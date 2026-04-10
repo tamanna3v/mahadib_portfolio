@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Hadi Bhuiyan — Digital, AI, Enterprise & SaaS. Co-Founder CommEngine, EasyDO.ai, BuildNation. 19+ years experience."/>
+<meta property="og:title" content="Hadi Bhuiyan — Digital · AI · SaaS"/>
+<meta property="og:url" content="https://mahadib.futuremind.ltd"/>
+<title>Hadi Bhuiyan — Digital · AI · SaaS</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a1a'/><text y='.85em' font-size='52' x='8' fill='white' font-family='sans-serif' font-weight='bold'>HB</text></svg>"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:#fafafa;color:#1a1a1a;min-height:100vh}
+a{text-decoration:none;color:inherit}
+button{font-family:'Nunito',sans-serif;cursor:pointer}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.95);backdrop-filter:blur(12px);border-bottom:1px solid #e8e8e8;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:52px;gap:8px}
+.nav-brand{font-weight:900;font-size:15px;letter-spacing:-0.5px;background:none;border:none;color:#1a1a1a;padding:0}
+.nav-tabs{display:flex;flex-wrap:wrap;gap:2px}
+.nav-btn{background:transparent;color:#666;border:none;border-radius:20px;padding:5px 12px;font-size:12px;font-weight:700;transition:all .2s}
+.nav-btn.active{background:#1a1a1a;color:#fff}
+
+/* PAGE */
+.page{max-width:820px;margin:0 auto;padding:80px 24px 60px;display:none}
+.page.active{display:block}
+
+/* SECTION TITLE */
+.section-title{font-size:28px;font-weight:900;margin:0 0 6px;letter-spacing:-0.5px;color:#1a1a1a}
+.section-sub{font-size:16px;color:#666;margin:0 0 28px;font-weight:500}
+.sub-label{display:flex;align-items:center;gap:10px;margin:30px 0 16px}
+.sub-label h3{font-size:17px;font-weight:800;margin:0;color:#1a1a1a;white-space:nowrap}
+.sub-label-line{flex:1;height:1px;background:#e8e8e8}
+.lbl{font-size:12px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+
+/* CARDS */
+.card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:18px 20px;transition:box-shadow .2s}
+.card:hover{box-shadow:0 2px 14px rgba(0,0,0,0.06)}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:8px}
+.stat-box{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:14px 10px;text-align:center}
+.stat-val{font-size:24px;font-weight:900;letter-spacing:-1px;color:#1a1a1a}
+.stat-lbl{font-size:12px;color:#666;margin-top:3px;font-weight:600}
+
+/* CHIP */
+.chip{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:5px;padding:2px 9px;font-size:12px;font-weight:600;color:#666;display:inline-block}
+.chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+
+/* EXP CARD */
+.exp-card{border:1px solid #e8e8e8;border-radius:12px;background:#fff;overflow:hidden;margin-bottom:8px;transition:box-shadow .2s}
+.exp-card:hover{box-shadow:0 2px 14px rgba(0,0,0,0.06)}
+.exp-header{width:100%;background:none;border:none;padding:15px 18px;cursor:pointer;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.exp-role{font-weight:800;font-size:16px;color:#1a1a1a;margin-bottom:2px}
+.exp-org{font-size:14px;color:#666;margin-bottom:6px}
+.exp-period{font-size:13px;color:#666;font-weight:600;white-space:nowrap}
+.exp-arrow{font-size:14px;color:#aaa;transition:transform .2s;display:block}
+.exp-arrow.open{transform:rotate(180deg)}
+.exp-body{padding:0 18px 15px;border-top:1px solid #e8e8e8;display:none}
+.exp-body.open{display:block}
+.exp-body ul{margin:12px 0 0;padding-left:18px}
+.exp-body li{font-size:15px;color:#666;line-height:1.7;margin-bottom:5px}
+.exp-link{display:inline-block;margin-top:8px;font-size:13px;color:#666;font-weight:700;text-decoration:underline}
+
+/* PRODUCT GRID */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.product-card{background:#fff;border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s}
+.product-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.07)}
+.product-preview{display:block;overflow:hidden;border-bottom:1px solid #e8e8e8;position:relative}
+.product-preview img{width:100%;height:170px;object-fit:cover;object-position:top;display:block;transition:transform .35s}
+.product-preview:hover img{transform:scale(1.04)}
+.preview-badge{position:absolute;top:9px;right:9px;background:rgba(0,0,0,0.55);color:#fff;font-size:12px;font-weight:700;border-radius:6px;padding:3px 9px;backdrop-filter:blur(4px)}
+.product-body{padding:16px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.product-emoji{font-size:22px;margin-bottom:3px}
+.product-name{font-weight:900;font-size:17px;color:#1a1a1a}
+.product-tag{font-size:13px;color:#666;font-weight:600}
+.product-desc{font-size:14px;color:#666;line-height:1.75;margin:0}
+.product-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:auto}
+.pstat{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:8px;padding:7px 5px;text-align:center}
+.pstat-val{font-size:14px;font-weight:800;color:#1a1a1a}
+.pstat-lbl{font-size:11px;color:#666;font-weight:600}
+
+/* PROGRAM BANNER */
+.prog-banner{background:#1a1a1a;border-radius:16px;padding:26px;margin-bottom:24px;color:#fff}
+.prog-banner-tag{display:inline-block;background:rgba(255,255,255,0.1);border-radius:8px;padding:3px 10px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;color:rgba(255,255,255,0.55)}
+.prog-banner h3{font-size:22px;font-weight:900;margin:0 0 8px;letter-spacing:-0.5px}
+.prog-banner p{font-size:13px;color:rgba(255,255,255,0.6);margin:0 0 20px;line-height:1.6}
+.prog-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.prog-stat{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 8px;text-align:center}
+.prog-stat-val{font-size:22px;font-weight:900;color:#fff}
+.prog-stat-lbl{font-size:10px;font-weight:700;color:rgba(255,255,255,0.7);margin-top:3px}
+.prog-stat-sub{font-size:9px;color:rgba(255,255,255,0.4);margin-top:2px;line-height:1.3}
+
+/* FORMAT CARDS */
+.format-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:12px}
+.format-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:18px 16px}
+.format-num{background:#1a1a1a;color:#fff;border-radius:50%;width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;margin-left:6px}
+.format-title{font-weight:800;font-size:13px;color:#1a1a1a;margin-bottom:3px}
+.format-sub{font-size:11px;color:#666;margin-bottom:9px;font-weight:600}
+.format-desc{font-size:12px;color:#666;line-height:1.6;margin:0 0 10px}
+
+/* CURRICULUM */
+.curr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:10px}
+.curr-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:16px}
+.curr-phase{font-size:10px;font-weight:700;color:#666;margin-bottom:4px}
+.curr-title{font-weight:800;font-size:13px;color:#1a1a1a;margin-bottom:10px}
+.curr-week{font-size:11px;color:#666;line-height:1.6;margin-bottom:4px;padding-left:9px;border-left:2px solid #e8e8e8}
+
+/* DIFF GRID */
+.diff-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:10px}
+.diff-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:14px 16px;display:flex;gap:10px}
+.diff-num{background:#1a1a1a;color:#fff;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800}
+.diff-t{font-weight:800;font-size:12px;color:#1a1a1a;margin-bottom:3px}
+.diff-d{font-size:11px;color:#666;line-height:1.5}
+
+/* EVENTS */
+.event-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-bottom:12px;transition:box-shadow .2s}
+.event-card:hover{box-shadow:0 2px 14px rgba(0,0,0,0.06)}
+.event-header{background:#f5f5f5;padding:12px 18px;border-bottom:1px solid #e8e8e8;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.event-avatar{width:36px;height:36px;border-radius:50%;background:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#fff;flex-shrink:0}
+.event-name{font-weight:800;font-size:13px;color:#1a1a1a}
+.event-date{font-size:10px;color:#666}
+.event-type{background:#fff;border:1px solid #e8e8e8;border-radius:6px;padding:3px 9px;font-size:10px;font-weight:700;color:#666;white-space:nowrap}
+.event-body{padding:14px 18px}
+.event-title{font-weight:900;font-size:14px;color:#1a1a1a;margin-bottom:4px}
+.event-meta{font-size:11px;color:#666;font-weight:700;margin-bottom:9px}
+.event-desc{font-size:13px;color:#666;line-height:1.75;margin:0 0 10px}
+.event-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid #e8e8e8}
+.event-actions span{font-size:11px;color:#666;font-weight:600;cursor:pointer;margin-right:14px}
+.event-btn{font-size:11px;background:#1a1a1a;color:#fff;border-radius:7px;padding:6px 13px;font-weight:700;font-family:'Nunito',sans-serif}
+
+/* RESEARCH */
+.research-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:20px 22px;margin-bottom:14px;position:relative;transition:box-shadow .2s}
+.research-card:hover{box-shadow:0 2px 16px rgba(0,0,0,0.07)}
+.research-featured{position:absolute;top:16px;right:16px;background:#1a1a1a;color:#fff;font-size:9px;font-weight:800;border-radius:6px;padding:3px 8px;letter-spacing:0.5px;text-transform:uppercase}
+.research-title{font-weight:900;font-size:16px;color:#1a1a1a;margin-bottom:6px;line-height:1.3}
+.research-venue{font-size:12px;color:#666;font-weight:700;margin-bottom:6px;font-style:italic}
+.research-loc{font-size:12px;color:#666;margin-bottom:4px;font-weight:500}
+.research-abs{font-size:13px;color:#666;line-height:1.75;margin:12px 0 14px;padding-top:12px;border-top:1px solid #e8e8e8}
+.ieee-btn{display:inline-flex;align-items:center;gap:5px;font-size:11px;background:#f5f5f5;border:1px solid #e8e8e8;color:#1a1a1a;border-radius:8px;padding:6px 13px;font-weight:700;font-family:'Nunito',sans-serif}
+
+/* WRITING GRID */
+.writing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.writing-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:10px;transition:box-shadow .2s}
+.writing-card:hover{box-shadow:0 2px 16px rgba(0,0,0,0.07)}
+.writing-title{font-weight:900;font-size:14px;color:#1a1a1a;line-height:1.3}
+.writing-venue{font-size:12px;color:#666;font-weight:700;font-style:italic}
+.writing-abs{font-size:12px;color:#666;line-height:1.7;margin:0}
+.writing-link{font-size:11px;color:#666;font-weight:700;text-decoration:underline;margin-top:auto}
+
+/* RECOGNITION */
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.feat-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:18px}
+.feat-type{font-size:10px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px}
+.feat-title{font-weight:800;font-size:14px;color:#1a1a1a;margin-bottom:6px}
+.feat-detail{font-size:12px;color:#666;line-height:1.6;margin:0 0 10px}
+.feat-year{font-size:11px;color:#666;font-weight:600}
+.award-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:10px}
+.award-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:15px;display:flex;gap:12px;transition:box-shadow .2s}
+.award-card:hover{box-shadow:0 2px 14px rgba(0,0,0,0.06)}
+.award-icon{font-size:22px}
+.award-title{font-weight:700;font-size:13px;color:#1a1a1a;margin-bottom:3px}
+.award-detail{font-size:11px;color:#666}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:8px}
+.contact-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:18px;display:flex;gap:14px;align-items:flex-start;text-decoration:none;transition:box-shadow .2s}
+.contact-card:hover{box-shadow:0 2px 14px rgba(0,0,0,0.06)}
+.contact-icon{font-size:22px}
+.contact-lbl{font-size:11px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:4px}
+.contact-val{font-weight:700;font-size:13px;color:#1a1a1a}
+.link-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border:1.5px solid #1a1a1a;border-radius:10px;font-size:13px;color:#1a1a1a;font-weight:700;background:#fff;transition:all .15s;margin:4px}
+.link-btn:hover{background:#1a1a1a;color:#fff}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:24px}
+.timeline-line{position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:#e8e8e8}
+.tl-item{display:flex;gap:14px;margin-bottom:14px;position:relative}
+.tl-dot{position:absolute;left:-20px;top:4px;width:8px;height:8px;border-radius:50%;background:#e8e8e8;border:2px solid #e8e8e8;flex-shrink:0}
+.tl-dot.active{background:#1a1a1a}
+.tl-year{min-width:64px;font-size:11px;font-weight:800;color:#666;padding-top:2px}
+.tl-label{font-weight:800;font-size:13px;color:#1a1a1a;margin-bottom:1px}
+.tl-note{font-size:11px;color:#666}
+
+/* BUILDING */
+.building-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.building-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:15px 16px;display:flex;gap:12px;align-items:flex-start}
+.building-emoji{font-size:22px}
+.building-title{font-weight:800;font-size:13px;color:#1a1a1a;margin-bottom:3px}
+.building-desc{font-size:12px;color:#666;line-height:1.6}
+
+/* SKILLS */
+.skill-pill{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:20px;padding:5px 13px;font-size:14px;font-weight:700;color:#1a1a1a;display:inline-block;margin:3px}
+.skill-tag{background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:5px 12px;font-size:14px;color:#1a1a1a;font-weight:600;display:inline-block;margin:3px}
+.edu-badge{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:6px;padding:3px 10px;font-size:11px;font-weight:700;color:#1a1a1a;display:inline-block;margin-right:6px;margin-top:6px}
+
+/* INFO NOTICE */
+.notice{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:12px;padding:16px 18px;display:flex;gap:12px;margin-top:28px}
+.notice-text{font-size:12px;color:#666;line-height:1.7;margin:0 0 10px}
+
+/* TRUSTED */
+.trusted-pill{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:7px;padding:5px 12px;font-size:12px;font-weight:700;color:#1a1a1a;display:inline-block;margin:3px}
+
+/* BTN */
+.btn-dark{font-size:12px;background:#1a1a1a;color:#fff;border-radius:8px;padding:8px 16px;font-weight:700;font-family:'Nunito',sans-serif;border:none;display:inline-block}
+.btn-light{font-size:12px;background:#f5f5f5;border:1px solid #e8e8e8;color:#1a1a1a;border-radius:8px;padding:8px 16px;font-weight:700;font-family:'Nunito',sans-serif;border-style:solid;display:inline-block}
+
+/* LI INFO BANNER */
+.li-banner{display:flex;align-items:center;gap:8px;background:#f5f5f5;border:1px solid #e8e8e8;border-radius:10px;padding:10px 14px;margin-bottom:20px;font-size:12px;color:#666;font-weight:600}
+
+/* FOOTER */
+footer{text-align:center;padding:20px 0;color:#666;font-size:13px;border-top:1px solid #e8e8e8;font-weight:600}
+
+@media(max-width:600px){
+  .stat-grid,.prog-stats{grid-template-columns:repeat(2,1fr)}
+  .nav-tabs{gap:1px}
+  .nav-btn{padding:4px 8px;font-size:10px}
+  nav{flex-wrap:wrap;height:auto;padding:8px 12px;gap:6px}
+  .page{padding:100px 16px 40px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <button class="nav-brand" onclick="showPage('about')">Hadi Bhuiyan</button>
+  <div class="nav-tabs" id="navTabs"></div>
+</nav>
+
+<div id="app"></div>
+
+<footer>© 2026 Hadi Bhuiyan · Dhaka, Bangladesh</footer>
+
+<script>
+// ── DATA ────────────────────────────────────────────────
+const NAV = ["About","Experience","Products","Programs","Events","Research","Recognition","Contact"];
+
+const STATS = [
+  {val:"19+",label:"Years Experience"},{val:"120+",label:"Brands Served"},
+  {val:"20M+",label:"Customers Profiled"},{val:"90M",label:"Subscribers Managed"}
+];
+
+const TIMELINE = [
+  {year:"2001–05",label:"B.Sc. CSE",note:"CUET · Ranked 5th · Dean's Award",active:false},
+  {year:"2006–07",label:"Lecturer, Premier University",note:"Teaching CSE & Business",active:false},
+  {year:"2006–08",label:"Huawei Technologies",note:"BSS · Billing · Mediation",active:false},
+  {year:"2008–13",label:"Nokia Siemens Networks",note:"IN · BSS · 90M subscribers",active:false},
+  {year:"2013–21",label:"Robi Axiata Limited",note:"IoT · MFS · Digital Services",active:false},
+  {year:"2018–",label:"Co-Founded CommEngine",note:"SocialCRM · SaaS · 120+ brands",active:true},
+  {year:"2022–",label:"BuildNation / CPO",note:"AI-PA · Digital Transformation",active:true},
+  {year:"2022",label:"Microsoft Founders Fellow",note:"Panelist at BD launch",active:true},
+  {year:"2024",label:"CxO Conclave Certified",note:"IBA – University of Dhaka",active:true}
+];
+
+const BUILDING = [
+  {emoji:"🤖",title:"EasyDO.ai",desc:"Multi-LLM AI workspace — no-code, pay-per-use, for teams."},
+  {emoji:"🌊",title:"EasyDO Flow",desc:"Guided journey platform for structured AI-powered workflows."},
+  {emoji:"🏗️",title:"AI-PA Program",desc:"Scaling corporate AI transformation across Bangladesh."},
+  {emoji:"💬",title:"CommEngine v2",desc:"Next-gen SocialCRM with deeper AI profiling & automation."}
+];
+
+const EXPERIENCES = [
+  {org:"BuildCon Consultancies & BuildNation Limited",role:"Consultant (CPO Capacity)",period:"Aug 2022 – Present",tags:["AI","Digital Transformation","Consulting"],points:["Led AI-Proficiency Accelerator for 190+ Corporate Senior Leadership participants across six corporate engagements.","Built a Blended Learning B2B LMS platform onboarding global programs (TAFE Australia, ACCA, CIMA, AI-PA).","Delivered consultancy for Tier-IV Data Center Feasibility and Digital Bank Establishment projects."],url:"https://buildnation.com.bd/aipa/"},
+  {org:"CommEngine Limited",role:"Co-Founder",period:"April 2018 – Present",tags:["SaaS","AI","SocialCRM"],points:["Co-Founded EasyDO.ai and FutureMind AI — Private AI-Workspace, Application Launchpad & AI-Consulting Manager.","Secured seed funding from Robi Axiata; launched enterprise B2B SaaS serving 120+ brands.","Built Business, Strategy, Product & Technology teams; profiled 20M+ customers."],url:"http://www.commengine.xyz"},
+  {org:"Robi Axiata Limited",role:"Unit Lead – Project & Innovation",period:"May 2013 – July 2021",tags:["Telco","IoT","Digital Services"],points:["Led complete product lifecycle for Digital Services, Innovation, IoT & VAS.","Managed Airtel & Axiata SDP merger, onboarding 2000+ services across USSD, VAS, MFS & Digital platforms.","Redesigned SMS Ecosystem for 40M subscribers — achieved $3M YRR."]},
+  {org:"Nokia Siemens Networks",role:"Specialist & Project Lead",period:"Feb 2008 – May 2013",tags:["IN","BSS","Telecom"],points:["Implemented Banglalink IN09–IN14 (five IN platforms) handling 90 million subscribers.","Managed migration of 60M subscribers across four IN nodes for Vodafone India."]},
+  {org:"Huawei Technologies",role:"Application & Software Engineer",period:"April 2006 – Feb 2008",tags:["BSS","Billing","Mediation"],points:["Led commissioning of Postpaid Billing, Mediation, PRM & International Roaming solutions.","Deployed BTTB to Teletalk Charging system transformation for 20M subscribers."]},
+  {org:"Premier University, Chittagong",role:"Lecturer in CSE",period:"Feb 2006 – Sep 2007",tags:["Teaching","Academia"],points:["Conducted CS & Business lectures, labs and mentored undergraduate thesis and projects."]}
+];
+
+const SKILLS = {
+  "Top Skills":["Digital Transformation","Product Management","AI Strategy","SaaS","Enterprise Solutions","Telecom","IoT","Blockchain","Social CRM","Startup Building"],
+  "Function":["Ideation & Design","GTM Strategy","CX & Product","Solution Design","RFP/RFI & Tech Procurement","Product Management","Forecasting & Budgeting"],
+  "Domain":["Telco Charging & VAS","CRM & IoT","Intelligent Networks","API Gateway","AI-Workspace","AI-Avatar","Application Launchpad","SocialCRM & Profiling","RetailTech"],
+  "Certifications":["ITILv4","BABOK","PMP","CxO Conclave (IBA-DU, 2024)","ServADM","NSN TACII","Microsoft for Founders Fellow 2022"]
+};
+
+const PRODUCTS = [
+  {name:"CommEngine",tagline:"Social CRM & Customer Intelligence",url:"https://www.commengine.xyz",emoji:"💬",tags:["SocialCRM","B2B SaaS","Analytics"],desc:"Bangladesh's leading Social Media CRM. Enables query management, AI-based customer profiling, lead management, and real-time analytics. Serving 120+ brands including Unilever, BRAC Bank and Singer.",stats:[{val:"120+",label:"Brands"},{val:"1.5M+",label:"Profiles"},{val:"99%",label:"Satisfaction"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://commengine.xyz/"},
+  {name:"Zachai",tagline:"Blockchain & IoT Anti-Counterfeit",url:"https://www.zachai.xyz",emoji:"🔐",tags:["Blockchain","IoT","RetailTech"],desc:"Mobile, IoT and Blockchain-based product authentication platform. Enables brands to verify products across supply chains. Serves Automobile, Healthcare, Food & Consumer Goods industries.",stats:[{val:"Multi",label:"Industries"},{val:"Supply",label:"Chain Track"},{val:"Block",label:"Verified"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://www.zachai.xyz/"},
+  {name:"EasyDO.ai",tagline:"Unified AI Aggregator & Workspace",url:"https://easydo.ai",emoji:"🤖",tags:["AI Workspace","No-code","LLM"],desc:"Private AI workspace aggregating GPT-4o, Gemini 2.5, Claude 3, DALL·E, Whisper, Deepseek and more. Design AI tools in under 5 minutes with no code. Starting from $1/month.",stats:[{val:"5 min",label:"Tool Setup"},{val:"Multi-LLM",label:"Models"},{val:"$1/mo",label:"Starting"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://easydo.ai/"},
+  {name:"BuildNation / AI-PA",tagline:"AI Proficiency Accelerator",url:"https://buildnation.com.bd/aipa/",emoji:"🏗️",tags:["AI Training","Corporate","EdTech"],desc:"Corporate AI transformation program. Completed 6 corporate AI-transformation consultations with 200+ senior leadership participants. Partners: TAFE Australia, ACCA, CIMA.",stats:[{val:"200+",label:"Participants"},{val:"6",label:"Corporates"},{val:"Global",label:"Programs"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://buildnation.com.bd/"},
+  {name:"EasyDO Flow",tagline:"Guided Journey Platform",url:"https://flow.easydo.ai",emoji:"🌊",tags:["Guided Journey","Workflow","EasyDO"],desc:"A guided journey platform under the EasyDO.ai ecosystem. Designed to help teams and individuals navigate structured workflows, onboarding flows, and step-by-step AI-powered journeys with ease.",stats:[{val:"Guided",label:"Journeys"},{val:"AI",label:"Powered"},{val:"No-code",label:"Setup"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://flow.easydo.ai/"}
+];
+
+const PROGRAM_STATS = [
+  {val:"85%",label:"Career Impact",sub:"Within 6 months"},
+  {val:"40%",label:"Productivity Gain",sub:"Avg across orgs"},
+  {val:"92%",label:"Implementation",sub:"Within 30 days"},
+  {val:"3.5x",label:"ROI",sub:"Return on investment"}
+];
+
+const PROGRAM_FORMATS = [
+  {num:"1",icon:"🎯",title:"AI Strategy & Transformation",sub:"For CXOs & Business Leaders",duration:"3 Hours",desc:"Led by Mahtab Uddin Ahmed. Focuses on strategy, organizational AI framework, and AI-driven transformation at the leadership level."},
+  {num:"2",icon:"🛠️",title:"AI Framework Workshop",sub:"For General Professionals",duration:"3 Hours",desc:"Introductory & functional AI with use case analysis. Curated for General, Finance, HR, Legal, Operations, or Sales teams."},
+  {num:"3",icon:"🚀",title:"AI Proficiency L1 / L2 / L3",sub:"For Mid–Senior Professionals",duration:"12 Sessions × 3–4 hrs",desc:"36-hour hands-on accelerator. Group study, workshops, and real organization implementation with 6+ AI use cases per participant."}
+];
+
+const CURRICULUM = [
+  {phase:"Weeks 1–4",title:"Building Your AI Foundation",weeks:["Week 1: What AI is (and isn't), LLM Philosophy, real-world applications","Week 2: Models, Prompts, Tools, Use Cases — Mastering generative AI","Week 3: Extract insights, generate reports, presentations & custom models","Week 4: Data processing, automate organization jobs, AI agents"]},
+  {phase:"Weeks 5–8",title:"Enhancing Professional Output",weeks:["Week 5: Professional content — emails, reports, CVs, memos","Week 6: Presentations & data visualizations from ideas","Week 7: Excel Copilot — automate calculations, analyze spreadsheets","Week 8: SWOT analyses, decision paths, scenario planning"]},
+  {phase:"Weeks 9–12",title:"Advanced Implementation",weeks:["Week 9: Branding, content calendars, visuals & campaigns with AI","Week 10: Simplify policies, contracts, regulations with AI","Week 11: No-code automation with AI-powered workflows","Week 12: Showcase & Graduation — present final AI project"]}
+];
+
+const DIFFERENTIATORS = [
+  {n:"1",t:"Domain Expert Involvement",d:"Trusted industry experts guide curriculum for real business challenges."},
+  {n:"2",t:"Workshop & Project-Based Learning",d:"Expert-led training to build AI use cases tailored to your role."},
+  {n:"3",t:"Post-Course Support",d:"AI-based follow-up and assessment for continuous learning."},
+  {n:"4",t:"Tiered Learning Journey",d:"3-phase L1/L2/L3 progression, participants advance at their own pace."},
+  {n:"5",t:"Local Audience Adaptability",d:"Content designed for local language and workplace realities."},
+  {n:"6",t:"Certification Pathways",d:"Industry-recognized certifications at final tier enhancing credentials."}
+];
+
+const EVENTS = [
+  {type:"Panel / Speaker",title:"Microsoft for Startups Founders Hub — Bangladesh Launch",date:"August 12, 2022",org:"Microsoft Bangladesh",location:"Dhaka, Bangladesh",desc:"Joined as Co-founder & Lead of CommEngine on a panel discussing AI startup ecosystems, enterprise B2B SaaS, and the role of Microsoft Founders Hub in empowering Bangladeshi tech entrepreneurs. The event launched $300,000+ in benefits for startups.",tags:["Microsoft","Startups","AI","SaaS"],url:"https://news.microsoft.com/apac/2022/08/12/microsoft-for-startups-founders-hub-to-harness-the-power-of-startups-in-bangladesh/",btnLabel:"Read Story →"},
+  {type:"Policy",title:"National Blockchain Policy Forum",date:"2021–2022",org:"Government of Bangladesh",location:"Dhaka, Bangladesh",desc:"Contributed as a subject matter expert to Bangladesh's National Blockchain Policy Forum and SME Digitization Policy, helping shape the country's 4IR digital infrastructure roadmap. Also contributed to the Consumer Protection Digital System for BSTI.",tags:["Blockchain","Policy","4IR","Government"],url:"http://bd.linkedin.com/in/mahadib/",btnLabel:"View on LinkedIn →"},
+  {type:"Program Launch",title:"AI-Proficiency Accelerator (AI-PA) — Corporate Cohort",date:"2023 – Dec 2025",org:"BuildNation Limited",location:"Dhaka, Bangladesh",desc:"Led the AI-PA program across 6+ corporate organizations — including Ispahani, Beximco Pharma, Nuvista Pharma, Japan Solar and more — training 200+ senior executives. Participants achieved up to 40% productivity gains.",tags:["AI Training","Corporate","Leadership","BuildNation"],url:"https://buildnation.com.bd/aipa/",btnLabel:"Learn More →"},
+  {type:"Certification",title:"CxO Conclave — IBA, University of Dhaka",date:"2024",org:"IBA – University of Dhaka",location:"Dhaka, Bangladesh",desc:"Completed the CxO Conclave executive leadership certification — a prestigious program for C-suite executives covering advanced strategy, digital leadership, and organizational transformation.",tags:["Leadership","Executive","Certification","IBA-DU"],url:"http://bd.linkedin.com/in/mahadib/",btnLabel:"View on LinkedIn →"},
+  {type:"Award Ceremony",title:"BASIS National ICT Award — CommEngine",date:"2019",org:"BASIS Bangladesh",location:"Dhaka, Bangladesh",desc:"CommEngine was recognized with Bangladesh's most prestigious tech innovation award. BASIS President Syed Almas Kabir and Microsoft Bangladesh's MD Sonia Bashir Kabir attended as special guests.",tags:["Award","CommEngine","SaaS","Innovation"],url:"http://bd.linkedin.com/in/mahadib/",btnLabel:"View on LinkedIn →"},
+  {type:"Social Initiative",title:"Swachho — Covid-19 Digital Response",date:"2020",org:"Call for Nation Initiative",location:"Bangladesh (Nationwide)",desc:"Contributed to Swachho, a nationwide Covid-19 digital solution that earned the Retail Digital Innovation Award 2020, combining tech with public health response during the pandemic.",tags:["Covid-19","Social Impact","Digital Health"],url:"http://bd.linkedin.com/in/mahadib/",btnLabel:"View on LinkedIn →"}
+];
+
+const RESEARCH = [
+  {year:"2005",title:"Fuzzy Logic: Model-Based Controller",venue:"IEEE 8th International Conference on Computer and Information Technology (ICCIT-2005)",publisher:"IEEE",location:"Chittagong, Bangladesh",abstract:"Presents a model-based fuzzy logic controller design approach. The paper explores intelligent control systems leveraging fuzzy inference for dynamic process management — foundational work completed during undergraduate studies at CUET.",tags:["Fuzzy Logic","Control Systems","AI","IEEE"],featured:true},
+  {year:"2006",title:"Network Systems: Localized Router-Centric Approach",venue:"IEEE International Conference on Networking, Electronics and Systems (ICNEWS-2006)",publisher:"IEEE",location:"Bangladesh",abstract:"Proposes a localized router-centric approach for network systems architecture. Investigates routing optimization strategies with a focus on reducing network overhead and improving packet delivery efficiency in distributed systems.",tags:["Networking","Routing","Distributed Systems","IEEE"],featured:false},
+  {year:"2010",title:"Digital Display: Sustainable Segmented Display",venue:"IEEE 13th International Conference on Computer and Information Technology (ICCIT-2010)",publisher:"IEEE",location:"Dhaka, Bangladesh",abstract:"Explores energy-efficient, sustainable segmented display technologies. The research proposes architectural improvements to reduce power consumption in digital display systems — relevant to green computing and embedded display applications.",tags:["Digital Display","Green Computing","Embedded Systems","IEEE"],featured:false}
+];
+
+const WRITINGS = [
+  {type:"Policy Contribution",year:"2021–2022",title:"National Blockchain Policy — Bangladesh",venue:"Government of Bangladesh · Ministry of ICT",abstract:"Contributed as a subject matter expert to Bangladesh's National Blockchain Policy Framework, helping define regulatory and adoption guidelines for blockchain technology across public and private sectors.",tags:["Blockchain","Policy","4IR","Government"],url:"http://bd.linkedin.com/in/mahadib/"},
+  {type:"Policy Contribution",year:"2021",title:"SME Digitization Policy",venue:"Government of Bangladesh",abstract:"Provided expert input on the SME Digitization Policy, focusing on digital platform adoption, social CRM integration, and AI-readiness frameworks for small and medium-sized enterprises in Bangladesh.",tags:["SME","Digitization","Policy","Bangladesh"],url:"http://bd.linkedin.com/in/mahadib/"},
+  {type:"Policy / Standards",year:"2022",title:"Consumer Protection Digital System",venue:"Bangladesh Standards and Testing Institution (BSTI)",abstract:"Contributed to the design and framework of a digital consumer protection system for BSTI — integrating product authentication (Zachai platform) and digital tracking for consumer goods across Bangladesh.",tags:["Consumer Protection","Digital Standards","BSTI","Zachai"],url:"https://www.zachai.xyz"},
+  {type:"Academic Review",year:"2010–2016",title:"Independent Reviewer — ICT4D Conference",venue:"ICT for Development (ICT4D) International Conference",abstract:"Served as an independent academic reviewer for the ICT4D conference series for six consecutive years, evaluating research papers on technology adoption, digital infrastructure, and innovation in developing economies.",tags:["Academic Review","ICT4D","Peer Review","Development"],url:"http://bd.linkedin.com/in/mahadib/"}
+];
+
+const FEATURED = [
+  {type:"Award",title:"BASIS National ICT Award",detail:"CommEngine wins Bangladesh's top tech innovation award for SocialCRM platform.",year:"2019"},
+  {type:"Fellowship",title:"Microsoft for Startups Founders Hub",detail:"Panelist at the Bangladesh launch — discussed AI startup ecosystem and enterprise B2B SaaS.",year:"Aug 2022"},
+  {type:"Certification",title:"CxO Conclave Certified",detail:"IBA – University of Dhaka. Executive leadership certification for C-suite strategy.",year:"2024"}
+];
+
+const AWARDS = [
+  {icon:"🏆",title:"BASIS National ICT Award",detail:"CommEngine – 2019"},
+  {icon:"🏅",title:"Retail Digital Innovation Award",detail:"Zachai – 2020"},
+  {icon:"🦠",title:"Covid-19 Solution Award",detail:"Swachho – 2020"},
+  {icon:"🌐",title:"National Blockchain Policy Forum",detail:"Policy Contributor"},
+  {icon:"📘",title:"IEEE Publications",detail:"ICCIT-2005, ICNEWS-2006, ICCIT-2010"},
+  {icon:"🤝",title:"ICT4D Conference Reviewer",detail:"Independent 2010–2016"},
+  {icon:"🏛️",title:"BSTI Consumer Protection",detail:"Digital System Contributor"},
+  {icon:"💻",title:"Microsoft for Founders Fellow",detail:"2022"}
+];
+
+// ── HELPERS ─────────────────────────────────────────────
+function chips(arr){ return arr.map(t=>`<span class="chip">${t}</span>`).join(''); }
+function chipRow(arr){ return `<div class="chip-row">${chips(arr)}</div>`; }
+
+// ── PAGES ────────────────────────────────────────────────
+function pageAbout(){
+  return `
+    <h2 class="section-title">About</h2>
+    <p class="section-sub">Builder · Founder · Consultant · Dhaka, Bangladesh</p>
+    <p style="font-size:15px;line-height:1.9;color:#1a1a1a;margin-bottom:28px">
+      Results-driven, innovative builder with over <strong>19 years of experience</strong> in Telco & Digital Transformation, AI-Workspace development, customer/enterprise solutions, and startup building. Proven track record at <strong>Nokia Siemens Networks</strong>, <strong>Huawei</strong>, and <strong>Robi Axiata Limited</strong>.<br><br>
+      Co-Founded <strong>EasyDO.ai</strong> and <strong>FutureMind AI</strong>. Currently leading AI-Proficiency programs and Digital Transformation consultancy at BuildCon & BuildNation. Architect of BuildNation's AI vision and member of national committees on 4IR and blockchain. A curious mind and builder by nature.
+    </p>
+    <div class="stat-grid">${STATS.map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}</div>
+    <div class="sub-label"><h3>Currently Building</h3><div class="sub-label-line"></div></div>
+    <div class="building-grid">${BUILDING.map(b=>`<div class="building-card"><div class="building-emoji">${b.emoji}</div><div><div class="building-title">${b.title}</div><div class="building-desc">${b.desc}</div></div></div>`).join('')}</div>
+    <div class="sub-label"><h3>Career Timeline</h3><div class="sub-label-line"></div></div>
+    <div class="timeline">
+      <div class="timeline-line"></div>
+      ${TIMELINE.map(t=>`<div class="tl-item"><div class="tl-dot${t.active?' active':''}"></div><div class="tl-year">${t.year}</div><div><div class="tl-label">${t.label}</div><div class="tl-note">${t.note}</div></div></div>`).join('')}
+    </div>
+    <div class="sub-label"><h3>Connect</h3><div class="sub-label-line"></div></div>
+    <div style="display:flex;flex-wrap:wrap;gap:9px">
+      <a href="mailto:bhuiyan.hadi@gmail.com" class="link-btn">✉️ bhuiyan.hadi@gmail.com</a>
+      <a href="tel:+8801833180420" class="link-btn">📞 +880 18 33180420</a>
+      <span class="link-btn">📍 Dhaka-1217, Bangladesh</span>
+      <a href="http://bd.linkedin.com/in/mahadib/" target="_blank" class="link-btn">💼 LinkedIn</a>
+    </div>`;
+}
+
+function pageExperience(){
+  const expCards = EXPERIENCES.map((e,i)=>`
+    <div class="exp-card">
+      <button class="exp-header" onclick="toggleExp(${i})">
+        <div style="flex:1">
+          <div class="exp-role">${e.role}</div>
+          <div class="exp-org">${e.org}</div>
+          <div class="chip-row">${chips(e.tags)}</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
+          <span class="exp-period">${e.period}</span>
+          <span class="exp-arrow" id="arr${i}">⌄</span>
+        </div>
+      </button>
+      <div class="exp-body" id="expb${i}">
+        <ul>${e.points.map(p=>`<li>${p}</li>`).join('')}</ul>
+        ${e.url?`<a href="${e.url}" target="_blank" class="exp-link">Visit →</a>`:''}
+      </div>
+    </div>`).join('');
+
+  const skillSections = Object.entries(SKILLS).map(([cat,items])=>`
+    <div style="margin-bottom:16px">
+      <div class="lbl">${cat}</div>
+      <div>${items.map(s=>`<span class="${cat==='Top Skills'?'skill-pill':'skill-tag'}">${s}</span>`).join('')}</div>
+    </div>`).join('');
+
+  return `
+    <h2 class="section-title">Experience</h2>
+    <p class="section-sub">19+ years across Telco, AI, SaaS & Digital Transformation</p>
+    ${expCards}
+    <div class="sub-label"><h3>Competence</h3><div class="sub-label-line"></div></div>
+    ${skillSections}
+    <div class="sub-label"><h3>Education</h3><div class="sub-label-line"></div></div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+        <div>
+          <div style="font-weight:800;font-size:15px;color:#1a1a1a">B.Sc. Engineering in Computer Science & Engineering</div>
+          <div style="font-size:13px;color:#666;margin-top:4px">Chittagong University of Engineering & Technology, Bangladesh</div>
+          <div><span class="edu-badge">Ranked 5th</span><span class="edu-badge">Dean's Award</span></div>
+        </div>
+        <div style="font-size:12px;color:#666;font-weight:600">2001 – 2005</div>
+      </div>
+    </div>`;
+}
+
+function pageProducts(){
+  const cards = PRODUCTS.map(p=>`
+    <div class="product-card">
+      <a href="${p.url}" target="_blank" class="product-preview">
+        <img src="${p.preview}" alt="${p.name}" loading="lazy"/>
+        <div class="preview-badge">Visit Site ↗</div>
+      </a>
+      <div class="product-body">
+        <div>
+          <div class="product-emoji">${p.emoji}</div>
+          <div class="product-name">${p.name}</div>
+          <div class="product-tag">${p.tagline}</div>
+        </div>
+        <div class="chip-row">${chips(p.tags)}</div>
+        <p class="product-desc">${p.desc}</p>
+        <div class="product-stats">${p.stats.map(s=>`<div class="pstat"><div class="pstat-val">${s.val}</div><div class="pstat-lbl">${s.label}</div></div>`).join('')}</div>
+      </div>
+    </div>`).join('');
+  return `
+    <h2 class="section-title">Products</h2>
+    <p class="section-sub">Ventures built at the intersection of AI, SaaS & Digital Transformation</p>
+    <div class="product-grid">${cards}</div>`;
+}
+
+function pagePrograms(){
+  const formats = PROGRAM_FORMATS.map(f=>`
+    <div class="format-card">
+      <div style="display:flex;align-items:center;margin-bottom:10px">
+        <span style="font-size:20px">${f.icon}</span>
+        <span class="format-num">${f.num}</span>
+      </div>
+      <div class="format-title">${f.title}</div>
+      <div class="format-sub">${f.sub}</div>
+      <p class="format-desc">${f.desc}</p>
+      <span class="chip">⏱ ${f.duration}</span>
+    </div>`).join('');
+
+  const curr = CURRICULUM.map(c=>`
+    <div class="curr-card">
+      <div class="curr-phase">${c.phase}</div>
+      <div class="curr-title">${c.title}</div>
+      ${c.weeks.map(w=>`<div class="curr-week">${w}</div>`).join('')}
+    </div>`).join('');
+
+  const diff = DIFFERENTIATORS.map(d=>`
+    <div class="diff-card">
+      <div class="diff-num">${d.n}</div>
+      <div><div class="diff-t">${d.t}</div><div class="diff-d">${d.d}</div></div>
+    </div>`).join('');
+
+  return `
+    <h2 class="section-title">Programs</h2>
+    <p class="section-sub">BuildNation AI-PA · Strategy-Led, Implementation-Driven AI Transformation</p>
+    <div class="prog-banner">
+      <div class="prog-banner-tag">BuildNation · AI-PA</div>
+      <h3>AI Proficiency Accelerator</h3>
+      <p>From CXO executive workshops to 12-week immersive accelerators — practical AI transformation at every level.</p>
+      <div class="prog-stats">${PROGRAM_STATS.map(s=>`<div class="prog-stat"><div class="prog-stat-val">${s.val}</div><div class="prog-stat-lbl">${s.label}</div><div class="prog-stat-sub">${s.sub}</div></div>`).join('')}</div>
+    </div>
+    <div class="sub-label"><h3>Program Formats</h3><div class="sub-label-line"></div></div>
+    <div class="format-grid">${formats}</div>
+    <div class="sub-label"><h3>12-Week Course Journey</h3><div class="sub-label-line"></div></div>
+    <div class="curr-grid">${curr}</div>
+    <div class="sub-label"><h3>Key Differentiators</h3><div class="sub-label-line"></div></div>
+    <div class="diff-grid">${diff}</div>
+    <div class="sub-label"><h3>Trusted by Leading Organizations</h3><div class="sub-label-line"></div></div>
+    <div class="card">
+      <p style="font-size:13px;color:#666;margin-bottom:12px;line-height:1.6">200+ senior leaders across HR, IT, procurement, supply chain, sales, finance, and strategy transformed their work through AI-PA.</p>
+      <div style="margin-bottom:16px">${["Ispahani","Beximco Pharma","Nuvista Pharma","Japan Solar","Bahon","Hero","Natal Hero"].map(t=>`<span class="trusted-pill">${t}</span>`).join('')}</div>
+      <div style="padding-top:14px;border-top:1px solid #e8e8e8;display:flex;gap:9px">
+        <a href="https://buildnation.com.bd/aipa/" target="_blank" class="btn-dark">Learn More →</a>
+        <a href="mailto:mahadib@buildnation.com.bd" class="btn-light">Request Info</a>
+      </div>
+    </div>`;
+}
+
+function pageEvents(){
+  const cards = EVENTS.map(ev=>`
+    <div class="event-card">
+      <div class="event-header">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="event-avatar">HB</div>
+          <div><div class="event-name">Hadi Bhuiyan</div><div class="event-date">${ev.date}</div></div>
+        </div>
+        <span class="event-type">${ev.type}</span>
+      </div>
+      <div class="event-body">
+        <div class="event-title">${ev.title}</div>
+        <div class="event-meta">🏢 ${ev.org} · 📍 ${ev.location}</div>
+        <p class="event-desc">${ev.desc}</p>
+        <div class="chip-row">${ev.tags.map(t=>`<span class="chip">#${t}</span>`).join('')}</div>
+        <div class="event-footer">
+          <div class="event-actions">
+            <span>👍 Like</span><span>💬 Comment</span><span>↗️ Share</span>
+          </div>
+          <a href="${ev.url}" target="_blank" class="event-btn">${ev.btnLabel}</a>
+        </div>
+      </div>
+    </div>`).join('');
+  return `
+    <h2 class="section-title">Events & Milestones</h2>
+    <p class="section-sub">Key appearances, launches and contributions</p>
+    <div class="li-banner">
+      🔗 <span>Drawn from LinkedIn activity, press coverage & official records.</span>
+      <a href="http://bd.linkedin.com/in/mahadib/" target="_blank" style="margin-left:auto;color:#1a1a1a;font-weight:800;white-space:nowrap">Follow on LinkedIn →</a>
+    </div>
+    ${cards}`;
+}
+
+function pageResearch(){
+  const papers = RESEARCH.map(r=>`
+    <div class="research-card">
+      ${r.featured?'<div class="research-featured">Featured</div>':''}
+      <div class="chip-row">
+        <span class="chip">Conference Paper</span>
+        <span class="chip">📅 ${r.year}</span>
+        <span style="background:#1a1a1a;color:#fff;border-radius:6px;padding:3px 9px;font-size:12px;font-weight:700">${r.publisher}</span>
+      </div>
+      <div class="research-title">${r.title}</div>
+      <div class="research-venue">${r.venue}</div>
+      <div class="research-loc">📍 ${r.location}</div>
+      <p class="research-abs">${r.abstract}</p>
+      <div class="chip-row">${chips(r.tags)}</div>
+      <a href="https://ieeexplore.ieee.org/" target="_blank" class="ieee-btn">🔍 Search on IEEE Xplore →</a>
+    </div>`).join('');
+
+  const writings = WRITINGS.map(w=>`
+    <div class="writing-card">
+      <div class="chip-row"><span class="chip">${w.type}</span><span class="chip">📅 ${w.year}</span></div>
+      <div class="writing-title">${w.title}</div>
+      <div class="writing-venue">${w.venue}</div>
+      <p class="writing-abs">${w.abstract}</p>
+      <div class="chip-row">${chips(w.tags)}</div>
+      <a href="${w.url}" target="_blank" class="writing-link">View Reference →</a>
+    </div>`).join('');
+
+  return `
+    <h2 class="section-title">Research & Writings</h2>
+    <p class="section-sub">IEEE publications, policy contributions & academic reviews</p>
+    <div class="stat-grid">
+      ${[{val:"3",label:"IEEE Papers"},{val:"3",label:"Policy Works"},{val:"6 yrs",label:"ICT4D Reviewer"},{val:"2005–10",label:"Publication Span"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
+    </div>
+    <div class="sub-label"><h3>📄 IEEE Publications</h3><div class="sub-label-line"></div></div>
+    ${papers}
+    <div class="sub-label"><h3>✍️ Policy Contributions & Academic Reviews</h3><div class="sub-label-line"></div></div>
+    <div class="writing-grid">${writings}</div>
+    <div class="notice">
+      <span style="font-size:20px">📚</span>
+      <div>
+        <div style="font-weight:800;font-size:13px;color:#1a1a1a;margin-bottom:4px">IEEE Xplore Archive</div>
+        <p class="notice-text">All three IEEE publications are indexed through IEEE Xplore Digital Library. Search "Hadi Bhuiyan" or "Mahadib" with the respective conference names to access the full papers.</p>
+        <a href="https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=bhuiyan+ICCIT" target="_blank" class="btn-dark">Search IEEE Xplore →</a>
+      </div>
+    </div>`;
+}
+
+function pageRecognition(){
+  const feat = FEATURED.map(f=>`
+    <div class="feat-card">
+      <div class="feat-type">${f.type}</div>
+      <div class="feat-title">${f.title}</div>
+      <p class="feat-detail">${f.detail}</p>
+      <div class="feat-year">📅 ${f.year}</div>
+    </div>`).join('');
+  const awards = AWARDS.map(a=>`
+    <div class="award-card">
+      <div class="award-icon">${a.icon}</div>
+      <div><div class="award-title">${a.title}</div><div class="award-detail">${a.detail}</div></div>
+    </div>`).join('');
+  return `
+    <h2 class="section-title">Recognition</h2>
+    <p class="section-sub">Awards, honours and featured milestones</p>
+    <div class="sub-label"><h3>Featured Highlights</h3><div class="sub-label-line"></div></div>
+    <div class="feat-grid">${feat}</div>
+    <div class="sub-label"><h3>Awards & Contributions</h3><div class="sub-label-line"></div></div>
+    <div class="award-grid">${awards}</div>`;
+}
+
+function pageContact(){
+  const contacts = [
+    {icon:"✉️",label:"Email",val:"bhuiyan.hadi@gmail.com",href:"mailto:bhuiyan.hadi@gmail.com"},
+    {icon:"📞",label:"Phone",val:"+880 18 33180420",href:"tel:+8801833180420"},
+    {icon:"💼",label:"LinkedIn",val:"bd.linkedin.com/in/mahadib",href:"http://bd.linkedin.com/in/mahadib/"},
+    {icon:"📍",label:"Location",val:"Dhaka-1217, Bangladesh",href:"#"}
+  ].map(c=>`
+    <a href="${c.href}" target="${c.href.startsWith('http')?'_blank':'_self'}" class="contact-card">
+      <span class="contact-icon">${c.icon}</span>
+      <div><div class="contact-lbl">${c.label}</div><div class="contact-val">${c.val}</div></div>
+    </a>`).join('');
+
+  const links = [
+    {label:"🌐 BuildNation",href:"https://buildnation.com.bd/aipa/"},
+    {label:"🏢 CommEngine",href:"http://www.commengine.xyz"},
+    {label:"🤖 EasyDO.ai",href:"https://easydo.ai"},
+    {label:"🔐 Zachai",href:"https://www.zachai.xyz"},
+    {label:"🌊 EasyDO Flow",href:"https://flow.easydo.ai"}
+  ].map(l=>`<a href="${l.href}" target="_blank" class="link-btn">${l.label}</a>`).join('');
+
+  return `
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-sub">Interested in AI transformation, enterprise solutions, or building something together?</p>
+    <div class="contact-grid">${contacts}</div>
+    <div class="sub-label"><h3>Product Links</h3><div class="sub-label-line"></div></div>
+    <div style="display:flex;flex-wrap:wrap;gap:4px">${links}</div>`;
+}
+
+// ── ROUTER ───────────────────────────────────────────────
+const PAGES = {
+  about: pageAbout,
+  experience: pageExperience,
+  products: pageProducts,
+  programs: pagePrograms,
+  events: pageEvents,
+  research: pageResearch,
+  recognition: pageRecognition,
+  contact: pageContact
+};
+
+let currentPage = 'about';
+
+function showPage(id){
+  currentPage = id;
+  // render page
+  document.getElementById('app').innerHTML = `<div class="page active" id="pg-${id}">${PAGES[id]()}</div>`;
+  // update nav
+  document.querySelectorAll('.nav-btn').forEach(b=>{
+    b.classList.toggle('active', b.dataset.page === id);
+  });
+  window.scrollTo(0,0);
+}
+
+function toggleExp(i){
+  const body = document.getElementById('expb'+i);
+  const arr  = document.getElementById('arr'+i);
+  body.classList.toggle('open');
+  arr.classList.toggle('open');
+}
+
+// ── INIT ─────────────────────────────────────────────────
+(function init(){
+  // build nav
+  const tabs = document.getElementById('navTabs');
+  NAV.forEach(n=>{
+    const id = n.toLowerCase();
+    const btn = document.createElement('button');
+    btn.className = 'nav-btn';
+    btn.dataset.page = id;
+    btn.textContent = n;
+    btn.onclick = ()=>showPage(id);
+    tabs.appendChild(btn);
+  });
+  showPage('about');
+})();
+</script>
+</body>
+</html>
