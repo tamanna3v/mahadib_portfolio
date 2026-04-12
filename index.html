@@ -232,7 +232,7 @@ footer{text-align:center;padding:20px 0;color:#666;font-size:13px;border-top:1px
 
 <script>
 // ── DATA ────────────────────────────────────────────────
-const NAV = ["About","Experience","Products","Programs","Events","Research","Recognition","Contact"];
+const NAV = ["About","Products","Programs","Events","Research","Recognition","Contact"];
 
 const STATS = [
   {val:"19+",label:"Years Experience"},{val:"120+",label:"Brands Served"},
@@ -370,17 +370,9 @@ function pageAbout(){
       <div class="timeline-line"></div>
       ${TIMELINE.map(t=>`<div class="tl-item"><div class="tl-dot${t.active?' active':''}"></div><div class="tl-year">${t.year}</div><div><div class="tl-label">${t.label}</div><div class="tl-note">${t.note}</div></div></div>`).join('')}
     </div>
-    <div class="sub-label"><h3>Connect</h3><div class="sub-label-line"></div></div>
-    <div style="display:flex;flex-wrap:wrap;gap:9px">
-      <a href="mailto:bhuiyan.hadi@gmail.com" class="link-btn">✉️ bhuiyan.hadi@gmail.com</a>
-      <a href="tel:+8801833180420" class="link-btn">📞 +880 18 33180420</a>
-      <span class="link-btn">📍 Dhaka-1217, Bangladesh</span>
-      <a href="http://bd.linkedin.com/in/mahadib/" target="_blank" class="link-btn">💼 LinkedIn</a>
-    </div>`;
-}
-
-function pageExperience(){
-  const expCards = EXPERIENCES.map((e,i)=>`
+    <div class="sub-label"><h3>Experience</h3><div class="sub-label-line"></div></div>
+    <p class="section-sub" style="margin-bottom:16px">19+ years across Telco, AI, SaaS & Digital Transformation</p>
+    ${EXPERIENCES.map((e,i)=>`
     <div class="exp-card">
       <button class="exp-header" onclick="toggleExp(${i})">
         <div style="flex:1">
@@ -397,20 +389,13 @@ function pageExperience(){
         <ul>${e.points.map(p=>`<li>${p}</li>`).join('')}</ul>
         ${e.url?`<a href="${e.url}" target="_blank" class="exp-link">Visit →</a>`:''}
       </div>
-    </div>`).join('');
-
-  const skillSections = Object.entries(SKILLS).map(([cat,items])=>`
+    </div>`).join('')}
+    <div class="sub-label"><h3>Competence</h3><div class="sub-label-line"></div></div>
+    ${Object.entries(SKILLS).map(([cat,items])=>`
     <div style="margin-bottom:16px">
       <div class="lbl">${cat}</div>
       <div>${items.map(s=>`<span class="${cat==='Top Skills'?'skill-pill':'skill-tag'}">${s}</span>`).join('')}</div>
-    </div>`).join('');
-
-  return `
-    <h2 class="section-title">Experience</h2>
-    <p class="section-sub">19+ years across Telco, AI, SaaS & Digital Transformation</p>
-    ${expCards}
-    <div class="sub-label"><h3>Competence</h3><div class="sub-label-line"></div></div>
-    ${skillSections}
+    </div>`).join('')}
     <div class="sub-label"><h3>Education</h3><div class="sub-label-line"></div></div>
     <div class="card">
       <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
@@ -421,8 +406,16 @@ function pageExperience(){
         </div>
         <div style="font-size:12px;color:#666;font-weight:600">2001 – 2005</div>
       </div>
+    </div>
+    <div class="sub-label"><h3>Connect</h3><div class="sub-label-line"></div></div>
+    <div style="display:flex;flex-wrap:wrap;gap:9px">
+      <a href="mailto:bhuiyan.hadi@gmail.com" class="link-btn">✉️ bhuiyan.hadi@gmail.com</a>
+      <a href="tel:+8801833180420" class="link-btn">📞 +880 18 33180420</a>
+      <span class="link-btn">📍 Dhaka-1217, Bangladesh</span>
+      <a href="http://bd.linkedin.com/in/mahadib/" target="_blank" class="link-btn">💼 LinkedIn</a>
     </div>`;
 }
+
 
 function pageProducts(){
   const cards = PRODUCTS.map(p=>`
@@ -633,7 +626,6 @@ function pageContact(){
 // ── ROUTER ───────────────────────────────────────────────
 const PAGES = {
   about: pageAbout,
-  experience: pageExperience,
   products: pageProducts,
   programs: pagePrograms,
   events: pageEvents,
