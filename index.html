@@ -232,7 +232,7 @@ footer{text-align:center;padding:20px 0;color:#666;font-size:13px;border-top:1px
 
 <script>
 // ── DATA ────────────────────────────────────────────────
-const NAV = ["About","Products","Programs","Events","Research","Contact"];
+const NAV = [];
 
 const STATS = [
   {val:"19+",label:"Years Experience"},{val:"120+",label:"Brands Served"},
@@ -407,6 +407,41 @@ function pageAbout(){
         <div style="font-size:12px;color:#666;font-weight:600">2001 – 2005</div>
       </div>
     </div>
+    <div class="sub-label"><h3>Products</h3><div class="sub-label-line"></div></div>
+    <p class="section-sub" style="margin-bottom:16px">Ventures built at the intersection of AI, SaaS & Digital Transformation</p>
+    <div class="product-grid">${PRODUCTS.map(p=>`<div class="product-card"><a href="${p.url}" target="_blank" class="product-preview"><img src="${p.preview}" alt="${p.name}" loading="lazy"/><div class="preview-badge">Visit Site ↗</div></a><div class="product-body"><div><div class="product-emoji">${p.emoji}</div><div class="product-name">${p.name}</div><div class="product-tag">${p.tagline}</div></div><div class="chip-row">${chips(p.tags)}</div><p class="product-desc">${p.desc}</p><div class="product-stats">${p.stats.map(s=>`<div class="pstat"><div class="pstat-val">${s.val}</div><div class="pstat-lbl">${s.label}</div></div>`).join('')}</div></div></div>`).join('')}</div>
+    <div class="sub-label"><h3>Programs</h3><div class="sub-label-line"></div></div>
+    <div class="prog-banner">
+      <div class="prog-banner-tag">BuildNation · AI-PA</div>
+      <h3>AI Proficiency Accelerator</h3>
+      <p>From CXO executive workshops to 12-week immersive accelerators — practical AI transformation at every level.</p>
+      <div class="prog-stats">${PROGRAM_STATS.map(s=>`<div class="prog-stat"><div class="prog-stat-val">${s.val}</div><div class="prog-stat-lbl">${s.label}</div><div class="prog-stat-sub">${s.sub}</div></div>`).join('')}</div>
+    </div>
+    <div class="sub-label"><h3>Program Formats</h3><div class="sub-label-line"></div></div>
+    <div class="format-grid">${PROGRAM_FORMATS.map(f=>`<div class="format-card"><div style="display:flex;align-items:center;margin-bottom:10px"><span style="font-size:20px">${f.icon}</span><span class="format-num">${f.num}</span></div><div class="format-title">${f.title}</div><div class="format-sub">${f.sub}</div><p class="format-desc">${f.desc}</p><span class="chip">⏱ ${f.duration}</span></div>`).join('')}</div>
+    <div class="sub-label"><h3>12-Week Course Journey</h3><div class="sub-label-line"></div></div>
+    <div class="curr-grid">${CURRICULUM.map(c=>`<div class="curr-card"><div class="curr-phase">${c.phase}</div><div class="curr-title">${c.title}</div>${c.weeks.map(w=>`<div class="curr-week">${w}</div>`).join('')}</div>`).join('')}</div>
+    <div class="sub-label"><h3>Key Differentiators</h3><div class="sub-label-line"></div></div>
+    <div class="diff-grid">${DIFFERENTIATORS.map(d=>`<div class="diff-card"><div class="diff-num">${d.n}</div><div><div class="diff-t">${d.t}</div><div class="diff-d">${d.d}</div></div></div>`).join('')}</div>
+    <div class="sub-label"><h3>Trusted by Leading Organizations</h3><div class="sub-label-line"></div></div>
+    <div class="card">
+      <p style="font-size:13px;color:#666;margin-bottom:12px;line-height:1.6">200+ senior leaders across HR, IT, procurement, supply chain, sales, finance, and strategy transformed their work through AI-PA.</p>
+      <div style="margin-bottom:16px">${["Ispahani","Beximco Pharma","Nuvista Pharma","Japan Solar","Bahon","Hero","Natal Hero"].map(t=>`<span class="trusted-pill">${t}</span>`).join('')}</div>
+      <div style="padding-top:14px;border-top:1px solid #e8e8e8;display:flex;gap:9px">
+        <a href="https://buildnation.com.bd/aipa/" target="_blank" class="btn-dark">Learn More →</a>
+        <a href="mailto:mahadib@buildnation.com.bd" class="btn-light">Request Info</a>
+      </div>
+    </div>
+    <div class="sub-label"><h3>Events & Milestones</h3><div class="sub-label-line"></div></div>
+    <div class="li-banner">🔗 <span>Drawn from LinkedIn activity, press coverage & official records.</span><a href="http://bd.linkedin.com/in/mahadib/" target="_blank" style="margin-left:auto;color:#1a1a1a;font-weight:800;white-space:nowrap">Follow on LinkedIn →</a></div>
+    ${EVENTS.map(ev=>`<div class="event-card"><div class="event-header"><div style="display:flex;align-items:center;gap:10px"><div class="event-avatar">HB</div><div><div class="event-name">Hadi Bhuiyan</div><div class="event-date">${ev.date}</div></div></div><span class="event-type">${ev.type}</span></div><div class="event-body"><div class="event-title">${ev.title}</div><div class="event-meta">🏢 ${ev.org} · 📍 ${ev.location}</div><p class="event-desc">${ev.desc}</p><div class="chip-row">${ev.tags.map(t=>`<span class="chip">#${t}</span>`).join('')}</div><div class="event-footer"><div class="event-actions"><span>👍 Like</span><span>💬 Comment</span><span>↗️ Share</span></div><a href="${ev.url}" target="_blank" class="event-btn">${ev.btnLabel}</a></div></div></div>`).join('')}
+    <div class="sub-label"><h3>Research & Writings</h3><div class="sub-label-line"></div></div>
+    <div class="stat-grid">${[{val:"3",label:"IEEE Papers"},{val:"3",label:"Policy Works"},{val:"6 yrs",label:"ICT4D Reviewer"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}</div>
+    <div class="sub-label"><h3>📄 IEEE Publications</h3><div class="sub-label-line"></div></div>
+    ${RESEARCH.map(r=>`<div class="research-card">${r.featured?'<div class="research-featured">Featured</div>':''}<div class="chip-row"><span class="chip">Conference Paper</span><span class="chip">📅 ${r.year}</span><span style="background:#1a1a1a;color:#fff;border-radius:6px;padding:3px 9px;font-size:12px;font-weight:700">${r.publisher}</span></div><div class="research-title">${r.title}</div><div class="research-venue">${r.venue}</div><div class="research-loc">📍 ${r.location}</div><p class="research-abs">${r.abstract}</p><div class="chip-row">${chips(r.tags)}</div><a href="https://ieeexplore.ieee.org/" target="_blank" class="ieee-btn">🔍 Search on IEEE Xplore →</a></div>`).join('')}
+    <div class="sub-label"><h3>✍️ Policy Contributions & Academic Reviews</h3><div class="sub-label-line"></div></div>
+    <div class="writing-grid">${WRITINGS.map(w=>`<div class="writing-card"><div class="chip-row"><span class="chip">${w.type}</span><span class="chip">📅 ${w.year}</span></div><div class="writing-title">${w.title}</div><div class="writing-venue">${w.venue}</div><p class="writing-abs">${w.abstract}</p><div class="chip-row">${chips(w.tags)}</div><a href="${w.url}" target="_blank" class="writing-link">View Reference →</a></div>`).join('')}</div>
+    <div class="notice"><span style="font-size:20px">📚</span><div><div style="font-weight:800;font-size:13px;color:#1a1a1a;margin-bottom:4px">IEEE Xplore Archive</div><p class="notice-text">All three IEEE publications are indexed through IEEE Xplore Digital Library. Search "Hadi Bhuiyan" or "Mahadib" with the respective conference names to access the full papers.</p><a href="https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=bhuiyan+ICCIT" target="_blank" class="btn-dark">Search IEEE Xplore →</a></div></div>
     <div class="sub-label"><h3>Featured Highlights</h3><div class="sub-label-line"></div></div>
     <div class="feat-grid">${FEATURED.map(f=>`<div class="feat-card"><div class="feat-type">${f.type}</div><div class="feat-title">${f.title}</div><p class="feat-detail">${f.detail}</p><div class="feat-year">📅 ${f.year}</div></div>`).join('')}</div>
     <div class="sub-label"><h3>Awards & Contributions</h3><div class="sub-label-line"></div></div>
@@ -433,199 +468,9 @@ function pageAbout(){
 }
 
 
-function pageProducts(){
-  const cards = PRODUCTS.map(p=>`
-    <div class="product-card">
-      <a href="${p.url}" target="_blank" class="product-preview">
-        <img src="${p.preview}" alt="${p.name}" loading="lazy"/>
-        <div class="preview-badge">Visit Site ↗</div>
-      </a>
-      <div class="product-body">
-        <div>
-          <div class="product-emoji">${p.emoji}</div>
-          <div class="product-name">${p.name}</div>
-          <div class="product-tag">${p.tagline}</div>
-        </div>
-        <div class="chip-row">${chips(p.tags)}</div>
-        <p class="product-desc">${p.desc}</p>
-        <div class="product-stats">${p.stats.map(s=>`<div class="pstat"><div class="pstat-val">${s.val}</div><div class="pstat-lbl">${s.label}</div></div>`).join('')}</div>
-      </div>
-    </div>`).join('');
-  return `
-    <h2 class="section-title">Products</h2>
-    <p class="section-sub">Ventures built at the intersection of AI, SaaS & Digital Transformation</p>
-    <div class="product-grid">${cards}</div>`;
-}
-
-function pagePrograms(){
-  const formats = PROGRAM_FORMATS.map(f=>`
-    <div class="format-card">
-      <div style="display:flex;align-items:center;margin-bottom:10px">
-        <span style="font-size:20px">${f.icon}</span>
-        <span class="format-num">${f.num}</span>
-      </div>
-      <div class="format-title">${f.title}</div>
-      <div class="format-sub">${f.sub}</div>
-      <p class="format-desc">${f.desc}</p>
-      <span class="chip">⏱ ${f.duration}</span>
-    </div>`).join('');
-
-  const curr = CURRICULUM.map(c=>`
-    <div class="curr-card">
-      <div class="curr-phase">${c.phase}</div>
-      <div class="curr-title">${c.title}</div>
-      ${c.weeks.map(w=>`<div class="curr-week">${w}</div>`).join('')}
-    </div>`).join('');
-
-  const diff = DIFFERENTIATORS.map(d=>`
-    <div class="diff-card">
-      <div class="diff-num">${d.n}</div>
-      <div><div class="diff-t">${d.t}</div><div class="diff-d">${d.d}</div></div>
-    </div>`).join('');
-
-  return `
-    <h2 class="section-title">Programs</h2>
-    <p class="section-sub">BuildNation AI-PA · Strategy-Led, Implementation-Driven AI Transformation</p>
-    <div class="prog-banner">
-      <div class="prog-banner-tag">BuildNation · AI-PA</div>
-      <h3>AI Proficiency Accelerator</h3>
-      <p>From CXO executive workshops to 12-week immersive accelerators — practical AI transformation at every level.</p>
-      <div class="prog-stats">${PROGRAM_STATS.map(s=>`<div class="prog-stat"><div class="prog-stat-val">${s.val}</div><div class="prog-stat-lbl">${s.label}</div><div class="prog-stat-sub">${s.sub}</div></div>`).join('')}</div>
-    </div>
-    <div class="sub-label"><h3>Program Formats</h3><div class="sub-label-line"></div></div>
-    <div class="format-grid">${formats}</div>
-    <div class="sub-label"><h3>12-Week Course Journey</h3><div class="sub-label-line"></div></div>
-    <div class="curr-grid">${curr}</div>
-    <div class="sub-label"><h3>Key Differentiators</h3><div class="sub-label-line"></div></div>
-    <div class="diff-grid">${diff}</div>
-    <div class="sub-label"><h3>Trusted by Leading Organizations</h3><div class="sub-label-line"></div></div>
-    <div class="card">
-      <p style="font-size:13px;color:#666;margin-bottom:12px;line-height:1.6">200+ senior leaders across HR, IT, procurement, supply chain, sales, finance, and strategy transformed their work through AI-PA.</p>
-      <div style="margin-bottom:16px">${["Ispahani","Beximco Pharma","Nuvista Pharma","Japan Solar","Bahon","Hero","Natal Hero"].map(t=>`<span class="trusted-pill">${t}</span>`).join('')}</div>
-      <div style="padding-top:14px;border-top:1px solid #e8e8e8;display:flex;gap:9px">
-        <a href="https://buildnation.com.bd/aipa/" target="_blank" class="btn-dark">Learn More →</a>
-        <a href="mailto:mahadib@buildnation.com.bd" class="btn-light">Request Info</a>
-      </div>
-    </div>`;
-}
-
-function pageEvents(){
-  const cards = EVENTS.map(ev=>`
-    <div class="event-card">
-      <div class="event-header">
-        <div style="display:flex;align-items:center;gap:10px">
-          <div class="event-avatar">HB</div>
-          <div><div class="event-name">Hadi Bhuiyan</div><div class="event-date">${ev.date}</div></div>
-        </div>
-        <span class="event-type">${ev.type}</span>
-      </div>
-      <div class="event-body">
-        <div class="event-title">${ev.title}</div>
-        <div class="event-meta">🏢 ${ev.org} · 📍 ${ev.location}</div>
-        <p class="event-desc">${ev.desc}</p>
-        <div class="chip-row">${ev.tags.map(t=>`<span class="chip">#${t}</span>`).join('')}</div>
-        <div class="event-footer">
-          <div class="event-actions">
-            <span>👍 Like</span><span>💬 Comment</span><span>↗️ Share</span>
-          </div>
-          <a href="${ev.url}" target="_blank" class="event-btn">${ev.btnLabel}</a>
-        </div>
-      </div>
-    </div>`).join('');
-  return `
-    <h2 class="section-title">Events & Milestones</h2>
-    <p class="section-sub">Key appearances, launches and contributions</p>
-    <div class="li-banner">
-      🔗 <span>Drawn from LinkedIn activity, press coverage & official records.</span>
-      <a href="http://bd.linkedin.com/in/mahadib/" target="_blank" style="margin-left:auto;color:#1a1a1a;font-weight:800;white-space:nowrap">Follow on LinkedIn →</a>
-    </div>
-    ${cards}`;
-}
-
-function pageResearch(){
-  const papers = RESEARCH.map(r=>`
-    <div class="research-card">
-      ${r.featured?'<div class="research-featured">Featured</div>':''}
-      <div class="chip-row">
-        <span class="chip">Conference Paper</span>
-        <span class="chip">📅 ${r.year}</span>
-        <span style="background:#1a1a1a;color:#fff;border-radius:6px;padding:3px 9px;font-size:12px;font-weight:700">${r.publisher}</span>
-      </div>
-      <div class="research-title">${r.title}</div>
-      <div class="research-venue">${r.venue}</div>
-      <div class="research-loc">📍 ${r.location}</div>
-      <p class="research-abs">${r.abstract}</p>
-      <div class="chip-row">${chips(r.tags)}</div>
-      <a href="https://ieeexplore.ieee.org/" target="_blank" class="ieee-btn">🔍 Search on IEEE Xplore →</a>
-    </div>`).join('');
-
-  const writings = WRITINGS.map(w=>`
-    <div class="writing-card">
-      <div class="chip-row"><span class="chip">${w.type}</span><span class="chip">📅 ${w.year}</span></div>
-      <div class="writing-title">${w.title}</div>
-      <div class="writing-venue">${w.venue}</div>
-      <p class="writing-abs">${w.abstract}</p>
-      <div class="chip-row">${chips(w.tags)}</div>
-      <a href="${w.url}" target="_blank" class="writing-link">View Reference →</a>
-    </div>`).join('');
-
-  return `
-    <h2 class="section-title">Research & Writings</h2>
-    <p class="section-sub">IEEE publications, policy contributions & academic reviews</p>
-    <div class="stat-grid">
-      ${[{val:"3",label:"IEEE Papers"},{val:"3",label:"Policy Works"},{val:"6 yrs",label:"ICT4D Reviewer"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
-    </div>
-    <div class="sub-label"><h3>📄 IEEE Publications</h3><div class="sub-label-line"></div></div>
-    ${papers}
-    <div class="sub-label"><h3>✍️ Policy Contributions & Academic Reviews</h3><div class="sub-label-line"></div></div>
-    <div class="writing-grid">${writings}</div>
-    <div class="notice">
-      <span style="font-size:20px">📚</span>
-      <div>
-        <div style="font-weight:800;font-size:13px;color:#1a1a1a;margin-bottom:4px">IEEE Xplore Archive</div>
-        <p class="notice-text">All three IEEE publications are indexed through IEEE Xplore Digital Library. Search "Hadi Bhuiyan" or "Mahadib" with the respective conference names to access the full papers.</p>
-        <a href="https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=bhuiyan+ICCIT" target="_blank" class="btn-dark">Search IEEE Xplore →</a>
-      </div>
-    </div>`;
-}
-
-
-function pageContact(){
-  const contacts = [
-    {icon:"✉️",label:"Email",val:"bhuiyan.hadi@gmail.com",href:"mailto:bhuiyan.hadi@gmail.com"},
-    {icon:"📞",label:"Phone",val:"+880 18 33180420",href:"tel:+8801833180420"},
-    {icon:"💼",label:"LinkedIn",val:"bd.linkedin.com/in/mahadib",href:"http://bd.linkedin.com/in/mahadib/"},
-    {icon:"📍",label:"Location",val:"Dhaka-1217, Bangladesh",href:"#"}
-  ].map(c=>`
-    <a href="${c.href}" target="${c.href.startsWith('http')?'_blank':'_self'}" class="contact-card">
-      <span class="contact-icon">${c.icon}</span>
-      <div><div class="contact-lbl">${c.label}</div><div class="contact-val">${c.val}</div></div>
-    </a>`).join('');
-
-  const links = [
-    {label:"🌐 BuildNation",href:"https://buildnation.com.bd/aipa/"},
-    {label:"🏢 CommEngine",href:"http://www.commengine.xyz"},
-    {label:"🤖 EasyDO.ai",href:"https://easydo.ai"},
-    {label:"🔐 Zachai",href:"https://www.zachai.xyz"},
-    {label:"🌊 EasyDO Flow",href:"https://flow.easydo.ai"}
-  ].map(l=>`<a href="${l.href}" target="_blank" class="link-btn">${l.label}</a>`).join('');
-
-  return `
-    <h2 class="section-title">Get in Touch</h2>
-    <p class="section-sub">Interested in AI transformation, enterprise solutions, or building something together?</p>
-    <div class="contact-grid">${contacts}</div>
-    <div class="sub-label"><h3>Product Links</h3><div class="sub-label-line"></div></div>
-    <div style="display:flex;flex-wrap:wrap;gap:4px">${links}</div>`;
-}
-
 // ── ROUTER ───────────────────────────────────────────────
 const PAGES = {
-  about: pageAbout,
-  products: pageProducts,
-  programs: pagePrograms,
-  events: pageEvents,
-  research: pageResearch,
-  contact: pageContact
+  about: pageAbout
 };
 
 let currentPage = 'about';
