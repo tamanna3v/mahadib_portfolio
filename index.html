@@ -115,11 +115,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 /* EVENTS */
 .event-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-bottom:12px;transition:box-shadow .2s}
 .event-card:hover{box-shadow:0 2px 14px rgba(0,0,0,0.06)}
-.event-header{background:#f5f5f5;padding:12px 18px;border-bottom:1px solid #e8e8e8;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.event-header{background:#e8f5ec;padding:12px 18px;border-bottom:1px solid #c8e6cc;display:flex;justify-content:space-between;align-items:center;gap:10px}
 .event-avatar{width:36px;height:36px;border-radius:50%;background:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#fff;flex-shrink:0}
-.event-name{font-weight:800;font-size:13px;color:#1a1a1a}
-.event-date{font-size:10px;color:#666}
-.event-type{background:#fff;border:1px solid #e8e8e8;border-radius:6px;padding:3px 9px;font-size:10px;font-weight:700;color:#666;white-space:nowrap}
+.event-name{font-weight:900;font-size:14px;color:#1a1a1a}
+.event-date{font-size:11px;color:#555;font-weight:600;margin-top:1px}
+.event-type{background:rgba(255,255,255,0.7);border:1px solid #b2dfbf;border-radius:6px;padding:4px 11px;font-size:11px;font-weight:800;color:#2e7d44;white-space:nowrap}
 .event-body{padding:14px 18px}
 .event-title{font-weight:900;font-size:14px;color:#1a1a1a;margin-bottom:4px}
 .event-meta{font-size:11px;color:#666;font-weight:700;margin-bottom:9px}
@@ -434,7 +434,7 @@ function pageAbout(){
     </div>
     <div class="sub-label"><h3>Events & Milestones</h3><div class="sub-label-line"></div></div>
     <div class="li-banner">🔗 <span>Drawn from LinkedIn activity, press coverage & official records.</span><a href="http://bd.linkedin.com/in/mahadib/" target="_blank" style="margin-left:auto;color:#1a1a1a;font-weight:800;white-space:nowrap">Follow on LinkedIn →</a></div>
-    ${EVENTS.map(ev=>`<div class="event-card"><div class="event-header"><div style="display:flex;align-items:center;gap:10px"><div class="event-avatar">HB</div><div><div class="event-name">Hadi Bhuiyan</div><div class="event-date">${ev.date}</div></div></div><span class="event-type">${ev.type}</span></div><div class="event-body"><div class="event-title">${ev.title}</div><div class="event-meta">🏢 ${ev.org} · 📍 ${ev.location}</div><p class="event-desc">${ev.desc}</p><div class="chip-row">${ev.tags.map(t=>`<span class="chip">#${t}</span>`).join('')}</div><div class="event-footer"><div class="event-actions"><span>👍 Like</span><span>💬 Comment</span><span>↗️ Share</span></div><a href="${ev.url}" target="_blank" class="event-btn">${ev.btnLabel}</a></div></div></div>`).join('')}
+    ${EVENTS.map(ev=>`<div class="event-card"><div class="event-header"><div><div class="event-name">${ev.type}</div><div class="event-date">📅 ${ev.date} · 🏢 ${ev.org}</div></div><span class="event-date" style="white-space:nowrap;font-size:11px">📍 ${ev.location}</span></div><div class="event-body"><div class="event-title">${ev.title}</div><p class="event-desc">${ev.desc}</p><div class="chip-row">${ev.tags.map(t=>`<span class="chip">#${t}</span>`).join('')}</div><div class="event-footer"><div class="event-actions"><span>👍 Like</span><span>💬 Comment</span><span>↗️ Share</span></div><a href="${ev.url}" target="_blank" class="event-btn">${ev.btnLabel}</a></div></div></div>`).join('')}
     <div class="sub-label"><h3>Research & Writings</h3><div class="sub-label-line"></div></div>
     <div class="stat-grid">${[{val:"3",label:"IEEE Papers"},{val:"3",label:"Policy Works"},{val:"6 yrs",label:"ICT4D Reviewer"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}</div>
     <div class="sub-label"><h3>📄 IEEE Publications</h3><div class="sub-label-line"></div></div>
