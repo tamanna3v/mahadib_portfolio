@@ -232,7 +232,7 @@ footer{text-align:center;padding:20px 0;color:#666;font-size:13px;border-top:1px
 
 <script>
 // ── DATA ────────────────────────────────────────────────
-const NAV = ["About","Products","Programs","Events","Research","Recognition","Contact"];
+const NAV = ["About","Products","Programs","Events","Research","Contact"];
 
 const STATS = [
   {val:"19+",label:"Years Experience"},{val:"120+",label:"Brands Served"},
@@ -407,6 +407,10 @@ function pageAbout(){
         <div style="font-size:12px;color:#666;font-weight:600">2001 – 2005</div>
       </div>
     </div>
+    <div class="sub-label"><h3>Featured Highlights</h3><div class="sub-label-line"></div></div>
+    <div class="feat-grid">${FEATURED.map(f=>`<div class="feat-card"><div class="feat-type">${f.type}</div><div class="feat-title">${f.title}</div><p class="feat-detail">${f.detail}</p><div class="feat-year">📅 ${f.year}</div></div>`).join('')}</div>
+    <div class="sub-label"><h3>Awards & Contributions</h3><div class="sub-label-line"></div></div>
+    <div class="award-grid">${AWARDS.map(a=>`<div class="award-card"><div class="award-icon">${a.icon}</div><div><div class="award-title">${a.title}</div><div class="award-detail">${a.detail}</div></div></div>`).join('')}</div>
     <div class="sub-label"><h3>Connect</h3><div class="sub-label-line"></div></div>
     <div class="contact-grid">
       <a href="mailto:bhuiyan.hadi@gmail.com" class="contact-card">
@@ -585,27 +589,6 @@ function pageResearch(){
     </div>`;
 }
 
-function pageRecognition(){
-  const feat = FEATURED.map(f=>`
-    <div class="feat-card">
-      <div class="feat-type">${f.type}</div>
-      <div class="feat-title">${f.title}</div>
-      <p class="feat-detail">${f.detail}</p>
-      <div class="feat-year">📅 ${f.year}</div>
-    </div>`).join('');
-  const awards = AWARDS.map(a=>`
-    <div class="award-card">
-      <div class="award-icon">${a.icon}</div>
-      <div><div class="award-title">${a.title}</div><div class="award-detail">${a.detail}</div></div>
-    </div>`).join('');
-  return `
-    <h2 class="section-title">Recognition</h2>
-    <p class="section-sub">Awards, honours and featured milestones</p>
-    <div class="sub-label"><h3>Featured Highlights</h3><div class="sub-label-line"></div></div>
-    <div class="feat-grid">${feat}</div>
-    <div class="sub-label"><h3>Awards & Contributions</h3><div class="sub-label-line"></div></div>
-    <div class="award-grid">${awards}</div>`;
-}
 
 function pageContact(){
   const contacts = [
@@ -642,7 +625,6 @@ const PAGES = {
   programs: pagePrograms,
   events: pageEvents,
   research: pageResearch,
-  recognition: pageRecognition,
   contact: pageContact
 };
 
