@@ -376,7 +376,11 @@ function pageAbout(){
       <a href="tel:+8801833180420" class="link-btn">📞 +880 18 33180420</a>
       <span class="link-btn">📍 Dhaka-1217, Bangladesh</span>
       <a href="http://bd.linkedin.com/in/mahadib/" target="_blank" class="link-btn">💼 LinkedIn</a>
-    </div>`;
+    </div>
+    <div class="sub-label"><h3>Featured Highlights</h3><div class="sub-label-line"></div></div>
+    <div class="feat-grid">${FEATURED.map(f=>`<div class="feat-card"><div class="feat-type">${f.type}</div><div class="feat-title">${f.title}</div><p class="feat-detail">${f.detail}</p><div class="feat-year">📅 ${f.year}</div></div>`).join('')}</div>
+    <div class="sub-label"><h3>Awards & Contributions</h3><div class="sub-label-line"></div></div>
+    <div class="award-grid">${AWARDS.map(a=>`<div class="award-card"><div class="award-icon">${a.icon}</div><div><div class="award-title">${a.title}</div><div class="award-detail">${a.detail}</div></div></div>`).join('')}</div>`;
 }
 
 function pageExperience(){
