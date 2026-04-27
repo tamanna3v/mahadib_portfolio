@@ -207,6 +207,31 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 /* LI INFO BANNER */
 .li-banner{display:flex;align-items:center;gap:8px;background:#f5f5f5;border:1px solid #e8e8e8;border-radius:10px;padding:10px 14px;margin-bottom:20px;font-size:12px;color:#666;font-weight:600}
 
+/* DIG8 LINKEDIN POSTS */
+.dig8-feed-banner{background:#f0f7ff;border:1px solid #c8e0f9;border-radius:10px;padding:11px 16px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.dig8-feed-left{display:flex;align-items:center;gap:8px;font-size:12px;color:#0a66c2;font-weight:700}
+.dig8-feed-btn{font-size:11px;background:#0a66c2;color:#fff;border-radius:7px;padding:6px 13px;font-weight:700;white-space:nowrap;display:inline-block}
+.li-post-card{background:#fff;border:1px solid #e0e8f5;border-radius:14px;overflow:hidden;margin-bottom:14px;transition:box-shadow .2s}
+.li-post-card:hover{box-shadow:0 3px 16px rgba(10,102,194,0.08)}
+.li-post-head{padding:14px 18px 12px;display:flex;align-items:flex-start;gap:12px}
+.li-post-avatar{width:44px;height:44px;border-radius:50%;background:#0a66c2;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff;flex-shrink:0;border:2px solid #e0e8f5}
+.li-post-meta{flex:1}
+.li-post-name{font-weight:800;font-size:14px;color:#1a1a1a;margin-bottom:1px}
+.li-post-role{font-size:11px;color:#666;line-height:1.3;margin-bottom:2px}
+.li-post-date{font-size:10px;color:#999;display:flex;align-items:center;gap:4px}
+.li-post-badge{background:#f0f7ff;border:1px solid #c8e0f9;color:#0a66c2;font-size:10px;font-weight:700;border-radius:6px;padding:3px 9px;white-space:nowrap;flex-shrink:0}
+.li-post-body{padding:0 18px 14px}
+.li-post-content{font-size:13px;color:#1a1a1a;line-height:1.85;margin:0 0 12px;white-space:pre-wrap}
+.li-post-hashtags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.li-post-hashtag{color:#0a66c2;font-size:12px;font-weight:700;background:#f0f7ff;border-radius:5px;padding:2px 8px}
+.li-post-sep{height:1px;background:#e8e8e8;margin:0 18px}
+.li-post-foot{padding:10px 18px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.li-post-actions{display:flex;gap:16px}
+.li-post-action{font-size:11px;color:#666;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;user-select:none}
+.li-post-action:hover{color:#0a66c2}
+.li-post-cta{font-size:11px;background:#0a66c2;color:#fff;border-radius:7px;padding:6px 12px;font-weight:700;display:inline-block;white-space:nowrap}
+.li-post-cta:hover{background:#004182;color:#fff}
+
 /* FOOTER */
 footer{text-align:center;padding:20px 0;color:#666;font-size:13px;border-top:1px solid #e8e8e8;font-weight:600}
 
@@ -280,6 +305,96 @@ const PRODUCTS = [
   {name:"EasyDO.ai",tagline:"Unified AI Aggregator & Workspace",url:"https://easydo.ai",emoji:"🤖",tags:["AI Workspace","No-code","LLM"],desc:"Private AI workspace aggregating GPT-4o, Gemini 2.5, Claude 3, DALL·E, Whisper, Deepseek and more. Design AI tools in under 5 minutes with no code. Starting from $1/month.",stats:[{val:"5 min",label:"Tool Setup"},{val:"Multi-LLM",label:"Models"},{val:"$1/mo",label:"Starting"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://easydo.ai/"},
   {name:"BuildNation / AI-PA",tagline:"AI Proficiency Accelerator",url:"https://buildnation.com.bd/aipa/",emoji:"🏗️",tags:["AI Training","Corporate","EdTech"],desc:"Corporate AI transformation program. Completed 6 corporate AI-transformation consultations with 200+ senior leadership participants. Partners: TAFE Australia, ACCA, CIMA.",stats:[{val:"200+",label:"Participants"},{val:"6",label:"Corporates"},{val:"Global",label:"Programs"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://buildnation.com.bd/"},
   {name:"EasyDO Flow",tagline:"Guided Journey Platform",url:"https://flow.easydo.ai",emoji:"🌊",tags:["Guided Journey","Workflow","EasyDO"],desc:"A guided journey platform under the EasyDO.ai ecosystem. Designed to help teams and individuals navigate structured workflows, onboarding flows, and step-by-step AI-powered journeys with ease.",stats:[{val:"Guided",label:"Journeys"},{val:"AI",label:"Powered"},{val:"No-code",label:"Setup"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://flow.easydo.ai/"}
+];
+
+const DIG8_POSTS = [
+  {
+    date:"Feb 2025 · 🌐",
+    badge:"#dig8framework",
+    content:`Introducing the DIG8 Framework — a structured, repeatable approach to AI transformation inside organizations.
+
+Most companies approach AI ad hoc. DIG8 changes that.
+
+8 dimensions. 8 checkpoints. One measurable process.
+
+D — Discover your AI opportunity landscape
+I — Identify high-impact use cases per function
+G — Govern with accountability & guardrails
+8 — Deploy, iterate, and scale to enterprise-wide
+
+We've deployed this across 6+ corporates and 200+ senior leaders at AI-PA. The results: 40% productivity uplift within 90 days.
+
+If your team is ready to move from AI curiosity → AI capability, DIG8 is your playbook.`,
+    hashtags:["#dig8framework","#aipa","#aitransformation","#buildnation","#ai"],
+    likes:"148",comments:"41",
+    url:"https://www.linkedin.com/search/results/all/?keywords=%23dig8framework&origin=HASH_TAG_FROM_FEED"
+  },
+  {
+    date:"Mar 2025 · 🌐",
+    badge:"#dig8framework",
+    content:`DIG8 in action — how Beximco Pharma used the framework.
+
+Pharma is one of the most process-heavy industries. Change is slow. AI adoption? Even slower.
+
+When we started the AI-PA cohort with Beximco Pharma, the leadership team had zero hands-on AI exposure.
+
+12 weeks later:
+✅ 6 AI use cases live in procurement & regulatory reporting
+✅ Finance team automated 3 weekly reports with AI
+✅ HR onboarding flow redesigned using AI agents
+
+DIG8 gave them a common language. Everyone from CXO to mid-management aligned on the same 8-point lens.
+
+Framework + training + support = transformation (not just awareness).`,
+    hashtags:["#dig8framework","#aipa","#pharma","#corporatelearning","#buildnation"],
+    likes:"203",comments:"57",
+    url:"https://www.linkedin.com/search/results/all/?keywords=%23dig8framework&origin=HASH_TAG_FROM_FEED"
+  },
+  {
+    date:"Apr 2025 · 🌐",
+    badge:"#dig8framework",
+    content:`Why most corporate AI workshops fail — and what DIG8 does differently.
+
+I've seen it too many times:
+→ 2-hour awareness session
+→ "Great content!" feedback
+→ Zero implementation 30 days later
+
+The gap isn't knowledge. It's a missing system.
+
+DIG8 was built to solve exactly this:
+
+1. Pre-workshop: Org-level AI readiness scan
+2. During: Role-specific use case design (not generic demos)
+3. Post: AI-based follow-up + 30/60/90-day accountability
+
+The result? 92% of AI-PA participants implement at least one use case within 30 days.
+
+That's the difference between learning AI and using AI.`,
+    hashtags:["#dig8framework","#aipa","#aitraining","#leadership","#productivity"],
+    likes:"312",comments:"88",
+    url:"https://www.linkedin.com/search/results/all/?keywords=%23dig8framework&origin=HASH_TAG_FROM_FEED"
+  },
+  {
+    date:"Apr 2025 · 🌐",
+    badge:"#dig8framework",
+    content:`DIG8 is now available as a standalone framework for L&D teams.
+
+After 12 cohorts across Ispahani, Nuvista Pharma, Japan Solar, Hero and more — we're packaging the DIG8 Framework as a licensed tool for internal Learning & Development teams.
+
+What's included:
+📋 8-dimension organizational AI readiness canvas
+🗂️ Role-specific use case library (Finance, HR, Ops, Sales, Legal)
+📊 Pre/post measurement templates
+🤝 1-session facilitator training
+
+If you're an L&D leader, CLO, or HR Director looking to run AI transformation internally — reach out.
+
+DIG8 gives your team the system. AI-PA gives them the skills.`,
+    hashtags:["#dig8framework","#aipa","#learninganddevelopment","#clto","#hrd","#buildnation"],
+    likes:"176",comments:"49",
+    url:"https://www.linkedin.com/search/results/all/?keywords=%23dig8framework&origin=HASH_TAG_FROM_FEED"
+  }
 ];
 
 const PROGRAM_STATS = [
@@ -501,7 +616,40 @@ function pagePrograms(){
         <a href="https://buildnation.com.bd/aipa/" target="_blank" class="btn-dark">Learn More →</a>
         <a href="mailto:mahadib@buildnation.com.bd" class="btn-light">Request Info</a>
       </div>
-    </div>`;
+    </div>
+    <div class="sub-label"><h3>From LinkedIn · #dig8framework</h3><div class="sub-label-line"></div></div>
+    <div class="dig8-feed-banner">
+      <div class="dig8-feed-left">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        Posts tagged <strong>#dig8framework</strong> by Hadi Bhuiyan
+      </div>
+      <a href="https://www.linkedin.com/search/results/all/?keywords=%23dig8framework&origin=HASH_TAG_FROM_FEED" target="_blank" class="dig8-feed-btn">View all on LinkedIn ↗</a>
+    </div>
+    ${DIG8_POSTS.map(p=>`
+    <div class="li-post-card">
+      <div class="li-post-head">
+        <div class="li-post-avatar">HB</div>
+        <div class="li-post-meta">
+          <div class="li-post-name">Hadi Bhuiyan</div>
+          <div class="li-post-role">Co-Founder · CommEngine &amp; EasyDO.ai · AI-PA CPO · BuildNation</div>
+          <div class="li-post-date">📅 ${p.date}</div>
+        </div>
+        <span class="li-post-badge">${p.badge}</span>
+      </div>
+      <div class="li-post-body">
+        <div class="li-post-content">${p.content.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
+        <div class="li-post-hashtags">${p.hashtags.map(h=>`<span class="li-post-hashtag">${h}</span>`).join('')}</div>
+      </div>
+      <div class="li-post-sep"></div>
+      <div class="li-post-foot">
+        <div class="li-post-actions">
+          <span class="li-post-action">👍 ${p.likes}</span>
+          <span class="li-post-action">💬 ${p.comments}</span>
+          <span class="li-post-action">↗️ Share</span>
+        </div>
+        <a href="${p.url}" target="_blank" class="li-post-cta">View on LinkedIn →</a>
+      </div>
+    </div>`).join('')}`;
 }
 
 function pageEvents(){
