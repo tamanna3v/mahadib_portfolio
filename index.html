@@ -398,31 +398,31 @@ DIG8 gives your team the system. AI-PA gives them the skills.`,
 ];
 
 const PROGRAM_STATS = [
-  {val:"85%",label:"Career Impact",sub:"Within 6 months"},
-  {val:"40%",label:"Productivity Gain",sub:"Avg across orgs"},
-  {val:"92%",label:"Implementation",sub:"Within 30 days"},
-  {val:"3.5x",label:"ROI",sub:"Return on investment"}
+  {val:"40%",label:"Productivity Increase",sub:"Average efficiency gain"},
+  {val:"90%",label:"Implementation Rate",sub:"Within 30 days"},
+  {val:"3.5x",label:"ROI",sub:"Return on investment"},
+  {val:"200+",label:"Professionals Trained",sub:"Across 6+ organizations"}
 ];
 
 const PROGRAM_FORMATS = [
-  {num:"1",icon:"🎯",title:"AI Strategy & Transformation",sub:"For CXOs & Business Leaders",duration:"3 Hours",desc:"Led by Mahtab Uddin Ahmed. Focuses on strategy, organizational AI framework, and AI-driven transformation at the leadership level."},
-  {num:"2",icon:"🛠️",title:"AI Framework Workshop",sub:"For General Professionals",duration:"3 Hours",desc:"Introductory & functional AI with use case analysis. Curated for General, Finance, HR, Legal, Operations, or Sales teams."},
-  {num:"3",icon:"🚀",title:"AI Proficiency L1 / L2 / L3",sub:"For Mid–Senior Professionals",duration:"12 Sessions × 3–4 hrs",desc:"36-hour hands-on accelerator. Group study, workshops, and real organization implementation with 6+ AI use cases per participant."}
+  {num:"1",icon:"🎯",title:"AI Strategy Accelerator",sub:"For CXOs & Leadership",duration:"2 Days · 16 Hours",desc:"Strategic framing, AI readiness assessment, and a 24-month transformation roadmap. Answers: 'Where do we start?' Led by Mahtab Uddin Ahmed."},
+  {num:"2",icon:"🚀",title:"AI Proficiency Accelerator",sub:"For Entire Workforce",duration:"5 Months · 12 Sessions",desc:"Hands-on capability building from foundations to agentic automation. 36-hour program with 16-hour participant commitment. Led by Hadi Bhuiyan & Munaf Mojib Chowdhury."},
+  {num:"3",icon:"⚡",title:"AI Transformation Accelerator",sub:"For Organizational Goals",duration:"1 Month per Goal",desc:"Goal-based transformation sprint with expert teams (facilitation, product, technology). Up to 8 goals per year. Real-world organizational transformation."}
 ];
 
 const CURRICULUM = [
-  {phase:"Weeks 1–4",title:"Building Your AI Foundation",weeks:["Week 1: What AI is (and isn't), LLM Philosophy, real-world applications","Week 2: Models, Prompts, Tools, Use Cases — Mastering generative AI","Week 3: Extract insights, generate reports, presentations & custom models","Week 4: Data processing, automate organization jobs, AI agents"]},
-  {phase:"Weeks 5–8",title:"Enhancing Professional Output",weeks:["Week 5: Professional content — emails, reports, CVs, memos","Week 6: Presentations & data visualizations from ideas","Week 7: Excel Copilot — automate calculations, analyze spreadsheets","Week 8: SWOT analyses, decision paths, scenario planning"]},
-  {phase:"Weeks 9–12",title:"Advanced Implementation",weeks:["Week 9: Branding, content calendars, visuals & campaigns with AI","Week 10: Simplify policies, contracts, regulations with AI","Week 11: No-code automation with AI-powered workflows","Week 12: Showcase & Graduation — present final AI project"]}
+  {phase:"Cohort 1 — Sessions 1–4",title:"Foundations & Proficiency",weeks:["Understanding AI & its landscape","Core AI tools and platforms","Building AI proficiency at work","Implementing AI in daily tasks"]},
+  {phase:"Cohort 2 — Sessions 5–8",title:"Work Function Automation",weeks:["Work function AI automation","No-code & AI app building","Impactful AI applications","Data & insight visualization"]},
+  {phase:"Cohort 3 — Sessions 9–12",title:"Advanced AI Practice",weeks:["Organizational roadmap creation","Agentic AI & automated routines","Workflow AI integration","Enterprise AI deployment"]}
 ];
 
 const DIFFERENTIATORS = [
-  {n:"1",t:"Domain Expert Involvement",d:"Trusted industry experts guide curriculum for real business challenges."},
-  {n:"2",t:"Workshop & Project-Based Learning",d:"Expert-led training to build AI use cases tailored to your role."},
-  {n:"3",t:"Post-Course Support",d:"AI-based follow-up and assessment for continuous learning."},
-  {n:"4",t:"Tiered Learning Journey",d:"3-phase L1/L2/L3 progression, participants advance at their own pace."},
-  {n:"5",t:"Local Audience Adaptability",d:"Content designed for local language and workplace realities."},
-  {n:"6",t:"Certification Pathways",d:"Industry-recognized certifications at final tier enhancing credentials."}
+  {n:"1",t:"Structured, Phased Methodology",d:"A proven three-program pathway — strategy first, proficiency second, transformation third."},
+  {n:"2",t:"Optimized Time Commitment",d:"AIPA delivers 36 hours of learning with only 16 hours of participant commitment — designed for busy professionals."},
+  {n:"3",t:"Quantified ROI",d:"Average 3.5× ROI, 20% productivity gain, 4+ automated tasks per participant — trackable outcomes, not aspirational."},
+  {n:"4",t:"Organization-Wide Coverage",d:"From C-suite to general workforce — every program meets participants at their level."},
+  {n:"5",t:"Expert Leadership",d:"Led by industry veterans with multi-decade experience in transformation and organizational development."},
+  {n:"6",t:"Proven Track Record",d:"200+ professionals trained across 6+ organizations with measurable implementation rates."}
 ];
 
 const EVENTS = [
@@ -594,24 +594,24 @@ function pagePrograms(){
     </div>`).join('');
 
   return `
-    <h2 class="section-title">Programs</h2>
-    <p class="section-sub">BuildNation AI-PA · Strategy-Led, Implementation-Driven AI Transformation</p>
+    <h2 class="section-title">AI Accelerator Suite</h2>
+    <p class="section-sub">BuildNation · Strategy-Led, Implementation-Driven AI Transformation</p>
     <div class="prog-banner">
-      <div class="prog-banner-tag">BuildNation · AI-PA</div>
-      <h3>AI Proficiency Accelerator</h3>
-      <p>From CXO executive workshops to 12-week immersive accelerators — practical AI transformation at every level.</p>
+      <div class="prog-banner-tag">BuildNation · AI Accelerator Suite</div>
+      <h3>Three Programs. One Complete Journey.</h3>
+      <p>A structured pathway from AI readiness to full organizational transformation — built for leadership teams ready to lead the AI era.</p>
       <div class="prog-stats">${PROGRAM_STATS.map(s=>`<div class="prog-stat"><div class="prog-stat-val">${s.val}</div><div class="prog-stat-lbl">${s.label}</div><div class="prog-stat-sub">${s.sub}</div></div>`).join('')}</div>
     </div>
-    <div class="sub-label"><h3>Program Formats</h3><div class="sub-label-line"></div></div>
+    <div class="sub-label"><h3>Core Programs</h3><div class="sub-label-line"></div></div>
     <div class="format-grid">${formats}</div>
-    <div class="sub-label"><h3>12-Week Course Journey</h3><div class="sub-label-line"></div></div>
+    <div class="sub-label"><h3>AIPA Curriculum Structure</h3><div class="sub-label-line"></div></div>
     <div class="curr-grid">${curr}</div>
     <div class="sub-label"><h3>Key Differentiators</h3><div class="sub-label-line"></div></div>
     <div class="diff-grid">${diff}</div>
     <div class="sub-label"><h3>Trusted by Leading Organizations</h3><div class="sub-label-line"></div></div>
     <div class="card">
-      <p style="font-size:13px;color:#666;margin-bottom:12px;line-height:1.6">200+ senior leaders across HR, IT, procurement, supply chain, sales, finance, and strategy transformed their work through AI-PA.</p>
-      <div style="margin-bottom:16px">${["Ispahani","Beximco Pharma","Nuvista Pharma","Japan Solar","Bahon","Hero","Natal Hero"].map(t=>`<span class="trusted-pill">${t}</span>`).join('')}</div>
+      <p style="font-size:13px;color:#666;margin-bottom:12px;line-height:1.6">Over 200+ senior leaders and executives across HR, IT, procurement, supply chain, sales, finance, administration, and strategy have transformed the way they work by integrating AI into both their enterprise responsibilities and personal productivity.</p>
+      <div style="margin-bottom:16px">${["Ispahani Tea","Beximco Pharmaceuticals","Nuvista Pharma","Japan Solar","Dhaka Bank","Nitol Niloy","Bahon","RahimAfrooz"].map(t=>`<span class="trusted-pill">${t}</span>`).join('')}</div>
       <div style="padding-top:14px;border-top:1px solid #e8e8e8;display:flex;gap:9px">
         <a href="https://buildnation.com.bd/aipa/" target="_blank" class="btn-dark">Learn More →</a>
         <a href="mailto:mahadib@buildnation.com.bd" class="btn-light">Request Info</a>
