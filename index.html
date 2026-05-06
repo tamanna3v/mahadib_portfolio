@@ -257,7 +257,7 @@ footer{text-align:center;padding:20px 0;color:#666;font-size:13px;border-top:1px
 
 <script>
 // ── DATA ────────────────────────────────────────────────
-const NAV = ["About","Experience","Products","Programs","Events","Research","Recognition","Contact"];
+const NAV = ["About","Products","Programs","Events","Research","Recognition","Contact"];
 
 const STATS = [
   {val:"19+",label:"Years Experience"},{val:"120+",label:"Brands Served"},
@@ -470,35 +470,6 @@ function chipRow(arr){ return `<div class="chip-row">${chips(arr)}</div>`; }
 
 // ── PAGES ────────────────────────────────────────────────
 function pageAbout(){
-  return `
-    <h2 class="section-title">About</h2>
-    <p class="section-sub">Builder · Founder · Consultant · Dhaka, Bangladesh</p>
-    <p style="font-size:15px;line-height:1.9;color:#1a1a1a;margin-bottom:28px">
-      Results-driven, innovative builder with over <strong>19 years of experience</strong> in Telco & Digital Transformation, AI-Workspace development, customer/enterprise solutions, and startup building. Proven track record at <strong>Nokia Siemens Networks</strong>, <strong>Huawei</strong>, and <strong>Robi Axiata Limited</strong>.<br><br>
-      Co-Founded <strong>EasyDO.ai</strong> and <strong>FutureMind AI</strong>. Currently leading AI-Proficiency programs and Digital Transformation consultancy at BuildCon & BuildNation. Architect of BuildNation's AI vision and member of national committees on 4IR and blockchain. A curious mind and builder by nature.
-    </p>
-    <div class="stat-grid">${STATS.map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}</div>
-    <div class="sub-label"><h3>Currently Building</h3><div class="sub-label-line"></div></div>
-    <div class="building-grid">${BUILDING.map(b=>`<div class="building-card"><div class="building-emoji">${b.emoji}</div><div><div class="building-title">${b.title}</div><div class="building-desc">${b.desc}</div></div></div>`).join('')}</div>
-    <div class="sub-label"><h3>Career Timeline</h3><div class="sub-label-line"></div></div>
-    <div class="timeline">
-      <div class="timeline-line"></div>
-      ${TIMELINE.map(t=>`<div class="tl-item"><div class="tl-dot${t.active?' active':''}"></div><div class="tl-year">${t.year}</div><div><div class="tl-label">${t.label}</div><div class="tl-note">${t.note}</div></div></div>`).join('')}
-    </div>
-    <div class="sub-label"><h3>Connect</h3><div class="sub-label-line"></div></div>
-    <div style="display:flex;flex-wrap:wrap;gap:9px">
-      <a href="mailto:bhuiyan.hadi@gmail.com" class="link-btn">✉️ bhuiyan.hadi@gmail.com</a>
-      <a href="tel:+8801833180420" class="link-btn">📞 +880 18 33180420</a>
-      <span class="link-btn">📍 Dhaka-1217, Bangladesh</span>
-      <a href="http://bd.linkedin.com/in/mahadib/" target="_blank" class="link-btn">💼 LinkedIn</a>
-    </div>
-    <div class="sub-label"><h3>Featured Highlights</h3><div class="sub-label-line"></div></div>
-    <div class="feat-grid">${FEATURED.map(f=>`<div class="feat-card"><div class="feat-type">${f.type}</div><div class="feat-title">${f.title}</div><p class="feat-detail">${f.detail}</p><div class="feat-year">📅 ${f.year}</div></div>`).join('')}</div>
-    <div class="sub-label"><h3>Awards & Contributions</h3><div class="sub-label-line"></div></div>
-    <div class="award-grid">${AWARDS.map(a=>`<div class="award-card"><div class="award-icon">${a.icon}</div><div><div class="award-title">${a.title}</div><div class="award-detail">${a.detail}</div></div></div>`).join('')}</div>`;
-}
-
-function pageExperience(){
   const expCards = EXPERIENCES.map((e,i)=>`
     <div class="exp-card">
       <button class="exp-header" onclick="toggleExp(${i})">
@@ -525,8 +496,21 @@ function pageExperience(){
     </div>`).join('');
 
   return `
-    <h2 class="section-title">Experience</h2>
-    <p class="section-sub">19+ years across Telco, AI, SaaS & Digital Transformation</p>
+    <h2 class="section-title">About</h2>
+    <p class="section-sub">Builder · Founder · Consultant · Dhaka, Bangladesh</p>
+    <p style="font-size:15px;line-height:1.9;color:#1a1a1a;margin-bottom:28px">
+      Results-driven, innovative builder with over <strong>19 years of experience</strong> in Telco & Digital Transformation, AI-Workspace development, customer/enterprise solutions, and startup building. Proven track record at <strong>Nokia Siemens Networks</strong>, <strong>Huawei</strong>, and <strong>Robi Axiata Limited</strong>.<br><br>
+      Co-Founded <strong>EasyDO.ai</strong> and <strong>FutureMind AI</strong>. Currently leading AI-Proficiency programs and Digital Transformation consultancy at BuildCon & BuildNation. Architect of BuildNation's AI vision and member of national committees on 4IR and blockchain. A curious mind and builder by nature.
+    </p>
+    <div class="stat-grid">${STATS.map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}</div>
+    <div class="sub-label"><h3>Currently Building</h3><div class="sub-label-line"></div></div>
+    <div class="building-grid">${BUILDING.map(b=>`<div class="building-card"><div class="building-emoji">${b.emoji}</div><div><div class="building-title">${b.title}</div><div class="building-desc">${b.desc}</div></div></div>`).join('')}</div>
+    <div class="sub-label"><h3>Career Timeline</h3><div class="sub-label-line"></div></div>
+    <div class="timeline">
+      <div class="timeline-line"></div>
+      ${TIMELINE.map(t=>`<div class="tl-item"><div class="tl-dot${t.active?' active':''}"></div><div class="tl-year">${t.year}</div><div><div class="tl-label">${t.label}</div><div class="tl-note">${t.note}</div></div></div>`).join('')}
+    </div>
+    <div class="sub-label"><h3>Experience</h3><div class="sub-label-line"></div></div>
     ${expCards}
     <div class="sub-label"><h3>Competence</h3><div class="sub-label-line"></div></div>
     ${skillSections}
@@ -540,7 +524,18 @@ function pageExperience(){
         </div>
         <div style="font-size:12px;color:#666;font-weight:600">2001 – 2005</div>
       </div>
-    </div>`;
+    </div>
+    <div class="sub-label"><h3>Connect</h3><div class="sub-label-line"></div></div>
+    <div style="display:flex;flex-wrap:wrap;gap:9px">
+      <a href="mailto:bhuiyan.hadi@gmail.com" class="link-btn">✉️ bhuiyan.hadi@gmail.com</a>
+      <a href="tel:+8801833180420" class="link-btn">📞 +880 18 33180420</a>
+      <span class="link-btn">📍 Dhaka-1217, Bangladesh</span>
+      <a href="http://bd.linkedin.com/in/mahadib/" target="_blank" class="link-btn">💼 LinkedIn</a>
+    </div>
+    <div class="sub-label"><h3>Featured Highlights</h3><div class="sub-label-line"></div></div>
+    <div class="feat-grid">${FEATURED.map(f=>`<div class="feat-card"><div class="feat-type">${f.type}</div><div class="feat-title">${f.title}</div><p class="feat-detail">${f.detail}</p><div class="feat-year">📅 ${f.year}</div></div>`).join('')}</div>
+    <div class="sub-label"><h3>Awards & Contributions</h3><div class="sub-label-line"></div></div>
+    <div class="award-grid">${AWARDS.map(a=>`<div class="award-card"><div class="award-icon">${a.icon}</div><div><div class="award-title">${a.title}</div><div class="award-detail">${a.detail}</div></div></div>`).join('')}</div>`;
 }
 
 function pageProducts(){
@@ -785,7 +780,6 @@ function pageContact(){
 // ── ROUTER ───────────────────────────────────────────────
 const PAGES = {
   about: pageAbout,
-  experience: pageExperience,
   products: pageProducts,
   programs: pagePrograms,
   events: pageEvents,
