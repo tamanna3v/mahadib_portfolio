@@ -796,7 +796,7 @@ const PAGES = {
 
 let currentPage = 'about';
 
-function showPage(id){
+function showPage(id, updateHistory = true){
   currentPage = id;
   // render page
   document.getElementById('app').innerHTML = `<div class="page active" id="pg-${id}">${PAGES[id]()}</div>`;
@@ -805,7 +805,23 @@ function showPage(id){
     b.classList.toggle('active', b.dataset.page === id);
   });
   window.scrollTo(0,0);
+  // update URL
+  if(updateHistory){
+    const path = id === 'about' ? '/' : `/${id}`;
+    window.history.pushState({ page: id }, '', path);
+  }
 }
+
+function getPageFromURL(){
+  const path = window.location.pathname;
+  if(path === '/' || path === '') return 'about';
+  return path.replace(/\//g, '').toLowerCase();
+}
+
+window.addEventListener('popstate', (e)=>{
+  const page = e.state?.page || getPageFromURL();
+  if(PAGES[page]) showPage(page, false);
+});
 
 function toggleExp(i){
   const body = document.getElementById('expb'+i);
@@ -827,7 +843,10 @@ function toggleExp(i){
     btn.onclick = ()=>showPage(id);
     tabs.appendChild(btn);
   });
-  showPage('about');
+  // load page from URL
+  const pageFromURL = getPageFromURL();
+  const initialPage = PAGES[pageFromURL] ? pageFromURL : 'about';
+  showPage(initialPage, false);
 })();
 </script>
 </body>
