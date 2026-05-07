@@ -397,17 +397,32 @@ DIG8 gives your team the system. AI-PA gives them the skills.`,
   }
 ];
 
+const CASE_STUDIES = [
+  {org:"Ispahani Tea",industry:"Food & Beverage",impact:"Automated supply chain reporting with AI agents"},
+  {org:"Beximco Pharmaceuticals",industry:"Pharma",impact:"6 AI use cases in procurement & regulatory reporting"},
+  {org:"Dhaka Bank",industry:"Financial Services",impact:"AI-driven customer profiling and risk assessment"},
+  {org:"Nitol Niloy",industry:"Automotive & Trading",impact:"Inventory optimization and predictive maintenance"},
+  {org:"Bahon",industry:"Manufacturing",impact:"Production scheduling with AI forecasting"},
+  {org:"RahimAfrooz",industry:"Energy",impact:"Equipment monitoring and downtime prediction"}
+];
+
+const TECHNICAL_EXTENSIONS = [
+  {icon:"🔒",title:"Private AI Workspace",desc:"Secure, self-hosted AI environments for enterprise data privacy and compliance requirements."},
+  {icon:"🤖",title:"Agentic AI Workflow Building",desc:"Design autonomous AI agents that handle complex multi-step processes without manual intervention."},
+  {icon:"🏢",title:"Enterprise AI Building",desc:"Custom AI solutions architected for organizational infrastructure, integrations, and scale."}
+];
+
 const PROGRAM_STATS = [
   {val:"40%",label:"Productivity Increase",sub:"Average efficiency gain"},
-  {val:"90%",label:"Implementation Rate",sub:"Within 30 days"},
+  {val:"95%",label:"Non-Engineering Participants",sub:"Cross-functional teams"},
   {val:"3.5x",label:"ROI",sub:"Return on investment"},
-  {val:"200+",label:"Professionals Trained",sub:"Across 6+ organizations"}
+  {val:"192",label:"Professionals Trained",sub:"Across 6+ organizations"}
 ];
 
 const PROGRAM_FORMATS = [
-  {num:"1",icon:"🎯",title:"AI Strategy Accelerator",sub:"For CXOs & Leadership",duration:"2 Days · 16 Hours",desc:"Strategic framing, AI readiness assessment, and a 24-month transformation roadmap. Answers: 'Where do we start?' Led by Mahtab Uddin Ahmed."},
-  {num:"2",icon:"🚀",title:"AI Proficiency Accelerator",sub:"For Entire Workforce",duration:"5 Months · 12 Sessions",desc:"Hands-on capability building from foundations to agentic automation. 36-hour program with 16-hour participant commitment. Led by Hadi Bhuiyan & Munaf Mojib Chowdhury."},
-  {num:"3",icon:"⚡",title:"AI Transformation Accelerator",sub:"For Organizational Goals",duration:"1 Month per Goal",desc:"Goal-based transformation sprint with expert teams (facilitation, product, technology). Up to 8 goals per year. Real-world organizational transformation."}
+  {num:"1",icon:"🎯",title:"AI Strategy Accelerator",sub:"For CXOs & Leadership",duration:"2 Days · 16 Hours",desc:"Strategic framing, AI readiness assessment, and a 24-month transformation roadmap. Answers: 'Where do we start?' Led by Mahatab Uddin Ahmed."},
+  {num:"2",icon:"🚀",title:"AI Proficiency Accelerator",sub:"For Entire Workforce",duration:"5 Months · 12 Sessions",desc:"Hands-on capability building from foundations to agentic automation. 36-hour program with 16-hour participant commitment. Led by Hadi Bhuiyan, Munaf Mojib Chowdhury & Sania Mahmood."},
+  {num:"3",icon:"⚡",title:"AI Transformation Accelerator",sub:"For Organizational Goals",duration:"1 Month per Goal",desc:"Goal-based transformation sprint with expert teams (facilitation, product, technology). Up to 8 goals per year. Real-world organizational transformation. Led by Mahatab Uddin Ahmed."}
 ];
 
 const CURRICULUM = [
@@ -603,6 +618,10 @@ function pagePrograms(){
     <div class="curr-grid">${curr}</div>
     <div class="sub-label"><h3>Key Differentiators</h3><div class="sub-label-line"></div></div>
     <div class="diff-grid">${diff}</div>
+    <div class="sub-label"><h3>Technical Extensions</h3><div class="sub-label-line"></div></div>
+    <div class="format-grid">${TECHNICAL_EXTENSIONS.map(t=>`<div class="format-card"><div style="font-size:24px;margin-bottom:10px">${t.icon}</div><div class="format-title">${t.title}</div><p class="format-desc">${t.desc}</p></div>`).join('')}</div>
+    <div class="sub-label"><h3>Case Studies from Partner Organizations</h3><div class="sub-label-line"></div></div>
+    <div class="building-grid">${CASE_STUDIES.map(c=>`<div class="building-card"><div style="font-size:20px">📊</div><div><div class="building-title">${c.org}</div><div style="font-size:11px;color:#999;margin-bottom:5px">${c.industry}</div><div class="building-desc">${c.impact}</div></div></div>`).join('')}</div>
     <div class="sub-label"><h3>Trusted by Leading Organizations</h3><div class="sub-label-line"></div></div>
     <div class="card">
       <p style="font-size:13px;color:#666;margin-bottom:12px;line-height:1.6">Over 200+ senior leaders and executives across HR, IT, procurement, supply chain, sales, finance, administration, and strategy have transformed the way they work by integrating AI into both their enterprise responsibilities and personal productivity.</p>
