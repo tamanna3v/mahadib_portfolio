@@ -203,40 +203,66 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .prog-menu-card-03 .prog-menu-for{color:#a0682a}
 .prog-menu-card-04 .prog-menu-for{color:#6840a8}
 
+/* FLOW HERO LANDING */
+.flow-hero{background:linear-gradient(135deg,#0d1a2e 0%,#1a2e50 60%,#0d2255 100%);border-radius:24px;padding:56px 44px 52px;margin-top:36px;position:relative;overflow:hidden}
+.flow-hero::before{content:'';position:absolute;top:-80px;right:-80px;width:380px;height:380px;border-radius:50%;background:rgba(100,160,255,0.07);pointer-events:none}
+.flow-hero::after{content:'';position:absolute;bottom:-60px;left:-60px;width:260px;height:260px;border-radius:50%;background:rgba(100,200,255,0.05);pointer-events:none}
+.flow-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(100,160,255,0.15);border:1px solid rgba(100,160,255,0.25);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#a8c8ff;margin-bottom:24px}
+.flow-hero-title{font-size:52px;font-weight:900;line-height:1.0;letter-spacing:-2.5px;color:#fff;margin-bottom:10px}
+.flow-hero-by{font-size:16px;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:0.5px;margin-bottom:26px}
+.flow-hero-sub{font-size:20px;color:rgba(255,255,255,0.72);line-height:1.65;max-width:620px;margin-bottom:36px;font-weight:500}
+.flow-hero-sub strong{color:#fff;font-weight:800}
+.flow-hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+.flow-hero-btn-primary{background:#fff;color:#0d1a2e;font-size:15px;font-weight:800;border-radius:100px;padding:14px 28px;text-decoration:none;transition:opacity .2s}
+.flow-hero-btn-primary:hover{opacity:0.88}
+.flow-hero-btn-ghost{background:transparent;color:#fff;font-size:15px;font-weight:700;border-radius:100px;padding:14px 28px;border:1.5px solid rgba(255,255,255,0.3);text-decoration:none;transition:border-color .2s}
+.flow-hero-btn-ghost:hover{border-color:rgba(255,255,255,0.7)}
+.flow-hero-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:40px;padding-top:36px;border-top:1px solid rgba(255,255,255,0.1)}
+.flow-hero-step{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:20px 18px}
+.flow-hero-step-num{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:8px}
+.flow-hero-step-icon{font-size:26px;margin-bottom:10px}
+.flow-hero-step-title{font-size:16px;font-weight:900;color:#fff;margin-bottom:6px;letter-spacing:-0.3px}
+.flow-hero-step-desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6}
+
 /* FLOW CORE FEATURES */
-.flow-features-section{margin-top:36px;padding:32px;background:#f9fbff;border:1.5px solid #dce8ff;border-radius:20px}
+.flow-features-section{margin-top:16px;padding:36px;background:#f9fbff;border:1.5px solid #dce8ff;border-radius:20px}
 .flow-features-header{display:flex;align-items:center;gap:12px;margin-bottom:6px}
-.flow-features-tag{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#4a72d4;background:#eef3ff;border-radius:6px;padding:3px 10px}
-.flow-features-title{font-size:22px;font-weight:900;color:#0d1a2e;letter-spacing:-0.5px;margin-bottom:4px}
-.flow-features-sub{font-size:13px;color:#666;margin-bottom:24px}
-.flow-feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-.flow-feat-card{background:#fff;border:1px solid #e0eaff;border-radius:14px;padding:18px 16px}
+.flow-features-tag{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#4a72d4;background:#eef3ff;border-radius:6px;padding:4px 12px}
+.flow-features-title{font-size:28px;font-weight:900;color:#0d1a2e;letter-spacing:-0.8px;margin-bottom:6px}
+.flow-features-sub{font-size:15px;color:#666;margin-bottom:28px;line-height:1.6}
+.flow-feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.flow-feat-card{background:#fff;border:1px solid #e0eaff;border-radius:16px;padding:22px 20px}
 .flow-feat-card.highlight{background:#0d1a2e;border-color:#0d1a2e}
-.flow-feat-icon{font-size:22px;margin-bottom:10px}
-.flow-feat-name{font-weight:800;font-size:14px;color:#1a1a1a;margin-bottom:6px}
+.flow-feat-icon{font-size:26px;margin-bottom:12px}
+.flow-feat-name{font-weight:900;font-size:16px;color:#1a1a1a;margin-bottom:8px}
 .flow-feat-card.highlight .flow-feat-name{color:#fff}
-.flow-feat-desc{font-size:12px;color:#666;line-height:1.6;margin-bottom:10px}
+.flow-feat-desc{font-size:13px;color:#666;line-height:1.65;margin-bottom:12px}
 .flow-feat-card.highlight .flow-feat-desc{color:rgba(255,255,255,0.5)}
-.flow-feat-pills{display:flex;flex-wrap:wrap;gap:5px}
-.flow-feat-pill{font-size:11px;font-weight:700;border-radius:6px;padding:3px 9px}
+.flow-feat-pills{display:flex;flex-wrap:wrap;gap:6px}
+.flow-feat-pill{font-size:12px;font-weight:700;border-radius:6px;padding:4px 10px}
 .flow-feat-pill.assess{background:#eef3ff;color:#3a5ec4;border:1px solid #c8d8ff}
 .flow-feat-pill.submit{background:#ecfaf5;color:#1d8c58;border:1px solid #b6ecd5}
 
 /* FLOW POWER FEATURES */
-.flow-power-section{margin-top:16px;padding:32px;background:#0d1a2e;border-radius:20px}
-.flow-power-tag{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:6px}
-.flow-power-title{font-size:22px;font-weight:900;color:#fff;letter-spacing:-0.5px;margin-bottom:4px}
-.flow-power-sub{font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:24px}
-.flow-power-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-.flow-power-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:18px 16px}
+.flow-power-section{margin-top:16px;padding:36px;background:#0d1a2e;border-radius:20px}
+.flow-power-tag{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px}
+.flow-power-title{font-size:28px;font-weight:900;color:#fff;letter-spacing:-0.8px;margin-bottom:6px}
+.flow-power-sub{font-size:15px;color:rgba(255,255,255,0.45);margin-bottom:28px;line-height:1.6}
+.flow-power-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.flow-power-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:22px 20px}
 .flow-power-card.highlight{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.22)}
-.flow-power-icon{font-size:22px;margin-bottom:10px}
-.flow-power-name{font-weight:800;font-size:14px;color:#fff;margin-bottom:6px}
-.flow-power-desc{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:10px}
-.flow-power-pills{display:flex;flex-wrap:wrap;gap:5px}
-.flow-power-pill{font-size:11px;font-weight:700;border-radius:6px;padding:3px 9px;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);border:1px solid rgba(255,255,255,0.15)}
+.flow-power-icon{font-size:26px;margin-bottom:12px}
+.flow-power-name{font-weight:900;font-size:16px;color:#fff;margin-bottom:8px}
+.flow-power-desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.65;margin-bottom:12px}
+.flow-power-pills{display:flex;flex-wrap:wrap;gap:6px}
+.flow-power-pill{font-size:12px;font-weight:700;border-radius:6px;padding:4px 10px;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);border:1px solid rgba(255,255,255,0.15)}
 .flow-power-pill.ai{background:rgba(100,160,255,0.15);color:#a8c8ff;border-color:rgba(100,160,255,0.25)}
-@media(max-width:600px){.flow-power-grid{grid-template-columns:1fr}}
+@media(max-width:600px){
+  .flow-hero{padding:36px 24px 32px}
+  .flow-hero-title{font-size:34px;letter-spacing:-1.5px}
+  .flow-hero-sub{font-size:16px}
+  .flow-feat-grid,.flow-power-grid,.flow-hero-steps{grid-template-columns:1fr}
+}
 
 /* EVENTS */
 .event-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-bottom:12px;transition:box-shadow .2s}
@@ -795,6 +821,44 @@ function pageProducts(){
     <h2 class="section-title">Products</h2>
     <p class="section-sub">Ventures built at the intersection of AI, SaaS & Digital Transformation</p>
     <div class="product-grid">${cards}</div>
+
+    <!-- EASYDO FLOW: HERO LANDING -->
+    <div class="flow-hero">
+      <div class="flow-hero-eyebrow">🌊 EasyDO Flow</div>
+      <div class="flow-hero-title">AI-Guided Audience<br>Engagement Platform</div>
+      <div class="flow-hero-by">by CommEngine-FutureMind AI</div>
+      <p class="flow-hero-sub">Now manage <strong>thousands of participants</strong> together — live or self-paced. Take feedback, assign a <strong>1:1 AI coach</strong>, make assessments. Simple.</p>
+      <div class="flow-hero-cta">
+        <a href="https://flow.easydo.ai" target="_blank" class="flow-hero-btn-primary">Try EasyDO Flow →</a>
+        <a href="https://flow.easydo.ai" target="_blank" class="flow-hero-btn-ghost">See How It Works</a>
+      </div>
+      <div class="flow-hero-steps">
+        <div class="flow-hero-step">
+          <div class="flow-hero-step-num">Step 01</div>
+          <div class="flow-hero-step-icon">🗺️</div>
+          <div class="flow-hero-step-title">Build your Journey</div>
+          <div class="flow-hero-step-desc">Design a guided flow for training, presentations, recruitment, or any audience experience.</div>
+        </div>
+        <div class="flow-hero-step">
+          <div class="flow-hero-step-num">Step 02</div>
+          <div class="flow-hero-step-icon">👥</div>
+          <div class="flow-hero-step-title">Invite Participants</div>
+          <div class="flow-hero-step-desc">Onboard thousands at once — live sessions, self-paced tracks, or a mix of both.</div>
+        </div>
+        <div class="flow-hero-step">
+          <div class="flow-hero-step-num">Step 03</div>
+          <div class="flow-hero-step-icon">📝</div>
+          <div class="flow-hero-step-title">Assess &amp; Collect</div>
+          <div class="flow-hero-step-desc">Run quizzes, polls, MCQs, and paragraph answers. Collect submissions and files in one place.</div>
+        </div>
+        <div class="flow-hero-step">
+          <div class="flow-hero-step-num">Step 04</div>
+          <div class="flow-hero-step-icon">🧠</div>
+          <div class="flow-hero-step-title">AI Insights &amp; Coaching</div>
+          <div class="flow-hero-step-desc">Get AI-generated performance summaries and assign a personal AI coach to every participant.</div>
+        </div>
+      </div>
+    </div>
 
     <!-- EASYDO FLOW: CORE PLATFORM FEATURES -->
     <div class="flow-features-section">
