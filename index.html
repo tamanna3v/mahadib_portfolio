@@ -157,10 +157,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .prog-team-avatar{width:60px;height:60px;border-radius:50%;background:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;margin:0 auto 12px}
 .prog-team-name{font-weight:900;font-size:14px;color:#1a1a1a;margin-bottom:5px}
 .prog-team-role{font-size:12px;color:#666;line-height:1.55}
-.prog-cohort-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-bottom:8px}
-.prog-cohort-card{background:#fff;border:1px solid #e8e8e8;border-radius:16px;padding:22px 20px}
+.prog-cohort-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-bottom:8px}
+.prog-cohort-card{background:#fff;border:1px solid #e8e8e8;border-radius:16px;padding:22px 20px;display:flex;flex-direction:column}
+.prog-cohort-logo-wrap{width:56px;height:56px;border-radius:12px;border:1px solid #f0f0f0;background:#fafafa;display:flex;align-items:center;justify-content:center;margin-bottom:14px;overflow:hidden;flex-shrink:0}
+.prog-cohort-logo-wrap img{width:48px;height:48px;object-fit:contain}
+.prog-cohort-logo-initial{width:48px;height:48px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;color:#fff;letter-spacing:-1px}
 .prog-cohort-name{font-weight:900;font-size:15px;color:#1a1a1a;margin-bottom:9px}
-.prog-cohort-desc{font-size:13px;color:#666;line-height:1.7;margin-bottom:14px}
+.prog-cohort-desc{font-size:13px;color:#666;line-height:1.7;margin-bottom:14px;flex:1}
 .prog-cohort-quote{font-style:italic;font-size:13px;color:#1a1a1a;font-weight:700;border-left:3px solid #1a1a1a;padding-left:12px;margin:0}
 .prog-partner-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:8px}
 .prog-partner-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:20px}
@@ -1041,18 +1044,57 @@ function pagePrograms(){
     <div class="sub-label"><h3>Successful Cohorts</h3><div class="sub-label-line"></div></div>
     <div class="prog-cohort-grid">
       <div class="prog-cohort-card">
+        <div class="prog-cohort-logo-wrap">
+          <img src="https://logo.clearbit.com/ispahani.com" alt="Ispahani" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="prog-cohort-logo-initial" style="display:none;background:#1a6e2e">IT</div>
+        </div>
         <div class="prog-cohort-name">Ispahani Tea Limited</div>
         <div class="prog-cohort-desc">Successful completion of AIPA training program for the management leadership team in Dhaka. Led by Hadi Bhuiyan and Munaf Chowdhury — providing practical and strategic insights into AI-driven decision-making.</div>
         <p class="prog-cohort-quote">"Bridging the gap between theory and practice."</p>
       </div>
       <div class="prog-cohort-card">
+        <div class="prog-cohort-logo-wrap">
+          <img src="https://logo.clearbit.com/beximcopharma.com" alt="Beximco" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="prog-cohort-logo-initial" style="display:none;background:#003087">BP</div>
+        </div>
         <div class="prog-cohort-name">Beximco Pharmaceuticals PLC</div>
         <div class="prog-cohort-desc">Completion of six sessions of the AIPA Program for senior leadership. Focused on senior management gaining strategic insights for AI-driven transformation across procurement, regulatory, and finance teams.</div>
         <p class="prog-cohort-quote">"Empowering organizations with future-ready capabilities."</p>
       </div>
       <div class="prog-cohort-card">
-        <div class="prog-cohort-name">RahimAfrooz · Dhaka Bank · Nitol Niloy · Bahon</div>
-        <div class="prog-cohort-desc">Successful AI-PA Demo Sessions for senior management. Showcased practical AI-driven decision-making and real-world business applications across diverse industries.</div>
+        <div class="prog-cohort-logo-wrap">
+          <img src="https://logo.clearbit.com/rahimafrooz.com" alt="RahimAfrooz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="prog-cohort-logo-initial" style="display:none;background:#e63c2f">RA</div>
+        </div>
+        <div class="prog-cohort-name">RahimAfrooz</div>
+        <div class="prog-cohort-desc">AI-PA Demo Session for senior management. Showcased practical AI-driven decision-making and real-world business applications across the energy, automotive, and consumer goods sectors.</div>
+        <p class="prog-cohort-quote">"Cultivating future-ready leadership."</p>
+      </div>
+      <div class="prog-cohort-card">
+        <div class="prog-cohort-logo-wrap">
+          <img src="https://logo.clearbit.com/dhakabankltd.com" alt="Dhaka Bank" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="prog-cohort-logo-initial" style="display:none;background:#0b4f8a">DB</div>
+        </div>
+        <div class="prog-cohort-name">Dhaka Bank</div>
+        <div class="prog-cohort-desc">AI-PA Demo Session for senior management. Explored AI-driven financial services transformation, intelligent banking operations, and data-led decision-making at scale.</div>
+        <p class="prog-cohort-quote">"Cultivating future-ready leadership."</p>
+      </div>
+      <div class="prog-cohort-card">
+        <div class="prog-cohort-logo-wrap">
+          <img src="https://logo.clearbit.com/nitolniloygroup.com" alt="Nitol Niloy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="prog-cohort-logo-initial" style="display:none;background:#d4320c">NN</div>
+        </div>
+        <div class="prog-cohort-name">Nitol Niloy</div>
+        <div class="prog-cohort-desc">AI-PA Demo Session for senior management. Highlighted AI applications across automotive distribution, supply chain management, and enterprise productivity tools.</div>
+        <p class="prog-cohort-quote">"Cultivating future-ready leadership."</p>
+      </div>
+      <div class="prog-cohort-card">
+        <div class="prog-cohort-logo-wrap">
+          <img src="https://logo.clearbit.com/bahon.com.bd" alt="Bahon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="prog-cohort-logo-initial" style="display:none;background:#2c6e49">BH</div>
+        </div>
+        <div class="prog-cohort-name">Bahon</div>
+        <div class="prog-cohort-desc">AI-PA Demo Session for senior management. Demonstrated AI-powered logistics, fleet optimization, and smart operations solutions for modern transport and mobility businesses.</div>
         <p class="prog-cohort-quote">"Cultivating future-ready leadership."</p>
       </div>
     </div>
