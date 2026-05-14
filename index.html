@@ -445,8 +445,7 @@ const NAV = [
   {text:"About",id:"about"},
   {text:"Experience",id:"experience"},
   {text:"Products",id:"products"},
-  {text:"Programs",id:"programs"},
-  {text:"AI-Proficiency Accelerator",id:"aipa"},
+  {text:"AI Accelerator",id:"aipa"},
   {text:"Events",id:"events"},
   {text:"Research",id:"research"},
   {text:"Recognition",id:"recognition"},
@@ -1278,8 +1277,8 @@ function pageContact(){
 function pageAIPA(){
   const trustedOrgs = ["Ispahani Group","Beximco Pharmaceuticals","Nuvista Pharma","Japan Solar","Dhaka Bank PLC","Nitol Niloy","Bahon Limited","RahimAfrooz"];
   return `
-<h2 class="section-title">AI-Proficiency Accelerator</h2>
-<p class="section-sub">by BuildNation · A structured pathway from AI readiness to full organizational transformation</p>
+<h2 class="section-title">AI Accelerator</h2>
+<p class="section-sub">BuildNation · Strategy-Led, Implementation-Driven AI Transformation</p>
 
 <!-- SLIDE 1: HERO -->
 <div class="aipa-slide aipa-dark">
@@ -1324,7 +1323,7 @@ function pageAIPA(){
     <div class="aipa-kpi-box"><div class="aipa-kpi-val">95%</div><div class="aipa-kpi-lbl">Non-Engineering Participants</div></div>
   </div>
   <div class="aipa-divider"></div>
-  <div class="aipa-outcome-grid">
+  <div class="aipa-outcome-grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))">
     <div class="aipa-outcome-card">
       <div class="aipa-outcome-icon">🏆</div>
       <div class="aipa-outcome-title">Own AI Solutions,<br>Own Expertise</div>
@@ -1334,6 +1333,11 @@ function pageAIPA(){
       <div class="aipa-outcome-icon">⚙️</div>
       <div class="aipa-outcome-title">Automation Without<br>Vendors</div>
       <div class="aipa-outcome-desc">Significant automation delivered internally through organizational mandate and trained teams.</div>
+    </div>
+    <div class="aipa-outcome-card">
+      <div class="aipa-outcome-icon">🗺️</div>
+      <div class="aipa-outcome-title">Organizational AI<br>Roadmap &amp; Vendor Management</div>
+      <div class="aipa-outcome-desc">Organizations develop a clear AI roadmap with structured vendor evaluation frameworks — enabling confident, informed decisions at leadership level.</div>
     </div>
   </div>
   <div class="aipa-divider"></div>
@@ -1345,94 +1349,104 @@ function pageAIPA(){
   <div class="aipa-big-num" style="color:#1a1a1a">03</div>
   <span class="aipa-tag" style="color:#888">THE SUITE · THREE PROGRAMS, ONE COMPLETE JOURNEY</span>
   <div class="aipa-headline-lg">Three Programs.<br>One Complete Journey.</div>
-  <p class="aipa-body" style="color:#555;margin-bottom:4px">A comprehensive four-program curriculum — strategy first, proficiency second, transformation third.</p>
-  <div class="aipa-prog-cards">
-    <div class="aipa-prog-card-light">
-      <span class="aipa-prog-num-badge aipa-prog-num-light">PROGRAM 01</span>
-      <div class="aipa-prog-title">AI Strategy<br>Accelerator</div>
-      <div class="aipa-prog-sub">Led by Mahatab Uddin Ahmed</div>
-      <p class="aipa-prog-desc" style="color:#666">Strategic framing, AI readiness assessment, and a 24-month transformation roadmap for leadership.</p>
-      <span class="chip" style="margin-top:12px;display:inline-block">⏱ 2 Days · 16 Hours</span>
+  <p class="aipa-body" style="color:#555;margin-bottom:16px">A comprehensive four-program curriculum — strategy first, proficiency second, transformation third.</p>
+  <div class="prog-menu" style="margin-bottom:20px">
+    <div class="prog-menu-card prog-menu-card-01">
+      <div class="prog-menu-accent"></div>
+      <div class="prog-menu-num">Program 01</div>
+      <div class="prog-menu-code">AISA</div>
+      <div class="prog-menu-name">AI Strategy Accelerator</div>
+      <div class="prog-menu-for">For CXOs &amp; Senior Leadership · 2 Days</div>
     </div>
-    <div class="aipa-prog-card-light">
-      <span class="aipa-prog-num-badge aipa-prog-num-light">PROGRAM 02</span>
-      <div class="aipa-prog-title">AI Proficiency<br>Accelerator</div>
-      <div class="aipa-prog-sub">Led by Hadi Bhuiyan &amp; Munaf Mojib</div>
-      <p class="aipa-prog-desc" style="color:#666">Hands-on AI capability building for the entire workforce — from fundamentals to agentic automation.</p>
-      <span class="chip" style="margin-top:12px;display:inline-block">⏱ 5 Months · 12 Sessions</span>
+    <div class="prog-menu-card prog-menu-card-02">
+      <div class="prog-menu-accent"></div>
+      <div class="prog-menu-num">Program 02</div>
+      <div class="prog-menu-code">AIPA</div>
+      <div class="prog-menu-name">AI Proficiency Accelerator</div>
+      <div class="prog-menu-for">For Entire Workforce · 5 Months</div>
     </div>
-    <div class="aipa-prog-card-light">
-      <span class="aipa-prog-num-badge aipa-prog-num-light">PROGRAM 03</span>
-      <div class="aipa-prog-title">AI Transformation<br>Accelerator</div>
-      <div class="aipa-prog-sub">Expert Four-Team Delivery</div>
-      <p class="aipa-prog-desc" style="color:#666">Four expert teams converge to execute real organizational transformation — consulting, product, and technology.</p>
-      <span class="chip" style="margin-top:12px;display:inline-block">⏱ 1 Month per Goal · Up to 8/yr</span>
+    <div class="prog-menu-card prog-menu-card-03">
+      <div class="prog-menu-accent"></div>
+      <div class="prog-menu-num">Program 03</div>
+      <div class="prog-menu-code">AITA</div>
+      <div class="prog-menu-name">AI Transformation Accelerator</div>
+      <div class="prog-menu-for">Goal-Based Sprint · 1 Month / Goal</div>
+    </div>
+    <div class="prog-menu-card prog-menu-card-04">
+      <div class="prog-menu-accent"></div>
+      <div class="prog-menu-num">Technical Add-On</div>
+      <div class="prog-menu-code" style="font-size:17px;letter-spacing:-0.3px">Product<br>Bootcamp</div>
+      <div class="prog-menu-name" style="margin-top:4px">Technical Product Bootcamp</div>
+      <div class="prog-menu-for">For IT &amp; Engineering Teams</div>
     </div>
   </div>
 </div>
 
 <!-- SLIDE 5: PROGRAM 01 — AI STRATEGY ACCELERATOR -->
-<div class="aipa-slide aipa-dark">
-  <div class="aipa-big-num">01</div>
-  <span class="aipa-tag">PROGRAM ONE · AI STRATEGY ACCELERATOR</span>
-  <div class="aipa-headline-xl">Where Do<br>We Start?</div>
-  <p class="aipa-body aipa-body-dark" style="max-width:500px;margin-bottom:24px">A two-day leadership intensive that answers the most important question. Designed for CXOs &amp; Senior Leadership. Led by <strong style="opacity:0.9">Mahatab Uddin Ahmed</strong>.</p>
+<div class="aipa-slide" style="background:#eef3ff;border:1px solid #c8d8ff">
+  <div class="aipa-big-num" style="color:#4a72d4">01</div>
+  <span class="aipa-tag" style="color:#4a72d4">PROGRAM ONE · AI STRATEGY ACCELERATOR</span>
+  <div class="aipa-headline-xl" style="color:#0d2255">Where Do<br>We Start?</div>
+  <p class="aipa-body" style="color:#2a3f6a;max-width:500px;margin-bottom:24px">A two-day leadership intensive that answers the most important question. Designed for CXOs &amp; Senior Leadership. Led by <strong>Mahtab Uddin Ahmed</strong>.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+    <span class="aipa-step-badge" style="background:#c8d8ff;color:#0d2255;border:none">⏱ 2 Days · 16 Hours</span>
+    <span class="aipa-step-badge" style="background:#c8d8ff;color:#0d2255;border:none">👥 Leadership Cohort</span>
+    <span class="aipa-step-badge" style="background:#c8d8ff;color:#0d2255;border:none">🎯 Strategy &amp; Roadmap</span>
+  </div>
   <div class="aipa-prog-cards">
-    <div class="aipa-prog-card-dark">
+    <div class="aipa-prog-card-light" style="background:#fff;border-color:#c8d8ff">
       <div style="font-size:24px;margin-bottom:10px">🔍</div>
-      <div class="aipa-prog-title">Induction &amp; AI Awareness</div>
-      <p class="aipa-prog-desc">AI preparedness, opportunity mapping, and risk — framed for senior leadership and management.</p>
+      <div class="aipa-prog-title" style="color:#0d2255">Induction &amp; AI Awareness</div>
+      <p class="aipa-prog-desc" style="color:#4a6080">AI preparedness, opportunity mapping, and risk — framed for senior leadership and management.</p>
     </div>
-    <div class="aipa-prog-card-dark">
+    <div class="aipa-prog-card-light" style="background:#fff;border-color:#c8d8ff">
       <div style="font-size:24px;margin-bottom:10px">📊</div>
-      <div class="aipa-prog-title">Strategic Assessment</div>
-      <p class="aipa-prog-desc">Leadership exercise assessing people, process, and solution across the entire organization.</p>
+      <div class="aipa-prog-title" style="color:#0d2255">Strategic Assessment</div>
+      <p class="aipa-prog-desc" style="color:#4a6080">Leadership exercise assessing people, process, and solution across the entire organization.</p>
     </div>
-    <div class="aipa-prog-card-dark">
+    <div class="aipa-prog-card-light" style="background:#fff;border-color:#c8d8ff">
       <div style="font-size:24px;margin-bottom:10px">🗺️</div>
-      <div class="aipa-prog-title">Starter Strategy Pack</div>
-      <p class="aipa-prog-desc">24-month roadmap delivered as a live document — the organization's starting point for AI strategy.</p>
+      <div class="aipa-prog-title" style="color:#0d2255">Starter Strategy Pack</div>
+      <p class="aipa-prog-desc" style="color:#4a6080">24-month roadmap delivered as a live document — the organization's starting point for AI strategy.</p>
     </div>
   </div>
-  <div class="aipa-divider"></div>
+  <div style="height:1px;background:#c8d8ff;margin:22px 0"></div>
+  <div style="font-size:12px;font-weight:700;color:#4a72d4;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.8px">What You Leave With</div>
   <div style="display:flex;flex-wrap:wrap;gap:8px">
-    <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700">✅ AI awareness across leadership</span>
-    <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700">✅ Clarity on where to start</span>
-    <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700">✅ 24-month AI roadmap</span>
-    <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700">✅ A live document to evolve</span>
+    ${["✅ AI awareness across leadership","✅ Clarity on where to start","✅ 24-month AI roadmap","✅ A live document to evolve"].map(t=>`<span style="background:#fff;border:1px solid #c8d8ff;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;color:#0d2255">${t}</span>`).join('')}
   </div>
 </div>
 
 <!-- SLIDE 6: PROGRAM 02 — AI PROFICIENCY ACCELERATOR -->
-<div class="aipa-slide aipa-accent">
-  <div class="aipa-big-num" style="color:#0a66c2">02</div>
-  <span class="aipa-tag" style="color:#0a66c2">PROGRAM TWO · AI PROFICIENCY ACCELERATOR</span>
-  <div class="aipa-headline-xl" style="color:#0d1a2e">AI Proficiency<br>for Everyone</div>
-  <p class="aipa-body" style="color:#3a5a7a;max-width:520px;margin-bottom:24px">12 sessions · 5 months · From AI foundations to agentic automation — for every level of your organization. Led by <strong style="color:#0d1a2e">Hadi Bhuiyan</strong> and <strong style="color:#0d1a2e">Munaf Mojib Chowdhury</strong>.</p>
+<div class="aipa-slide" style="background:#ecfaf5;border:1px solid #b6ecd5">
+  <div class="aipa-big-num" style="color:#27a76a">02</div>
+  <span class="aipa-tag" style="color:#27a76a">PROGRAM TWO · AI PROFICIENCY ACCELERATOR</span>
+  <div class="aipa-headline-xl" style="color:#0d2e1e">AI Proficiency<br>for Everyone</div>
+  <p class="aipa-body" style="color:#2a5040;max-width:520px;margin-bottom:24px">12 sessions · 5 months · From AI foundations to agentic automation — for every level of your organization. Led by <strong style="color:#0d2e1e">Hadi Bhuiyan</strong> and <strong style="color:#0d2e1e">Munaf Mojib Chowdhury</strong>.</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:22px">
-    <div style="background:#fff;border:1px solid #c8e0f9;border-radius:12px;padding:16px;text-align:center">
-      <div style="font-size:38px;font-weight:900;color:#0a66c2;letter-spacing:-1.5px;line-height:1">12</div>
-      <div style="font-size:10px;color:#5a7a9a;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Sessions</div>
+    <div style="background:#fff;border:1px solid #b6ecd5;border-radius:12px;padding:16px;text-align:center">
+      <div style="font-size:38px;font-weight:900;color:#27a76a;letter-spacing:-1.5px;line-height:1">12</div>
+      <div style="font-size:10px;color:#3d8c63;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Sessions</div>
     </div>
-    <div style="background:#fff;border:1px solid #c8e0f9;border-radius:12px;padding:16px;text-align:center">
-      <div style="font-size:38px;font-weight:900;color:#0a66c2;letter-spacing:-1.5px;line-height:1">5</div>
-      <div style="font-size:10px;color:#5a7a9a;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Months</div>
+    <div style="background:#fff;border:1px solid #b6ecd5;border-radius:12px;padding:16px;text-align:center">
+      <div style="font-size:38px;font-weight:900;color:#27a76a;letter-spacing:-1.5px;line-height:1">5</div>
+      <div style="font-size:10px;color:#3d8c63;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Months</div>
     </div>
-    <div style="background:#fff;border:1px solid #c8e0f9;border-radius:12px;padding:16px;text-align:center">
-      <div style="font-size:38px;font-weight:900;color:#0a66c2;letter-spacing:-1.5px;line-height:1">36h</div>
-      <div style="font-size:10px;color:#5a7a9a;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Program</div>
+    <div style="background:#fff;border:1px solid #b6ecd5;border-radius:12px;padding:16px;text-align:center">
+      <div style="font-size:38px;font-weight:900;color:#27a76a;letter-spacing:-1.5px;line-height:1">36h</div>
+      <div style="font-size:10px;color:#3d8c63;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Program</div>
     </div>
-    <div style="background:#fff;border:1px solid #c8e0f9;border-radius:12px;padding:16px;text-align:center">
-      <div style="font-size:38px;font-weight:900;color:#0a66c2;letter-spacing:-1.5px;line-height:1">16h</div>
-      <div style="font-size:10px;color:#5a7a9a;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Commitment</div>
+    <div style="background:#fff;border:1px solid #b6ecd5;border-radius:12px;padding:16px;text-align:center">
+      <div style="font-size:38px;font-weight:900;color:#27a76a;letter-spacing:-1.5px;line-height:1">16h</div>
+      <div style="font-size:10px;color:#3d8c63;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Commitment</div>
     </div>
-    <div style="background:#fff;border:1px solid #c8e0f9;border-radius:12px;padding:16px;text-align:center">
-      <div style="font-size:26px;font-weight:900;color:#0a66c2;letter-spacing:-1px;line-height:1">12–35%</div>
-      <div style="font-size:10px;color:#5a7a9a;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Productivity Gain</div>
+    <div style="background:#fff;border:1px solid #b6ecd5;border-radius:12px;padding:16px;text-align:center">
+      <div style="font-size:26px;font-weight:900;color:#27a76a;letter-spacing:-1px;line-height:1">12–35%</div>
+      <div style="font-size:10px;color:#3d8c63;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Productivity Gain</div>
     </div>
   </div>
-  <div class="aipa-divider-light"></div>
-  <p class="aipa-body" style="color:#3a5a7a">In 1990, Microsoft Excel was perceived as "magic." Within a decade, it became a mandatory personal skill known by everyone in the workforce. <strong style="color:#0d1a2e">AI will become a universal personal skill.</strong> AIPA prepares your workforce for this shift — ensuring AI becomes a natural extension of every professional's capability.</p>
+  <div style="height:1px;background:#b6ecd5;margin:22px 0"></div>
+  <p class="aipa-body" style="color:#2a5040">In 1990, Microsoft Excel was perceived as "magic." Within a decade, it became a mandatory personal skill known by everyone in the workforce. <strong style="color:#0d2e1e">AI will become a universal personal skill.</strong> AIPA prepares your workforce for this shift — ensuring AI becomes a natural extension of every professional's capability.</p>
 </div>
 
 <!-- SLIDE 7: CURRICULUM -->
@@ -1524,72 +1538,78 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 9: PROGRAM 03 — TRANSFORMATION ACCELERATOR -->
-<div class="aipa-slide aipa-light">
-  <div class="aipa-big-num" style="color:#1a1a1a">06</div>
-  <span class="aipa-tag" style="color:#888">PROGRAM THREE · AI TRANSFORMATION ACCELERATOR</span>
-  <div class="aipa-headline-xl" style="color:#1a1a1a">One Goal.<br>One Month.</div>
-  <p class="aipa-body" style="color:#555;max-width:520px;margin-bottom:24px">A goal-based transformation sprint. Up to 8 goals per year, per organization. <strong>Prerequisite:</strong> Completion of AIPA required before enrolling.</p>
+<div class="aipa-slide" style="background:#fff8ec;border:1px solid #fdddb0">
+  <div class="aipa-big-num" style="color:#e08a2a">06</div>
+  <span class="aipa-tag" style="color:#c48836">PROGRAM THREE · AI TRANSFORMATION ACCELERATOR</span>
+  <div class="aipa-headline-xl" style="color:#3a2000">One Goal.<br>One Month.</div>
+  <p class="aipa-body" style="color:#5a3a10;max-width:520px;margin-bottom:16px">A goal-based transformation sprint. Up to 8 goals per year, per organization. <strong>Prerequisite:</strong> Completion of AIPA required before enrolling.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+    <span style="background:#fdddb0;border:1px solid #f0b840;border-radius:8px;padding:5px 13px;font-size:12px;font-weight:700;color:#6a3800">⏱ 1 Month / Goal</span>
+    <span style="background:#fdddb0;border:1px solid #f0b840;border-radius:8px;padding:5px 13px;font-size:12px;font-weight:700;color:#6a3800">🎯 Up to 8 Goals / Year</span>
+    <span style="background:#fdddb0;border:1px solid #f0b840;border-radius:8px;padding:5px 13px;font-size:12px;font-weight:700;color:#6a3800">📋 Prerequisite: AIPA Completion</span>
+  </div>
   <div class="aipa-prog-cards">
-    <div class="aipa-prog-card-light">
+    <div class="aipa-prog-card-light" style="background:#fff;border-color:#fdddb0">
       <div style="font-size:24px;margin-bottom:8px">🎓</div>
-      <div class="aipa-prog-title" style="font-size:14px">Facilitation Team</div>
-      <p class="aipa-prog-desc" style="color:#666">Program design, learning architecture, and cohort coordination.</p>
+      <div class="aipa-prog-title" style="color:#3a2000;font-size:14px">Facilitation Team</div>
+      <p class="aipa-prog-desc" style="color:#7a5020">Program design, learning architecture, and cohort coordination.</p>
     </div>
-    <div class="aipa-prog-card-light">
+    <div class="aipa-prog-card-light" style="background:#fff;border-color:#fdddb0">
       <div style="font-size:24px;margin-bottom:8px">🛠️</div>
-      <div class="aipa-prog-title" style="font-size:14px">Product Team</div>
-      <p class="aipa-prog-desc" style="color:#666">Co-building AI products and tools directly for your organization's workflows.</p>
+      <div class="aipa-prog-title" style="color:#3a2000;font-size:14px">Product Team</div>
+      <p class="aipa-prog-desc" style="color:#7a5020">Co-building AI products and tools directly for your organization's workflows.</p>
     </div>
-    <div class="aipa-prog-card-light">
+    <div class="aipa-prog-card-light" style="background:#fff;border-color:#fdddb0">
       <div style="font-size:24px;margin-bottom:8px">⚙️</div>
-      <div class="aipa-prog-title" style="font-size:14px">Technology Dev</div>
-      <p class="aipa-prog-desc" style="color:#666">System integration, automation pipelines, and deployment.</p>
+      <div class="aipa-prog-title" style="color:#3a2000;font-size:14px">Technology Dev</div>
+      <p class="aipa-prog-desc" style="color:#7a5020">System integration, automation pipelines, and deployment at scale.</p>
     </div>
-    <div class="aipa-prog-card-light">
+    <div class="aipa-prog-card-light" style="background:#fff;border-color:#fdddb0">
       <div style="font-size:24px;margin-bottom:8px">🤝</div>
-      <div class="aipa-prog-title" style="font-size:14px">Vendor Partners</div>
-      <p class="aipa-prog-desc" style="color:#666">Specialist ecosystem partners providing capability and tooling.</p>
+      <div class="aipa-prog-title" style="color:#3a2000;font-size:14px">Vendor Partners</div>
+      <p class="aipa-prog-desc" style="color:#7a5020">Specialist ecosystem partners providing capability and tooling.</p>
     </div>
   </div>
-  <div class="aipa-divider-light"></div>
+  <div style="height:1px;background:#fdddb0;margin:22px 0"></div>
   <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
-    <div style="background:#f5f5f5;border:1px solid #e8e8e8;border-radius:12px;padding:14px 20px;text-align:center;min-width:90px">
-      <div style="font-size:30px;font-weight:900;color:#1a1a1a;letter-spacing:-1px;line-height:1">8</div>
-      <div style="font-size:10px;color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Goals/Year</div>
+    <div style="background:#fff;border:1px solid #fdddb0;border-radius:12px;padding:14px 20px;text-align:center;min-width:90px">
+      <div style="font-size:30px;font-weight:900;color:#e08a2a;letter-spacing:-1px;line-height:1">8</div>
+      <div style="font-size:10px;color:#c48836;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Goals/Year</div>
     </div>
-    <div style="background:#f5f5f5;border:1px solid #e8e8e8;border-radius:12px;padding:14px 20px;text-align:center;min-width:90px">
-      <div style="font-size:30px;font-weight:900;color:#1a1a1a;letter-spacing:-1px;line-height:1">1mo</div>
-      <div style="font-size:10px;color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Per Goal</div>
+    <div style="background:#fff;border:1px solid #fdddb0;border-radius:12px;padding:14px 20px;text-align:center;min-width:90px">
+      <div style="font-size:30px;font-weight:900;color:#e08a2a;letter-spacing:-1px;line-height:1">1mo</div>
+      <div style="font-size:10px;color:#c48836;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Per Goal</div>
     </div>
-    <div style="font-size:13px;color:#555;font-weight:600;max-width:340px">Format: 1 in-person + 1 online session per week · Workshop, bootcamp, and consulting delivery.</div>
+    <div style="font-size:13px;color:#5a3a10;font-weight:600;max-width:340px">Format: 1 in-person + 1 online session per week · Workshop, bootcamp, and consulting delivery.</div>
   </div>
 </div>
 
 <!-- SLIDE 10: TECHNICAL BOOTCAMP -->
-<div class="aipa-slide aipa-accent">
-  <div class="aipa-big-num" style="color:#0a66c2">TC</div>
-  <span class="aipa-tag" style="color:#0a66c2">TECHNICAL EXTENSION · AI PRODUCT BOOTCAMP</span>
-  <div class="aipa-headline-lg" style="color:#0d1a2e">Technical<br>Product Bootcamp</div>
-  <p class="aipa-body" style="color:#3a5a7a;margin-bottom:20px">Available as an add-on, customized to your stack. IT &amp; Engineering team engagement is mandatory. Facilitated by BuildNation's technology team and partners — deep technical expertise delivered.</p>
-  <div class="aipa-tech-grid">
-    <div class="aipa-tech-card">
-      <div class="aipa-tech-icon">🔒</div>
-      <div class="aipa-tech-title">Private AI Workspace</div>
-      <p class="aipa-tech-desc">Deploy a secure, organization-owned AI workspace — tailored to your data, policies, and team structure.</p>
-    </div>
-    <div class="aipa-tech-card">
-      <div class="aipa-tech-icon">🤖</div>
-      <div class="aipa-tech-title">Agentic AI Workflow Building</div>
-      <p class="aipa-tech-desc">Design and deploy autonomous AI agents and multi-step workflow automations specific to your business processes.</p>
-    </div>
-    <div class="aipa-tech-card">
-      <div class="aipa-tech-icon">🏗️</div>
-      <div class="aipa-tech-title">Enterprise AI Building</div>
-      <p class="aipa-tech-desc">Build internal AI-powered applications — from dashboards to intelligent process tools that serve the organization.</p>
-    </div>
+<div class="aipa-slide" style="background:#f3effd;border:1px solid #d5c6f8">
+  <div class="aipa-big-num" style="color:#7c4dca">TC</div>
+  <span class="aipa-tag" style="color:#7c4dca">TECHNICAL EXTENSION · AI PRODUCT BOOTCAMP</span>
+  <div class="aipa-headline-lg" style="color:#2a0e60">Technical<br>Product Bootcamp</div>
+  <p class="aipa-body" style="color:#4a2e90;margin-bottom:16px">Available as an add-on, customized to your stack. IT &amp; Engineering team engagement is mandatory. Facilitated by BuildNation's technology team and partners — deep technical expertise delivered.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+    <span style="background:#d5c6f8;border:1px solid #b8a0f0;border-radius:8px;padding:5px 13px;font-size:12px;font-weight:700;color:#2a0e60">For IT &amp; Engineering Teams</span>
+    <span style="background:#d5c6f8;border:1px solid #b8a0f0;border-radius:8px;padding:5px 13px;font-size:12px;font-weight:700;color:#2a0e60">📌 On Request · Add-On</span>
   </div>
-  <div style="margin-top:16px;padding:12px 16px;background:rgba(10,102,194,0.08);border:1px solid #c8e0f9;border-radius:10px;font-size:13px;color:#3a5a7a;font-weight:600">
-    📌 On Request — Available as an add-on, customized to your stack.
+  <div class="aipa-tech-grid">
+    <div class="aipa-tech-card" style="background:#fff;border:1px solid #d5c6f8">
+      <div class="aipa-tech-icon">🔒</div>
+      <div class="aipa-tech-title" style="color:#2a0e60">Private AI Workspace</div>
+      <p class="aipa-tech-desc" style="color:#5a3a90">Deploy a secure, organization-owned AI workspace — tailored to your data, policies, and team structure.</p>
+    </div>
+    <div class="aipa-tech-card" style="background:#fff;border:1px solid #d5c6f8">
+      <div class="aipa-tech-icon">🤖</div>
+      <div class="aipa-tech-title" style="color:#2a0e60">Agentic AI Workflow Building</div>
+      <p class="aipa-tech-desc" style="color:#5a3a90">Design and deploy autonomous AI agents and multi-step workflow automations specific to your business processes.</p>
+    </div>
+    <div class="aipa-tech-card" style="background:#fff;border:1px solid #d5c6f8">
+      <div class="aipa-tech-icon">🏗️</div>
+      <div class="aipa-tech-title" style="color:#2a0e60">Enterprise AI Building</div>
+      <p class="aipa-tech-desc" style="color:#5a3a90">Build internal AI-powered applications — from dashboards to intelligent process tools that serve the organization.</p>
+    </div>
   </div>
 </div>
 
@@ -1646,29 +1666,96 @@ function pageAIPA(){
   <div class="aipa-big-num" style="color:#1a1a1a">09</div>
   <span class="aipa-tag" style="color:#888">COHORT SUCCESS STORIES</span>
   <div class="aipa-headline-lg">Proven.<br>In Practice.</div>
-  <div class="aipa-cohort-grid">
-    <div class="aipa-cohort-card">
-      <div class="aipa-cohort-tag">✅ Successful Completion</div>
-      <div class="aipa-cohort-org">Ispahani Group</div>
-      <p class="aipa-cohort-desc">Successful completion of AIPA training program for the management leadership team in Dhaka. Led by Hadi Bhuiyan and Munaf Chowdhury, providing practical and strategic insights into AI-driven decision-making.</p>
-      <div class="aipa-cohort-quote">"Bridging the gap between theory and practice."</div>
+  <div class="prog-cohort-grid">
+    <div class="prog-cohort-card">
+      <div class="prog-cohort-logo-wrap">
+        <img src="https://logo.clearbit.com/ispahani.com" alt="Ispahani" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="prog-cohort-logo-initial" style="display:none;background:#1a6e2e">IG</div>
+      </div>
+      <div class="prog-cohort-name">Ispahani Group</div>
+      <div class="prog-cohort-desc">Successful completion of AIPA training program for the management leadership team in Dhaka. Led by Hadi Bhuiyan and Munaf Chowdhury — providing practical and strategic insights into AI-driven decision-making.</div>
+      <p class="prog-cohort-quote">"Bridging the gap between theory and practice."</p>
+      <a href="https://ispahani.com" target="_blank" style="display:inline-block;margin-top:12px;font-size:11px;font-weight:700;color:#1a6e2e;text-decoration:none">ispahani.com →</a>
     </div>
-    <div class="aipa-cohort-card">
-      <div class="aipa-cohort-tag">✅ Six Sessions Completed</div>
-      <div class="aipa-cohort-org">Beximco Pharmaceuticals PLC</div>
-      <p class="aipa-cohort-desc">Completion of six sessions of the AIPA Program for senior leadership. Focused on gaining strategic insights for AI-driven transformation across procurement, finance, and HR.</p>
-      <div class="aipa-cohort-quote">"Empowering organizations with future-ready capabilities."</div>
+    <div class="prog-cohort-card">
+      <div class="prog-cohort-logo-wrap">
+        <img src="https://logo.clearbit.com/beximcopharma.com" alt="Beximco" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="prog-cohort-logo-initial" style="display:none;background:#003087">BP</div>
+      </div>
+      <div class="prog-cohort-name">Beximco Pharmaceuticals PLC</div>
+      <div class="prog-cohort-desc">Completion of six sessions of the AIPA Program for senior leadership. Focused on gaining strategic insights for AI-driven transformation across procurement, regulatory, and finance teams.</div>
+      <p class="prog-cohort-quote">"Empowering organizations with future-ready capabilities."</p>
+      <a href="https://www.beximcopharma.com" target="_blank" style="display:inline-block;margin-top:12px;font-size:11px;font-weight:700;color:#003087;text-decoration:none">beximcopharma.com →</a>
     </div>
-    <div class="aipa-cohort-card">
-      <div class="aipa-cohort-tag">✅ Demo Session Completed</div>
-      <div class="aipa-cohort-org">RahimAfrooz, Dhaka Bank PLC, Nitol Niloy &amp; Bahon</div>
-      <p class="aipa-cohort-desc">Successful AI-PA Demo Session for senior management across multiple organizations. Showcased practical AI-driven decision-making and real-world business applications.</p>
-      <div class="aipa-cohort-quote">"Cultivating future-ready leadership."</div>
+    <div class="prog-cohort-card">
+      <div class="prog-cohort-logo-wrap">
+        <img src="https://logo.clearbit.com/rahimafrooz.com" alt="RahimAfrooz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="prog-cohort-logo-initial" style="display:none;background:#e63c2f">RA</div>
+      </div>
+      <div class="prog-cohort-name">RahimAfrooz</div>
+      <div class="prog-cohort-desc">AI-PA Demo Session for senior management. Showcased practical AI-driven decision-making and real-world business applications across the energy, automotive, and consumer goods sectors.</div>
+      <p class="prog-cohort-quote">"Cultivating future-ready leadership."</p>
+      <a href="https://www.rahimafrooz.com" target="_blank" style="display:inline-block;margin-top:12px;font-size:11px;font-weight:700;color:#e63c2f;text-decoration:none">rahimafrooz.com →</a>
+    </div>
+    <div class="prog-cohort-card">
+      <div class="prog-cohort-logo-wrap">
+        <img src="https://logo.clearbit.com/dhakabankltd.com" alt="Dhaka Bank PLC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="prog-cohort-logo-initial" style="display:none;background:#0b4f8a">DB</div>
+      </div>
+      <div class="prog-cohort-name">Dhaka Bank PLC</div>
+      <div class="prog-cohort-desc">AI-PA Demo Session for senior management. Explored AI-driven financial services transformation, intelligent banking operations, and data-led decision-making at scale.</div>
+      <p class="prog-cohort-quote">"Cultivating future-ready leadership."</p>
+      <a href="https://www.dhakabank.com.bd" target="_blank" style="display:inline-block;margin-top:12px;font-size:11px;font-weight:700;color:#0b4f8a;text-decoration:none">dhakabank.com.bd →</a>
+    </div>
+    <div class="prog-cohort-card">
+      <div class="prog-cohort-logo-wrap">
+        <img src="https://logo.clearbit.com/nitolniloygroup.com" alt="Nitol Niloy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="prog-cohort-logo-initial" style="display:none;background:#d4320c">NN</div>
+      </div>
+      <div class="prog-cohort-name">Nitol Niloy</div>
+      <div class="prog-cohort-desc">AI-PA Demo Session for senior management. Highlighted AI applications across automotive distribution, supply chain management, and enterprise productivity tools.</div>
+      <p class="prog-cohort-quote">"Cultivating future-ready leadership."</p>
+      <a href="https://www.nitolniloygroup.com" target="_blank" style="display:inline-block;margin-top:12px;font-size:11px;font-weight:700;color:#d4320c;text-decoration:none">nitolniloygroup.com →</a>
+    </div>
+    <div class="prog-cohort-card">
+      <div class="prog-cohort-logo-wrap">
+        <img src="https://logo.clearbit.com/bahon.com.bd" alt="Bahon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="prog-cohort-logo-initial" style="display:none;background:#2c6e49">BH</div>
+      </div>
+      <div class="prog-cohort-name">Bahon</div>
+      <div class="prog-cohort-desc">AI-PA Demo Session for senior management. Demonstrated AI-powered logistics, fleet optimization, and smart operations solutions for modern transport and mobility businesses.</div>
+      <p class="prog-cohort-quote">"Cultivating future-ready leadership."</p>
+      <a href="https://bahon.com.bd" target="_blank" style="display:inline-block;margin-top:12px;font-size:11px;font-weight:700;color:#2c6e49;text-decoration:none">bahon.com.bd →</a>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 14: TRUSTED ORGANIZATIONS -->
+<!-- SLIDE 14: BUILDNATION'S OTHER KEY PROGRAM -->
+<div class="aipa-slide aipa-light">
+  <div class="aipa-big-num" style="color:#1a1a1a">10</div>
+  <span class="aipa-tag" style="color:#888">GLOBAL COLLABORATIONS · EDUCATION PATHWAYS</span>
+  <div class="aipa-headline-lg">BuildNation's Other<br>Key Program</div>
+  <p class="aipa-body" style="color:#555;margin-bottom:20px">Global education partnerships offering internationally recognised qualifications — delivered through BuildNation's blended learning platform.</p>
+  <div class="prog-partner-grid">
+    <div class="prog-partner-card" style="background:#eef3ff;border-color:#c8d8ff">
+      <div class="prog-partner-name" style="color:#0d2255">ACCA Partnership</div>
+      <div class="prog-partner-desc">ACCA-approved courses for globally respected qualifications in accounting and finance. Highly sought after by employers in 180+ countries worldwide.</div>
+      <a href="https://www.accaglobal.com" target="_blank" style="display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:#4a72d4;text-decoration:none">accaglobal.com →</a>
+    </div>
+    <div class="prog-partner-card" style="background:#ecfaf5;border-color:#b6ecd5">
+      <div class="prog-partner-name" style="color:#0d2e1e">CIMA Partnership</div>
+      <div class="prog-partner-desc">Pathways to the prestigious CGMA designation. Opens global career opportunities in management accounting and leadership roles.</div>
+      <a href="https://www.cimaglobal.com" target="_blank" style="display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:#27a76a;text-decoration:none">cimaglobal.com →</a>
+    </div>
+    <div class="prog-partner-card" style="background:#fff8ec;border-color:#fdddb0">
+      <div class="prog-partner-name" style="color:#3a2000">TAFE WA</div>
+      <div class="prog-partner-desc">Certificate IV in IT — Networking &amp; Programming. Practical skills providing direct pathways to Australian universities.</div>
+      <a href="https://www.tafewa.edu.au" target="_blank" style="display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:#e08a2a;text-decoration:none">tafewa.edu.au →</a>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 15: TRUSTED ORGANIZATIONS -->
 <div class="aipa-slide aipa-dark">
   <div class="aipa-big-num">10</div>
   <span class="aipa-tag">TRUSTED BY LEADING ORGANIZATIONS</span>
@@ -1694,6 +1781,7 @@ function pageAIPA(){
   <div style="display:flex;flex-wrap:wrap;gap:16px;font-size:12px;opacity:0.38;font-weight:600">
     <span>📍 Amanullah Trade Center, Level 9, Gulshan 2, Dhaka 1212</span>
     <span>📞 +8801861884444</span>
+    <span>📱 +8801833180420</span>
     <span>🌐 buildnation.com.bd</span>
   </div>
 </div>
@@ -1705,7 +1793,6 @@ const PAGES = {
   about: pageAbout,
   experience: pageExperience,
   products: pageProducts,
-  programs: pagePrograms,
   aipa: pageAIPA,
   events: pageEvents,
   research: pageResearch,
