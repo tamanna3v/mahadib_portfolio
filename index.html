@@ -112,6 +112,69 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .diff-t{font-weight:800;font-size:12px;color:#1a1a1a;margin-bottom:3px}
 .diff-d{font-size:11px;color:#666;line-height:1.5}
 
+/* PROGRAM PAGE REDESIGN */
+.prog-hero{background:#1a1a1a;border-radius:20px;padding:44px 36px;margin-bottom:28px;color:#fff;position:relative;overflow:hidden}
+.prog-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,0.03)}
+.prog-hero-tag{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px}
+.prog-hero-title{font-size:48px;font-weight:900;line-height:1.05;letter-spacing:-2px;margin-bottom:20px;color:#fff}
+.prog-hero-sub{font-size:15px;color:rgba(255,255,255,0.58);line-height:1.85;margin:0;max-width:600px}
+.prog-result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:14px}
+.prog-result-card{background:#fff;border:1px solid #e8e8e8;border-radius:16px;padding:26px;text-align:center}
+.prog-result-val{font-size:58px;font-weight:900;letter-spacing:-3px;color:#1a1a1a;line-height:1}
+.prog-result-label{font-size:14px;color:#333;font-weight:700;margin-top:8px}
+.prog-result-sub{font-size:12px;color:#999;margin-top:6px;line-height:1.5}
+.aipa-step{background:#fff;border:1px solid #e8e8e8;border-radius:20px;padding:32px;margin-bottom:20px;overflow:hidden;position:relative}
+.aipa-step-num{font-size:110px;font-weight:900;color:#f2f2f2;line-height:0.85;letter-spacing:-4px;position:absolute;right:24px;top:24px;user-select:none;pointer-events:none}
+.aipa-step-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#999;margin-bottom:10px}
+.aipa-step-title{font-size:30px;font-weight:900;letter-spacing:-0.8px;color:#1a1a1a;margin-bottom:4px}
+.aipa-step-sub{font-size:15px;color:#666;margin-bottom:20px;font-weight:600}
+.aipa-step-desc{font-size:15px;color:#444;line-height:1.85;margin-bottom:22px;max-width:620px}
+.aipa-step-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.aipa-step-badge{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;color:#1a1a1a}
+.prog-sub-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-top:4px}
+.prog-sub-card{background:#f9f9f9;border:1px solid #ededed;border-radius:14px;padding:18px 16px}
+.prog-sub-card-num{background:#1a1a1a;color:#fff;border-radius:50%;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-bottom:10px}
+.prog-sub-title{font-weight:800;font-size:14px;color:#1a1a1a;margin-bottom:5px}
+.prog-sub-desc{font-size:12px;color:#666;line-height:1.65}
+.prog-phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:4px 0 20px}
+.prog-phase-card{background:#f9f9f9;border:1px solid #ededed;border-radius:14px;padding:18px 16px}
+.prog-phase-num{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:6px}
+.prog-phase-title{font-weight:900;font-size:14px;color:#1a1a1a;margin-bottom:10px}
+.prog-phase-item{font-size:12px;color:#666;line-height:1.65;padding-left:10px;border-left:2px solid #e0e0e0;margin-bottom:6px}
+.prog-impact{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:4px 0 20px}
+.prog-impact-card{border-radius:16px;padding:22px 16px;text-align:center}
+.prog-impact-card.l1{background:#f9f9f9;border:1px solid #e8e8e8}
+.prog-impact-card.l2{background:#eef3ff;border:1px solid #d0dcff}
+.prog-impact-card.l3{background:#1a1a1a;border:1px solid #1a1a1a}
+.prog-impact-val{font-size:40px;font-weight:900;letter-spacing:-2px;color:#1a1a1a;margin-bottom:4px;line-height:1}
+.prog-impact-card.l3 .prog-impact-val{color:#fff}
+.prog-impact-label{font-size:13px;font-weight:700;color:#444}
+.prog-impact-card.l3 .prog-impact-label{color:rgba(255,255,255,0.65)}
+.prog-impact-type{font-size:11px;color:#aaa;margin-top:5px;line-height:1.4}
+.prog-impact-card.l3 .prog-impact-type{color:rgba(255,255,255,0.35)}
+.prog-team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:12px;margin-bottom:8px}
+.prog-team-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:22px 18px;text-align:center}
+.prog-team-avatar{width:60px;height:60px;border-radius:50%;background:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;margin:0 auto 12px}
+.prog-team-name{font-weight:900;font-size:14px;color:#1a1a1a;margin-bottom:5px}
+.prog-team-role{font-size:12px;color:#666;line-height:1.55}
+.prog-cohort-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-bottom:8px}
+.prog-cohort-card{background:#fff;border:1px solid #e8e8e8;border-radius:16px;padding:22px 20px}
+.prog-cohort-name{font-weight:900;font-size:15px;color:#1a1a1a;margin-bottom:9px}
+.prog-cohort-desc{font-size:13px;color:#666;line-height:1.7;margin-bottom:14px}
+.prog-cohort-quote{font-style:italic;font-size:13px;color:#1a1a1a;font-weight:700;border-left:3px solid #1a1a1a;padding-left:12px;margin:0}
+.prog-partner-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:8px}
+.prog-partner-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:20px}
+.prog-partner-name{font-weight:900;font-size:15px;color:#1a1a1a;margin-bottom:7px}
+.prog-partner-desc{font-size:12px;color:#666;line-height:1.65}
+@media(max-width:600px){
+  .prog-result-grid{grid-template-columns:1fr}
+  .prog-hero-title{font-size:32px}
+  .prog-impact{grid-template-columns:1fr}
+  .prog-phase-grid{grid-template-columns:1fr}
+  .aipa-step-num{font-size:70px;top:16px;right:16px}
+  .aipa-step-title{font-size:22px}
+}
+
 /* EVENTS */
 .event-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-bottom:12px;transition:box-shadow .2s}
 .event-card:hover{box-shadow:0 2px 14px rgba(0,0,0,0.06)}
@@ -568,25 +631,6 @@ function pageProducts(){
 }
 
 function pagePrograms(){
-  const formats = PROGRAM_FORMATS.map(f=>`
-    <div class="format-card">
-      <div style="display:flex;align-items:center;margin-bottom:10px">
-        <span style="font-size:20px">${f.icon}</span>
-        <span class="format-num">${f.num}</span>
-      </div>
-      <div class="format-title">${f.title}</div>
-      <div class="format-sub">${f.sub}</div>
-      <p class="format-desc">${f.desc}</p>
-      <span class="chip">⏱ ${f.duration}</span>
-    </div>`).join('');
-
-  const curr = CURRICULUM.map(c=>`
-    <div class="curr-card">
-      <div class="curr-phase">${c.phase}</div>
-      <div class="curr-title">${c.title}</div>
-      ${c.weeks.map(w=>`<div class="curr-week">${w}</div>`).join('')}
-    </div>`).join('');
-
   const diff = DIFFERENTIATORS.map(d=>`
     <div class="diff-card">
       <div class="diff-num">${d.n}</div>
@@ -596,60 +640,298 @@ function pagePrograms(){
   return `
     <h2 class="section-title">AI Accelerator Suite</h2>
     <p class="section-sub">BuildNation · Strategy-Led, Implementation-Driven AI Transformation</p>
+
+    <!-- VISION HERO -->
+    <div class="prog-hero">
+      <div class="prog-hero-tag">The Vision · BuildNation AI Accelerators</div>
+      <div class="prog-hero-title">Riding the<br>AI Wave</div>
+      <p class="prog-hero-sub">AI is creating both excitement and anxiety — but it is already transforming the way we work. Organizations must adapt within two years; professionals within months.<br><br>The real challenge is not AI itself — it is how fast we are ready to grow with it.<br><br><strong style="color:rgba(255,255,255,0.85)">AI is like a tsunami — you cannot stop it, but you can learn to ride the wave.</strong> BuildNation AI Accelerators help turn AI from fear into a practical everyday skill.</p>
+    </div>
+
+    <!-- PROVEN RESULTS -->
+    <div class="sub-label"><h3>Proven Results — Previous Cohorts</h3><div class="sub-label-line"></div></div>
+    <div class="prog-result-grid">
+      <div class="prog-result-card">
+        <div class="prog-result-val">192</div>
+        <div class="prog-result-label">Professionals Trained &amp; Transformed</div>
+        <div class="prog-result-sub">Finance · Procurement · HR · Supply Chain · Marketing · Sales · Production · Strategy · CXOs · International Business</div>
+      </div>
+      <div class="prog-result-card">
+        <div class="prog-result-val">95%</div>
+        <div class="prog-result-label">Non-Engineering Participants</div>
+        <div class="prog-result-sub">AI proficiency is for everyone — not just IT &amp; Software teams</div>
+      </div>
+    </div>
+    <div class="prog-result-grid" style="margin-bottom:32px">
+      <div class="prog-result-card" style="text-align:left">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:8px">Key Outcome 01</div>
+        <div style="font-size:20px;font-weight:900;color:#1a1a1a;margin-bottom:10px;letter-spacing:-0.5px">Own AI solutions,<br>own expertise</div>
+        <div style="font-size:13px;color:#666;line-height:1.7">Participants built their own AI solutions using subject matter expertise — no external vendors required.</div>
+      </div>
+      <div class="prog-result-card" style="text-align:left">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:8px">Key Outcome 02</div>
+        <div style="font-size:20px;font-weight:900;color:#1a1a1a;margin-bottom:10px;letter-spacing:-0.5px">Automation without<br>vendors</div>
+        <div style="font-size:13px;color:#666;line-height:1.7">Significant automation delivered internally through organizational mandate — owned end-to-end.</div>
+      </div>
+    </div>
+
+    <!-- SUITE OVERVIEW -->
+    <div class="sub-label"><h3>The Suite — Three Programs. One Complete Journey.</h3><div class="sub-label-line"></div></div>
     <div class="prog-banner">
-      <div class="prog-banner-tag">BuildNation · AI Accelerator Suite</div>
-      <h3>Three Programs. One Complete Journey.</h3>
-      <p>A structured pathway from AI readiness to full organizational transformation — built for leadership teams ready to lead the AI era.</p>
+      <div class="prog-banner-tag">AISA · AIPA · AITA · AI Technical Bootcamp</div>
+      <h3>A structured pathway from AI readiness to full organizational transformation</h3>
+      <p>Built for leadership teams ready to lead the AI era. A comprehensive four-program curriculum covering strategy, proficiency, transformation, and technical deployment.</p>
       <div class="prog-stats">${PROGRAM_STATS.map(s=>`<div class="prog-stat"><div class="prog-stat-val">${s.val}</div><div class="prog-stat-lbl">${s.label}</div><div class="prog-stat-sub">${s.sub}</div></div>`).join('')}</div>
     </div>
-    <div class="sub-label"><h3>Core Programs</h3><div class="sub-label-line"></div></div>
-    <div class="format-grid">${formats}</div>
-    <div class="sub-label"><h3>AIPA Curriculum Structure</h3><div class="sub-label-line"></div></div>
-    <div class="curr-grid">${curr}</div>
-    <div class="sub-label"><h3>Key Differentiators</h3><div class="sub-label-line"></div></div>
+
+    <!-- STEP-BY-STEP JOURNEY -->
+    <div class="sub-label"><h3>Step-by-Step: The Program Journey</h3><div class="sub-label-line"></div></div>
+
+    <!-- PROGRAM 01 -->
+    <div class="aipa-step">
+      <div class="aipa-step-num">01</div>
+      <div class="aipa-step-tag">Program One · AISA</div>
+      <div class="aipa-step-title">AI Strategy Accelerator</div>
+      <div class="aipa-step-sub">For CXOs &amp; Senior Leadership · Led by Mahtab Uddin Ahmed</div>
+      <p class="aipa-step-desc">A two-day leadership intensive that answers the most important question: <strong>Where do we start?</strong><br><br>A structured pathway from AI readiness to full organizational transformation — built for leadership teams ready to lead the AI era.</p>
+      <div class="aipa-step-meta">
+        <span class="aipa-step-badge">⏱ 2 Days · 16 Hours</span>
+        <span class="aipa-step-badge">👥 Leadership Cohort</span>
+        <span class="aipa-step-badge">🎯 Strategy &amp; Roadmap</span>
+      </div>
+      <div class="prog-sub-cards">
+        <div class="prog-sub-card">
+          <div class="prog-sub-card-num">1</div>
+          <div class="prog-sub-title">Induction &amp; AI Awareness</div>
+          <div class="prog-sub-desc">AI preparedness, opportunity mapping, and risk — framed for senior leadership and management.</div>
+        </div>
+        <div class="prog-sub-card">
+          <div class="prog-sub-card-num">2</div>
+          <div class="prog-sub-title">Strategic Assessment</div>
+          <div class="prog-sub-desc">Leadership exercise assessing people, process, and solution across the organization.</div>
+        </div>
+        <div class="prog-sub-card">
+          <div class="prog-sub-card-num">3</div>
+          <div class="prog-sub-title">Starter Strategy Pack</div>
+          <div class="prog-sub-desc">24-month roadmap delivered as a live document — the organization's starting point for AI strategy.</div>
+        </div>
+      </div>
+      <div style="margin-top:20px;padding-top:18px;border-top:1px solid #e8e8e8">
+        <div style="font-size:12px;font-weight:700;color:#1a1a1a;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.8px">What You Leave With</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          ${["AI awareness across leadership","Clarity on where to start","24-month AI roadmap","A live document to evolve"].map(t=>`<span class="chip">${t}</span>`).join('')}
+        </div>
+      </div>
+    </div>
+
+    <!-- PROGRAM 02 -->
+    <div class="aipa-step">
+      <div class="aipa-step-num">02</div>
+      <div class="aipa-step-tag">Program Two · AIPA</div>
+      <div class="aipa-step-title">AI Proficiency Accelerator</div>
+      <div class="aipa-step-sub">For the Entire Workforce · Led by Hadi Bhuiyan &amp; Munaf Mojib Chowdhury</div>
+      <p class="aipa-step-desc">In 1990, Microsoft Excel was perceived as "magic." Within a decade, it transitioned from a specialized tool to a mandatory personal skill known by everyone.<br><br><strong>AI will become a universal personal skill.</strong> The AIPA program prepares your entire workforce for this shift — ensuring AI becomes a natural extension of every professional's capability, from foundational skills to advanced agentic automation.</p>
+      <div class="aipa-step-meta">
+        <span class="aipa-step-badge">⏱ 5 Months · 12 Sessions</span>
+        <span class="aipa-step-badge">📚 36h Program · 16h Commitment</span>
+        <span class="aipa-step-badge">📈 12%–35% Productivity Gain</span>
+      </div>
+      <div style="font-size:13px;font-weight:800;color:#1a1a1a;margin:0 0 12px;text-transform:uppercase;letter-spacing:0.8px">Three Phase Curriculum — Progressive Mastery</div>
+      <div class="prog-phase-grid">
+        <div class="prog-phase-card">
+          <div class="prog-phase-num">Cohort 1 · Sessions 1–4</div>
+          <div class="prog-phase-title">Foundations &amp; Proficiency</div>
+          ${["Understanding AI &amp; its landscape","Core AI tools and platforms","Building AI proficiency at work","Implementing AI in daily tasks"].map(w=>`<div class="prog-phase-item">${w}</div>`).join('')}
+        </div>
+        <div class="prog-phase-card">
+          <div class="prog-phase-num">Cohort 2 · Sessions 5–8</div>
+          <div class="prog-phase-title">Work Function Automation</div>
+          ${["Work function AI automation","No-code &amp; AI app building","Impactful AI applications","Data &amp; insight visualization"].map(w=>`<div class="prog-phase-item">${w}</div>`).join('')}
+        </div>
+        <div class="prog-phase-card">
+          <div class="prog-phase-num">Cohort 3 · Sessions 9–12</div>
+          <div class="prog-phase-title">Advanced AI Practice</div>
+          ${["Organizational roadmap creation","Agentic AI &amp; automated routines","Workflow AI integration","Enterprise AI deployment"].map(w=>`<div class="prog-phase-item">${w}</div>`).join('')}
+        </div>
+      </div>
+      <div style="font-size:13px;font-weight:800;color:#1a1a1a;margin:4px 0 12px;text-transform:uppercase;letter-spacing:0.8px">Three Levels of AI Adoption · Three Levels of Gain</div>
+      <div class="prog-impact">
+        <div class="prog-impact-card l1">
+          <div class="prog-impact-val">+12%</div>
+          <div class="prog-impact-label">Personal Productivity</div>
+          <div class="prog-impact-type">Level 01 · Applying AI to existing workflows</div>
+          <div style="margin-top:10px;font-size:11px;color:#aaa">No tool cost · Immediate impact</div>
+        </div>
+        <div class="prog-impact-card l2">
+          <div class="prog-impact-val">+20%</div>
+          <div class="prog-impact-label">Tool Integration</div>
+          <div class="prog-impact-type">Level 02 · Automating with 6–10 tools</div>
+          <div style="margin-top:10px;font-size:11px;color:#7a8bcc">5 months investment</div>
+        </div>
+        <div class="prog-impact-card l3">
+          <div class="prog-impact-val">+35%</div>
+          <div class="prog-impact-label">AI Transformation</div>
+          <div class="prog-impact-type">Level 03 · Agentic workflows &amp; workspace</div>
+          <div style="margin-top:10px;font-size:11px;color:rgba(255,255,255,0.3)">3.5× ROI · Full transformation</div>
+        </div>
+      </div>
+      <div style="padding:18px;background:#f9f9f9;border:1px solid #ededed;border-radius:12px">
+        <div style="font-size:12px;font-weight:700;color:#1a1a1a;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.8px">Expected Outcomes</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          ${["20% Productivity Boost","85% Positive Career Impact","40% Org-Wide Efficiency","Workshop-Style Functional Learning","Learn-By-Doing Approach","Adapted to Executive Schedules"].map(t=>`<span class="chip">${t}</span>`).join('')}
+        </div>
+      </div>
+    </div>
+
+    <!-- PROGRAM 03 -->
+    <div class="aipa-step">
+      <div class="aipa-step-num">03</div>
+      <div class="aipa-step-tag">Program Three · AITA</div>
+      <div class="aipa-step-title">AI Transformation Accelerator</div>
+      <div class="aipa-step-sub">Goal-Based Transformation Sprint · For Organizational Goals</div>
+      <p class="aipa-step-desc">A goal-based transformation sprint. <strong>One goal per month. Up to 8 goals per year, per organization.</strong> Four expert teams converge to execute real organizational transformation — combining consulting, product co-building, and technology deployment into one seamless sprint.</p>
+      <div class="aipa-step-meta">
+        <span class="aipa-step-badge">⏱ 1 Month / Goal</span>
+        <span class="aipa-step-badge">🎯 Up to 8 Goals / Year</span>
+        <span class="aipa-step-badge">📋 Prerequisite: AIPA Completion</span>
+      </div>
+      <div class="prog-sub-cards">
+        <div class="prog-sub-card">
+          <div class="prog-sub-card-num">A</div>
+          <div class="prog-sub-title">Facilitation Team</div>
+          <div class="prog-sub-desc">Program design, learning architecture, and cohort coordination.</div>
+        </div>
+        <div class="prog-sub-card">
+          <div class="prog-sub-card-num">B</div>
+          <div class="prog-sub-title">Product Team</div>
+          <div class="prog-sub-desc">Co-building AI products and tools directly for your organization's workflows.</div>
+        </div>
+        <div class="prog-sub-card">
+          <div class="prog-sub-card-num">C</div>
+          <div class="prog-sub-title">Technology Dev</div>
+          <div class="prog-sub-desc">System integration, automation pipelines, and deployment at scale.</div>
+        </div>
+        <div class="prog-sub-card">
+          <div class="prog-sub-card-num">D</div>
+          <div class="prog-sub-title">Vendor Partners</div>
+          <div class="prog-sub-desc">Specialist ecosystem partners providing deep capability and tooling.</div>
+        </div>
+      </div>
+      <div style="margin-top:18px;padding:14px 18px;background:#f9f9f9;border:1px solid #ededed;border-radius:10px;font-size:13px;color:#666;line-height:1.65">
+        <strong style="color:#1a1a1a">Format:</strong> 1 in-person + 1 online session per week. Workshop, bootcamp, and consulting combined.
+      </div>
+    </div>
+
+    <!-- PROGRAM 04: TECHNICAL BOOTCAMP -->
+    <div class="aipa-step" style="background:#1a1a1a;border-color:#111">
+      <div class="aipa-step-num" style="color:rgba(255,255,255,0.06)">04</div>
+      <div class="aipa-step-tag" style="color:rgba(255,255,255,0.4)">Technical Extension · On Request</div>
+      <div class="aipa-step-title" style="color:#fff">Technical Product Bootcamp</div>
+      <div class="aipa-step-sub" style="color:rgba(255,255,255,0.5)">For IT &amp; Engineering Teams · Add-On, Customized to Your Stack</div>
+      <p class="aipa-step-desc" style="color:rgba(255,255,255,0.6)">Sessions facilitated by BuildNation's technology facilitators and partners — bringing deep technical expertise. IT &amp; Engineering team engagement is mandatory for all Bootcamp sessions.</p>
+      <div class="prog-sub-cards">
+        <div class="prog-sub-card" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1)">
+          <div class="prog-sub-card-num" style="background:rgba(255,255,255,0.15);color:#fff">1</div>
+          <div class="prog-sub-title" style="color:#fff">Private AI Workspace</div>
+          <div class="prog-sub-desc" style="color:rgba(255,255,255,0.5)">Deploy a secure, organization-owned AI workspace — tailored to your data, policies, and team structure.</div>
+        </div>
+        <div class="prog-sub-card" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1)">
+          <div class="prog-sub-card-num" style="background:rgba(255,255,255,0.15);color:#fff">2</div>
+          <div class="prog-sub-title" style="color:#fff">Agentic AI Workflow Building</div>
+          <div class="prog-sub-desc" style="color:rgba(255,255,255,0.5)">Design and deploy autonomous AI agents and multi-step workflow automations specific to your business processes.</div>
+        </div>
+        <div class="prog-sub-card" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1)">
+          <div class="prog-sub-card-num" style="background:rgba(255,255,255,0.15);color:#fff">3</div>
+          <div class="prog-sub-title" style="color:#fff">Enterprise AI Building</div>
+          <div class="prog-sub-desc" style="color:rgba(255,255,255,0.5)">Build internal AI-powered applications that serve the organization — from dashboards to intelligent process tools.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY BUILDNATION -->
+    <div class="sub-label"><h3>Why BuildNation — Built for Organizations. Proven in Practice.</h3><div class="sub-label-line"></div></div>
     <div class="diff-grid">${diff}</div>
+
+    <!-- PROGRAM LEADERSHIP -->
+    <div class="sub-label"><h3>Program Leadership</h3><div class="sub-label-line"></div></div>
+    <div class="prog-team-grid">
+      <div class="prog-team-card">
+        <div class="prog-team-avatar">MA</div>
+        <div class="prog-team-name">Mahtab Uddin Ahmed</div>
+        <div class="prog-team-role">Founder &amp; Strategy Lead<br>Industry veteran and respected leader in finance &amp; strategy</div>
+      </div>
+      <div class="prog-team-card">
+        <div class="prog-team-avatar">SM</div>
+        <div class="prog-team-name">Sania Mahmood</div>
+        <div class="prog-team-role">CEO &amp; Program Advisor<br>Expert in organizational transformation</div>
+      </div>
+      <div class="prog-team-card">
+        <div class="prog-team-avatar">HB</div>
+        <div class="prog-team-name">Hadi Bhuiyan</div>
+        <div class="prog-team-role">Co-Founder &amp; Program Director<br>18+ years in telecom and edtech leadership</div>
+      </div>
+      <div class="prog-team-card">
+        <div class="prog-team-avatar">MC</div>
+        <div class="prog-team-name">Munaf Mojib Chowdhury</div>
+        <div class="prog-team-role">Founder, CoNexus AI<br>Branding strategist with deep tech expertise</div>
+      </div>
+    </div>
+
+    <!-- COHORT SUCCESS -->
+    <div class="sub-label"><h3>Successful Cohorts</h3><div class="sub-label-line"></div></div>
+    <div class="prog-cohort-grid">
+      <div class="prog-cohort-card">
+        <div class="prog-cohort-name">Ispahani Tea Limited</div>
+        <div class="prog-cohort-desc">Successful completion of AIPA training program for the management leadership team in Dhaka. Led by Hadi Bhuiyan and Munaf Chowdhury — providing practical and strategic insights into AI-driven decision-making.</div>
+        <p class="prog-cohort-quote">"Bridging the gap between theory and practice."</p>
+      </div>
+      <div class="prog-cohort-card">
+        <div class="prog-cohort-name">Beximco Pharmaceuticals PLC</div>
+        <div class="prog-cohort-desc">Completion of six sessions of the AIPA Program for senior leadership. Focused on senior management gaining strategic insights for AI-driven transformation across procurement, regulatory, and finance teams.</div>
+        <p class="prog-cohort-quote">"Empowering organizations with future-ready capabilities."</p>
+      </div>
+      <div class="prog-cohort-card">
+        <div class="prog-cohort-name">RahimAfrooz · Dhaka Bank · Nitol Niloy · Bahon</div>
+        <div class="prog-cohort-desc">Successful AI-PA Demo Sessions for senior management. Showcased practical AI-driven decision-making and real-world business applications across diverse industries.</div>
+        <p class="prog-cohort-quote">"Cultivating future-ready leadership."</p>
+      </div>
+    </div>
+
+    <!-- TRUSTED ORGANIZATIONS -->
     <div class="sub-label"><h3>Trusted by Leading Organizations</h3><div class="sub-label-line"></div></div>
     <div class="card">
-      <p style="font-size:13px;color:#666;margin-bottom:12px;line-height:1.6">Over 200+ senior leaders and executives across HR, IT, procurement, supply chain, sales, finance, administration, and strategy have transformed the way they work by integrating AI into both their enterprise responsibilities and personal productivity.</p>
-      <div style="margin-bottom:16px">${["Ispahani Tea","Beximco Pharmaceuticals","Nuvista Pharma","Japan Solar","Dhaka Bank","Nitol Niloy","Bahon","RahimAfrooz"].map(t=>`<span class="trusted-pill">${t}</span>`).join('')}</div>
-      <div style="padding-top:14px;border-top:1px solid #e8e8e8;display:flex;gap:9px">
-        <a href="https://buildnation.com.bd/aipa/" target="_blank" class="btn-dark">Learn More →</a>
-        <a href="mailto:mahadib@buildnation.com.bd" class="btn-light">Request Info</a>
+      <p style="font-size:14px;color:#666;margin-bottom:18px;line-height:1.8">Over 200+ senior leaders and executives across HR, IT, procurement, supply chain, sales, finance, administration, and strategy have transformed the way they work by integrating AI into both their enterprise responsibilities and personal productivity.</p>
+      <div style="margin-bottom:18px">${["Ispahani Tea","Beximco Pharmaceuticals","Nuvista Pharma","Japan Solar","Dhaka Bank","Nitol Niloy","Bahon","RahimAfrooz"].map(t=>`<span class="trusted-pill">${t}</span>`).join('')}</div>
+    </div>
+
+    <!-- GLOBAL PARTNERSHIPS -->
+    <div class="sub-label"><h3>Global Collaborations &amp; Education Pathways</h3><div class="sub-label-line"></div></div>
+    <div class="prog-partner-grid">
+      <div class="prog-partner-card">
+        <div class="prog-partner-name">ACCA Partnership</div>
+        <div class="prog-partner-desc">ACCA-approved courses for globally respected qualifications in accounting and finance. Highly sought after by employers in 180+ countries worldwide.</div>
+      </div>
+      <div class="prog-partner-card">
+        <div class="prog-partner-name">CIMA Partnership</div>
+        <div class="prog-partner-desc">Pathways to the prestigious CGMA designation. Opens global career opportunities in management accounting and leadership roles.</div>
+      </div>
+      <div class="prog-partner-card">
+        <div class="prog-partner-name">TAFE WA</div>
+        <div class="prog-partner-desc">Certificate IV in IT — Networking &amp; Programming. Practical skills providing direct pathways to Australian universities.</div>
       </div>
     </div>
-    <div class="sub-label"><h3>From LinkedIn · #dig8framework</h3><div class="sub-label-line"></div></div>
-    <div class="dig8-feed-banner">
-      <div class="dig8-feed-left">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        Posts tagged <strong>#dig8framework</strong> by Hadi Bhuiyan
+
+    <!-- CTA -->
+    <div class="card" style="background:#1a1a1a;border-color:#111;color:#fff;padding:32px">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.35);margin-bottom:14px">Ready to Begin?</div>
+      <div style="font-size:26px;font-weight:900;letter-spacing:-0.8px;color:#fff;margin-bottom:12px">Start your AI<br>transformation journey</div>
+      <p style="font-size:14px;color:rgba(255,255,255,0.55);margin-bottom:24px;line-height:1.8">Led by program directors with multi-decade industry experience. Follow BuildNation on LinkedIn for all AIPA program details and upcoming cohorts.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:9px">
+        <a href="https://buildnation.com.bd/aipa/" target="_blank" style="font-size:13px;background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:9px;padding:10px 18px;font-weight:700;font-family:'Nunito',sans-serif;display:inline-block">View Program →</a>
+        <a href="mailto:mahadib@buildnation.com.bd" style="font-size:13px;background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:9px;padding:10px 18px;font-weight:700;font-family:'Nunito',sans-serif;display:inline-block">Request Info</a>
+        <a href="https://www.linkedin.com/company/buildnationbd/" target="_blank" style="font-size:13px;background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:9px;padding:10px 18px;font-weight:700;font-family:'Nunito',sans-serif;display:inline-block">Follow on LinkedIn →</a>
       </div>
-      <a href="https://www.linkedin.com/search/results/all/?keywords=%23dig8framework&origin=HASH_TAG_FROM_FEED" target="_blank" class="dig8-feed-btn">View all on LinkedIn ↗</a>
-    </div>
-    ${DIG8_POSTS.map(p=>`
-    <div class="li-post-card">
-      <div class="li-post-head">
-        <div class="li-post-avatar">HB</div>
-        <div class="li-post-meta">
-          <div class="li-post-name">Hadi Bhuiyan</div>
-          <div class="li-post-role">Co-Founder · CommEngine &amp; EasyDO.ai · AI-PA CPO · BuildNation</div>
-          <div class="li-post-date">📅 ${p.date}</div>
-        </div>
-        <span class="li-post-badge">${p.badge}</span>
-      </div>
-      <div class="li-post-body">
-        <div class="li-post-content">${p.content.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
-        <div class="li-post-hashtags">${p.hashtags.map(h=>`<span class="li-post-hashtag">${h}</span>`).join('')}</div>
-      </div>
-      <div class="li-post-sep"></div>
-      <div class="li-post-foot">
-        <div class="li-post-actions">
-          <span class="li-post-action">👍 ${p.likes}</span>
-          <span class="li-post-action">💬 ${p.comments}</span>
-          <span class="li-post-action">↗️ Share</span>
-        </div>
-        <a href="${p.url}" target="_blank" class="li-post-cta">View on LinkedIn →</a>
-      </div>
-    </div>`).join('')}`;
+    </div>`;
 }
 
 function pageEvents(){
