@@ -173,7 +173,31 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
   .prog-phase-grid{grid-template-columns:1fr}
   .aipa-step-num{font-size:70px;top:16px;right:16px}
   .aipa-step-title{font-size:22px}
+  .prog-menu{grid-template-columns:repeat(2,1fr)}
 }
+
+/* PROGRAM MENU */
+.prog-menu{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
+.prog-menu-card{border-radius:18px;padding:24px 20px;position:relative;overflow:hidden;border:1.5px solid transparent;cursor:default}
+.prog-menu-card-01{background:#eef3ff;border-color:#c8d8ff}
+.prog-menu-card-02{background:#ecfaf5;border-color:#b6ecd5}
+.prog-menu-card-03{background:#fff8ec;border-color:#fdddb0}
+.prog-menu-card-04{background:#f3effd;border-color:#d5c6f8}
+.prog-menu-accent{width:32px;height:4px;border-radius:3px;margin-bottom:14px}
+.prog-menu-card-01 .prog-menu-accent{background:#4a72d4}
+.prog-menu-card-02 .prog-menu-accent{background:#27a76a}
+.prog-menu-card-03 .prog-menu-accent{background:#e08a2a}
+.prog-menu-card-04 .prog-menu-accent{background:#7c4dca}
+.prog-menu-num{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#8aa0c8;margin-bottom:6px}
+.prog-menu-card-02 .prog-menu-num{color:#5cb88c}
+.prog-menu-card-03 .prog-menu-num{color:#c48836}
+.prog-menu-card-04 .prog-menu-num{color:#9b72d8}
+.prog-menu-code{font-size:24px;font-weight:900;letter-spacing:-0.5px;color:#0d2255;margin-bottom:4px;line-height:1}
+.prog-menu-name{font-size:12px;font-weight:700;color:#2a3f6a;margin-bottom:10px;line-height:1.4}
+.prog-menu-for{font-size:11px;color:#6b7fa0;font-weight:600;line-height:1.45}
+.prog-menu-card-02 .prog-menu-for{color:#3d8c63}
+.prog-menu-card-03 .prog-menu-for{color:#a0682a}
+.prog-menu-card-04 .prog-menu-for{color:#6840a8}
 
 /* EVENTS */
 .event-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-bottom:12px;transition:box-shadow .2s}
@@ -682,6 +706,38 @@ function pagePrograms(){
       <h3>A structured pathway from AI readiness to full organizational transformation</h3>
       <p>Built for leadership teams ready to lead the AI era. A comprehensive four-program curriculum covering strategy, proficiency, transformation, and technical deployment.</p>
       <div class="prog-stats">${PROGRAM_STATS.map(s=>`<div class="prog-stat"><div class="prog-stat-val">${s.val}</div><div class="prog-stat-lbl">${s.label}</div><div class="prog-stat-sub">${s.sub}</div></div>`).join('')}</div>
+    </div>
+
+    <!-- PROGRAM MENU -->
+    <div class="prog-menu">
+      <div class="prog-menu-card prog-menu-card-01">
+        <div class="prog-menu-accent"></div>
+        <div class="prog-menu-num">Program 01</div>
+        <div class="prog-menu-code">AISA</div>
+        <div class="prog-menu-name">AI Strategy Accelerator</div>
+        <div class="prog-menu-for">For CXOs &amp; Senior Leadership · 2 Days</div>
+      </div>
+      <div class="prog-menu-card prog-menu-card-02">
+        <div class="prog-menu-accent"></div>
+        <div class="prog-menu-num">Program 02</div>
+        <div class="prog-menu-code">AIPA</div>
+        <div class="prog-menu-name">AI Proficiency Accelerator</div>
+        <div class="prog-menu-for">For Entire Workforce · 5 Months</div>
+      </div>
+      <div class="prog-menu-card prog-menu-card-03">
+        <div class="prog-menu-accent"></div>
+        <div class="prog-menu-num">Program 03</div>
+        <div class="prog-menu-code">AITA</div>
+        <div class="prog-menu-name">AI Transformation Accelerator</div>
+        <div class="prog-menu-for">Goal-Based Sprint · 1 Month / Goal</div>
+      </div>
+      <div class="prog-menu-card prog-menu-card-04">
+        <div class="prog-menu-accent"></div>
+        <div class="prog-menu-num">Technical Add-On</div>
+        <div class="prog-menu-code" style="font-size:17px;letter-spacing:-0.3px">Product<br>Bootcamp</div>
+        <div class="prog-menu-name" style="margin-top:4px">Technical Product Bootcamp</div>
+        <div class="prog-menu-for">For IT &amp; Engineering Teams</div>
+      </div>
     </div>
 
     <!-- STEP-BY-STEP JOURNEY -->
