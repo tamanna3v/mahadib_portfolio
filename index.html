@@ -222,6 +222,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .flow-feat-pill.assess{background:#eef3ff;color:#3a5ec4;border:1px solid #c8d8ff}
 .flow-feat-pill.submit{background:#ecfaf5;color:#1d8c58;border:1px solid #b6ecd5}
 
+/* FLOW POWER FEATURES */
+.flow-power-section{margin-top:16px;padding:32px;background:#0d1a2e;border-radius:20px}
+.flow-power-tag{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:6px}
+.flow-power-title{font-size:22px;font-weight:900;color:#fff;letter-spacing:-0.5px;margin-bottom:4px}
+.flow-power-sub{font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:24px}
+.flow-power-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.flow-power-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:18px 16px}
+.flow-power-card.highlight{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.22)}
+.flow-power-icon{font-size:22px;margin-bottom:10px}
+.flow-power-name{font-weight:800;font-size:14px;color:#fff;margin-bottom:6px}
+.flow-power-desc{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:10px}
+.flow-power-pills{display:flex;flex-wrap:wrap;gap:5px}
+.flow-power-pill{font-size:11px;font-weight:700;border-radius:6px;padding:3px 9px;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);border:1px solid rgba(255,255,255,0.15)}
+.flow-power-pill.ai{background:rgba(100,160,255,0.15);color:#a8c8ff;border-color:rgba(100,160,255,0.25)}
+@media(max-width:600px){.flow-power-grid{grid-template-columns:1fr}}
+
 /* EVENTS */
 .event-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-bottom:12px;transition:box-shadow .2s}
 .event-card:hover{box-shadow:0 2px 14px rgba(0,0,0,0.06)}
@@ -825,6 +841,49 @@ function pageProducts(){
           <div class="flow-feat-icon">🔗</div>
           <div class="flow-feat-name">Integrations</div>
           <div class="flow-feat-desc">Connect with existing tools and LMS platforms for a seamless workflow experience.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EASYDO FLOW: BUILT-IN POWER FEATURES -->
+    <div class="flow-power-section">
+      <div class="flow-power-tag">🌊 EasyDO Flow</div>
+      <div class="flow-power-title">Built-in Power Features</div>
+      <p class="flow-power-sub">Advanced capabilities to make every guided journey smarter, faster, and more impactful.</p>
+      <div class="flow-power-grid">
+        <div class="flow-power-card">
+          <div class="flow-power-icon">🤖</div>
+          <div class="flow-power-name">AI Journey Recommendations</div>
+          <div class="flow-power-desc">Automatically suggest next steps and content based on each participant's progress and behaviour.</div>
+        </div>
+        <div class="flow-power-card highlight">
+          <div class="flow-power-icon">🧠</div>
+          <div class="flow-power-name">Smart Assessment &amp; Profiling</div>
+          <div class="flow-power-desc">Evaluate participants intelligently and build rich profiles from every interaction. Anybody can instantly generate an AI summary of each participant's performance and profile — no technical expertise needed.</div>
+          <div class="flow-power-pills">
+            <span class="flow-power-pill ai">AI Summarize Performance</span>
+            <span class="flow-power-pill ai">AI Summarize Profile</span>
+          </div>
+        </div>
+        <div class="flow-power-card">
+          <div class="flow-power-icon">🔔</div>
+          <div class="flow-power-name">Automated Notifications</div>
+          <div class="flow-power-desc">Send timely reminders, milestone alerts, and follow-ups automatically throughout the journey.</div>
+        </div>
+        <div class="flow-power-card">
+          <div class="flow-power-icon">🛤️</div>
+          <div class="flow-power-name">Personalized Learning Paths</div>
+          <div class="flow-power-desc">Adapt journey content and flow dynamically to each participant's role, level, and goals.</div>
+        </div>
+        <div class="flow-power-card">
+          <div class="flow-power-icon">🎨</div>
+          <div class="flow-power-name">White-label &amp; Branding</div>
+          <div class="flow-power-desc">Fully customize the experience with your organization's logo, colors, and domain.</div>
+        </div>
+        <div class="flow-power-card">
+          <div class="flow-power-icon">🔒</div>
+          <div class="flow-power-name">Secure &amp; Compliant</div>
+          <div class="flow-power-desc">Enterprise-grade data security with role-based access control and compliance-ready infrastructure.</div>
         </div>
       </div>
     </div>`;
