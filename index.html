@@ -170,6 +170,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .prog-partner-name{font-weight:900;font-size:15px;color:#1a1a1a;margin-bottom:7px}
 .prog-partner-desc{font-size:12px;color:#666;line-height:1.65}
 @media(max-width:600px){
+  .flow-feat-grid{grid-template-columns:1fr}
   .prog-result-grid{grid-template-columns:1fr}
   .prog-hero-title{font-size:32px}
   .prog-impact{grid-template-columns:1fr}
@@ -201,6 +202,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .prog-menu-card-02 .prog-menu-for{color:#3d8c63}
 .prog-menu-card-03 .prog-menu-for{color:#a0682a}
 .prog-menu-card-04 .prog-menu-for{color:#6840a8}
+
+/* FLOW CORE FEATURES */
+.flow-features-section{margin-top:36px;padding:32px;background:#f9fbff;border:1.5px solid #dce8ff;border-radius:20px}
+.flow-features-header{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.flow-features-tag{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#4a72d4;background:#eef3ff;border-radius:6px;padding:3px 10px}
+.flow-features-title{font-size:22px;font-weight:900;color:#0d1a2e;letter-spacing:-0.5px;margin-bottom:4px}
+.flow-features-sub{font-size:13px;color:#666;margin-bottom:24px}
+.flow-feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.flow-feat-card{background:#fff;border:1px solid #e0eaff;border-radius:14px;padding:18px 16px}
+.flow-feat-card.highlight{background:#0d1a2e;border-color:#0d1a2e}
+.flow-feat-icon{font-size:22px;margin-bottom:10px}
+.flow-feat-name{font-weight:800;font-size:14px;color:#1a1a1a;margin-bottom:6px}
+.flow-feat-card.highlight .flow-feat-name{color:#fff}
+.flow-feat-desc{font-size:12px;color:#666;line-height:1.6;margin-bottom:10px}
+.flow-feat-card.highlight .flow-feat-desc{color:rgba(255,255,255,0.5)}
+.flow-feat-pills{display:flex;flex-wrap:wrap;gap:5px}
+.flow-feat-pill{font-size:11px;font-weight:700;border-radius:6px;padding:3px 9px}
+.flow-feat-pill.assess{background:#eef3ff;color:#3a5ec4;border:1px solid #c8d8ff}
+.flow-feat-pill.submit{background:#ecfaf5;color:#1d8c58;border:1px solid #b6ecd5}
 
 /* EVENTS */
 .event-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;overflow:hidden;margin-bottom:12px;transition:box-shadow .2s}
@@ -758,7 +778,56 @@ function pageProducts(){
   return `
     <h2 class="section-title">Products</h2>
     <p class="section-sub">Ventures built at the intersection of AI, SaaS & Digital Transformation</p>
-    <div class="product-grid">${cards}</div>`;
+    <div class="product-grid">${cards}</div>
+
+    <!-- EASYDO FLOW: CORE PLATFORM FEATURES -->
+    <div class="flow-features-section">
+      <div class="flow-features-header">
+        <span class="flow-features-tag">🌊 EasyDO Flow</span>
+      </div>
+      <div class="flow-features-title">Core Platform Features</div>
+      <p class="flow-features-sub">Everything you need to turn training, presentations, recruitment & assessments into an AI guided journey.</p>
+      <div class="flow-feat-grid">
+        <div class="flow-feat-card">
+          <div class="flow-feat-icon">🗺️</div>
+          <div class="flow-feat-name">Journey Builder</div>
+          <div class="flow-feat-desc">Drag-and-drop interface to design step-by-step guided journeys for any use case.</div>
+        </div>
+        <div class="flow-feat-card">
+          <div class="flow-feat-icon">📚</div>
+          <div class="flow-feat-name">Content Management</div>
+          <div class="flow-feat-desc">Centralized library to upload, organize, and publish training materials and presentations.</div>
+        </div>
+        <div class="flow-feat-card highlight">
+          <div class="flow-feat-icon">📝</div>
+          <div class="flow-feat-name">Assessment &amp; Submission</div>
+          <div class="flow-feat-desc">Comprehensive tools to evaluate learners and collect work — all in one place.</div>
+          <div class="flow-feat-pills">
+            <span class="flow-feat-pill assess">Quiz</span>
+            <span class="flow-feat-pill assess">MCQ</span>
+            <span class="flow-feat-pill assess">Paragraph Answer</span>
+            <span class="flow-feat-pill assess">Poll</span>
+            <span class="flow-feat-pill submit">File Upload</span>
+            <span class="flow-feat-pill submit">File Download</span>
+          </div>
+        </div>
+        <div class="flow-feat-card">
+          <div class="flow-feat-icon">📊</div>
+          <div class="flow-feat-name">Analytics &amp; Reports</div>
+          <div class="flow-feat-desc">Track engagement, completion rates, and assessment scores with real-time dashboards.</div>
+        </div>
+        <div class="flow-feat-card">
+          <div class="flow-feat-icon">👥</div>
+          <div class="flow-feat-name">User Management</div>
+          <div class="flow-feat-desc">Manage participants, assign roles, and control access across teams and cohorts.</div>
+        </div>
+        <div class="flow-feat-card">
+          <div class="flow-feat-icon">🔗</div>
+          <div class="flow-feat-name">Integrations</div>
+          <div class="flow-feat-desc">Connect with existing tools and LMS platforms for a seamless workflow experience.</div>
+        </div>
+      </div>
+    </div>`;
 }
 
 function pagePrograms(){
