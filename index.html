@@ -11,15 +11,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Nunito',sans-serif;background:#fafafa;color:#1a1a1a;min-height:100vh}
+body{font-family:'Nunito',sans-serif;background:#fafafa;color:#1a1a1a;min-height:100vh;font-size:16px}
 a{text-decoration:none;color:inherit}
 button{font-family:'Nunito',sans-serif;cursor:pointer}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.95);backdrop-filter:blur(12px);border-bottom:1px solid #e8e8e8;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:52px;gap:8px}
-.nav-brand{font-weight:900;font-size:15px;letter-spacing:-0.5px;background:none;border:none;color:#1a1a1a;padding:0}
+.nav-brand{font-weight:900;font-size:16px;letter-spacing:-0.5px;background:none;border:none;color:#1a1a1a;padding:0}
 .nav-tabs{display:flex;flex-wrap:wrap;gap:2px}
-.nav-btn{background:transparent;color:#666;border:none;border-radius:20px;padding:5px 12px;font-size:12px;font-weight:700;transition:all .2s}
+.nav-btn{background:transparent;color:#666;border:none;border-radius:20px;padding:5px 13px;font-size:13px;font-weight:700;transition:all .2s}
 .nav-btn.active{background:#1a1a1a;color:#fff}
 
 /* PAGE */
@@ -27,68 +27,68 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .page.active{display:block}
 
 /* SECTION TITLE */
-.section-title{font-size:28px;font-weight:900;margin:0 0 6px;letter-spacing:-0.5px;color:#1a1a1a}
-.section-sub{font-size:16px;color:#666;margin:0 0 28px;font-weight:500}
-.sub-label{display:flex;align-items:center;gap:10px;margin:30px 0 16px}
-.sub-label h3{font-size:17px;font-weight:800;margin:0;color:#1a1a1a;white-space:nowrap}
+.section-title{font-size:36px;font-weight:900;margin:0 0 8px;letter-spacing:-1px;color:#1a1a1a}
+.section-sub{font-size:18px;color:#666;margin:0 0 30px;font-weight:500}
+.sub-label{display:flex;align-items:center;gap:10px;margin:34px 0 18px}
+.sub-label h3{font-size:19px;font-weight:800;margin:0;color:#1a1a1a;white-space:nowrap}
 .sub-label-line{flex:1;height:1px;background:#e8e8e8}
-.lbl{font-size:12px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.lbl{font-size:13px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
 
 /* CARDS */
-.card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:18px 20px;transition:box-shadow .2s}
+.card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:20px 22px;transition:box-shadow .2s}
 .card:hover{box-shadow:0 2px 14px rgba(0,0,0,0.06)}
-.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:8px}
-.stat-box{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:14px 10px;text-align:center}
-.stat-val{font-size:24px;font-weight:900;letter-spacing:-1px;color:#1a1a1a}
-.stat-lbl{font-size:12px;color:#666;margin-top:3px;font-weight:600}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:10px}
+.stat-box{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:16px 12px;text-align:center}
+.stat-val{font-size:28px;font-weight:900;letter-spacing:-1px;color:#1a1a1a}
+.stat-lbl{font-size:13px;color:#666;margin-top:4px;font-weight:600}
 
 /* CHIP */
-.chip{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:5px;padding:2px 9px;font-size:12px;font-weight:600;color:#666;display:inline-block}
+.chip{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:6px;padding:3px 10px;font-size:13px;font-weight:600;color:#666;display:inline-block}
 .chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
 
 /* EXP CARD */
-.exp-card{border:1px solid #e8e8e8;border-radius:12px;background:#fff;overflow:hidden;margin-bottom:8px;transition:box-shadow .2s}
+.exp-card{border:1px solid #e8e8e8;border-radius:14px;background:#fff;overflow:hidden;margin-bottom:10px;transition:box-shadow .2s}
 .exp-card:hover{box-shadow:0 2px 14px rgba(0,0,0,0.06)}
-.exp-header{width:100%;background:none;border:none;padding:15px 18px;cursor:pointer;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:10px}
-.exp-role{font-weight:800;font-size:16px;color:#1a1a1a;margin-bottom:2px}
-.exp-org{font-size:14px;color:#666;margin-bottom:6px}
-.exp-period{font-size:13px;color:#666;font-weight:600;white-space:nowrap}
+.exp-header{width:100%;background:none;border:none;padding:18px 20px;cursor:pointer;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.exp-role{font-weight:800;font-size:18px;color:#1a1a1a;margin-bottom:3px}
+.exp-org{font-size:15px;color:#666;margin-bottom:7px}
+.exp-period{font-size:14px;color:#666;font-weight:600;white-space:nowrap}
 .exp-arrow{font-size:14px;color:#aaa;transition:transform .2s;display:block}
 .exp-arrow.open{transform:rotate(180deg)}
-.exp-body{padding:0 18px 15px;border-top:1px solid #e8e8e8;display:none}
+.exp-body{padding:0 20px 16px;border-top:1px solid #e8e8e8;display:none}
 .exp-body.open{display:block}
 .exp-body ul{margin:12px 0 0;padding-left:18px}
-.exp-body li{font-size:15px;color:#666;line-height:1.7;margin-bottom:5px}
-.exp-link{display:inline-block;margin-top:8px;font-size:13px;color:#666;font-weight:700;text-decoration:underline}
+.exp-body li{font-size:16px;color:#555;line-height:1.75;margin-bottom:6px}
+.exp-link{display:inline-block;margin-top:8px;font-size:14px;color:#666;font-weight:700;text-decoration:underline}
 
 /* PRODUCT GRID */
-.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
-.product-card{background:#fff;border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s}
-.product-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.07)}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.product-card{background:#fff;border:1px solid #e8e8e8;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s}
+.product-card:hover{box-shadow:0 6px 24px rgba(0,0,0,0.09)}
 .product-preview{display:block;overflow:hidden;border-bottom:1px solid #e8e8e8;position:relative}
-.product-preview img{width:100%;height:170px;object-fit:cover;object-position:top;display:block;transition:transform .35s}
+.product-preview img{width:100%;height:185px;object-fit:cover;object-position:top;display:block;transition:transform .35s}
 .product-preview:hover img{transform:scale(1.04)}
-.preview-badge{position:absolute;top:9px;right:9px;background:rgba(0,0,0,0.55);color:#fff;font-size:12px;font-weight:700;border-radius:6px;padding:3px 9px;backdrop-filter:blur(4px)}
-.product-body{padding:16px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
-.product-emoji{font-size:22px;margin-bottom:3px}
-.product-name{font-weight:900;font-size:17px;color:#1a1a1a}
-.product-tag{font-size:13px;color:#666;font-weight:600}
-.product-desc{font-size:14px;color:#666;line-height:1.75;margin:0}
-.product-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:auto}
-.pstat{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:8px;padding:7px 5px;text-align:center}
-.pstat-val{font-size:14px;font-weight:800;color:#1a1a1a}
-.pstat-lbl{font-size:11px;color:#666;font-weight:600}
+.preview-badge{position:absolute;top:9px;right:9px;background:rgba(0,0,0,0.55);color:#fff;font-size:13px;font-weight:700;border-radius:6px;padding:4px 10px;backdrop-filter:blur(4px)}
+.product-body{padding:20px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.product-emoji{font-size:26px;margin-bottom:3px}
+.product-name{font-weight:900;font-size:20px;color:#1a1a1a}
+.product-tag{font-size:14px;color:#666;font-weight:600}
+.product-desc{font-size:15px;color:#555;line-height:1.8;margin:0}
+.product-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:auto}
+.pstat{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:10px;padding:9px 6px;text-align:center}
+.pstat-val{font-size:15px;font-weight:800;color:#1a1a1a}
+.pstat-lbl{font-size:12px;color:#666;font-weight:600}
 
 /* PROGRAM BANNER */
-.prog-banner{background:#1a1a1a;border-radius:16px;padding:26px;margin-bottom:24px;color:#fff}
-.prog-banner-tag{display:inline-block;background:rgba(255,255,255,0.1);border-radius:8px;padding:3px 10px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;color:rgba(255,255,255,0.55)}
-.prog-banner h3{font-size:22px;font-weight:900;margin:0 0 8px;letter-spacing:-0.5px}
-.prog-banner p{font-size:13px;color:rgba(255,255,255,0.6);margin:0 0 20px;line-height:1.6}
+.prog-banner{background:#1a1a1a;border-radius:18px;padding:30px;margin-bottom:26px;color:#fff}
+.prog-banner-tag{display:inline-block;background:rgba(255,255,255,0.1);border-radius:8px;padding:4px 11px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;color:rgba(255,255,255,0.55)}
+.prog-banner h3{font-size:26px;font-weight:900;margin:0 0 10px;letter-spacing:-0.5px}
+.prog-banner p{font-size:15px;color:rgba(255,255,255,0.6);margin:0 0 22px;line-height:1.7}
 .prog-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.prog-stat{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 8px;text-align:center}
-.prog-stat-val{font-size:22px;font-weight:900;color:#fff}
-.prog-stat-lbl{font-size:10px;font-weight:700;color:rgba(255,255,255,0.7);margin-top:3px}
-.prog-stat-sub{font-size:9px;color:rgba(255,255,255,0.4);margin-top:2px;line-height:1.3}
+.prog-stat{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:14px 8px;text-align:center}
+.prog-stat-val{font-size:26px;font-weight:900;color:#fff}
+.prog-stat-lbl{font-size:11px;font-weight:700;color:rgba(255,255,255,0.7);margin-top:4px}
+.prog-stat-sub{font-size:10px;color:rgba(255,255,255,0.4);margin-top:2px;line-height:1.3}
 
 /* FORMAT CARDS */
 .format-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:12px}
@@ -113,44 +113,44 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .diff-d{font-size:11px;color:#666;line-height:1.5}
 
 /* PROGRAM PAGE REDESIGN */
-.prog-hero{background:#1a1a1a;border-radius:20px;padding:44px 36px;margin-bottom:28px;color:#fff;position:relative;overflow:hidden}
+.prog-hero{background:#1a1a1a;border-radius:22px;padding:52px 42px;margin-bottom:32px;color:#fff;position:relative;overflow:hidden}
 .prog-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,0.03)}
-.prog-hero-tag{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px}
-.prog-hero-title{font-size:48px;font-weight:900;line-height:1.05;letter-spacing:-2px;margin-bottom:20px;color:#fff}
-.prog-hero-sub{font-size:15px;color:rgba(255,255,255,0.58);line-height:1.85;margin:0;max-width:600px}
+.prog-hero-tag{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:18px}
+.prog-hero-title{font-size:58px;font-weight:900;line-height:1.05;letter-spacing:-2.5px;margin-bottom:22px;color:#fff}
+.prog-hero-sub{font-size:17px;color:rgba(255,255,255,0.62);line-height:1.9;margin:0;max-width:620px}
 .prog-result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:14px}
 .prog-result-card{background:#fff;border:1px solid #e8e8e8;border-radius:16px;padding:26px;text-align:center}
-.prog-result-val{font-size:58px;font-weight:900;letter-spacing:-3px;color:#1a1a1a;line-height:1}
-.prog-result-label{font-size:14px;color:#333;font-weight:700;margin-top:8px}
-.prog-result-sub{font-size:12px;color:#999;margin-top:6px;line-height:1.5}
+.prog-result-val{font-size:68px;font-weight:900;letter-spacing:-3px;color:#1a1a1a;line-height:1}
+.prog-result-label{font-size:16px;color:#333;font-weight:700;margin-top:10px}
+.prog-result-sub{font-size:13px;color:#999;margin-top:7px;line-height:1.55}
 .aipa-step{background:#fff;border:1px solid #e8e8e8;border-radius:20px;padding:32px;margin-bottom:20px;overflow:hidden;position:relative}
 .aipa-step-num{font-size:110px;font-weight:900;color:#f2f2f2;line-height:0.85;letter-spacing:-4px;position:absolute;right:24px;top:24px;user-select:none;pointer-events:none}
 .aipa-step-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#999;margin-bottom:10px}
-.aipa-step-title{font-size:30px;font-weight:900;letter-spacing:-0.8px;color:#1a1a1a;margin-bottom:4px}
-.aipa-step-sub{font-size:15px;color:#666;margin-bottom:20px;font-weight:600}
-.aipa-step-desc{font-size:15px;color:#444;line-height:1.85;margin-bottom:22px;max-width:620px}
+.aipa-step-title{font-size:34px;font-weight:900;letter-spacing:-0.8px;color:#1a1a1a;margin-bottom:4px}
+.aipa-step-sub{font-size:17px;color:#666;margin-bottom:22px;font-weight:600}
+.aipa-step-desc{font-size:16px;color:#444;line-height:1.9;margin-bottom:24px;max-width:640px}
 .aipa-step-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
-.aipa-step-badge{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;color:#1a1a1a}
+.aipa-step-badge{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:8px;padding:8px 16px;font-size:14px;font-weight:700;color:#1a1a1a}
 .prog-sub-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-top:4px}
 .prog-sub-card{background:#f9f9f9;border:1px solid #ededed;border-radius:14px;padding:18px 16px}
 .prog-sub-card-num{background:#1a1a1a;color:#fff;border-radius:50%;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;margin-bottom:10px}
-.prog-sub-title{font-weight:800;font-size:14px;color:#1a1a1a;margin-bottom:5px}
-.prog-sub-desc{font-size:12px;color:#666;line-height:1.65}
+.prog-sub-title{font-weight:800;font-size:15px;color:#1a1a1a;margin-bottom:5px}
+.prog-sub-desc{font-size:13px;color:#666;line-height:1.65}
 .prog-phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:4px 0 20px}
 .prog-phase-card{background:#f9f9f9;border:1px solid #ededed;border-radius:14px;padding:18px 16px}
 .prog-phase-num{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:6px}
-.prog-phase-title{font-weight:900;font-size:14px;color:#1a1a1a;margin-bottom:10px}
-.prog-phase-item{font-size:12px;color:#666;line-height:1.65;padding-left:10px;border-left:2px solid #e0e0e0;margin-bottom:6px}
+.prog-phase-title{font-weight:900;font-size:15px;color:#1a1a1a;margin-bottom:10px}
+.prog-phase-item{font-size:13px;color:#666;line-height:1.65;padding-left:10px;border-left:2px solid #e0e0e0;margin-bottom:6px}
 .prog-impact{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:4px 0 20px}
 .prog-impact-card{border-radius:16px;padding:22px 16px;text-align:center}
 .prog-impact-card.l1{background:#f9f9f9;border:1px solid #e8e8e8}
 .prog-impact-card.l2{background:#eef3ff;border:1px solid #d0dcff}
 .prog-impact-card.l3{background:#1a1a1a;border:1px solid #1a1a1a}
-.prog-impact-val{font-size:40px;font-weight:900;letter-spacing:-2px;color:#1a1a1a;margin-bottom:4px;line-height:1}
+.prog-impact-val{font-size:46px;font-weight:900;letter-spacing:-2px;color:#1a1a1a;margin-bottom:4px;line-height:1}
 .prog-impact-card.l3 .prog-impact-val{color:#fff}
-.prog-impact-label{font-size:13px;font-weight:700;color:#444}
+.prog-impact-label{font-size:15px;font-weight:700;color:#444}
 .prog-impact-card.l3 .prog-impact-label{color:rgba(255,255,255,0.65)}
-.prog-impact-type{font-size:11px;color:#aaa;margin-top:5px;line-height:1.4}
+.prog-impact-type{font-size:12px;color:#aaa;margin-top:5px;line-height:1.4}
 .prog-impact-card.l3 .prog-impact-type{color:rgba(255,255,255,0.35)}
 .prog-team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:12px;margin-bottom:8px}
 .prog-team-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:22px 18px;text-align:center}
@@ -162,21 +162,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .prog-cohort-logo-wrap{width:56px;height:56px;border-radius:12px;border:1px solid #f0f0f0;background:#fafafa;display:flex;align-items:center;justify-content:center;margin-bottom:14px;overflow:hidden;flex-shrink:0}
 .prog-cohort-logo-wrap img{width:48px;height:48px;object-fit:contain}
 .prog-cohort-logo-initial{width:48px;height:48px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;color:#fff;letter-spacing:-1px}
-.prog-cohort-name{font-weight:900;font-size:15px;color:#1a1a1a;margin-bottom:9px}
-.prog-cohort-desc{font-size:13px;color:#666;line-height:1.7;margin-bottom:14px;flex:1}
-.prog-cohort-quote{font-style:italic;font-size:13px;color:#1a1a1a;font-weight:700;border-left:3px solid #1a1a1a;padding-left:12px;margin:0}
+.prog-cohort-name{font-weight:900;font-size:17px;color:#1a1a1a;margin-bottom:10px}
+.prog-cohort-desc{font-size:14px;color:#666;line-height:1.75;margin-bottom:14px;flex:1}
+.prog-cohort-quote{font-style:italic;font-size:14px;color:#1a1a1a;font-weight:700;border-left:3px solid #1a1a1a;padding-left:12px;margin:0}
 .prog-partner-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:8px}
 .prog-partner-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:20px}
-.prog-partner-name{font-weight:900;font-size:15px;color:#1a1a1a;margin-bottom:7px}
-.prog-partner-desc{font-size:12px;color:#666;line-height:1.65}
+.prog-partner-name{font-weight:900;font-size:16px;color:#1a1a1a;margin-bottom:7px}
+.prog-partner-desc{font-size:13px;color:#666;line-height:1.65}
 @media(max-width:600px){
   .prog-result-grid{grid-template-columns:1fr}
-  .prog-hero-title{font-size:32px}
+  .prog-hero-title{font-size:36px}
   .prog-impact{grid-template-columns:1fr}
   .prog-phase-grid{grid-template-columns:1fr}
   .aipa-step-num{font-size:70px;top:16px;right:16px}
-  .aipa-step-title{font-size:22px}
+  .aipa-step-title{font-size:24px}
   .prog-menu{grid-template-columns:repeat(2,1fr)}
+  .section-title{font-size:28px}
+  .section-sub{font-size:16px}
 }
 
 /* PROGRAM MENU */
@@ -211,9 +213,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .event-date{font-size:10px;color:#666}
 .event-type{background:#fff;border:1px solid #e8e8e8;border-radius:6px;padding:3px 9px;font-size:10px;font-weight:700;color:#666;white-space:nowrap}
 .event-body{padding:14px 18px}
-.event-title{font-weight:900;font-size:14px;color:#1a1a1a;margin-bottom:4px}
-.event-meta{font-size:11px;color:#666;font-weight:700;margin-bottom:9px}
-.event-desc{font-size:13px;color:#666;line-height:1.75;margin:0 0 10px}
+.event-title{font-weight:900;font-size:16px;color:#1a1a1a;margin-bottom:5px}
+.event-meta{font-size:12px;color:#666;font-weight:700;margin-bottom:10px}
+.event-desc{font-size:14px;color:#555;line-height:1.8;margin:0 0 10px}
 .event-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid #e8e8e8}
 .event-actions span{font-size:11px;color:#666;font-weight:600;cursor:pointer;margin-right:14px}
 .event-btn{font-size:11px;background:#1a1a1a;color:#fff;border-radius:7px;padding:6px 13px;font-weight:700;font-family:'Nunito',sans-serif}
@@ -222,42 +224,42 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .research-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:20px 22px;margin-bottom:14px;position:relative;transition:box-shadow .2s}
 .research-card:hover{box-shadow:0 2px 16px rgba(0,0,0,0.07)}
 .research-featured{position:absolute;top:16px;right:16px;background:#1a1a1a;color:#fff;font-size:9px;font-weight:800;border-radius:6px;padding:3px 8px;letter-spacing:0.5px;text-transform:uppercase}
-.research-title{font-weight:900;font-size:16px;color:#1a1a1a;margin-bottom:6px;line-height:1.3}
-.research-venue{font-size:12px;color:#666;font-weight:700;margin-bottom:6px;font-style:italic}
-.research-loc{font-size:12px;color:#666;margin-bottom:4px;font-weight:500}
-.research-abs{font-size:13px;color:#666;line-height:1.75;margin:12px 0 14px;padding-top:12px;border-top:1px solid #e8e8e8}
+.research-title{font-weight:900;font-size:18px;color:#1a1a1a;margin-bottom:7px;line-height:1.3}
+.research-venue{font-size:13px;color:#666;font-weight:700;margin-bottom:7px;font-style:italic}
+.research-loc{font-size:13px;color:#666;margin-bottom:5px;font-weight:500}
+.research-abs{font-size:14px;color:#555;line-height:1.8;margin:14px 0 15px;padding-top:14px;border-top:1px solid #e8e8e8}
 .ieee-btn{display:inline-flex;align-items:center;gap:5px;font-size:11px;background:#f5f5f5;border:1px solid #e8e8e8;color:#1a1a1a;border-radius:8px;padding:6px 13px;font-weight:700;font-family:'Nunito',sans-serif}
 
 /* WRITING GRID */
 .writing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
 .writing-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:10px;transition:box-shadow .2s}
 .writing-card:hover{box-shadow:0 2px 16px rgba(0,0,0,0.07)}
-.writing-title{font-weight:900;font-size:14px;color:#1a1a1a;line-height:1.3}
-.writing-venue{font-size:12px;color:#666;font-weight:700;font-style:italic}
-.writing-abs{font-size:12px;color:#666;line-height:1.7;margin:0}
-.writing-link{font-size:11px;color:#666;font-weight:700;text-decoration:underline;margin-top:auto}
+.writing-title{font-weight:900;font-size:16px;color:#1a1a1a;line-height:1.3}
+.writing-venue{font-size:13px;color:#666;font-weight:700;font-style:italic}
+.writing-abs{font-size:13px;color:#555;line-height:1.75;margin:0}
+.writing-link{font-size:12px;color:#666;font-weight:700;text-decoration:underline;margin-top:auto}
 
 /* RECOGNITION */
-.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-.feat-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:18px}
-.feat-type{font-size:10px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px}
-.feat-title{font-weight:800;font-size:14px;color:#1a1a1a;margin-bottom:6px}
-.feat-detail{font-size:12px;color:#666;line-height:1.6;margin:0 0 10px}
-.feat-year{font-size:11px;color:#666;font-weight:600}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.feat-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:20px}
+.feat-type{font-size:11px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:7px}
+.feat-title{font-weight:800;font-size:16px;color:#1a1a1a;margin-bottom:7px}
+.feat-detail{font-size:13px;color:#555;line-height:1.65;margin:0 0 10px}
+.feat-year{font-size:12px;color:#666;font-weight:600}
 .award-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:10px}
 .award-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:15px;display:flex;gap:12px;transition:box-shadow .2s}
 .award-card:hover{box-shadow:0 2px 14px rgba(0,0,0,0.06)}
 .award-icon{font-size:22px}
-.award-title{font-weight:700;font-size:13px;color:#1a1a1a;margin-bottom:3px}
-.award-detail{font-size:11px;color:#666}
+.award-title{font-weight:700;font-size:15px;color:#1a1a1a;margin-bottom:4px}
+.award-detail{font-size:13px;color:#666}
 
 /* CONTACT */
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:8px}
-.contact-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:18px;display:flex;gap:14px;align-items:flex-start;text-decoration:none;transition:box-shadow .2s}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:10px}
+.contact-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:20px;display:flex;gap:14px;align-items:flex-start;text-decoration:none;transition:box-shadow .2s}
 .contact-card:hover{box-shadow:0 2px 14px rgba(0,0,0,0.06)}
-.contact-icon{font-size:22px}
-.contact-lbl{font-size:11px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:4px}
-.contact-val{font-weight:700;font-size:13px;color:#1a1a1a}
+.contact-icon{font-size:24px}
+.contact-lbl{font-size:12px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:5px}
+.contact-val{font-weight:700;font-size:15px;color:#1a1a1a}
 .link-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border:1.5px solid #1a1a1a;border-radius:10px;font-size:13px;color:#1a1a1a;font-weight:700;background:#fff;transition:all .15s;margin:4px}
 .link-btn:hover{background:#1a1a1a;color:#fff}
 
@@ -272,15 +274,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .tl-note{font-size:11px;color:#666}
 
 /* BUILDING */
-.building-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-.building-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:15px 16px;display:flex;gap:12px;align-items:flex-start}
-.building-emoji{font-size:22px}
-.building-title{font-weight:800;font-size:13px;color:#1a1a1a;margin-bottom:3px}
-.building-desc{font-size:12px;color:#666;line-height:1.6}
+.building-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.building-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:18px;display:flex;gap:14px;align-items:flex-start}
+.building-emoji{font-size:26px}
+.building-title{font-weight:800;font-size:15px;color:#1a1a1a;margin-bottom:4px}
+.building-desc{font-size:13px;color:#555;line-height:1.65}
 
 /* SKILLS */
-.skill-pill{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:20px;padding:5px 13px;font-size:14px;font-weight:700;color:#1a1a1a;display:inline-block;margin:3px}
-.skill-tag{background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:5px 12px;font-size:14px;color:#1a1a1a;font-weight:600;display:inline-block;margin:3px}
+.skill-pill{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:20px;padding:6px 15px;font-size:15px;font-weight:700;color:#1a1a1a;display:inline-block;margin:3px}
+.skill-tag{background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:6px 13px;font-size:15px;color:#1a1a1a;font-weight:600;display:inline-block;margin:3px}
 .edu-badge{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:6px;padding:3px 10px;font-size:11px;font-weight:700;color:#1a1a1a;display:inline-block;margin-right:6px;margin-top:6px}
 
 /* INFO NOTICE */
@@ -291,8 +293,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .trusted-pill{background:#f5f5f5;border:1px solid #e8e8e8;border-radius:7px;padding:5px 12px;font-size:12px;font-weight:700;color:#1a1a1a;display:inline-block;margin:3px}
 
 /* BTN */
-.btn-dark{font-size:12px;background:#1a1a1a;color:#fff;border-radius:8px;padding:8px 16px;font-weight:700;font-family:'Nunito',sans-serif;border:none;display:inline-block}
-.btn-light{font-size:12px;background:#f5f5f5;border:1px solid #e8e8e8;color:#1a1a1a;border-radius:8px;padding:8px 16px;font-weight:700;font-family:'Nunito',sans-serif;border-style:solid;display:inline-block}
+.btn-dark{font-size:14px;background:#1a1a1a;color:#fff;border-radius:9px;padding:10px 19px;font-weight:700;font-family:'Nunito',sans-serif;border:none;display:inline-block}
+.btn-light{font-size:14px;background:#f5f5f5;border:1px solid #e8e8e8;color:#1a1a1a;border-radius:9px;padding:10px 19px;font-weight:700;font-family:'Nunito',sans-serif;border-style:solid;display:inline-block}
 
 /* LI INFO BANNER */
 .li-banner{display:flex;align-items:center;gap:8px;background:#f5f5f5;border:1px solid #e8e8e8;border-radius:10px;padding:10px 14px;margin-bottom:20px;font-size:12px;color:#666;font-weight:600}
@@ -323,7 +325,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .li-post-cta:hover{background:#004182;color:#fff}
 
 /* FOOTER */
-footer{text-align:center;padding:20px 0;color:#666;font-size:13px;border-top:1px solid #e8e8e8;font-weight:600}
+footer{text-align:center;padding:24px 0;color:#666;font-size:14px;border-top:1px solid #e8e8e8;font-weight:600}
 
 /* ── AI-PA PRESENTATION SLIDES ── */
 .aipa-slide{border-radius:20px;padding:42px 38px;margin-bottom:18px;position:relative;overflow:hidden}
@@ -331,9 +333,9 @@ footer{text-align:center;padding:20px 0;color:#666;font-size:13px;border-top:1px
 .aipa-light{background:#fff;border:1px solid #e8e8e8}
 .aipa-accent{background:linear-gradient(135deg,#f0f7ff 0%,#e3effe 100%);border:1px solid #c8e0f9}
 .aipa-tag{font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;opacity:0.5;margin-bottom:12px;display:block}
-.aipa-headline-xl{font-size:52px;font-weight:900;line-height:1.0;letter-spacing:-2.5px;margin-bottom:16px}
-.aipa-headline-lg{font-size:36px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:14px}
-.aipa-body{font-size:15px;line-height:1.75}
+.aipa-headline-xl{font-size:60px;font-weight:900;line-height:1.0;letter-spacing:-2.5px;margin-bottom:18px}
+.aipa-headline-lg{font-size:44px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px}
+.aipa-body{font-size:17px;line-height:1.8}
 .aipa-body-dark{color:rgba(255,255,255,0.62)}
 .aipa-big-num{font-size:130px;font-weight:900;line-height:1;letter-spacing:-6px;opacity:0.05;position:absolute;right:18px;top:8px;pointer-events:none}
 .aipa-divider{height:1px;background:rgba(255,255,255,0.1);margin:26px 0}
@@ -341,8 +343,8 @@ footer{text-align:center;padding:20px 0;color:#666;font-size:13px;border-top:1px
 /* KPI grids */
 .aipa-kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
 .aipa-kpi-box{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:18px}
-.aipa-kpi-val{font-size:44px;font-weight:900;letter-spacing:-2px;line-height:1;margin-bottom:4px}
-.aipa-kpi-lbl{font-size:11px;font-weight:700;opacity:0.45;text-transform:uppercase;letter-spacing:0.5px}
+.aipa-kpi-val{font-size:52px;font-weight:900;letter-spacing:-2px;line-height:1;margin-bottom:6px}
+.aipa-kpi-lbl{font-size:13px;font-weight:700;opacity:0.45;text-transform:uppercase;letter-spacing:0.5px}
 /* Program cards */
 .aipa-prog-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-top:20px}
 .aipa-prog-card-dark{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:18px}
@@ -350,78 +352,78 @@ footer{text-align:center;padding:20px 0;color:#666;font-size:13px;border-top:1px
 .aipa-prog-num-badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;border-radius:6px;padding:3px 10px;margin-bottom:10px}
 .aipa-prog-num-dark{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75)}
 .aipa-prog-num-light{background:#1a1a1a;color:#fff}
-.aipa-prog-title{font-size:17px;font-weight:900;margin-bottom:6px;line-height:1.2}
-.aipa-prog-sub{font-size:11px;opacity:0.5;font-weight:600;margin-bottom:10px}
-.aipa-prog-desc{font-size:12px;opacity:0.6;line-height:1.6}
+.aipa-prog-title{font-size:19px;font-weight:900;margin-bottom:7px;line-height:1.2}
+.aipa-prog-sub{font-size:13px;opacity:0.5;font-weight:600;margin-bottom:11px}
+.aipa-prog-desc{font-size:13px;opacity:0.65;line-height:1.65}
 /* Curriculum phases */
 .aipa-phase-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:10px;margin-top:16px}
 .aipa-phase-card{border-radius:14px;padding:22px 18px;position:relative;overflow:hidden}
 .aipa-phase-bg{font-size:90px;font-weight:900;opacity:0.06;position:absolute;right:8px;top:4px;line-height:1;pointer-events:none}
 .aipa-phase-label{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;opacity:0.45;margin-bottom:6px}
-.aipa-phase-title{font-size:16px;font-weight:900;margin-bottom:14px;line-height:1.2}
-.aipa-phase-item{font-size:12px;line-height:1.7;padding:6px 0;border-bottom:1px solid rgba(0,0,0,0.06)}
+.aipa-phase-title{font-size:18px;font-weight:900;margin-bottom:14px;line-height:1.2}
+.aipa-phase-item{font-size:13px;line-height:1.75;padding:7px 0;border-bottom:1px solid rgba(0,0,0,0.06)}
 .aipa-phase-item:last-child{border-bottom:none}
 /* Productivity impact */
 .aipa-impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
 .aipa-impact-card{border-radius:16px;padding:26px 14px;text-align:center}
-.aipa-impact-val{font-size:54px;font-weight:900;letter-spacing:-3px;line-height:1;margin-bottom:6px}
-.aipa-impact-lbl{font-size:12px;font-weight:800;margin-bottom:4px;line-height:1.3}
-.aipa-impact-sub{font-size:11px;opacity:0.55;margin-bottom:8px;line-height:1.4}
+.aipa-impact-val{font-size:62px;font-weight:900;letter-spacing:-3px;line-height:1;margin-bottom:7px}
+.aipa-impact-lbl{font-size:14px;font-weight:800;margin-bottom:5px;line-height:1.3}
+.aipa-impact-sub{font-size:12px;opacity:0.55;margin-bottom:9px;line-height:1.4}
 .aipa-impact-badge{font-size:10px;font-weight:700;border-radius:20px;padding:3px 9px;display:inline-block}
 /* Differentiators */
 .aipa-diff-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:10px;margin-top:16px}
 .aipa-diff-item{display:flex;gap:12px;background:#f5f5f5;border:1px solid #e8e8e8;border-radius:12px;padding:14px}
 .aipa-diff-num{width:26px;height:26px;min-width:26px;background:#1a1a1a;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900}
-.aipa-diff-title{font-size:13px;font-weight:800;color:#1a1a1a;margin-bottom:3px}
-.aipa-diff-desc{font-size:11px;color:#666;line-height:1.5}
+.aipa-diff-title{font-size:15px;font-weight:800;color:#1a1a1a;margin-bottom:4px}
+.aipa-diff-desc{font-size:13px;color:#555;line-height:1.55}
 /* Leadership team */
 .aipa-team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-top:20px}
 .aipa-team-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:20px 16px}
 .aipa-team-highlight{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2)}
 .aipa-team-avatar{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;margin-bottom:10px}
-.aipa-team-name{font-size:15px;font-weight:900;margin-bottom:3px}
-.aipa-team-role{font-size:11px;opacity:0.5;font-weight:600;line-height:1.4;margin-bottom:6px}
-.aipa-team-note{font-size:11px;opacity:0.4;line-height:1.45}
+.aipa-team-name{font-size:17px;font-weight:900;margin-bottom:4px}
+.aipa-team-role{font-size:13px;opacity:0.5;font-weight:600;line-height:1.4;margin-bottom:7px}
+.aipa-team-note{font-size:13px;opacity:0.45;line-height:1.5}
 /* Cohort cards */
 .aipa-cohort-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:12px;margin-top:16px}
 .aipa-cohort-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:22px}
-.aipa-cohort-tag{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#999;margin-bottom:8px}
-.aipa-cohort-org{font-size:18px;font-weight:900;color:#1a1a1a;margin-bottom:8px;line-height:1.2}
-.aipa-cohort-desc{font-size:13px;color:#555;line-height:1.65;margin-bottom:12px}
-.aipa-cohort-quote{font-size:13px;color:#1a1a1a;font-style:italic;font-weight:700;padding:10px 12px;background:#f5f5f5;border-radius:8px;border-left:3px solid #1a1a1a}
+.aipa-cohort-tag{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#999;margin-bottom:9px}
+.aipa-cohort-org{font-size:20px;font-weight:900;color:#1a1a1a;margin-bottom:9px;line-height:1.2}
+.aipa-cohort-desc{font-size:14px;color:#555;line-height:1.7;margin-bottom:13px}
+.aipa-cohort-quote{font-size:14px;color:#1a1a1a;font-style:italic;font-weight:700;padding:11px 14px;background:#f5f5f5;border-radius:9px;border-left:3px solid #1a1a1a}
 /* Trusted orgs */
 .aipa-trusted-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.aipa-trusted-pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:7px 16px;font-size:13px;font-weight:700;color:#fff;display:inline-block}
+.aipa-trusted-pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:8px 18px;font-size:15px;font-weight:700;color:#fff;display:inline-block}
 /* Outcome grid */
 .aipa-outcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
 .aipa-outcome-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:18px}
 .aipa-outcome-icon{font-size:26px;margin-bottom:8px}
-.aipa-outcome-title{font-size:15px;font-weight:900;margin-bottom:5px;line-height:1.3}
+.aipa-outcome-title{font-size:17px;font-weight:900;margin-bottom:6px;line-height:1.3}
 .aipa-outcome-desc{font-size:12px;opacity:0.55;line-height:1.55}
 /* Technical grid */
 .aipa-tech-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:12px;margin-top:16px}
 .aipa-tech-card{background:#fff;border:1px solid #c8e0f9;border-radius:14px;padding:18px}
 .aipa-tech-icon{font-size:28px;margin-bottom:10px}
-.aipa-tech-title{font-size:15px;font-weight:900;color:#0d1a2e;margin-bottom:6px}
-.aipa-tech-desc{font-size:12px;color:#3a5a7a;line-height:1.6}
+.aipa-tech-title{font-size:17px;font-weight:900;color:#0d1a2e;margin-bottom:7px}
+.aipa-tech-desc{font-size:13px;color:#3a5a7a;line-height:1.65}
 /* Suite tags */
 .aipa-suite-tag{display:inline-block;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:5px 14px;font-size:11px;font-weight:700;margin:3px}
 /* CTA buttons */
 .aipa-cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-.aipa-btn-white{display:inline-flex;align-items:center;gap:6px;background:#fff;color:#0d0d0d;border-radius:10px;padding:12px 22px;font-size:14px;font-weight:800;font-family:'Nunito',sans-serif;text-decoration:none;border:none;cursor:pointer}
-.aipa-btn-ghost{display:inline-flex;align-items:center;gap:6px;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.3);border-radius:10px;padding:12px 22px;font-size:14px;font-weight:800;font-family:'Nunito',sans-serif;text-decoration:none}
+.aipa-btn-white{display:inline-flex;align-items:center;gap:6px;background:#fff;color:#0d0d0d;border-radius:10px;padding:14px 26px;font-size:16px;font-weight:800;font-family:'Nunito',sans-serif;text-decoration:none;border:none;cursor:pointer}
+.aipa-btn-ghost{display:inline-flex;align-items:center;gap:6px;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.3);border-radius:10px;padding:14px 26px;font-size:16px;font-weight:800;font-family:'Nunito',sans-serif;text-decoration:none}
 
 @media(max-width:600px){
   .stat-grid,.prog-stats{grid-template-columns:repeat(2,1fr)}
   .nav-tabs{gap:1px}
-  .nav-btn{padding:4px 8px;font-size:10px}
+  .nav-btn{padding:4px 8px;font-size:11px}
   nav{flex-wrap:wrap;height:auto;padding:8px 12px;gap:6px}
   .page{padding:100px 16px 40px}
-  .aipa-headline-xl{font-size:32px;letter-spacing:-1.5px}
-  .aipa-headline-lg{font-size:24px;letter-spacing:-1px}
-  .aipa-slide{padding:26px 18px}
-  .aipa-kpi-val{font-size:32px}
-  .aipa-impact-val{font-size:38px}
+  .aipa-headline-xl{font-size:34px;letter-spacing:-1.5px}
+  .aipa-headline-lg{font-size:26px;letter-spacing:-1px}
+  .aipa-slide{padding:28px 20px}
+  .aipa-kpi-val{font-size:36px}
+  .aipa-impact-val{font-size:44px}
   .aipa-impact-grid{gap:6px}
   .aipa-outcome-grid{grid-template-columns:1fr}
   .aipa-big-num{font-size:80px}
@@ -472,7 +474,7 @@ const TIMELINE = [
 
 const BUILDING = [
   {emoji:"🤖",title:"EasyDO.ai",desc:"Multi-LLM AI workspace — no-code, pay-per-use, for teams."},
-  {emoji:"🌊",title:"EasyDO Flow",desc:"Guided journey platform for structured AI-powered workflows."},
+  {emoji:"🌊",title:"EasyDO Flow",desc:"AI-Guided Audience Engagement platform — manage thousands live or async, with 1:1 AI coaching & assessments."},
   {emoji:"🏗️",title:"AI-PA Program",desc:"Scaling corporate AI transformation across Bangladesh."},
   {emoji:"💬",title:"CommEngine v2",desc:"Next-gen SocialCRM with deeper AI profiling & automation."}
 ];
@@ -498,7 +500,7 @@ const PRODUCTS = [
   {name:"Zachai",tagline:"Blockchain & IoT Anti-Counterfeit",url:"https://www.zachai.xyz",emoji:"🔐",tags:["Blockchain","IoT","RetailTech"],desc:"Mobile, IoT and Blockchain-based product authentication platform. Enables brands to verify products across supply chains. Serves Automobile, Healthcare, Food & Consumer Goods industries.",stats:[{val:"Multi",label:"Industries"},{val:"Supply",label:"Chain Track"},{val:"Block",label:"Verified"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://www.zachai.xyz/"},
   {name:"EasyDO.ai",tagline:"Unified AI Aggregator & Workspace",url:"https://easydo.ai",emoji:"🤖",tags:["AI Workspace","No-code","LLM"],desc:"Private AI workspace aggregating GPT-4o, Gemini 2.5, Claude 3, DALL·E, Whisper, Deepseek and more. Design AI tools in under 5 minutes with no code. Starting from $1/month.",stats:[{val:"5 min",label:"Tool Setup"},{val:"Multi-LLM",label:"Models"},{val:"$1/mo",label:"Starting"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://easydo.ai/"},
   {name:"BuildNation / AI-PA",tagline:"AI Proficiency Accelerator",url:"https://buildnation.com.bd/aipa/",emoji:"🏗️",tags:["AI Training","Corporate","EdTech"],desc:"Corporate AI transformation program. Completed 6 corporate AI-transformation consultations with 200+ senior leadership participants. Partners: TAFE Australia, ACCA, CIMA.",stats:[{val:"200+",label:"Participants"},{val:"6",label:"Corporates"},{val:"Global",label:"Programs"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://buildnation.com.bd/"},
-  {name:"EasyDO Flow",tagline:"Turn your training into a guided journey",url:"https://flow.easydo.ai",emoji:"🌊",tags:["Guided Journey","Workflow","EasyDO"],desc:"Turn your training, presentations, recruitment & assessments into an AI guided journey. Designed to help teams and individuals navigate structured workflows, onboarding flows, and step-by-step AI-powered journeys with ease.",stats:[{val:"Guided",label:"Journeys"},{val:"AI",label:"Powered"},{val:"No-code",label:"Setup"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://flow.easydo.ai/"}
+  {name:"EasyDO Flow",tagline:"AI-Guided Audience Engagement Platform · CommEngine-FutureMind AI",url:"https://flow.easydo.ai",emoji:"🌊",tags:["Audience Engagement","AI Coach","Live & Self-Paced"],desc:"Now manage even thousands of participants together — live or self-paced. Take feedback, assign 1:1 AI coaches, run assessments. All in one elegant flow. Simple, powerful, built for scale.",stats:[{val:"1000s",label:"Participants"},{val:"1:1 AI",label:"Coaching"},{val:"Live+Async",label:"Delivery"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://flow.easydo.ai/"}
 ];
 
 const DIG8_POSTS = [
@@ -667,7 +669,7 @@ function pageAbout(){
   return `
     <h2 class="section-title">About</h2>
     <p class="section-sub">Builder · Founder · Consultant · Dhaka, Bangladesh</p>
-    <p style="font-size:15px;line-height:1.9;color:#1a1a1a;margin-bottom:28px">
+    <p style="font-size:17px;line-height:1.95;color:#1a1a1a;margin-bottom:30px">
       Results-driven, innovative builder with over <strong>19 years of experience</strong> in Telco & Digital Transformation, AI-Workspace development, customer/enterprise solutions, and startup building. Proven track record at <strong>Nokia Siemens Networks</strong>, <strong>Huawei</strong>, and <strong>Robi Axiata Limited</strong>.<br><br>
       Co-Founded <strong>EasyDO.ai</strong> and <strong>FutureMind AI</strong>. Currently leading AI-Proficiency programs and Digital Transformation consultancy at BuildCon & BuildNation. Architect of BuildNation's AI vision and member of national committees on 4IR and blockchain. A curious mind and builder by nature.
     </p>
