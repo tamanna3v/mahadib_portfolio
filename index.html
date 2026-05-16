@@ -264,14 +264,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .link-btn:hover{background:#1a1a1a;color:#fff}
 
 /* TIMELINE */
-.timeline{position:relative;padding-left:24px}
-.timeline-line{position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:#e8e8e8}
-.tl-item{display:flex;gap:14px;margin-bottom:14px;position:relative}
-.tl-dot{position:absolute;left:-20px;top:4px;width:8px;height:8px;border-radius:50%;background:#e8e8e8;border:2px solid #e8e8e8;flex-shrink:0}
-.tl-dot.active{background:#1a1a1a}
-.tl-year{min-width:64px;font-size:11px;font-weight:800;color:#666;padding-top:2px}
-.tl-label{font-weight:800;font-size:13px;color:#1a1a1a;margin-bottom:1px}
-.tl-note{font-size:11px;color:#666}
+.timeline{display:flex;flex-direction:row;gap:8px;overflow-x:auto;padding:4px 0 8px;scrollbar-width:none}
+.timeline::-webkit-scrollbar{display:none}
+.timeline-line{display:none}
+.tl-item{display:flex;flex-direction:column;align-items:flex-start;min-width:110px;max-width:130px;background:#f9f9f9;border:1px solid #ededed;border-radius:12px;padding:12px 10px;gap:4px;flex-shrink:0;position:relative}
+.tl-item.active-phase{background:#1a1a1a;border-color:#1a1a1a}
+.tl-dot{display:none}
+.tl-year{font-size:10px;font-weight:800;color:#999;letter-spacing:0.5px}
+.tl-item.active-phase .tl-year{color:#888}
+.tl-label{font-weight:800;font-size:12px;color:#1a1a1a;line-height:1.3}
+.tl-item.active-phase .tl-label{color:#fff}
+.tl-note{font-size:10px;color:#888;line-height:1.4}
+.tl-item.active-phase .tl-note{color:#aaa}
 
 /* BUILDING */
 .building-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
@@ -718,13 +722,13 @@ function pageAbout(){
     <div class="sub-label"><h3>Career Timeline</h3><div class="sub-label-line"></div></div>
     <div class="timeline">
       <div class="timeline-line"></div>
-      ${TIMELINE.map(t=>`<div class="tl-item"><div class="tl-dot${t.active?' active':''}"></div><div class="tl-year">${t.year}</div><div><div class="tl-label">${t.label}</div><div class="tl-note">${t.note}</div></div></div>`).join('')}
+      ${TIMELINE.map(t=>`<div class="tl-item${t.active?' active-phase':''}"><div class="tl-year">${t.year}</div><div class="tl-label">${t.label}</div><div class="tl-note">${t.note}</div></div>`).join('')}
     </div>
     <div class="sub-label"><h3>Connect</h3><div class="sub-label-line"></div></div>
     <div style="display:flex;flex-wrap:wrap;gap:9px">
       <a href="mailto:bhuiyan.hadi@gmail.com" class="link-btn">✉️ bhuiyan.hadi@gmail.com</a>
       <a href="tel:+8801833180420" class="link-btn">📞 +880 18 33180420</a>
-      <span class="link-btn">📍 Dhaka-1217, Bangladesh</span>
+      <a href="https://mahadib.futuremind.ltd" target="_blank" class="link-btn">🌐 mahadib.futuremind.ltd</a>
       <a href="http://bd.linkedin.com/in/mahadib/" target="_blank" class="link-btn">💼 LinkedIn</a>
     </div>
     <div class="sub-label"><h3>Awards, Contributions and Participations</h3><div class="sub-label-line"></div></div>
@@ -1291,7 +1295,7 @@ function pageContact(){
     {icon:"✉️",label:"Email",val:"bhuiyan.hadi@gmail.com",href:"mailto:bhuiyan.hadi@gmail.com"},
     {icon:"📞",label:"Phone",val:"+880 18 33180420",href:"tel:+8801833180420"},
     {icon:"💼",label:"LinkedIn",val:"bd.linkedin.com/in/mahadib",href:"http://bd.linkedin.com/in/mahadib/"},
-    {icon:"📍",label:"Location",val:"Dhaka-1217, Bangladesh",href:"#"}
+    {icon:"🌐",label:"Website",val:"mahadib.futuremind.ltd",href:"https://mahadib.futuremind.ltd"}
   ].map(c=>`
     <a href="${c.href}" target="${c.href.startsWith('http')?'_blank':'_self'}" class="contact-card">
       <span class="contact-icon">${c.icon}</span>
