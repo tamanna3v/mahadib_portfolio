@@ -264,14 +264,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .link-btn:hover{background:#1a1a1a;color:#fff}
 
 /* TIMELINE */
-.timeline{position:relative;padding-left:24px}
-.timeline-line{position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:#e8e8e8}
-.tl-item{display:flex;gap:14px;margin-bottom:14px;position:relative}
-.tl-dot{position:absolute;left:-20px;top:4px;width:8px;height:8px;border-radius:50%;background:#e8e8e8;border:2px solid #e8e8e8;flex-shrink:0}
-.tl-dot.active{background:#1a1a1a}
-.tl-year{min-width:64px;font-size:11px;font-weight:800;color:#666;padding-top:2px}
-.tl-label{font-weight:800;font-size:13px;color:#1a1a1a;margin-bottom:1px}
-.tl-note{font-size:11px;color:#666}
+.timeline{display:flex;flex-wrap:nowrap;gap:0;overflow-x:auto;padding-bottom:6px}
+.timeline-line{display:none}
+.tl-item{display:flex;flex-direction:column;flex:1;min-width:100px;position:relative;padding:0 0 0 0}
+.tl-item:not(:last-child)::after{content:'';position:absolute;top:10px;right:0;width:1px;height:calc(100% - 10px);background:#e8e8e8}
+.tl-dot{width:8px;height:8px;border-radius:50%;background:#e8e8e8;border:2px solid #ddd;flex-shrink:0;margin:3px auto 10px;display:block}
+.tl-dot.active{background:#1a1a1a;border-color:#1a1a1a}
+.tl-box{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:12px 10px;margin:0 6px;flex:1;display:flex;flex-direction:column;gap:4px;transition:box-shadow .2s}
+.tl-box:hover{box-shadow:0 2px 12px rgba(0,0,0,0.07)}
+.tl-box.active-box{border-color:#1a1a1a;background:#fafafa}
+.tl-year{font-size:10px;font-weight:800;color:#999;letter-spacing:0.3px}
+.tl-label{font-weight:800;font-size:12px;color:#1a1a1a;line-height:1.3}
+.tl-note{font-size:11px;color:#888;line-height:1.4}
+@media(max-width:600px){.timeline{gap:0}.tl-box{padding:10px 8px}.tl-label{font-size:11px}.tl-note{font-size:10px}}
 
 /* BUILDING */
 .building-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
@@ -718,13 +723,13 @@ function pageAbout(){
     <div class="sub-label"><h3>Career Timeline</h3><div class="sub-label-line"></div></div>
     <div class="timeline">
       <div class="timeline-line"></div>
-      ${TIMELINE.map(t=>`<div class="tl-item"><div class="tl-dot${t.active?' active':''}"></div><div class="tl-year">${t.year}</div><div><div class="tl-label">${t.label}</div><div class="tl-note">${t.note}</div></div></div>`).join('')}
+      ${TIMELINE.map(t=>`<div class="tl-item"><div class="tl-dot${t.active?' active':''}"></div><div class="tl-box${t.active?' active-box':''}"><div class="tl-year">${t.year}</div><div class="tl-label">${t.label}</div><div class="tl-note">${t.note}</div></div></div>`).join('')}
     </div>
     <div class="sub-label"><h3>Connect</h3><div class="sub-label-line"></div></div>
     <div style="display:flex;flex-wrap:wrap;gap:9px">
       <a href="mailto:bhuiyan.hadi@gmail.com" class="link-btn">✉️ bhuiyan.hadi@gmail.com</a>
       <a href="tel:+8801833180420" class="link-btn">📞 +880 18 33180420</a>
-      <span class="link-btn">📍 Dhaka-1217, Bangladesh</span>
+      <a href="https://mahadib.futuremind.ltd" target="_blank" class="link-btn">🌐 mahadib.futuremind.ltd</a>
       <a href="http://bd.linkedin.com/in/mahadib/" target="_blank" class="link-btn">💼 LinkedIn</a>
     </div>
     <div class="sub-label"><h3>Featured Highlights</h3><div class="sub-label-line"></div></div>
