@@ -264,17 +264,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .link-btn:hover{background:#1a1a1a;color:#fff}
 
 /* TIMELINE */
-.timeline{display:flex;flex-direction:row;gap:8px;overflow-x:auto;padding:4px 0 8px;scrollbar-width:none}
-.timeline::-webkit-scrollbar{display:none}
+.timeline{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;padding:4px 0 8px;}
 .timeline-line{display:none}
-.tl-item{display:flex;flex-direction:column;align-items:flex-start;min-width:110px;max-width:130px;background:#f9f9f9;border:1px solid #ededed;border-radius:12px;padding:12px 10px;gap:4px;flex-shrink:0;position:relative}
+.tl-item{display:flex;flex-direction:column;align-items:flex-start;min-width:130px;max-width:160px;min-height:110px;background:#f9f9f9;border:1px solid #ededed;border-radius:12px;padding:14px 12px;gap:3px;flex-shrink:0;position:relative}
 .tl-item.active-phase{background:#1a1a1a;border-color:#1a1a1a}
 .tl-dot{display:none}
 .tl-year{font-size:10px;font-weight:800;color:#999;letter-spacing:0.5px}
 .tl-item.active-phase .tl-year{color:#888}
 .tl-label{font-weight:800;font-size:12px;color:#1a1a1a;line-height:1.3}
 .tl-item.active-phase .tl-label{color:#fff}
-.tl-note{font-size:10px;color:#888;line-height:1.4}
+.tl-role{font-size:9px;font-weight:600;color:#aaa;line-height:1.3;text-transform:uppercase;letter-spacing:0.3px;margin-top:1px}
+.tl-item.active-phase .tl-role{color:#777}
+.tl-note{font-size:10px;color:#888;line-height:1.4;margin-top:2px}
 .tl-item.active-phase .tl-note{color:#aaa}
 
 /* BUILDING */
@@ -477,13 +478,11 @@ const STATS = [
 const TIMELINE = [
   {year:"2001–05",label:"B.Sc. CSE",note:"CUET · Ranked 5th · Dean's Award",active:false},
   {year:"2006–07",label:"Lecturer, Premier University",note:"Teaching CSE & Business",active:false},
-  {year:"2006–08",label:"Huawei Technologies",note:"BSS · Billing · Mediation",active:false},
-  {year:"2008–13",label:"Nokia Siemens Networks",note:"IN · BSS · 90M subscribers",active:false},
-  {year:"2013–21",label:"Robi Axiata Limited",note:"IoT · MFS · Digital Services",active:false},
-  {year:"2018–",label:"Co-Founded CommEngine",note:"SocialCRM · SaaS · 120+ brands",active:true},
-  {year:"2022–",label:"BuildNation / CPO",note:"AI-PA · Digital Transformation",active:true},
-  {year:"2022",label:"Microsoft Founders Fellow",note:"Panelist at BD launch",active:true},
-  {year:"2024",label:"CxO Conclave Certified",note:"IBA – University of Dhaka",active:true}
+  {year:"2006–08",label:"Huawei Technologies",role:"System Engineer",note:"BSS · Billing · Mediation",active:false},
+  {year:"2008–13",label:"Nokia Siemens Networks",role:"Senior Engineer",note:"IN · BSS · 90M subscribers",active:false},
+  {year:"2013–21",label:"Robi Axiata Limited",role:"Unit Lead",note:"IoT · MFS · Digital Services",active:false},
+  {year:"2018–",label:"Co-Founded CommEngine",role:"Co-Founder & CPO",note:"SocialCRM · SaaS · 120+ brands",active:true},
+  {year:"2022–",label:"BuildCon & BuildNation",role:"Consultant (CPO Capacity)",note:"AI-PA · Digital Transformation",active:true}
 ];
 
 const BUILDING = [
@@ -722,7 +721,7 @@ function pageAbout(){
     <div class="sub-label"><h3>Career Timeline</h3><div class="sub-label-line"></div></div>
     <div class="timeline">
       <div class="timeline-line"></div>
-      ${TIMELINE.map(t=>`<div class="tl-item${t.active?' active-phase':''}"><div class="tl-year">${t.year}</div><div class="tl-label">${t.label}</div><div class="tl-note">${t.note}</div></div>`).join('')}
+      ${TIMELINE.map(t=>`<div class="tl-item${t.active?' active-phase':''}"><div class="tl-year">${t.year}</div><div class="tl-label">${t.label}</div><div class="tl-role">${t.role}</div><div class="tl-note">${t.note}</div></div>`).join('')}
     </div>
     <div class="sub-label"><h3>Connect</h3><div class="sub-label-line"></div></div>
     <div style="display:flex;flex-wrap:wrap;gap:9px">
