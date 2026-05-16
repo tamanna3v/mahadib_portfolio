@@ -277,6 +277,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .building-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .building-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:18px;display:flex;gap:14px;align-items:flex-start}
 .building-emoji{font-size:26px}
+
+/* COMPANY LOGOS */
+.company-logos-row{display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between;gap:12px;padding:20px 0 4px;overflow-x:auto}
+.company-logo-item{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;min-width:80px;opacity:0.7;transition:opacity .2s}
+.company-logo-item:hover{opacity:1}
+.company-logo-wrap{width:64px;height:64px;border-radius:14px;border:1px solid #e8e8e8;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.company-logo-wrap img{width:44px;height:44px;object-fit:contain}
+.company-logo-initial{width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:#fff;letter-spacing:-0.5px}
+.company-logo-name{font-size:11px;font-weight:700;color:#666;text-align:center;line-height:1.3;max-width:80px}
+@media(max-width:600px){.company-logos-row{gap:8px}.company-logo-wrap{width:52px;height:52px}.company-logo-wrap img{width:36px;height:36px}.company-logo-name{font-size:10px}}
 .building-title{font-weight:800;font-size:15px;color:#1a1a1a;margin-bottom:4px}
 .building-desc{font-size:13px;color:#555;line-height:1.65}
 
@@ -678,6 +688,33 @@ function pageAbout(){
     <div class="stat-grid">${STATS.map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}</div>
     <div class="sub-label"><h3>Currently Building</h3><div class="sub-label-line"></div></div>
     <div class="building-grid">${BUILDING.map(b=>`<div class="building-card"><div class="building-emoji">${b.emoji}</div><div><div class="building-title">${b.title}</div><div class="building-desc">${b.desc}</div></div></div>`).join('')}</div>
+    <div class="sub-label"><h3>Associated Companies</h3><div class="sub-label-line"></div></div>
+    <div class="company-logos-row">
+      <div class="company-logo-item">
+        <div class="company-logo-wrap"><img src="https://logo.clearbit.com/buildnation.com.bd" alt="BuildNation" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#1a6b3c\\'>BN</div>')"/></div>
+        <span class="company-logo-name">BuildNation</span>
+      </div>
+      <div class="company-logo-item">
+        <div class="company-logo-wrap"><img src="https://logo.clearbit.com/commengine.xyz" alt="CommEngine" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#e05c1a\\'>CE</div>')"/></div>
+        <span class="company-logo-name">CommEngine</span>
+      </div>
+      <div class="company-logo-item">
+        <div class="company-logo-wrap"><img src="https://logo.clearbit.com/robi.com.bd" alt="Robi Axiata" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#e4002b\\'>RA</div>')"/></div>
+        <span class="company-logo-name">Robi Axiata</span>
+      </div>
+      <div class="company-logo-item">
+        <div class="company-logo-wrap"><img src="https://logo.clearbit.com/nokia.com" alt="Nokia Siemens" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#005AFF\\'>NSN</div>')"/></div>
+        <span class="company-logo-name">Nokia Siemens</span>
+      </div>
+      <div class="company-logo-item">
+        <div class="company-logo-wrap"><img src="https://logo.clearbit.com/huawei.com" alt="Huawei" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#cf0a2c\\'>HW</div>')"/></div>
+        <span class="company-logo-name">Huawei</span>
+      </div>
+      <div class="company-logo-item">
+        <div class="company-logo-wrap"><img src="https://logo.clearbit.com/puc.ac.bd" alt="Premier University" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#1a3a6b\\'>PU</div>')"/></div>
+        <span class="company-logo-name">Premier University</span>
+      </div>
+    </div>
     <div class="sub-label"><h3>Career Timeline</h3><div class="sub-label-line"></div></div>
     <div class="timeline">
       <div class="timeline-line"></div>
