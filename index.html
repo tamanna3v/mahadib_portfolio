@@ -289,7 +289,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .building-emoji{font-size:26px}
 
 /* COMPANY LOGOS */
-.company-logos-row{display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between;gap:12px;padding:20px 0 4px;overflow-x:auto}
+.company-logos-row{display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-start;gap:16px;padding:8px 0 12px;overflow-x:auto}
 .company-logo-item{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;min-width:80px;opacity:0.7;transition:opacity .2s}
 .company-logo-item:hover{opacity:1}
 .company-logo-wrap{width:64px;height:64px;border-radius:14px;border:1px solid #e8e8e8;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
@@ -696,8 +696,12 @@ function pageAbout(){
     <div class="stat-grid">${STATS.map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}</div>
     <div class="sub-label"><h3>Building NOW</h3><div class="sub-label-line"></div></div>
     <div class="building-grid">${BUILDING.map(b=>`<div class="building-card"><div class="building-emoji">${b.emoji}</div><div><div class="building-title">${b.title}</div><div class="building-desc">${b.desc}</div></div></div>`).join('')}</div>
-    <div class="sub-label"><h3>Associated Companies</h3><div class="sub-label-line"></div></div>
+    <div class="sub-label"><h3>Career Timeline</h3><div class="sub-label-line"></div></div>
     <div class="company-logos-row">
+      <div class="company-logo-item">
+        <div class="company-logo-wrap"><img src="https://logo.clearbit.com/futuremind.ltd" alt="FutureMind AI" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#0f2a5e\\'>FM</div>')"/></div>
+        <span class="company-logo-name">FutureMind AI</span>
+      </div>
       <div class="company-logo-item">
         <div class="company-logo-wrap"><img src="https://logo.clearbit.com/buildnation.com.bd" alt="BuildNation" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#1a6b3c\\'>BN</div>')"/></div>
         <span class="company-logo-name">BuildNation</span>
@@ -718,12 +722,7 @@ function pageAbout(){
         <div class="company-logo-wrap"><img src="https://logo.clearbit.com/huawei.com" alt="Huawei" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#cf0a2c\\'>HW</div>')"/></div>
         <span class="company-logo-name">Huawei</span>
       </div>
-      <div class="company-logo-item">
-        <div class="company-logo-wrap"><img src="https://logo.clearbit.com/puc.ac.bd" alt="Premier University" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#1a3a6b\\'>PU</div>')"/></div>
-        <span class="company-logo-name">Premier University</span>
-      </div>
     </div>
-    <div class="sub-label"><h3>Career Timeline</h3><div class="sub-label-line"></div></div>
     <div class="timeline">
       <div class="timeline-line"></div>
       ${TIMELINE.map(t=>`<div class="tl-item${t.active?' active-phase':''}${t.isNew?' tl-new':''}"><div class="tl-year">${t.year}</div><div class="tl-label">${t.label}</div><div class="tl-role">${t.role||''}</div><div class="tl-note">${t.note}</div></div>${t.arrowAfter?'<div class="tl-arrow">→</div>':''}`).join('')}
