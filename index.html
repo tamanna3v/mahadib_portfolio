@@ -802,9 +802,17 @@ function pageProducts(){
         <div class="product-stats">${p.stats.map(s=>`<div class="pstat"><div class="pstat-val">${s.val}</div><div class="pstat-lbl">${s.label}</div></div>`).join('')}</div>
       </div>
     </div>`).join('');
+  const quickLinks = [
+    {label:"🌐 BuildNation",href:"https://buildnation.com.bd/aipa/"},
+    {label:"🏢 CommEngine",href:"http://www.commengine.xyz"},
+    {label:"🤖 EasyDO.ai",href:"https://easydo.ai"},
+    {label:"🔐 Zachai",href:"https://www.zachai.xyz"},
+    {label:"🌊 EasyDO Flow",href:"https://flow.easydo.ai"}
+  ].map(l=>`<a href="${l.href}" target="_blank" class="link-btn">${l.label}</a>`).join('');
   return `
     <h2 class="section-title">Products</h2>
     <p class="section-sub">Ventures built at the intersection of AI, SaaS & Digital Transformation</p>
+    <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:20px">${quickLinks}</div>
     <div class="product-grid">${cards}</div>`;
 }
 
