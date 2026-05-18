@@ -240,18 +240,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .writing-link{font-size:12px;color:#666;font-weight:700;text-decoration:underline;margin-top:auto}
 
 /* RECOGNITION */
-.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
-.feat-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:20px}
-.feat-type{font-size:11px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:7px}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));grid-auto-rows:1fr;gap:14px}
+.feat-card{background:#fff;border:1px solid #e8e8e8;border-radius:14px;padding:20px;display:flex;flex-direction:column;transition:box-shadow .2s}
+.feat-card:hover{box-shadow:0 2px 14px rgba(0,0,0,0.06)}
+.feat-head{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.feat-icon{font-size:20px;line-height:1}
+.feat-type{font-size:11px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:0.8px}
 .feat-title{font-weight:800;font-size:16px;color:#1a1a1a;margin-bottom:7px}
 .feat-detail{font-size:13px;color:#555;line-height:1.65;margin:0 0 10px}
-.feat-year{font-size:12px;color:#666;font-weight:600}
-.award-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:10px}
-.award-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:15px;display:flex;gap:12px;transition:box-shadow .2s}
-.award-card:hover{box-shadow:0 2px 14px rgba(0,0,0,0.06)}
-.award-icon{font-size:22px}
-.award-title{font-weight:700;font-size:15px;color:#1a1a1a;margin-bottom:4px}
-.award-detail{font-size:13px;color:#666}
+.feat-year{font-size:12px;color:#666;font-weight:600;margin-top:auto}
 
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:10px}
@@ -662,21 +659,16 @@ const WRITINGS = [
   {type:"Academic Review",year:"2010–2016",title:"Independent Reviewer — ICT4D Conference",venue:"ICT for Development (ICT4D) International Conference",abstract:"Served as an independent academic reviewer for the ICT4D conference series for six consecutive years, evaluating research papers on technology adoption, digital infrastructure, and innovation in developing economies.",tags:["Academic Review","ICT4D","Peer Review","Development"],url:"http://bd.linkedin.com/in/mahadib/"}
 ];
 
-const FEATURED = [
-  {type:"Award",title:"BASIS National ICT Award",detail:"CommEngine wins Bangladesh's top tech innovation award for SocialCRM platform.",year:"2019"},
-  {type:"Fellowship",title:"Microsoft for Startups Founders Hub",detail:"Panelist at the Bangladesh launch — discussed AI startup ecosystem and enterprise B2B SaaS.",year:"Aug 2022"},
-  {type:"Certification",title:"CxO Conclave Certified",detail:"IBA – University of Dhaka. Executive leadership certification for C-suite strategy.",year:"2024"}
-];
-
-const AWARDS = [
-  {icon:"🏆",title:"BASIS National ICT Award",detail:"CommEngine – 2019"},
-  {icon:"🏅",title:"Retail Digital Innovation Award",detail:"Zachai – 2020"},
-  {icon:"🦠",title:"Covid-19 Solution Award",detail:"Swachho – 2020"},
-  {icon:"🌐",title:"National Blockchain Policy Forum",detail:"Policy Contributor"},
-  {icon:"📘",title:"IEEE Publications",detail:"ICCIT-2005, ICNEWS-2006, ICCIT-2010"},
-  {icon:"🤝",title:"ICT4D Conference Reviewer",detail:"Independent 2010–2016"},
-  {icon:"🏛️",title:"BSTI Consumer Protection",detail:"Digital System Contributor"},
-  {icon:"💻",title:"Microsoft for Founders Fellow",detail:"2022"}
+const ACHIEVEMENTS = [
+  {type:"Certification",icon:"🎓",title:"CxO Conclave Certified",detail:"IBA – University of Dhaka. Executive leadership certification for C-suite strategy.",year:"2024"},
+  {type:"Fellowship",icon:"💻",title:"Microsoft for Startups Founders Hub",detail:"Panelist at the Bangladesh launch — discussed AI startup ecosystem and enterprise B2B SaaS.",year:"2022"},
+  {type:"Award",icon:"🏅",title:"Retail Digital Innovation Award",detail:"Zachai – Recognised for digital retail innovation.",year:"2020"},
+  {type:"Award",icon:"🦠",title:"Covid-19 Solution Award",detail:"Swachho – Pandemic response digital solution.",year:"2020"},
+  {type:"Award",icon:"🏆",title:"BASIS National ICT Award",detail:"CommEngine wins Bangladesh's top tech innovation award for SocialCRM platform.",year:"2019"},
+  {type:"Service",icon:"🤝",title:"ICT4D Conference Reviewer",detail:"Independent reviewer for International Conference on ICT for Development.",year:"2010–2016"},
+  {type:"Publication",icon:"📘",title:"IEEE Publications",detail:"ICCIT-2005, ICNEWS-2006, ICCIT-2010.",year:"2005–2010"},
+  {type:"Policy",icon:"🌐",title:"National Blockchain Policy Forum",detail:"Policy Contributor – national-level blockchain policy advisory.",year:"Ongoing"},
+  {type:"Advisory",icon:"🏛️",title:"BSTI Consumer Protection",detail:"Digital System Contributor – BSTI consumer protection systems.",year:"Ongoing"}
 ];
 
 // ── HELPERS ─────────────────────────────────────────────
@@ -753,8 +745,7 @@ function pageAbout(){
       ${TIMELINE.map(t=>`<div class="tl-item${t.active?' active-phase':''}${t.isNew?' tl-new':''}"><div class="tl-year">${t.year}</div><div class="tl-label">${t.label}</div><div class="tl-role">${t.role||''}</div><div class="tl-note">${t.note}</div></div>${t.arrowAfter?'<div class="tl-arrow">→</div>':''}`).join('')}
     </div>
     <div class="sub-label"><h3>Awards, Contributions and Participations</h3><div class="sub-label-line"></div></div>
-    <div class="feat-grid">${FEATURED.map(f=>`<div class="feat-card"><div class="feat-type">${f.type}</div><div class="feat-title">${f.title}</div><p class="feat-detail">${f.detail}</p><div class="feat-year">📅 ${f.year}</div></div>`).join('')}</div>
-    <div class="award-grid">${AWARDS.map(a=>`<div class="award-card"><div class="award-icon">${a.icon}</div><div><div class="award-title">${a.title}</div><div class="award-detail">${a.detail}</div></div></div>`).join('')}</div>`;
+    <div class="feat-grid">${ACHIEVEMENTS.map(a=>`<div class="feat-card"><div class="feat-head"><span class="feat-icon">${a.icon}</span><div class="feat-type">${a.type}</div></div><div class="feat-title">${a.title}</div><p class="feat-detail">${a.detail}</p><div class="feat-year">📅 ${a.year}</div></div>`).join('')}</div>`;
 }
 
 function pageExperience(){
@@ -907,24 +898,18 @@ function pageResearch(){
 }
 
 function pageRecognition(){
-  const feat = FEATURED.map(f=>`
+  const cards = ACHIEVEMENTS.map(a=>`
     <div class="feat-card">
-      <div class="feat-type">${f.type}</div>
-      <div class="feat-title">${f.title}</div>
-      <p class="feat-detail">${f.detail}</p>
-      <div class="feat-year">📅 ${f.year}</div>
-    </div>`).join('');
-  const awards = AWARDS.map(a=>`
-    <div class="award-card">
-      <div class="award-icon">${a.icon}</div>
-      <div><div class="award-title">${a.title}</div><div class="award-detail">${a.detail}</div></div>
+      <div class="feat-head"><span class="feat-icon">${a.icon}</span><div class="feat-type">${a.type}</div></div>
+      <div class="feat-title">${a.title}</div>
+      <p class="feat-detail">${a.detail}</p>
+      <div class="feat-year">📅 ${a.year}</div>
     </div>`).join('');
   return `
     <h2 class="section-title">Recognition</h2>
     <p class="section-sub">Awards, honours and featured milestones</p>
     <div class="sub-label"><h3>Awards, Contributions and Participations</h3><div class="sub-label-line"></div></div>
-    <div class="feat-grid">${feat}</div>
-    <div class="award-grid">${awards}</div>`;
+    <div class="feat-grid">${cards}</div>`;
 }
 
 function pageContact(){
