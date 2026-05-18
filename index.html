@@ -162,6 +162,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .tpc-badge{margin-top:14px;display:inline-block;background:rgba(0,0,0,0.06);border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;color:#555}
 .tpc.c2 .tpc-badge{background:rgba(100,150,220,0.18);color:#2a4a7a}
 .tpc.c3 .tpc-badge{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.65)}
+.one-goal-block{background:#f5f6f8;border-radius:20px;padding:32px 28px;margin:22px 0;position:relative;overflow:hidden}
+.one-goal-watermark{position:absolute;top:10px;right:24px;font-size:120px;font-weight:900;color:rgba(0,0,0,0.05);line-height:1;letter-spacing:-4px;user-select:none;pointer-events:none}
+.one-goal-tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:12px}
+.one-goal-title{font-size:52px;font-weight:900;line-height:1.05;letter-spacing:-2px;color:#1a1a1a;margin-bottom:18px}
+.one-goal-desc{font-size:16px;color:#555;line-height:1.85;margin-bottom:26px;max-width:580px}
+.one-goal-teams{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+.one-goal-team-card{background:#efefef;border-radius:14px;padding:20px 18px}
+.one-goal-team-icon{font-size:22px;margin-bottom:10px}
+.one-goal-team-name{font-weight:900;font-size:15px;color:#1a1a1a;margin-bottom:6px}
+.one-goal-team-desc{font-size:13px;color:#666;line-height:1.65}
+.one-goal-vendor{background:#efefef;border-radius:14px;padding:20px 18px;display:inline-block;min-width:220px;margin-bottom:20px}
+.one-goal-divider{border:none;border-top:1px solid #e0e0e0;margin:20px 0}
+.one-goal-stats{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.one-goal-stat-box{background:#e8e8e8;border-radius:12px;padding:14px 18px;text-align:center;min-width:80px}
+.one-goal-stat-val{font-size:28px;font-weight:900;color:#1a1a1a;line-height:1}
+.one-goal-stat-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888;margin-top:4px}
+.one-goal-format{font-size:14px;color:#555;font-weight:600;line-height:1.6}
 .prog-impact{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:4px 0 20px}
 .prog-impact-card{border-radius:16px;padding:22px 16px;text-align:center}
 .prog-impact-card.l1{background:#f9f9f9;border:1px solid #e8e8e8}
@@ -198,6 +215,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
   .three-phases-grid{grid-template-columns:1fr}
   .three-phases-title{font-size:26px}
   .three-phases-watermark{font-size:80px}
+  .one-goal-teams{grid-template-columns:1fr}
+  .one-goal-title{font-size:34px;letter-spacing:-1.2px}
+  .one-goal-watermark{font-size:80px}
   .aipa-step-num{font-size:70px;top:16px;right:16px}
   .aipa-step-title{font-size:24px}
   .prog-menu{grid-template-columns:repeat(2,1fr)}
@@ -955,6 +975,48 @@ function pagePrograms(){
           <div class="tpc-item">Enterprise AI deployment</div>
           <div class="tpc-badge">✦ Advanced cohort</div>
         </div>
+      </div>
+    </div>
+
+    <!-- ONE GOAL ONE MONTH BLOCK -->
+    <div class="one-goal-block">
+      <div class="one-goal-watermark">06</div>
+      <div class="one-goal-tag">Program Three · AI Transformation Accelerator</div>
+      <div class="one-goal-title">One Goal.<br>One Month.</div>
+      <p class="one-goal-desc">A goal-based transformation sprint. Up to 8 goals per year, per organization. <strong>Prerequisite:</strong> Completion of AIPA required before enrolling.</p>
+      <div class="one-goal-teams">
+        <div class="one-goal-team-card">
+          <div class="one-goal-team-icon">🎓</div>
+          <div class="one-goal-team-name">Facilitation Team</div>
+          <div class="one-goal-team-desc">Program design, learning architecture, and cohort coordination.</div>
+        </div>
+        <div class="one-goal-team-card">
+          <div class="one-goal-team-icon">🛠️</div>
+          <div class="one-goal-team-name">Product Team</div>
+          <div class="one-goal-team-desc">Co-building AI products and tools directly for your organization's workflows.</div>
+        </div>
+        <div class="one-goal-team-card">
+          <div class="one-goal-team-icon">⚙️</div>
+          <div class="one-goal-team-name">Technology Dev</div>
+          <div class="one-goal-team-desc">System integration, automation pipelines, and deployment.</div>
+        </div>
+      </div>
+      <div class="one-goal-vendor">
+        <div class="one-goal-team-icon">🤝</div>
+        <div class="one-goal-team-name">Vendor Partners</div>
+        <div class="one-goal-team-desc">Specialist ecosystem partners providing capability and tooling.</div>
+      </div>
+      <hr class="one-goal-divider">
+      <div class="one-goal-stats">
+        <div class="one-goal-stat-box">
+          <div class="one-goal-stat-val">8</div>
+          <div class="one-goal-stat-lbl">Goals/Year</div>
+        </div>
+        <div class="one-goal-stat-box">
+          <div class="one-goal-stat-val">1mo</div>
+          <div class="one-goal-stat-lbl">Per Goal</div>
+        </div>
+        <div class="one-goal-format">Format: 1 in-person + 1 online session per week · Workshop, bootcamp, and consulting delivery.</div>
       </div>
     </div>
 
