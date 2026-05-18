@@ -141,6 +141,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
 .prog-phase-num{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:6px}
 .prog-phase-title{font-weight:900;font-size:15px;color:#1a1a1a;margin-bottom:10px}
 .prog-phase-item{font-size:13px;color:#666;line-height:1.65;padding-left:10px;border-left:2px solid #e0e0e0;margin-bottom:6px}
+.three-phases-block{background:#f5f6f8;border-radius:20px;padding:32px 28px;margin:22px 0;position:relative;overflow:hidden}
+.three-phases-watermark{position:absolute;top:10px;right:24px;font-size:120px;font-weight:900;color:rgba(0,0,0,0.05);line-height:1;letter-spacing:-4px;user-select:none;pointer-events:none}
+.three-phases-tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:12px}
+.three-phases-title{font-size:36px;font-weight:900;line-height:1.1;letter-spacing:-1.2px;color:#1a1a1a;margin-bottom:24px}
+.three-phases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tpc{border-radius:16px;padding:22px 18px;display:flex;flex-direction:column}
+.tpc.c1{background:#fff;border:1px solid #e8e8e8}
+.tpc.c2{background:#deeaf7;border:1px solid #c5d9ee}
+.tpc.c3{background:#1a1a1a;border:1px solid #1a1a1a}
+.tpc-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#aaa;margin-bottom:10px}
+.tpc.c3 .tpc-label{color:rgba(255,255,255,0.4)}
+.tpc-num{font-size:80px;font-weight:900;color:rgba(0,0,0,0.06);line-height:0.85;letter-spacing:-3px;float:right;margin-top:-4px;user-select:none}
+.tpc.c3 .tpc-num{color:rgba(255,255,255,0.06)}
+.tpc-title{font-size:17px;font-weight:900;color:#1a1a1a;margin:0 0 14px;clear:both}
+.tpc.c3 .tpc-title{color:#fff}
+.tpc-item{font-size:13px;color:#555;padding:8px 0;border-bottom:1px solid #e8e8e8;line-height:1.5}
+.tpc.c2 .tpc-item{color:#2a4a6a;border-color:rgba(100,150,200,0.2)}
+.tpc.c3 .tpc-item{color:rgba(255,255,255,0.6);border-color:rgba(255,255,255,0.1)}
+.tpc-badge{margin-top:14px;display:inline-block;background:rgba(0,0,0,0.06);border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;color:#555}
+.tpc.c2 .tpc-badge{background:rgba(100,150,220,0.18);color:#2a4a7a}
+.tpc.c3 .tpc-badge{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.65)}
 .prog-impact{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:4px 0 20px}
 .prog-impact-card{border-radius:16px;padding:22px 16px;text-align:center}
 .prog-impact-card.l1{background:#f9f9f9;border:1px solid #e8e8e8}
@@ -174,6 +195,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,
   .prog-hero-title{font-size:36px}
   .prog-impact{grid-template-columns:1fr}
   .prog-phase-grid{grid-template-columns:1fr}
+  .three-phases-grid{grid-template-columns:1fr}
+  .three-phases-title{font-size:26px}
+  .three-phases-watermark{font-size:80px}
   .aipa-step-num{font-size:70px;top:16px;right:16px}
   .aipa-step-title{font-size:24px}
   .prog-menu{grid-template-columns:repeat(2,1fr)}
@@ -892,6 +916,45 @@ function pagePrograms(){
         <div class="prog-menu-code" style="font-size:17px;letter-spacing:-0.3px">Product<br>Bootcamp</div>
         <div class="prog-menu-name" style="margin-top:4px">Technical Product Bootcamp</div>
         <div class="prog-menu-for">For IT &amp; Engineering Teams</div>
+      </div>
+    </div>
+
+    <!-- THREE PHASES BLOCK -->
+    <div class="three-phases-block">
+      <div class="three-phases-watermark">04</div>
+      <div class="three-phases-tag">AIPA Curriculum · Progressive Mastery</div>
+      <div class="three-phases-title">Three Phases.<br>Progressive Mastery.</div>
+      <div class="three-phases-grid">
+        <div class="tpc c1">
+          <div class="tpc-label">Cohort 1 · Sessions 1–4</div>
+          <div class="tpc-num">1</div>
+          <div class="tpc-title">Foundations &amp; Proficiency</div>
+          <div class="tpc-item">Understanding AI &amp; its landscape</div>
+          <div class="tpc-item">Core AI tools and platforms</div>
+          <div class="tpc-item">Building AI proficiency at work</div>
+          <div class="tpc-item">Implementing AI in daily tasks</div>
+          <div class="tpc-badge">✦ Common to all levels</div>
+        </div>
+        <div class="tpc c2">
+          <div class="tpc-label">Cohort 2 · Sessions 5–8</div>
+          <div class="tpc-num">2</div>
+          <div class="tpc-title">Work Function Automation</div>
+          <div class="tpc-item">Work function AI automation</div>
+          <div class="tpc-item">No-code &amp; AI app building</div>
+          <div class="tpc-item">Impactful AI applications</div>
+          <div class="tpc-item">Data &amp; insight visualization</div>
+          <div class="tpc-badge">✦ Top management → General workforce</div>
+        </div>
+        <div class="tpc c3">
+          <div class="tpc-label">Cohort 3 · Sessions 9–12</div>
+          <div class="tpc-num">3</div>
+          <div class="tpc-title">Advanced AI Practice</div>
+          <div class="tpc-item">Organizational roadmap creation</div>
+          <div class="tpc-item">Agentic AI &amp; automated routines</div>
+          <div class="tpc-item">Workflow AI integration</div>
+          <div class="tpc-item">Enterprise AI deployment</div>
+          <div class="tpc-badge">✦ Advanced cohort</div>
+        </div>
       </div>
     </div>
 
