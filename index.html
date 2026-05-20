@@ -431,82 +431,6 @@ nav{
 .uc-menu-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:-0.008em;line-height:1.3}
 .uc-menu-desc{font-size:12px;color:var(--muted);font-weight:400;line-height:1.5;letter-spacing:-0.003em}
 @media(max-width:700px){.uc-menu{grid-template-columns:repeat(2,1fr)}}
-.uc-menu-card.uc-clickable{cursor:pointer}
-.uc-menu-card.uc-clickable:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
-.uc-menu-card.uc-active{border-color:var(--accent)}
-.uc-menu-card.uc-active .uc-menu-icon{background:var(--accent-sky);border-color:var(--accent)}
-.uc-menu-card.uc-active .uc-menu-icon svg{stroke:var(--accent)}
-.uc-cta{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);margin-top:14px;letter-spacing:-0.003em}
-.uc-cta-arrow{transition:transform .2s ease}
-.uc-menu-card.uc-active .uc-cta-arrow{transform:rotate(90deg)}
-
-/* HR USE CASE PANEL — EasyFlow recruitment article */
-.uc-panel{display:none;margin-bottom:32px}
-.uc-panel.open{display:block;animation:fadeUp .45s ease both}
-.uc-article{background:var(--paper);border:1px solid var(--line-soft);border-radius:var(--radius-xl);padding:48px 52px}
-.uc-kicker{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
-.uc-kicker::after{content:'';flex:1;height:1px;background:var(--line-soft)}
-.uc-art-title{font-family:var(--sans);font-size:clamp(28px,4vw,40px);font-weight:600;line-height:1.08;letter-spacing:-0.022em;color:var(--ink);margin-bottom:16px}
-.uc-art-title span{color:var(--accent)}
-.uc-art-meta{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted);margin-bottom:8px}
-.uc-art-meta .uc-dot{width:3px;height:3px;border-radius:50%;background:var(--line)}
-.uc-art-divider{height:1px;background:var(--line-soft);margin:28px 0}
-.uc-intro{font-size:19px;font-weight:500;line-height:1.5;color:var(--ink-2);margin-bottom:20px;letter-spacing:-0.005em}
-.uc-art-p{font-size:16px;line-height:1.65;color:var(--ink-2);margin-bottom:18px;letter-spacing:-0.003em}
-.uc-pull{border-left:3px solid var(--accent);background:var(--accent-sky);border-radius:0 var(--radius) var(--radius) 0;padding:16px 22px;margin:26px 0;font-family:var(--sans);font-size:17px;font-weight:600;color:var(--accent);line-height:1.45;letter-spacing:-0.012em}
-.uc-art-h2{font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted);margin:38px 0 18px}
-.uc-benefits{display:grid;grid-template-columns:1fr;gap:14px}
-.uc-benefit{background:var(--paper-2);border-radius:var(--radius-lg);padding:24px 26px;display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:start}
-.uc-benefit-num{width:48px;height:48px;border-radius:12px;background:var(--accent-sky);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:20px;font-weight:600;color:var(--accent)}
-.uc-benefit-title{font-family:var(--sans);font-size:18px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:-0.012em}
-.uc-benefit-text{font-size:14.5px;line-height:1.6;color:var(--ink-2);margin:0 0 12px}
-.uc-benefit-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:-0.003em;color:var(--accent);background:var(--accent-sky);padding:4px 11px;border-radius:999px}
-.uc-closing{margin-top:30px;padding-top:24px;border-top:1px solid var(--line-soft)}
-.uc-closing p{font-size:15px;color:var(--ink-2);line-height:1.6;margin:0}
-.uc-closing strong{font-weight:600;color:var(--ink)}
-
-/* HR USE CASE — FLOW DIAGRAM */
-.uc-diagram{background:var(--paper-2);border-radius:var(--radius-xl);padding:32px;margin:24px 0}
-.uc-diagram-title{font-family:var(--sans);font-size:22px;font-weight:600;color:var(--ink);letter-spacing:-0.018em;margin-bottom:4px}
-.uc-diagram-sub{font-size:13px;color:var(--muted);margin-bottom:22px;letter-spacing:-0.003em}
-.uc-phase{border-radius:var(--radius-lg);padding:20px}
-.uc-phase-label{font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:14px}
-.uc-phase-candidate{background:var(--paper);border:1px solid var(--line-soft)}
-.uc-phase-candidate .uc-phase-label{color:var(--accent)}
-.uc-phase-ai{background:#000}
-.uc-phase-ai .uc-phase-label{color:var(--accent)}
-.uc-phase-recruiter{background:var(--accent)}
-.uc-phase-recruiter .uc-phase-label{color:rgba(255,255,255,0.72)}
-.uc-phase-connector{display:flex;justify-content:center;color:var(--muted-2);font-size:15px;padding:7px 0}
-.uc-steps{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch}
-.uc-step{flex:1 1 104px;border-radius:var(--radius);padding:14px 9px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
-.uc-phase-candidate .uc-step{background:var(--paper-2)}
-.uc-phase-ai .uc-step{background:rgba(255,255,255,0.07)}
-.uc-step-ico{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center}
-.uc-phase-candidate .uc-step-ico{background:var(--accent-sky)}
-.uc-phase-ai .uc-step-ico{background:rgba(255,255,255,0.12)}
-.uc-step-ico svg{width:17px;height:17px;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.uc-phase-candidate .uc-step-ico svg{stroke:var(--accent)}
-.uc-phase-ai .uc-step-ico svg{stroke:#fff}
-.uc-step-num{font-size:10px;font-weight:600;letter-spacing:0.03em}
-.uc-phase-candidate .uc-step-num{color:var(--muted)}
-.uc-phase-ai .uc-step-num{color:rgba(245,245,247,0.5)}
-.uc-step-label{font-size:11.5px;font-weight:600;line-height:1.35;letter-spacing:-0.005em}
-.uc-phase-candidate .uc-step-label{color:var(--ink)}
-.uc-phase-ai .uc-step-label{color:#f5f5f7}
-.uc-arrow{display:flex;align-items:center;flex:0 0 auto;font-size:13px;color:var(--muted-2)}
-.uc-phase-ai .uc-arrow{color:rgba(255,255,255,0.4)}
-.uc-recruiter-row{display:flex;align-items:center;gap:15px}
-.uc-recruiter-ico{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.uc-recruiter-ico svg{width:23px;height:23px;stroke:#fff;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.uc-recruiter-text{font-family:var(--sans);font-size:17px;font-weight:600;color:#fff;letter-spacing:-0.012em;line-height:1.3}
-.uc-recruiter-text span{display:block;font-size:12.5px;font-weight:400;color:rgba(255,255,255,0.82);margin-top:3px;letter-spacing:-0.003em}
-@media(max-width:600px){
-  .uc-article{padding:32px 22px}
-  .uc-diagram{padding:22px 16px}
-  .uc-benefit{grid-template-columns:40px 1fr;gap:14px;padding:20px}
-  .uc-benefit-num{width:40px;height:40px;font-size:17px}
-}
 
 /* EVENTS */
 .event-card{background:var(--paper-2);border:none;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:14px;transition:box-shadow .25s ease, transform .25s ease}
@@ -854,16 +778,6 @@ const SKILLS = {
   "Certifications":["ITILv4","BABOK","PMP","CxO Conclave (IBA-DU, 2024)","ServADM","NSN TACII","Microsoft for Founders Fellow 2022"]
 };
 
-const PRODUCTS = [
-  {name:"EasyFlow",tagline:"AI-Guided Audience Engagement Platform · CommEngine-FutureMind AI",url:"https://flow.easydo.ai",emoji:"🌊",tags:["Audience Engagement","AI Coach","Live & Self-Paced"],desc:"Now manage even thousands of participants together — live or self-paced. Take feedback, assign 1:1 AI coaches, run assessments. All in one elegant flow. Simple, powerful, built for scale.",stats:[{val:"1000s",label:"Participants"},{val:"1:1 AI",label:"Coaching"},{val:"Live+Async",label:"Delivery"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://flow.easydo.ai/"},
-  {name:"EasyDo",tagline:"Unified AI Aggregator & Workspace",url:"https://easydo.ai",emoji:"🤖",tags:["AI Workspace","No-code","LLM"],desc:"Private AI workspace aggregating GPT-4o, Gemini 2.5, Claude 3, DALL·E, Whisper, Deepseek and more. Design AI tools in under 5 minutes with no code. Starting from $1/month.",stats:[{val:"5 min",label:"Tool Setup"},{val:"Multi-LLM",label:"Models"},{val:"$1/mo",label:"Starting"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://easydo.ai/"},
-  {name:"CommEngine",tagline:"Social CRM & Customer Intelligence",url:"https://www.commengine.xyz",emoji:"💬",tags:["SocialCRM","B2B SaaS","Analytics"],desc:"Bangladesh's leading Social Media CRM. Enables query management, AI-based customer profiling, lead management, and real-time analytics. Serving 120+ brands including Unilever, BRAC Bank and Singer.",stats:[{val:"120+",label:"Brands"},{val:"1.5M+",label:"Profiles"},{val:"99%",label:"Satisfaction"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://commengine.xyz/"},
-  {name:"Zachai",tagline:"Blockchain & IoT Anti-Counterfeit",url:"https://www.zachai.xyz",emoji:"🔐",tags:["Blockchain","IoT","RetailTech"],desc:"Mobile, IoT and Blockchain-based product authentication platform. Enables brands to verify products across supply chains. Serves Automobile, Healthcare, Food & Consumer Goods industries.",stats:[{val:"Multi",label:"Industries"},{val:"Supply",label:"Chain Track"},{val:"Block",label:"Verified"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://www.zachai.xyz/"},
-  {name:"SMS Filter",tagline:"Intelligent SMS Ecosystem & Spam Control",url:"https://www.commengine.xyz",emoji:"📱",tags:["Telco","SMS","Digital Services"],desc:"Redesigned the SMS ecosystem for 40M+ subscribers at Robi Axiata. Implemented intelligent filtering, spam control, and VAS platform optimisation — achieving $3M YRR and a cleaner subscriber experience.",stats:[{val:"40M+",label:"Subscribers"},{val:"$3M",label:"YRR"},{val:"Spam-Free",label:"Ecosystem"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://www.commengine.xyz/"},
-  {name:"IOT Lab",tagline:"IoT Innovation & Digital Services Lab",url:"https://www.commengine.xyz",emoji:"🔌",tags:["IoT","Innovation","Telecom"],desc:"Led IoT product lifecycle and innovation lab at Robi Axiata. Managed Airtel & Axiata SDP merger, onboarding 2000+ services across USSD, VAS, MFS & Digital platforms. Driving next-gen connected solutions.",stats:[{val:"2000+",label:"Services"},{val:"IoT+MFS",label:"Platforms"},{val:"Axiata",label:"Group"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://www.commengine.xyz/"},
-  {name:"BuildNation LMS",tagline:"Blended Learning B2B Platform",url:"https://buildnation.com.bd/aipa/",emoji:"🏗️",tags:["LMS","EdTech","Corporate"],desc:"Blended Learning B2B LMS onboarding global programs including TAFE Australia, ACCA, CIMA and AI-PA. Built for corporate AI transformation, executive upskilling, and measurable learning outcomes.",stats:[{val:"200+",label:"Participants"},{val:"6",label:"Corporates"},{val:"Global",label:"Programs"}],preview:"https://image.thum.io/get/width/700/crop/420/noanimate/https://buildnation.com.bd/"}
-];
-
 const DIG8_POSTS = [
   {
     date:"Feb 2025 · 🌐",
@@ -1143,32 +1057,14 @@ function pageExperience(){
 }
 
 function pageProducts(){
-  const cards = PRODUCTS.map(p=>`
-    <div class="product-card">
-      <a href="${p.url}" target="_blank" class="product-preview">
-        <img src="${p.preview}" alt="${p.name}" loading="lazy"/>
-        <div class="preview-badge">Visit Site ↗</div>
-      </a>
-      <div class="product-body">
-        <div>
-          <div class="product-emoji">${p.emoji}</div>
-          <div class="product-name">${p.name}</div>
-          <div class="product-tag">${p.tagline}</div>
-        </div>
-        <div class="chip-row">${chips(p.tags)}</div>
-        <p class="product-desc">${p.desc}</p>
-        <div class="product-stats">${p.stats.map(s=>`<div class="pstat"><div class="pstat-val">${s.val}</div><div class="pstat-lbl">${s.label}</div></div>`).join('')}</div>
-      </div>
-    </div>`).join('');
-  const ucMenu = `
+  return `
     <div class="uc-menu">
-      <div class="uc-menu-card uc-clickable" id="uc-card-hr" onclick="toggleUseCase('hr')">
+      <div class="uc-menu-card">
         <div class="uc-menu-icon">
           <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
         </div>
         <div class="uc-menu-title">EasyFlow for HR</div>
         <div class="uc-menu-desc">Recruitment, interviews, onboarding</div>
-        <div class="uc-cta">View use case <span class="uc-cta-arrow">→</span></div>
       </div>
       <div class="uc-menu-card">
         <div class="uc-menu-icon">
@@ -1192,126 +1088,6 @@ function pageProducts(){
         <div class="uc-menu-desc">Product demos, pitch decks</div>
       </div>
     </div>`;
-  const hrPanel = `
-    <div class="uc-panel" id="uc-panel-hr">
-      <div class="uc-article">
-        <div class="uc-kicker">EasyFlow — Recruitment Use Case</div>
-        <h3 class="uc-art-title">Hire smarter. Screen faster. <span>Let the flow do the work.</span></h3>
-        <div class="uc-art-meta">
-          <span>2-minute read</span>
-          <span class="uc-dot"></span>
-          <span>Powered by EasyFlow · flow.easydo.ai</span>
-        </div>
-        <div class="uc-art-divider"></div>
-        <p class="uc-intro">Finding the right candidate is hard enough. Managing the screening process shouldn't be. EasyFlow turns your entire recruitment intake — from job description to AI interview — into one seamless, self-running flow.</p>
-        <p class="uc-art-p">When a candidate enters your recruitment flow, they see the job description first — no confusion, no back-and-forth. Then, step by step, the flow guides them through qualification questions, a short written task, and a three-minute AI-powered conversational interview, designed entirely by your recruiter. They upload their CV, hit submit, and they're done.</p>
-        <p class="uc-art-p">What happens next requires zero manual effort from your team. Behind the scenes, every response — form answers, written task, interview transcript, CV content — is automatically scored by AI. Your recruiter opens a ranked list and makes one decision: who moves forward.</p>
-
-        <div class="uc-diagram">
-          <div class="uc-diagram-title">The recruitment flow, end to end</div>
-          <div class="uc-diagram-sub">One link to the candidate. Three phases. No manual screening.</div>
-          <div class="uc-phase uc-phase-candidate">
-            <div class="uc-phase-label">Phase 01 · Candidate experience — self-paced</div>
-            <div class="uc-steps">
-              <div class="uc-step">
-                <div class="uc-step-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg></div>
-                <div class="uc-step-num">STEP 1</div>
-                <div class="uc-step-label">Job description</div>
-              </div>
-              <div class="uc-arrow">→</div>
-              <div class="uc-step">
-                <div class="uc-step-ico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-                <div class="uc-step-num">STEP 2</div>
-                <div class="uc-step-label">Qualification Q&amp;A</div>
-              </div>
-              <div class="uc-arrow">→</div>
-              <div class="uc-step">
-                <div class="uc-step-ico"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4z"/></svg></div>
-                <div class="uc-step-num">STEP 3</div>
-                <div class="uc-step-label">Written task</div>
-              </div>
-              <div class="uc-arrow">→</div>
-              <div class="uc-step">
-                <div class="uc-step-ico"><svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg></div>
-                <div class="uc-step-num">STEP 4</div>
-                <div class="uc-step-label">AI interview · 3 min</div>
-              </div>
-              <div class="uc-arrow">→</div>
-              <div class="uc-step">
-                <div class="uc-step-ico"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
-                <div class="uc-step-num">STEP 5</div>
-                <div class="uc-step-label">CV upload &amp; submit</div>
-              </div>
-            </div>
-          </div>
-          <div class="uc-phase-connector">↓</div>
-          <div class="uc-phase uc-phase-ai">
-            <div class="uc-phase-label">Phase 02 · AI does the work — automatic, zero effort</div>
-            <div class="uc-steps">
-              <div class="uc-step">
-                <div class="uc-step-ico"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-                <div class="uc-step-num">STEP 6</div>
-                <div class="uc-step-label">Every response scored by AI</div>
-              </div>
-              <div class="uc-arrow">→</div>
-              <div class="uc-step">
-                <div class="uc-step-ico"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-                <div class="uc-step-num">STEP 7</div>
-                <div class="uc-step-label">Ranked shortlist built</div>
-              </div>
-            </div>
-          </div>
-          <div class="uc-phase-connector">↓</div>
-          <div class="uc-phase uc-phase-recruiter">
-            <div class="uc-phase-label">Phase 03 · Recruiter — where it counts</div>
-            <div class="uc-recruiter-row">
-              <div class="uc-recruiter-ico"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg></div>
-              <div class="uc-recruiter-text">One decision: who moves forward<span>The recruiter reviews the ranked list — no screening, no spreadsheets.</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="uc-pull">From application link to ranked shortlist — with no recruiter involvement until it counts.</div>
-
-        <div class="uc-art-h2">Why teams choose EasyFlow for recruitment</div>
-        <div class="uc-benefits">
-          <div class="uc-benefit">
-            <div class="uc-benefit-num">01</div>
-            <div>
-              <div class="uc-benefit-title">One flow replaces five tools</div>
-              <p class="uc-benefit-text">No more switching between a form builder, email threads, WhatsApp, video call links, and spreadsheets. EasyFlow combines job description display, structured Q&amp;A, written assessment, AI interview, and CV collection into a single link you send to every candidate.</p>
-              <span class="uc-benefit-tag">Efficiency</span>
-            </div>
-          </div>
-          <div class="uc-benefit">
-            <div class="uc-benefit-num">02</div>
-            <div>
-              <div class="uc-benefit-title">AI scoring that actually thinks</div>
-              <p class="uc-benefit-text">Forget keyword matching. EasyFlow's AI evaluates how well a candidate understood the role, the quality of their written response, and the depth of their interview answers — all weighted together. The result is a score that reflects real suitability, not just resume length.</p>
-              <span class="uc-benefit-tag">Intelligence</span>
-            </div>
-          </div>
-          <div class="uc-benefit">
-            <div class="uc-benefit-num">03</div>
-            <div>
-              <div class="uc-benefit-title">A fair, consistent experience at any scale</div>
-              <p class="uc-benefit-text">Whether you're screening 20 or 2,000 applicants, every candidate gets the same structured process — same questions, same interview design, same objective scoring. Human bias is removed from the intake stage. Your recruiters focus where they matter most: the final conversation.</p>
-              <span class="uc-benefit-tag">Fairness &amp; scale</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="uc-closing">
-          <p>EasyFlow is built for teams who want recruitment to run itself — <strong>structured by design, intelligent by default, and fair for everyone.</strong> Set it up once. Let every candidate experience it at their own pace. Review the ranked list when you're ready.</p>
-        </div>
-      </div>
-    </div>`;
-  return `
-    <h2 class="section-title">Products</h2>
-    <p class="section-sub">Ventures built at the intersection of AI, SaaS & Digital Transformation</p>
-    ${ucMenu}
-    ${hrPanel}
-    <div class="product-grid">${cards}</div>`;
 }
 
 function pageEvents(){
@@ -1983,15 +1759,6 @@ function toggleExp(i){
   const arr  = document.getElementById('arr'+i);
   body.classList.toggle('open');
   arr.classList.toggle('open');
-}
-
-function toggleUseCase(key){
-  const panel = document.getElementById('uc-panel-'+key);
-  const card  = document.getElementById('uc-card-'+key);
-  if(!panel) return;
-  const open = panel.classList.toggle('open');
-  if(card) card.classList.toggle('uc-active', open);
-  if(open) panel.scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 
 // ── INIT ─────────────────────────────────────────────────
