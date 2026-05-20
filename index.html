@@ -422,6 +422,16 @@ nav{
 .prog-menu-name{font-size:13px;font-weight:500;color:var(--ink-2);margin-bottom:10px;line-height:1.4;letter-spacing:-0.005em}
 .prog-menu-for{font-size:12px;color:var(--muted);font-weight:400;line-height:1.5}
 
+/* USE CASE MENU */
+.uc-menu{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:32px}
+.uc-menu-card{background:var(--paper);border:1px solid var(--line-soft);border-radius:var(--radius-lg);padding:26px 22px;transition:box-shadow .2s ease,transform .2s ease}
+.uc-menu-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.uc-menu-icon{width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--paper-2);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.uc-menu-icon svg{width:20px;height:20px;stroke:var(--ink-2);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.uc-menu-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:-0.008em;line-height:1.3}
+.uc-menu-desc{font-size:12px;color:var(--muted);font-weight:400;line-height:1.5;letter-spacing:-0.003em}
+@media(max-width:700px){.uc-menu{grid-template-columns:repeat(2,1fr)}}
+
 /* EVENTS */
 .event-card{background:var(--paper-2);border:none;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:14px;transition:box-shadow .25s ease, transform .25s ease}
 .event-card:hover{box-shadow:var(--shadow);transform:translateY(-1px)}
@@ -1074,9 +1084,41 @@ function pageProducts(){
         <div class="product-stats">${p.stats.map(s=>`<div class="pstat"><div class="pstat-val">${s.val}</div><div class="pstat-lbl">${s.label}</div></div>`).join('')}</div>
       </div>
     </div>`).join('');
+  const ucMenu = `
+    <div class="uc-menu">
+      <div class="uc-menu-card">
+        <div class="uc-menu-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+        </div>
+        <div class="uc-menu-title">EasyFlow for HR</div>
+        <div class="uc-menu-desc">Recruitment, interviews, onboarding</div>
+      </div>
+      <div class="uc-menu-card">
+        <div class="uc-menu-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="uc-menu-title">EasyFlow for Trainers</div>
+        <div class="uc-menu-desc">Training courses, modules, lessons</div>
+      </div>
+      <div class="uc-menu-card">
+        <div class="uc-menu-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+        </div>
+        <div class="uc-menu-title">EasyFlow for Course Delivery</div>
+        <div class="uc-menu-desc">Interactive learning experiences</div>
+      </div>
+      <div class="uc-menu-card">
+        <div class="uc-menu-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="uc-menu-title">EasyFlow for Product Presentation</div>
+        <div class="uc-menu-desc">Product demos, pitch decks</div>
+      </div>
+    </div>`;
   return `
     <h2 class="section-title">Products</h2>
     <p class="section-sub">Ventures built at the intersection of AI, SaaS & Digital Transformation</p>
+    ${ucMenu}
     <div class="product-grid">${cards}</div>`;
 }
 
