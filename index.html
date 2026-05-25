@@ -1777,8 +1777,18 @@ function toggleExp(i){
     btn.onclick = ()=>showPage(id);
     tabs.appendChild(btn);
   });
-  // load page from URL
-  const pageFromURL = getPageFromURL();
+  // load page from URL or redirect path
+  let pageFromURL = getPageFromURL();
+  // check if redirected from 404
+  const redirectPath = sessionStorage.getItem('redirectPath');
+  if(redirectPath){
+    sessionStorage.removeItem('redirectPath');
+    const redirectPage = redirectPath.replace(/\//g, '').toLowerCase() || 'about';
+    if(PAGES[redirectPage]){
+      pageFromURL = redirectPage;
+      window.history.replaceState({ page: redirectPage }, '', redirectPath);
+    }
+  }
   const initialPage = PAGES[pageFromURL] ? pageFromURL : 'about';
   showPage(initialPage, false);
 })();
