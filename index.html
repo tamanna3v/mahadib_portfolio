@@ -1088,6 +1088,18 @@ function pageExperience(){
 }
 
 function pageProducts(){
+  const productLinks = [
+    {icon:"🌐",label:"AI Accelerator Program",val:"buildnation.com.bd",href:"https://buildnation.com.bd/aipa/"},
+    {icon:"🏢",label:"SocialCRM & AI Profiling",val:"commengine.xyz",href:"http://www.commengine.xyz"},
+    {icon:"🤖",label:"Private AI Workspace",val:"easydo.ai",href:"https://easydo.ai"},
+    {icon:"🔐",label:"Product Authentication",val:"zachai.xyz",href:"https://www.zachai.xyz"},
+    {icon:"🌊",label:"AI Audience Engagement",val:"flow.easydo.ai",href:"https://flow.easydo.ai"}
+  ].map(c=>`
+    <a href="${c.href}" target="_blank" class="contact-card">
+      <span class="contact-icon">${c.icon}</span>
+      <div><div class="contact-lbl">${c.label}</div><div class="contact-val">${c.val}</div></div>
+    </a>`).join('');
+
   return `
     <h2 class="section-title">Products</h2>
     <p class="section-sub">AI-powered platforms built to transform how teams work and engage</p>
@@ -1169,7 +1181,9 @@ function pageProducts(){
         <div class="uc-menu-title">EasyFlow for Product Presentation</div>
         <div class="uc-menu-desc">Product demos, pitch decks</div>
       </div>
-    </div>`;
+    </div>
+    <div class="sub-label"><h3>Product Links</h3><div class="sub-label-line"></div></div>
+    <div class="contact-grid">${productLinks}</div>`;
 }
 
 function pageEvents(){
