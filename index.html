@@ -73,6 +73,12 @@ a:hover{text-decoration:underline}
 .exp-link:hover,.dig8-feed-btn:hover,.ieee-btn:hover,.writing-link:hover{text-decoration:none}
 button{font-family:var(--sans);cursor:pointer}
 em,i{font-style:italic;font-weight:inherit}
+.aipa-slide[data-program]:not([data-program="all"]) {
+  display: none;
+}
+.aipa-slide[data-program="all"] {
+  display: block;
+}
 
 /* NAV — Apple's signature translucent thin bar */
 nav{
@@ -1229,38 +1235,38 @@ function pageAIPA(){
 
 <!-- AI ACCELERATOR MENU -->
 <div class="prog-menu">
-  <div class="prog-menu-card prog-menu-card-01">
+  <button class="prog-menu-card prog-menu-card-01" onclick="switchAIPAContent('aisa')" style="cursor:pointer;border:none;background:none">
     <div class="prog-menu-accent"></div>
     <div class="prog-menu-num">Program 01</div>
     <div class="prog-menu-code">AISA</div>
     <div class="prog-menu-name">AI Strategy Accelerator</div>
     <div class="prog-menu-for">For CXOs &amp; Senior Leadership · 2 Days</div>
-  </div>
-  <div class="prog-menu-card prog-menu-card-02">
+  </button>
+  <button class="prog-menu-card prog-menu-card-02" onclick="switchAIPAContent('aipa')" style="cursor:pointer;border:none;background:none">
     <div class="prog-menu-accent"></div>
     <div class="prog-menu-num">Program 02</div>
     <div class="prog-menu-code">AIPA</div>
     <div class="prog-menu-name">AI Proficiency Accelerator</div>
     <div class="prog-menu-for">For Entire Workforce · 5 Months · 12 Sessions</div>
-  </div>
-  <div class="prog-menu-card prog-menu-card-03">
+  </button>
+  <button class="prog-menu-card prog-menu-card-03" onclick="switchAIPAContent('aita')" style="cursor:pointer;border:none;background:none">
     <div class="prog-menu-accent"></div>
     <div class="prog-menu-num">Program 03</div>
     <div class="prog-menu-code">AITA</div>
     <div class="prog-menu-name">AI Transformation Accelerator</div>
     <div class="prog-menu-for">Goal-Based Sprint · 1 Month / Goal</div>
-  </div>
-  <div class="prog-menu-card prog-menu-card-04">
+  </button>
+  <button class="prog-menu-card prog-menu-card-04" onclick="switchAIPAContent('bootcamp')" style="cursor:pointer;border:none;background:none">
     <div class="prog-menu-accent"></div>
     <div class="prog-menu-num">Technical Add-On</div>
     <div class="prog-menu-code" style="font-size:22px;line-height:1.2">Product<br>Bootcamp</div>
     <div class="prog-menu-name">Technical Product Bootcamp</div>
     <div class="prog-menu-for">For IT &amp; Engineering Teams</div>
-  </div>
+  </button>
 </div>
 
 <!-- SLIDE 1: HERO -->
-<div class="aipa-slide aipa-dark">
+<div class="aipa-slide aipa-dark" data-program="all">
   <div class="aipa-big-num">AI</div>
   <span class="aipa-tag">AI ACCELERATOR SUITE · BUILDNATION LIMITED</span>
   <div class="aipa-headline-xl">AI Proficiency<br>Accelerator</div>
@@ -1280,7 +1286,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 2: THE VISION -->
-<div class="aipa-slide aipa-light">
+<div class="aipa-slide aipa-light" data-program="all">
   <div class="aipa-big-num" style="color:#1a1a1a">01</div>
   <span class="aipa-tag" style="color:#888">THE VISION</span>
   <div class="aipa-headline-lg">Riding the AI Wave</div>
@@ -1293,7 +1299,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 3: PROVEN RESULTS -->
-<div class="aipa-slide aipa-dark">
+<div class="aipa-slide aipa-dark" data-program="all">
   <div class="aipa-big-num">02</div>
   <span class="aipa-tag">PROVEN RESULTS · PREVIOUS COHORTS</span>
   <div class="aipa-headline-lg">190+ Professionals.<br>Real Transformation.</div>
@@ -1319,7 +1325,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 4: THE SUITE -->
-<div class="aipa-slide aipa-light">
+<div class="aipa-slide aipa-light" data-program="all">
   <div class="aipa-big-num" style="color:#1a1a1a">03</div>
   <span class="aipa-tag" style="color:#888">THE SUITE · THREE PROGRAMS, ONE COMPLETE JOURNEY</span>
   <div class="aipa-headline-lg">Three Programs.<br>One Complete Journey.</div>
@@ -1361,7 +1367,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 5: PROGRAM 01 — AI STRATEGY ACCELERATOR -->
-<div class="aipa-slide aipa-dark">
+<div class="aipa-slide aipa-dark" data-program="aisa">
   <div class="aipa-big-num">01</div>
   <span class="aipa-tag">PROGRAM ONE · AI STRATEGY ACCELERATOR</span>
   <div class="aipa-headline-xl">Where Do<br>We Start?</div>
@@ -1393,7 +1399,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 6: PROGRAM 02 — AI PROFICIENCY ACCELERATOR -->
-<div class="aipa-slide aipa-accent">
+<div class="aipa-slide aipa-accent" data-program="aipa">
   <div class="aipa-big-num" style="color:#0a66c2">02</div>
   <span class="aipa-tag" style="color:#0a66c2">PROGRAM TWO · AI PROFICIENCY ACCELERATOR</span>
   <div class="aipa-headline-xl" style="color:#0d1a2e">AI Proficiency<br>for Everyone</div>
@@ -1425,7 +1431,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 7: CURRICULUM -->
-<div class="aipa-slide aipa-light">
+<div class="aipa-slide aipa-light" data-program="aipa">
   <div class="aipa-big-num" style="color:#1a1a1a">04</div>
   <span class="aipa-tag" style="color:#888">AIPA CURRICULUM · PROGRESSIVE MASTERY</span>
   <div class="aipa-headline-lg">Three Phases.<br>Progressive Mastery.</div>
@@ -1464,7 +1470,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 8: PRODUCTIVITY IMPACT -->
-<div class="aipa-slide aipa-dark">
+<div class="aipa-slide aipa-dark" data-program="aipa">
   <div class="aipa-big-num">05</div>
   <span class="aipa-tag">PRODUCTIVITY IMPACT · THREE LEVELS OF GAIN</span>
   <div class="aipa-headline-lg">Three Levels<br>of Gain.</div>
@@ -1495,7 +1501,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 9: PROGRAM 03 — TRANSFORMATION ACCELERATOR -->
-<div class="aipa-slide aipa-light">
+<div class="aipa-slide aipa-light" data-program="aita">
   <div class="aipa-big-num" style="color:#1a1a1a">06</div>
   <span class="aipa-tag" style="color:#888">PROGRAM THREE · AI TRANSFORMATION ACCELERATOR</span>
   <div class="aipa-headline-xl" style="color:#1a1a1a">One Goal.<br>One Month.</div>
@@ -1537,7 +1543,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 10: TECHNICAL BOOTCAMP -->
-<div class="aipa-slide aipa-accent">
+<div class="aipa-slide aipa-accent" data-program="bootcamp">
   <div class="aipa-big-num" style="color:#0a66c2">TC</div>
   <span class="aipa-tag" style="color:#0a66c2">TECHNICAL EXTENSION · AI PRODUCT BOOTCAMP</span>
   <div class="aipa-headline-lg" style="color:#0d1a2e">Technical<br>Product Bootcamp</div>
@@ -1575,7 +1581,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 11: WHY BUILDNATION -->
-<div class="aipa-slide aipa-light">
+<div class="aipa-slide aipa-light" data-program="all">
   <div class="aipa-big-num" style="color:#1a1a1a">07</div>
   <span class="aipa-tag" style="color:#888">WHY BUILDNATION · BUILT FOR ORGANIZATIONS</span>
   <div class="aipa-headline-lg">Built for Organizations.<br>Proven in Practice.</div>
@@ -1596,7 +1602,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 12: LEADERSHIP TEAM -->
-<div class="aipa-slide aipa-dark">
+<div class="aipa-slide aipa-dark" data-program="all">
   <div class="aipa-big-num">08</div>
   <span class="aipa-tag">AI-PA LEADERSHIP TEAM</span>
   <div class="aipa-headline-lg">The Minds<br>Behind AIPA</div>
@@ -1629,7 +1635,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 13: COHORT SUCCESS STORIES -->
-<div class="aipa-slide aipa-light">
+<div class="aipa-slide aipa-light" data-program="all">
   <div class="aipa-big-num" style="color:#1a1a1a">09</div>
   <span class="aipa-tag" style="color:#888">COHORT SUCCESS STORIES</span>
   <div class="aipa-headline-lg">Proven.<br>In Practice.</div>
@@ -1656,7 +1662,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 14: TRUSTED ORGANIZATIONS + CTA -->
-<div class="aipa-slide aipa-dark" style="background:linear-gradient(145deg, #c8e0bd 0%, #e3d0cc 60%, #e8d4d1 100%)">
+<div class="aipa-slide aipa-dark" data-program="all" style="background:linear-gradient(145deg, #c8e0bd 0%, #e3d0cc 60%, #e8d4d1 100%)">
   <div class="aipa-big-num">10</div>
   <span class="aipa-tag">TRUSTED BY LEADING ORGANIZATIONS</span>
   <div class="aipa-headline-lg">200+ Senior<br>Leaders Transformed.</div>
@@ -1681,7 +1687,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 16: CONTACT -->
-<div class="aipa-slide aipa-accent">
+<div class="aipa-slide aipa-accent" data-program="all">
   <span class="aipa-tag" style="color:#0a66c2">CONTACT · REACH OUT TO US</span>
   <div class="aipa-headline-lg" style="color:#0d1a2e">Let's Connect</div>
   <p class="aipa-body" style="color:#3a5a7a;max-width:500px;margin-bottom:24px">Ready to start your AI transformation journey? Reach out directly to discuss your organization's needs.</p>
@@ -1761,6 +1767,19 @@ function toggleExp(i){
   const arr  = document.getElementById('arr'+i);
   body.classList.toggle('open');
   arr.classList.toggle('open');
+}
+
+function switchAIPAContent(program){
+  const slides = document.querySelectorAll('.aipa-slide[data-program]');
+  slides.forEach(slide => {
+    const slideProgram = slide.dataset.program;
+    if (slideProgram === 'all' || slideProgram === program) {
+      slide.style.display = 'block';
+    } else {
+      slide.style.display = 'none';
+    }
+  });
+  window.scrollTo(0, 0);
 }
 
 // ── INIT ─────────────────────────────────────────────────
