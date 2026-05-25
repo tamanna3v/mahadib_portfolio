@@ -446,6 +446,42 @@ nav{
 .uc-menu-desc{font-size:12px;color:var(--muted);font-weight:400;line-height:1.5;letter-spacing:-0.003em}
 @media(max-width:700px){.uc-menu{grid-template-columns:repeat(2,1fr)}}
 
+/* PRODUCT SELECTOR */
+.prod-selector{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
+.prod-sel-btn{
+  background:var(--paper-2);border:none;border-radius:999px;
+  padding:10px 22px;font-size:14px;font-weight:500;color:var(--ink-2);
+  cursor:pointer;font-family:var(--sans);letter-spacing:-0.005em;
+  transition:background .2s ease,color .2s ease;
+}
+.prod-sel-btn.active{background:var(--accent);color:#fff}
+.prod-sel-btn:hover:not(.active){background:var(--line-soft)}
+
+/* PRODUCT EMBED PANEL */
+.prod-embed-panel{display:none;border-radius:var(--radius-xl);overflow:hidden;background:var(--paper-2);margin-bottom:28px}
+.prod-embed-panel.active{display:block}
+.prod-embed-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 22px;background:var(--paper);
+  border-bottom:1px solid var(--line-soft);flex-wrap:wrap;gap:10px;
+}
+.prod-embed-name{font-family:var(--sans);font-size:17px;font-weight:600;color:var(--ink);letter-spacing:-0.012em}
+.prod-embed-url{font-size:12px;color:var(--muted);letter-spacing:-0.005em}
+.prod-embed-actions{display:flex;gap:8px;align-items:center}
+.prod-embed-link{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12px;font-weight:500;color:var(--accent);
+  background:var(--paper-2);border:none;border-radius:999px;
+  padding:7px 14px;text-decoration:none;letter-spacing:-0.005em;
+  transition:background .2s;
+}
+.prod-embed-link:hover{background:var(--accent);color:#fff;text-decoration:none}
+.prod-embed-frame{
+  width:100%;height:680px;border:none;display:block;
+  background:var(--paper);
+}
+@media(max-width:700px){.prod-embed-frame{height:460px}}
+
 /* EVENTS */
 .event-card{background:var(--paper-2);border:none;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:14px;transition:box-shadow .25s ease, transform .25s ease}
 .event-card:hover{box-shadow:var(--shadow);transform:translateY(-1px)}
@@ -1053,6 +1089,57 @@ function pageExperience(){
 
 function pageProducts(){
   return `
+    <h2 class="section-title">Products</h2>
+    <p class="section-sub">AI-powered platforms built to transform how teams work and engage</p>
+
+    <!-- Product selector -->
+    <div class="prod-selector">
+      <button class="prod-sel-btn active" onclick="switchProduct('easyflow')">🌊 EasyFlow</button>
+      <button class="prod-sel-btn" onclick="switchProduct('commengine')">🏢 CommEngine</button>
+    </div>
+
+    <!-- EasyFlow embed -->
+    <div class="prod-embed-panel active" id="prod-easyflow">
+      <div class="prod-embed-header">
+        <div>
+          <div class="prod-embed-name">🌊 EasyFlow by EasyDO.ai</div>
+          <div class="prod-embed-url">flow.easydo.ai</div>
+        </div>
+        <div class="prod-embed-actions">
+          <a href="https://flow.easydo.ai/" target="_blank" class="prod-embed-link">Open in new tab ↗</a>
+        </div>
+      </div>
+      <iframe
+        class="prod-embed-frame"
+        src="https://flow.easydo.ai/"
+        title="EasyFlow — AI-Guided Audience Engagement"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- CommEngine embed -->
+    <div class="prod-embed-panel" id="prod-commengine">
+      <div class="prod-embed-header">
+        <div>
+          <div class="prod-embed-name">🏢 CommEngine</div>
+          <div class="prod-embed-url">commengine.xyz</div>
+        </div>
+        <div class="prod-embed-actions">
+          <a href="http://commengine.xyz/" target="_blank" class="prod-embed-link">Open in new tab ↗</a>
+        </div>
+      </div>
+      <iframe
+        class="prod-embed-frame"
+        src="http://commengine.xyz/"
+        title="CommEngine — SocialCRM & AI Profiling"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- EasyFlow use cases -->
+    <div class="sub-label"><h3>EasyFlow Use Cases</h3><div class="sub-label-line"></div></div>
     <div class="uc-menu">
       <div class="uc-menu-card">
         <div class="uc-menu-icon">
@@ -2095,6 +2182,14 @@ function pageAIInference(){
   </div>
 </div>
 `;
+}
+
+function switchProduct(id){
+  document.querySelectorAll('.prod-embed-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.prod-sel-btn').forEach(b=>b.classList.remove('active'));
+  const panel = document.getElementById('prod-'+id);
+  if(panel) panel.classList.add('active');
+  event.currentTarget.classList.add('active');
 }
 
 // ── ROUTER ───────────────────────────────────────────────
