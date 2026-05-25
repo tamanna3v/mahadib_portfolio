@@ -416,8 +416,12 @@ nav{
 
 /* PROGRAM MENU */
 .prog-menu{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:30px}
-.prog-menu-card{border-radius:var(--radius-lg);padding:28px 24px;position:relative;overflow:hidden;border:none;cursor:default;transition:transform .25s ease}
-.prog-menu-card:hover{transform:translateY(-2px)}
+.prog-menu-card{border-radius:var(--radius-lg);padding:28px 24px;position:relative;overflow:hidden;border:2px solid transparent;cursor:pointer;transition:transform .25s ease, box-shadow .25s ease, border-color .2s ease}
+.prog-menu-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.1)}
+.prog-menu-card-01.prog-menu-active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 8px 24px rgba(0,113,227,0.18);transform:translateY(-3px)}
+.prog-menu-card-02.prog-menu-active{border-color:#ff6a00;box-shadow:0 0 0 1px #ff6a00,0 8px 24px rgba(255,106,0,0.15);transform:translateY(-3px)}
+.prog-menu-card-03.prog-menu-active{border-color:#fa233b;box-shadow:0 0 0 1px #fa233b,0 8px 24px rgba(250,35,59,0.15);transform:translateY(-3px)}
+.prog-menu-card-04.prog-menu-active{border-color:#a06bff;box-shadow:0 0 0 1px #a06bff,0 8px 24px rgba(160,107,255,0.15);transform:translateY(-3px)}
 .prog-menu-card-01{background:var(--paper-2)}
 .prog-menu-card-02{background:#fff5e6}
 .prog-menu-card-03{background:#ffe9e5}
@@ -1222,28 +1226,28 @@ function pageAIPA(){
 
 <!-- AI ACCELERATOR MENU -->
 <div class="prog-menu">
-  <button class="prog-menu-card prog-menu-card-01" onclick="switchAIPAContent('aisa')" style="cursor:pointer;border:none;background:none">
+  <button class="prog-menu-card prog-menu-card-01" data-prog="aisa" onclick="switchAIPAContent('aisa')" style="background:#f5f5f7">
     <div class="prog-menu-accent"></div>
     <div class="prog-menu-num">Program 01</div>
     <div class="prog-menu-code">AISA</div>
     <div class="prog-menu-name">AI Strategy Accelerator</div>
     <div class="prog-menu-for">For CXOs &amp; Senior Leadership · 2 Days</div>
   </button>
-  <button class="prog-menu-card prog-menu-card-02" onclick="switchAIPAContent('aipa')" style="cursor:pointer;border:none;background:none">
+  <button class="prog-menu-card prog-menu-card-02" data-prog="aipa" onclick="switchAIPAContent('aipa')" style="background:#fff5e6">
     <div class="prog-menu-accent"></div>
     <div class="prog-menu-num">Program 02</div>
     <div class="prog-menu-code">AIPA</div>
     <div class="prog-menu-name">AI Proficiency Accelerator</div>
     <div class="prog-menu-for">For Entire Workforce · 5 Months · 12 Sessions</div>
   </button>
-  <button class="prog-menu-card prog-menu-card-03" onclick="switchAIPAContent('aita')" style="cursor:pointer;border:none;background:none">
+  <button class="prog-menu-card prog-menu-card-03" data-prog="aita" onclick="switchAIPAContent('aita')" style="background:#ffe9e5">
     <div class="prog-menu-accent"></div>
     <div class="prog-menu-num">Program 03</div>
     <div class="prog-menu-code">AITA</div>
     <div class="prog-menu-name">AI Transformation Accelerator</div>
     <div class="prog-menu-for">Goal-Based Sprint · 1 Month / Goal</div>
   </button>
-  <button class="prog-menu-card prog-menu-card-04" onclick="switchAIPAContent('bootcamp')" style="cursor:pointer;border:none;background:none">
+  <button class="prog-menu-card prog-menu-card-04" data-prog="bootcamp" onclick="switchAIPAContent('bootcamp')" style="background:#ece5fb">
     <div class="prog-menu-accent"></div>
     <div class="prog-menu-num">Technical Add-On</div>
     <div class="prog-menu-code" style="font-size:22px;line-height:1.2">Product<br>Bootcamp</div>
@@ -1286,7 +1290,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 3: PROVEN RESULTS -->
-<div class="aipa-slide aipa-dark" data-program="all">
+<div class="aipa-slide aipa-dark" data-program="aipa">
   <div class="aipa-big-num">02</div>
   <span class="aipa-tag">PROVEN RESULTS · PREVIOUS COHORTS</span>
   <div class="aipa-headline-lg">190+ Professionals.<br>Real Transformation.</div>
@@ -1622,7 +1626,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 13: COHORT SUCCESS STORIES -->
-<div class="aipa-slide aipa-light" data-program="all">
+<div class="aipa-slide aipa-light" data-program="aipa">
   <div class="aipa-big-num" style="color:#1a1a1a">09</div>
   <span class="aipa-tag" style="color:#888">COHORT SUCCESS STORIES</span>
   <div class="aipa-headline-lg">Proven.<br>In Practice.</div>
@@ -2161,6 +2165,11 @@ function switchAICWContent(program){
 }
 
 function switchAIPAContent(program){
+  // Update active state on menu cards
+  document.querySelectorAll('.prog-menu-card[data-prog]').forEach(card => {
+    card.classList.toggle('prog-menu-active', card.dataset.prog === program);
+  });
+  // Show/hide slides
   const slides = document.querySelectorAll('.aipa-slide[data-program]');
   slides.forEach(slide => {
     const slideProgram = slide.dataset.program;
@@ -2170,7 +2179,13 @@ function switchAIPAContent(program){
       slide.style.display = 'none';
     }
   });
-  window.scrollTo(0, 0);
+  // Scroll smoothly to the first program-specific slide (skipping the always-on hero)
+  const firstSpecific = document.querySelector(`.aipa-slide[data-program="${program}"]`);
+  if(firstSpecific){
+    const navHeight = 56;
+    const top = firstSpecific.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+    window.scrollTo({top, behavior:'smooth'});
+  }
 }
 
 // ── INIT ─────────────────────────────────────────────────
