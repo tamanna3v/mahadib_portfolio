@@ -35,6 +35,8 @@
   --accent-lilac-ink:#5e3bb7;
   --accent-rose:#fde2e0;
   --accent-rose-ink:#c2362a;
+  --accent-maroon-light:#ead4d1;
+  --accent-maroon-ink:#8b4842;
   --accent-butter:#fbf0c9;
   --accent-butter-ink:#8a6a00;
   --accent-sky:#e1edf7;
@@ -595,28 +597,28 @@ footer{text-align:center;padding:36px 0 32px;color:var(--muted);font-size:13px;b
 
 /* ── AI-PA PRESENTATION SLIDES — Apple-style big sections ── */
 .aipa-slide{border-radius:var(--radius-xl);padding:64px 56px;margin-bottom:18px;position:relative;overflow:hidden}
-.aipa-dark{background:#000;color:#f5f5f7}
+.aipa-dark{background:linear-gradient(135deg, #d4e8d0 0%, #e3d0cc 100%);color:#2d2d2d}
 .aipa-light{background:var(--paper-2);border:none}
 .aipa-accent{background:var(--bg-soft);border:none}
 .aipa-tag{font-size:18px;font-weight:500;letter-spacing:-0.005em;text-transform:none;opacity:1;color:var(--accent);margin-bottom:16px;display:block}
 .aipa-headline-xl{font-family:var(--sans);font-size:68px;font-weight:600;line-height:1;letter-spacing:-0.025em;margin-bottom:24px}
 .aipa-headline-lg{font-family:var(--sans);font-size:56px;font-weight:600;line-height:1.05;letter-spacing:-0.022em;margin-bottom:20px}
 .aipa-body{font-size:19px;line-height:1.5;letter-spacing:-0.005em}
-.aipa-body-dark{color:rgba(245,245,247,0.78)}
+.aipa-body-dark{color:#3d3d3d}
 .aipa-big-num{font-family:var(--sans);font-size:180px;font-weight:700;line-height:1;letter-spacing:-0.04em;opacity:0.04;position:absolute;right:30px;top:14px;pointer-events:none}
-.aipa-divider{height:1px;background:rgba(245,245,247,0.12);margin:32px 0}
+.aipa-divider{height:1px;background:rgba(0,0,0,0.1);margin:32px 0}
 .aipa-divider-light{height:1px;background:var(--line-soft);margin:28px 0}
 /* KPI grids */
 .aipa-kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
-.aipa-kpi-box{background:rgba(255,255,255,0.06);border:none;border-radius:var(--radius-lg);padding:24px}
+.aipa-kpi-box{background:rgba(255,255,255,0.5);border:none;border-radius:var(--radius-lg);padding:24px}
 .aipa-kpi-val{font-family:var(--sans);font-size:64px;font-weight:600;letter-spacing:-0.025em;line-height:1;margin-bottom:8px}
-.aipa-kpi-lbl{font-size:13px;font-weight:500;opacity:0.7;text-transform:none;letter-spacing:-0.005em}
+.aipa-kpi-lbl{font-size:13px;font-weight:500;opacity:0.8;color:#333;text-transform:none;letter-spacing:-0.005em}
 /* Program cards */
 .aipa-prog-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:24px}
-.aipa-prog-card-dark{background:rgba(255,255,255,0.05);border:none;border-radius:var(--radius-lg);padding:24px}
+.aipa-prog-card-dark{background:rgba(255,255,255,0.6);border:none;border-radius:var(--radius-lg);padding:24px}
 .aipa-prog-card-light{background:var(--paper);border:none;border-radius:var(--radius-lg);padding:24px}
 .aipa-prog-num-badge{display:inline-block;font-size:12px;font-weight:500;letter-spacing:-0.005em;text-transform:none;border-radius:999px;padding:5px 12px;margin-bottom:12px}
-.aipa-prog-num-dark{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.9)}
+.aipa-prog-num-dark{background:rgba(139,72,66,0.15);color:#5a3a37}
 .aipa-prog-num-light{background:var(--accent);color:#fff}
 .aipa-prog-title{font-family:var(--sans);font-size:24px;font-weight:600;margin-bottom:8px;line-height:1.15;letter-spacing:-0.018em}
 .aipa-prog-sub{font-size:14px;opacity:0.65;font-weight:400;margin-bottom:12px;font-style:italic;font-family:var(--sans)}
@@ -649,8 +651,8 @@ footer{text-align:center;padding:36px 0 32px;color:var(--muted);font-size:13px;b
 .aipa-diff-desc{font-size:13px;color:var(--ink-2);line-height:1.55}
 /* Leadership team */
 .aipa-team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;margin-top:24px}
-.aipa-team-card{background:rgba(255,255,255,0.06);border:none;border-radius:var(--radius-lg);padding:24px 20px}
-.aipa-team-highlight{background:rgba(255,255,255,0.12)}
+.aipa-team-card{background:rgba(255,255,255,0.55);border:none;border-radius:var(--radius-lg);padding:24px 20px}
+.aipa-team-highlight{background:rgba(255,255,255,0.7)}
 .aipa-team-avatar{
   width:52px;height:52px;border-radius:50%;
   background:var(--accent);
@@ -669,10 +671,10 @@ footer{text-align:center;padding:36px 0 32px;color:var(--muted);font-size:13px;b
 .aipa-cohort-quote{font-family:var(--sans);font-size:15px;color:var(--ink);font-style:italic;font-weight:400;padding:14px 18px;background:var(--paper-2);border-radius:var(--radius);border-left:2px solid var(--accent);line-height:1.5}
 /* Trusted orgs */
 .aipa-trusted-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.aipa-trusted-pill{background:rgba(255,255,255,0.1);border:none;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:400;color:#f5f5f7;display:inline-block;letter-spacing:-0.005em}
+.aipa-trusted-pill{background:rgba(255,255,255,0.6);border:none;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:400;color:#333;display:inline-block;letter-spacing:-0.005em}
 /* Outcome grid */
 .aipa-outcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
-.aipa-outcome-card{background:rgba(255,255,255,0.05);border:none;border-radius:var(--radius-lg);padding:24px}
+.aipa-outcome-card{background:rgba(255,255,255,0.55);border:none;border-radius:var(--radius-lg);padding:24px}
 .aipa-outcome-icon{font-size:30px;margin-bottom:12px}
 .aipa-outcome-title{font-family:var(--sans);font-size:20px;font-weight:600;margin-bottom:6px;line-height:1.2;letter-spacing:-0.018em}
 .aipa-outcome-desc{font-size:13px;opacity:0.7;line-height:1.55}
@@ -683,13 +685,13 @@ footer{text-align:center;padding:36px 0 32px;color:var(--muted);font-size:13px;b
 .aipa-tech-title{font-family:var(--sans);font-size:20px;font-weight:600;color:var(--ink);margin-bottom:8px;letter-spacing:-0.018em}
 .aipa-tech-desc{font-size:13px;color:var(--ink-2);line-height:1.55}
 /* Suite tags */
-.aipa-suite-tag{display:inline-block;background:rgba(255,255,255,0.1);border:none;border-radius:999px;padding:7px 16px;font-size:13px;font-weight:400;margin:3px;letter-spacing:-0.005em}
+.aipa-suite-tag{display:inline-block;background:rgba(255,255,255,0.55);border:none;border-radius:999px;padding:7px 16px;font-size:13px;font-weight:400;color:#333;margin:3px;letter-spacing:-0.005em}
 /* CTA buttons */
 .aipa-cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .aipa-btn-white{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;border-radius:999px;padding:14px 28px;font-size:16px;font-weight:400;font-family:var(--sans);text-decoration:none;border:none;cursor:pointer;letter-spacing:-0.005em;transition:background .2s}
 .aipa-btn-white:hover{background:var(--accent-hover);text-decoration:none}
-.aipa-btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#f5f5f7;border:1px solid rgba(245,245,247,0.4);border-radius:999px;padding:14px 28px;font-size:16px;font-weight:400;font-family:var(--sans);text-decoration:none;letter-spacing:-0.005em;transition:background .2s}
-.aipa-btn-ghost:hover{background:rgba(245,245,247,0.1);text-decoration:none}
+.aipa-btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#2d2d2d;border:1px solid rgba(45,45,45,0.3);border-radius:999px;padding:14px 28px;font-size:16px;font-weight:400;font-family:var(--sans);text-decoration:none;letter-spacing:-0.005em;transition:background .2s}
+.aipa-btn-ghost:hover{background:rgba(45,45,45,0.08);text-decoration:none}
 
 @media(max-width:600px){
   .stat-grid,.prog-stats{grid-template-columns:repeat(2,1fr)}
@@ -1654,7 +1656,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 14: TRUSTED ORGANIZATIONS + CTA -->
-<div class="aipa-slide aipa-dark" style="background:linear-gradient(145deg,#0d1a2e 0%,#1a1a1a 60%,#0d0d0d 100%)">
+<div class="aipa-slide aipa-dark" style="background:linear-gradient(145deg, #c8e0bd 0%, #e3d0cc 60%, #e8d4d1 100%)">
   <div class="aipa-big-num">10</div>
   <span class="aipa-tag">TRUSTED BY LEADING ORGANIZATIONS</span>
   <div class="aipa-headline-lg">200+ Senior<br>Leaders Transformed.</div>
