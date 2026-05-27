@@ -532,7 +532,8 @@ nav{
 
 /* RECOGNITION */
 .feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
-.feat-card{background:var(--paper-2);border:none;border-radius:var(--radius-lg);padding:26px}
+.feat-card{background:var(--paper-2);border:none;border-radius:var(--radius-lg);padding:26px;transition:box-shadow .25s ease,transform .25s ease}
+.feat-card:hover{box-shadow:var(--shadow);transform:translateY(-1px)}
 .feat-type{font-size:11px;font-weight:500;color:var(--accent);text-transform:none;letter-spacing:-0.005em;margin-bottom:10px}
 .feat-title{font-family:var(--sans);font-weight:600;font-size:21px;color:var(--ink);margin-bottom:8px;letter-spacing:-0.018em;line-height:1.2}
 .feat-detail{font-size:14px;color:var(--ink-2);line-height:1.5;margin:0 0 12px}
@@ -973,18 +974,18 @@ const WRITINGS = [
 ];
 
 const FEATURED = [
-  {type:"Award",title:"BASIS National ICT Award",detail:"CommEngine wins Bangladesh's top tech innovation award for SocialCRM platform.",year:"2019"},
-  {type:"Fellowship",title:"Microsoft for Startups Founders Hub",detail:"Panelist at the Bangladesh launch — discussed AI startup ecosystem and enterprise B2B SaaS.",year:"Aug 2022"},
-  {type:"Certification",title:"CxO Conclave Certified",detail:"IBA – University of Dhaka. Executive leadership certification for C-suite strategy.",year:"2024"}
+  {type:"Award",title:"BASIS National ICT Award",detail:"CommEngine wins Bangladesh's top tech innovation award for SocialCRM platform.",year:"2019",bg:"var(--accent-sky)"},
+  {type:"Fellowship",title:"Microsoft for Startups Founders Hub",detail:"Panelist at the Bangladesh launch — discussed AI startup ecosystem and enterprise B2B SaaS.",year:"Aug 2022",bg:"var(--accent-sage)"},
+  {type:"Certification",title:"CxO Conclave Certified",detail:"IBA – University of Dhaka. Executive leadership certification for C-suite strategy.",year:"2024",bg:"var(--accent-lilac)"}
 ];
 
 const AWARDS = [
-  {icon:"🏅",title:"Retail Digital Innovation Award",detail:"Zachai – 2020"},
-  {icon:"🦠",title:"Covid-19 Solution Award",detail:"Swachho – 2020"},
-  {icon:"🌐",title:"National Blockchain Policy Forum",detail:"Policy Contributor"},
-  {icon:"📘",title:"IEEE Publications",detail:"ICCIT-2005, ICNEWS-2006, ICCIT-2010"},
-  {icon:"🤝",title:"ICT4D Conference Reviewer",detail:"Independent 2010–2016"},
-  {icon:"🏛️",title:"BSTI Consumer Protection",detail:"Digital System Contributor"}
+  {type:"Award",title:"Retail Digital Innovation Award",detail:"Zachai – 2020",year:"2020",bg:"var(--accent-peach)"},
+  {type:"Award",title:"Covid-19 Solution Award",detail:"Swachho – 2020",year:"2020",bg:"var(--accent-rose)"},
+  {type:"Contribution",title:"National Blockchain Policy Forum",detail:"Policy Contributor",bg:"var(--accent-butter)"},
+  {type:"Publication",title:"IEEE Publications",detail:"ICCIT-2005, ICNEWS-2006, ICCIT-2010",bg:"var(--accent-sky)"},
+  {type:"Recognition",title:"ICT4D Conference Reviewer",detail:"Independent 2010–2016",bg:"var(--accent-sage)"},
+  {type:"Contribution",title:"BSTI Consumer Protection",detail:"Digital System Contributor",bg:"var(--accent-maroon-light)"}
 ];
 
 // ── HELPERS ─────────────────────────────────────────────
@@ -1042,8 +1043,8 @@ function pageAbout(){
       ${TIMELINE.map(t=>`<div class="tl-item${t.active?' active-phase':''}${t.isNew?' tl-new':''}"><div class="tl-year">${t.year}</div><div class="tl-label">${t.label}</div><div class="tl-role">${t.role||''}</div><div class="tl-note">${t.note}</div></div>${t.arrowAfter?'<div class="tl-arrow">→</div>':''}`).join('')}
     </div>
     <div class="sub-label"><h3>Awards, Contributions and Participations</h3><div class="sub-label-line"></div></div>
-    <div class="feat-grid">${FEATURED.map(f=>`<div class="feat-card"><div class="feat-type">${f.type}</div><div class="feat-title">${f.title}</div><p class="feat-detail">${f.detail}</p><div class="feat-year">📅 ${f.year}</div></div>`).join('')}</div>
-    <div class="award-grid">${AWARDS.map(a=>`<div class="award-card"><div class="award-icon">${a.icon}</div><div><div class="award-title">${a.title}</div><div class="award-detail">${a.detail}</div></div></div>`).join('')}</div>`;
+    <div class="feat-grid">${FEATURED.map(f=>`<div class="feat-card" style="background:${f.bg}"><div class="feat-type">${f.type}</div><div class="feat-title">${f.title}</div><p class="feat-detail">${f.detail}</p><div class="feat-year">📅 ${f.year}</div></div>`).join('')}</div>
+    <div class="feat-grid" style="margin-top:14px">${AWARDS.map(a=>`<div class="feat-card" style="background:${a.bg}"><div class="feat-type">${a.type}</div><div class="feat-title">${a.title}</div><p class="feat-detail">${a.detail}</p>${a.year?`<div class="feat-year">📅 ${a.year}</div>`:''}</div>`).join('')}</div>`;
 }
 
 function pageExperience(){
@@ -1272,23 +1273,25 @@ function pageResearch(){
 
 function pageRecognition(){
   const feat = FEATURED.map(f=>`
-    <div class="feat-card">
+    <div class="feat-card" style="background:${f.bg}">
       <div class="feat-type">${f.type}</div>
       <div class="feat-title">${f.title}</div>
       <p class="feat-detail">${f.detail}</p>
       <div class="feat-year">📅 ${f.year}</div>
     </div>`).join('');
   const awards = AWARDS.map(a=>`
-    <div class="award-card">
-      <div class="award-icon">${a.icon}</div>
-      <div><div class="award-title">${a.title}</div><div class="award-detail">${a.detail}</div></div>
+    <div class="feat-card" style="background:${a.bg}">
+      <div class="feat-type">${a.type}</div>
+      <div class="feat-title">${a.title}</div>
+      <p class="feat-detail">${a.detail}</p>
+      ${a.year?`<div class="feat-year">📅 ${a.year}</div>`:''}
     </div>`).join('');
   return `
     <h2 class="section-title">Recognition</h2>
     <p class="section-sub">Awards, honours and featured milestones</p>
     <div class="sub-label"><h3>Awards, Contributions and Participations</h3><div class="sub-label-line"></div></div>
     <div class="feat-grid">${feat}</div>
-    <div class="award-grid">${awards}</div>`;
+    <div class="feat-grid" style="margin-top:14px">${awards}</div>`;
 }
 
 function pageContact(){
