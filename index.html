@@ -491,27 +491,40 @@ nav{
 @media(max-width:700px){.prod-embed-frame{height:460px}}
 
 /* EVENTS */
-.event-card{background:var(--paper-2);border:none;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:14px;transition:box-shadow .25s ease, transform .25s ease}
-.event-card:hover{box-shadow:var(--shadow);transform:translateY(-1px)}
-.event-header{background:transparent;padding:18px 24px 8px;border-bottom:none;display:flex;justify-content:space-between;align-items:center;gap:10px}
-.event-avatar{
-  width:40px;height:40px;border-radius:50%;
-  background:var(--accent);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--sans);font-size:14px;font-weight:600;color:#fff;
-  flex-shrink:0;letter-spacing:-0.012em;
-}
-.event-name{font-weight:600;font-size:14px;color:var(--ink);letter-spacing:-0.005em}
-.event-date{font-size:11px;color:var(--muted);text-transform:none;letter-spacing:-0.005em}
-.event-type{background:var(--paper);border:none;border-radius:999px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--muted);white-space:nowrap;letter-spacing:-0.005em}
-.event-body{padding:6px 24px 20px}
-.event-title{font-family:var(--sans);font-weight:600;font-size:24px;color:var(--ink);margin-bottom:8px;letter-spacing:-0.018em;line-height:1.2}
-.event-meta{font-size:12px;color:var(--muted);font-weight:400;margin-bottom:12px;letter-spacing:-0.005em}
-.event-desc{font-size:15px;color:var(--ink-2);line-height:1.5;margin:0 0 12px}
-.event-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--line-soft)}
-.event-actions span{font-size:12px;color:var(--muted);font-weight:400;cursor:pointer;margin-right:16px;letter-spacing:-0.005em}
-.event-btn{font-size:12px;background:var(--accent);color:#fff;border-radius:999px;padding:8px 16px;font-weight:500;font-family:var(--sans);letter-spacing:-0.005em;text-transform:none}
-.event-btn:hover{background:var(--accent-hover);text-decoration:none}
+.event-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.event-filter-btn{border:none;border-radius:999px;padding:7px 16px;font-size:12px;font-weight:500;font-family:var(--sans);cursor:pointer;letter-spacing:-0.005em;transition:background .18s,color .18s,box-shadow .18s;background:var(--paper-2);color:var(--muted)}
+.event-filter-btn:hover{background:var(--line-soft);color:var(--ink)}
+.event-filter-btn.active{background:var(--ink);color:#fff;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.event-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:700px){.event-grid{grid-template-columns:1fr}}
+.event-card{border:none;border-radius:var(--radius-lg);overflow:hidden;transition:box-shadow .25s ease,transform .25s ease;display:flex;flex-direction:column}
+.event-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+/* per-type accent colors */
+.event-card[data-type="Panel / Speaker"]{background:linear-gradient(135deg,#e8f4fd 0%,#dbeeff 100%)}
+.event-card[data-type="Policy"]{background:linear-gradient(135deg,#e8f5ee 0%,#d4eddf 100%)}
+.event-card[data-type="Program Launch"]{background:linear-gradient(135deg,#fef3e2 0%,#fde8c2 100%)}
+.event-card[data-type="Certification"]{background:linear-gradient(135deg,#f3e8fd 0%,#e8d4f7 100%)}
+.event-card[data-type="Award Ceremony"]{background:linear-gradient(135deg,#fff8e1 0%,#fdefc3 100%)}
+.event-card[data-type="Social Initiative"]{background:linear-gradient(135deg,#fde8ea 0%,#fdd4d7 100%)}
+.event-header{padding:18px 20px 8px;display:flex;justify-content:space-between;align-items:center;gap:10px;background:transparent}
+.event-avatar{width:36px;height:36px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:13px;font-weight:600;color:#fff;flex-shrink:0;letter-spacing:-0.012em}
+.event-name{font-weight:600;font-size:13px;color:var(--ink);letter-spacing:-0.005em}
+.event-date{font-size:11px;color:var(--muted);letter-spacing:-0.005em}
+.event-type{border-radius:999px;padding:4px 11px;font-size:11px;font-weight:600;white-space:nowrap;letter-spacing:-0.005em;background:rgba(0,0,0,.07);color:var(--ink)}
+.event-body{padding:4px 20px 18px;flex:1;display:flex;flex-direction:column}
+.event-title{font-family:var(--sans);font-weight:600;font-size:17px;color:var(--ink);margin-bottom:7px;letter-spacing:-0.014em;line-height:1.25}
+.event-meta{font-size:12px;color:var(--muted);font-weight:400;margin-bottom:10px;letter-spacing:-0.005em}
+.event-desc{font-size:14px;color:var(--ink-2);line-height:1.5;margin:0 0 10px;flex:1}
+.event-footer{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid rgba(0,0,0,.08);margin-top:auto}
+.event-actions span{font-size:12px;color:var(--muted);font-weight:400;cursor:pointer;margin-right:12px;letter-spacing:-0.005em}
+.event-btn{font-size:12px;background:var(--ink);color:#fff;border-radius:999px;padding:7px 15px;font-weight:500;font-family:var(--sans);letter-spacing:-0.005em;text-transform:none}
+.event-btn:hover{opacity:.82;text-decoration:none}
+.event-card[data-type="Panel / Speaker"] .event-btn{background:#1a73e8}
+.event-card[data-type="Policy"] .event-btn{background:#1a8f4e}
+.event-card[data-type="Program Launch"] .event-btn{background:#e07c00}
+.event-card[data-type="Certification"] .event-btn{background:#8a2be2}
+.event-card[data-type="Award Ceremony"] .event-btn{background:#b8860b}
+.event-card[data-type="Social Initiative"] .event-btn{background:#c0392b}
 
 /* DIG8 FRAMEWORK EMBED */
 .dig8-embed{background:var(--paper-2);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:20px;border:1.5px solid var(--line-soft)}
@@ -1260,9 +1273,16 @@ function pageProducts(){
     <div class="contact-grid">${productLinks}</div>`;
 }
 
-function pageEvents(){
-  const cards = EVENTS.map(ev=>`
-    <div class="event-card">
+function pageEvents(activeFilter){
+  activeFilter = activeFilter || 'All';
+  const categories = ['All', ...new Set(EVENTS.map(e=>e.type))];
+  const filtered = activeFilter === 'All' ? EVENTS : EVENTS.filter(e=>e.type === activeFilter);
+
+  const filterBtns = categories.map(c=>`
+    <button class="event-filter-btn${c===activeFilter?' active':''}" onclick="rerenderEvents('${c}')">${c}</button>`).join('');
+
+  const cards = filtered.map(ev=>`
+    <div class="event-card" data-type="${ev.type}">
       <div class="event-header">
         <div style="display:flex;align-items:center;gap:10px">
           <div class="event-avatar">HB</div>
@@ -1286,6 +1306,7 @@ function pageEvents(){
   return `
     <h2 class="section-title">Events & Milestones</h2>
     <p class="section-sub">Key appearances, launches and contributions</p>
+    <div class="event-filter-bar">${filterBtns}</div>
 
     <div class="dig8-embed">
       <div class="dig8-embed-header">
@@ -1325,7 +1346,37 @@ function pageEvents(){
       🔗 <span>Drawn from LinkedIn activity, press coverage & official records.</span>
       <a href="http://bd.linkedin.com/in/mahadib/" target="_blank" style="margin-left:auto;color:#1a1a1a;font-weight:800;white-space:nowrap">Follow on LinkedIn →</a>
     </div>
-    ${cards}`;
+    <div class="event-grid" id="eventGrid">${cards}</div>`;
+}
+
+function rerenderEvents(filter){
+  const grid = document.getElementById('eventGrid');
+  const filterBtns = document.querySelectorAll('.event-filter-btn');
+  if(!grid) return;
+  const filtered = filter === 'All' ? EVENTS : EVENTS.filter(e=>e.type === filter);
+  filterBtns.forEach(b=>b.classList.toggle('active', b.textContent.trim() === filter));
+  grid.innerHTML = filtered.map(ev=>`
+    <div class="event-card" data-type="${ev.type}">
+      <div class="event-header">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="event-avatar">HB</div>
+          <div><div class="event-name">Hadi Bhuiyan</div><div class="event-date">${ev.date}</div></div>
+        </div>
+        <span class="event-type">${ev.type}</span>
+      </div>
+      <div class="event-body">
+        <div class="event-title">${ev.title}</div>
+        <div class="event-meta">🏢 ${ev.org} · 📍 ${ev.location}</div>
+        <p class="event-desc">${ev.desc}</p>
+        <div class="chip-row">${ev.tags.map(t=>`<span class="chip">#${t}</span>`).join('')}</div>
+        <div class="event-footer">
+          <div class="event-actions">
+            <span>👍 Like</span><span>💬 Comment</span><span>↗️ Share</span>
+          </div>
+          <a href="${ev.url}" target="_blank" class="event-btn">${ev.btnLabel}</a>
+        </div>
+      </div>
+    </div>`).join('');
 }
 
 function pageResearch(){
