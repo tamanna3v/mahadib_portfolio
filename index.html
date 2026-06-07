@@ -807,8 +807,8 @@ const TIMELINE = [
 ];
 
 const BUILDING = [
+  {emoji:"🌊",title:"EasyFlow",desc:"AI-Guided Audience Engagement platform — manage thousands live or async, with 1:1 AI coaching & assessments.",href:"https://flow.easydo.ai/"},
   {emoji:"🤖",title:"AI Inference | EasyDO WorkSpace",desc:"Multi-LLM Local Inference and Cascaded AI Inference with No Code Application Launcher, Enterprise WorkSpace"},
-  {emoji:"🌊",title:"EasyDO Flow",desc:"AI-Guided Audience Engagement platform — manage thousands live or async, with 1:1 AI coaching & assessments."},
   {emoji:"🏗️",title:"AI-Accelerator Program",desc:"Scaling corporate AI transformation in strategy, execution and people transformation level through workshops and custom solutions."},
   {emoji:"💬",title:"CommEngine v2",desc:"Next-gen SocialCRM with deeper AI profiling & automation."}
 ];
@@ -1005,7 +1005,7 @@ function pageAbout(){
       <a href="http://bd.linkedin.com/in/mahadib/" target="_blank" class="link-btn">💼 LinkedIn</a>
     </div>
     <div class="sub-label"><h3>Building NOW</h3><div class="sub-label-line"></div></div>
-    <div class="building-grid">${BUILDING.map(b=>`<div class="building-card"><div class="building-emoji">${b.emoji}</div><div><div class="building-title">${b.title}</div><div class="building-desc">${b.desc}</div></div></div>`).join('')}</div>
+    <div class="building-grid">${BUILDING.map(b=>`<div class="building-card"${b.href?` style="cursor:pointer" onclick="window.open('${b.href}','_blank')"`:''}>` +`<div class="building-emoji">${b.emoji}</div><div><div class="building-title">${b.title}${b.href?` <span style="font-size:12px;opacity:.6">↗</span>`:''}</div><div class="building-desc">${b.desc}</div></div></div>`).join('')}</div>
     <div class="sub-label"><h3>Associated Companies</h3><div class="sub-label-line"></div></div>
     <div class="company-logos-row">
       <div class="company-logo-item">
