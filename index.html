@@ -1043,7 +1043,8 @@ function pageAbout(){
     </div>
     <div class="sub-label"><h3>Awards, Contributions and Participations</h3><div class="sub-label-line"></div></div>
     <div class="feat-grid">${FEATURED.map(f=>`<div class="feat-card" style="background:${f.bg}"><div class="feat-type">${f.type}</div><div class="feat-title">${f.title}</div><p class="feat-detail">${f.detail}</p><div class="feat-year">📅 ${f.year}</div></div>`).join('')}</div>
-    <div class="feat-grid" style="margin-top:14px">${AWARDS.map(a=>`<div class="feat-card" style="background:${a.bg}"><div class="feat-type">${a.type}</div><div class="feat-title">${a.title}</div><p class="feat-detail">${a.detail}</p>${a.year?`<div class="feat-year">📅 ${a.year}</div>`:''}</div>`).join('')}</div>`;
+    <div class="feat-grid" style="margin-top:14px">${AWARDS.map(a=>`<div class="feat-card" style="background:${a.bg}"><div class="feat-type">${a.type}</div><div class="feat-title">${a.title}</div><p class="feat-detail">${a.detail}</p>${a.year?`<div class="feat-year">📅 ${a.year}</div>`:''}</div>`).join('')}</div>
+    ${pageExperience()}`;
 }
 
 function pageExperience(){
