@@ -1270,14 +1270,16 @@ function pageAbout(){
       <a href="https://mahadib.futuremind.ltd" target="_blank" class="link-btn">🌐 mahadib.futuremind.ltd</a>
       <a href="http://bd.linkedin.com/in/mahadib/" target="_blank" class="link-btn">💼 LinkedIn</a>
     </div>
-    <p style="font-size:17px;line-height:1.95;color:var(--ink-2);margin-bottom:30px">
-      Managing and building solutions with over <strong>20 years of experience</strong> in Telco &amp; Digital Transformation, AI-Workspace development, customer/enterprise solutions, Training/HRtech, and social good tech.<br><br>
-      Proven track record at <strong>Nokia Siemens Networks</strong>, <strong>Huawei Technologies</strong>, <strong>Robi Axiata Limited</strong>, and <strong>Premier University</strong>.<br><br>
-      Built and executed the GTM strategy for <strong>CommEngine</strong>, <strong>EasyFlow AI</strong>, and <strong>FutureMind AI</strong> products from scratch to revenue.<br><br>
-      Leading AI-Proficiency programs and Digital Transformation consultancy at <strong>BuildCon &amp; BuildNation</strong>.<br><br>
-      Contributed to the National Blockchain Policy, Consumer Protection tech, E-commerce 4IR, Nationwide Support Distribution, and Citizen-social CRM projects.<br><br>
-      Let's connect if you're looking for a professional who can drive product innovation, build disruptive solutions, and make a real impact, here: <a href="mailto:bhuiyan.hadi@gmail.com" style="color:inherit;text-decoration:underline">bhuiyan.hadi@gmail.com</a>
-    </p>
+    <div style="background:var(--accent-sage);border:1px solid var(--accent-sage-ink);border-left:5px solid var(--accent-sage-ink);border-radius:14px;padding:28px 32px;margin-bottom:30px;box-shadow:0 2px 10px rgba(29,111,66,0.08)">
+      <p style="font-size:17px;line-height:1.95;color:var(--ink-2);margin:0">
+        Managing and building solutions with over <strong>20 years of experience</strong> in Telco &amp; Digital Transformation, AI-Workspace development, customer/enterprise solutions, Training/HRtech, and social good tech.<br><br>
+        Proven track record at <strong>Nokia Siemens Networks</strong>, <strong>Huawei Technologies</strong>, <strong>Robi Axiata Limited</strong>, and <strong>Premier University</strong>.<br><br>
+        Built and executed the GTM strategy for <strong>CommEngine</strong>, <strong>EasyFlow AI</strong>, and <strong>FutureMind AI</strong> products from scratch to revenue.<br><br>
+        Leading AI-Proficiency programs and Digital Transformation consultancy at <strong>BuildCon &amp; BuildNation</strong>.<br><br>
+        Contributed to the National Blockchain Policy, Consumer Protection tech, E-commerce 4IR, Nationwide Support Distribution, and Citizen-social CRM projects.<br><br>
+        Let's connect if you're looking for a professional who can drive product innovation, build disruptive solutions, and make a real impact, here: <a href="mailto:bhuiyan.hadi@gmail.com" style="color:inherit;text-decoration:underline">bhuiyan.hadi@gmail.com</a>
+      </p>
+    </div>
     <div class="sub-label"><h3>Building NOW</h3><div class="sub-label-line"></div></div>
     <div class="building-grid">${BUILDING.map(b=>`<div class="building-card"${b.href?` style="cursor:pointer" onclick="window.open('${b.href}','_blank')"`:''}>` +`<div class="building-emoji">${b.emoji}</div><div><div class="building-title">${b.title}${b.href?` <span style="font-size:12px;opacity:.6">↗</span>`:''}</div><div class="building-desc">${b.desc}</div></div></div>`).join('')}</div>
     <div class="sub-label"><h3>Associated Companies</h3><div class="sub-label-line"></div></div>
