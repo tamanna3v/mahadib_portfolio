@@ -10,45 +10,52 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a1a'/><text y='.85em' font-size='52' x='8' fill='white' font-family='sans-serif' font-weight='bold'>HB</text></svg>"/>
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
-/* ── DESIGN TOKENS (Apple.com-inspired) ── */
+/* ── DESIGN TOKENS (Neo-brutalist "classroom guide" — cream + Fredoka) ── */
 :root{
-  --bg:#fff;
-  --bg-soft:#fbfbfd;
-  --paper:#fff;
-  --paper-2:#f5f5f7;
-  --paper-3:#fafafa;
-  --ink:#1d1d1f;
-  --ink-2:#424245;
-  --muted:#6e6e73;
-  --muted-2:#86868b;
-  --line:#d2d2d7;
-  --line-soft:#e8e8ed;
-  --accent:#0071e3;
-  --accent-hover:#0077ed;
-  --accent-sage:#e8f3e3;
+  --bg:#f0e9d8;
+  --bg-soft:#f5efe1;
+  --paper:#fffdf6;
+  --paper-2:#faf3e1;
+  --paper-3:#f6efdd;
+  --ink:#1a1a1a;
+  --ink-2:#2f2b24;
+  --muted:#6b6356;
+  --muted-2:#8a8375;
+  --line:#1a1a1a;
+  --line-soft:#ddd2b8;
+  --accent:#d9663f;
+  --accent-hover:#c4542f;
+  --accent-blue:#3a6b8c;
+  --accent-purple:#8b5a9c;
+  --hl:#fff23d;
+  --accent-sage:#cfe3c4;
   --accent-sage-ink:#1d6f42;
-  --accent-peach:#fde7d6;
-  --accent-peach-ink:#b04a00;
-  --accent-lilac:#ebe5f7;
+  --accent-peach:#f6cdaa;
+  --accent-peach-ink:#9c4516;
+  --accent-lilac:#dccdec;
   --accent-lilac-ink:#5e3bb7;
-  --accent-rose:#fde2e0;
-  --accent-rose-ink:#c2362a;
-  --accent-maroon-light:#ead4d1;
+  --accent-rose:#f6c8c2;
+  --accent-rose-ink:#b1362a;
+  --accent-maroon-light:#e3c4be;
   --accent-maroon-ink:#8b4842;
-  --accent-butter:#fbf0c9;
+  --accent-butter:#f8e7a8;
   --accent-butter-ink:#8a6a00;
-  --accent-sky:#e1edf7;
-  --accent-sky-ink:#0071e3;
-  --serif:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Helvetica Neue",Arial,sans-serif;
-  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Helvetica Neue",Arial,sans-serif;
-  --radius-sm:8px;
-  --radius:12px;
-  --radius-lg:18px;
-  --radius-xl:22px;
-  --shadow-sm:0 1px 2px rgba(0,0,0,0.04);
-  --shadow:0 6px 20px rgba(0,0,0,0.06);
+  --accent-sky:#bcd3df;
+  --accent-sky-ink:#2c5670;
+  --serif:"Fredoka","Mulish",system-ui,sans-serif;
+  --sans:"Mulish",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --display:"Fredoka","Mulish",system-ui,sans-serif;
+  --radius-sm:10px;
+  --radius:14px;
+  --radius-lg:20px;
+  --radius-xl:26px;
+  --border:2.5px solid var(--line);
+  --nb-shadow:6px 6px 0 var(--line);
+  --nb-shadow-sm:4px 4px 0 var(--line);
+  --shadow-sm:3px 3px 0 var(--line);
+  --shadow:6px 6px 0 var(--line);
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -809,6 +816,208 @@ footer{text-align:center;padding:36px 0 32px;color:var(--muted);font-size:13px;b
   .aipa-step{padding:30px 24px}
 }
 
+/* ════════════════════════════════════════════════════════════════
+   NEO-BRUTALIST "CLASSROOM GUIDE" OVERRIDE LAYER
+   Cream canvas · Fredoka display type · hard offset shadows ·
+   thick ink borders · black pill badges · highlighter accents.
+   Cascades last so it restyles every page cohesively.
+   ════════════════════════════════════════════════════════════════ */
+body{
+  background:var(--bg);
+  font-weight:500;
+  letter-spacing:0;
+}
+/* Subtle paper grain so the cream feels like the printed guide */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(217,102,63,0.05), transparent 42%),
+    radial-gradient(circle at 88% 82%, rgba(58,107,140,0.05), transparent 42%);
+}
+
+/* ── Display type → Fredoka, heavy & rounded ── */
+.section-title,.sub-label h3,.exp-role,.product-name,.stat-val,.pstat-val,
+.format-title,.curr-title,.diff-t,.prog-banner h3,.prog-hero-title,
+.aipa-step-title,.prog-sub-title,.prog-phase-title,.prog-impact-val,
+.prog-team-name,.prog-cohort-name,.prog-partner-name,.prog-menu-code,
+.research-title,.writing-title,.feat-title,.award-title,.contact-val,
+.tl-label,.building-title,.dig8-embed-hashtag,.dig8-stat-num,
+.aipa-headline-xl,.aipa-headline-lg,.aipa-kpi-val,.aipa-prog-title,
+.aipa-phase-title,.aipa-impact-val,.aipa-diff-title,.aipa-team-name,
+.aipa-cohort-org,.aipa-outcome-title,.aipa-tech-title,.aipa-big-num,
+.aipa-step-num,.aipa-phase-bg,.li-post-name,.prog-result-val,.nav-brand,
+.event-title,.event-name,.prod-embed-name{
+  font-family:var(--display)!important;
+  font-weight:600;
+  letter-spacing:0!important;
+}
+.section-title{font-weight:700;color:var(--ink);text-transform:none}
+
+/* ── NAV → solid cream bar, pill menu, brand wordmark ── */
+nav{
+  background:var(--bg);
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+  border-bottom:2.5px solid var(--line);
+  height:auto;min-height:54px;padding:8px 18px;
+}
+.nav-brand{
+  font-family:var(--display);font-weight:700;font-size:20px;color:#fff;
+  background:var(--ink);border:2.5px solid var(--line);
+  border-radius:999px;padding:6px 18px;line-height:1;
+  box-shadow:var(--nb-shadow-sm);transition:transform .12s ease,box-shadow .12s ease;
+}
+.nav-brand:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--line)}
+.nav-btn{
+  background:var(--paper);color:var(--ink);
+  border:2px solid var(--line);border-radius:999px;
+  padding:6px 13px;font-size:12px;font-weight:700;opacity:1;
+  margin:3px;transition:transform .12s ease,box-shadow .12s ease,background .12s;
+}
+.nav-btn:hover{opacity:1;transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--line)}
+.nav-btn.active{background:var(--accent);color:#fff;font-weight:700;box-shadow:3px 3px 0 var(--line)}
+
+/* ── Hero treatment (about) ── */
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--ink);color:#fff;border:2.5px solid var(--line);
+  border-radius:999px;padding:8px 18px;margin-bottom:18px;
+  font-family:var(--display);font-weight:600;font-size:13px;
+  letter-spacing:0.04em;text-transform:uppercase;box-shadow:var(--nb-shadow-sm);
+}
+.hero-eyebrow::before{content:"";width:13px;height:13px;border-radius:50%;border:2px solid #fff}
+.hl{
+  background:var(--hl);padding:0 .12em;border-radius:4px;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;color:var(--ink);
+}
+.ink-accent{color:var(--accent)}
+.ink-blue{color:var(--accent-blue)}
+.ink-purple{color:var(--accent-purple)}
+
+/* ── CARDS → thick ink border + hard offset shadow ── */
+.card,.stat-box,.exp-card,.product-card,.pstat,.format-card,.curr-card,
+.diff-card,.prog-result-card,.aipa-step,.prog-sub-card,.prog-phase-card,
+.prog-impact-card,.prog-team-card,.prog-cohort-card,.prog-partner-card,
+.prog-menu-card,.uc-menu-card,.event-card,.dig8-embed,.research-card,
+.writing-card,.feat-card,.award-card,.contact-card,.building-card,.tl-item,
+.notice,.li-post-card,.li-banner,.dig8-feed-banner,.aipa-slide,.aipa-kpi-box,
+.aipa-prog-card-dark,.aipa-prog-card-light,.aipa-phase-card,.aipa-impact-card,
+.aipa-diff-item,.aipa-team-card,.aipa-cohort-card,.aipa-outcome-card,
+.aipa-tech-card,.prod-embed-panel,.contact-card{
+  border:2.5px solid var(--line)!important;
+  box-shadow:var(--nb-shadow);
+  border-radius:var(--radius-lg);
+}
+/* hover lift → shadow grows toward the page, card nudges into it */
+.card:hover,.exp-card:hover,.product-card:hover,.event-card:hover,
+.research-card:hover,.writing-card:hover,.feat-card:hover,.award-card:hover,
+.contact-card:hover,.building-card:hover,.li-post-card:hover,.stat-box:hover,
+.uc-menu-card:hover,.prog-menu-card:hover{
+  transform:translate(-3px,-3px)!important;
+  box-shadow:9px 9px 0 var(--line)!important;
+}
+/* warm default card surfaces */
+.stat-box,.pstat,.format-card,.curr-card,.diff-card,.prog-sub-card,
+.prog-phase-card,.prog-team-card,.prog-cohort-card,.prog-partner-card,
+.research-card,.writing-card,.feat-card,.award-card,.contact-card,
+.building-card,.tl-item,.notice,.li-post-card,.li-banner,.dig8-feed-banner,
+.aipa-kpi-box,.aipa-team-card,.writing-card,.uc-menu-card{
+  background:var(--paper)!important;
+}
+
+/* ── Number / corner accent pill on prog menu + result cards ── */
+.prog-menu-card-01{background:var(--accent-sky)!important}
+.prog-menu-card-02{background:var(--accent-peach)!important}
+.prog-menu-card-03{background:var(--accent-rose)!important}
+.prog-menu-card-04{background:var(--accent-lilac)!important}
+.prog-menu-accent{height:6px;border-radius:999px}
+
+/* ── Stat / impact emphasis ── */
+.stat-val,.prog-impact-val,.aipa-impact-val,.aipa-kpi-val,.prog-result-val{color:var(--ink)}
+
+/* ── BADGES & PILLS → black pill chips like "01 · Yes" ── */
+.chip,.skill-tag,.trusted-pill,.aipa-trusted-pill,.aipa-suite-tag,
+.aipa-step-badge{
+  background:var(--paper)!important;color:var(--ink)!important;
+  border:2px solid var(--line)!important;border-radius:999px;font-weight:700;
+}
+.skill-pill,.event-type,.li-post-badge,.preview-badge,.research-featured,
+.edu-badge,.prog-banner-tag,.aipa-prog-num-badge,.aipa-impact-badge,
+.li-post-hashtag{
+  background:var(--ink)!important;color:#fff!important;
+  border:2px solid var(--line)!important;border-radius:999px;font-weight:700;
+}
+.edu-badge,.research-featured,.aipa-prog-num-light{background:var(--accent)!important;color:#fff!important;border:2px solid var(--line)!important}
+
+/* ── Round number badges → squared-off ink coins with border ── */
+.format-num,.diff-num,.prog-sub-card-num,.aipa-diff-num{
+  background:var(--accent)!important;color:#fff!important;
+  border:2px solid var(--line)!important;border-radius:50%;
+}
+
+/* ── BUTTONS → hard-edge pills with offset shadow ── */
+.btn-dark,.link-btn,.event-btn,.event-filter-btn,.ieee-btn,.dig8-feed-btn,
+.li-post-cta,.aipa-btn-white,.aipa-btn-ghost,.prod-sel-btn,.prod-embed-link,
+.dig8-embed-follow-btn{
+  border:2.5px solid var(--line)!important;border-radius:999px;
+  font-family:var(--display);font-weight:600!important;
+  box-shadow:var(--nb-shadow-sm);
+  transition:transform .12s ease,box-shadow .12s ease,background .12s,color .12s;
+}
+.btn-dark,.event-btn,.dig8-feed-btn,.li-post-cta,.aipa-btn-white{
+  background:var(--accent)!important;color:#fff!important;
+}
+.link-btn,.event-filter-btn,.ieee-btn,.prod-sel-btn,.aipa-btn-ghost,
+.prod-embed-link,.dig8-embed-follow-btn{background:var(--paper)!important;color:var(--ink)!important}
+.event-filter-btn.active{background:var(--ink)!important;color:#fff!important}
+.prod-sel-btn.active{background:var(--accent)!important;color:#fff!important;box-shadow:var(--nb-shadow)}
+.btn-dark:hover,.link-btn:hover,.event-btn:hover,.event-filter-btn:hover,
+.ieee-btn:hover,.dig8-feed-btn:hover,.li-post-cta:hover,.aipa-btn-white:hover,
+.aipa-btn-ghost:hover,.prod-sel-btn:hover,.prod-embed-link:hover,
+.dig8-embed-follow-btn:hover,.exp-link:hover,.writing-link:hover{
+  transform:translate(-2px,-2px);box-shadow:var(--nb-shadow);opacity:1;
+}
+
+/* ── Dark hero blocks keep ink but gain the framed look ── */
+.prog-banner,.prog-hero{
+  background:var(--ink)!important;border:2.5px solid var(--line)!important;
+  box-shadow:var(--nb-shadow);border-radius:var(--radius-xl);
+}
+.prog-banner h3,.prog-hero-title{color:var(--hl)!important}
+.prog-banner-tag,.prog-hero-tag,.aipa-tag,.aipa-step-tag,.curr-phase,
+.feat-type,.prog-phase-num,.prog-menu-num,.aipa-cohort-tag,.aipa-phase-label{
+  color:var(--accent)!important;font-weight:700;
+}
+
+/* ── Avatars / logo coins → framed ── */
+.event-avatar,.prog-team-avatar,.li-post-avatar,.aipa-team-avatar,
+.company-logo-wrap,.prog-cohort-logo-wrap,.dig8-embed-logo,.uc-menu-icon{
+  border:2.5px solid var(--line)!important;
+  font-family:var(--display);box-shadow:var(--nb-shadow-sm);
+}
+.event-avatar,.prog-team-avatar,.li-post-avatar,.aipa-team-avatar{background:var(--accent)!important}
+
+/* ── Section sub / labels ── */
+.sub-label-line{height:2.5px;background:var(--line);border-radius:2px}
+.section-sub{color:var(--ink-2)}
+.lbl,.curr-phase{font-weight:700}
+
+/* ── Timeline accent states ── */
+.tl-item.active-phase{background:var(--ink)!important}
+.tl-item.tl-new{background:var(--accent)!important}
+
+/* ── FOOTER → framed cream strip ── */
+footer{
+  background:var(--bg);border-top:2.5px solid var(--line);
+  font-family:var(--display);font-weight:600;color:var(--ink-2);font-size:14px;
+}
+
+/* ── Mobile: tame shadows so cards don't overflow ── */
+@media(max-width:600px){
+  :root{--nb-shadow:4px 4px 0 var(--line);--nb-shadow-sm:3px 3px 0 var(--line)}
+  .section-title{font-size:42px}
+  .nav-brand{font-size:17px}
+}
+
 </style>
 </head>
 <body>
@@ -1033,9 +1242,10 @@ function chipRow(arr){ return `<div class="chip-row">${chips(arr)}</div>`; }
 // ── PAGES ────────────────────────────────────────────────
 function pageAbout(){
   return `
-    <h2 class="section-title">HADI BHUIYAN</h2>
-    <p class="section-sub" style="color:#0d2255;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;font-weight:700">Digital Ecosystem Designer, AI-Product Builder, Consultant &amp; Trainer | 20+ Years in Telco &amp; Innovation Industry</p>
-    <p style="font-size:17px;line-height:1.95;color:#1a1a1a;margin-bottom:30px">
+    <div class="hero-eyebrow">Digital · AI · Enterprise · SaaS</div>
+    <h2 class="section-title">Hadi <span class="hl">Bhuiyan</span></h2>
+    <p class="section-sub" style="color:var(--ink-2);font-weight:700">Digital Ecosystem Designer, <span class="ink-accent">AI-Product Builder</span>, Consultant &amp; Trainer | <span class="ink-blue">20+ Years</span> in Telco &amp; Innovation Industry</p>
+    <p style="font-size:17px;line-height:1.95;color:var(--ink-2);margin-bottom:30px">
       Managing and building solutions with over <strong>20 years of experience</strong> in Telco &amp; Digital Transformation, AI-Workspace development, customer/enterprise solutions, Training/HRtech, and social good tech.<br><br>
       Proven track record at <strong>Nokia Siemens Networks</strong>, <strong>Huawei Technologies</strong>, <strong>Robi Axiata Limited</strong>, and <strong>Premier University</strong>.<br><br>
       Built and executed the GTM strategy for <strong>CommEngine</strong>, <strong>EasyFlow AI</strong>, and <strong>FutureMind AI</strong> products from scratch to revenue.<br><br>
