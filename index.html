@@ -578,6 +578,14 @@ nav{
 .feat-title{font-family:var(--sans);font-weight:600;font-size:21px;color:var(--ink);margin-bottom:8px;letter-spacing:-0.018em;line-height:1.2}
 .feat-detail{font-size:14px;color:var(--ink-2);line-height:1.5;margin:0 0 12px}
 .feat-year{font-size:12px;color:var(--muted);font-weight:400;letter-spacing:-0.005em}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:24px}
+.cert-card{display:flex;gap:18px;align-items:flex-start;border:none;border-radius:var(--radius-lg);padding:24px;transition:box-shadow .25s ease,transform .25s ease}
+.cert-card:hover{box-shadow:var(--shadow);transform:translateY(-1px)}
+.cert-badge{flex-shrink:0;min-width:60px;height:60px;padding:0 12px;border-radius:14px;background:rgba(0,0,0,.06);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:700;font-size:15px;color:var(--ink);letter-spacing:-0.01em;text-align:center}
+.cert-body{flex:1;min-width:0}
+.cert-title{font-family:var(--sans);font-weight:600;font-size:18px;color:var(--ink);margin-bottom:4px;letter-spacing:-0.018em;line-height:1.25}
+.cert-issuer{font-size:13px;font-weight:600;color:var(--accent);margin-bottom:8px;letter-spacing:-0.005em}
+.cert-detail{font-size:13.5px;color:var(--ink-2);line-height:1.5;margin:0 0 8px}
 .award-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:12px;margin-top:14px}
 .award-card{background:var(--paper-2);border:none;border-radius:var(--radius-lg);padding:18px 20px;display:flex;gap:14px;align-items:center;transition:box-shadow .25s ease, transform .25s ease}
 .award-card:hover{box-shadow:var(--shadow);transform:translateY(-1px)}
@@ -830,7 +838,8 @@ const NAV = [
   {text:"AI Accelerator",id:"aipa"},
   {text:"AI Inference",id:"ai-inference"},
   {text:"Events",id:"events"},
-  {text:"Research",id:"research"}
+  {text:"Research",id:"research"},
+  {text:"Certifications",id:"certifications"}
 ];
 
 const STATS = [
@@ -1024,6 +1033,16 @@ const AWARDS = [
   {type:"Publication",title:"IEEE Publications",detail:"ICCIT-2005, ICNEWS-2006, ICCIT-2010",bg:"var(--accent-sky)"},
   {type:"Recognition",title:"ICT4D Conference Reviewer",detail:"Independent 2010–2016",bg:"var(--accent-sage)"},
   {type:"Contribution",title:"BSTI Consumer Protection",detail:"Digital System Contributor",bg:"var(--accent-maroon-light)"}
+];
+
+const CERTIFICATIONS = [
+  {code:"PMP",title:"Project Management Professional",issuer:"Project Management Institute (PMI)",detail:"Global gold-standard credential in project planning, execution, risk and stakeholder management.",bg:"var(--accent-sky)"},
+  {code:"ITIL v4",title:"ITIL v4 Foundation",issuer:"AXELOS / PeopleCert",detail:"IT service management best practices for designing, delivering and continually improving digital services.",bg:"var(--accent-sage)"},
+  {code:"BABOK",title:"Business Analysis (BABOK)",issuer:"IIBA",detail:"Body of knowledge for requirements engineering, solution assessment and enterprise analysis.",bg:"var(--accent-lilac)"},
+  {code:"CxO",title:"CxO Conclave Certified",issuer:"IBA – University of Dhaka",detail:"Executive leadership certification for C-suite strategy and digital decision-making.",year:"2024",bg:"var(--accent-peach)"},
+  {code:"MS",title:"Microsoft for Startups Founders Fellow",issuer:"Microsoft",detail:"Founders Hub fellowship recognising AI startup ecosystem and enterprise B2B SaaS leadership.",year:"2022",bg:"var(--accent-butter)"},
+  {code:"NSN",title:"NSN TAC II Certified",issuer:"Nokia Siemens Networks",detail:"Advanced technical assistance certification for Intelligent Network and BSS platforms.",bg:"var(--accent-rose)"},
+  {code:"ServADM",title:"Service Administration",issuer:"Telecom Systems",detail:"Service provisioning and administration across charging, VAS and digital service platforms.",bg:"var(--accent-maroon-light)"}
 ];
 
 // ── HELPERS ─────────────────────────────────────────────
@@ -1448,6 +1467,26 @@ function pageRecognition(){
     <div class="sub-label"><h3>Awards, Contributions and Participations</h3><div class="sub-label-line"></div></div>
     <div class="feat-grid">${feat}</div>
     <div class="feat-grid" style="margin-top:14px">${awards}</div>`;
+}
+
+function pageCertifications(){
+  const cards = CERTIFICATIONS.map(c=>`
+    <div class="cert-card" style="background:${c.bg}">
+      <div class="cert-badge">${c.code}</div>
+      <div class="cert-body">
+        <div class="cert-title">${c.title}</div>
+        <div class="cert-issuer">${c.issuer}</div>
+        <p class="cert-detail">${c.detail}</p>
+        ${c.year?`<div class="feat-year">📅 ${c.year}</div>`:''}
+      </div>
+    </div>`).join('');
+  return `
+    <h2 class="section-title">Certifications</h2>
+    <p class="section-sub">Professional credentials & executive certifications</p>
+    <div class="stat-grid">
+      ${[{val:String(CERTIFICATIONS.length),label:"Certifications"},{val:"PMP",label:"Project Mgmt"},{val:"ITIL v4",label:"Service Mgmt"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
+    </div>
+    <div class="cert-grid">${cards}</div>`;
 }
 
 function pageContact(){
@@ -2390,6 +2429,7 @@ const PAGES = {
   'ai-inference': pageAIInference,
   events: pageEvents,
   research: pageResearch,
+  certifications: pageCertifications,
   recognition: pageRecognition,
   contact: pageContact
 };
