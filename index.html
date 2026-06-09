@@ -600,6 +600,34 @@ nav{
 .award-title{font-family:var(--sans);font-weight:600;font-size:15px;color:var(--ink);margin-bottom:4px;letter-spacing:-0.012em}
 .award-detail{font-size:12px;color:var(--muted)}
 
+/* HOMEPAGE SLIDESHOW */
+.hs-wrapper{display:flex;gap:20px;align-items:flex-start;min-height:600px}
+.hs-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:16px}
+.hs-slides{position:relative;min-height:400px}
+.hs-slide{display:none}
+.hs-slide.active{display:block;animation:hsFadeIn .3s ease}
+@keyframes hsFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hs-nav-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0 4px;border-top:1px solid var(--line)}
+.hs-nav-btn{padding:8px 20px;border:1px solid var(--line);border-radius:999px;background:var(--paper);font-size:13px;font-weight:500;color:var(--ink);cursor:pointer;transition:all .18s}
+.hs-nav-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hs-dots{display:flex;gap:6px;align-items:center}
+.hs-dot{width:8px;height:8px;border-radius:50%;border:none;background:var(--line);cursor:pointer;padding:0;transition:all .18s}
+.hs-dot.active{background:var(--ink);width:22px;border-radius:4px}
+.hs-sidebar{width:148px;flex-shrink:0;position:sticky;top:80px;max-height:calc(100vh - 100px);display:flex;flex-direction:column;gap:8px}
+.hs-sidebar-label{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;padding:0 2px 4px}
+.hs-thumbs{display:flex;flex-direction:column;gap:8px;overflow-y:auto;padding-bottom:8px}
+.hs-thumb{background:var(--paper-2);border:2px solid transparent;border-radius:12px;padding:10px 12px;cursor:pointer;transition:all .18s;display:flex;flex-direction:column;gap:3px}
+.hs-thumb:hover{border-color:var(--line);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.hs-thumb.active{border-color:var(--ink);background:var(--ink)}
+.hs-thumb-num{font-size:9px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.hs-thumb.active .hs-thumb-num{color:rgba(255,255,255,.55)}
+.hs-thumb-icon{font-size:20px;line-height:1}
+.hs-thumb-label{font-size:12px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.hs-thumb.active .hs-thumb-label{color:#fff}
+.hs-thumb-preview{font-size:10px;color:var(--muted);line-height:1.4;margin-top:1px}
+.hs-thumb.active .hs-thumb-preview{color:rgba(255,255,255,.6)}
+@media(max-width:700px){.hs-wrapper{flex-direction:column}.hs-sidebar{width:100%;position:static;max-height:none}.hs-thumbs{flex-direction:row;overflow-x:auto;overflow-y:hidden;padding-bottom:4px}.hs-thumb{min-width:100px;flex-shrink:0}}
+
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:12px}
 .contact-card{background:var(--paper-2);border:none;border-radius:var(--radius-lg);padding:24px;display:flex;gap:16px;align-items:center;text-decoration:none;transition:box-shadow .25s ease, transform .25s ease;color:var(--ink)}
@@ -1261,65 +1289,147 @@ function chipRow(arr){ return `<div class="chip-row">${chips(arr)}</div>`; }
 
 // ── PAGES ────────────────────────────────────────────────
 function pageAbout(){
+  const slides = [
+    {
+      id: 'slide-hero',
+      label: 'Intro',
+      icon: '👤',
+      preview: 'Hadi Bhuiyan · Digital · AI · SaaS',
+      content: `
+        <div class="hero-eyebrow">Digital · AI · Enterprise · SaaS</div>
+        <h2 class="section-title"><span class="hl">Hadi Bhuiyan</span></h2>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:18px 0 30px">
+          Enterprise &amp; SaaS Builder, Digital/AI Product Manager, Volunteer, 'Retired' Trekker
+          <a href="mailto:bhuiyan.hadi@gmail.com" class="link-btn">✉️ bhuiyan.hadi@gmail.com</a>
+          <a href="tel:+8801833180420" class="link-btn">📞 +880 18 33180420</a>
+          <a href="https://mahadib.futuremind.ltd" target="_blank" class="link-btn">🌐 mahadib.futuremind.ltd</a>
+          <a href="http://bd.linkedin.com/in/mahadib/" target="_blank" class="link-btn">💼 LinkedIn</a>
+          <a href="mailto:mahadib@CommEngine.xyz" class="link-btn">✉️ mahadib@CommEngine.xyz</a>
+        </div>
+        <div style="background:var(--accent-sage);border:3px solid var(--accent-sage-ink);border-radius:18px;padding:40px 44px;margin-bottom:30px;box-shadow:0 6px 22px rgba(29,111,66,0.18)">
+          <p style="font-size:17px;line-height:1.95;color:var(--ink-2);margin:0">
+            Managing and building solutions with over <strong>20 years of experience</strong> in Telco &amp; Digital Transformation, AI-Workspace development, customer/enterprise solutions, Training/HRtech, and social good tech.<br><br>
+            Proven track record at <strong>Nokia Siemens Networks</strong>, <strong>Huawei Technologies</strong>, <strong>Robi Axiata Limited</strong>, and <strong>Premier University</strong>.<br><br>
+            Built and executed the GTM strategy for <strong>CommEngine</strong>, <strong>EasyFlow AI</strong>, and <strong>FutureMind AI</strong> products from scratch to revenue.<br><br>
+            Leading AI-Proficiency programs and Digital Transformation consultancy at <strong>BuildCon &amp; BuildNation</strong>.<br><br>
+            Contributed to the National Blockchain Policy, Consumer Protection tech, E-commerce 4IR, Nationwide Support Distribution, and Citizen-social CRM projects.<br><br>
+            Let's connect if you're looking for a professional who can drive product innovation, build disruptive solutions, and make a real impact, here: <a href="mailto:bhuiyan.hadi@gmail.com" style="color:inherit;text-decoration:underline">bhuiyan.hadi@gmail.com</a>
+          </p>
+        </div>`
+    },
+    {
+      id: 'slide-building',
+      label: 'Building',
+      icon: '🚀',
+      preview: 'Building NOW & Companies',
+      content: `
+        <div class="sub-label"><h3>Building NOW</h3><div class="sub-label-line"></div></div>
+        <div class="building-grid">${BUILDING.map(b=>`<div class="building-card"${b.href?` style="cursor:pointer" onclick="window.open('${b.href}','_blank')"`:''}>` +`<div class="building-emoji">${b.emoji}</div><div><div class="building-title">${b.title}${b.href?` <span style="font-size:12px;opacity:.6">↗</span>`:''}</div><div class="building-desc">${b.desc}</div></div></div>`).join('')}</div>
+        <div class="sub-label"><h3>Associated Companies</h3><div class="sub-label-line"></div></div>
+        <div class="company-logos-row">
+          <div class="company-logo-item">
+            <div class="company-logo-wrap"><img src="https://www.google.com/s2/favicons?domain=buildnation.com.bd&sz=128" alt="BuildNation" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#1a6b3c\\'>BN</div>')"/></div>
+            <span class="company-logo-name">BuildNation</span>
+          </div>
+          <div class="company-logo-item">
+            <div class="company-logo-wrap"><img src="https://www.google.com/s2/favicons?domain=commengine.xyz&sz=128" alt="CommEngine" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#e05c1a\\'>CE</div>')"/></div>
+            <span class="company-logo-name">CommEngine</span>
+          </div>
+          <div class="company-logo-item">
+            <div class="company-logo-wrap"><img src="https://www.google.com/s2/favicons?domain=robi.com.bd&sz=128" alt="Robi Axiata" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#e4002b\\'>RA</div>')"/></div>
+            <span class="company-logo-name">Robi Axiata</span>
+          </div>
+          <div class="company-logo-item">
+            <div class="company-logo-wrap"><img src="assets/logos/nokia.svg" alt="Nokia Siemens" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#005AFF\\'>NSN</div>')"/></div>
+            <span class="company-logo-name">Nokia Siemens</span>
+          </div>
+          <div class="company-logo-item">
+            <div class="company-logo-wrap"><img src="assets/logos/huawei.svg" alt="Huawei" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#cf0a2c\\'>HW</div>')"/></div>
+            <span class="company-logo-name">Huawei</span>
+          </div>
+          <div class="company-logo-item">
+            <div class="company-logo-wrap"><img src="https://www.google.com/s2/favicons?domain=puc.ac.bd&sz=128" alt="Premier University" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#1a3a6b\\'>PU</div>')"/></div>
+            <span class="company-logo-name">Premier University</span>
+          </div>
+        </div>`
+    },
+    {
+      id: 'slide-timeline',
+      label: 'Timeline',
+      icon: '📅',
+      preview: 'Career Timeline · 20 yrs',
+      content: `
+        <div class="sub-label"><h3>Career Timeline</h3><div class="sub-label-line"></div></div>
+        <div class="timeline">
+          <div class="timeline-line"></div>
+          ${TIMELINE.map(t=>`<div class="tl-item${t.active?' active-phase':''}${t.isNew?' tl-new':''}"><div class="tl-year">${t.year}</div><div class="tl-label">${t.label}</div><div class="tl-role">${t.role||''}</div><div class="tl-note">${t.note}</div></div>${t.arrowAfter?'<div class="tl-arrow">→</div>':''}`).join('')}
+        </div>`
+    },
+    {
+      id: 'slide-awards',
+      label: 'Awards',
+      icon: '🏆',
+      preview: 'Awards & Recognition',
+      content: `
+        <div class="sub-label"><h3>Awards, Contributions and Participations</h3><div class="sub-label-line"></div></div>
+        <div class="feat-grid">${FEATURED.map(f=>`<div class="feat-card" style="background:${f.bg}"><div class="feat-type">${f.type}</div><div class="feat-title">${f.title}</div><p class="feat-detail">${f.detail}</p><div class="feat-year">📅 ${f.year}</div></div>`).join('')}</div>
+        <div class="feat-grid" style="margin-top:14px">${AWARDS.map(a=>`<div class="feat-card" style="background:${a.bg}"><div class="feat-type">${a.type}</div><div class="feat-title">${a.title}</div><p class="feat-detail">${a.detail}</p>${a.year?`<div class="feat-year">📅 ${a.year}</div>`:''}</div>`).join('')}</div>`
+    },
+    {
+      id: 'slide-experience',
+      label: 'Experience',
+      icon: '💼',
+      preview: 'Work Experience & Skills',
+      content: pageExperience()
+    }
+  ];
+
+  const thumbnails = slides.map((s,i)=>`
+    <div class="hs-thumb${i===0?' active':''}" data-slide="${i}" onclick="hsGoTo(${i})">
+      <div class="hs-thumb-num">${i+1}</div>
+      <div class="hs-thumb-icon">${s.icon}</div>
+      <div class="hs-thumb-label">${s.label}</div>
+      <div class="hs-thumb-preview">${s.preview}</div>
+    </div>`).join('');
+
+  const slideItems = slides.map((s,i)=>`
+    <div class="hs-slide${i===0?' active':''}" data-slide="${i}">${s.content}</div>`).join('');
+
   return `
-    <div class="hero-eyebrow">Digital · AI · Enterprise · SaaS</div>
-    <h2 class="section-title"><span class="hl">Hadi Bhuiyan</span></h2>
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:18px 0 30px">
-      Enterprise &amp; SaaS Builder, Digital/AI Product Manager, Volunteer, 'Retired' Trekker
-      <a href="mailto:bhuiyan.hadi@gmail.com" class="link-btn">✉️ bhuiyan.hadi@gmail.com</a>
-      <a href="tel:+8801833180420" class="link-btn">📞 +880 18 33180420</a>
-      <a href="https://mahadib.futuremind.ltd" target="_blank" class="link-btn">🌐 mahadib.futuremind.ltd</a>
-      <a href="http://bd.linkedin.com/in/mahadib/" target="_blank" class="link-btn">💼 LinkedIn</a>
-      <a href="mailto:mahadib@CommEngine.xyz" class="link-btn">✉️ mahadib@CommEngine.xyz</a>
-    </div>
-    <div style="background:var(--accent-sage);border:3px solid var(--accent-sage-ink);border-radius:18px;padding:40px 44px;margin-bottom:30px;box-shadow:0 6px 22px rgba(29,111,66,0.18)">
-      <p style="font-size:17px;line-height:1.95;color:var(--ink-2);margin:0">
-        Managing and building solutions with over <strong>20 years of experience</strong> in Telco &amp; Digital Transformation, AI-Workspace development, customer/enterprise solutions, Training/HRtech, and social good tech.<br><br>
-        Proven track record at <strong>Nokia Siemens Networks</strong>, <strong>Huawei Technologies</strong>, <strong>Robi Axiata Limited</strong>, and <strong>Premier University</strong>.<br><br>
-        Built and executed the GTM strategy for <strong>CommEngine</strong>, <strong>EasyFlow AI</strong>, and <strong>FutureMind AI</strong> products from scratch to revenue.<br><br>
-        Leading AI-Proficiency programs and Digital Transformation consultancy at <strong>BuildCon &amp; BuildNation</strong>.<br><br>
-        Contributed to the National Blockchain Policy, Consumer Protection tech, E-commerce 4IR, Nationwide Support Distribution, and Citizen-social CRM projects.<br><br>
-        Let's connect if you're looking for a professional who can drive product innovation, build disruptive solutions, and make a real impact, here: <a href="mailto:bhuiyan.hadi@gmail.com" style="color:inherit;text-decoration:underline">bhuiyan.hadi@gmail.com</a>
-      </p>
-    </div>
-    <div class="sub-label"><h3>Building NOW</h3><div class="sub-label-line"></div></div>
-    <div class="building-grid">${BUILDING.map(b=>`<div class="building-card"${b.href?` style="cursor:pointer" onclick="window.open('${b.href}','_blank')"`:''}>` +`<div class="building-emoji">${b.emoji}</div><div><div class="building-title">${b.title}${b.href?` <span style="font-size:12px;opacity:.6">↗</span>`:''}</div><div class="building-desc">${b.desc}</div></div></div>`).join('')}</div>
-    <div class="sub-label"><h3>Associated Companies</h3><div class="sub-label-line"></div></div>
-    <div class="company-logos-row">
-      <div class="company-logo-item">
-        <div class="company-logo-wrap"><img src="https://www.google.com/s2/favicons?domain=buildnation.com.bd&sz=128" alt="BuildNation" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#1a6b3c\\'>BN</div>')"/></div>
-        <span class="company-logo-name">BuildNation</span>
+    <div class="hs-wrapper">
+      <div class="hs-main">
+        <div class="hs-slides">${slideItems}</div>
+        <div class="hs-nav-bar">
+          <button class="hs-nav-btn" onclick="hsGoTo(window._hsIdx-1)">← Prev</button>
+          <div class="hs-dots">${slides.map((_,i)=>`<button class="hs-dot${i===0?' active':''}" data-slide="${i}" onclick="hsGoTo(${i})"></button>`).join('')}</div>
+          <button class="hs-nav-btn" onclick="hsGoTo(window._hsIdx+1)">Next →</button>
+        </div>
       </div>
-      <div class="company-logo-item">
-        <div class="company-logo-wrap"><img src="https://www.google.com/s2/favicons?domain=commengine.xyz&sz=128" alt="CommEngine" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#e05c1a\\'>CE</div>')"/></div>
-        <span class="company-logo-name">CommEngine</span>
-      </div>
-      <div class="company-logo-item">
-        <div class="company-logo-wrap"><img src="https://www.google.com/s2/favicons?domain=robi.com.bd&sz=128" alt="Robi Axiata" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#e4002b\\'>RA</div>')"/></div>
-        <span class="company-logo-name">Robi Axiata</span>
-      </div>
-      <div class="company-logo-item">
-        <div class="company-logo-wrap"><img src="assets/logos/nokia.svg" alt="Nokia Siemens" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#005AFF\\'>NSN</div>')"/></div>
-        <span class="company-logo-name">Nokia Siemens</span>
-      </div>
-      <div class="company-logo-item">
-        <div class="company-logo-wrap"><img src="assets/logos/huawei.svg" alt="Huawei" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#cf0a2c\\'>HW</div>')"/></div>
-        <span class="company-logo-name">Huawei</span>
-      </div>
-      <div class="company-logo-item">
-        <div class="company-logo-wrap"><img src="https://www.google.com/s2/favicons?domain=puc.ac.bd&sz=128" alt="Premier University" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#1a3a6b\\'>PU</div>')"/></div>
-        <span class="company-logo-name">Premier University</span>
+      <div class="hs-sidebar">
+        <div class="hs-sidebar-label">Slides</div>
+        <div class="hs-thumbs">${thumbnails}</div>
       </div>
     </div>
-    <div class="sub-label"><h3>Career Timeline</h3><div class="sub-label-line"></div></div>
-    <div class="timeline">
-      <div class="timeline-line"></div>
-      ${TIMELINE.map(t=>`<div class="tl-item${t.active?' active-phase':''}${t.isNew?' tl-new':''}"><div class="tl-year">${t.year}</div><div class="tl-label">${t.label}</div><div class="tl-role">${t.role||''}</div><div class="tl-note">${t.note}</div></div>${t.arrowAfter?'<div class="tl-arrow">→</div>':''}`).join('')}
-    </div>
-    <div class="sub-label"><h3>Awards, Contributions and Participations</h3><div class="sub-label-line"></div></div>
-    <div class="feat-grid">${FEATURED.map(f=>`<div class="feat-card" style="background:${f.bg}"><div class="feat-type">${f.type}</div><div class="feat-title">${f.title}</div><p class="feat-detail">${f.detail}</p><div class="feat-year">📅 ${f.year}</div></div>`).join('')}</div>
-    <div class="feat-grid" style="margin-top:14px">${AWARDS.map(a=>`<div class="feat-card" style="background:${a.bg}"><div class="feat-type">${a.type}</div><div class="feat-title">${a.title}</div><p class="feat-detail">${a.detail}</p>${a.year?`<div class="feat-year">📅 ${a.year}</div>`:''}</div>`).join('')}</div>
-    ${pageExperience()}`;
+    <script>
+      window._hsIdx = 0;
+      function hsGoTo(n){
+        const slides = document.querySelectorAll('.hs-slide');
+        const thumbs = document.querySelectorAll('.hs-thumb');
+        const dots = document.querySelectorAll('.hs-dot');
+        if(!slides.length) return;
+        const total = slides.length;
+        n = ((n % total) + total) % total;
+        slides[window._hsIdx].classList.remove('active');
+        thumbs[window._hsIdx].classList.remove('active');
+        dots[window._hsIdx].classList.remove('active');
+        window._hsIdx = n;
+        slides[n].classList.add('active');
+        thumbs[n].classList.add('active');
+        dots[n].classList.add('active');
+        thumbs[n].scrollIntoView({block:'nearest',behavior:'smooth'});
+        document.querySelector('.hs-main').scrollTo(0,0);
+      }
+    <\/script>`;
 }
 
 function pageExperience(){
