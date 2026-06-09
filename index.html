@@ -1027,9 +1027,84 @@ footer{
   .nav-brand{font-size:17px}
 }
 
+
+/* ── SECTIONS PANEL (fixed right) ── */
+#sections-panel{
+  position:fixed;right:16px;top:50%;transform:translateY(-50%);
+  z-index:90;display:flex;flex-direction:column;gap:0;
+  background:var(--bg,#f5f0e8);
+  border:1.5px solid rgba(0,0,0,0.1);
+  border-radius:14px;
+  padding:10px 8px 8px;
+  min-width:130px;
+  box-shadow:0 4px 18px rgba(0,0,0,0.08);
+}
+#sections-panel .sp-label{
+  font-size:8px;font-weight:700;letter-spacing:0.08em;
+  color:rgba(0,0,0,0.35);text-transform:uppercase;
+  padding:0 6px 6px;border-bottom:1px solid rgba(0,0,0,0.08);
+  margin-bottom:6px;
+}
+#sections-panel .sp-card{
+  display:flex;align-items:center;gap:8px;
+  padding:7px 8px;border-radius:9px;
+  cursor:pointer;transition:background .15s ease;
+  text-align:left;background:none;border:none;width:100%;
+}
+#sections-panel .sp-card:hover{background:rgba(0,0,0,0.06)}
+#sections-panel .sp-card.active{background:rgba(0,0,0,0.88);color:#fff}
+#sections-panel .sp-num{
+  font-size:9px;font-weight:600;color:rgba(0,0,0,0.3);
+  min-width:12px;line-height:1;
+}
+#sections-panel .sp-card.active .sp-num{color:rgba(255,255,255,0.5)}
+#sections-panel .sp-icon{font-size:14px;line-height:1}
+#sections-panel .sp-info{display:flex;flex-direction:column;gap:1px}
+#sections-panel .sp-title{
+  font-size:11px;font-weight:600;letter-spacing:-0.005em;
+  color:var(--ink,#1d1d1f);line-height:1.2;
+}
+#sections-panel .sp-card.active .sp-title{color:#fff}
+#sections-panel .sp-sub{
+  font-size:9px;color:rgba(0,0,0,0.4);font-weight:400;
+  letter-spacing:-0.003em;line-height:1.2;
+}
+#sections-panel .sp-card.active .sp-sub{color:rgba(255,255,255,0.55)}
+@media(max-width:900px){#sections-panel{display:none}}
+
 </style>
 </head>
 <body>
+
+<!-- SECTIONS PANEL -->
+<div id="sections-panel">
+  <div class="sp-label">Sections</div>
+  <button class="sp-card active" data-sec="intro" onclick="scrollToSection('intro',this)">
+    <span class="sp-num">1</span>
+    <span class="sp-icon">👤</span>
+    <span class="sp-info"><span class="sp-title">Intro</span><span class="sp-sub">Hadi Bhuiyan · AI · SaaS</span></span>
+  </button>
+  <button class="sp-card" data-sec="building" onclick="scrollToSection('building',this)">
+    <span class="sp-num">2</span>
+    <span class="sp-icon">🚀</span>
+    <span class="sp-info"><span class="sp-title">Building</span><span class="sp-sub">Building NOW &amp; Companies</span></span>
+  </button>
+  <button class="sp-card" data-sec="timeline" onclick="scrollToSection('timeline',this)">
+    <span class="sp-num">3</span>
+    <span class="sp-icon">📅</span>
+    <span class="sp-info"><span class="sp-title">Timeline</span><span class="sp-sub">Career · 20 yrs</span></span>
+  </button>
+  <button class="sp-card" data-sec="awards" onclick="scrollToSection('awards',this)">
+    <span class="sp-num">4</span>
+    <span class="sp-icon">🏆</span>
+    <span class="sp-info"><span class="sp-title">Awards</span><span class="sp-sub">Awards &amp; Recognition</span></span>
+  </button>
+  <button class="sp-card" data-sec="experience" onclick="scrollToSection('experience',this)">
+    <span class="sp-num">5</span>
+    <span class="sp-icon">💼</span>
+    <span class="sp-info"><span class="sp-title">Experience</span><span class="sp-sub">Work Experience &amp; Skills</span></span>
+  </button>
+</div>
 
 <nav>
   <button class="nav-brand" onclick="showPage('about')">Hadi Bhuiyan</button>
@@ -1262,6 +1337,7 @@ function chipRow(arr){ return `<div class="chip-row">${chips(arr)}</div>`; }
 // ── PAGES ────────────────────────────────────────────────
 function pageAbout(){
   return `
+    <div id="sec-intro" style="scroll-margin-top:68px"></div>
     <div class="hero-eyebrow">Digital · AI · Enterprise · SaaS</div>
     <h2 class="section-title"><span class="hl">Hadi Bhuiyan</span></h2>
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:18px 0 30px">
@@ -1282,6 +1358,7 @@ function pageAbout(){
         Let's connect if you're looking for a professional who can drive product innovation, build disruptive solutions, and make a real impact, here: <a href="mailto:bhuiyan.hadi@gmail.com" style="color:inherit;text-decoration:underline">bhuiyan.hadi@gmail.com</a>
       </p>
     </div>
+    <div id="sec-building" style="scroll-margin-top:68px"></div>
     <div class="sub-label"><h3>Building NOW</h3><div class="sub-label-line"></div></div>
     <div class="building-grid">${BUILDING.map(b=>`<div class="building-card"${b.href?` style="cursor:pointer" onclick="window.open('${b.href}','_blank')"`:''}>` +`<div class="building-emoji">${b.emoji}</div><div><div class="building-title">${b.title}${b.href?` <span style="font-size:12px;opacity:.6">↗</span>`:''}</div><div class="building-desc">${b.desc}</div></div></div>`).join('')}</div>
     <div class="sub-label"><h3>Associated Companies</h3><div class="sub-label-line"></div></div>
@@ -1311,14 +1388,17 @@ function pageAbout(){
         <span class="company-logo-name">Premier University</span>
       </div>
     </div>
+    <div id="sec-timeline" style="scroll-margin-top:68px"></div>
     <div class="sub-label"><h3>Career Timeline</h3><div class="sub-label-line"></div></div>
     <div class="timeline">
       <div class="timeline-line"></div>
       ${TIMELINE.map(t=>`<div class="tl-item${t.active?' active-phase':''}${t.isNew?' tl-new':''}"><div class="tl-year">${t.year}</div><div class="tl-label">${t.label}</div><div class="tl-role">${t.role||''}</div><div class="tl-note">${t.note}</div></div>${t.arrowAfter?'<div class="tl-arrow">→</div>':''}`).join('')}
     </div>
+    <div id="sec-awards" style="scroll-margin-top:68px"></div>
     <div class="sub-label"><h3>Awards, Contributions and Participations</h3><div class="sub-label-line"></div></div>
     <div class="feat-grid">${FEATURED.map(f=>`<div class="feat-card" style="background:${f.bg}"><div class="feat-type">${f.type}</div><div class="feat-title">${f.title}</div><p class="feat-detail">${f.detail}</p><div class="feat-year">📅 ${f.year}</div></div>`).join('')}</div>
     <div class="feat-grid" style="margin-top:14px">${AWARDS.map(a=>`<div class="feat-card" style="background:${a.bg}"><div class="feat-type">${a.type}</div><div class="feat-title">${a.title}</div><p class="feat-detail">${a.detail}</p>${a.year?`<div class="feat-year">📅 ${a.year}</div>`:''}</div>`).join('')}</div>
+    <div id="sec-experience" style="scroll-margin-top:68px"></div>
     ${pageExperience()}`;
 }
 
@@ -2648,6 +2728,41 @@ function switchProduct(id){
   event.currentTarget.classList.add('active');
 }
 
+// ── SECTIONS PANEL ───────────────────────────────────────
+function scrollToSection(sec, btn){
+  const el = document.getElementById('sec-'+sec);
+  if(el) el.scrollIntoView({behavior:'smooth'});
+  document.querySelectorAll('#sections-panel .sp-card').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+}
+
+function updateSectionsPanelVisibility(pageId){
+  const panel = document.getElementById('sections-panel');
+  if(!panel) return;
+  panel.style.display = (pageId === 'about') ? '' : 'none';
+}
+
+(function initScrollSpy(){
+  const SECS = ['intro','building','timeline','awards','experience'];
+  let ticking = false;
+  window.addEventListener('scroll', ()=>{
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(()=>{
+      if(document.querySelector('#sections-panel')?.style.display === 'none'){ticking=false;return;}
+      let active = 'intro';
+      for(const s of SECS){
+        const el = document.getElementById('sec-'+s);
+        if(el && el.getBoundingClientRect().top <= 80) active = s;
+      }
+      document.querySelectorAll('#sections-panel .sp-card').forEach(b=>{
+        b.classList.toggle('active', b.dataset.sec === active);
+      });
+      ticking = false;
+    });
+  },{passive:true});
+})();
+
 // ── ROUTER ───────────────────────────────────────────────
 const PAGES = {
   about: pageAbout,
@@ -2673,6 +2788,7 @@ function showPage(id, updateHistory = true){
   document.querySelectorAll('.nav-btn').forEach(b=>{
     b.classList.toggle('active', b.dataset.page === id);
   });
+  updateSectionsPanelVisibility(id);
   window.scrollTo(0,0);
   // update URL
   if(updateHistory){
