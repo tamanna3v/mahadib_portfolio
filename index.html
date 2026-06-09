@@ -661,7 +661,7 @@ nav{
 .building-desc{font-size:13px;color:var(--muted);line-height:1.5}
 
 /* COMPANY LOGOS */
-.company-logos-row{display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between;gap:14px;padding:24px 0 6px;overflow-x:auto}
+.company-logos-row{display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between;gap:14px;padding:10px 0 4px;overflow-x:auto}
 .company-logo-item{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;min-width:80px;opacity:0.92;transition:opacity .2s}
 .company-logo-item:hover{opacity:1}
 .company-logo-wrap{width:72px;height:72px;border-radius:18px;border:none;background:var(--paper-2);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:12px}
@@ -1327,8 +1327,8 @@ function pageAbout(){
         <section id="hs-building" class="hs-section">
           <div class="sub-label"><h3>Building NOW</h3><div class="sub-label-line"></div></div>
           <div class="building-grid">${BUILDING.map(b=>`<div class="building-card"${b.href?` style="cursor:pointer" onclick="window.open('${b.href}','_blank')"`:''}>` +`<div class="building-emoji">${b.emoji}</div><div><div class="building-title">${b.title}${b.href?` <span style="font-size:12px;opacity:.6">↗</span>`:''}</div><div class="building-desc">${b.desc}</div></div></div>`).join('')}</div>
-          <div class="sub-label"><h3>Associated Companies</h3><div class="sub-label-line"></div></div>
-          <div class="company-logos-row">
+          <div class="sub-label" style="margin-top:16px"><h3>Worked With</h3><div class="sub-label-line"></div></div>
+          <div class="company-logos-row" style="padding:10px 0 4px">
             <div class="company-logo-item"><div class="company-logo-wrap"><img src="https://www.google.com/s2/favicons?domain=buildnation.com.bd&sz=128" alt="BuildNation" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#1a6b3c\\'>BN</div>')"/></div><span class="company-logo-name">BuildNation</span></div>
             <div class="company-logo-item"><div class="company-logo-wrap"><img src="https://www.google.com/s2/favicons?domain=commengine.xyz&sz=128" alt="CommEngine" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#e05c1a\\'>CE</div>')"/></div><span class="company-logo-name">CommEngine</span></div>
             <div class="company-logo-item"><div class="company-logo-wrap"><img src="https://www.google.com/s2/favicons?domain=robi.com.bd&sz=128" alt="Robi Axiata" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#e4002b\\'>RA</div>')"/></div><span class="company-logo-name">Robi Axiata</span></div>
