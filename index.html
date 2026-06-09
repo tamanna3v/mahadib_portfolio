@@ -121,8 +121,12 @@ nav{
 .nav-btn.active{font-weight:500;opacity:1}
 
 /* PAGE */
-.page{max-width:1180px;margin:0 auto;padding:88px 22px 80px;display:none}
+.page{width:80%;max-width:1600px;margin:0 auto;padding:88px 22px 80px;display:none}
 .page.active{display:block;animation:fadeUp .5s ease both}
+/* Width responsiveness — widen as the viewport shrinks so content stays comfortable on every device */
+@media(max-width:1024px){.page{width:88%}}
+@media(max-width:768px){.page{width:92%}}
+@media(max-width:600px){.page{width:94%}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
 /* SECTION TITLE — Apple's huge bold sans-serif headlines */
