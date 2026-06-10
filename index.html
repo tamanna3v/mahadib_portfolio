@@ -535,6 +535,26 @@ nav{
 .event-card[data-type="Social Initiative"] .event-btn{background:#c0392b}
 .event-card[data-type="LinkedIn Post"] .event-btn{background:#0a66c2}
 
+/* NEWS CARDS */
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;grid-auto-rows:320px}
+@media(max-width:700px){.news-grid{grid-template-columns:1fr;grid-auto-rows:auto}}
+.news-card{border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column;height:320px;transition:box-shadow .25s ease,transform .25s ease;border:1.5px solid var(--line-soft)}
+.news-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.news-card:nth-child(4n+1){background:linear-gradient(135deg,#e8f4fd 0%,#dbeeff 100%)}
+.news-card:nth-child(4n+2){background:linear-gradient(135deg,#e8f5ee 0%,#d4eddf 100%)}
+.news-card:nth-child(4n+3){background:linear-gradient(135deg,#fef3e2 0%,#fde8c2 100%)}
+.news-card:nth-child(4n+4){background:linear-gradient(135deg,#f3e8fd 0%,#e8d4f7 100%)}
+.news-card-thumb{flex-shrink:0;height:130px;overflow:hidden;position:relative}
+.news-card-thumb img{width:100%;height:100%;object-fit:cover}
+.news-card-body{padding:16px 18px 14px;flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0}
+.news-card-headline{font-size:15px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex-shrink:0}
+.news-card-desc{font-size:12px;color:var(--ink-2);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex-shrink:0;margin-bottom:8px}
+.news-card-footer{margin-top:auto;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:10px;border-top:1px solid rgba(0,0,0,.07)}
+.news-pub-row{display:flex;align-items:center;gap:7px}
+.news-pub-logo{width:20px;height:20px;border-radius:4px;object-fit:contain;flex-shrink:0}
+.news-pub-name{font-size:11px;font-weight:700;letter-spacing:-0.005em}
+.news-card-btn{font-size:11px;font-weight:600;color:#fff;border-radius:999px;padding:5px 13px;white-space:nowrap;text-decoration:none}
+.news-card-btn:hover{opacity:.82;text-decoration:none}
 /* DIG8 FRAMEWORK EMBED */
 .dig8-embed{background:var(--paper-2);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:20px;border:1.5px solid var(--line-soft)}
 .dig8-embed-header{background:#0a66c2;padding:18px 24px 14px;display:flex;align-items:center;gap:14px}
@@ -1126,7 +1146,8 @@ const NAV = [
   {text:"AI Inference",id:"ai-inference"},
   {text:"Events",id:"events"},
   {text:"Research",id:"research"},
-  {text:"Certifications",id:"certifications"}
+  {text:"Certifications",id:"certifications"},
+  {text:"News",id:"news"}
 ];
 
 const STATS = [
@@ -1254,6 +1275,53 @@ DIG8 gives your team the system. AI-PA gives them the skills.`,
     hashtags:["#dig8framework","#aipa","#learninganddevelopment","#clto","#hrd","#buildnation"],
     likes:"176",comments:"49",
     url:"https://www.linkedin.com/search/results/all/?keywords=%23dig8framework&origin=HASH_TAG_FROM_FEED"
+  }
+];
+
+const NEWS = [
+  {
+    publication:"Channel 24",
+    pubLogo:"https://www.google.com/s2/favicons?domain=channel24bd.tv&sz=128",
+    pubColor:"#e8222a",
+    headline:"First Bangladeshi Social CRM Featured on Channel 24",
+    date:"2017",
+    desc:"First Bangladeshi social customer management and profiling solution featured by Channel 24 — showcasing CommEngine's SocialCRM platform as a pioneering local technology product built for enterprise customer engagement.",
+    tags:["CommEngine","SocialCRM","Channel24","Bangladesh","Tech"],
+    url:"https://www.youtube.com/watch?v=VdS6xUtAvr8&feature=youtu.be",
+    btnLabel:"Watch Coverage →"
+  },
+  {
+    publication:"Daily Observer",
+    pubLogo:"https://www.google.com/s2/favicons?domain=observerbd.com&sz=128",
+    pubColor:"#1a3a6b",
+    headline:"Mostafa Jabbar on Robi's Employee Entrepreneurship Initiative",
+    date:"2018",
+    desc:"ICT Minister Mostafa Jabbar lauded the initiative: \"I have never seen any organization trying to help their employees to become entrepreneurs.\" The statement came during Robi's landmark r-ventures program launch.",
+    tags:["Robi","Entrepreneurship","r-ventures","DailyObserver"],
+    url:"https://observerbd.com",
+    btnLabel:"Read Article →"
+  },
+  {
+    publication:"The Financial Express",
+    pubLogo:"https://www.google.com/s2/favicons?domain=thefinancialexpress.com.bd&sz=128",
+    pubColor:"#003580",
+    headline:"Seven Robi Employees Start Entrepreneurship Journey via r-ventures",
+    date:"July 2018",
+    desc:"The journey has begun in the form of incubating the employees' business ideas under the company's innovative digital entrepreneurship development platform, r-ventures — a first-of-its-kind corporate startup incubation initiative in Bangladesh.",
+    tags:["Robi","r-ventures","Entrepreneurship","FinancialExpress"],
+    url:"https://today.thefinancialexpress.com.bd/print/seven-robi-employees-start-entrepreneurship-journey-1531067087",
+    btnLabel:"Read Article →"
+  },
+  {
+    publication:"The Independent",
+    pubLogo:"https://www.google.com/s2/favicons?domain=theindependentbd.com&sz=128",
+    pubColor:"#b22222",
+    headline:"CommEngine: Bangladesh's Pioneer Social CRM Platform",
+    date:"2017",
+    desc:"The Independent Bangladesh covers CommEngine's social customer management and profiling solution — the first of its kind built locally, serving enterprises across telecom, FMCG, and digital services.",
+    tags:["CommEngine","SocialCRM","TheIndependent","Bangladesh"],
+    url:"https://theindependentbd.com/printversion/details/157027",
+    btnLabel:"Read Article →"
   }
 ];
 
@@ -2900,6 +2968,37 @@ function pageFutureMind(){
 </div>`;
 }
 
+function pageNews(){
+  function ytThumbNews(url){
+    const m = (url||'').match(/(?:v=|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+    return m ? `https://img.youtube.com/vi/${m[1]}/mqdefault.jpg` : null;
+  }
+  const cards = NEWS.map(n=>{
+    const thumb = ytThumbNews(n.url);
+    return `
+    <div class="news-card">
+      ${thumb ? `<a href="${n.url}" target="_blank" rel="noopener" class="news-card-thumb" style="display:block;text-decoration:none"><img src="${thumb}" alt="${n.headline}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><div style="background:rgba(0,0,0,0.55);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 16 16" fill="white"><polygon points="5,2 14,8 5,14"/></svg></div></div></a>` : ''}
+      <div class="news-card-body">
+        <div class="news-card-headline">${n.headline}</div>
+        <p class="news-card-desc">${n.desc}</p>
+        <div class="chip-row" style="flex-shrink:0;overflow:hidden;max-height:26px;margin-bottom:0">${n.tags.slice(0,3).map(t=>`<span class="chip">#${t}</span>`).join('')}</div>
+        <div class="news-card-footer">
+          <div class="news-pub-row">
+            <img class="news-pub-logo" src="${n.pubLogo}" alt="${n.publication}" onerror="this.style.display='none'">
+            <span class="news-pub-name" style="color:${n.pubColor}">${n.publication}</span>
+            <span style="font-size:10px;color:var(--muted);font-weight:400">· ${n.date}</span>
+          </div>
+          <a href="${n.url}" target="_blank" rel="noopener" class="news-card-btn" style="background:${n.pubColor}">${n.btnLabel}</a>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  return `
+    <h2 class="section-title">News</h2>
+    <p class="section-sub">Press coverage, media features &amp; public mentions</p>
+    <div class="news-grid">${cards}</div>`;
+}
+
 const PAGES = {
   about: pageAbout,
   experience: pageExperience,
@@ -2912,7 +3011,8 @@ const PAGES = {
   certifications: pageCertifications,
   recognition: pageRecognition,
   contact: pageContact,
-  futuremind: pageFutureMind
+  futuremind: pageFutureMind,
+  news: pageNews
 };
 
 let currentPage = 'about';
