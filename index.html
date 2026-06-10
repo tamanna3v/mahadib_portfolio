@@ -2356,10 +2356,306 @@ function pageAIPA(){
 function pageAIInference(){
   return `
 <h2 class="section-title">AI Inference</h2>
-<p class="section-sub">Enterprise AI &amp; CoWork Implementation Stack · A structured two-day consultation by FutureMind AI Group</p>
+<p class="section-sub">Enterprise AI &amp; CoWork Implementation Stack · Consultation Proposal · Doc № AI-CW-2026-01 · FutureMind AI Group</p>
 
-<iframe src="ai-cowork-proposal.html" style="width:100%;height:90vh;border:none;border-radius:var(--radius-xl);display:block;margin-bottom:24px" title="Enterprise AI &amp; CoWork Consultation Proposal"></iframe>
-`;
+<!-- SLIDE 1: HERO -->
+<div class="aipa-slide aipa-dark">
+  <div class="aipa-big-num">AI</div>
+  <span class="aipa-tag">CONSULTATION PROPOSAL · TWO-DAY ENGAGEMENT · BUILDNATION LIMITED</span>
+  <div class="aipa-headline-xl">Enterprise <em style="color:#6ee7b7;font-style:italic">AI &amp; CoWork</em><br>Implementation Stack<br>Consultation.</div>
+  <p class="aipa-body aipa-body-dark" style="max-width:580px;margin-bottom:24px">A structured, two-day consultation to take regulated enterprises in FMCG, pharmaceuticals, financial services, and telco &amp; services from broad AI interest to a defensible implementation roadmap — grounded in inference infrastructure, retrieval, workflow sandboxing, and a no-code application launcher fit for legacy enterprise estates.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px">
+    <span class="aipa-suite-tag">RAG &amp; Vector DBs</span>
+    <span class="aipa-suite-tag">PEFT / LoRA / QLoRA</span>
+    <span class="aipa-suite-tag">Tool Calling · MCP</span>
+    <span class="aipa-suite-tag">Agentic Orchestration</span>
+    <span class="aipa-suite-tag">vLLM Inference</span>
+    <span class="aipa-suite-tag">N8N Workflow Sandbox</span>
+    <span class="aipa-suite-tag">No-Code Launcher</span>
+    <span class="aipa-suite-tag">ERP · TMS · HRMS Integration</span>
+  </div>
+  <div class="aipa-kpi-grid">
+    <div class="aipa-kpi-box"><div class="aipa-kpi-val">10h</div><div class="aipa-kpi-lbl">Total Engagement</div></div>
+    <div class="aipa-kpi-box"><div class="aipa-kpi-val">5</div><div class="aipa-kpi-lbl">Workstreams Covered</div></div>
+    <div class="aipa-kpi-box"><div class="aipa-kpi-val">3</div><div class="aipa-kpi-lbl">Sectors Mapped</div></div>
+    <div class="aipa-kpi-box"><div class="aipa-kpi-val">1</div><div class="aipa-kpi-lbl">Scope Document Out</div></div>
+  </div>
+  <div style="margin-top:24px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:18px 22px">
+    <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#6ee7b7;margin-bottom:6px">Consultation Outcome</div>
+    <div style="font-size:17px;font-weight:700;color:#fff;line-height:1.5">Building a <em style="color:#6ee7b7">Scope, Cost and Roadmap</em> document for future implementation.</div>
+  </div>
+</div>
+
+<!-- SLIDE 2: EXECUTIVE SUMMARY -->
+<div class="aipa-slide aipa-light">
+  <div class="aipa-big-num" style="color:#1a1a1a">01</div>
+  <span class="aipa-tag" style="color:#888">SECTION 01 · EXECUTIVE SUMMARY</span>
+  <div class="aipa-headline-lg">From broad AI interest to an executable plan — in two working days.</div>
+  <p class="aipa-body" style="color:#555;max-width:680px;margin-bottom:14px">Most enterprises today have moved past general curiosity about generative AI. The harder question is operational: <em>what</em> should we build first, <em>where</em> should it run, <em>what</em> will it cost, and <em>how</em> do we connect it to the systems we already depend on without disturbing them. This engagement is designed to answer those questions.</p>
+  <p class="aipa-body" style="color:#555;max-width:680px;margin-bottom:24px">Day one is a six-hour, multi-party strategy and discovery consultation that pairs the client's leadership and engineering teams with our product, infrastructure, AI workflow and solution-architecture facilitators. Day two is a focused four-hour compilation and refactoring session — consolidating the day-one decisions into a scope document covering technical, commercial and demand dimensions, ready to drive procurement, vendor selection and the implementation roadmap.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1.5px solid var(--line-soft);border-radius:14px;overflow:hidden;margin-bottom:24px">
+    ${[["DURATION","10 hours — Day 1: 6 hours · Day 2: 4 hours"],["FORMAT","Executive and technical strategy consultation with structured working sessions"],["AUDIENCE","CTOs, CIOs, IT managers, AI and data teams, software leads, digital-transformation owners and enterprise decision-makers"],["SECTORS","FMCG · Pharmaceuticals · Financial Services (extensible to manufacturing and other regulated estates)"],["PRIMARY OUTCOME","A consolidated scope document — technical, commercial and demand — and a phased implementation roadmap covering PoC, pilot and production"]].map(([k,v],i)=>`
+    <div style="padding:14px 18px;border-bottom:1px solid var(--line-soft);${i%2===0?'border-right:1px solid var(--line-soft)':''}">
+      <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#aaa;margin-bottom:4px">${k}</div>
+      <div style="font-size:13px;font-weight:500;color:var(--ink);line-height:1.5">${v}</div>
+    </div>`).join('')}
+    <div style="padding:14px 18px;border-right:1px solid var(--line-soft)"></div>
+  </div>
+</div>
+
+<!-- SLIDE 3: FIVE WORKSTREAMS -->
+<div class="aipa-slide aipa-dark">
+  <div class="aipa-big-num">02</div>
+  <span class="aipa-tag">SECTION 02 · ENGAGEMENT OBJECTIVES</span>
+  <div class="aipa-headline-lg">Five workstreams.<br>One coordinated outcome.</div>
+  <p class="aipa-body aipa-body-dark" style="max-width:620px;margin-bottom:22px">The engagement is shaped around five workstreams the client has prioritised. They map directly to the day-one modules and feed into the day-two scope document.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px">
+    ${[
+      ["01","AI Inference Building &amp; Requirements","Define the inference foundation — model class, GPU sizing, latency and concurrency targets, and the cloud / on-premise / hybrid posture appropriate for the data class involved."],
+      ["02","AI Workflow Sandbox","Design an ETN-style sandbox where business workflows can be assembled, tested and observed before promotion to production — orchestrated through n8n-class tooling with approval gates."],
+      ["03","No-Code Application Launcher","A window-agnostic launcher through which internal users and approved external partners can run sanctioned AI applications under role-based controls, without each one requiring a custom front-end."],
+      ["04","Cybersecurity &amp; Legacy Connectivity","Address the actual integration surface: ERP, TMS, data middleware and HRMS. Define connectivity, identity, audit and data-classification boundaries before any pilot reaches production."]
+    ].map(([n,t,d])=>`
+    <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:20px">
+      <div style="font-size:11px;font-weight:800;color:#6ee7b7;margin-bottom:6px">${n}</div>
+      <div style="font-size:15px;font-weight:800;color:#fff;margin-bottom:8px;line-height:1.3">${t}</div>
+      <p style="font-size:12px;color:rgba(245,245,247,0.6);line-height:1.6;margin:0">${d}</p>
+    </div>`).join('')}
+  </div>
+  <div style="background:rgba(110,231,183,0.08);border:1px solid rgba(110,231,183,0.2);border-radius:14px;padding:20px">
+    <div style="font-size:13px;font-weight:800;color:#6ee7b7;margin-bottom:8px">05 · Scope Document — Technical · Commercial · Demand</div>
+    <p style="font-size:13px;color:rgba(245,245,247,0.7);line-height:1.6;margin:0">The consolidated outcome of the engagement: a single document the client can use to drive procurement, vendor selection, budgeting and the forward implementation roadmap.</p>
+  </div>
+  <div style="margin-top:20px;padding:16px 20px;border-left:3px solid #6ee7b7;background:rgba(110,231,183,0.06);border-radius:0 10px 10px 0">
+    <div style="font-size:12px;font-weight:700;color:#6ee7b7;margin-bottom:4px">Central question we will answer together</div>
+    <div style="font-size:14px;color:rgba(245,245,247,0.8);font-style:italic;line-height:1.6">What type of AI &amp; CoWork system should we build first, what infrastructure does it require, and how should we phase the implementation to reduce risk while creating measurable business value?</div>
+  </div>
+</div>
+
+<!-- SLIDE 4: DAY 1 SCHEDULE -->
+<div class="aipa-slide aipa-light">
+  <div class="aipa-big-num" style="color:#1a1a1a">03</div>
+  <span class="aipa-tag" style="color:#888">SECTION 03 · DAY 1</span>
+  <div class="aipa-headline-lg">Day 1 — Strategy &amp; discovery consultation.</div>
+  <p class="aipa-body" style="color:#777;margin-bottom:20px">Six hours · multi-party consultation</p>
+  <p class="aipa-body" style="color:#555;max-width:640px;margin-bottom:22px">Day one runs as a working session, not a lecture. Each module pairs a concise briefing with structured argumentation, demonstrations where relevant, and a worked client decision — so that by the end of the day the organisation has made eight to ten substantive choices that will shape the scope document.</p>
+  <div style="border:1.5px solid var(--line-soft);border-radius:14px;overflow:hidden">
+    <div style="display:grid;grid-template-columns:100px 1fr 1fr;background:var(--paper-2);padding:10px 18px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#aaa;gap:16px">
+      <span>Time</span><span>Module</span><span>Focus &amp; Client Decisions</span>
+    </div>
+    ${[
+      ["09:00–09:30","Opening &amp; framing","EXECUTIVE","Welcome, objective alignment, introduction of facilitators, confirmation of the five workstreams, and a shared view of the enterprise AI &amp; CoWork stack and maturity ladder."],
+      ["09:30–10:30","Inference, cloud · local · hybrid, GPU basics","TECHNICAL","Training versus inference, model sizing, latency and concurrency, GPU memory, and the deployment posture appropriate for sensitive enterprise data. Closes with a posture decision per identified workload."],
+      ["10:30–11:45","RAG &amp; vector databases","TECHNICAL","Document ingestion, chunking, embeddings, retrieval, reranking, citations and document-level access control. Live demonstration on a representative document set. Closes with a candidate-document shortlist."],
+      ["11:45–12:15","Ready RAG frameworks &amp; CustomGPT-class systems","MIXED","Where no-code is sufficient and where it is not: Dify, Flowise, AnythingLLM, OpenWebUI, LlamaIndex and LangChain compared against compliance and audit requirements."],
+      ["12:15–13:00","Working lunch &amp; sector breakout","DISCUSSION","Sector-specific use-case shortlisting for FMCG, pharmaceuticals and financial services in parallel breakouts, recombined into a single ranked list."],
+      ["13:00–13:45","Fine-tuning, PEFT, LoRA, QLoRA","TECHNICAL","When fine-tuning is justified and when retrieval is sufficient. Dataset design, GPU implications, and a fine-tuning feasibility verdict for each shortlisted use case."],
+      ["13:45–14:30","Tool calling, APIs, MCP &amp; enterprise integration","TECHNICAL","Read-only versus write-action tools, permission boundaries, audit logging, and concrete integration sketches for the ERP, TMS, HRMS and middleware surfaces in scope."],
+      ["14:30–15:15","Agents, agentic RAG &amp; multi-agent orchestration","TECHNICAL","Single agent with approval, n8n workflow sandboxing, LangGraph stateful workflows, and OpenClaw-style multi-agent routing — selected to match the workflow sandbox workstream."],
+      ["15:15–15:30","Proposal-building activity","WORKING","Use-case selection, architecture selection, budget tier, no-code launcher placement, and explicit next-step ownership ahead of day two."]
+    ].map(([time,mod,type,desc],i)=>`
+    <div style="display:grid;grid-template-columns:100px 1fr 1fr;padding:12px 18px;gap:16px;border-top:1px solid var(--line-soft);background:${i%2===0?'transparent':'rgba(0,0,0,0.02)'}">
+      <span style="font-size:11px;color:#888;font-weight:600;padding-top:2px">${time}</span>
+      <div>
+        <span style="font-size:13px;font-weight:700;color:var(--ink)">${mod}</span>
+        <span style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#27a76a;background:#ecfaf5;border-radius:4px;padding:2px 6px;margin-left:6px;vertical-align:middle">${type}</span>
+      </div>
+      <p style="font-size:12px;color:#555;line-height:1.5;margin:0">${desc}</p>
+    </div>`).join('')}
+  </div>
+</div>
+
+<!-- SLIDE 5: MODULE DEEP DIVE -->
+<div class="aipa-slide aipa-dark">
+  <div class="aipa-big-num">04</div>
+  <span class="aipa-tag">SECTION 04 · MODULE DEEP DIVE</span>
+  <div class="aipa-headline-lg">Inside each day-one module.</div>
+  <div style="display:flex;flex-direction:column;gap:22px">
+    ${[
+      ["M1","60 MIN","Inference, cloud / local / hybrid, GPU basics","We separate training from inference, define the metrics that actually determine user experience, and align the deployment posture to the sensitivity of the data involved.",["Latency, throughput, time-to-first-token, context length, concurrency, GPU memory","Cloud API, on-premise inference, and hybrid routing with data classification","Decision: deployment posture per shortlisted workload"],"Local inference servers reviewed: <strong>vLLM, Ollama, Text Generation Inference, llama.cpp</strong>, and OpenAI-compatible endpoints. Model sizing 7B / 14B / 30–34B / 70B versus frontier cloud models — matched against GPU memory and target concurrency."],
+      ["M2","75 MIN","Retrieval-Augmented Generation &amp; vector databases","RAG is presented as the most practical first enterprise AI &amp; CoWork architecture for document-heavy organisations — and the right starting point for most of the use cases we expect to surface.",["Document parsing (incl. OCR), chunking strategies, embedding models","Retrieval, reranking, query rewriting, multi-hop retrieval, citation accuracy","Document-level access control and evaluation for groundedness and hallucination"],"Vector stores covered: <strong>Qdrant, Milvus, Weaviate, pgvector, Chroma, FAISS</strong> — selection guided by deployment posture, scale, and existing database estate."],
+      ["M3","45 MIN","Fine-tuning, PEFT, LoRA, QLoRA","We deliberately separate the cases where retrieval is sufficient from the cases where adaptation of the model itself is warranted — to prevent over-investment in fine-tuning where it does not pay back.",["RAG versus fine-tuning decision matrix per shortlisted use case","Dataset design for classification, extraction, and tone adaptation","GPU and operational implications of maintaining adapters"],"<strong>LoRA</strong> freezes pretrained weights and trains low-rank adapters; <strong>QLoRA</strong> further reduces memory by quantising the base model — together they make adaptation viable on constrained GPU envelopes."],
+      ["M4","45 MIN","Tool calling, APIs, MCP &amp; legacy connectivity","This module addresses the cybersecurity-and-legacy-connectivity workstream directly. We separate read-only lookups from write actions, and require explicit human approval for state-changing operations against systems of record.",["Connectivity sketches for ERP, TMS, data middleware and HRMS","Identity, role-based access, permission boundaries, audit logging","Prompt-injection threat modelling for document-driven agents"],"Function-calling flow standardised through <strong>MCP</strong> (Model Context Protocol) so that tools, file systems, and search services attach to AI applications through a consistent, auditable interface."],
+      ["M5","45 MIN","Agents, agentic RAG &amp; the workflow sandbox","This module materialises the workflow-sandbox and no-code-launcher workstreams. We move from chatbot to single agent with approval, then to orchestrated multi-agent workflows where the architecture clearly justifies it.",["Agentic RAG with retrieval, tool selection, and human-in-the-loop escalation","n8n-style workflow sandboxing with deterministic steps and approval gates","No-code launcher: window-agnostic surface for internal and external users"],"Orchestration options reviewed: <strong>LangGraph</strong> (stateful, durable execution), <strong>CrewAI</strong>, <strong>AutoGen / Microsoft Agent Framework</strong>, and OpenClaw-style multi-agent routing with isolated workspaces and channel bindings."]
+    ].map(([id,dur,title,desc,bullets,note])=>`
+    <div style="display:grid;grid-template-columns:80px 1fr;gap:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.08)">
+      <div>
+        <div style="font-size:13px;font-weight:900;color:#6ee7b7">${id}</div>
+        <div style="font-size:11px;color:rgba(245,245,247,0.4);font-weight:600;margin-top:2px">${dur}</div>
+      </div>
+      <div>
+        <div style="font-size:17px;font-weight:800;color:#fff;margin-bottom:6px;line-height:1.3">${title}</div>
+        <p style="font-size:13px;color:rgba(245,245,247,0.65);line-height:1.6;margin:0 0 10px">${desc}</p>
+        <ul style="margin:0 0 12px;padding-left:18px">${bullets.map(b=>`<li style="font-size:12px;color:rgba(245,245,247,0.55);line-height:1.6;margin-bottom:3px">${b}</li>`).join('')}</ul>
+        <div style="background:rgba(110,231,183,0.07);border:1px solid rgba(110,231,183,0.15);border-radius:8px;padding:10px 14px;font-size:11px;color:rgba(245,245,247,0.55);line-height:1.65;font-family:monospace">${note}</div>
+      </div>
+    </div>`).join('')}
+  </div>
+</div>
+
+<!-- SLIDE 6: DAY 2 -->
+<div class="aipa-slide aipa-light">
+  <div class="aipa-big-num" style="color:#1a1a1a">05</div>
+  <span class="aipa-tag" style="color:#888">SECTION 05 · DAY 2</span>
+  <div class="aipa-headline-lg">Day 2 — Compilation &amp; refactoring.</div>
+  <p class="aipa-body" style="color:#777;margin-bottom:16px">Four hours · joint working session with client IT and engineering</p>
+  <p class="aipa-body" style="color:#555;max-width:660px;margin-bottom:24px">Day two is not a second consultation. It is a focused, four-hour working session held between our facilitators and the client IT and engineering team, with the sole purpose of consolidating day-one decisions into a single scope document — technical, commercial and demand — that the organisation can act on.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+    ${[
+      ["00:00–00:45","Block 1","Decision review &amp; gap closure",["Replay of day-one decisions: posture, architecture, use-case shortlist","Identification of open items and assumptions that require validation","Confirmation of data classifications driving each workload's deployment"]],
+      ["00:45–01:45","Block 2","Technical scope — inference, RAG, sandbox, launcher",["Reference architecture refactored against the client's actual estate","GPU envelope, vector store, orchestration layer and launcher placement","ERP / TMS / middleware / HRMS connector inventory with permission boundaries"]],
+      ["01:45–02:30","Block 3","Commercial scope &amp; budget tier confirmation",["Tier selection (T1 / T2 / T3) against the candidate use cases","Cost element breakdown — hardware, software, integration, training, support","Optional add-ons: prototype RAG, n8n demo, vendor quotation comparison"]],
+      ["02:30–03:15","Block 4","Demand scope &amp; phased roadmap",["User-base sizing, change-management and training requirements","Phase 1 → 4 roadmap: discovery, PoC, pilot, production","Success metrics, evaluation framework, and go / no-go gates"]],
+      ["03:15–04:00","Block 5 · Closing","Walk-through of the scope document &amp; sign-off path",["Joint review of the consolidated scope document section by section","Identification of internal approvers and the steps required to convert the document into a contracted statement of work","Handover of supporting artefacts: use-case matrix, RAG-readiness assessment, governance checklist, infrastructure recommendation, and proposal skeleton"]]
+    ].map(([time,block,title,bullets],i)=>`
+    <div style="background:var(--paper-2);border:1.5px solid var(--line-soft);border-radius:14px;padding:18px 20px;${i===4?'grid-column:1/-1':''}">
+      <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#27a76a;margin-bottom:4px">${time} · ${block}</div>
+      <div style="font-size:16px;font-weight:800;color:var(--ink);margin-bottom:12px;line-height:1.3">${title}</div>
+      <ul style="margin:0;padding-left:16px">${bullets.map(b=>`<li style="font-size:12px;color:#555;line-height:1.6;margin-bottom:4px">${b}</li>`).join('')}</ul>
+    </div>`).join('')}
+  </div>
+</div>
+
+<!-- SLIDE 7: SECTOR USE CASES -->
+<div class="aipa-slide aipa-dark">
+  <div class="aipa-big-num">06</div>
+  <span class="aipa-tag">SECTION 06 · SECTOR USE-CASE MAP</span>
+  <div class="aipa-headline-lg">High-value use cases by sector.</div>
+  <p class="aipa-body aipa-body-dark" style="max-width:660px;margin-bottom:22px">The day-one sector breakout draws from a curated list of use cases known to produce defensible business value in regulated estates. We narrow this list to the candidates that match the client's documents, integrations and data sensitivity.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:22px">
+    ${[
+      ["SECTOR 01","FMCG &amp; Manufacturing",[["Sales report &amp; territory assistant","RAG"],["Distributor query desk","RAG · TOOL"],["Inventory report summariser","RAG · TOOL"],["Maintenance SOP assistant","RAG"],["Procurement document assistant","RAG"],["Dealer support workflow","AGENT"],["Executive dashboard narrative","TOOL · LLM"]]],
+      ["SECTOR 02","Pharmaceuticals",[["SOP &amp; cGMP assistant","RAG"],["Regulatory guideline search","RAG"],["QA deviation report drafting","RAG · FT"],["Batch record search","RAG · TOOL"],["Pharmacovigilance literature","RAG"],["Audit preparation assistant","AGENT"],["Training &amp; onboarding assistant","RAG"]]],
+      ["SECTOR 03","Financial Services",[["Policy &amp; circular assistant","RAG"],["Compliance circular search","RAG"],["Loan checklist assistant","RAG · TOOL"],["Branch operations assistant","RAG · TOOL"],["Complaint summarisation","RAG · FT"],["Fraud investigation summariser","AGENT"],["Internal developer assistant","RAG · TOOL"]]],
+      ["SECTOR 04","Telco &amp; Services",[["Customer care knowledge desk","RAG"],["Tariff &amp; plan comparison agent","RAG · TOOL"],["Field-engineer SOP assistant","RAG"],["Network-incident summariser","RAG · FT"],["Billing &amp; complaint triage","AGENT"],["Regulatory &amp; BTRC filing search","RAG"],["Service-desk ticket assistant","RAG · TOOL"]]]
+    ].map(([num,name,cases])=>`
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:18px">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#6ee7b7;margin-bottom:6px">${num}</div>
+      <div style="font-size:16px;font-weight:900;color:#fff;margin-bottom:12px;line-height:1.2">${name}</div>
+      ${cases.map(([c,t])=>`<div style="display:flex;justify-content:space-between;align-items:baseline;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.05)"><span style="font-size:11px;color:rgba(245,245,247,0.7)">${c}</span><span style="font-size:9px;font-weight:700;color:#6ee7b7;white-space:nowrap;margin-left:8px">${t}</span></div>`).join('')}
+    </div>`).join('')}
+  </div>
+  <div style="background:rgba(110,231,183,0.07);border:1px solid rgba(110,231,183,0.15);border-radius:12px;padding:16px 20px">
+    <div style="font-size:13px;font-weight:800;color:#6ee7b7;margin-bottom:6px">Why these four sectors together</div>
+    <p style="font-size:12px;color:rgba(245,245,247,0.6);line-height:1.65;margin:0">FMCG, pharmaceuticals, financial services and telco &amp; services share three defining characteristics: a document-heavy operating model, a meaningful regulatory or audit perimeter, and a legacy systems estate that any new AI capability must integrate with respectfully — not replace prematurely. The same consultation framework therefore applies cleanly across all four, with sector-specific use cases substituted in the relevant modules.</p>
+  </div>
+</div>
+
+<!-- SLIDE 8: INFRASTRUCTURE TIERS -->
+<div class="aipa-slide aipa-light">
+  <div class="aipa-big-num" style="color:#1a1a1a">07</div>
+  <span class="aipa-tag" style="color:#888">SECTION 07 · BUDGET-TIER INFRASTRUCTURE PLANNING</span>
+  <div class="aipa-headline-lg">Indicative infrastructure tiers.</div>
+  <p class="aipa-body" style="color:#555;max-width:660px;margin-bottom:22px">The tiers below are planning envelopes, not quotations. Final hardware selection is made on the basis of current vendor pricing, warranty terms, power and cooling constraints and the target workload determined in the day-two technical scope block.</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:26px">
+    ${[
+      ["TIER 1","Lab &amp; PoC","~ 10 Lakh BDT","#ecfaf5","#27a76a","AI lab, proof-of-concept, small RAG demonstration, local model testing for a single department's documents.","7B–14B model inference · small RAG corpus · small LoRA experimentation · limited concurrency · single GPU class"],
+      ["TIER 2","Department Pilot","~ 20 Lakh BDT","#eef3ff","#4a72d4","Departmental AI server and serious pilot — supports multiple RAG applications with better concurrency and meaningful integration depth.","14B–34B local models depending on GPU · multiple RAG apps · tool-calling workflows · early agentic flows · monitoring baseline"],
+      ["TIER 3","Enterprise Foundation","~ 30–40 Lakh BDT","#fff8ec","#e08a2a","Enterprise pilot and production-like private AI foundation supporting multi-department use under governance.","Private RAG · agentic workflows · larger local models · access control · monitoring · multi-department launcher · DR backbone"]
+    ].map(([tier,name,price,bg,col,desc,cap])=>`
+    <div style="background:${bg};border:1.5px solid ${col}33;border-radius:16px;padding:22px">
+      <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:${col};margin-bottom:6px">${tier}</div>
+      <div style="font-size:22px;font-weight:900;color:var(--ink);margin-bottom:4px;line-height:1.2">${name}</div>
+      <div style="font-size:14px;font-weight:700;color:${col};margin-bottom:12px">${price}</div>
+      <p style="font-size:12px;color:#555;line-height:1.55;margin:0 0 12px">${desc}</p>
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#aaa;margin-bottom:6px">Capability</div>
+      <p style="font-size:11px;color:#777;line-height:1.6;margin:0">${cap}</p>
+    </div>`).join('')}
+  </div>
+  <div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:14px">Cost elements that the scope document will price</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+    ${[["COMPUTE","GPU","Primary accelerator for inference and adapter training."],["PLATFORM","Server &amp; RAM","PCIe lanes, reliability, expansion, document-processing memory."],["STORAGE","NVMe + NAS","Models, vectors, indexes, logs, retention and DR."],["FACILITY","UPS &amp; Cooling","Sustained GPU workload protection and uptime hygiene."],["SOFTWARE","Inference Stack","vLLM / TGI / Ollama / llama.cpp and API serving."],["SOFTWARE","Vector DB","Embeddings, metadata, retrieval and reranking."],["SECURITY","Monitoring","Access control, audit logs, GPU and request observability."],["SERVICES","Implementation","Deployment, documentation, staff training, and support."]].map(([cat,name,desc])=>`
+    <div style="background:var(--paper-2);border:1px solid var(--line-soft);border-radius:12px;padding:14px">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#27a76a;margin-bottom:4px">${cat}</div>
+      <div style="font-size:14px;font-weight:800;color:var(--ink);margin-bottom:6px">${name}</div>
+      <p style="font-size:11px;color:#777;line-height:1.5;margin:0">${desc}</p>
+    </div>`).join('')}
+  </div>
+</div>
+
+<!-- SLIDE 9: GOVERNANCE & ROADMAP -->
+<div class="aipa-slide aipa-dark">
+  <div class="aipa-big-num">08</div>
+  <span class="aipa-tag">SECTION 08 · GOVERNANCE, ROADMAP &amp; DELIVERABLES</span>
+  <div class="aipa-headline-lg">Governance, roadmap and packaged deliverables.</div>
+  <div style="font-size:15px;font-weight:800;color:#6ee7b7;margin-bottom:12px">Security &amp; governance controls in scope</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;margin-bottom:26px">
+    ${[["Role-based access &amp; identity","Integration with the enterprise identity provider and per-application role definitions."],["Document-level permission filtering","Retrieval respects existing access controls; users only see citations they are entitled to."],["Human-in-the-loop approval","All write actions and sensitive responses require explicit human approval before execution."],["Tool permission boundaries","Hardened boundaries around APIs, databases and MCP servers, with deny-by-default posture."],["Prompt-injection testing","Threat modelling and adversarial testing for documents and tools that can influence agent behaviour."],["Audit logging &amp; evaluation","Prompts, retrieved documents, tool calls, outputs and approvals — plus hallucination and groundedness scoring."]].map(([t,d])=>`
+    <div style="background:rgba(255,255,255,0.04);padding:16px 20px">
+      <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:4px">${t}</div>
+      <p style="font-size:11px;color:rgba(245,245,247,0.55);line-height:1.55;margin:0">${d}</p>
+    </div>`).join('')}
+  </div>
+  <div style="font-size:15px;font-weight:800;color:#6ee7b7;margin-bottom:14px">Four-phase implementation roadmap</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px">
+    ${[["PHASE 01","Discovery","Use-case selection, document audit, data-sensitivity mapping, stakeholder interviews, success-metric definition.","→ Prioritised use cases"],["PHASE 02","Proof of Concept","Build one RAG or tool-calling prototype using sample documents and a limited user set.","→ Working demo + feedback"],["PHASE 03","Pilot","Add authentication, real documents, evaluation set, monitoring, approval workflow and departmental rollout.","→ Governed pilot"],["PHASE 04","Production","Harden infrastructure, integrate enterprise systems, train users and define the support process.","→ Enterprise AI &amp; CoWork service"]].map(([ph,name,desc,out])=>`
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:16px">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#6ee7b7;margin-bottom:6px">${ph}</div>
+      <div style="font-size:16px;font-weight:900;color:#fff;margin-bottom:8px">${name}</div>
+      <p style="font-size:11px;color:rgba(245,245,247,0.55);line-height:1.6;margin:0 0 10px">${desc}</p>
+      <div style="font-size:11px;font-weight:700;color:#6ee7b7">${out}</div>
+    </div>`).join('')}
+  </div>
+  <div style="font-size:15px;font-weight:800;color:#6ee7b7;margin-bottom:14px">Packaged deliverables</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+    ${["AI use-case discovery matrix","Fine-tuning feasibility assessment","RAG readiness assessment","Agentic workflow opportunity map","Data and document readiness checklist","Security and governance checklist","Cloud / local / hybrid deployment recommendation","Phased PoC → pilot → production roadmap","Budget-tier infrastructure recommendation","Consolidated scope document (technical, commercial, demand)"].map(d=>`
+    <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06)">
+      <span style="color:#6ee7b7;font-size:14px;flex-shrink:0">→</span>
+      <span style="font-size:12px;color:rgba(245,245,247,0.7)">${d}</span>
+    </div>`).join('')}
+  </div>
+</div>
+
+<!-- SLIDE 10: TEAM & CONTACT -->
+<div class="aipa-slide aipa-light">
+  <div class="aipa-big-num" style="color:#1a1a1a">09</div>
+  <span class="aipa-tag" style="color:#888">SECTION 09 · ENGAGEMENT TEAM &amp; COMMERCIALS</span>
+  <div class="aipa-headline-lg">Engagement team &amp; commercial positioning.</div>
+  <div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:14px">Facilitators</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:26px">
+    ${[["01","Hadi Bhuiyan","Product Lead","Co-Founder, CommEngine &amp; BuildNation","https://linkedin.com/in/mahadib"],["02","Kanij Fatema Tamanna","Software Solution Architect","ImpactEngine; CommEngine Limited","https://linkedin.com/in/kftamanna"],["03","Mohd. Ruhul Ameen","AI / AR Architect","PhD, Marshall University; Founder, Ruhul Engineering","https://linkedin.com/in/ameenruhul"],["04","Talemul Islam","Workflow Automation Specialist","Former Head of Engineering, Praava Health; ERP Specialist, RahimAfrooz","https://linkedin.com/in/talemul"],["05","Debabrata Sarkar","Infrastructure Specialist","Former Infrastructure Expert at a2i and MySh","https://linkedin.com/in/debabrata-sarkar"]].map(([n,name,role,org,li])=>`
+    <div style="background:var(--paper-2);border:1.5px solid var(--line-soft);border-radius:14px;padding:16px 20px;display:flex;gap:14px;align-items:flex-start">
+      <div style="font-size:11px;font-weight:900;color:#aaa;margin-top:2px;flex-shrink:0">${n}</div>
+      <div>
+        <div style="font-size:15px;font-weight:800;color:var(--ink);margin-bottom:2px">${name}</div>
+        <div style="font-size:11px;font-weight:700;color:#27a76a;font-family:monospace;margin-bottom:4px">${role}</div>
+        <div style="font-size:12px;color:#777;margin-bottom:6px">${org}</div>
+        <a href="${li}" target="_blank" style="font-size:11px;font-weight:700;color:#4a72d4">${li.replace('https://','')}</a>
+      </div>
+    </div>`).join('')}
+  </div>
+  <div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:14px">Commercial positioning</div>
+  <p class="aipa-body" style="color:#555;max-width:680px;margin-bottom:16px">This engagement is positioned as a consulting-led <em>implementation readiness</em> consultation rather than a generic AI training session. The value lies less in the explanation of tools and more in helping the organisation decide <em>what to build, what not to build, what infrastructure is justified</em>, and <em>how to move safely</em> from proof-of-concept to pilot under appropriate governance.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:26px">
+    ${[["CORE PACKAGE","Two-day engagement","Six-hour strategy and discovery consultation on day one, four-hour compilation and refactoring session on day two, and a consolidated scope, cost and roadmap document at the end."],["ARCHITECTURE","Recommendation set","Cloud / local / hybrid recommendation, vector-store selection, orchestration layer, and integration boundaries for the selected use cases."],["BUDGET","Tier &amp; cost-element plan","Tier selection with priced cost elements covering hardware, software, integration, training and support."],["OPTIONAL ADD-ONS","Beyond the consultation","Full technical proposal, vendor quotation comparison, prototype RAG, n8n workflow demo, AI server specification, security review and staff training."]].map(([cat,name,desc])=>`
+    <div style="background:var(--paper-2);border:1.5px solid var(--line-soft);border-radius:14px;padding:18px 20px">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#27a76a;margin-bottom:6px">${cat}</div>
+      <div style="font-size:16px;font-weight:900;color:var(--ink);margin-bottom:8px">${name}</div>
+      <p style="font-size:12px;color:#555;line-height:1.6;margin:0">${desc}</p>
+    </div>`).join('')}
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+    <div style="background:#ecfaf5;border:1.5px solid #b6ecd5;border-radius:14px;padding:20px">
+      <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#27a76a;margin-bottom:8px">Engagement Lead</div>
+      <div style="font-size:20px;font-weight:900;color:var(--ink);margin-bottom:4px">Hadi Bhuiyan</div>
+      <div style="font-size:12px;font-weight:700;color:#27a76a;font-family:monospace;margin-bottom:8px">Product Lead · BuildNation Limited</div>
+      <div style="font-size:12px;color:#555;margin-bottom:2px">FutureMind AI Group — a BuildCon® initiative</div>
+    </div>
+    <div style="background:var(--paper-2);border:1.5px solid var(--line-soft);border-radius:14px;padding:20px">
+      <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#27a76a;margin-bottom:10px">Direct Contact</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:13px;color:var(--ink)"><span style="font-size:10px;font-weight:800;text-transform:uppercase;color:#aaa;letter-spacing:1px;margin-right:8px">Mobile</span>+880 1833 180 420</div>
+        <div style="font-size:13px;color:var(--ink)"><span style="font-size:10px;font-weight:800;text-transform:uppercase;color:#aaa;letter-spacing:1px;margin-right:8px">Email</span><a href="mailto:mahadib@buildnation.com.bd" style="color:#4a72d4">mahadib@buildnation.com.bd</a></div>
+        <div style="font-size:13px;color:var(--ink)"><span style="font-size:10px;font-weight:800;text-transform:uppercase;color:#aaa;letter-spacing:1px;margin-right:8px">LinkedIn</span><a href="https://linkedin.com/in/mahadib" target="_blank" style="color:#4a72d4">linkedin.com/in/mahadib</a></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:20px;background:#ecfaf5;border:1.5px solid #b6ecd5;border-radius:14px;padding:18px 22px">
+    <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#27a76a;margin-bottom:6px">Next Step</div>
+    <div style="font-size:16px;font-weight:700;color:var(--ink)">Confirm engagement dates, share document samples under NDA, and lock the day-one participant list.</div>
+  </div>
+  <p style="font-size:10px;color:#bbb;text-align:right;margin-top:14px">Document № AI-CW-2026-01 · Confidential — Client Use · FutureMind AI Group · buildnation.com.bd</p>
+</div>`;
 }
 
 /* ── LEGACY AI INFERENCE SLIDES (kept for reference, not rendered) ── */
