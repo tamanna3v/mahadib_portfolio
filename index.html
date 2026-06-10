@@ -1464,6 +1464,7 @@ const RESEARCH = [
 ];
 
 const WRITINGS = [
+  {type:"Article",year:"2024",title:"Why Excellent Service Is Not Always Good for Your Organization",venue:"Medium · Personal Blog",abstract:"A thought-provoking piece examining the paradox of excellence in service — when optimizing for outstanding customer service can create hidden organizational costs, dependency cultures, and strategic blind spots that actually hurt long-term performance.",tags:["Service Design","Organizational Strategy","Leadership","Management"],url:"https://medium.com/@bhuiyan.hadi/you-may-curious-to-know-why-excellent-service-is-not-always-good-for-your-organization-7a4369720005"},
   {type:"Policy Contribution",year:"2021–2022",title:"National Blockchain Policy — Bangladesh",venue:"Government of Bangladesh · Ministry of ICT",abstract:"Contributed as a subject matter expert to Bangladesh's National Blockchain Policy Framework, helping define regulatory and adoption guidelines for blockchain technology across public and private sectors.",tags:["Blockchain","Policy","4IR","Government"],url:"http://bd.linkedin.com/in/mahadib/"},
   {type:"Policy Contribution",year:"2021",title:"SME Digitization Policy",venue:"Government of Bangladesh",abstract:"Provided expert input on the SME Digitization Policy, focusing on digital platform adoption, social CRM integration, and AI-readiness frameworks for small and medium-sized enterprises in Bangladesh.",tags:["SME","Digitization","Policy","Bangladesh"],url:"http://bd.linkedin.com/in/mahadib/"},
   {type:"Policy / Standards",year:"2022",title:"Consumer Protection Digital System",venue:"Bangladesh Standards and Testing Institution (BSTI)",abstract:"Contributed to the design and framework of a digital consumer protection system for BSTI — integrating product authentication (Zachai platform) and digital tracking for consumer goods across Bangladesh.",tags:["Consumer Protection","Digital Standards","BSTI","Zachai"],url:"https://www.zachai.xyz"},
@@ -1870,7 +1871,7 @@ function pageResearch(){
 
   return `
     <h2 class="section-title">Research & Writings</h2>
-    <p class="section-sub">IEEE publications, policy contributions & academic reviews</p>
+    <p class="section-sub">IEEE publications, policy contributions, academic reviews &amp; writings</p>
     <div class="stat-grid">
       ${[{val:"3",label:"IEEE Papers"},{val:"3",label:"Policy Works"},{val:"6 yrs",label:"ICT4D Reviewer"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
     </div>
