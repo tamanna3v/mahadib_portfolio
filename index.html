@@ -1284,6 +1284,7 @@ const DIFFERENTIATORS = [
 ];
 
 const EVENTS = [
+  {type:"LinkedIn Post",title:"AI-PA Completion — Beximco Pharmaceuticals PLC Senior Management",date:"Feb 2025",org:"BuildNation Limited",location:"Dhaka, Bangladesh",desc:"We are proud to announce the successful completion of all six sessions of the AI-PA Training Program for Beximco Pharmaceuticals PLC's Senior Management. Led by expert facilitators Hadi Bhuiyan and Munaf Mojib Chowdhury, the program enabled senior leaders to gain practical, strategic insights into AI-driven decision-making and real-world applications within the pharmaceutical landscape. At BuildNation, we continue to serve as the Bridge to a Brighter Tomorrow by empowering organizations with future-ready capabilities.",tags:["BuildNation","AIPA","BeximcoPharma","SeniorLeadership","AIinPharma","DIG8Framework"],img:"assets/events/beximco-aipa.jpg",url:"https://www.linkedin.com/in/mahadib/",btnLabel:"View on LinkedIn →"},
   {type:"Panel / Speaker",title:"Microsoft for Startups Founders Hub — Bangladesh Launch",date:"August 12, 2022",org:"Microsoft Bangladesh",location:"Dhaka, Bangladesh",desc:"Joined as Co-founder & Lead of CommEngine on a panel discussing AI startup ecosystems, enterprise B2B SaaS, and the role of Microsoft Founders Hub in empowering Bangladeshi tech entrepreneurs. The event launched $300,000+ in benefits for startups.",tags:["Microsoft","Startups","AI","SaaS"],url:"https://news.microsoft.com/apac/2022/08/12/microsoft-for-startups-founders-hub-to-harness-the-power-of-startups-in-bangladesh/",btnLabel:"Read Story →"},
   {type:"Policy",title:"National Blockchain Policy Forum",date:"2021–2022",org:"Government of Bangladesh",location:"Dhaka, Bangladesh",desc:"Contributed as a subject matter expert to Bangladesh's National Blockchain Policy Forum and SME Digitization Policy, helping shape the country's 4IR digital infrastructure roadmap. Also contributed to the Consumer Protection Digital System for BSTI.",tags:["Blockchain","Policy","4IR","Government"],url:"http://bd.linkedin.com/in/mahadib/",btnLabel:"View on LinkedIn →"},
   {type:"Program Launch",title:"AI-Proficiency Accelerator (AI-PA) — Corporate Cohort",date:"2023 – Dec 2025",org:"BuildNation Limited",location:"Dhaka, Bangladesh",desc:"Led the AI-PA program across 6+ corporate organizations — including Ispahani, Beximco Pharma, Nuvista Pharma, Japan Solar and more — training 200+ senior executives. Participants achieved up to 40% productivity gains.",tags:["AI Training","Corporate","Leadership","BuildNation"],url:"https://buildnation.com.bd/aipa/",btnLabel:"Learn More →"},
@@ -1611,6 +1612,7 @@ function pageEvents(activeFilter){
         <span class="event-type">${ev.type}</span>
       </div>
       <div class="event-body">
+        ${ev.img?`<img src="${ev.img}" alt="${ev.title}" style="width:100%;border-radius:10px;margin-bottom:14px;object-fit:cover;max-height:260px" loading="lazy">` : ''}
         <div class="event-title">${ev.title}</div>
         <div class="event-meta">🏢 ${ev.org} · 📍 ${ev.location}</div>
         <p class="event-desc">${ev.desc}</p>
@@ -1651,6 +1653,7 @@ function rerenderEvents(filter){
         <span class="event-type">${ev.type}</span>
       </div>
       <div class="event-body">
+        ${ev.img?`<img src="${ev.img}" alt="${ev.title}" style="width:100%;border-radius:10px;margin-bottom:14px;object-fit:cover;max-height:260px" loading="lazy">` : ''}
         <div class="event-title">${ev.title}</div>
         <div class="event-meta">🏢 ${ev.org} · 📍 ${ev.location}</div>
         <p class="event-desc">${ev.desc}</p>
