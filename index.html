@@ -820,6 +820,8 @@ footer{text-align:center;padding:36px 0 32px;color:var(--muted);font-size:13px;b
 /* ── AI-PA PRESENTATION SLIDES — Apple-style big sections ── */
 .aipa-slide{border-radius:var(--radius-xl);padding:64px 56px;margin-bottom:18px;position:relative;overflow:hidden}
 .aipa-dark{background:linear-gradient(135deg, #d4e8d0 0%, #e3d0cc 100%);color:#2d2d2d}
+.aipa-ink{background:linear-gradient(135deg,#0f1117 0%,#1a1f2e 100%);color:#f5f5f7}
+.aipa-ink .aipa-tag,.aipa-ink .aipa-step-tag{color:#6ee7b7!important}
 .aipa-light{background:var(--paper-2);border:none}
 .aipa-accent{background:var(--bg-soft);border:none}
 .aipa-tag{font-size:18px;font-weight:500;letter-spacing:-0.005em;text-transform:none;opacity:1;color:var(--accent);margin-bottom:16px;display:block}
@@ -2450,11 +2452,11 @@ function pageAIInference(){
 <p class="section-sub">Enterprise AI &amp; CoWork Implementation Stack · Consultation Proposal · Doc № AI-CW-2026-01 · FutureMind AI Group</p>
 
 <!-- SLIDE 1: HERO -->
-<div class="aipa-slide aipa-dark">
+<div class="aipa-slide aipa-ink">
   <div class="aipa-big-num">AI</div>
   <span class="aipa-tag">CONSULTATION PROPOSAL · TWO-DAY ENGAGEMENT · BUILDNATION LIMITED</span>
   <div class="aipa-headline-xl">Enterprise <em style="color:#6ee7b7;font-style:italic">AI &amp; CoWork</em><br>Implementation Stack<br>Consultation.</div>
-  <p class="aipa-body aipa-body-dark" style="max-width:580px;margin-bottom:24px">A structured, two-day consultation to take regulated enterprises in FMCG, pharmaceuticals, financial services, and telco &amp; services from broad AI interest to a defensible implementation roadmap — grounded in inference infrastructure, retrieval, workflow sandboxing, and a no-code application launcher fit for legacy enterprise estates.</p>
+  <p class="aipa-body" style="color:rgba(245,245,247,0.8);max-width:580px;margin-bottom:24px">A structured, two-day consultation to take regulated enterprises in FMCG, pharmaceuticals, financial services, and telco &amp; services from broad AI interest to a defensible implementation roadmap — grounded in inference infrastructure, retrieval, workflow sandboxing, and a no-code application launcher fit for legacy enterprise estates.</p>
   <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px">
     <span class="aipa-suite-tag">RAG &amp; Vector DBs</span>
     <span class="aipa-suite-tag">PEFT / LoRA / QLoRA</span>
@@ -2495,11 +2497,11 @@ function pageAIInference(){
 </div>
 
 <!-- SLIDE 3: FIVE WORKSTREAMS -->
-<div class="aipa-slide aipa-dark">
+<div class="aipa-slide aipa-ink">
   <div class="aipa-big-num">02</div>
   <span class="aipa-tag">SECTION 02 · ENGAGEMENT OBJECTIVES</span>
   <div class="aipa-headline-lg">Five workstreams.<br>One coordinated outcome.</div>
-  <p class="aipa-body aipa-body-dark" style="max-width:620px;margin-bottom:22px">The engagement is shaped around five workstreams the client has prioritised. They map directly to the day-one modules and feed into the day-two scope document.</p>
+  <p class="aipa-body" style="color:rgba(245,245,247,0.8);max-width:620px;margin-bottom:22px">The engagement is shaped around five workstreams the client has prioritised. They map directly to the day-one modules and feed into the day-two scope document.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px">
     ${[
       ["01","AI Inference Building &amp; Requirements","Define the inference foundation — model class, GPU sizing, latency and concurrency targets, and the cloud / on-premise / hybrid posture appropriate for the data class involved."],
@@ -2557,7 +2559,7 @@ function pageAIInference(){
 </div>
 
 <!-- SLIDE 5: MODULE DEEP DIVE -->
-<div class="aipa-slide aipa-dark">
+<div class="aipa-slide aipa-ink">
   <div class="aipa-big-num">04</div>
   <span class="aipa-tag">SECTION 04 · MODULE DEEP DIVE</span>
   <div class="aipa-headline-lg">Inside each day-one module.</div>
@@ -2608,11 +2610,11 @@ function pageAIInference(){
 </div>
 
 <!-- SLIDE 7: SECTOR USE CASES -->
-<div class="aipa-slide aipa-dark">
+<div class="aipa-slide aipa-ink">
   <div class="aipa-big-num">06</div>
   <span class="aipa-tag">SECTION 06 · SECTOR USE-CASE MAP</span>
   <div class="aipa-headline-lg">High-value use cases by sector.</div>
-  <p class="aipa-body aipa-body-dark" style="max-width:660px;margin-bottom:22px">The day-one sector breakout draws from a curated list of use cases known to produce defensible business value in regulated estates. We narrow this list to the candidates that match the client's documents, integrations and data sensitivity.</p>
+  <p class="aipa-body" style="color:rgba(245,245,247,0.8);max-width:660px;margin-bottom:22px">The day-one sector breakout draws from a curated list of use cases known to produce defensible business value in regulated estates. We narrow this list to the candidates that match the client's documents, integrations and data sensitivity.</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:22px">
     ${[
       ["SECTOR 01","FMCG &amp; Manufacturing",[["Sales report &amp; territory assistant","RAG"],["Distributor query desk","RAG · TOOL"],["Inventory report summariser","RAG · TOOL"],["Maintenance SOP assistant","RAG"],["Procurement document assistant","RAG"],["Dealer support workflow","AGENT"],["Executive dashboard narrative","TOOL · LLM"]]],
@@ -2665,7 +2667,7 @@ function pageAIInference(){
 </div>
 
 <!-- SLIDE 9: GOVERNANCE & ROADMAP -->
-<div class="aipa-slide aipa-dark">
+<div class="aipa-slide aipa-ink">
   <div class="aipa-big-num">08</div>
   <span class="aipa-tag">SECTION 08 · GOVERNANCE, ROADMAP &amp; DELIVERABLES</span>
   <div class="aipa-headline-lg">Governance, roadmap and packaged deliverables.</div>
