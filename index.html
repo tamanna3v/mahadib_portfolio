@@ -1293,7 +1293,7 @@ const EVENTS = [
   {type:"Program Launch",title:"AI-Proficiency Accelerator (AI-PA) — Corporate Cohort",date:"2023 – Dec 2025",org:"BuildNation Limited",location:"Dhaka, Bangladesh",desc:"Led the AI-PA program across 6+ corporate organizations — including Ispahani, Beximco Pharma, Nuvista Pharma, Japan Solar and more — training 200+ senior executives. Participants achieved up to 40% productivity gains.",tags:["AI Training","Corporate","Leadership","BuildNation"],url:"https://buildnation.com.bd/aipa/",btnLabel:"Learn More →"},
   {type:"Certification",title:"CxO Conclave — IBA, University of Dhaka",date:"2024",org:"IBA – University of Dhaka",location:"Dhaka, Bangladesh",desc:"Completed the CxO Conclave executive leadership certification — a prestigious program for C-suite executives covering advanced strategy, digital leadership, and organizational transformation.",tags:["Leadership","Executive","Certification","IBA-DU"],url:"http://bd.linkedin.com/in/mahadib/",btnLabel:"View on LinkedIn →"},
   {type:"Award Ceremony",title:"BASIS National ICT Award — CommEngine",date:"2019",org:"BASIS Bangladesh",location:"Dhaka, Bangladesh",desc:"CommEngine was recognized with Bangladesh's most prestigious tech innovation award. BASIS President Syed Almas Kabir and Microsoft Bangladesh's MD Sonia Bashir Kabir attended as special guests.",tags:["Award","CommEngine","SaaS","Innovation"],url:"http://bd.linkedin.com/in/mahadib/",btnLabel:"View on LinkedIn →"},
-  {type:"Social Initiative",title:"Swachho — Covid-19 Digital Response",date:"2020",org:"Call for Nation Initiative",location:"Bangladesh (Nationwide)",desc:"Contributed to Swachho, a nationwide Covid-19 digital solution that earned the Retail Digital Innovation Award 2020, combining tech with public health response during the pandemic.",tags:["Covid-19","Social Impact","Digital Health"],url:"http://bd.linkedin.com/in/mahadib/",btnLabel:"View on LinkedIn →"}
+  {type:"Social Initiative",title:"Amra Khati Gorib — Youth Volunteer Platform",date:"2009 – Present",org:"Amra Khati Gorib (আমরা খাঁটি গরিব)",location:"Bangladesh (Nationwide)",desc:"A prominent youth-driven Facebook volunteer organization founded Nov 27, 2009. Signature project: annual Mango Festival for Street Children distributing thousands of kg of mangoes across 6 divisions. Provided winter clothing to 15,000+ individuals. Crowdfunded crisis relief with full transparency. Collaborated with Aparajeyo Bangla, Bidyanondo, and renowned singer Kanak Chapa.",tags:["SocialWelfare","StreetChildren","YouthVolunteer","Bangladesh"],url:"https://www.youtube.com/watch?v=yUeT6DYKZy8&t=10s",btnLabel:"Watch Video →"},date:"2020",org:"Call for Nation Initiative",location:"Bangladesh (Nationwide)",desc:"Contributed to Swachho, a nationwide Covid-19 digital solution that earned the Retail Digital Innovation Award 2020, combining tech with public health response during the pandemic.",tags:["Covid-19","Social Impact","Digital Health"],url:"http://bd.linkedin.com/in/mahadib/",btnLabel:"View on LinkedIn →"}
 ];
 
 const RESEARCH = [
@@ -1605,9 +1605,16 @@ function pageEvents(activeFilter){
   const filterBtns = categories.map(c=>`
     <button class="event-filter-btn${c===activeFilter?' active':''}" onclick="rerenderEvents('${c}')">${c}</button>`).join('');
 
-  const cards = filtered.map(ev=>`
+  function ytThumb(url){
+    const m = url.match(/(?:v=|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+    return m ? `https://img.youtube.com/vi/${m[1]}/mqdefault.jpg` : null;
+  }
+  const cards = filtered.map(ev=>{
+    const thumb = ytThumb(ev.url||'');
+    return `
     <div class="event-card" data-type="${ev.type}">
-      <div class="event-header">
+      ${thumb ? `<a href="${ev.url}" target="_blank" rel="noopener" style="display:block;flex-shrink:0;height:130px;overflow:hidden;position:relative"><img src="${thumb}" alt="${ev.title}" style="width:100%;height:100%;object-fit:cover"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><div style="background:rgba(0,0,0,0.55);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 16 16" fill="white"><polygon points="5,2 14,8 5,14"/></svg></div></div></a>` : ''}
+      <div class="event-header" style="${thumb?'padding-top:10px':''}">
         <div style="display:flex;align-items:center;gap:10px">
           <div class="event-avatar">HB</div>
           <div><div class="event-name">Hadi Bhuiyan</div><div class="event-date">${ev.date}</div></div>
@@ -1626,7 +1633,7 @@ function pageEvents(activeFilter){
           <a href="${ev.url}" target="_blank" class="event-btn">${ev.btnLabel}</a>
         </div>
       </div>
-    </div>`).join('');
+    </div>`}).join('');
   return `
     <h2 class="section-title">Events & Milestones</h2>
     <p class="section-sub">Key appearances, launches and contributions</p>
@@ -1645,9 +1652,12 @@ function rerenderEvents(filter){
   if(!grid) return;
   const filtered = filter === 'All' ? EVENTS : EVENTS.filter(e=>e.type === filter);
   filterBtns.forEach(b=>b.classList.toggle('active', b.textContent.trim() === filter));
-  grid.innerHTML = filtered.map(ev=>`
+  grid.innerHTML = filtered.map(ev=>{
+    const thumb = ytThumb(ev.url||'');
+    return `
     <div class="event-card" data-type="${ev.type}">
-      <div class="event-header">
+      ${thumb ? `<a href="${ev.url}" target="_blank" rel="noopener" style="display:block;flex-shrink:0;height:130px;overflow:hidden;position:relative"><img src="${thumb}" alt="${ev.title}" style="width:100%;height:100%;object-fit:cover"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><div style="background:rgba(0,0,0,0.55);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 16 16" fill="white"><polygon points="5,2 14,8 5,14"/></svg></div></div></a>` : ''}
+      <div class="event-header" style="${thumb?'padding-top:10px':''}">
         <div style="display:flex;align-items:center;gap:10px">
           <div class="event-avatar">HB</div>
           <div><div class="event-name">Hadi Bhuiyan</div><div class="event-date">${ev.date}</div></div>
@@ -1666,7 +1676,7 @@ function rerenderEvents(filter){
           <a href="${ev.url}" target="_blank" class="event-btn">${ev.btnLabel}</a>
         </div>
       </div>
-    </div>`).join('');
+    </div>`}).join('');
 }
 
 function pageResearch(){
