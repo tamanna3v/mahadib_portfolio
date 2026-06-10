@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /futuremind
+
+Sitemap: https://mahadib.futuremind.ltd/sitemap.xml
