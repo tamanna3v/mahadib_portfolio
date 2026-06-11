@@ -945,6 +945,58 @@ footer{text-align:center;padding:36px 0 32px;color:var(--muted);font-size:13px;b
 }
 
 /* ════════════════════════════════════════════════════════════════
+   AI INFERENCE — FULL-SCREEN PRESENTATION DECK
+   Each .aipa-slide becomes a viewport-filling, scroll-snapping panel.
+   Scoped to body.deck-mode so other pages that reuse .aipa-slide
+   (AIPA, FutureMind) keep their normal stacked layout.
+   ════════════════════════════════════════════════════════════════ */
+body.deck-mode{overflow:hidden}
+body.deck-mode footer{display:none}
+body.deck-mode #app{height:100vh}
+body.deck-mode .page{
+  width:100%;max-width:none;margin:0;padding:0;height:100vh;
+  overflow-y:scroll;overflow-x:hidden;
+  scroll-snap-type:y proximity;scroll-padding-top:48px;
+  scroll-behavior:smooth;-webkit-overflow-scrolling:touch;
+}
+/* the standalone page heading is dropped — slide 1 already carries the brand */
+body.deck-mode .section-title,
+body.deck-mode .section-sub{display:none}
+/* each panel fills the window and centres its content */
+body.deck-mode .aipa-slide{
+  min-height:100vh;margin:0;border-radius:0;
+  scroll-snap-align:start;
+  display:flex;padding:0;
+}
+/* margin:auto centres a short panel, but collapses to 0 when a dense
+   panel is taller than the viewport — so nothing is ever clipped */
+body.deck-mode .aipa-slide-inner{
+  margin:auto;width:100%;max-width:1180px;
+  padding:84px 7vw 64px;box-sizing:border-box;
+}
+body.deck-mode .aipa-slide + .aipa-slide{box-shadow:inset 0 1px 0 rgba(0,0,0,0.06)}
+/* tighten the largest type so dense panels fit a single screen */
+body.deck-mode .aipa-headline-xl{font-size:clamp(34px,5vw,60px)}
+body.deck-mode .aipa-headline-lg{font-size:clamp(28px,3.6vw,46px)}
+body.deck-mode .aipa-big-num{top:60px}
+/* subtle "keep scrolling" cue on the opening panel */
+body.deck-mode .aipa-slide:first-of-type .aipa-slide-inner::after{
+  content:"";position:absolute;left:50%;bottom:26px;width:22px;height:22px;
+  margin-left:-11px;border-right:2px solid rgba(110,231,183,0.7);
+  border-bottom:2px solid rgba(110,231,183,0.7);transform:rotate(45deg);
+  animation:deckCue 1.8s ease-in-out infinite;pointer-events:none
+}
+body.deck-mode .aipa-slide:first-of-type{position:relative}
+@keyframes deckCue{0%,100%{opacity:.25;transform:translateY(0) rotate(45deg)}50%{opacity:.9;transform:translateY(7px) rotate(45deg)}}
+@media(max-width:900px){
+  body.deck-mode .page{scroll-padding-top:0}
+  body.deck-mode .aipa-slide-inner{padding:96px 22px 60px}
+}
+@media(max-height:720px){
+  body.deck-mode .aipa-slide-inner{padding-top:68px;padding-bottom:44px}
+}
+
+/* ════════════════════════════════════════════════════════════════
    NEO-BRUTALIST "CLASSROOM GUIDE" OVERRIDE LAYER
    Cream canvas · Fredoka display type · hard offset shadows ·
    thick ink borders · black pill badges · highlighter accents.
@@ -3449,6 +3501,10 @@ function showPage(id, updateHistory = true){
   applyPageMeta(id);
   // render page
   document.getElementById('app').innerHTML = `<div class="page active" id="pg-${id}">${PAGES[id]()}</div>`;
+  // presentation-deck mode: AI Inference renders as full-screen, snapping panels
+  const deck = (id === 'ai-inference');
+  document.body.classList.toggle('deck-mode', deck);
+  if(deck) wrapDeckSlides('pg-' + id);
   // update nav
   document.querySelectorAll('.nav-btn').forEach(b=>{
     b.classList.toggle('active', b.dataset.page === id);
@@ -3461,6 +3517,36 @@ function showPage(id, updateHistory = true){
     window.history.pushState({ page: id }, '', path);
   }
 }
+
+// Wrap each deck panel's content in a centring element so short panels sit
+// in the middle of the window while dense panels grow without being clipped.
+function wrapDeckSlides(pageElId){
+  document.querySelectorAll('#' + pageElId + ' .aipa-slide').forEach(s=>{
+    if(s.firstElementChild && s.firstElementChild.classList.contains('aipa-slide-inner')) return;
+    const inner = document.createElement('div');
+    inner.className = 'aipa-slide-inner';
+    while(s.firstChild) inner.appendChild(s.firstChild);
+    s.appendChild(inner);
+  });
+}
+
+// Keyboard navigation for the presentation deck — advance one panel at a time.
+document.addEventListener('keydown', (e)=>{
+  if(!document.body.classList.contains('deck-mode')) return;
+  const next = ['ArrowDown','PageDown'].includes(e.key) || (e.key === ' ' && !e.shiftKey);
+  const prev = ['ArrowUp','PageUp'].includes(e.key) || (e.key === ' ' && e.shiftKey);
+  if(!next && !prev) return;
+  const scroller = document.querySelector('.page');
+  if(!scroller) return;
+  const slides = [...scroller.querySelectorAll('.aipa-slide')];
+  if(!slides.length) return;
+  e.preventDefault();
+  const base = scroller.getBoundingClientRect().top;
+  let idx = 0;
+  slides.forEach((s,i)=>{ if(s.getBoundingClientRect().top - base <= 5) idx = i; });
+  const target = Math.min(Math.max(idx + (next ? 1 : -1), 0), slides.length - 1);
+  slides[target].scrollIntoView({ behavior:'smooth', block:'start' });
+});
 
 function getPageFromURL(){
   const path = window.location.pathname;
