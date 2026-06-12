@@ -116,6 +116,7 @@
   --muted-2:#8a8375;
   --line:#1a1a1a;
   --line-soft:#ddd2b8;
+  --shadow-line:#d4d4d4;
   --accent:#d9663f;
   --accent-hover:#c4542f;
   --accent-blue:#3a6b8c;
@@ -143,10 +144,10 @@
   --radius-lg:20px;
   --radius-xl:26px;
   --border:2.5px solid var(--line);
-  --nb-shadow:6px 6px 0 var(--line);
-  --nb-shadow-sm:4px 4px 0 var(--line);
-  --shadow-sm:3px 3px 0 var(--line);
-  --shadow:6px 6px 0 var(--line);
+  --nb-shadow:3px 3px 0 var(--shadow-line);
+  --nb-shadow-sm:2px 2px 0 var(--shadow-line);
+  --shadow-sm:2px 2px 0 var(--shadow-line);
+  --shadow:3px 3px 0 var(--shadow-line);
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -1046,15 +1047,15 @@ nav{
   border-radius:999px;padding:6px 18px;line-height:1;
   box-shadow:var(--nb-shadow-sm);transition:transform .12s ease,box-shadow .12s ease;
 }
-.nav-brand:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--line)}
+.nav-brand:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--shadow-line)}
 .nav-btn{
   background:var(--paper);color:var(--ink);
   border:2px solid var(--line);border-radius:999px;
   padding:6px 13px;font-size:12px;font-weight:700;opacity:1;
   margin:3px;transition:transform .12s ease,box-shadow .12s ease,background .12s;
 }
-.nav-btn:hover{opacity:1;transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--line)}
-.nav-btn.active{background:var(--accent);color:#fff;font-weight:700;box-shadow:3px 3px 0 var(--line)}
+.nav-btn:hover{opacity:1;transform:translate(-1px,-1px);box-shadow:2px 2px 0 var(--shadow-line)}
+.nav-btn.active{background:var(--accent);color:#fff;font-weight:700;box-shadow:2px 2px 0 var(--shadow-line)}
 
 /* ── Hero treatment (about) ── */
 .hero-eyebrow{
@@ -1093,7 +1094,7 @@ nav{
 .contact-card:hover,.building-card:hover,.li-post-card:hover,.stat-box:hover,
 .uc-menu-card:hover,.prog-menu-card:hover{
   transform:translate(-3px,-3px)!important;
-  box-shadow:9px 9px 0 var(--line)!important;
+  box-shadow:6px 6px 0 var(--shadow-line)!important;
 }
 /* warm default card surfaces */
 .stat-box,.pstat,.format-card,.curr-card,.diff-card,.prog-sub-card,
@@ -1193,7 +1194,7 @@ footer{
 
 /* ── Mobile: tame shadows so cards don't overflow ── */
 @media(max-width:600px){
-  :root{--nb-shadow:4px 4px 0 var(--line);--nb-shadow-sm:3px 3px 0 var(--line)}
+  :root{--nb-shadow:2px 2px 0 var(--shadow-line);--nb-shadow-sm:2px 2px 0 var(--shadow-line)}
   .section-title{font-size:42px}
   .nav-brand{font-size:17px}
 }
