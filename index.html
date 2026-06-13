@@ -212,6 +212,14 @@ nav{
 .nav-btn:hover{opacity:0.6}
 .nav-btn.active{font-weight:500;opacity:1}
 
+/* NAV DROPDOWN */
+.nav-dropdown{position:relative;display:inline-block}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown-menu:hover{display:block}
+.nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;background:var(--paper);border:1px solid rgba(0,0,0,0.08);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.10);min-width:180px;z-index:100;padding:6px 0}
+.nav-dropdown-item{display:block;width:100%;background:transparent;border:none;text-align:left;padding:8px 16px;font-size:12px;font-weight:400;color:var(--ink);font-family:var(--sans);letter-spacing:-0.005em;cursor:pointer;white-space:nowrap}
+.nav-dropdown-item:hover{background:var(--paper-2);color:var(--accent)}
+.nav-dropdown-arrow{font-size:9px;margin-left:3px;opacity:0.5}
+
 /* PAGE */
 .page{width:80%;max-width:1600px;margin:0 auto;padding:88px 22px 80px;display:none}
 .page.active{display:block;animation:fadeUp .5s ease both}
@@ -1056,6 +1064,8 @@ nav{
 }
 .nav-btn:hover{opacity:1;transform:translate(-1px,-1px);box-shadow:2px 2px 0 var(--shadow-line)}
 .nav-btn.active{background:var(--accent);color:#fff;font-weight:700;box-shadow:2px 2px 0 var(--shadow-line)}
+.nav-dropdown-menu{background:var(--paper);border-color:var(--shadow-line)}
+.nav-dropdown-item:hover{background:var(--paper-2)}
 
 /* ── Hero treatment (about) ── */
 .hero-eyebrow{
@@ -1292,7 +1302,9 @@ footer{
 const NAV = [
   {text:"Hadi Bhuiyan",id:"about"},
   {text:"Products",id:"products"},
-  {text:"AI Accelerator",id:"aipa"},
+  {text:"AI Accelerator",id:"aipa",dropdown:[
+    {text:"AIPA Session Plan",id:"aipa-session-plan"}
+  ]},
   {text:"AI Inference",id:"ai-inference"},
   {text:"Events",id:"events"},
   {text:"Research",id:"research"},
@@ -3447,12 +3459,222 @@ function pageNews(){
     <div class="news-grid">${cards}</div>`;
 }
 
+function pageAIPASessionPlan(){
+  return `
+<div class="aipa-slide aipa-ink" style="margin-bottom:18px">
+  <div class="aipa-tag">Program 02 · AI Accelerator Suite</div>
+  <div class="aipa-headline-xl">The AIPA<br><span style="color:#6ee7b7">Curriculum</span></div>
+  <div class="aipa-body" style="color:#ccc;max-width:56ch">A progressive journey across three stages — Foundation → Advanced → Enterprise — structured so every professional advances from AI awareness to autonomous, organization-wide impact.</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:32px">
+    <div style="background:rgba(255,255,255,0.08);border-radius:10px;padding:18px 16px"><div style="font-size:32px;font-weight:700;color:#6ee7b7;letter-spacing:-0.03em">12</div><div style="font-size:12px;color:#aaa;margin-top:4px">Sessions + Add-Ons</div></div>
+    <div style="background:rgba(255,255,255,0.08);border-radius:10px;padding:18px 16px"><div style="font-size:32px;font-weight:700;color:#6ee7b7;letter-spacing:-0.03em">4</div><div style="font-size:12px;color:#aaa;margin-top:4px">Parts: Foundations → Enterprise</div></div>
+    <div style="background:rgba(255,255,255,0.08);border-radius:10px;padding:18px 16px"><div style="font-size:32px;font-weight:700;color:#6ee7b7;letter-spacing:-0.03em">~5</div><div style="font-size:12px;color:#aaa;margin-top:4px">Months · Workshop-Style</div></div>
+    <div style="background:rgba(255,255,255,0.08);border-radius:10px;padding:18px 16px"><div style="font-size:32px;font-weight:700;color:#6ee7b7;letter-spacing:-0.03em">Basic→Adv</div><div style="font-size:12px;color:#aaa;margin-top:4px">Every Level of the Org</div></div>
+  </div>
+</div>
+
+<div style="background:var(--paper-2);border-radius:14px;padding:20px 24px;margin-bottom:18px;display:flex;align-items:flex-start;gap:16px">
+  <div>
+    <div style="font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px">✦ Methodology</div>
+    <div style="font-family:var(--sans);font-size:20px;font-weight:600;color:var(--ink);margin-bottom:4px">Project-Based Learning</div>
+    <div style="font-size:14px;color:var(--muted)">Learn-by-doing · Workshop format · Real organizational outcomes built in every session</div>
+  </div>
+</div>
+
+<!-- PART 1 -->
+<div style="margin-bottom:8px">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;padding:14px 20px;background:#1a1f2e;border-radius:10px">
+    <span style="background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;letter-spacing:0.04em">PART 1</span>
+    <span style="font-family:var(--sans);font-size:17px;font-weight:600;color:#f5f5f7">Mandatory Personal Proficiency</span>
+    <span style="font-size:12px;color:#888;margin-left:auto">Grammar · Anthropology · No-Code · Vibe Code · DIG8 Framework</span>
+  </div>
+  <div style="background:var(--paper-2);border-radius:8px;padding:10px 16px;margin-bottom:14px;font-size:12px;color:var(--muted)"><strong>Tools:</strong> Gemini / ChatGPT / Claude or EasyDO · NotebookLM · Google AI Studio · Cursor / Codex · Claude Code · Google Whisper</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px">
+    <div class="aipa-step" style="padding:28px">
+      <div class="aipa-step-num">01</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:var(--paper);padding:3px 10px;border-radius:999px;color:var(--muted)">AIPA_B01</span><span style="font-size:11px;background:#e6f4e6;color:#2a6e2a;padding:3px 10px;border-radius:999px;font-weight:600">BASIC</span></div>
+      <div class="aipa-step-title" style="font-size:22px">AI Anthropology &amp; Augmentation in Enterprise</div>
+      <div class="aipa-step-desc" style="font-size:14px">Build foundational understanding of AI — its evolution, philosophy, and role in the modern enterprise.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">AI Evolution &amp; Fundamentals</span><span class="aipa-step-badge">DIG+8 Framework</span><span class="aipa-step-badge">Practice &amp; Adaptability</span></div>
+      <div style="font-size:12px;color:var(--muted);text-align:right">FAC · MHB</div>
+    </div>
+    <div class="aipa-step" style="padding:28px">
+      <div class="aipa-step-num">02</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:var(--paper);padding:3px 10px;border-radius:999px;color:var(--muted)">AIPA_B03</span><span style="font-size:11px;background:#e6f4e6;color:#2a6e2a;padding:3px 10px;border-radius:999px;font-weight:600">BASIC</span></div>
+      <div class="aipa-step-title" style="font-size:22px">AI as Colleague: Communication Framework &amp; Second Brain</div>
+      <div class="aipa-step-desc" style="font-size:14px">Master structured prompting, AI collaboration, advanced reasoning, and persistent knowledge management.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">Chain of Thought</span><span class="aipa-step-badge">Red / Green Light Prompting</span><span class="aipa-step-badge">RAG with NotebookLM</span></div>
+      <div style="font-size:12px;color:var(--muted);text-align:right">FAC · MHB</div>
+    </div>
+    <div class="aipa-step" style="padding:28px">
+      <div class="aipa-step-num">03</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:var(--paper);padding:3px 10px;border-radius:999px;color:var(--muted)">AIPA_B04</span><span style="font-size:11px;background:#e6f4e6;color:#2a6e2a;padding:3px 10px;border-radius:999px;font-weight:600">BASIC</span></div>
+      <div class="aipa-step-title" style="font-size:22px">No-Code App Building with DIG8 Platform</div>
+      <div class="aipa-step-desc" style="font-size:14px">Build functional organizational solutions without coding using AI-powered no-code tools.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">Problem Definition</span><span class="aipa-step-badge">Build with DIG8</span><span class="aipa-step-badge">Docs &amp; Deployment</span></div>
+      <div style="font-size:12px;color:var(--muted);text-align:right">FAC · MHB / MaH</div>
+    </div>
+    <div class="aipa-step" style="padding:28px">
+      <div class="aipa-step-num">04</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:var(--paper);padding:3px 10px;border-radius:999px;color:var(--muted)">AIPA_B06</span><span style="font-size:11px;background:#fff3e0;color:#b05000;padding:3px 10px;border-radius:999px;font-weight:600">ADVANCED</span></div>
+      <div class="aipa-step-title" style="font-size:22px">Google AI Studio &amp; Data Insight Workshop</div>
+      <div class="aipa-step-desc" style="font-size:14px">Analyze organizational data and extract actionable insights using AI tools.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">Data Prep &amp; Privacy</span><span class="aipa-step-badge">Insight Discovery</span><span class="aipa-step-badge">Actionable Reporting</span></div>
+      <div style="font-size:12px;color:var(--muted);text-align:right">FAC · MHB / KFT</div>
+    </div>
+  </div>
+</div>
+
+<!-- PART 2 -->
+<div style="margin-bottom:8px">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;padding:14px 20px;background:#1a1f2e;border-radius:10px">
+    <span style="background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;letter-spacing:0.04em">PART 2</span>
+    <span style="font-family:var(--sans);font-size:17px;font-weight:600;color:#f5f5f7">Advanced Personal &amp; Team Proficiency</span>
+    <span style="font-size:12px;color:#888;margin-left:auto">Low-Code Automation · RAG · Persistent &amp; Contextual AI · Harness</span>
+  </div>
+  <div style="background:var(--paper-2);border-radius:8px;padding:10px 16px;margin-bottom:14px;font-size:12px;color:var(--muted)"><strong>Tools:</strong> n8n / Zapier / Make.com · Gamma / Prezi · Gemini Pro · OpenClaw / Hermes · Cursor / Codex · Claude Code · HeyGen / Sora / Flow</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px">
+    <div class="aipa-step" style="padding:28px">
+      <div class="aipa-step-num">05</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:var(--paper);padding:3px 10px;border-radius:999px;color:var(--muted)">AIPA_B05</span><span style="font-size:11px;background:#e6f4e6;color:#2a6e2a;padding:3px 10px;border-radius:999px;font-weight:600">BASIC</span></div>
+      <div class="aipa-step-title" style="font-size:22px">Professional Content Creation with AI Tools</div>
+      <div class="aipa-step-desc" style="font-size:14px">Create compelling presentations, reports, and visuals using Gamma, Gemini, and Canva.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">Gamma Frameworks</span><span class="aipa-step-badge">Content Tools &amp; Integration</span><span class="aipa-step-badge">Professional Polish</span></div>
+      <div style="font-size:12px;color:var(--muted);text-align:right">FAC · MMC</div>
+    </div>
+    <div class="aipa-step" style="padding:28px">
+      <div class="aipa-step-num">06</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:var(--paper);padding:3px 10px;border-radius:999px;color:var(--muted)">AIPA_B07</span><span style="font-size:11px;background:#e8f0fe;color:#1a56a0;padding:3px 10px;border-radius:999px;font-weight:600">SEMI-TECH</span></div>
+      <div class="aipa-step-title" style="font-size:22px">Low-Code Automation with N8N &amp; Workflows</div>
+      <div class="aipa-step-desc" style="font-size:14px">Design and implement complex automated workflows using low-code platforms.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">N8N &amp; Workflow Basics</span><span class="aipa-step-badge">Automation Patterns</span><span class="aipa-step-badge">Agentic Workflows</span></div>
+      <div style="font-size:12px;color:var(--muted);text-align:right">FAC · TaIs</div>
+    </div>
+    <div class="aipa-step" style="padding:28px">
+      <div class="aipa-step-num">07</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:var(--paper);padding:3px 10px;border-radius:999px;color:var(--muted)">AIPA_B08</span><span style="font-size:11px;background:#e8f0fe;color:#1a56a0;padding:3px 10px;border-radius:999px;font-weight:600">SEMI-TECH</span></div>
+      <div class="aipa-step-title" style="font-size:22px">Hands-On Agentic Workflow Implementation</div>
+      <div class="aipa-step-desc" style="font-size:14px">Build real-world autonomous workflows for live business processes.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">Workflow Design</span><span class="aipa-step-badge">Skill · Connector · MCP</span><span class="aipa-step-badge">Execution &amp; Testing</span></div>
+      <div style="font-size:12px;color:var(--muted);text-align:right">FAC · MHB / TaIs</div>
+    </div>
+    <div class="aipa-step" style="padding:28px">
+      <div class="aipa-step-num">08</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:var(--paper);padding:3px 10px;border-radius:999px;color:var(--muted)">AIPA_B09</span><span style="font-size:11px;background:#fff3e0;color:#b05000;padding:3px 10px;border-radius:999px;font-weight:600">ADVANCED</span></div>
+      <div class="aipa-step-title" style="font-size:22px">Creating Your Second Brain: RAG &amp; Multimodal AI</div>
+      <div class="aipa-step-desc" style="font-size:14px">Build persistent AI memory systems and leverage multimodal capabilities — audio, video, decks.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">Second Brain Architecture</span><span class="aipa-step-badge">RAG Implementation</span><span class="aipa-step-badge">Hallucination Protection</span></div>
+      <div style="font-size:12px;color:var(--muted);text-align:right">FAC · MHB</div>
+    </div>
+  </div>
+</div>
+
+<!-- PART 3 -->
+<div style="margin-bottom:8px">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;padding:14px 20px;background:#1a1f2e;border-radius:10px">
+    <span style="background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;letter-spacing:0.04em">PART 3</span>
+    <span style="font-family:var(--sans);font-size:17px;font-weight:600;color:#f5f5f7">Advanced AI Practice &amp; Enterprise Integration</span>
+    <span style="font-size:12px;color:#888;margin-left:auto">Roadmap · Agentic Routines · Adoption · Governance</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px">
+    <div class="aipa-step" style="padding:28px">
+      <div class="aipa-step-num">09</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:var(--paper);padding:3px 10px;border-radius:999px;color:var(--muted)">Day 5 · S2</span><span style="font-size:11px;background:#fff3e0;color:#b05000;padding:3px 10px;border-radius:999px;font-weight:600">ADVANCED</span></div>
+      <div class="aipa-step-title" style="font-size:22px">Enterprise Integration Blueprint</div>
+      <div class="aipa-step-desc" style="font-size:14px">Cross-department AI integration architecture with data governance and security alignment.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">AI Product Selection Matrix</span><span class="aipa-step-badge">Financial &amp; Inference Basics</span><span class="aipa-step-badge">Roadmap &amp; Playbook</span></div>
+    </div>
+    <div class="aipa-step" style="padding:28px">
+      <div class="aipa-step-num">10</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:#fff3e0;color:#b05000;padding:3px 10px;border-radius:999px;font-weight:600">ADVANCED</span></div>
+      <div class="aipa-step-title" style="font-size:22px">Skill &amp; AI Mapping</div>
+      <div class="aipa-step-desc" style="font-size:14px">Departmental workflow analysis, skill-gap identification, and AI-assisted operations alignment.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">Workflow Analysis by Dept.</span><span class="aipa-step-badge">Skills-Gap Identification</span><span class="aipa-step-badge">Learning Alignment Plan</span></div>
+    </div>
+    <div class="aipa-step" style="padding:28px">
+      <div class="aipa-step-num">11</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:#fff3e0;color:#b05000;padding:3px 10px;border-radius:999px;font-weight:600">ADVANCED</span></div>
+      <div class="aipa-step-title" style="font-size:22px">AI Adoption Playbook &amp; AI-Ready Gameboard Design</div>
+      <div class="aipa-step-desc" style="font-size:14px">Drive organization-wide adoption via a change-management roadmap and a four-quadrant AI Gameboard.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">Change-Management Roadmap</span><span class="aipa-step-badge">Stakeholder &amp; KPI Design</span><span class="aipa-step-badge">Four-Quadrant Gameboard</span><span class="aipa-step-badge">Org AI Role Mapping</span></div>
+    </div>
+    <div class="aipa-step" style="padding:28px">
+      <div class="aipa-step-num">12</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:var(--paper);padding:3px 10px;border-radius:999px;color:var(--muted)">CNT_06</span><span style="font-size:11px;background:#fff3e0;color:#b05000;padding:3px 10px;border-radius:999px;font-weight:600">ADVANCED</span></div>
+      <div class="aipa-step-title" style="font-size:22px">Governance, Trust &amp; Leadership Decision-Making</div>
+      <div class="aipa-step-desc" style="font-size:14px">Build responsible AI governance frameworks and AI-augmented executive decision-making.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">Responsible AI Principles</span><span class="aipa-step-badge">Security · Fairness · Accountability</span><span class="aipa-step-badge">Executive Decision Frameworks</span><span class="aipa-step-badge">Dashboards &amp; Compliance</span></div>
+      <div style="font-size:12px;color:var(--muted);text-align:right">FAC · MMC</div>
+    </div>
+  </div>
+</div>
+
+<!-- PART 4 OPTIONAL -->
+<div style="margin-bottom:18px">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;padding:14px 20px;background:var(--paper-2);border-radius:10px;border:1px dashed rgba(0,0,0,0.12)">
+    <span style="background:#888;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;letter-spacing:0.04em">PART 4 · OPTIONAL</span>
+    <span style="font-family:var(--sans);font-size:17px;font-weight:600;color:var(--ink)">Advanced &amp; Sectoral Add-On Sessions</span>
+    <span style="font-size:12px;color:var(--muted);margin-left:auto">Activated by audience &amp; organizational requirement</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px">
+    <div class="aipa-step" style="padding:24px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:var(--paper);padding:3px 10px;border-radius:999px;color:var(--muted)">O1 · ADD-ON S2</span></div>
+      <div class="aipa-step-title" style="font-size:18px">Advanced Prompting &amp; Chain of Thought Reasoning</div>
+      <div class="aipa-step-desc" style="font-size:13px">Master advanced reasoning techniques for complex, multi-step problem-solving.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">CoT Fundamentals</span><span class="aipa-step-badge">Red / Green Light</span><span class="aipa-step-badge">Multi-Step Logic</span></div>
+      <div style="font-size:12px;color:var(--muted);text-align:right">FAC · MHB</div>
+    </div>
+    <div class="aipa-step" style="padding:24px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:var(--paper);padding:3px 10px;border-radius:999px;color:var(--muted)">O2 · ADD-ON S5</span></div>
+      <div class="aipa-step-title" style="font-size:18px">Visual Excellence &amp; Professional Presentation Design</div>
+      <div class="aipa-step-desc" style="font-size:13px">Create visually stunning content and decks using AI-powered design tools.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">Diagram &amp; Visual Design</span><span class="aipa-step-badge">Image &amp; Multimedia</span><span class="aipa-step-badge">Presentation &amp; Branding</span></div>
+      <div style="font-size:12px;color:var(--muted);text-align:right">FAC · MMC / HHC</div>
+    </div>
+    <div class="aipa-step" style="padding:24px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:var(--paper);padding:3px 10px;border-radius:999px;color:var(--muted)">O3 · ADD-ON S5</span></div>
+      <div class="aipa-step-title" style="font-size:18px">Telling Stories with Data: Slide &amp; Report Mastery</div>
+      <div class="aipa-step-desc" style="font-size:13px">Transform complex data into compelling visual narratives for professional audiences.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">Data Storytelling</span><span class="aipa-step-badge">Visualization Techniques</span><span class="aipa-step-badge">Audience-Driven Design</span></div>
+      <div style="font-size:12px;color:var(--muted);text-align:right">FAC · MMC / MSR</div>
+    </div>
+    <div class="aipa-step" style="padding:24px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:#1a1f2e;color:#f5f5f7;padding:3px 10px;border-radius:999px">O4 · Leadership</span><span style="font-size:11px;background:#3d1a3d;color:#e8b4e8;padding:3px 10px;border-radius:999px;font-weight:600">EXEC</span></div>
+      <div class="aipa-step-title" style="font-size:18px">How AI Can Transform Your Organization</div>
+      <div class="aipa-step-desc" style="font-size:13px">AI reshaping manufacturing, pharma &amp; distribution — decision systems, automation, and data governance.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">Manufacturing &amp; Distribution</span><span class="aipa-step-badge">Pharma &amp; Regulated Industries</span><span class="aipa-step-badge">Transformation Roadmap</span></div>
+      <div style="font-size:12px;color:var(--muted);text-align:right">FAC · Mahtab Ahmed</div>
+    </div>
+    <div class="aipa-step" style="padding:24px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:#e8f0fe;color:#1a56a0;padding:3px 10px;border-radius:999px;font-weight:600">O5 · SECTORAL</span></div>
+      <div class="aipa-step-title" style="font-size:18px">HR &amp; Workforce Intelligence</div>
+      <div class="aipa-step-desc" style="font-size:13px">Recruitment, performance tracking, and engagement analytics for data-informed HR strategies.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">AI Recruitment Pipeline</span><span class="aipa-step-badge">Performance &amp; Engagement Analytics</span><span class="aipa-step-badge">Workforce Planning</span></div>
+    </div>
+    <div class="aipa-step" style="padding:24px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span style="font-size:11px;background:#e8f0fe;color:#1a56a0;padding:3px 10px;border-radius:999px;font-weight:600">O6 · SECTORAL</span></div>
+      <div class="aipa-step-title" style="font-size:18px">Predictive Business &amp; Supply-Chain Analytics</div>
+      <div class="aipa-step-desc" style="font-size:13px">Forecasting and optimization for planning, inventory, and distribution efficiency.</div>
+      <div class="aipa-step-meta"><span class="aipa-step-badge">Demand Forecasting</span><span class="aipa-step-badge">Inventory Optimization</span><span class="aipa-step-badge">Distribution Analytics</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Session 13 banner -->
+<div style="background:#1a1f2e;border-radius:12px;padding:20px 28px;display:flex;align-items:center;gap:20px">
+  <span style="font-family:var(--sans);font-size:42px;font-weight:700;color:#6ee7b7;letter-spacing:-0.03em;line-height:1">13</span>
+  <span style="font-size:15px;color:#ccc;line-height:1.5">AI for Marketing, Sales &amp; Customer Intelligence — Reporting, Documenting &amp; Negotiations</span>
+</div>
+`;
+}
+
 const PAGES = {
   about: pageAbout,
   experience: pageExperience,
   products: pageProducts,
   programs: pageAIPA,
   aipa: pageAIPA,
+  'aipa-session-plan': pageAIPASessionPlan,
   'ai-inference': pageAIInference,
   events: pageEvents,
   research: pageResearch,
@@ -3469,6 +3691,7 @@ const PAGE_META = {
   about:{t:"Hadi Bhuiyan — Digital · AI · SaaS",d:"Digital, AI, Enterprise & SaaS leader in Bangladesh. Co-Founder of CommEngine, EasyDO.ai, FutureMind & BuildNation. 20+ years experience."},
   products:{t:"Products — Hadi Bhuiyan",d:"SaaS & AI products built by Hadi Bhuiyan: CommEngine SocialCRM, EasyDO.ai, EasyFlow, Madevo and more."},
   aipa:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA for leadership, AIPA 5-month workforce program, AITA transformation sprints, and the AI Product Bootcamp. 190+ executives trained."},
+  'aipa-session-plan':{t:"AIPA Session Plan — BuildNation | Hadi Bhuiyan", d:"The AIPA Curriculum — 12 sessions across 4 parts. A progressive journey from AI foundations to enterprise-wide impact."},
   programs:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA, AIPA, AITA and the AI Product Bootcamp. 190+ executives trained across 6+ corporates."},
   'ai-inference':{t:"Enterprise AI & CoWork Consultation — FutureMind AI Group",d:"A two-day Enterprise AI & CoWork Implementation Stack consultation: inference infrastructure, RAG, workflow sandboxing, no-code launcher and a scope-cost-roadmap document."},
   events:{t:"Events & Milestones — Hadi Bhuiyan",d:"Key appearances, program launches, awards and social initiatives — from Microsoft panels to the AI-PA corporate cohorts."},
@@ -3508,6 +3731,9 @@ function showPage(id, updateHistory = true){
   if(deck) wrapDeckSlides('pg-' + id);
   // update nav
   document.querySelectorAll('.nav-btn').forEach(b=>{
+    b.classList.toggle('active', b.dataset.page === id);
+  });
+  document.querySelectorAll('.nav-dropdown-item').forEach(b=>{
     b.classList.toggle('active', b.dataset.page === id);
   });
   updateSectionsPanelVisibility(id);
@@ -3598,14 +3824,35 @@ function switchAIPAContent(program){
   // build nav
   const tabs = document.getElementById('navTabs');
   NAV.filter(n=>!n.unlisted).forEach(n=>{
-    const id = n.id;
-    const text = n.text;
-    const btn = document.createElement('button');
-    btn.className = 'nav-btn';
-    btn.dataset.page = id;
-    btn.textContent = text;
-    btn.onclick = ()=>showPage(id);
-    tabs.appendChild(btn);
+    if(n.dropdown){
+      const wrap = document.createElement('div');
+      wrap.className = 'nav-dropdown';
+      const btn = document.createElement('button');
+      btn.className = 'nav-btn';
+      btn.dataset.page = n.id;
+      btn.innerHTML = n.text + '<span class="nav-dropdown-arrow">▾</span>';
+      btn.onclick = ()=>showPage(n.id);
+      wrap.appendChild(btn);
+      const menu = document.createElement('div');
+      menu.className = 'nav-dropdown-menu';
+      n.dropdown.forEach(sub=>{
+        const subBtn = document.createElement('button');
+        subBtn.className = 'nav-dropdown-item';
+        subBtn.dataset.page = sub.id;
+        subBtn.textContent = sub.text;
+        subBtn.onclick = ()=>showPage(sub.id);
+        menu.appendChild(subBtn);
+      });
+      wrap.appendChild(menu);
+      tabs.appendChild(wrap);
+    } else {
+      const btn = document.createElement('button');
+      btn.className = 'nav-btn';
+      btn.dataset.page = n.id;
+      btn.textContent = n.text;
+      btn.onclick = ()=>showPage(n.id);
+      tabs.appendChild(btn);
+    }
   });
   // load page from URL or redirect path
   let pageFromURL = getPageFromURL();
