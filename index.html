@@ -288,38 +288,36 @@ nav{
 }
 .chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
 
-/* EXP CARD */
+/* EXP CARD — clean list style */
+.exp-list{display:flex;flex-direction:column;gap:0}
 .exp-card{
-  border:1px solid var(--line-soft);
-  border-radius:var(--radius-lg);
-  background:var(--paper);
-  overflow:hidden;margin-bottom:12px;
-  transition:box-shadow .25s ease, transform .25s ease;
+  display:flex;gap:16px;align-items:flex-start;
+  padding:20px 0;
+  border-bottom:1px solid var(--line-soft);
 }
-.exp-card:hover{box-shadow:var(--shadow);transform:translateY(-1px)}
-.exp-header{
-  width:100%;background:none;border:none;
-  padding:24px 28px;cursor:pointer;text-align:left;
-  display:flex;justify-content:space-between;align-items:center;gap:12px;
+.exp-card:last-child{border-bottom:none}
+.exp-logo{
+  width:44px;height:44px;min-width:44px;
+  border-radius:10px;border:1px solid var(--line-soft);
+  background:var(--paper-2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;overflow:hidden;
+}
+.exp-logo img{width:100%;height:100%;object-fit:contain;border-radius:9px}
+.exp-content{flex:1;min-width:0}
+.exp-org{
+  font-family:var(--sans);
+  font-weight:700;font-size:15px;color:var(--ink);
+  margin-bottom:2px;letter-spacing:-0.01em;
 }
 .exp-role{
-  font-family:var(--sans);
-  font-weight:600;font-size:22px;color:var(--ink);margin-bottom:4px;
-  letter-spacing:-0.012em;line-height:1.2;
+  font-size:13px;color:var(--muted);font-weight:400;
+  margin-bottom:6px;line-height:1.4;
 }
-.exp-org{font-size:15px;color:var(--muted);margin-bottom:10px;font-weight:400;letter-spacing:-0.005em}
-.exp-period{
-  font-size:12px;color:var(--muted);font-weight:500;white-space:nowrap;
-  letter-spacing:-0.005em;
-}
-.exp-arrow{font-size:14px;color:var(--muted-2);transition:transform .25s;display:block}
-.exp-arrow.open{transform:rotate(180deg)}
-.exp-body{padding:0 28px 24px;border-top:1px solid var(--line-soft);display:none}
-.exp-body.open{display:block}
-.exp-body ul{margin:18px 0 0;padding-left:18px}
-.exp-body li{font-size:15px;color:var(--ink-2);line-height:1.7;margin-bottom:8px}
-.exp-link{display:inline-block;margin-top:14px;font-size:14px;color:var(--accent);font-weight:500;text-decoration:none}
-.exp-link:hover{text-decoration:underline}
+.exp-desc{font-size:13px;color:var(--muted);line-height:1.6}
+.exp-period{font-size:12px;color:var(--muted-2);white-space:nowrap;padding-top:2px;font-weight:500}
+/* legacy — keep so toggleExp JS doesn't crash */
+.exp-header,.exp-arrow,.exp-body,.exp-link{display:none!important}
 
 /* PRODUCT GRID */
 .product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -1334,12 +1332,12 @@ const BUILDING = [
 ];
 
 const EXPERIENCES = [
-  {org:"BuildCon Consultancies & BuildNation Limited",role:"Consultant (CPO Capacity)",period:"Aug 2022 – Present",tags:["AI","Digital Transformation","Consulting"],points:["Led AI-Proficiency Accelerator for 190+ Corporate Senior Leadership participants across six corporate engagements.","Built a Blended Learning B2B LMS platform onboarding global programs (TAFE Australia, ACCA, CIMA, AI-PA).","Delivered consultancy for Tier-IV Data Center Feasibility and Digital Bank Establishment projects."],url:"https://buildnation.com.bd/aipa/"},
-  {org:"CommEngine Limited",role:"Co-Founder",period:"April 2018 – Present",tags:["SaaS","AI","SocialCRM"],points:["Co-Founded EasyDO.ai and FutureMind AI — Private AI-Workspace, Application Launchpad & AI-Consulting Manager.","Secured seed funding from Robi Axiata; launched enterprise B2B SaaS serving 120+ brands.","Built Business, Strategy, Product & Technology teams; profiled 20M+ customers."],url:"http://www.commengine.xyz"},
-  {org:"Robi Axiata Limited",role:"Innovation & Digital Service Unit Lead",period:"May 2013 – July 2021",tags:["Telco","IoT","Digital Services"],points:["Led complete product lifecycle for Digital Services, Innovation, IoT & VAS.","Managed Airtel & Axiata SDP merger, onboarding 2000+ services across USSD, VAS, MFS & Digital platforms.","Redesigned SMS Ecosystem for 40M subscribers — achieved $3M YRR."]},
-  {org:"Nokia Siemens Networks",role:"Intelligent Network & Project Management Lead",period:"Feb 2008 – May 2013",tags:["IN","BSS","Telecom"],points:["Implemented Banglalink IN09–IN14 (five IN platforms) handling 90 million subscribers.","Managed migration of 60M subscribers across four IN nodes for Vodafone India."]},
-  {org:"Huawei Technologies",role:"Business Support System Engineer",period:"April 2006 – Feb 2008",tags:["BSS","Billing","Mediation"],points:["Led commissioning of Postpaid Billing, Mediation, PRM & International Roaming solutions.","Deployed BTTB to Teletalk Charging system transformation for 20M subscribers."]},
-  {org:"Premier University, Chittagong",role:"Lecturer in CSE",period:"Feb 2006 – Sep 2007",tags:["Teaching","Academia"],points:["Conducted CS & Business lectures, labs and mentored undergraduate thesis and projects."]}
+  {logo:"🏗️",org:"BuildCon Consultancies & BuildNation Limited",role:"Consultant (CPO Capacity) · Aug 2022 – Present · Dhaka, Bangladesh",desc:"Led AI-Proficiency Accelerator (AIPA) for 190+ senior leaders across 6+ corporates. Built B2B LMS platform onboarding TAFE Australia, ACCA, CIMA, and AI-PA programs.",tags:["AI","Digital Transformation","Consulting"],points:["Led AI-Proficiency Accelerator for 190+ Corporate Senior Leadership participants across six corporate engagements.","Built a Blended Learning B2B LMS platform onboarding global programs (TAFE Australia, ACCA, CIMA, AI-PA).","Delivered consultancy for Tier-IV Data Center Feasibility and Digital Bank Establishment projects."],url:"https://buildnation.com.bd/aipa/"},
+  {logo:"💬",org:"CommEngine Limited",role:"Co-Founder · April 2018 – Present · Dhaka, Bangladesh",desc:"Co-founded enterprise B2B SaaS serving 120+ brands. Built SocialCRM, profiled 20M+ customers, secured seed funding from Robi Axiata.",tags:["SaaS","AI","SocialCRM"],points:["Co-Founded EasyDO.ai and FutureMind AI — Private AI-Workspace, Application Launchpad & AI-Consulting Manager.","Secured seed funding from Robi Axiata; launched enterprise B2B SaaS serving 120+ brands.","Built Business, Strategy, Product & Technology teams; profiled 20M+ customers."],url:"http://www.commengine.xyz"},
+  {logo:"📡",org:"Robi Axiata Limited",role:"Innovation & Digital Service Unit Lead · May 2013 – July 2021 · Dhaka, Bangladesh",desc:"Led product lifecycle for Digital Services, Innovation, IoT & VAS. Redesigned SMS Ecosystem for 40M subscribers — $3M YRR.",tags:["Telco","IoT","Digital Services"],points:["Led complete product lifecycle for Digital Services, Innovation, IoT & VAS.","Managed Airtel & Axiata SDP merger, onboarding 2000+ services across USSD, VAS, MFS & Digital platforms.","Redesigned SMS Ecosystem for 40M subscribers — achieved $3M YRR."]},
+  {logo:"📶",org:"Nokia Siemens Networks",role:"Intelligent Network & Project Management Lead · Feb 2008 – May 2013",desc:"Implemented Banglalink IN09–IN14 handling 90M subscribers. Managed 60M-subscriber migration for Vodafone India.",tags:["IN","BSS","Telecom"],points:["Implemented Banglalink IN09–IN14 (five IN platforms) handling 90 million subscribers.","Managed migration of 60M subscribers across four IN nodes for Vodafone India."]},
+  {logo:"⚙️",org:"Huawei Technologies",role:"Business Support System Engineer · April 2006 – Feb 2008",desc:"Led commissioning of Postpaid Billing, Mediation, PRM & International Roaming. Deployed BTTB to Teletalk Charging for 20M subscribers.",tags:["BSS","Billing","Mediation"],points:["Led commissioning of Postpaid Billing, Mediation, PRM & International Roaming solutions.","Deployed BTTB to Teletalk Charging system transformation for 20M subscribers."]},
+  {logo:"🎓",org:"Premier University, Chittagong",role:"Lecturer in CSE · Feb 2006 – Sep 2007",desc:"Conducted CS & Business lectures and mentored undergraduate thesis and projects.",tags:["Teaching","Academia"],points:["Conducted CS & Business lectures, labs and mentored undergraduate thesis and projects."]}
 ];
 
 const SKILLS = {
@@ -1639,24 +1637,15 @@ function pageAbout(){
 }
 
 function pageExperience(){
-  const expCards = EXPERIENCES.map((e,i)=>`
+  const expCards = `<div class="exp-list">`+EXPERIENCES.map((e)=>`
     <div class="exp-card">
-      <button class="exp-header" onclick="toggleExp(${i})">
-        <div style="flex:1">
-          <div class="exp-role">${e.role}</div>
-          <div class="exp-org">${e.org}</div>
-          <div class="chip-row">${chips(e.tags)}</div>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
-          <span class="exp-period">${e.period}</span>
-          <span class="exp-arrow" id="arr${i}">⌄</span>
-        </div>
-      </button>
-      <div class="exp-body" id="expb${i}">
-        <ul>${e.points.map(p=>`<li>${p}</li>`).join('')}</ul>
-        ${e.url?`<a href="${e.url}" target="_blank" class="exp-link">Visit →</a>`:''}
+      <div class="exp-logo">${e.logo}</div>
+      <div class="exp-content">
+        <div class="exp-org">${e.org}</div>
+        <div class="exp-role">${e.role}</div>
+        ${e.desc?`<div class="exp-desc">${e.desc}</div>`:''}
       </div>
-    </div>`).join('');
+    </div>`).join('')+`</div>`;
 
   const skillSections = Object.entries(SKILLS).map(([cat,items])=>`
     <div style="margin-bottom:16px">
@@ -1667,7 +1656,7 @@ function pageExperience(){
   return `
     <h2 class="section-title">Experience</h2>
     <p class="section-sub">19+ years across Telco, AI, SaaS & Digital Transformation</p>
-    ${expCards}
+    <div class="card" style="padding:8px 24px">${expCards}</div>
     <div class="sub-label"><h3>Competence</h3><div class="sub-label-line"></div></div>
     ${skillSections}
     <div class="sub-label"><h3>Education</h3><div class="sub-label-line"></div></div>
