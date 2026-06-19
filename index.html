@@ -1306,7 +1306,11 @@ const NAV = [
   {text:"AI Inference",id:"ai-inference"},
   {text:"Events",id:"events"},
   {text:"Research",id:"research"},
-  {text:"News",id:"news"}
+  {text:"News",id:"news"},
+  {text:"Contact",id:"contact",dropdown:[
+    {text:"Partner / Build Together",id:"contact-partner"},
+    {text:"Affiliation",id:"contact-affiliation"}
+  ]}
 ];
 
 const STATS = [
@@ -2016,6 +2020,168 @@ function pageContact(){
     <div class="contact-grid">${contacts}</div>
     <div class="sub-label"><h3>Product Links</h3><div class="sub-label-line"></div></div>
     <div style="display:flex;flex-wrap:wrap;gap:4px">${links}</div>`;
+}
+
+function pagePartner(){
+  return `
+<h2 class="section-title">Partner / Build Together</h2>
+<p class="section-sub">Co-create AI-powered flows and micro-applications with us — your expertise, our platform.</p>
+
+<!-- HERO BANNER -->
+<div style="background:linear-gradient(135deg,#0d1a2e 0%,#1a3a5c 60%,#0e4d92 100%);border-radius:20px;padding:48px 40px;margin-bottom:32px;position:relative;overflow:hidden">
+  <div style="position:absolute;top:-40px;right:-40px;width:220px;height:220px;background:rgba(255,255,255,0.04);border-radius:50%"></div>
+  <div style="position:absolute;bottom:-60px;left:-20px;width:160px;height:160px;background:rgba(255,255,255,0.03);border-radius:50%"></div>
+  <div style="position:relative;z-index:1">
+    <div style="display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:700;color:#7ecfff;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px">Build Together Model</div>
+    <h3 style="font-size:clamp(22px,4vw,34px);font-weight:900;color:#fff;letter-spacing:-0.03em;margin:0 0 14px;line-height:1.15">Launch Your Own AI-Augmented Flow — With Us</h3>
+    <p style="color:rgba(255,255,255,0.72);font-size:15px;line-height:1.7;max-width:560px;margin:0 0 24px">Whether you want to deliver AI-guided learning programs or launch no-code micro-applications for your audience, our Build Together model gives you the platform, infrastructure, and co-creation support to go live fast.</p>
+    <button onclick="document.getElementById('partner-form').scrollIntoView({behavior:'smooth'})" style="background:#fff;color:#0d1a2e;border:none;border-radius:10px;padding:13px 28px;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:-0.02em">Apply to Partner →</button>
+  </div>
+</div>
+
+<!-- TWO FLOW TYPES -->
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-bottom:32px">
+
+  <!-- Learning Flow -->
+  <div style="background:var(--paper-2);border-radius:16px;padding:32px;border:1px solid rgba(0,0,0,0.06)">
+    <div style="font-size:32px;margin-bottom:14px">🎓</div>
+    <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#0e4d92;margin-bottom:8px">Flow Type 01</div>
+    <h3 style="font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-0.02em;margin:0 0 10px">Learning Flow</h3>
+    <p style="color:var(--muted);font-size:14px;line-height:1.65;margin:0 0 20px">Build AI-augmented learning journeys on any topic. Learners progress step-by-step through structured content — with AI tracking, marking and guiding them in real time.</p>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      ${['📹 Video & content delivery','📝 AI-generated assessments & exams','🤖 AI Avatar instructor','💬 AI Consulting Manager','📊 Real-time progress tracking & marking','🏆 Instant certifications'].map(f=>`<div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink)"><span style="color:#27a76a;font-weight:700">✓</span>${f}</div>`).join('')}
+    </div>
+  </div>
+
+  <!-- Application Flow -->
+  <div style="background:var(--paper-2);border-radius:16px;padding:32px;border:1px solid rgba(0,0,0,0.06)">
+    <div style="font-size:32px;margin-bottom:14px">⚡</div>
+    <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#7c3aed;margin-bottom:8px">Flow Type 02</div>
+    <h3 style="font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-0.02em;margin:0 0 10px">Application Flow</h3>
+    <p style="color:var(--muted);font-size:14px;line-height:1.65;margin:0 0 20px">Rather than learning, focus on outcomes. Deploy no-code micro-applications your users can run directly — calculators, generators, analysers, and more.</p>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      ${['📊 ROI & Ad calculators','📄 CV / Resume maker','📈 Report analytics engine','🛒 Procurement & sales tools','🚚 Supply & marketing automation','🔧 Custom micro-systems per use case'].map(f=>`<div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink)"><span style="color:#27a76a;font-weight:700">✓</span>${f}</div>`).join('')}
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div style="margin-bottom:32px">
+  <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:18px">How it works</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+    ${[
+      {step:'01',title:'Apply',desc:'Submit your idea and domain — we review fit within 48 hours.'},
+      {step:'02',title:'Co-Design',desc:'We map the flow together: content, tools, user journey and AI integrations.'},
+      {step:'03',title:'Build',desc:'Our team builds the platform layer; you supply the expertise and content.'},
+      {step:'04',title:'Launch',desc:'Go live under your brand on our infrastructure — fully AI-augmented.'}
+    ].map(s=>`
+    <div style="background:var(--paper-2);border-radius:12px;padding:22px;border:1px solid rgba(0,0,0,0.05)">
+      <div style="font-size:28px;font-weight:900;color:rgba(14,77,146,0.15);letter-spacing:-0.04em;margin-bottom:8px">${s.step}</div>
+      <div style="font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px">${s.title}</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.6">${s.desc}</div>
+    </div>`).join('')}
+  </div>
+</div>
+
+<!-- CONTACT FORM -->
+<div id="partner-form" style="background:var(--paper-2);border-radius:16px;padding:36px;border:1px solid rgba(0,0,0,0.06)">
+  <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#0e4d92;margin-bottom:10px">Apply to Partner</div>
+  <h3 style="font-size:20px;font-weight:800;color:var(--ink);margin:0 0 6px">Let's Build Together</h3>
+  <p style="color:var(--muted);font-size:14px;margin:0 0 24px">Fill in the form below and we'll get back to you within 48 hours.</p>
+  <form id="partnerForm" onsubmit="submitPartnerForm(event)" style="display:flex;flex-direction:column;gap:14px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <input name="name" placeholder="Your Name *" required style="padding:12px 16px;border-radius:10px;border:1.5px solid rgba(0,0,0,0.1);font-size:14px;font-family:var(--sans);background:var(--paper);color:var(--ink);outline:none">
+      <input name="org" placeholder="Organisation" style="padding:12px 16px;border-radius:10px;border:1.5px solid rgba(0,0,0,0.1);font-size:14px;font-family:var(--sans);background:var(--paper);color:var(--ink);outline:none">
+    </div>
+    <input name="email" type="email" placeholder="Email Address *" required style="padding:12px 16px;border-radius:10px;border:1.5px solid rgba(0,0,0,0.1);font-size:14px;font-family:var(--sans);background:var(--paper);color:var(--ink);outline:none">
+    <input name="phone" placeholder="Phone / WhatsApp" style="padding:12px 16px;border-radius:10px;border:1.5px solid rgba(0,0,0,0.1);font-size:14px;font-family:var(--sans);background:var(--paper);color:var(--ink);outline:none">
+    <select name="flowType" style="padding:12px 16px;border-radius:10px;border:1.5px solid rgba(0,0,0,0.1);font-size:14px;font-family:var(--sans);background:var(--paper);color:var(--ink);outline:none">
+      <option value="">Flow Type — select one</option>
+      <option>Learning Flow</option>
+      <option>Application Flow</option>
+      <option>Both / Not sure yet</option>
+    </select>
+    <textarea name="idea" placeholder="Brief description of your idea / domain *" required rows="4" style="padding:12px 16px;border-radius:10px;border:1.5px solid rgba(0,0,0,0.1);font-size:14px;font-family:var(--sans);background:var(--paper);color:var(--ink);outline:none;resize:vertical"></textarea>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+      <button type="submit" style="background:#0d1a2e;color:#fff;border:none;border-radius:10px;padding:13px 28px;font-size:14px;font-weight:700;cursor:pointer">Send Application ✉️</button>
+      <a href="https://wa.me/8801833180420?text=Hi%20Hadi%2C%20I'm%20interested%20in%20the%20Build%20Together%20partnership." target="_blank" style="background:#25d366;color:#fff;text-decoration:none;border-radius:10px;padding:13px 22px;font-size:14px;font-weight:700">💬 WhatsApp</a>
+    </div>
+    <div id="partnerFormMsg" style="display:none;padding:12px 16px;border-radius:10px;font-size:14px;font-weight:600"></div>
+  </form>
+</div>`;
+}
+
+function pageAffiliation(){
+  return `
+<h2 class="section-title">Affiliation Program</h2>
+<p class="section-sub">Refer clients to us and earn lifetime revenue share — while staying engaged to grow together.</p>
+
+<!-- HERO -->
+<div style="background:linear-gradient(135deg,#1a0533 0%,#3b1066 60%,#6d28d9 100%);border-radius:20px;padding:48px 40px;margin-bottom:32px;position:relative;overflow:hidden">
+  <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:rgba(255,255,255,0.05);border-radius:50%"></div>
+  <div style="position:relative;z-index:1">
+    <div style="display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:700;color:#c4b5fd;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px">Referral & Affiliation</div>
+    <h3 style="font-size:clamp(22px,4vw,34px);font-weight:900;color:#fff;letter-spacing:-0.03em;margin:0 0 14px;line-height:1.15">Earn 10% Lifetime Revenue Share on Every Client You Bring</h3>
+    <p style="color:rgba(255,255,255,0.72);font-size:15px;line-height:1.7;max-width:560px;margin:0 0 24px">Refer any person or organisation to us. For every client you bring — individual or corporate — you earn 10% of the lifetime revenue they generate, as long as you remain actively engaged with that client relationship.</p>
+    <button onclick="document.getElementById('affiliation-form').scrollIntoView({behavior:'smooth'})" style="background:#fff;color:#3b1066;border:none;border-radius:10px;padding:13px 28px;font-size:14px;font-weight:700;cursor:pointer">Become an Affiliate →</button>
+  </div>
+</div>
+
+<!-- EARNING TIERS -->
+<div style="margin-bottom:32px">
+  <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:18px">Earning Criteria</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+    ${[
+      {icon:'🔗',tier:'Tier 1 — Referral Only',earn:'Year 1 Revenue Share',pct:'10%',desc:'Refer a client and stay minimally connected. Earn 10% of their first-year revenue with us.'},
+      {icon:'🤝',tier:'Tier 2 — Active Collaboration',earn:'Lifetime Revenue Share',pct:'10%',desc:'Maintain an active collaborative relationship with the client throughout. Earn 10% of their lifetime revenue with us — no cap.'},
+      {icon:'🚀',tier:'Tier 3 — Deep Integration',earn:'Lifetime + Bonus',pct:'10%+',desc:'Co-deliver services alongside our team. Lifetime 10% share plus performance bonuses based on outcomes achieved.'}
+    ].map(t=>`
+    <div style="background:var(--paper-2);border-radius:14px;padding:26px;border:1px solid rgba(0,0,0,0.06)">
+      <div style="font-size:28px;margin-bottom:12px">${t.icon}</div>
+      <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#7c3aed;margin-bottom:6px">${t.tier}</div>
+      <div style="font-size:30px;font-weight:900;color:var(--ink);letter-spacing:-0.04em;margin-bottom:4px">${t.pct}</div>
+      <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:10px">${t.earn}</div>
+      <p style="font-size:13px;color:var(--muted);line-height:1.65;margin:0">${t.desc}</p>
+    </div>`).join('')}
+  </div>
+</div>
+
+<!-- WHO CAN JOIN -->
+<div style="background:var(--paper-2);border-radius:16px;padding:28px;margin-bottom:32px;border:1px solid rgba(0,0,0,0.06)">
+  <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:14px">Who can join?</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+    ${['Individual consultants & advisors','Marketing & business agencies','Training & education providers','Tech companies & system integrators','Corporate alumni networks','Community builders & influencers'].map(w=>`
+    <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink)"><span style="color:#7c3aed;font-weight:700">✓</span>${w}</div>`).join('')}
+  </div>
+</div>
+
+<!-- FORM -->
+<div id="affiliation-form" style="background:var(--paper-2);border-radius:16px;padding:36px;border:1px solid rgba(0,0,0,0.06)">
+  <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#7c3aed;margin-bottom:10px">Join the Program</div>
+  <h3 style="font-size:20px;font-weight:800;color:var(--ink);margin:0 0 6px">Become an Affiliate</h3>
+  <p style="color:var(--muted);font-size:14px;margin:0 0 24px">Submit the form and we'll reach out within 48 hours with your affiliate agreement.</p>
+  <form id="affiliationForm" onsubmit="submitAffiliationForm(event)" style="display:flex;flex-direction:column;gap:14px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <input name="name" placeholder="Your Name *" required style="padding:12px 16px;border-radius:10px;border:1.5px solid rgba(0,0,0,0.1);font-size:14px;font-family:var(--sans);background:var(--paper);color:var(--ink);outline:none">
+      <input name="org" placeholder="Organisation (if any)" style="padding:12px 16px;border-radius:10px;border:1.5px solid rgba(0,0,0,0.1);font-size:14px;font-family:var(--sans);background:var(--paper);color:var(--ink);outline:none">
+    </div>
+    <input name="email" type="email" placeholder="Email Address *" required style="padding:12px 16px;border-radius:10px;border:1.5px solid rgba(0,0,0,0.1);font-size:14px;font-family:var(--sans);background:var(--paper);color:var(--ink);outline:none">
+    <input name="phone" placeholder="Phone / WhatsApp" style="padding:12px 16px;border-radius:10px;border:1.5px solid rgba(0,0,0,0.1);font-size:14px;font-family:var(--sans);background:var(--paper);color:var(--ink);outline:none">
+    <select name="tier" style="padding:12px 16px;border-radius:10px;border:1.5px solid rgba(0,0,0,0.1);font-size:14px;font-family:var(--sans);background:var(--paper);color:var(--ink);outline:none">
+      <option value="">Preferred Tier — select one</option>
+      <option>Tier 1 — Referral Only (Year 1 share)</option>
+      <option>Tier 2 — Active Collaboration (Lifetime share)</option>
+      <option>Tier 3 — Deep Integration (Lifetime + Bonus)</option>
+      <option>Not sure yet — let's discuss</option>
+    </select>
+    <textarea name="network" placeholder="Briefly describe your network / how you plan to refer clients *" required rows="3" style="padding:12px 16px;border-radius:10px;border:1.5px solid rgba(0,0,0,0.1);font-size:14px;font-family:var(--sans);background:var(--paper);color:var(--ink);outline:none;resize:vertical"></textarea>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+      <button type="submit" style="background:#3b1066;color:#fff;border:none;border-radius:10px;padding:13px 28px;font-size:14px;font-weight:700;cursor:pointer">Send Application ✉️</button>
+      <a href="https://wa.me/8801833180420?text=Hi%20Hadi%2C%20I'm%20interested%20in%20joining%20the%20Affiliation%20Program." target="_blank" style="background:#25d366;color:#fff;text-decoration:none;border-radius:10px;padding:13px 22px;font-size:14px;font-weight:700">💬 WhatsApp</a>
+    </div>
+    <div id="affiliationFormMsg" style="display:none;padding:12px 16px;border-radius:10px;font-size:14px;font-weight:600"></div>
+  </form>
+</div>`;
 }
 
 function pageAIPA(){
@@ -3670,6 +3836,8 @@ const PAGES = {
   certifications: pageCertifications,
   recognition: pageRecognition,
   contact: pageContact,
+  'contact-partner': pagePartner,
+  'contact-affiliation': pageAffiliation,
   futuremind: pageFutureMind,
   news: pageNews
 };
@@ -3689,6 +3857,8 @@ const PAGE_META = {
   recognition:{t:"Recognition — Hadi Bhuiyan",d:"Awards and recognition including the BASIS National ICT Award and Retail Digital Innovation Award."},
   experience:{t:"Experience — Hadi Bhuiyan",d:"20+ years across Nokia Siemens Networks, Huawei, Robi Axiata, Premier University, CommEngine and BuildNation."},
   contact:{t:"Contact — Hadi Bhuiyan",d:"Get in touch with Hadi Bhuiyan — email, phone, WhatsApp and LinkedIn."},
+  'contact-partner':{t:"Partner / Build Together — Hadi Bhuiyan",d:"Co-create AI-augmented learning flows and no-code micro-applications with us under the Build Together model."},
+  'contact-affiliation':{t:"Affiliation Program — Hadi Bhuiyan",d:"Refer clients and earn 10% lifetime revenue share. Join our affiliation program and grow together."},
   news:{t:"News & Press — Hadi Bhuiyan",d:"Press coverage from Channel 24, Daily Observer, The Financial Express and The Independent."},
   futuremind:{t:"FutureMind.Ltd — AI Solution & Product Company",d:"FutureMind builds AI two ways: SaaS products (EasyFlow, Madevo) from $29/mo and custom private solutions (AI Inference, EasyDO Launchpad)."}
 };
@@ -3858,6 +4028,34 @@ function switchAIPAContent(program){
   const initialPage = PAGES[pageFromURL] ? pageFromURL : 'about';
   showPage(initialPage, false);
 })();
+
+function submitPartnerForm(e){
+  e.preventDefault();
+  const f = e.target;
+  const d = Object.fromEntries(new FormData(f));
+  const body = `Partner Application%0A%0AName: ${d.name}%0AOrg: ${d.org||'—'}%0AEmail: ${d.email}%0APhone: ${d.phone||'—'}%0AFlow Type: ${d.flowType||'—'}%0AIdea: ${d.idea}`;
+  const msg = document.getElementById('partnerFormMsg');
+  window.open(`mailto:bhuiyan.hadi@gmail.com?subject=Partner%20Application%20—%20Build%20Together&body=${body}`,'_blank');
+  msg.style.display='block';
+  msg.style.background='#e6f9ee';
+  msg.style.color='#166534';
+  msg.textContent='✓ Email client opened. Also feel free to reach us via WhatsApp.';
+  f.reset();
+}
+
+function submitAffiliationForm(e){
+  e.preventDefault();
+  const f = e.target;
+  const d = Object.fromEntries(new FormData(f));
+  const body = `Affiliation Application%0A%0AName: ${d.name}%0AOrg: ${d.org||'—'}%0AEmail: ${d.email}%0APhone: ${d.phone||'—'}%0ATier: ${d.tier||'—'}%0ANetwork: ${d.network}`;
+  const msg = document.getElementById('affiliationFormMsg');
+  window.open(`mailto:bhuiyan.hadi@gmail.com?subject=Affiliation%20Program%20Application&body=${body}`,'_blank');
+  msg.style.display='block';
+  msg.style.background='#f3e8ff';
+  msg.style.color='#4c1d95';
+  msg.textContent='✓ Email client opened. Also feel free to reach us via WhatsApp.';
+  f.reset();
+}
 </script>
 <style>
 #wa-chat-bar{position:fixed;bottom:24px;right:20px;z-index:9999;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;border-radius:999px;padding:10px 18px 10px 14px;box-shadow:0 4px 18px rgba(37,211,102,0.38);text-decoration:none;font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:-0.01em;transition:transform .2s ease,box-shadow .2s ease}
