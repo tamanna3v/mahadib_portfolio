@@ -81,7 +81,7 @@
         {
           "@type": "Question",
           "name": "What programs are in the BuildNation AI Accelerator suite?",
-          "acceptedAnswer": {"@type": "Answer", "text": "The suite has three programs plus a technical add-on: AISA (AI Strategy Accelerator) — a 2-day program for CXOs and senior leadership; AIPA (AI Proficiency Accelerator) — a 5-month hands-on program for the entire workforce; AITA (AI Transformation Accelerator) — goal-based 1-month sprints with up to 8 goals per year; and the AI Product Bootcamp for IT and engineering teams."}
+          "acceptedAnswer": {"@type": "Answer", "text": "The suite has three programs: AISA (AI Strategy Accelerator) — a 2-day program for CXOs and senior leadership; AIPA (AI Proficiency Accelerator) — a 5-month hands-on program for the entire workforce; and AITA (AI Transformation Accelerator) — goal-based 1-month sprints with up to 8 goals per year."}
         },
         {
           "@type": "Question",
@@ -557,8 +557,9 @@ nav{
 
 /* PROGRAM MENU */
 .prog-menu{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:30px}
-.prog-menu-card{border-radius:var(--radius-lg);padding:28px 24px;position:relative;overflow:hidden;border:none;cursor:default;transition:transform .25s ease}
+.prog-menu-card{border-radius:var(--radius-lg);padding:28px 24px;position:relative;overflow:hidden;border:none;cursor:default;transition:transform .25s ease,box-shadow .25s ease;outline:2px solid transparent;outline-offset:2px}
 .prog-menu-card:hover{transform:translateY(-2px)}
+.prog-menu-card-active{outline-color:var(--ink);box-shadow:0 6px 22px rgba(0,0,0,0.12)}
 .prog-menu-card-01{background:var(--paper-2)}
 .prog-menu-card-02{background:#fff5e6}
 .prog-menu-card-03{background:#ffe9e5}
@@ -2246,12 +2247,12 @@ function pageAIPA(){
     <div class="prog-menu-name">AI Transformation Accelerator</div>
     <div class="prog-menu-for">1 Month / Goal · Up to 8 Goals/yr · Workshop</div>
   </button>
-  <button class="prog-menu-card prog-menu-card-04" onclick="switchAIPAContent('bootcamp')" style="cursor:pointer;border:none;background:none">
+  <button class="prog-menu-card prog-menu-card-04" onclick="switchAIPAContent('curriculum')" style="cursor:pointer;border:none;background:none">
     <div class="prog-menu-accent"></div>
-    <div class="prog-menu-num">Technical Add-On</div>
-    <div class="prog-menu-code" style="font-size:22px;line-height:1.2">AI Product<br>Bootcamp</div>
-    <div class="prog-menu-name">AI Product Bootcamp</div>
-    <div class="prog-menu-for">For IT &amp; Engineering Teams</div>
+    <div class="prog-menu-num">Curriculum</div>
+    <div class="prog-menu-code" style="font-size:22px;line-height:1.2">AIPA<br>Curriculum</div>
+    <div class="prog-menu-name">AIPA Curriculum</div>
+    <div class="prog-menu-for">Three Phases · Progressive Mastery · 12 Sessions</div>
   </button>
 </div>
 
@@ -2260,7 +2261,7 @@ function pageAIPA(){
   <div class="aipa-big-num" style="color:#1a1a1a">03</div>
   <span class="aipa-tag" style="color:#888">THE SUITE · THREE PROGRAMS, ONE COMPLETE JOURNEY</span>
   <div class="aipa-headline-lg">Three Programs.<br>One Complete Journey.</div>
-  <p class="aipa-body" style="color:#555;margin-bottom:20px">A comprehensive four-program curriculum — strategy first, proficiency second, transformation third.</p>
+  <p class="aipa-body" style="color:#555;margin-bottom:20px">A comprehensive three-program curriculum — strategy first, proficiency second, transformation third.</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px">
     <div style="background:#eef3ff;border:1.5px solid #c8d8ff;border-radius:18px;padding:24px 20px;position:relative;overflow:hidden">
       <div style="width:32px;height:4px;border-radius:3px;background:#4a72d4;margin-bottom:14px"></div>
@@ -2285,14 +2286,6 @@ function pageAIPA(){
       <div style="font-size:13px;font-weight:800;color:#5a3000;margin-bottom:10px;line-height:1.4">AI Transformation Accelerator</div>
       <div style="font-size:12px;color:#a0682a;font-weight:600;line-height:1.45;margin-bottom:14px">Goal-Based Sprint · 1 Month / Goal</div>
       <div style="font-size:11px;color:#e08a2a;line-height:1.6">Four expert teams. Real organizational transformation. Up to 8 goals per year.</div>
-    </div>
-    <div style="background:#f3effd;border:1.5px solid #d5c6f8;border-radius:18px;padding:24px 20px;position:relative;overflow:hidden">
-      <div style="width:32px;height:4px;border-radius:3px;background:#7c4dca;margin-bottom:14px"></div>
-      <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#9b72d8;margin-bottom:6px">Technical Add-On</div>
-      <div style="font-size:18px;font-weight:900;letter-spacing:-0.3px;color:#0d2255;margin-bottom:4px;line-height:1.15">Product<br>Bootcamp</div>
-      <div style="font-size:13px;font-weight:800;color:#3a1a6e;margin-bottom:10px;line-height:1.4;margin-top:4px">Technical Product Bootcamp</div>
-      <div style="font-size:12px;color:#6840a8;font-weight:600;line-height:1.45;margin-bottom:14px">For IT &amp; Engineering Teams</div>
-      <div style="font-size:11px;color:#7c4dca;line-height:1.6">Private AI Workspace, Agentic workflows, Enterprise AI building.</div>
     </div>
   </div>
 </div>
@@ -2403,7 +2396,7 @@ function pageAIPA(){
 </div>
 
 <!-- SLIDE 7: CURRICULUM -->
-<div class="aipa-slide aipa-light" data-program="aipa">
+<div class="aipa-slide aipa-light" data-program="curriculum">
   <div class="aipa-big-num" style="color:#1a1a1a">04</div>
   <span class="aipa-tag" style="color:#888">AIPA CURRICULUM · PROGRESSIVE MASTERY</span>
   <div class="aipa-headline-lg">Three Phases.<br>Progressive Mastery.</div>
@@ -2511,44 +2504,6 @@ function pageAIPA(){
       <div style="font-size:10px;color:#888;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Per Goal</div>
     </div>
     <div style="font-size:13px;color:#555;font-weight:600;max-width:340px">Format: 1 in-person + 1 online session per week · Workshop, bootcamp, and consulting delivery.</div>
-  </div>
-</div>
-
-<!-- SLIDE 10: TECHNICAL BOOTCAMP -->
-<div class="aipa-slide aipa-accent" data-program="bootcamp">
-  <div class="aipa-big-num" style="color:#0a66c2">TC</div>
-  <span class="aipa-tag" style="color:#0a66c2">TECHNICAL EXTENSION · AI PRODUCT BOOTCAMP</span>
-  <div class="aipa-headline-lg" style="color:#0d1a2e">Technical<br>Product Bootcamp</div>
-  <p class="aipa-body" style="color:#3a5a7a;margin-bottom:20px">Available as an add-on, customized to your stack. IT &amp; Engineering team engagement is mandatory. Facilitated by BuildNation's technology team and partners — deep technical expertise delivered.</p>
-  <div class="aipa-tech-grid">
-    <div class="aipa-tech-card">
-      <div class="aipa-tech-icon">🔒</div>
-      <div class="aipa-tech-title">Private AI Workspace</div>
-      <p class="aipa-tech-desc">Deploy a secure, organization-owned AI workspace — tailored to your data, policies, and team structure.</p>
-    </div>
-    <div class="aipa-tech-card">
-      <div class="aipa-tech-icon">🤖</div>
-      <div class="aipa-tech-title">Agentic AI Workflow Building</div>
-      <p class="aipa-tech-desc">Design and deploy autonomous AI agents and multi-step workflow automations specific to your business processes.</p>
-    </div>
-    <div class="aipa-tech-card">
-      <div class="aipa-tech-icon">🏗️</div>
-      <div class="aipa-tech-title">Enterprise AI Building</div>
-      <p class="aipa-tech-desc">Build internal AI-powered applications — from dashboards to intelligent process tools that serve the organization.</p>
-    </div>
-    <div class="aipa-tech-card">
-      <div class="aipa-tech-icon">🛡️</div>
-      <div class="aipa-tech-title">Cybersecurity and Data Privacy</div>
-      <p class="aipa-tech-desc">Establish secure AI governance frameworks, data privacy protocols, and threat-aware deployment practices for enterprise AI systems.</p>
-    </div>
-    <div class="aipa-tech-card">
-      <div class="aipa-tech-icon">⚡</div>
-      <div class="aipa-tech-title">Workflow AI-Automation Builder Space</div>
-      <p class="aipa-tech-desc">A dedicated hands-on environment to design, prototype, and launch AI-powered workflow automations across business functions — no-code to pro-code.</p>
-    </div>
-  </div>
-  <div style="margin-top:16px;padding:12px 16px;background:rgba(10,102,194,0.08);border:1px solid #c8e0f9;border-radius:10px;font-size:13px;color:#3a5a7a;font-weight:600">
-    📌 On Request — Available as an add-on, customized to your stack.
   </div>
 </div>
 
@@ -3880,9 +3835,9 @@ let currentPage = 'about';
 const PAGE_META = {
   about:{t:"Hadi Bhuiyan — Digital · AI · SaaS",d:"Digital, AI, Enterprise & SaaS leader in Bangladesh. Co-Founder of CommEngine, EasyDO.ai, FutureMind & BuildNation. 20+ years experience."},
   products:{t:"Products — Hadi Bhuiyan",d:"SaaS & AI products built by Hadi Bhuiyan: CommEngine SocialCRM, EasyDO.ai, EasyFlow, Madevo and more."},
-  aipa:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA for leadership, AIPA 5-month workforce program, AITA transformation sprints, and the AI Product Bootcamp. 190+ executives trained."},
+  aipa:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA for leadership, AIPA 5-month workforce program, and AITA transformation sprints. 190+ executives trained."},
   'aipa-session-plan':{t:"AIPA Session Plan — BuildNation | Hadi Bhuiyan", d:"The AIPA Curriculum — 12 sessions across 4 parts. A progressive journey from AI foundations to enterprise-wide impact."},
-  programs:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA, AIPA, AITA and the AI Product Bootcamp. 190+ executives trained across 6+ corporates."},
+  programs:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA, AIPA and AITA. 190+ executives trained across 6+ corporates."},
   'ai-inference':{t:"Enterprise AI & CoWork Consultation — FutureMind AI Group",d:"A two-day Enterprise AI & CoWork Implementation Stack consultation: inference infrastructure, RAG, workflow sandboxing, no-code launcher and a scope-cost-roadmap document."},
   events:{t:"Events and News — Hadi Bhuiyan",d:"Events, milestones and news — key appearances, program launches, awards, social initiatives and press coverage, from Microsoft panels to the AI-PA corporate cohorts."},
   research:{t:"Research & Writings — Hadi Bhuiyan",d:"IEEE publications, national policy contributions (Blockchain, SME digitization, consumer protection) and academic reviewing."},
@@ -4007,6 +3962,11 @@ function switchAIPAContent(program){
     } else {
       slide.style.display = 'none';
     }
+  });
+  // highlight the active submenu card
+  document.querySelectorAll('.prog-menu-card').forEach(card => {
+    const onclick = card.getAttribute('onclick') || '';
+    card.classList.toggle('prog-menu-card-active', onclick.includes("'" + program + "'"));
   });
   window.scrollTo(0, 0);
 }
