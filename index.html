@@ -1334,7 +1334,8 @@ const NAV = [
   {text:"Hadi Bhuiyan",id:"about"},
   {text:"Products",id:"products"},
   {text:"AI Accelerator",id:"aipa",dropdown:[
-    {text:"AIPA Session Plan",id:"aipa-session-plan"}
+    {text:"AIPA Session Plan",id:"aipa-session-plan"},
+    {text:"Management AI-SA",id:"management-aisa"}
   ]},
   {text:"AI Inference",id:"ai-inference"},
   {text:"Events and News",id:"events"},
@@ -3811,6 +3812,110 @@ function pageAIPASessionPlan(){
 `;
 }
 
+function pageManagementAISA(){
+  const DAY = [
+    {t:"09:00",dur:"3 HRS",title:"Session 1",sub:"Strategic Framing",bg:"#1a1f2e",fg:"#fff"},
+    {t:"12:00",dur:"2 HRS",title:"Breakout",sub:"Opportunity Mapping",bg:"var(--paper-2)",fg:"var(--ink)"},
+    {t:"14:00",dur:"1 HR",title:"Lunch",sub:"Working Break",bg:"var(--paper)",fg:"var(--muted)"},
+    {t:"15:00",dur:"3 HRS",title:"Session 2",sub:"Formulation &amp; Roadmap",bg:"var(--accent)",fg:"#fff"},
+    {t:"18:00",dur:"1 HR",title:"Closing",sub:"Internal Wrap-Up",bg:"var(--paper-2)",fg:"var(--ink)"}
+  ];
+  const ROWS = [
+    {label:"Focus",s1:"Learn &amp; align — build a shared AI literacy baseline and surface opportunities across the Polar value chain.",s2:"Decide &amp; commit — prioritise initiatives and lock the roadmap."},
+    {label:"Primary Objective",s1:"Establish a shared AI vision and create initial alignment on Polar's AI ambition as an FMCG manufacturer and distributor.",s2:"Prioritise initiatives, consolidate a 24-month phased roadmap, and secure management endorsement of the base strategy."},
+    {label:"Key Sessions",s1:"Inauguration &amp; mindset assessment · Foundational AI training · Enterprise AI framing (Cornell CAIO) · Transformation Q&amp;A",s2:"Breakout playback &amp; ideas · AIPPM prioritisation · Strategy synthesis · Finalisation &amp; endorsement"},
+    {label:"Frameworks &amp; Tools",s1:"Cornell CAIO-based transformation framework; “Sourced vs. Owned” AI architecture.",s2:"AI Product Priority Matrix (AIPPM); 24-month phased roadmap (0–24 mo)."},
+    {label:"Duration",s1:"~3 hours session + 2 hrs breakout mapping",s2:"~3 hours session + 1 hr internal closing"},
+    {label:"Key Output",s1:"Shared AI baseline and an articulated AI ambition; mapped opportunity inputs from the breakout.",s2:"Endorsed base AI Strategy — ranked initiative portfolio, assigned owners &amp; sign-off."}
+  ];
+  const OUTCOMES = [
+    "A single, management-endorsed <strong>AI vision statement</strong> for Polar.",
+    "AI opportunities mapped across <strong>Polar's core operating and commercial functions</strong>.",
+    "A ranked, <strong>AIPPM-scored portfolio</strong> of AI initiatives ready for resource allocation.",
+    "A leadership-approved <strong>base AI Strategy</strong> with initiative owners and a decision register."
+  ];
+  return `
+<div class="aipa-slide aipa-ink" style="margin-bottom:18px">
+  <div class="aipa-tag">Client Engagement · BuildNation Limited</div>
+  <div class="aipa-headline-xl">Management<br><span style="color:#6ee7b7">AI-Strategy Accelerator</span></div>
+  <div class="aipa-body" style="color:#ccc;max-width:64ch">Dhaka Ice Cream Industries Limited · Polar Ice Cream · Senior Management Team</div>
+  <div class="aipa-body" style="color:#999;margin-top:6px">Facilitators: <strong style="color:#f5f5f7">Hadi Bhuiyan</strong> &amp; <strong style="color:#f5f5f7">Munaf Mojib Chowdhury</strong> | BuildNation Limited · July 2026</div>
+  <p class="aipa-body" style="color:#ccc;max-width:70ch;margin-top:18px">A condensed, single-day version of BuildNation's leadership working session for Polar's senior management. It combines strategic AI framing, a facilitated breakout on Polar's own value chain, and roadmap prioritisation into one 8-hour executive day, ending in a leadership-endorsed base AI strategy for the company.</p>
+</div>
+
+<!-- DAY AT A GLANCE -->
+<div class="aipa-slide aipa-light" style="margin-bottom:18px">
+  <span class="aipa-tag" style="color:#888">THE DAY AT A GLANCE</span>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px">
+    ${DAY.map(d=>`
+    <div style="background:${d.bg};color:${d.fg};border-radius:12px;padding:18px 16px">
+      <div style="font-size:11px;font-weight:600;opacity:0.75;letter-spacing:0.03em;margin-bottom:8px">${d.t} · ${d.dur}</div>
+      <div style="font-family:var(--sans);font-size:17px;font-weight:600;letter-spacing:-0.012em;margin-bottom:2px">${d.title}</div>
+      <div style="font-size:13px;opacity:0.8">${d.sub}</div>
+    </div>`).join('')}
+  </div>
+</div>
+
+<!-- SESSION COMPARISON TABLE -->
+<div class="aipa-slide aipa-light" style="margin-bottom:18px">
+  <span class="aipa-tag" style="color:#888">SESSION 1 vs SESSION 2</span>
+  <div class="aipa-headline-lg" style="font-size:32px">Strategic Framing<br>→ Formulation &amp; Roadmap</div>
+  <div style="overflow-x:auto">
+    <table style="width:100%;border-collapse:collapse;font-size:14px;min-width:640px">
+      <thead>
+        <tr style="border-bottom:2px solid var(--line-soft)">
+          <th style="text-align:left;padding:10px 14px;font-size:11px;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:-0.005em">AT A GLANCE</th>
+          <th style="text-align:left;padding:10px 14px;font-size:12px;font-weight:700;color:var(--ink);letter-spacing:-0.005em">SESSION 1 · Strategic Framing &amp; Awareness</th>
+          <th style="text-align:left;padding:10px 14px;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:-0.005em">SESSION 2 · Formulation &amp; Roadmap</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${ROWS.map(r=>`
+        <tr style="border-bottom:1px solid var(--line-soft)">
+          <td style="padding:12px 14px;white-space:nowrap;font-weight:600;color:var(--ink);vertical-align:top;font-size:13px">${r.label}</td>
+          <td style="padding:12px 14px;color:var(--ink-2);line-height:1.55;vertical-align:top">${r.s1}</td>
+          <td style="padding:12px 14px;color:var(--ink-2);line-height:1.55;vertical-align:top">${r.s2}</td>
+        </tr>`).join('')}
+      </tbody>
+    </table>
+  </div>
+  <div style="background:var(--paper-2);border-left:2px solid var(--accent);border-radius:var(--radius);padding:16px 20px;margin-top:18px;font-size:13px;color:var(--ink-2);line-height:1.6">
+    <strong style="color:var(--ink)">↳ Bridged by a 2-hour facilitated breakout</strong> — division heads map AI opportunities against Polar's own operations before Session 2 converts them into a ranked portfolio.
+  </div>
+</div>
+
+<!-- KEY OUTCOMES -->
+<div class="aipa-slide aipa-accent" style="margin-bottom:18px">
+  <span class="aipa-tag">KEY OUTCOMES BY END OF DAY</span>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:16px">
+    ${OUTCOMES.map(o=>`<div style="background:rgba(255,255,255,0.6);border-radius:var(--radius-lg);padding:20px 22px;font-size:14px;color:var(--ink-2);line-height:1.55">${o}</div>`).join('')}
+  </div>
+</div>
+
+<!-- FACILITATORS -->
+<div class="aipa-slide aipa-light">
+  <span class="aipa-tag" style="color:#888">FACILITATORS</span>
+  <div class="aipa-team-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+    <div class="aipa-team-card" style="background:var(--paper)">
+      <div class="aipa-team-avatar">HB</div>
+      <div class="aipa-team-name">Hadi Bhuiyan</div>
+      <div class="aipa-team-role">Co-Founder, CommEngine Limited (FutureMind AI) &amp; BuildNation Limited</div>
+      <div class="aipa-team-note">Ex-Faculty: Premier University &amp; CUET. Ex-Huawei, Nokia Siemens.<br><a href="https://mahadib.futuremind.ltd" style="color:var(--accent)">mahadib.futuremind.ltd</a></div>
+    </div>
+    <div class="aipa-team-card" style="background:var(--paper)">
+      <div class="aipa-team-avatar">MC</div>
+      <div class="aipa-team-name">Munaf Mojib Chowdhury</div>
+      <div class="aipa-team-role">Founder, Ekshathe Foundation · Head of Brand &amp; Communication, Axentec PLC</div>
+      <div class="aipa-team-note">Ex-Head of Meta Advertising Business in Bangladesh (official Meta ASP).<br><a href="https://linkedin.com/in/munafchowdhury" style="color:var(--accent)">linkedin.com/in/munafchowdhury</a></div>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--muted);margin-top:18px"><strong style="color:var(--ink)">Additional facilitators, if required:</strong> Muhtasim Jawaad, Head of Marketing, Foodi · Insan Arafat Jamil, Co-Founder, FactoryNext.</p>
+  <div class="aipa-divider"></div>
+  <p style="font-size:12px;color:var(--muted)">BuildNation Limited | www.buildnation.com.bd — Prepared exclusively for Dhaka Ice Cream Industries Limited (Polar) | July 2026</p>
+</div>
+`;
+}
+
 const PAGES = {
   about: pageAbout,
   experience: pageExperience,
@@ -3818,6 +3923,7 @@ const PAGES = {
   programs: pageAIPA,
   aipa: pageAIPA,
   'aipa-session-plan': pageAIPASessionPlan,
+  'management-aisa': pageManagementAISA,
   'ai-inference': pageAIInference,
   events: pageEvents,
   research: pageResearch,
@@ -3837,6 +3943,7 @@ const PAGE_META = {
   products:{t:"Products — Hadi Bhuiyan",d:"SaaS & AI products built by Hadi Bhuiyan: CommEngine SocialCRM, EasyDO.ai, EasyFlow, Madevo and more."},
   aipa:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA for leadership, AIPA 5-month workforce program, and AITA transformation sprints. 190+ executives trained."},
   'aipa-session-plan':{t:"AIPA Session Plan — BuildNation | Hadi Bhuiyan", d:"The AIPA Curriculum — 12 sessions across 4 parts. A progressive journey from AI foundations to enterprise-wide impact."},
+  'management-aisa':{t:"Management AI-Strategy Accelerator — BuildNation | Hadi Bhuiyan", d:"A condensed single-day AI Strategy Accelerator for Dhaka Ice Cream Industries Limited (Polar) senior management — strategic framing, breakout opportunity mapping, and a leadership-endorsed base AI strategy."},
   programs:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA, AIPA and AITA. 190+ executives trained across 6+ corporates."},
   'ai-inference':{t:"Enterprise AI & CoWork Consultation — FutureMind AI Group",d:"A two-day Enterprise AI & CoWork Implementation Stack consultation: inference infrastructure, RAG, workflow sandboxing, no-code launcher and a scope-cost-roadmap document."},
   events:{t:"Events and News — Hadi Bhuiyan",d:"Events, milestones and news — key appearances, program launches, awards, social initiatives and press coverage, from Microsoft panels to the AI-PA corporate cohorts."},
