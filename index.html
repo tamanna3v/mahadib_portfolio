@@ -606,6 +606,8 @@ nav{
 .prod-sel-btn[onclick*="commengine"].active{background:#ca8a04;color:#fff}
 .prod-sel-btn[onclick*="jachai"]{background:#fce7f3;color:#9d174d}
 .prod-sel-btn[onclick*="jachai"].active{background:#db2777;color:#fff}
+.prod-sel-btn[onclick*="swachho"]{background:#cffafe;color:#0e7490}
+.prod-sel-btn[onclick*="swachho"].active{background:#0891b2;color:#fff}
 
 /* PRODUCT EMBED PANEL */
 .prod-embed-panel{display:none;border-radius:var(--radius-xl);overflow:hidden;background:var(--paper-2);margin-bottom:28px}
@@ -1751,7 +1753,8 @@ function pageProducts(){
     {icon:"🏢",label:"SocialCRM & AI Profiling",val:"commengine.xyz",href:"http://www.commengine.xyz"},
     {icon:"🤖",label:"Private AI Workspace",val:"easydo.ai",href:"https://easydo.ai"},
     {icon:"🔐",label:"Product Authentication",val:"zachai.xyz",href:"https://www.zachai.xyz"},
-    {icon:"🌊",label:"AI Audience Engagement",val:"flow.easydo.ai",href:"https://flow.easydo.ai"}
+    {icon:"🌊",label:"AI Audience Engagement",val:"flow.easydo.ai",href:"https://flow.easydo.ai"},
+    {icon:"🧼",label:"Swachho — Covid-19 Response",val:"Retail Digital Innovation Award 2020",href:"http://bd.linkedin.com/in/mahadib/"}
   ].map(c=>`
     <a href="${c.href}" target="_blank" class="contact-card">
       <span class="contact-icon">${c.icon}</span>
@@ -1768,6 +1771,7 @@ function pageProducts(){
       <button class="prod-sel-btn" onclick="switchProduct('easydo')">🤖 EasyDo</button>
       <button class="prod-sel-btn" onclick="switchProduct('commengine')">🏢 CommEngine</button>
       <button class="prod-sel-btn" onclick="switchProduct('jachai')">🔐 Jachai</button>
+      <button class="prod-sel-btn" onclick="switchProduct('swachho')">🧼 Swachho</button>
     </div>
 
     <!-- EasyFlow embed -->
@@ -1845,6 +1849,29 @@ function pageProducts(){
         title="Jachai — Product Authentication"
         allowfullscreen
       ></iframe>
+    </div>
+
+    <!-- Swachho info panel -->
+    <div class="prod-embed-panel" id="prod-swachho">
+      <div class="prod-embed-header">
+        <div>
+          <div class="prod-embed-name">🧼 Swachho — Covid-19 Digital Response</div>
+          <div class="prod-embed-url">Call for Nation Initiative · 2020</div>
+        </div>
+        <div class="prod-embed-actions">
+          <a href="http://bd.linkedin.com/in/mahadib/" target="_blank" class="prod-embed-link">View on LinkedIn ↗</a>
+        </div>
+      </div>
+      <div style="padding:32px 28px;display:flex;flex-direction:column;gap:22px">
+        <div style="display:inline-flex;align-items:center;gap:8px;align-self:flex-start;background:#cffafe;color:#0e7490;font-size:12px;font-weight:800;letter-spacing:0.4px;text-transform:uppercase;padding:7px 14px;border-radius:999px">🏆 Retail Digital Innovation Award 2020</div>
+        <p style="font-size:16px;line-height:1.7;color:var(--ink-2);margin:0;max-width:640px">
+          <strong style="color:var(--ink)">Swachho</strong> was a nationwide Covid-19 digital solution launched under the <em>Call for Nation</em> initiative — combining technology with a public-health response during the pandemic. It earned the <strong>Retail Digital Innovation Award 2020</strong> for its impact in helping communities stay safe and informed across Bangladesh.
+        </p>
+        <div class="stat-grid" style="margin:0">
+          ${[{val:"2020",label:"Launched"},{val:"Nationwide",label:"Reach"},{val:"Award",label:"Recognized"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
+        </div>
+        <div class="chip-row">${['Covid-19','Social Impact','Digital Health','Public Response'].map(t=>`<span class="chip">#${t}</span>`).join('')}</div>
+      </div>
     </div>
 
     <!-- EasyFlow use cases -->
