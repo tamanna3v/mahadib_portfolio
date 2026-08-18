@@ -726,6 +726,25 @@ nav{
 .ieee-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;background:var(--paper);border:none;color:var(--accent);border-radius:999px;padding:8px 16px;font-weight:500;font-family:var(--sans);text-transform:none;letter-spacing:-0.005em}
 .ieee-btn:hover{text-decoration:none;background:var(--accent);color:#fff}
 
+/* CONSULTING */
+.cons-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.cons-card{margin-bottom:0;display:flex;flex-direction:column}
+.cons-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:4px}
+.cons-icon{flex:0 0 auto;width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;line-height:1}
+.cons-title{font-size:23px;margin:6px 0 4px}
+.cons-client{font-size:13px;font-weight:600;color:var(--ink);margin-top:12px;letter-spacing:-0.005em}
+.cons-abs{margin:14px 0 0}
+.cons-focus{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.cons-focus-item{display:flex;align-items:flex-start;gap:9px;font-size:14px;color:var(--ink-2);line-height:1.45}
+.cons-focus-dot{color:var(--accent-sage-ink);font-weight:700;flex:0 0 auto}
+.cons-clients{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.cons-cl-row{display:flex;align-items:center;gap:10px;background:var(--paper);border:none;border-radius:12px;padding:12px 14px;text-align:left;width:100%;font-family:var(--sans)}
+.cons-cl-name{font-size:14px;font-weight:600;color:var(--ink);letter-spacing:-0.005em;flex:1;line-height:1.35}
+.cons-cl-sector{font-size:12px;color:var(--muted);font-weight:500;white-space:nowrap}
+.cons-cl-link{cursor:pointer;transition:box-shadow .2s ease, transform .2s ease}
+.cons-cl-link:hover{box-shadow:var(--shadow);transform:translateY(-1px)}
+.cons-cl-arrow{color:var(--accent);font-weight:700;flex:0 0 auto}
+
 /* WRITING GRID */
 .writing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
 .writing-card{background:var(--paper-2);border:none;border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:10px;transition:box-shadow .25s ease, transform .25s ease}
@@ -1340,6 +1359,7 @@ const NAV = [
     {text:"Management AI-SA",id:"management-aisa"}
   ]},
   {text:"AI Inference",id:"ai-inference"},
+  {text:"Consulting",id:"consulting"},
   {text:"Events and News",id:"events"},
   {text:"Research",id:"research"},
   {text:"Contact",id:"contact",dropdown:[
@@ -1604,6 +1624,57 @@ const CERTIFICATIONS = [
   {code:"MS",title:"Microsoft for Startups Founders Fellow",issuer:"Microsoft",detail:"Founders Hub fellowship recognising AI startup ecosystem and enterprise B2B SaaS leadership.",year:"2022",bg:"var(--accent-butter)"},
   {code:"NSN",title:"NSN TAC II Certified",issuer:"Nokia Siemens Networks",detail:"Advanced technical assistance certification for Intelligent Network and BSS platforms.",bg:"var(--accent-rose)"},
   {code:"ServADM",title:"Service Administration",issuer:"Telecom Systems",detail:"Service provisioning and administration across charging, VAS and digital service platforms.",bg:"var(--accent-maroon-light)"}
+];
+
+const CONSULTING = [
+  {
+    icon:"🏦",
+    title:"UCB Digital Bank Licensing",
+    client:"United Commercial Bank PLC",
+    sector:"Financial Services · Digital Banking",
+    tag:"Digital Bank Establishment",
+    bg:"var(--accent-sky)",
+    ink:"var(--accent-sky-ink)",
+    desc:"Advisory support for the digital-bank licensing journey — shaping the business case, operating model and technology posture needed to stand up a compliant, digital-first banking entity.",
+    focus:["Licensing readiness & regulatory alignment","Digital operating-model design","Technology & platform strategy"]
+  },
+  {
+    icon:"🖥️",
+    title:"Four-Tier Data Center Consultancy",
+    client:"Tier-I → Tier-IV Feasibility",
+    sector:"Infrastructure · Data Center",
+    tag:"Tier-IV Feasibility",
+    bg:"var(--accent-sage)",
+    ink:"var(--accent-sage-ink)",
+    desc:"Feasibility and advisory work across a four-tier data-center strategy — from Tier-I through Tier-IV — covering capacity planning, resilience and the commercial case for sovereign-grade infrastructure.",
+    focus:["Tier-I to Tier-IV feasibility","Capacity, power & resilience planning","Commercial & investment modelling"]
+  },
+  {
+    icon:"🧭",
+    title:"AI Strategy & Roadmapping",
+    sector:"Cross-sector AI Advisory",
+    tag:"Multi-client engagement",
+    bg:"var(--accent-peach)",
+    ink:"var(--accent-peach-ink)",
+    desc:"Executive AI strategy and roadmapping engagements — helping leadership teams move from broad AI interest to a defensible, phased implementation roadmap grounded in real, sector-specific use cases.",
+    clients:[
+      {name:"Dhaka Bank PLC",sector:"Financial Services"},
+      {name:"Beximco Pharma",sector:"Pharmaceuticals"},
+      {name:"AI Strategy Accelerator — Dhaka Ice Cream Industries Limited",sector:"FMCG · Polar",link:"management-aisa"}
+    ]
+  },
+  {
+    icon:"📊",
+    title:"Organizational KPI & SLA Optimization",
+    sector:"Operational Excellence · Governance",
+    tag:"Performance & Governance",
+    bg:"var(--accent-lilac)",
+    ink:"var(--accent-lilac-ink)",
+    desc:"Optimization of organizational KPIs and service-level agreements — aligning performance metrics, accountability structures and SLA frameworks to strategic outcomes.",
+    clients:[
+      {name:"LafargeHolcim",sector:"Manufacturing · Building Materials"}
+    ]
+  }
 ];
 
 // ── HELPERS ─────────────────────────────────────────────
@@ -2011,6 +2082,51 @@ function pageResearch(){
         <a href="https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=bhuiyan+ICCIT" target="_blank" class="btn-dark">Search IEEE Xplore →</a>
       </div>
     </div>`;
+}
+
+function pageConsulting(){
+  const cards = CONSULTING.map(c=>{
+    const clientLine = c.client
+      ? `<div class="cons-client">${c.client}</div>`
+      : '';
+    const clientRows = c.clients ? `
+      <div class="cons-clients">
+        ${c.clients.map(cl=>{
+          const label = `<span class="cons-cl-name">${cl.name}</span><span class="cons-cl-sector">${cl.sector}</span>`;
+          return cl.link
+            ? `<button type="button" class="cons-cl-row cons-cl-link" onclick="showPage('${cl.link}')">${label}<span class="cons-cl-arrow">→</span></button>`
+            : `<div class="cons-cl-row">${label}</div>`;
+        }).join('')}
+      </div>` : '';
+    const focusRows = c.focus ? `
+      <div class="cons-focus">
+        ${c.focus.map(f=>`<div class="cons-focus-item"><span class="cons-focus-dot">✓</span>${f}</div>`).join('')}
+      </div>` : '';
+    return `
+      <div class="research-card cons-card">
+        <div class="cons-head">
+          <span class="cons-icon" style="background:${c.bg}">${c.icon}</span>
+          <div>
+            <div class="chip-row"><span class="chip" style="background:${c.bg};color:${c.ink}">${c.tag}</span></div>
+            <div class="research-title cons-title">${c.title}</div>
+            <div class="research-venue">${c.sector}</div>
+          </div>
+        </div>
+        ${clientLine}
+        <p class="research-abs cons-abs">${c.desc}</p>
+        ${focusRows}
+        ${clientRows}
+      </div>`;
+  }).join('');
+
+  return `
+    <h2 class="section-title">Consulting</h2>
+    <p class="section-sub">Advisory engagements across digital banking, data-center infrastructure, enterprise AI strategy and operational governance.</p>
+    <div class="stat-grid">
+      ${[{val:"4",label:"Engagement Tracks"},{val:"6+",label:"Client Organizations"},{val:"Tier-IV",label:"Data Center Scope"},{val:"Multi-sector",label:"Coverage"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
+    </div>
+    <div class="sub-label"><h3>Consulting Engagements</h3><div class="sub-label-line"></div></div>
+    <div class="cons-grid">${cards}</div>`;
 }
 
 function pageRecognition(){
@@ -3954,6 +4070,7 @@ const PAGES = {
   'ai-inference': pageAIInference,
   events: pageEvents,
   research: pageResearch,
+  consulting: pageConsulting,
   certifications: pageCertifications,
   recognition: pageRecognition,
   contact: pageContact,
@@ -3975,6 +4092,7 @@ const PAGE_META = {
   'ai-inference':{t:"Enterprise AI & CoWork Consultation — FutureMind AI Group",d:"A two-day Enterprise AI & CoWork Implementation Stack consultation: inference infrastructure, RAG, workflow sandboxing, no-code launcher and a scope-cost-roadmap document."},
   events:{t:"Events and News — Hadi Bhuiyan",d:"Events, milestones and news — key appearances, program launches, awards, social initiatives and press coverage, from Microsoft panels to the AI-PA corporate cohorts."},
   research:{t:"Research & Writings — Hadi Bhuiyan",d:"IEEE publications, national policy contributions (Blockchain, SME digitization, consumer protection) and academic reviewing."},
+  consulting:{t:"Consulting — Hadi Bhuiyan",d:"Advisory engagements across digital banking (UCB), Tier-IV data-center feasibility, enterprise AI strategy & roadmapping (Dhaka Bank, Beximco Pharma, Polar) and organizational KPI/SLA optimization (LafargeHolcim)."},
   certifications:{t:"Certifications — Hadi Bhuiyan",d:"PMP, ITIL v4, BABOK, CxO Conclave (IBA-DU), Microsoft for Startups Founders Fellow and more."},
   recognition:{t:"Recognition — Hadi Bhuiyan",d:"Awards and recognition including the BASIS National ICT Award and Retail Digital Innovation Award."},
   experience:{t:"Experience — Hadi Bhuiyan",d:"20+ years across Nokia Siemens Networks, Huawei, Robi Axiata, Premier University, CommEngine and BuildNation."},
