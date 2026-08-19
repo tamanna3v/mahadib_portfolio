@@ -1753,6 +1753,17 @@ const CONSULTING = [
     desc:"Innovation-design engagement for a Fourth Industrial Revolution surveillance application — tackling counterfeit certification (≈22% of products faked, static QR/barcodes forgeable) with a consumer-powered, AR-driven quality-control and metrology surveillance system. Delivered from the BSTI 4IR workshop, Dak Bhaban, Agargaon, Dhaka (21–22 Nov 2023).",
     focus:["AR + ML consumer-powered package surveillance","IoT metrology for weight & measurement verification","Blockchain-based certification & analytics decision engine"],
     doc:{href:"assets/bsti/bsti-4ir-surveillance-innovation-design.pdf",label:"View innovation-design deck ↗"}
+  },
+  {
+    icon:"👩‍🏫",
+    title:"AI for Teachers — TOP Program",
+    client:"United Nations Development Programme (UNDP)",
+    sector:"Education · Public Sector · Capacity Building",
+    tag:"AI in Education",
+    bg:"var(--accent-butter)",
+    ink:"var(--accent-butter-ink)",
+    desc:"Consulting engagement with UNDP designing AI for teachers — with a focus on high-school educators — as part of the TOP program. Shaping how classroom teachers adopt AI tools in their day-to-day practice, from lesson design to assessment, with capability building that fits real school contexts.",
+    focus:["AI-for-teaching design for high-school educators","Curriculum & capability building within the TOP program","Practical, classroom-ready AI adoption pathways"]
   }
 ];
 
@@ -2205,7 +2216,7 @@ function consultingSection(){
 
   return `
     <div class="stat-grid">
-      ${[{val:"5",label:"Engagement Tracks"},{val:"7+",label:"Client Organizations"},{val:"Tier-IV",label:"Data Center Scope"},{val:"Multi-sector",label:"Coverage"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
+      ${[{val:"6",label:"Engagement Tracks"},{val:"8+",label:"Client Organizations"},{val:"Tier-IV",label:"Data Center Scope"},{val:"Multi-sector",label:"Coverage"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
     </div>
     <div class="sub-label"><h3>Consulting Engagements</h3><div class="sub-label-line"></div></div>
     <div class="cons-grid">${cards}</div>`;
