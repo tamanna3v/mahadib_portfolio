@@ -744,6 +744,8 @@ nav{
 .cons-cl-link{cursor:pointer;transition:box-shadow .2s ease, transform .2s ease}
 .cons-cl-link:hover{box-shadow:var(--shadow);transform:translateY(-1px)}
 .cons-cl-arrow{color:var(--accent);font-weight:700;flex:0 0 auto}
+.cons-doc-link{margin-top:16px;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--accent);text-decoration:none;background:var(--paper);border-radius:10px;padding:9px 14px;letter-spacing:-0.005em;transition:box-shadow .2s ease, transform .2s ease}
+.cons-doc-link:hover{box-shadow:var(--shadow);transform:translateY(-1px)}
 
 /* WRITING GRID */
 .writing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
@@ -1739,6 +1741,18 @@ const CONSULTING = [
     clients:[
       {name:"LafargeHolcim",sector:"Manufacturing · Building Materials"}
     ]
+  },
+  {
+    icon:"🛰️",
+    title:"BSTI 4IR Surveillance Application",
+    client:"Bangladesh Standards & Testing Institution (BSTI)",
+    sector:"Public Sector · Standards & Metrology",
+    tag:"4IR Innovation Design",
+    bg:"var(--accent-sky)",
+    ink:"var(--accent-sky-ink)",
+    desc:"Innovation-design engagement for a Fourth Industrial Revolution surveillance application — tackling counterfeit certification (≈22% of products faked, static QR/barcodes forgeable) with a consumer-powered, AR-driven quality-control and metrology surveillance system. Delivered from the BSTI 4IR workshop, Dak Bhaban, Agargaon, Dhaka (21–22 Nov 2023).",
+    focus:["AR + ML consumer-powered package surveillance","IoT metrology for weight & measurement verification","Blockchain-based certification & analytics decision engine"],
+    doc:{href:"assets/bsti/bsti-4ir-surveillance-innovation-design.pdf",label:"View innovation-design deck ↗"}
   }
 ];
 
@@ -2169,6 +2183,8 @@ function consultingSection(){
       <div class="cons-focus">
         ${c.focus.map(f=>`<div class="cons-focus-item"><span class="cons-focus-dot">✓</span>${f}</div>`).join('')}
       </div>` : '';
+    const docRow = c.doc ? `
+      <a href="${c.doc.href}" target="_blank" rel="noopener" class="cons-doc-link">${c.doc.label}</a>` : '';
     return `
       <div class="research-card cons-card">
         <div class="cons-head">
@@ -2183,12 +2199,13 @@ function consultingSection(){
         <p class="research-abs cons-abs">${c.desc}</p>
         ${focusRows}
         ${clientRows}
+        ${docRow}
       </div>`;
   }).join('');
 
   return `
     <div class="stat-grid">
-      ${[{val:"4",label:"Engagement Tracks"},{val:"6+",label:"Client Organizations"},{val:"Tier-IV",label:"Data Center Scope"},{val:"Multi-sector",label:"Coverage"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
+      ${[{val:"5",label:"Engagement Tracks"},{val:"7+",label:"Client Organizations"},{val:"Tier-IV",label:"Data Center Scope"},{val:"Multi-sector",label:"Coverage"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
     </div>
     <div class="sub-label"><h3>Consulting Engagements</h3><div class="sub-label-line"></div></div>
     <div class="cons-grid">${cards}</div>`;
