@@ -1359,9 +1359,8 @@ const NAV = [
     {text:"Management AI-SA",id:"management-aisa"}
   ]},
   {text:"AI Inference",id:"ai-inference"},
-  {text:"Consulting",id:"consulting"},
+  {text:"Consulting & Research",id:"consulting-research"},
   {text:"Events and News",id:"events"},
-  {text:"Research",id:"research"},
   {text:"Contact",id:"contact",dropdown:[
     {text:"Partner / Build Together",id:"contact-partner"},
     {text:"Affiliation",id:"contact-affiliation"}
@@ -2035,7 +2034,7 @@ function rerenderEvents(filter){
   pg.innerHTML = pageEvents(filter);
 }
 
-function pageResearch(){
+function researchSection(){
   const papers = RESEARCH.map(r=>`
     <div class="research-card">
       ${r.featured?'<div class="research-featured">Featured</div>':''}
@@ -2063,8 +2062,6 @@ function pageResearch(){
     </div>`).join('');
 
   return `
-    <h2 class="section-title">Research & Writings</h2>
-    <p class="section-sub">IEEE publications, policy contributions, academic reviews &amp; writings</p>
     <div class="stat-grid">
       ${[{val:"3",label:"IEEE Papers"},{val:"3",label:"Policy Works"},{val:"6 yrs",label:"ICT4D Reviewer"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
     </div>
@@ -2082,7 +2079,14 @@ function pageResearch(){
     </div>`;
 }
 
-function pageConsulting(){
+function pageResearch(){
+  return `
+    <h2 class="section-title">Research & Writings</h2>
+    <p class="section-sub">IEEE publications, policy contributions, academic reviews &amp; writings</p>
+    ${researchSection()}`;
+}
+
+function consultingSection(){
   const cards = CONSULTING.map(c=>{
     const clientLine = c.client
       ? `<div class="cons-client">${c.client}</div>`
@@ -2118,13 +2122,28 @@ function pageConsulting(){
   }).join('');
 
   return `
-    <h2 class="section-title">Consulting</h2>
-    <p class="section-sub">Advisory engagements across digital banking, data-center infrastructure, enterprise AI strategy and operational governance.</p>
     <div class="stat-grid">
       ${[{val:"4",label:"Engagement Tracks"},{val:"6+",label:"Client Organizations"},{val:"Tier-IV",label:"Data Center Scope"},{val:"Multi-sector",label:"Coverage"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
     </div>
     <div class="sub-label"><h3>Consulting Engagements</h3><div class="sub-label-line"></div></div>
     <div class="cons-grid">${cards}</div>`;
+}
+
+function pageConsulting(){
+  return `
+    <h2 class="section-title">Consulting</h2>
+    <p class="section-sub">Advisory engagements across digital banking, data-center infrastructure, enterprise AI strategy and operational governance.</p>
+    ${consultingSection()}`;
+}
+
+function pageConsultingResearch(){
+  return `
+    <h2 class="section-title">Consulting &amp; Research</h2>
+    <p class="section-sub">Advisory engagements and academic contributions — digital banking, data-center feasibility, enterprise AI strategy, IEEE publications and national policy work.</p>
+    <div class="sub-label"><h3>💼 Consulting</h3><div class="sub-label-line"></div></div>
+    ${consultingSection()}
+    <div class="sub-label" style="margin-top:34px"><h3>📚 Research & Writings</h3><div class="sub-label-line"></div></div>
+    ${researchSection()}`;
 }
 
 function pageRecognition(){
@@ -4509,8 +4528,9 @@ const PAGES = {
   'management-aisa': pageManagementAISA,
   'ai-inference': pageAIInference,
   events: pageEvents,
-  research: pageResearch,
-  consulting: pageConsulting,
+  'consulting-research': pageConsultingResearch,
+  research: pageConsultingResearch,
+  consulting: pageConsultingResearch,
   certifications: pageCertifications,
   recognition: pageRecognition,
   contact: pageContact,
@@ -4531,6 +4551,7 @@ const PAGE_META = {
   programs:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA, AIPA and AITA. 190+ executives trained across 6+ corporates."},
   'ai-inference':{t:"Enterprise AI & CoWork Consultation — FutureMind AI Group",d:"A two-day Enterprise AI & CoWork Implementation Stack consultation: inference infrastructure, RAG, workflow sandboxing, no-code launcher and a scope-cost-roadmap document."},
   events:{t:"Events and News — Hadi Bhuiyan",d:"Events, milestones and news — key appearances, program launches, awards, social initiatives and press coverage, from Microsoft panels to the AI-PA corporate cohorts."},
+  'consulting-research':{t:"Consulting & Research — Hadi Bhuiyan",d:"Advisory engagements across digital banking (UCB), Tier-IV data-center feasibility, enterprise AI strategy & roadmapping (Dhaka Bank, Beximco Pharma, Polar), plus IEEE publications and national policy contributions (Blockchain, SME digitization, consumer protection)."},
   research:{t:"Research & Writings — Hadi Bhuiyan",d:"IEEE publications, national policy contributions (Blockchain, SME digitization, consumer protection) and academic reviewing."},
   consulting:{t:"Consulting — Hadi Bhuiyan",d:"Advisory engagements across digital banking (UCB), Tier-IV data-center feasibility, enterprise AI strategy & roadmapping (Dhaka Bank, Beximco Pharma, Polar) and organizational KPI/SLA optimization (LafargeHolcim)."},
   certifications:{t:"Certifications — Hadi Bhuiyan",d:"PMP, ITIL v4, BABOK, CxO Conclave (IBA-DU), Microsoft for Startups Founders Fellow and more."},
@@ -4560,6 +4581,8 @@ function applyPageMeta(id){
 }
 
 function showPage(id, updateHistory = true){
+  // Consulting & Research were merged into a single tab — normalize old links.
+  if(id === 'research' || id === 'consulting') id = 'consulting-research';
   currentPage = id;
   applyPageMeta(id);
   // render page
