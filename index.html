@@ -11,7 +11,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="profile"/>
 <meta property="og:title" content="Hadi Bhuiyan — Digital · AI · SaaS"/>
-<meta property="og:description" content="Digital, AI, Enterprise & SaaS leader. Co-Founder of CommEngine, EasyDO.ai, FutureMind & BuildNation. 20+ years experience. Lead facilitator of the AI Proficiency Accelerator (AIPA) — 190+ executives trained across 6+ corporates."/>
+<meta property="og:description" content="Digital, AI, Enterprise & SaaS leader. Co-Founder of CommEngine, EasyDO.ai, FutureMind & BuildNation. 20+ years experience. Lead facilitator of the AI Proficiency Accelerator (AIPA) — 256+ executives trained across 6+ corporates."/>
 <meta property="og:url" content="https://mahadib.futuremind.ltd"/>
 <meta property="og:site_name" content="Hadi Bhuiyan — Portfolio"/>
 <meta property="og:locale" content="en_US"/>
@@ -61,7 +61,7 @@
       "name": "AI Proficiency Accelerator (AIPA)",
       "url": "https://mahadib.futuremind.ltd/aipa",
       "provider": {"@type": "Organization", "name": "BuildNation Limited", "url": "https://buildnation.com.bd"},
-      "description": "A 5-month, 12-session corporate AI training program building hands-on capability from AI foundations to agentic automation. 190+ senior executives trained across 6+ organizations with up to 40% productivity gains.",
+      "description": "A 5-month, 12-session corporate AI training program building hands-on capability from AI foundations to agentic automation. 256+ senior executives trained across 6+ organizations with up to 40% productivity gains.",
       "areaServed": "Bangladesh",
       "serviceType": "Corporate AI Training"
     },
@@ -76,7 +76,7 @@
         {
           "@type": "Question",
           "name": "What is the AI Proficiency Accelerator (AIPA)?",
-          "acceptedAnswer": {"@type": "Answer", "text": "AIPA is a 5-month, 12-session corporate AI training program by BuildNation that builds hands-on AI capability from foundations to agentic automation. It has trained 190+ senior executives across 6+ corporate organizations in Bangladesh — including Ispahani, Beximco Pharma, Nuvista Pharma and Japan Solar — with participants achieving up to 40% productivity gains."}
+          "acceptedAnswer": {"@type": "Answer", "text": "AIPA is a 5-month, 12-session corporate AI training program by BuildNation that builds hands-on AI capability from foundations to agentic automation. It has trained 256+ senior executives across 6+ corporate organizations in Bangladesh — including Ispahani, Beximco Pharma, Nuvista Pharma and Japan Solar — with participants achieving up to 40% productivity gains."}
         },
         {
           "@type": "Question",
@@ -1423,9 +1423,9 @@ const NAV = [
     {text:"Management AI-SA",id:"management-aisa"}
   ]},
   {text:"AI Inference",id:"ai-inference"},
-  {text:"Consulting",id:"consulting"},
+  {text:"EasyFlow",id:"easyflow"},
+  {text:"Consulting & Research",id:"consulting-research"},
   {text:"Events and News",id:"events"},
-  {text:"Research",id:"research"},
   {text:"Contact",id:"contact",dropdown:[
     {text:"Partner / Build Together",id:"contact-partner"},
     {text:"Affiliation",id:"contact-affiliation"}
@@ -1455,7 +1455,7 @@ const BUILDING = [
 ];
 
 const EXPERIENCES = [
-  {logo:"🏗️",org:"BuildCon Consultancies & BuildNation Limited",role:"Consultant (CPO Capacity) · Aug 2022 – Present · Dhaka, Bangladesh",desc:"Led AI-Proficiency Accelerator (AIPA) for 190+ senior leaders across 6+ corporates. Built B2B LMS platform onboarding TAFE Australia, ACCA, CIMA, and AI-PA programs.",tags:["AI","Digital Transformation","Consulting"],points:["Led AI-Proficiency Accelerator for 190+ Corporate Senior Leadership participants across six corporate engagements.","Built a Blended Learning B2B LMS platform onboarding global programs (TAFE Australia, ACCA, CIMA, AI-PA).","Delivered consultancy for Tier-IV Data Center Feasibility and Digital Bank Establishment projects."],url:"https://buildnation.com.bd/aipa/",serviced:[
+  {logo:"🏗️",org:"BuildCon Consultancies & BuildNation Limited",role:"Consultant (CPO Capacity) · Aug 2022 – Present · Dhaka, Bangladesh",desc:"Led AI-Proficiency Accelerator (AIPA) for 256+ senior leaders across 6+ corporates. Built B2B LMS platform onboarding TAFE Australia, ACCA, CIMA, and AI-PA programs.",tags:["AI","Digital Transformation","Consulting"],points:["Led AI-Proficiency Accelerator for 256+ Corporate Senior Leadership participants across six corporate engagements.","Built a Blended Learning B2B LMS platform onboarding global programs (TAFE Australia, ACCA, CIMA, AI-PA).","Delivered consultancy for Tier-IV Data Center Feasibility and Digital Bank Establishment projects."],url:"https://buildnation.com.bd/aipa/",serviced:[
     {icon:"🚀",title:"AI Proficiency Accelerator",desc:"Led an AI Proficiency Accelerator across 9 organizations, training 240+ executives and delivering 100+ AI automations to accelerate enterprise AI adoption."},
     {icon:"🏦",title:"Advisory & Implementation",desc:"Led advisory and implementation for data center and AI tokenization, digital banking, and SLA/KPI management platforms for leading multinational organizations."},
     {icon:"🎓",title:"EdFinTech Platform",desc:"Built an EdFinTech platform through global and local partnerships, delivering blended learning and scalable skill-to-employment pathways."}
@@ -2099,7 +2099,7 @@ function rerenderEvents(filter){
   pg.innerHTML = pageEvents(filter);
 }
 
-function pageResearch(){
+function researchSection(){
   const papers = RESEARCH.map(r=>`
     <div class="research-card">
       ${r.featured?'<div class="research-featured">Featured</div>':''}
@@ -2127,8 +2127,6 @@ function pageResearch(){
     </div>`).join('');
 
   return `
-    <h2 class="section-title">Research & Writings</h2>
-    <p class="section-sub">IEEE publications, policy contributions, academic reviews &amp; writings</p>
     <div class="stat-grid">
       ${[{val:"3",label:"IEEE Papers"},{val:"3",label:"Policy Works"},{val:"6 yrs",label:"ICT4D Reviewer"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
     </div>
@@ -2146,7 +2144,14 @@ function pageResearch(){
     </div>`;
 }
 
-function pageConsulting(){
+function pageResearch(){
+  return `
+    <h2 class="section-title">Research & Writings</h2>
+    <p class="section-sub">IEEE publications, policy contributions, academic reviews &amp; writings</p>
+    ${researchSection()}`;
+}
+
+function consultingSection(){
   const cards = CONSULTING.map(c=>{
     const clientLine = c.client
       ? `<div class="cons-client">${c.client}</div>`
@@ -2182,13 +2187,28 @@ function pageConsulting(){
   }).join('');
 
   return `
-    <h2 class="section-title">Consulting</h2>
-    <p class="section-sub">Advisory engagements across digital banking, data-center infrastructure, enterprise AI strategy and operational governance.</p>
     <div class="stat-grid">
       ${[{val:"4",label:"Engagement Tracks"},{val:"6+",label:"Client Organizations"},{val:"Tier-IV",label:"Data Center Scope"},{val:"Multi-sector",label:"Coverage"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
     </div>
     <div class="sub-label"><h3>Consulting Engagements</h3><div class="sub-label-line"></div></div>
     <div class="cons-grid">${cards}</div>`;
+}
+
+function pageConsulting(){
+  return `
+    <h2 class="section-title">Consulting</h2>
+    <p class="section-sub">Advisory engagements across digital banking, data-center infrastructure, enterprise AI strategy and operational governance.</p>
+    ${consultingSection()}`;
+}
+
+function pageConsultingResearch(){
+  return `
+    <h2 class="section-title">Consulting &amp; Research</h2>
+    <p class="section-sub">Advisory engagements and academic contributions — digital banking, data-center feasibility, enterprise AI strategy, IEEE publications and national policy work.</p>
+    <div class="sub-label"><h3>💼 Consulting</h3><div class="sub-label-line"></div></div>
+    ${consultingSection()}
+    <div class="sub-label" style="margin-top:34px"><h3>📚 Research & Writings</h3><div class="sub-label-line"></div></div>
+    ${researchSection()}`;
 }
 
 function pageRecognition(){
@@ -4238,6 +4258,355 @@ function pageManagementAISA(){
 `;
 }
 
+function pageEasyFlow(){
+  return `
+<h2 class="section-title">EasyFlow</h2>
+<p class="section-sub">FUTUREMIND AI · AI-Guided Presentation, Training &amp; Assessment platform — the full pitch, slide by slide</p>
+
+<!-- ═══════════════ SLIDE 01 · TITLE ═══════════════ -->
+<div class="aipa-slide aipa-dark" data-program="all">
+  <div class="aipa-big-num">01</div>
+  <span class="aipa-tag">FUTUREMIND AI</span>
+  <div class="aipa-headline-xl">Scaling the Mind</div>
+  <p class="aipa-body aipa-body-dark" style="max-width:640px;margin-bottom:24px">Turn FutureMind into the platform that guides millions toward structured learning, literacy &amp; mastery.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:8px">
+    <a href="https://flow.easydo.ai/#join=565565" target="_blank" style="background:#1a1a1a;color:#fff;font-weight:800;font-size:14px;border-radius:12px;padding:12px 22px;text-decoration:none">Experience a Flow ↗</a>
+    <span style="font-size:13px;font-weight:700;opacity:0.7">flow.easydo.ai/#join=565565</span>
+  </div>
+  <div class="aipa-divider"></div>
+  <p style="font-size:12px;font-weight:800;letter-spacing:1px;opacity:0.55">FUTUREMIND.LTD · FLOW.EASYDO.AI · COMMENGINE LIMITED</p>
+</div>
+
+<!-- ═══════════════ SLIDE 02 · WHAT IT IS ═══════════════ -->
+<div class="aipa-slide aipa-accent" data-program="all">
+  <div class="aipa-big-num" style="color:#d9663f">02</div>
+  <span class="aipa-tag">→ AI-GUIDED PRESENTATION &amp; ASSESSMENT PLATFORM</span>
+  <div class="aipa-headline-lg">Transform your Presentation,<br>Training &amp; Recruitment</div>
+  <p class="aipa-body" style="color:#555;max-width:640px;margin-bottom:18px">With an <strong>AI-Agent</strong> as a journey — with Flow. EasyFlow turns your scattered slides, documents, sites, videos, polls, feedback, quizzes, submissions and brainstorms into <strong>one synchronized flow</strong>.</p>
+  <p class="aipa-body" style="color:#555;max-width:640px">Add a 1:1 conversational AI-Agent and a no-code AI app. Run a Live Training or a Self-Paced Course, an Assessment — anything you want.</p>
+</div>
+
+<!-- ═══════════════ SLIDE 03 · PROBLEMS → SOLUTION 3×3×3 ═══════════════ -->
+<div class="aipa-slide aipa-light" data-program="all">
+  <div class="aipa-big-num" style="color:#1a1a1a">03</div>
+  <span class="aipa-tag" style="color:#888">PROBLEMS → SOLUTION</span>
+  <div class="aipa-headline-lg">3 × 3 × 3</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:20px">
+    <div style="background:var(--accent-rose);border-radius:18px;padding:22px 20px">
+      <div style="font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--accent-rose-ink);margin-bottom:14px">Critical challenges in Corporate HR &amp; L&amp;D</div>
+      <div style="font-size:14px;color:#5a2420;line-height:1.7"><strong>01</strong> &lt;5% completion, no enforcement<br><strong>02</strong> Training ≠ measurable impact<br><strong>03</strong> Bulk recruitment is mammoth work</div>
+    </div>
+    <div style="background:var(--accent-sky);border-radius:18px;padding:22px 20px">
+      <div style="font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--accent-sky-ink);margin-bottom:14px">Critical challenges for Individual Trainers</div>
+      <div style="font-size:14px;color:#234050;line-height:1.7"><strong>01</strong> Everything is scattered<br><strong>02</strong> Content shared, value lost<br><strong>03</strong> Traditional content doesn't scale</div>
+    </div>
+    <div style="background:var(--accent-sage);border-radius:18px;padding:22px 20px">
+      <div style="font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--accent-sage-ink);margin-bottom:14px">Ways of solution by EasyFlow</div>
+      <div style="font-size:14px;color:#175233;line-height:1.7"><strong>01</strong> One connected flow<br><strong>02</strong> A 1:1 AI coach for every participant<br><strong>03</strong> No-code AI apps at scale</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ SLIDE 04 · PROBLEM 01 COMPLETION ═══════════════ -->
+<div class="aipa-slide aipa-light" data-program="all">
+  <div class="aipa-big-num" style="color:#1a1a1a">04</div>
+  <span class="aipa-tag" style="color:#888">THE PROBLEM 01 · COMPLETION &amp; ENFORCEMENT</span>
+  <div class="aipa-headline-lg">95 out of 100 never finish</div>
+  <p class="aipa-body" style="color:#555;max-width:620px;margin-bottom:22px">Assign a self-paced course to 100 employees — and the investment is wasted on 95 of them.</p>
+  <div class="aipa-kpi-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+    <div class="aipa-kpi-box"><div class="aipa-kpi-val" style="color:var(--accent)">&lt;5%</div><div class="aipa-kpi-lbl">complete an assigned self-paced course</div></div>
+    <div class="aipa-kpi-box"><div class="aipa-kpi-val">100</div><div class="aipa-kpi-lbl">employees assigned — the rest never open it</div></div>
+    <div class="aipa-kpi-box"><div class="aipa-kpi-val">∞</div><div class="aipa-kpi-lbl">Reminders, follow-ups, escalations — completion management stays manual, forever</div></div>
+  </div>
+  <div class="aipa-divider"></div>
+  <p style="font-size:13px;color:#777;line-height:1.6"><strong style="color:#333">Year-long mandatory journey</strong> — policies, conduct, compliance, self-paced: Onboard → Q1 → Q2 → Q3 → Q4. No way to enforce sequence or timing without extensive manual supervision — milestones go overdue quietly.</p>
+</div>
+
+<!-- ═══════════════ SLIDE 05 · PROBLEM 02 IMPACT ═══════════════ -->
+<div class="aipa-slide aipa-accent" data-program="all">
+  <div class="aipa-big-num" style="color:#d9663f">05</div>
+  <span class="aipa-tag">THE PROBLEM 02 · IMPACT MEASUREMENT</span>
+  <div class="aipa-headline-lg">HR can measure attendance.<br>Nothing after it.</div>
+  <p class="aipa-body" style="color:#555;max-width:620px;margin-bottom:22px">Training costs real time and coordination — but the part that matters stays invisible.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
+    <div style="background:var(--accent-sage);border-radius:16px;padding:20px 18px"><div style="font-size:17px;font-weight:900;color:var(--accent-sage-ink)">Attendance</div><div style="font-size:13px;color:#175233;margin-top:4px">✓ measured</div></div>
+    <div style="background:var(--paper);border-radius:16px;padding:20px 18px"><div style="font-size:17px;font-weight:900;color:#333">Attention</div><div style="font-size:13px;color:#999;margin-top:4px">? not verifiable</div></div>
+    <div style="background:var(--paper);border-radius:16px;padding:20px 18px"><div style="font-size:17px;font-weight:900;color:#333">Understanding</div><div style="font-size:13px;color:#999;margin-top:4px">? partially</div></div>
+    <div style="background:var(--accent-rose);border-radius:16px;padding:20px 18px"><div style="font-size:17px;font-weight:900;color:var(--accent-rose-ink)">Outcome</div><div style="font-size:13px;color:#b1362a;margin-top:4px">✗ not verifiable</div></div>
+  </div>
+  <div class="aipa-divider"></div>
+  <p style="font-size:13px;color:#777;line-height:1.6"><strong style="color:#333">One facilitator, one room.</strong> Attention can't be checked for every participant at once — and assessment adds work: more than 50% of effort is booked off training itself.</p>
+</div>
+
+<!-- ═══════════════ SLIDE 06 · PROBLEM 03 RECRUITMENT ═══════════════ -->
+<div class="aipa-slide aipa-light" data-program="all">
+  <div class="aipa-big-num" style="color:#1a1a1a">06</div>
+  <span class="aipa-tag" style="color:#888">THE PROBLEM 03 · BULK RECRUITMENT</span>
+  <div class="aipa-headline-lg">Hundreds of CVs in.<br>Every stage manual.</div>
+  <p class="aipa-body" style="color:#555;max-width:620px;margin-bottom:22px">A single hiring round runs entirely on specialist hours.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:20px">
+    ${[["CV intake","Hundreds of CVs"],["Screening","Read every one"],["Role matching","Compare to the JD"],["Assessment","Multi-stage, per candidate"],["Interviews","Scheduled one by one"],["Shortlist","A handful of names"]].map(s=>`<div style="background:var(--paper);border-radius:14px;padding:16px 16px"><div style="font-size:14px;font-weight:900;color:#333;margin-bottom:3px">${s[0]}</div><div style="font-size:12px;color:#888;line-height:1.4">${s[1]}</div><div style="font-size:11px;font-weight:800;color:var(--accent);margin-top:6px">done by hand</div></div>`).join('')}
+  </div>
+  <div class="aipa-outcome-grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+    <div class="aipa-outcome-card"><div class="aipa-outcome-title" style="font-size:17px">Expensive</div><div class="aipa-outcome-desc">The most expensive hours in the company, spent on sorting.</div></div>
+    <div class="aipa-outcome-card"><div class="aipa-outcome-title" style="font-size:17px">Weeks of calendar</div><div class="aipa-outcome-desc">Every manual stage adds delay — good candidates go elsewhere.</div></div>
+    <div class="aipa-outcome-card"><div class="aipa-outcome-title" style="font-size:17px">Drifting judgement</div><div class="aipa-outcome-desc">The same candidate scores differently depending on who reviews.</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ SLIDE 07 · TRAINER 01 FRAGMENTATION ═══════════════ -->
+<div class="aipa-slide aipa-accent" data-program="all">
+  <div class="aipa-big-num" style="color:#d9663f">07</div>
+  <span class="aipa-tag">THE PROBLEM · TRAINER 01 · FRAGMENTATION</span>
+  <div class="aipa-headline-lg">The trainer is the integration layer</div>
+  <p class="aipa-body" style="color:#555;max-width:640px;margin-bottom:20px">Seven tools, no shared record — every handoff done by hand, for every cohort.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+    ${["WhatsApp","Email","Slides","Video","Docs","Sheets","Quiz tool","Forms","Feedback","Tabulation","Reminders","Certificates"].map(t=>`<span style="background:var(--paper);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:800;color:#444">${t}</span>`).join('')}
+  </div>
+  <div style="text-align:center;font-size:13px;font-weight:800;color:var(--accent);margin-bottom:20px">↓ every arrow between these is a manual step — repeated for every cohort ↓</div>
+  <div class="aipa-outcome-grid">
+    <div class="aipa-outcome-card"><div class="aipa-outcome-title" style="font-size:17px">No shared record</div><div class="aipa-outcome-desc">Nothing connects, so no single view of who actually progressed.</div></div>
+    <div class="aipa-outcome-card"><div class="aipa-outcome-title" style="font-size:17px">Setup cost per cohort</div><div class="aipa-outcome-desc">The same stitching work is redone every time a program runs.</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ SLIDE 08 · TRAINER 02 VALUE LEAKAGE ═══════════════ -->
+<div class="aipa-slide aipa-light" data-program="all">
+  <div class="aipa-big-num" style="color:#1a1a1a">08</div>
+  <span class="aipa-tag" style="color:#888">THE PROBLEM · TRAINER 02 · VALUE LEAKAGE</span>
+  <div class="aipa-headline-lg">The file travels.<br>The value doesn't.</div>
+  <p class="aipa-body" style="color:#555;max-width:620px;margin-bottom:22px">What gets shared after a session is a stripped copy of what happened in it.</p>
+  <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center">
+    <div style="background:var(--accent-sage);border-radius:18px;padding:22px 20px">
+      <div style="font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--accent-sage-ink);margin-bottom:6px">In the live session</div>
+      <div style="font-size:20px;font-weight:900;color:#175233;margin-bottom:12px">6 of 6 layers intact</div>
+      <div style="font-size:13px;color:#175233;line-height:1.8">Content · Sequence &amp; pacing · Explanation &amp; nuance · Live coaching · Assessment of mastery · Record of progress</div>
+    </div>
+    <div style="font-size:34px;font-weight:900;color:var(--accent);text-align:center">→</div>
+    <div style="background:var(--accent-rose);border-radius:18px;padding:22px 20px">
+      <div style="font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--accent-rose-ink);margin-bottom:6px">What the learner receives</div>
+      <div style="font-size:20px;font-weight:900;color:#b1362a;margin-bottom:12px">A file — 1 of 6 layers</div>
+      <div style="font-size:13px;color:#b1362a;line-height:1.8"><strong>Content</strong> · <span style="opacity:0.5;text-decoration:line-through">Sequence · Nuance · Coaching · Assessment · Progress</span></div>
+    </div>
+  </div>
+  <div class="aipa-divider"></div>
+  <p style="font-size:13px;color:#777;line-height:1.6"><strong style="color:#333">Then it spreads:</strong> your file → forwarded → reposted → ? No control, and no record of who consumed what.</p>
+</div>
+
+<!-- ═══════════════ SLIDE 09 · TRAINER 03 SCALE ═══════════════ -->
+<div class="aipa-slide aipa-dark" data-program="all">
+  <div class="aipa-big-num">09</div>
+  <span class="aipa-tag">THE PROBLEM · TRAINER 03 · SCALE</span>
+  <div class="aipa-headline-lg">Reach goes up.<br>Interaction goes down.</div>
+  <p class="aipa-body aipa-body-dark" style="max-width:620px;margin-bottom:24px">The only way to reach more people has been to stop interacting with them.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
+    ${[["1","Full","One-to-one coaching."],["10","Shared","Still personal, barely."],["100","Thin","Names become a list."],["1,000","None","Publishing, not teaching."]].map(l=>`<div style="background:rgba(255,255,255,0.5);border-radius:16px;padding:20px 18px"><div style="font-size:32px;font-weight:900;color:#2d2d2d;line-height:1">${l[0]}</div><div style="font-size:11px;font-weight:800;opacity:0.6;margin:6px 0">learners</div><div style="font-size:15px;font-weight:900;color:#2d2d2d">${l[1]}</div><div style="font-size:12px;opacity:0.7;margin-top:2px">${l[2]}</div></div>`).join('')}
+  </div>
+  <div class="aipa-divider"></div>
+  <p style="font-size:13px;opacity:0.75;line-height:1.6"><strong>The usual answer — record it:</strong> ✗ passive watching · ✗ no personal feedback · ✗ progress unmeasured · ✗ journey uncontrolled. Today the trainer chooses between income and impact. <strong>Scale should not mean losing interaction.</strong></p>
+</div>
+
+<!-- ═══════════════ SLIDE 10 · 6 CRITICAL CHALLENGES ═══════════════ -->
+<div class="aipa-slide aipa-light" data-program="all">
+  <div class="aipa-big-num" style="color:#1a1a1a">10</div>
+  <span class="aipa-tag" style="color:#888">6 CRITICAL CHALLENGES IN TRAINING &amp; HIRING</span>
+  <div class="aipa-headline-lg">The recurring six</div>
+  <div style="font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin:16px 0 8px">Corporate — HR &amp; L&amp;D teams</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px">
+    ${[["Completion &amp; Enforcement","&lt;5% completion — and the year-long mandatory journey needs constant manual supervision."],["Impact Is Hard to Measure","HR verifies attendance — not attention, understanding or outcome."],["Manual Bulk Recruitment","Hundreds of CVs, then sorting, matching, assessment, interviews — all manual."]].map(c=>`<div style="background:var(--accent-rose);border-radius:14px;padding:16px 16px"><div style="font-size:15px;font-weight:900;color:var(--accent-rose-ink);margin-bottom:5px">${c[0]}</div><div style="font-size:12px;color:#5a2420;line-height:1.5">${c[1]}</div></div>`).join('')}
+  </div>
+  <div style="font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--accent-sky-ink);margin:18px 0 8px">Individual Trainers — consultants &amp; solo experts</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px">
+    ${[["Fragmentation","Six or seven disconnected tools — the trainer is the integration layer."],["Value Leakage","The file travels; sequence, coaching and IP stay behind."],["No Scale","Reach only grows by removing interaction — recordings are passive."]].map(c=>`<div style="background:var(--accent-sky);border-radius:14px;padding:16px 16px"><div style="font-size:15px;font-weight:900;color:var(--accent-sky-ink);margin-bottom:5px">${c[0]}</div><div style="font-size:12px;color:#234050;line-height:1.5">${c[1]}</div></div>`).join('')}
+  </div>
+  <div class="aipa-divider"></div>
+  <p style="font-size:13px;color:#555;line-height:1.6">The challenge is not access to learning — it is <strong>engagement, measurement, execution, and scale.</strong></p>
+</div>
+
+<!-- ═══════════════ SLIDE 11 · FLOW TYPES ═══════════════ -->
+<div class="aipa-slide aipa-accent" data-program="all">
+  <div class="aipa-big-num" style="color:#d9663f">11</div>
+  <span class="aipa-tag">FLOW TYPES</span>
+  <div class="aipa-headline-lg">Three Ways to Flow</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:20px">
+    <div style="background:var(--paper);border-radius:18px;padding:22px 20px">
+      <div style="font-size:11px;font-weight:900;letter-spacing:2px;color:#8aa0c8;margin-bottom:6px">TYPE 01 · SELF-PACED</div>
+      <div style="font-size:19px;font-weight:900;color:#0d2255;line-height:1.2;margin-bottom:10px">AI-Learning-Agent Guided Course</div>
+      <div style="font-size:13px;color:#555;line-height:1.7">Self-paced education · AI-enforced mastery checkpoints · no creator intervention needed during the session.</div>
+      <div style="font-size:12px;font-weight:800;color:var(--accent-sage-ink);margin-top:12px">Self-paced · AI-enforced mastery</div>
+    </div>
+    <div style="background:var(--paper);border-radius:18px;padding:22px 20px">
+      <div style="font-size:11px;font-weight:900;letter-spacing:2px;color:#5cb88c;margin-bottom:6px">TYPE 02 · LIVE</div>
+      <div style="font-size:19px;font-weight:900;color:#0d2255;line-height:1.2;margin-bottom:10px">Live Training / Pitch / Presentation Flow</div>
+      <div style="font-size:13px;color:#555;line-height:1.7">For in-person or live-online sessions · add quizzes, polls, slides &amp; AI content in real time · creators build while the session is active.</div>
+      <div style="font-size:12px;font-weight:800;color:var(--accent-sky-ink);margin-top:12px">In-person &amp; online · Real-time creation</div>
+    </div>
+    <div style="background:var(--paper);border-radius:18px;padding:22px 20px">
+      <div style="font-size:11px;font-weight:900;letter-spacing:2px;color:#c48836;margin-bottom:6px">TYPE 03 · TASK-ORIENTED</div>
+      <div style="font-size:19px;font-weight:900;color:#0d2255;line-height:1.2;margin-bottom:10px">Pre-Recruitment Screening / Assessment, Survey &amp; Application Flow</div>
+      <div style="font-size:13px;color:#555;line-height:1.7">Task-oriented guided journeys · guides users through a specific AI or non-AI application · from input to a finalized output.</div>
+      <div style="font-size:12px;font-weight:800;color:var(--accent-peach-ink);margin-top:12px">Input → Finalized output</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ SLIDE 12 · SECTION BREAK · THE PRODUCT ═══════════════ -->
+<div class="aipa-slide aipa-dark" data-program="all">
+  <div class="aipa-big-num">12</div>
+  <span class="aipa-tag">THE PRODUCT</span>
+  <div class="aipa-headline-xl">One flow.<br>The whole stack.</div>
+  <p class="aipa-body aipa-body-dark" style="max-width:600px">Everything that follows — capabilities, assessment, results — lives inside a single guided journey. No tool-switching, no lost value, no manual wiring.</p>
+</div>
+
+<!-- ═══════════════ SLIDE 13 · LIVE PRODUCT PREVIEW ═══════════════ -->
+<div class="aipa-slide aipa-light" data-program="all">
+  <div class="aipa-big-num" style="color:#1a1a1a">13</div>
+  <span class="aipa-tag" style="color:#888">SEE IT LIVE</span>
+  <div class="aipa-headline-lg">EasyFlow, running now</div>
+  <p class="aipa-body" style="color:#555;max-width:600px;margin-bottom:18px">The live platform — jump in and experience a flow end to end.</p>
+  <div class="prod-embed-panel active" style="margin:0">
+    <div class="prod-embed-header">
+      <div>
+        <div class="prod-embed-name">🌊 EasyFlow by EasyDO.ai</div>
+        <div class="prod-embed-url">flow.easydo.ai</div>
+      </div>
+      <div class="prod-embed-actions">
+        <a href="https://flow.easydo.ai/" target="_blank" class="prod-embed-link">Open in new tab ↗</a>
+      </div>
+    </div>
+    <iframe class="prod-embed-frame" src="https://flow.easydo.ai/" title="EasyFlow — live preview" loading="lazy" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- ═══════════════ SLIDE 14 · CAPABILITIES 1 · USECASE WISE ═══════════════ -->
+<div class="aipa-slide aipa-accent" data-program="all">
+  <div class="aipa-big-num" style="color:#d9663f">14</div>
+  <span class="aipa-tag">CAPABILITIES</span>
+  <div class="aipa-headline-lg">Key Capabilities 1 — Usecase Wise</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-top:20px">
+    ${[["🧑‍🏫","AI Consulting Manager","An AI that leads participants through every step — evaluating comprehension, providing feedback and enforcing mastery before progression."],["🔒","Conditional Progression","Users cannot skip steps. A minimum score — e.g. 80% — must be reached before advancing, ensuring real learning, not just completion."],["🗣️","AI Avatar Interface","A no-code AI avatar conducts interactive, multi-language voice interviews — English, Bangla and more — based on user inputs."],["📥","Assessment + AI Agent","Voice responses, typed text, handwritten inputs, file uploads such as CVs, and traditional multiple-choice quizzes."],["⚡","Real-Time Feedback","The AI teaching assistant explains right and wrong answers instantly, reinforcing understanding at every checkpoint."],["🧩","Zero Tool Switching","Replaces an entire stack of fragmented tools with a single, unified flow."]].map(c=>`<div class="aipa-prog-card-light"><div style="font-size:24px;margin-bottom:8px">${c[0]}</div><div class="aipa-prog-title" style="font-size:18px">${c[1]}</div><p class="aipa-prog-desc">${c[2]}</p></div>`).join('')}
+  </div>
+  <div class="aipa-divider"></div>
+  <p style="font-size:12px;color:#888">Replaces: Google Slides · Kahoot · Mentimeter · Google Forms · WhatsApp</p>
+</div>
+
+<!-- ═══════════════ SLIDE 15 · CAPABILITIES 2 · FEATURE WISE ═══════════════ -->
+<div class="aipa-slide aipa-light" data-program="all">
+  <div class="aipa-big-num" style="color:#1a1a1a">15</div>
+  <span class="aipa-tag" style="color:#888">THE PRODUCT</span>
+  <div class="aipa-headline-lg">Key Capabilities 2 — Feature Wise</div>
+  <p class="aipa-body" style="color:#555;max-width:620px;margin-bottom:18px">One platform that replaces the whole stack — six capabilities, one clean flow.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px">
+    ${[["🔗","Slides + Video + Site + Doc Sync","Connect Google Slides &amp; YouTube in one click. Connect websites, Word &amp; PDF documents in one click. Update once — everything syncs automatically."],["💬","Conversational AI Agent","A friendly AI voice that talks like a real coach — and says exactly what you tell it to say."],["🛠️","Build AI Tools Fast","Type what you want in plain English. No coding — EasyFlow builds it for you. Analysis, assessment, consulting — anything you want."],["🏁","Guidance, Leaderboard, Lock","Upload &amp; download files right here. No WhatsApp, no email, no confusion — every session connected, completion enforced by agents."],["📊","Tabulation &amp; Proctoring","Every participant, every answer — all in one clean table. Nothing missing."],["🛡️","Proctoring","For assessment: screen, keyboard, face, browser and movement proctoring, and a rejection agent."]].map(c=>`<div class="aipa-prog-card-light"><div style="font-size:24px;margin-bottom:8px">${c[0]}</div><div class="aipa-prog-title" style="font-size:18px">${c[1]}</div><p class="aipa-prog-desc">${c[2]}</p></div>`).join('')}
+  </div>
+</div>
+
+<!-- ═══════════════ SLIDE 16 · ANNEX DIVIDER ═══════════════ -->
+<div class="aipa-slide aipa-dark" data-program="all">
+  <div class="aipa-big-num">16</div>
+  <span class="aipa-tag">ANNEX</span>
+  <div class="aipa-headline-lg">Feature · Capability · Use Case</div>
+  <p class="aipa-body aipa-body-dark" style="max-width:600px">Product feedback. Complementary use for 2 Flows. Early-bird selected entity only.</p>
+</div>
+
+<!-- ═══════════════ SLIDE 17 · CAPABILITIES 3 · ASSESSMENT BY AI ═══════════════ -->
+<div class="aipa-slide aipa-accent" data-program="all">
+  <div class="aipa-big-num" style="color:#d9663f">17</div>
+  <span class="aipa-tag">THE SUPERPOWER · TALENT ASSESSMENT</span>
+  <div class="aipa-headline-lg">Key Capabilities 3 — Assessment by AI-Agent</div>
+  <p class="aipa-body" style="color:#555;max-width:640px;margin-bottom:18px">Set the criteria once. The agent grades every format, interviews like a human, reads any document, and scores at scale.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:20px">
+    ${[["EVERY FORMAT","Auto-Graded Assessment","Quiz, questions, polls, subjective answers. Set the marking criteria once — the agent grades against it every time."],["5-MINUTE BUILD","Human-Like AI Interviewer","A conversation app that interviews anyone on any topic — measuring knowledge, empathy and fluency."],["NO CODE","Reads Any Document","CVs, handwritten scripts, reports, any submission — processed and evaluated without writing a line of code."],["AT SCALE","One Unified Score","Everything combines into a single, comparable score — ready for ranking and decisions."]].map(c=>`<div class="aipa-prog-card-light"><div style="font-size:10px;font-weight:900;letter-spacing:1.5px;color:var(--accent);margin-bottom:6px">${c[0]}</div><div class="aipa-prog-title" style="font-size:17px">${c[1]}</div><p class="aipa-prog-desc">${c[2]}</p></div>`).join('')}
+  </div>
+  <div style="background:#1a1a1a;color:#fff;border-radius:18px;padding:24px 22px">
+    <div style="font-size:12px;font-weight:900;letter-spacing:1.5px;color:#6ee7b7;margin-bottom:8px">THE REAL SUPERPOWER</div>
+    <div style="font-size:22px;font-weight:900;margin-bottom:14px">An executive for every participant.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;font-size:13px;line-height:1.6;opacity:0.9">
+      <div><strong style="color:#6ee7b7">One-to-one mastery</strong><br>Teaches the material, bundles rules, policy &amp; methodology, then assesses until every member reaches mastery — not just completion.</div>
+      <div><strong style="color:#6ee7b7">Hiring at scale</strong><br>200 applicants, one role. When CV/JD matching isn't enough, offload pre-interview screening and shortlist on real signal.</div>
+      <div><strong style="color:#6ee7b7">Internal mastery</strong><br>Interactive surveys and assessments that ensure staff truly grasp mandatory training — not just click through it.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ SLIDE 18 · RESULTS ═══════════════ -->
+<div class="aipa-slide aipa-light" data-program="all">
+  <div class="aipa-big-num" style="color:#1a1a1a">18</div>
+  <span class="aipa-tag" style="color:#888">FUTUREMIND · AI ASSESSMENT &amp; LEARNING AGENT</span>
+  <div class="aipa-headline-lg">Time saved and results improved</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:20px">
+    <div style="background:var(--accent-sage);border-radius:18px;padding:22px 20px">
+      <div style="font-size:11px;font-weight:900;letter-spacing:1px;color:var(--accent-sage-ink);margin-bottom:6px">01 · COMPLETION RATE</div>
+      <div style="font-size:34px;font-weight:900;color:#175233;line-height:1">5% → 50%+</div>
+      <div style="font-size:12px;color:#175233;margin:8px 0 0;line-height:1.5">Under 5% finish self-paced courses. With AI-designed flows and automated follow-up, we crossed 50% in pilot. Target 75–80% (pilot 52%).</div>
+    </div>
+    <div style="background:var(--accent-peach);border-radius:18px;padding:22px 20px">
+      <div style="font-size:11px;font-weight:900;letter-spacing:1px;color:var(--accent-peach-ink);margin-bottom:6px">02 · SCREENING TIME</div>
+      <div style="font-size:34px;font-weight:900;color:#9c4516;line-height:1">60% saved</div>
+      <div style="font-size:12px;color:#9c4516;margin:8px 0 0;line-height:1.5">AI assessment + proctoring cuts the hiring team's engaged time by 60% — specialized resource time, so it converts directly into money.</div>
+    </div>
+    <div style="background:var(--accent-sky);border-radius:18px;padding:22px 20px">
+      <div style="font-size:11px;font-weight:900;letter-spacing:1px;color:var(--accent-sky-ink);margin-bottom:6px">03 · L&amp;D FOCUS</div>
+      <div style="font-size:26px;font-weight:900;color:#2c5670;line-height:1.05">Reporting → Outcomes</div>
+      <div style="font-size:12px;color:#2c5670;margin:8px 0 0;line-height:1.5">Reporting and follow-up are automated. What gets measured shifts — not "how many completed," but who can actually do what.</div>
+    </div>
+    <div style="background:var(--accent-lilac);border-radius:18px;padding:22px 20px">
+      <div style="font-size:11px;font-weight:900;letter-spacing:1px;color:var(--accent-lilac-ink);margin-bottom:6px">04 · LIVE ENGAGEMENT</div>
+      <div style="font-size:34px;font-weight:900;color:#5e3bb7;line-height:1">100%</div>
+      <div style="font-size:12px;color:#5e3bb7;margin:8px 0 0;line-height:1.5">One facilitator can't engage everyone. A one-to-one AI trainer keeps every participant engaged — no one drops out of the room.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ SLIDE 19 · FEATURE INVENTORY ═══════════════ -->
+<div class="aipa-slide aipa-accent" data-program="all">
+  <div class="aipa-big-num" style="color:#d9663f">19</div>
+  <span class="aipa-tag">FEATURES · FULL INVENTORY</span>
+  <div class="aipa-headline-lg">All Features at a Glance</div>
+  <p style="font-size:12px;color:#888;margin-bottom:16px">Launched · In progress · Proposed · Not started · Wish</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px">
+    ${[["AI &amp; Assessment (2)","Assessment answers as a RAG source · Separation of quiz types"],["Flow Management (6)","Multi-tap flow intro · Public vs Unlisted types · One-click duplication · Lock-step progression · Play/Edit/Live modes · Passive (self-paced) option"],["Content Blocks (7)","Word paragraph · Poll · MCQ · True/False · Video · Weblink · Closure message"],["Slide Editor (12)","Google Slide skip/hide · cursor marker · AR/VR duplication · image-generation slide · smarter duplicate placement · auto slide-count detection · per-slide timer · notification slide"],["Engagement &amp; Gamification (2)","Word Cloud (Mentimeter-style) · gamification mood + default game sound"],["Analytics &amp; Reporting (2)","Participant reporting (summary + detail) · auto leaderboard"],["File Handling (3)","Downloadable files table · multiple downloads per page · in-session upload"],["Access &amp; Auth (2)","Name required to join live · Google SSO via EasyDO"],["Integrations (2)","3rd-party embeds &amp; integrations · EasyDO AI-apps integration"],["Landing &amp; Marketing (5)","B2C product landing · easydo.ai landing · marketing site · fixed header · home page"],["UI / UX (4)","Text visibility controls · presentation maker menu · horizontal menu · slide-number config"],["Infrastructure &amp; Cost (2)","Loading-delay fix · session concurrency &amp; cost tiers"],["Recording (1)","Voice-recording consistency"]].map(g=>`<div style="background:var(--paper);border-radius:14px;padding:14px 16px"><div style="font-size:13px;font-weight:900;color:var(--accent);margin-bottom:5px">${g[0]}</div><div style="font-size:11.5px;color:#666;line-height:1.5">${g[1]}</div></div>`).join('')}
+  </div>
+</div>
+
+<!-- ═══════════════ SLIDE 20 · MARKET POSITION ═══════════════ -->
+<div class="aipa-slide aipa-light" data-program="all">
+  <div class="aipa-big-num" style="color:#1a1a1a">20</div>
+  <span class="aipa-tag" style="color:#888">MARKET POSITION</span>
+  <div class="aipa-headline-lg">A new category — the Flow Launcher</div>
+  <p class="aipa-body" style="color:#555;max-width:640px;margin-bottom:18px">EasyFlow combines capabilities that currently require 3–5 separate tools.</p>
+  <div style="overflow-x:auto">
+  <table style="width:100%;border-collapse:collapse;font-size:12.5px;min-width:560px">
+    <thead><tr style="text-align:left;color:#999;font-size:11px;text-transform:uppercase;letter-spacing:0.5px">
+      <th style="padding:8px 10px">What users do today</th><th style="padding:8px 10px">Tools required</th><th style="padding:8px 10px;color:var(--accent)">EasyFlow replaces with</th>
+    </tr></thead>
+    <tbody>
+    ${[["Train employees on a new tool","LMS + Screen recorder + Quiz + Survey tool","One guided flow: training + AI consultant + assessment + feedback survey + outcome"],["Run a live workshop","Mentimeter + Kahoot + Google Forms","One flow: polls + quiz with leaderboard + survey + AI-adaptive next steps"],["Onboard new customers","Help docs + Video + Support tickets","One flow: guided product tour + AI assistant + assessment + next steps"],["Conduct a hiring interview","Video call + Manual scoring + Spreadsheet","One flow: AI interviewer + scoring + adaptive follow-ups + instant result"],["Deliver a course with certification","LMS + Quiz tool + Certificate generator","One flow: content + AI consulting + assessment + dynamic certificate"]].map((r,i)=>`<tr style="background:${i%2?'var(--paper-3)':'var(--paper)'}"><td style="padding:10px;font-weight:800;color:#333;border-radius:8px 0 0 8px">${r[0]}</td><td style="padding:10px;color:#888">${r[1]}</td><td style="padding:10px;color:var(--accent-sage-ink);font-weight:700;border-radius:0 8px 8px 0">${r[2]}</td></tr>`).join('')}
+    </tbody>
+  </table>
+  </div>
+  <div class="aipa-divider"></div>
+  <p style="font-size:13px;color:#555;line-height:1.6">A revolutionary change in how people consume courses, use applications, and complete assessments. Instead of fragmented tools, EasyFlow provides a single guided journey where the AI-powered consulting manager ensures participants don't just complete — <strong>they master.</strong></p>
+</div>
+
+<!-- ═══════════════ SLIDE 21 · THANK YOU ═══════════════ -->
+<div class="aipa-slide aipa-dark" data-program="all">
+  <div class="aipa-big-num">21</div>
+  <span class="aipa-tag">FUTUREMIND AI</span>
+  <div class="aipa-headline-xl">Thank You</div>
+  <p class="aipa-body aipa-body-dark" style="max-width:600px;margin-bottom:20px">Buzz us for a detailed use case and demonstration.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px">
+    <a href="mailto:mahadib@CommEngine.xyz" style="background:#1a1a1a;color:#fff;font-weight:800;font-size:14px;border-radius:12px;padding:12px 20px;text-decoration:none">mahadib@CommEngine.xyz</a>
+    <a href="https://flow.easydo.ai/#join=565565" target="_blank" style="background:rgba(255,255,255,0.6);color:#1a1a1a;font-weight:800;font-size:14px;border-radius:12px;padding:12px 20px;text-decoration:none">Experience a Flow ↗</a>
+    <a href="https://www.linkedin.com/company/MyEasyFlow" target="_blank" style="background:rgba(255,255,255,0.6);color:#1a1a1a;font-weight:800;font-size:14px;border-radius:12px;padding:12px 20px;text-decoration:none">LinkedIn ↗</a>
+  </div>
+  <div class="aipa-divider"></div>
+  <p style="font-size:12px;opacity:0.7;line-height:1.7">CommEngine Limited has partnered with leading agencies, brands and organizations — sponsored by Axiata; National ICT Award 2019 (CommEngine SocialCRM); Retail Innovation Award 2020 (Zachai Supply Chain Tracing); Call for Nation Act-Covid Honor (Swachho Relief Distribution); Microsoft for Founders Fellow 2022. EasyDo and EasyFlow are products from our FutureMind AI Group — futuremind.ltd</p>
+  <p style="font-size:12px;font-weight:800;letter-spacing:1px;opacity:0.55;margin-top:14px">FUTUREMIND.LTD · FLOW.EASYDO.AI</p>
+</div>
+`;
+}
+
 const PAGES = {
   about: pageAbout,
   experience: pageExperience,
@@ -4247,9 +4616,11 @@ const PAGES = {
   'aipa-session-plan': pageAIPASessionPlan,
   'management-aisa': pageManagementAISA,
   'ai-inference': pageAIInference,
+  easyflow: pageEasyFlow,
   events: pageEvents,
-  research: pageResearch,
-  consulting: pageConsulting,
+  'consulting-research': pageConsultingResearch,
+  research: pageConsultingResearch,
+  consulting: pageConsultingResearch,
   certifications: pageCertifications,
   recognition: pageRecognition,
   contact: pageContact,
@@ -4264,12 +4635,14 @@ let currentPage = 'about';
 const PAGE_META = {
   about:{t:"Hadi Bhuiyan — Digital · AI · SaaS",d:"Digital, AI, Enterprise & SaaS leader in Bangladesh. Co-Founder of CommEngine, EasyDO.ai, FutureMind & BuildNation. 20+ years experience."},
   products:{t:"Products — Hadi Bhuiyan",d:"SaaS & AI products built by Hadi Bhuiyan: CommEngine SocialCRM, EasyDO.ai, EasyFlow, Madevo and more."},
-  aipa:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA for leadership, AIPA 5-month workforce program, and AITA transformation sprints. 190+ executives trained."},
+  aipa:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA for leadership, AIPA 5-month workforce program, and AITA transformation sprints. 256+ executives trained."},
   'aipa-session-plan':{t:"AIPA Session Plan — BuildNation | Hadi Bhuiyan", d:"The AIPA Curriculum — 12 sessions across 4 parts. A progressive journey from AI foundations to enterprise-wide impact."},
   'management-aisa':{t:"Management AI-Strategy Accelerator — BuildNation | Hadi Bhuiyan", d:"A condensed single-day AI Strategy Accelerator for Dhaka Ice Cream Industries Limited (Polar) senior management — strategic framing, breakout opportunity mapping, and a leadership-endorsed base AI strategy."},
-  programs:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA, AIPA and AITA. 190+ executives trained across 6+ corporates."},
+  programs:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA, AIPA and AITA. 256+ executives trained across 6+ corporates."},
   'ai-inference':{t:"Enterprise AI & CoWork Consultation — FutureMind AI Group",d:"A two-day Enterprise AI & CoWork Implementation Stack consultation: inference infrastructure, RAG, workflow sandboxing, no-code launcher and a scope-cost-roadmap document."},
+  easyflow:{t:"EasyFlow — AI-Guided Presentation, Training & Assessment | FutureMind AI",d:"EasyFlow turns scattered slides, docs, videos, quizzes and submissions into one synchronized flow with a 1:1 AI-Agent — self-paced courses, live training and AI assessment at scale. The full FutureMind pitch, slide by slide."},
   events:{t:"Events and News — Hadi Bhuiyan",d:"Events, milestones and news — key appearances, program launches, awards, social initiatives and press coverage, from Microsoft panels to the AI-PA corporate cohorts."},
+  'consulting-research':{t:"Consulting & Research — Hadi Bhuiyan",d:"Advisory engagements across digital banking (UCB), Tier-IV data-center feasibility, enterprise AI strategy & roadmapping (Dhaka Bank, Beximco Pharma, Polar), plus IEEE publications and national policy contributions (Blockchain, SME digitization, consumer protection)."},
   research:{t:"Research & Writings — Hadi Bhuiyan",d:"IEEE publications, national policy contributions (Blockchain, SME digitization, consumer protection) and academic reviewing."},
   consulting:{t:"Consulting — Hadi Bhuiyan",d:"Advisory engagements across digital banking (UCB), Tier-IV data-center feasibility, enterprise AI strategy & roadmapping (Dhaka Bank, Beximco Pharma, Polar) and organizational KPI/SLA optimization (LafargeHolcim)."},
   certifications:{t:"Certifications — Hadi Bhuiyan",d:"PMP, ITIL v4, BABOK, CxO Conclave (IBA-DU), Microsoft for Startups Founders Fellow and more."},
@@ -4299,12 +4672,14 @@ function applyPageMeta(id){
 }
 
 function showPage(id, updateHistory = true){
+  // Consulting & Research were merged into a single tab — normalize old links.
+  if(id === 'research' || id === 'consulting') id = 'consulting-research';
   currentPage = id;
   applyPageMeta(id);
   // render page
   document.getElementById('app').innerHTML = `<div class="page active" id="pg-${id}">${PAGES[id]()}</div>`;
   // presentation-deck mode: AI Inference renders as full-screen, snapping panels
-  const deck = (id === 'ai-inference');
+  const deck = (id === 'ai-inference' || id === 'easyflow');
   document.body.classList.toggle('deck-mode', deck);
   if(deck) wrapDeckSlides('pg-' + id);
   // update nav
