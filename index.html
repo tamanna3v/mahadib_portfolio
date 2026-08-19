@@ -3936,7 +3936,34 @@ function _pageAIInferenceLegacy(){
 `;
 }
 
-function switchProduct(id){
+// ── PRODUCTS · permalink support ─────────────────────────
+// Each product has a clean URL slug (e.g. /products/swaccho). The slug can
+// differ from the internal panel id (swachho → swaccho).
+const PRODUCTS_INFO = {
+  easyflow:  {slug:'easyflow',  name:'EasyFlow',   t:"EasyFlow by EasyDO.ai — Hadi Bhuiyan",                 d:"EasyFlow — AI-guided interactive content delivery. Turn slides, PDFs & videos into unified guided flows."},
+  easydo:    {slug:'easydo',    name:'EasyDo',     t:"EasyDo — Private AI Workspace | Hadi Bhuiyan",         d:"EasyDo.ai — a private AI workspace for teams."},
+  commengine:{slug:'commengine',name:'CommEngine', t:"CommEngine — SocialCRM & AI Profiling | Hadi Bhuiyan", d:"CommEngine — SocialCRM and AI audience profiling platform."},
+  jachai:    {slug:'jachai',    name:'Jachai',     t:"Jachai — Product Authentication | Hadi Bhuiyan",       d:"Jachai — product authentication and anti-counterfeit platform."},
+  swachho:   {slug:'swaccho',   name:'Swaccho',    t:"Swaccho — Food & Relief Distribution Tracking | Hadi Bhuiyan", d:"Swaccho — a P2O2V2P model based nationwide food & relief distribution tracking system. Retail Digital Innovation Award 2020."}
+};
+const PRODUCT_IDS  = new Set(Object.keys(PRODUCTS_INFO));
+const SLUG_TO_ID   = Object.fromEntries(Object.entries(PRODUCTS_INFO).map(([id,p])=>[p.slug, id]));
+const ID_TO_SLUG   = Object.fromEntries(Object.entries(PRODUCTS_INFO).map(([id,p])=>[id, p.slug]));
+
+function applyProductMeta(id){
+  const p = PRODUCTS_INFO[id]; if(!p) return;
+  const slug = p.slug;
+  document.title = p.t;
+  const set = (sel, attr, val)=>{ const el = document.querySelector(sel); if(el) el.setAttribute(attr, val); };
+  set('meta[name="description"]','content', p.d);
+  set('meta[property="og:title"]','content', p.t);
+  set('meta[property="og:description"]','content', p.d);
+  const url = 'https://mahadib.futuremind.ltd/products/' + slug;
+  set('meta[property="og:url"]','content', url);
+  set('link[rel="canonical"]','href', url);
+}
+
+function switchProduct(id, updateHistory = true){
   document.querySelectorAll('.prod-embed-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.prod-sel-btn').forEach(b=>b.classList.remove('active'));
   const panel = document.getElementById('prod-'+id);
@@ -3945,7 +3972,17 @@ function switchProduct(id){
     const iframe = panel.querySelector('iframe[data-src]');
     if(iframe && !iframe.src) iframe.src = iframe.dataset.src;
   }
-  event.currentTarget.classList.add('active');
+  // activate the matching selector button (works whether called from a click
+  // or programmatically from the router)
+  const btn = document.querySelector('.prod-sel-btn[onclick*="\'' + id + '\'"]');
+  if(btn) btn.classList.add('active');
+  if(PRODUCTS_INFO[id]){
+    applyProductMeta(id);
+    if(updateHistory){
+      const path = '/products/' + ID_TO_SLUG[id];
+      window.history.pushState({ page:'products', product:id }, '', path);
+    }
+  }
 }
 
 // ── SECTIONS PANEL ───────────────────────────────────────
@@ -4614,14 +4651,32 @@ document.addEventListener('keydown', (e)=>{
   slides[target].scrollIntoView({ behavior:'smooth', block:'start' });
 });
 
-function getPageFromURL(){
-  const path = window.location.pathname;
-  if(path === '/' || path === '') return 'about';
-  return path.replace(/\//g, '').toLowerCase();
+// Parse the current path into {page, sub} segments (e.g. /products/swaccho).
+function getRoute(){
+  const segs = window.location.pathname.split('/').filter(Boolean).map(s=>s.toLowerCase());
+  if(segs.length === 0) return { page:'about' };
+  return { page: segs[0], sub: segs[1] };
+}
+// Kept for backward compatibility with any callers expecting a bare page id.
+function getPageFromURL(){ return getRoute().page; }
+
+// Show the products page and, if given, activate a specific product panel.
+function showProduct(id){
+  showPage('products', false);
+  switchProduct(id, false);
 }
 
 window.addEventListener('popstate', (e)=>{
-  const page = e.state?.page || getPageFromURL();
+  const st = e.state;
+  if(st?.page === 'products' && st.product && PRODUCT_IDS.has(st.product)){
+    showProduct(st.product); return;
+  }
+  const r = getRoute();
+  if(r.page === 'products' && r.sub){
+    const id = SLUG_TO_ID[r.sub] || r.sub;
+    if(PRODUCT_IDS.has(id)){ showProduct(id); return; }
+  }
+  const page = st?.page || r.page;
   if(PAGES[page]) showPage(page, false);
 });
 
@@ -4699,18 +4754,26 @@ function switchAIPAContent(program){
     }
   });
   // load page from URL or redirect path
-  let pageFromURL = getPageFromURL();
-  // check if redirected from 404
+  let route = getRoute();
+  // check if redirected from 404 (GitHub Pages deep-link support)
   const redirectPath = sessionStorage.getItem('redirectPath');
   if(redirectPath){
     sessionStorage.removeItem('redirectPath');
-    const redirectPage = redirectPath.replace(/\//g, '').toLowerCase() || 'about';
-    if(PAGES[redirectPage]){
-      pageFromURL = redirectPage;
-      window.history.replaceState({ page: redirectPage }, '', redirectPath);
+    const segs = redirectPath.split('/').filter(Boolean).map(s=>s.toLowerCase());
+    route = segs.length ? { page: segs[0], sub: segs[1] } : { page:'about' };
+    window.history.replaceState({}, '', redirectPath);
+  }
+  // product deep-link: /products/<slug>
+  if(route.page === 'products' && route.sub){
+    const id = SLUG_TO_ID[route.sub] || route.sub;
+    if(PRODUCT_IDS.has(id)){
+      showProduct(id);
+      // normalize to the canonical slug path
+      window.history.replaceState({ page:'products', product:id }, '', '/products/' + ID_TO_SLUG[id]);
+      return;
     }
   }
-  const initialPage = PAGES[pageFromURL] ? pageFromURL : 'about';
+  const initialPage = PAGES[route.page] ? route.page : 'about';
   showPage(initialPage, false);
 })();
 
