@@ -1422,11 +1422,9 @@ footer{
 const NAV = [
   {text:"Hadi Bhuiyan",id:"about"},
   {text:"Products",id:"products"},
-  {text:"AI Accelerator",id:"aipa",dropdown:[
-    {text:"AI Briefing Session (AIBS)",id:"aibs"},
-    {text:"AIPA Session Plan",id:"aipa-session-plan"},
-    {text:"Management AI-SA",id:"management-aisa"}
-  ]},
+  {text:"AIBS",id:"aibs"},
+  {text:"AIPA",id:"aipa"},
+  {text:"AISA",id:"management-aisa"},
   {text:"AI Inference",id:"ai-inference"},
   {text:"EasyFlow",id:"easyflow"},
   {text:"Consulting & Research",id:"consulting-research"},
@@ -2489,8 +2487,8 @@ function pageAffiliation(){
 function pageAIPA(){
   const foot = `<div class="bnp-foot"><div class="bnp-foot-l">Partnering with · a2i · DoICT · TAFE · School Curriculum &amp; Standards Authority · Gov. of Western Australia &nbsp;|&nbsp; A member of · BASIS · ABCCI</div><div class="bnp-foot-r">build<b>n</b>ation · <span style="font-weight:600;color:#8a97a0">Bridge to a brighter tomorrow</span></div></div>`;
   return `
-<h2 class="section-title">AI Accelerator</h2>
-<p class="section-sub">AI Proficiency Accelerator · Briefing &amp; Strategy Accelerator by BuildNation</p>
+<h2 class="section-title">AIPA · AI Proficiency Accelerator</h2>
+<p class="section-sub">AI Proficiency Accelerator by BuildNation &nbsp;·&nbsp; <button type="button" onclick="showPage('aipa-session-plan')" style="background:none;border:none;padding:0;cursor:pointer;color:var(--accent);font:inherit;font-weight:600;text-decoration:underline">View full AIPA Session Plan →</button></p>
 
 <div class="bnp-deck">
 
@@ -4849,7 +4847,7 @@ let currentPage = 'about';
 const PAGE_META = {
   about:{t:"Hadi Bhuiyan — Digital · AI · SaaS",d:"Digital, AI, Enterprise & SaaS leader in Bangladesh. Co-Founder of CommEngine, EasyDO.ai, FutureMind & BuildNation. 20+ years experience."},
   products:{t:"Products — Hadi Bhuiyan",d:"SaaS & AI products built by Hadi Bhuiyan: CommEngine SocialCRM, EasyDO.ai, EasyFlow, Madevo and more."},
-  aipa:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA for leadership, AIPA 5-month workforce program, and AITA transformation sprints. 256+ executives trained."},
+  aipa:{t:"AIPA · AI Proficiency Accelerator — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Proficiency Accelerator (AIPA) — a hands-on workforce program that makes AI a universal personal skill. 256+ executives trained across 6+ corporates."},
   aibs:{t:"AI Briefing Session (AIBS) — BuildNation | Hadi Bhuiyan", d:"AIBS is a 3.5–8 hour executive orientation and pre-preparation session before BuildNation's AISA or AIPA — establishing what AI means for your business, what it costs, where it applies function by function, and what the first move should be."},
   'aipa-session-plan':{t:"AIPA Session Plan — BuildNation | Hadi Bhuiyan", d:"The AIPA Curriculum — 12 sessions across 4 parts. A progressive journey from AI foundations to enterprise-wide impact."},
   'management-aisa':{t:"Management AI-Strategy Accelerator — BuildNation | Hadi Bhuiyan", d:"A condensed single-day AI Strategy Accelerator for Dhaka Ice Cream Industries Limited (Polar) senior management — strategic framing, breakout opportunity mapping, and a leadership-endorsed base AI strategy."},
