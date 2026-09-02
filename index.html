@@ -1423,6 +1423,7 @@ const NAV = [
   {text:"Hadi Bhuiyan",id:"about"},
   {text:"Products",id:"products"},
   {text:"AI Accelerator",id:"aipa",dropdown:[
+    {text:"AI Briefing Session (AIBS)",id:"aibs"},
     {text:"AIPA Session Plan",id:"aipa-session-plan"},
     {text:"Management AI-SA",id:"management-aisa"}
   ]},
@@ -4195,6 +4196,177 @@ function pageAIPASessionPlan(){
 `;
 }
 
+function pageAIBS(){
+  const cover = [
+    {n:"01",t:"Where to start",d:"Training, workshop, or full transformation — the right entry point today.",c:"#e6f4e6"},
+    {n:"02",t:"Do's and don'ts",d:"What works and what fails in early adoption, and the regulations that apply.",c:"#eef2ff"},
+    {n:"03",t:"Cost-benefit analysis",d:"What an AI initiative costs, what it returns, how to read the trade-off.",c:"#fff8e6"},
+    {n:"04",t:"Low-cost augmentation",d:"Making employees AI-augmented quickly with a small set of low-cost tools.",c:"#fdecec"},
+    {n:"05",t:"Leveraging public tools",d:"Real work from Claude, Gemini, NotebookLM, AI Studio, ChatGPT, Perplexity.",c:"#f3eefe"},
+    {n:"06",t:"Function-wise journey",d:"Enterprise guidelines for HR, sales, supply chain, production, marketing.",c:"#e6f4f1"},
+    {n:"07",t:"What we have seen",d:"Our experience, successes and failures transforming industries.",c:"#fdf0e8"},
+    {n:"08",t:"Organization Q&A",d:"A context-specific question-and-answer session on your organization.",c:"#eef6ea"},
+    {n:"09",t:"Hands-on practice",d:"Working directly with the tools to understand AI in practice.",c:"#e8f0fe"}
+  ];
+  const audience = ["CxOs","HoDs","Function leads","Transformation & IT","HR & L&D","Functionwise frontier people"];
+  const decisions = ["Transformation","Functions","Budgeting","Forecast","Roadmapping","Upskilling","Consultation"];
+  const stats = [
+    {v:"296+",l:"Professionals transformed"},
+    {v:"16+",l:"Cohorts delivered"},
+    {v:"1200+",l:"Use cases built"},
+    {v:"82+",l:"Half-day sessions"}
+  ];
+  const partners = ["Beximco Pharma","Dhaka Bank PLC","Ispahani","Nuvista","ICMAB","Bahon & Japan Solartech","Nitol Motors Limited","EDGE-BCC","Polar","National Cyber Security Agency"];
+  const speakers = [
+    {n:"Hadi Bhuiyan",r:"Co-Founder, FutureMind AI (CommEngine Limited)",role:"Program Director, AIPA, BuildNation Limited"},
+    {n:"Munaf Mojib Chowdhury",r:"Founder, Ekshathe Foundation",role:"Program Director, AIPA, BuildNation Limited"},
+    {n:"Mahtab Uddin Ahmed",r:"Founder, Buildcon Consultancies Limited & BuildNation Limited",role:"Strategy Director, AIPA, BuildNation Limited"}
+  ];
+  const rows = [
+    {h:"Hour 1",s:"AI Anthropology & Communication Framework",a:["Quick assessment of AI expectation and AI readiness","Simple communication framework (RCTF) and communication grammar","LLM superpower and biggest fault — hallucination & protection"],o:["Understanding team expectations & AI readiness","How to properly communicate with AI using RCTF","Core strengths and major limitations / faults of LLMs"]},
+    {h:"Hour 2",s:"AI Adoption & Practical Applications",a:["Data analysis with SaaS solutions & basic content generation","Building no-code applications for analysis or plan generation"],o:["Hands-on data analysis using SaaS tools","Techniques for basic content generation","How to build no-code AI applications for planning & analysis"]},
+    {h:"Hour 3",s:"Advanced AI Concepts & Basic Organization Roadmap",a:["Overview of Agentic AI & Vibe Coding concepts","Hands-on 1: Memory management","Hands-on 2: Starting organization's AI PPM (Product Priority Matrix)"],o:["Concepts of Agentic AI & Vibe Coding","Effective AI memory management techniques","Initiating organizational AI PPM integration"]}
+  ];
+  const fullday = [
+    {h:"Hour 4–6",s:"Complete No-Code Business AI-Application with RAG",a:["Hands-on: building a complete no-code business AI application with RAG (retrieval-augmented generation)"],o:["Building an end-to-end no-code business AI application","Applying RAG to ground AI on your own data"]},
+    {h:"Hour 7–8",s:"Building a Baseline AIPPM for Your Organization",a:["Complete hands-on: building context for every function with DIG+8, and an AI roadmap for the organization including AIPPM hands-on"],o:["A baseline AIPPM for your organization","Context built for every function using DIG+8"]}
+  ];
+
+  const coverCards = cover.map(x=>`
+    <div style="background:${x.c};border-radius:12px;padding:20px 18px">
+      <div style="font-size:13px;font-weight:700;color:var(--accent);letter-spacing:0.02em">${x.n}</div>
+      <div style="font-family:var(--sans);font-size:16px;font-weight:700;color:var(--ink);margin:6px 0 6px">${x.t}</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.5">${x.d}</div>
+    </div>`).join('');
+
+  const rowHtml = (r,accent)=>`
+    <div class="aibs-table-row" style="display:grid;grid-template-columns:96px 1.1fr 1.3fr 1.3fr;gap:0;border-top:1px solid rgba(0,0,0,0.08)">
+      <div style="padding:18px 16px;font-weight:700;color:${accent};font-family:var(--sans);font-size:15px">${r.h}</div>
+      <div style="padding:18px 16px;font-family:var(--sans);font-weight:600;color:var(--ink);font-size:14px;line-height:1.4">${r.s}</div>
+      <div style="padding:18px 16px;font-size:13px;color:var(--muted);line-height:1.55">${r.a.map((i,ix)=>`${ix+1}. ${i}`).join('<br>')}</div>
+      <div style="padding:18px 16px;font-size:13px;color:var(--muted);line-height:1.55">${r.o.join('<br>')}</div>
+    </div>`;
+
+  return `
+<style>
+@media(max-width:760px){
+  .aibs-cover-grid{grid-template-columns:1fr !important}
+  .aibs-table-row{grid-template-columns:1fr !important}
+  .aibs-table-row>div{border-top:1px solid rgba(0,0,0,0.06)}
+}
+</style>
+
+<!-- HERO -->
+<div style="background:linear-gradient(135deg,#f7cf46,#f5c518);border-radius:16px;padding:34px 34px 30px;margin-bottom:22px">
+  <div style="font-size:12px;font-weight:700;color:#1b7c40;text-transform:uppercase;letter-spacing:0.1em">Entry Point · Executive Orientation</div>
+  <div style="font-family:var(--sans);font-size:44px;font-weight:800;color:#16324c;letter-spacing:-0.02em;line-height:1.05;margin:8px 0 12px">AI Briefing Session <span style="color:#1f9d55">(AIBS)</span></div>
+  <div style="font-size:16px;color:#33475b;max-width:70ch;line-height:1.5">Three hours to establish what AI means for your business, what it costs, where it applies function by function, and what the first move should be.</div>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:20px">
+    <span style="background:#1b7c40;color:#fff;font-size:13px;font-weight:700;padding:9px 16px;border-radius:8px">Half-Day AIBS · 3.5 hrs</span>
+    <span style="background:#1b7c40;color:#fff;font-size:13px;font-weight:700;padding:9px 16px;border-radius:8px">Full-Day AIBS · 8 hrs</span>
+    <span style="background:#1b7c40;color:#fff;font-size:13px;font-weight:700;padding:9px 16px;border-radius:8px">Senior–Mid leadership</span>
+  </div>
+</div>
+
+<!-- WHAT AIBS COVERS -->
+<div style="margin-bottom:22px">
+  <div style="font-family:var(--sans);font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px">What AIBS Covers</div>
+  <div style="font-size:15px;color:var(--muted);line-height:1.6;max-width:80ch;margin-bottom:18px">AIBS is a pre-preparation session before BuildNation's AISA or AIPA — helping management understand where to begin their AI transformation journey.</div>
+  <div class="aibs-cover-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">${coverCards}</div>
+</div>
+
+<!-- AUDIENCE -->
+<div style="background:var(--paper-2);border-radius:12px;padding:18px 22px;margin-bottom:16px;display:flex;flex-wrap:wrap;align-items:center;gap:10px">
+  <span style="font-family:var(--sans);font-size:15px;font-weight:700;color:var(--ink);margin-right:8px">Audience</span>
+  ${audience.map(a=>`<span style="border:1px solid #cfe6cf;color:#2a6e2a;background:#f2faf2;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px">${a}</span>`).join('')}
+</div>
+
+<!-- LEADERS LEAVE ABLE TO DECIDE ON -->
+<div style="background:#16324c;border-radius:12px;padding:22px 24px;margin-bottom:24px">
+  <div style="font-family:var(--sans);font-size:17px;font-weight:700;color:#fff;margin-bottom:14px">Leaders leave able to decide on</div>
+  <div style="display:flex;flex-wrap:wrap;gap:10px">
+    ${decisions.map(d=>`<span style="background:rgba(255,255,255,0.12);color:#fff;font-size:14px;font-weight:600;padding:8px 16px;border-radius:8px">${d}</span>`).join('')}
+  </div>
+</div>
+
+<!-- STATS -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px">
+  ${stats.map(s=>`<div style="background:#f2faf2;border-radius:12px;padding:22px 20px"><div style="font-family:var(--sans);font-size:34px;font-weight:800;color:#1b7c40;letter-spacing:-0.03em">${s.v}</div><div style="font-size:13px;color:var(--muted);margin-top:4px">${s.l}</div></div>`).join('')}
+</div>
+
+<!-- PARTNERS -->
+<div style="background:var(--paper-2);border-radius:12px;padding:22px 24px;margin-bottom:26px">
+  <div style="font-family:var(--sans);font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px">Multi-Session AIPA &amp; AISA Conducted With</div>
+  <div style="display:flex;flex-wrap:wrap;gap:10px">
+    ${partners.map(p=>`<span style="background:var(--paper);border:1px solid rgba(0,0,0,0.08);color:var(--ink);font-size:13px;font-weight:600;padding:8px 14px;border-radius:8px">${p}</span>`).join('')}
+  </div>
+</div>
+
+<!-- ===== PROGRAM PLAN ===== -->
+<div class="aipa-slide aipa-ink" style="margin-bottom:20px">
+  <div class="aipa-tag">Session Plan · 3.5–8 Hours</div>
+  <div class="aipa-headline-xl">Program <span style="color:#6ee7b7">Plan</span></div>
+  <div class="aipa-body" style="color:#ccc;max-width:70ch">Delivered across 3.5 to 8 hours, each building from fundamentals to advanced hands-on implementation.</div>
+</div>
+
+<!-- PRE-SESSION -->
+<div style="border-left:4px solid #1b7c40;background:#f2faf2;border-radius:0 12px 12px 0;padding:18px 22px;margin-bottom:18px">
+  <span style="background:#1b7c40;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;letter-spacing:0.04em">PRE-SESSION</span>
+  <span style="font-family:var(--sans);font-size:16px;font-weight:700;color:var(--ink);margin-left:10px">Readiness Assessment</span>
+  <div style="font-size:14px;color:var(--muted);line-height:1.55;margin-top:8px">Participants complete a readiness assessment with an AI-Avatar; facilitator analysis of the results produces a baseline guideline that shapes the session.</div>
+</div>
+
+<!-- HALF-DAY TABLE -->
+<div style="background:var(--paper);border:1px solid rgba(0,0,0,0.08);border-radius:12px;overflow:hidden;margin-bottom:18px">
+  <div class="aibs-table-row" style="display:grid;grid-template-columns:96px 1.1fr 1.3fr 1.3fr;background:#1b7c40">
+    <div style="padding:14px 16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.05em">HOUR</div>
+    <div style="padding:14px 16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.05em">SUBJECT / TOPIC</div>
+    <div style="padding:14px 16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.05em">ACTIVITIES</div>
+    <div style="padding:14px 16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.05em">OUTCOMES</div>
+  </div>
+  ${rows.slice(0,2).map(r=>rowHtml(r,'#1b7c40')).join('')}
+  <div style="background:#fff8e6;border-top:1px solid rgba(0,0,0,0.08);padding:12px 18px;font-size:13px;color:#8a6d1a"><span style="background:#b05000;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;margin-right:10px">BREAK &amp; Q&amp;A · 30 MIN</span>Comfort break with an open Q&amp;A allocation.</div>
+  ${rowHtml(rows[2],'#1b7c40')}
+</div>
+
+<!-- FULL-DAY EXTENSION -->
+<div style="background:#fffdf2;border:1px solid #f5c518;border-radius:12px;overflow:hidden;margin-bottom:24px">
+  <div style="padding:16px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <span style="background:#7c1f2e;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;letter-spacing:0.04em">FULL-DAY AIBS</span>
+    <span style="font-family:var(--sans);font-size:16px;font-weight:700;color:#7c1f2e">Complete Hands-On Extension</span>
+  </div>
+  ${fullday.map(r=>rowHtml(r,'#7c1f2e')).join('')}
+</div>
+
+<!-- MAIN BROCHURE PROGRAMS -->
+<div style="font-family:var(--sans);font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px">Please Check the Main Brochure for the AIPA &amp; AISA Programs</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:26px" class="aibs-cover-grid">
+  <div style="background:#f2faf2;border-radius:12px;padding:22px 24px">
+    <div style="font-family:var(--sans);font-size:18px;font-weight:800;color:#1b7c40;margin-bottom:8px">AIPA · AI Practitioner Accelerator</div>
+    <div style="font-size:14px;color:var(--muted);line-height:1.55;margin-bottom:10px">A hands-on program that makes AI a universal personal skill — preparing every professional to work AI-augmented across their function.</div>
+    <div style="font-size:13px;color:var(--ink)"><b style="color:#1b7c40">Format:</b> Foundational 6 sessions + Advanced 3 sessions + Organizational 3 sessions</div>
+  </div>
+  <div style="background:#eef2ff;border-radius:12px;padding:22px 24px">
+    <div style="font-family:var(--sans);font-size:18px;font-weight:800;color:#16324c;margin-bottom:8px">AISA · AI Strategy Accelerator</div>
+    <div style="font-size:14px;color:var(--muted);line-height:1.55">A specialized program for senior leadership — facilitated sessions ending in a management-endorsed base AI strategy and roadmap. Delivered over 2 days.</div>
+  </div>
+</div>
+
+<!-- SPEAKERS -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px" class="aibs-cover-grid">
+  ${speakers.map(s=>`<div style="background:var(--paper-2);border-radius:12px;padding:18px 20px"><div style="font-family:var(--sans);font-size:16px;font-weight:700;color:var(--ink)">${s.n}</div><div style="font-size:12px;color:var(--muted);margin-top:4px;line-height:1.45">${s.r}</div><div style="font-size:12px;font-weight:600;color:var(--accent);margin-top:6px">${s.role}</div></div>`).join('')}
+</div>
+
+<!-- CONTACT BAR -->
+<div style="background:#16324c;border-radius:12px;padding:22px 26px;display:flex;flex-wrap:wrap;align-items:center;gap:18px">
+  <span style="font-family:var(--sans);font-size:18px;font-weight:700;color:#fff">Talk to BuildNation</span>
+  <a href="mailto:contact@buildnation.com.bd" style="color:#cfe0ee;font-size:14px;text-decoration:none">contact@buildnation.com.bd</a>
+  <a href="tel:+8801861884444" style="color:#cfe0ee;font-size:14px;text-decoration:none">+8801861-88444</a>
+  <a href="https://buildnation.com.bd/aipa" target="_blank" style="color:#6ee7b7;font-size:14px;font-weight:600;text-decoration:none;margin-left:auto">buildnation.com.bd/aipa ↗</a>
+</div>
+`;
+}
+
 function pageManagementAISA(){
   const DAY = [
     {t:"09:00",dur:"3 HRS",title:"Session 1",sub:"Strategic Framing",bg:"#1a1f2e",fg:"#fff"},
@@ -4654,6 +4826,7 @@ const PAGES = {
   products: pageProducts,
   programs: pageAIPA,
   aipa: pageAIPA,
+  aibs: pageAIBS,
   'aipa-session-plan': pageAIPASessionPlan,
   'management-aisa': pageManagementAISA,
   'ai-inference': pageAIInference,
@@ -4677,6 +4850,7 @@ const PAGE_META = {
   about:{t:"Hadi Bhuiyan — Digital · AI · SaaS",d:"Digital, AI, Enterprise & SaaS leader in Bangladesh. Co-Founder of CommEngine, EasyDO.ai, FutureMind & BuildNation. 20+ years experience."},
   products:{t:"Products — Hadi Bhuiyan",d:"SaaS & AI products built by Hadi Bhuiyan: CommEngine SocialCRM, EasyDO.ai, EasyFlow, Madevo and more."},
   aipa:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA for leadership, AIPA 5-month workforce program, and AITA transformation sprints. 256+ executives trained."},
+  aibs:{t:"AI Briefing Session (AIBS) — BuildNation | Hadi Bhuiyan", d:"AIBS is a 3.5–8 hour executive orientation and pre-preparation session before BuildNation's AISA or AIPA — establishing what AI means for your business, what it costs, where it applies function by function, and what the first move should be."},
   'aipa-session-plan':{t:"AIPA Session Plan — BuildNation | Hadi Bhuiyan", d:"The AIPA Curriculum — 12 sessions across 4 parts. A progressive journey from AI foundations to enterprise-wide impact."},
   'management-aisa':{t:"Management AI-Strategy Accelerator — BuildNation | Hadi Bhuiyan", d:"A condensed single-day AI Strategy Accelerator for Dhaka Ice Cream Industries Limited (Polar) senior management — strategic framing, breakout opportunity mapping, and a leadership-endorsed base AI strategy."},
   programs:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA, AIPA and AITA. 256+ executives trained across 6+ corporates."},
