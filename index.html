@@ -608,6 +608,8 @@ nav{
 .prod-sel-btn[onclick*="jachai"].active{background:#db2777;color:#fff}
 .prod-sel-btn[onclick*="swachho"]{background:#cffafe;color:#0e7490}
 .prod-sel-btn[onclick*="swachho"].active{background:#0891b2;color:#fff}
+.prod-sel-btn[onclick*="probeno"]{background:#ede9ff;color:#5b2fd0}
+.prod-sel-btn[onclick*="probeno"].active{background:#6d3ff0;color:#fff}
 
 /* PRODUCT EMBED PANEL */
 .prod-embed-panel{display:none;border-radius:var(--radius-xl);overflow:hidden;background:var(--paper-2);margin-bottom:28px}
@@ -1904,7 +1906,8 @@ function pageProducts(){
     {icon:"🤖",label:"Private AI Workspace",val:"easydo.ai",href:"https://easydo.ai"},
     {icon:"🔐",label:"Product Authentication",val:"zachai.xyz",href:"https://www.zachai.xyz"},
     {icon:"🌊",label:"AI Audience Engagement",val:"flow.easydo.ai",href:"https://flow.easydo.ai"},
-    {icon:"🧼",label:"Swachho — Covid-19 Response",val:"Retail Digital Innovation Award 2020",href:"http://bd.linkedin.com/in/mahadib/"}
+    {icon:"🧼",label:"Swachho — Covid-19 Response",val:"Retail Digital Innovation Award 2020",href:"http://bd.linkedin.com/in/mahadib/"},
+    {icon:"🎓",label:"Probeno — AI for Educators",val:"UNESCO-aligned teacher upskilling",href:"probeno.html"}
   ].map(c=>`
     <a href="${c.href}" target="_blank" class="contact-card">
       <span class="contact-icon">${c.icon}</span>
@@ -1922,6 +1925,7 @@ function pageProducts(){
       <button class="prod-sel-btn" onclick="switchProduct('commengine')">🏢 CommEngine</button>
       <button class="prod-sel-btn" onclick="switchProduct('jachai')">🔐 Jachai</button>
       <button class="prod-sel-btn" onclick="switchProduct('swachho')">🧼 Swachho</button>
+      <button class="prod-sel-btn" onclick="switchProduct('probeno')">🎓 Probeno</button>
     </div>
 
     <!-- EasyFlow embed -->
@@ -2016,6 +2020,26 @@ function pageProducts(){
         class="prod-embed-frame"
         data-src="swaccho.html"
         title="Swaccho — Nationwide Food &amp; Relief Distribution Tracking System"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Probeno embed (AI for Educators — designed programme page) -->
+    <div class="prod-embed-panel" id="prod-probeno">
+      <div class="prod-embed-header">
+        <div>
+          <div class="prod-embed-name">🎓 Probeno — AI for Educators</div>
+          <div class="prod-embed-url">Teach the teachers · UNESCO AI Competency Framework aligned</div>
+        </div>
+        <div class="prod-embed-actions">
+          <a href="probeno.html" target="_blank" class="prod-embed-link">Open in new tab ↗</a>
+        </div>
+      </div>
+      <iframe
+        class="prod-embed-frame"
+        data-src="probeno.html"
+        title="Probeno — AI for Educators · Teach the Teachers, Empower Thousands"
         loading="lazy"
         allowfullscreen
       ></iframe>
