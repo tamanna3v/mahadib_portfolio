@@ -2396,9 +2396,6 @@ function consultingSection(){
   }).join('');
 
   return `
-    <div class="stat-grid">
-      ${[{val:"5",label:"Engagement Tracks"},{val:"7+",label:"Client Organizations"},{val:"Tier-IV",label:"Data Center Scope"},{val:"Multi-sector",label:"Coverage"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
-    </div>
     <div class="sub-label"><h3>Consulting Engagements</h3><div class="sub-label-line"></div></div>
     <div class="cons-grid">${cards}</div>`;
 }
