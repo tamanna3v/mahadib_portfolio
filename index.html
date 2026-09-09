@@ -2333,21 +2333,10 @@ function researchSection(){
     </div>`).join('');
 
   return `
-    <div class="stat-grid">
-      ${[{val:"3",label:"IEEE Papers"},{val:"3",label:"Policy Works"},{val:"6 yrs",label:"ICT4D Reviewer"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
-    </div>
     <div class="sub-label"><h3>📄 IEEE Publications</h3><div class="sub-label-line"></div></div>
     ${papers}
     <div class="sub-label"><h3>✍️ Policy Contributions & Academic Reviews</h3><div class="sub-label-line"></div></div>
-    <div class="writing-grid">${writings}</div>
-    <div class="notice">
-      <span style="font-size:20px">📚</span>
-      <div>
-        <div style="font-weight:800;font-size:13px;color:#244a33;margin-bottom:4px">IEEE Xplore Archive</div>
-        <p class="notice-text">All three IEEE publications are indexed through IEEE Xplore Digital Library. Search "Hadi Bhuiyan" or "Mahadib" with the respective conference names to access the full papers.</p>
-        <a href="https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=bhuiyan+ICCIT" target="_blank" class="btn-dark">Search IEEE Xplore →</a>
-      </div>
-    </div>`;
+    <div class="writing-grid">${writings}</div>`;
 }
 
 function pageResearch(){
