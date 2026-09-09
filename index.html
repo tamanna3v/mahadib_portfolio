@@ -647,6 +647,8 @@ nav{
   background:var(--paper);
 }
 @media(max-width:700px){.prod-embed-frame{height:460px}}
+.prod-embed-frame-tall{height:calc(100vh - 220px);min-height:680px}
+@media(max-width:700px){.prod-embed-frame-tall{height:calc(100vh - 180px);min-height:460px}}
 
 /* EVENTS */
 .event-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
@@ -1603,6 +1605,7 @@ const NAV = [
   ]},
   {text:"AI Inference",id:"ai-inference"},
   {text:"EasyFlow",id:"easyflow"},
+  {text:"Probeno",id:"probeno"},
   {text:"Consulting & Research",id:"consulting-research"},
   {text:"Events and News",id:"events"},
   {text:"Contact",id:"contact",dropdown:[
@@ -3901,6 +3904,31 @@ function _pageAIInferenceLegacy(){
 `;
 }
 
+function pageProbeno(){
+  return `
+    <h2 class="section-title">Probeno</h2>
+    <p class="section-sub">Teach the teachers, empower thousands of students — AI for Educators, aligned to the UNESCO AI Competency Framework for Teachers</p>
+
+    <div class="prod-embed-panel active" id="prod-probeno-page">
+      <div class="prod-embed-header">
+        <div>
+          <div class="prod-embed-name">🎓 Probeno — AI for Educators</div>
+          <div class="prod-embed-url">A FutureMind initiative · UNESCO AI Competency Framework aligned</div>
+        </div>
+        <div class="prod-embed-actions">
+          <a href="probeno.html" target="_blank" class="prod-embed-link">Open in new tab ↗</a>
+        </div>
+      </div>
+      <iframe
+        class="prod-embed-frame prod-embed-frame-tall"
+        src="probeno.html"
+        title="Probeno — AI for Educators · Teach the Teachers, Empower Thousands"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+    </div>`;
+}
+
 function switchProduct(id){
   document.querySelectorAll('.prod-embed-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.prod-sel-btn').forEach(b=>b.classList.remove('active'));
@@ -5005,6 +5033,7 @@ const PAGES = {
   'contact-partner': pagePartner,
   'contact-affiliation': pageAffiliation,
   futuremind: pageFutureMind,
+  probeno: pageProbeno,
   news: pageEvents
 };
 
@@ -5031,6 +5060,7 @@ const PAGE_META = {
   'contact-partner':{t:"Partner / Build Together — Hadi Bhuiyan",d:"Co-create AI-augmented learning flows and no-code micro-applications with us under the Build Together model."},
   'contact-affiliation':{t:"Affiliation Program — Hadi Bhuiyan",d:"Refer clients and earn 10% lifetime revenue share. Join our affiliation program and grow together."},
   news:{t:"Events and News — Hadi Bhuiyan",d:"Events, milestones and news — key appearances, program launches, awards, social initiatives and press coverage, from Microsoft panels to the AI-PA corporate cohorts."},
+  probeno:{t:"Probeno — AI for Educators | Hadi Bhuiyan",d:"Probeno equips high-school teachers with responsible, practical AI skills, aligned to the UNESCO AI Competency Framework for Teachers. Teach the teachers, empower thousands of students."},
   futuremind:{t:"FutureMind.Ltd — AI Solution & Product Company",d:"FutureMind builds AI two ways: SaaS products (EasyFlow, Madevo) from $29/mo and custom private solutions (AI Inference, EasyDO Launchpad)."}
 };
 
