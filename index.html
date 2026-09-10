@@ -2072,7 +2072,8 @@ function pageProducts(){
     {icon:"🔐",label:"Product Authentication",val:"zachai.xyz",href:"https://www.zachai.xyz"},
     {icon:"🌊",label:"AI Audience Engagement",val:"flow.easydo.ai",href:"https://flow.easydo.ai"},
     {icon:"🧼",label:"Swachho — Covid-19 Response",val:"Retail Digital Innovation Award 2020",href:"http://bd.linkedin.com/in/mahadib/"},
-    {icon:"🎓",label:"Probeno — AI for Educators",val:"UNESCO-aligned teacher upskilling",href:"probeno.html"}
+    {icon:"🎓",label:"Probeno — AI for Educators",val:"UNESCO-aligned teacher upskilling",href:"probeno.html"},
+    {icon:"🚀",label:"AIPA-Online — Presales Guideline",val:"Roles & steps for Program, Sales, Communication",href:"aipa-online.html"}
   ].map(c=>`
     <a href="${c.href}" target="_blank" class="contact-card">
       <span class="contact-icon">${c.icon}</span>
@@ -2091,6 +2092,7 @@ function pageProducts(){
       <button class="prod-sel-btn" onclick="switchProduct('jachai')">🔐 Jachai</button>
       <button class="prod-sel-btn" onclick="switchProduct('swachho')">🧼 Swachho</button>
       <button class="prod-sel-btn" onclick="switchProduct('probeno')">🎓 Probeno</button>
+      <button class="prod-sel-btn" onclick="switchProduct('aipaonline')">🚀 AIPA-Online</button>
     </div>
 
     <!-- EasyFlow embed -->
@@ -2205,6 +2207,26 @@ function pageProducts(){
         class="prod-embed-frame"
         data-src="probeno.html"
         title="Probeno — AI for Educators · Teach the Teachers, Empower Thousands"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- AIPA-Online embed (Presales Guideline — internal playbook landing page) -->
+    <div class="prod-embed-panel" id="prod-aipaonline">
+      <div class="prod-embed-header">
+        <div>
+          <div class="prod-embed-name">🚀 AIPA-Online — Presales Guideline</div>
+          <div class="prod-embed-url">Roles &amp; Steps for Program, Sales &amp; Communication Teams</div>
+        </div>
+        <div class="prod-embed-actions">
+          <a href="aipa-online.html" target="_blank" class="prod-embed-link">Open in new tab ↗</a>
+        </div>
+      </div>
+      <iframe
+        class="prod-embed-frame"
+        data-src="aipa-online.html"
+        title="AIPA-Online — Presales Guideline"
         loading="lazy"
         allowfullscreen
       ></iframe>
