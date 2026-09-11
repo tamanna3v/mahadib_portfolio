@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AIPA-Online — Presales Guideline · Roles &amp; Steps for Program, Sales &amp; Communication</title>
+<meta name="description" content="AIPA-Online Presales Guideline: the four-step process — Explain, Understand, Recommend, Lock — that keeps Program, Sales and Communication teams aligned and outcome-driven across every AIPA client engagement."/>
+<meta name="keywords" content="AIPA-Online, AIPA, presales guideline, presales process, program sales communication, AI Proficiency Accelerator, client engagement process"/>
+<meta property="og:title" content="AIPA-Online — Presales Guideline"/>
+<meta property="og:description" content="Understand → Diagnose → Recommend → Quote → Lock. The four-step presales process for AIPA, and who owns each step."/>
+<meta property="og:type" content="website"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23244a33'/><text y='.9em' font-size='58' x='16' fill='white'>🚀</text></svg>"/>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --green:#2e5c3f;
+  --green-deep:#244a33;
+  --accent:#c94f2f;
+  --accent-soft:#f3e3dc;
+  --gold:#f0c9bb;
+  --ink:#1c2a21;
+  --ink-2:#3f3f3c;
+  --muted:#5a5a56;
+  --line:#d3d3cd;
+  --paper:#ffffff;
+  --bg:#f1f1ec;
+  --sans:"DM Sans",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --serif:"DM Serif Display",Georgia,serif;
+  --mono:"DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink-2);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--green);text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-weight:400;letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:var(--accent)}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.sec-title{font-size:clamp(26px,4vw,40px);font-weight:600;letter-spacing:-.02em;line-height:1.1;color:var(--green)}
+.sec-sub{font-size:17px;color:var(--muted);max-width:660px;margin-top:12px}
+section{padding:70px 0}
+
+/* TOP BAR */
+.topbar{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:11px;color:var(--green);font-family:var(--serif);font-weight:400;font-size:24px}
+.brand::after{content:".";color:var(--accent)}
+.brand .logo{width:34px;height:34px;background:var(--paper);border:1px solid var(--line);display:grid;place-items:center;font-size:18px}
+.topnav{display:flex;gap:24px}
+.topnav a{color:var(--ink);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.topnav a:hover{color:var(--green)}
+.topbar .cta{background:var(--green);color:#fff;border:1px solid var(--green);padding:13px 20px;font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.topbar .cta:hover{background:var(--green-deep);border-color:var(--green-deep)}
+@media(max-width:900px){.topnav{display:none}}
+
+/* HERO */
+.hero{background:var(--green);color:#fff;position:relative;overflow:hidden;padding:66px 0 88px}
+.hero .wrap{position:relative;z-index:2}
+.hero .eyebrow{color:var(--gold)}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.6vw,48px);letter-spacing:-.01em;line-height:1.1;margin:16px 0 14px;max-width:820px}
+.hero h1 .u{color:var(--gold);font-style:italic}
+.hero p.lead{font-size:17px;color:rgba(255,255,255,.88);max-width:680px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-primary:hover{background:#ab4127;border-color:#ab4127}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+
+/* STAT / STEP BAND */
+.statband{margin-top:-46px;position:relative;z-index:5}
+.statgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{padding:20px;color:#fff;background:var(--green)}
+.stat:nth-child(2n){background:var(--accent)}
+.stat .ic{font-size:20px;opacity:.9}
+.stat .v{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1;margin:10px 0 6px}
+.stat .l{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.92}
+@media(max-width:720px){.statgrid{grid-template-columns:repeat(2,1fr)}}
+.partnerstrip{background:var(--paper);border:1px solid var(--line);padding:16px 22px;margin-top:22px;text-align:center;font-weight:500;color:var(--ink-2);font-size:14.5px}
+.partnerstrip b{color:var(--green)}
+
+/* PROCESS TABLE */
+.proc-table{margin-top:36px;border:1px solid var(--line);background:var(--paper)}
+.proc-row{display:grid;grid-template-columns:.5fr 1.4fr 2.2fr 1.6fr;border-top:1px solid var(--line)}
+.proc-row:first-child{border-top:0}
+.proc-row.head{background:var(--green);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.proc-row>div{padding:16px 18px;font-size:14px}
+.proc-row.head>div{padding:12px 18px}
+.proc-row:not(.head) .cell-step{font-family:var(--serif);font-size:22px;color:var(--accent);display:flex;align-items:center}
+.proc-row:not(.head)>div:nth-child(2){font-weight:600;color:var(--green);border-left:1px solid var(--line)}
+.proc-row:not(.head)>div:nth-child(3){border-left:1px solid var(--line);color:var(--ink-2)}
+.proc-row:not(.head)>div:nth-child(4){border-left:1px solid var(--line);color:var(--muted);font-weight:500}
+@media(max-width:760px){.proc-row{grid-template-columns:1fr}.proc-row>div{border-left:0!important;border-top:1px solid var(--line)}.proc-row>div:first-child{border-top:0}}
+
+/* STEP DETAIL CARDS */
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:860px){.g2{grid-template-columns:1fr}}
+.step-card{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--green);padding:26px}
+.step-card:nth-child(2n){border-top-color:var(--accent)}
+.step-card .sk{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.step-card h3{font-size:19px;font-weight:600;letter-spacing:-.01em;margin:6px 0 12px;color:var(--green)}
+.step-card ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.step-card li{display:flex;gap:10px;font-size:14.5px;color:var(--ink-2)}
+.step-card li::before{content:"→";color:var(--accent);font-weight:700;flex:none}
+
+/* NOT-TO-DO */
+.warn{background:var(--green-deep);color:#fff}
+.warn .wrap{display:grid;grid-template-columns:.9fr 1.6fr;gap:40px;align-items:center}
+@media(max-width:860px){.warn .wrap{grid-template-columns:1fr}}
+.warn .badge{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.24);padding:9px 15px;font-weight:600;font-size:13.5px;margin-bottom:14px}
+.warn p{color:rgba(255,255,255,.86);font-size:16px;max-width:600px}
+.no-postman{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);padding:24px}
+.no-postman .row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.18);font-weight:600;font-size:14px}
+.no-postman .row:last-child{border-bottom:0}
+.no-postman .pct{font-family:var(--serif);font-size:20px;color:var(--gold)}
+
+/* CORE PRINCIPLE FLOW */
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin-top:34px;justify-content:center}
+.flow .node{flex:1;min-width:140px;background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--green);padding:20px 14px;text-align:center}
+.flow .node:nth-child(4n+3){border-top-color:var(--accent)}
+.flow .node .n-ic{font-size:24px}
+.flow .node .n-t{font-weight:600;margin-top:8px;font-size:15px;color:var(--green)}
+.flow .arrow{align-self:center;color:var(--accent);font-size:22px;font-weight:700}
+@media(max-width:720px){.flow .arrow{transform:rotate(90deg)}}
+
+/* CLOSING */
+.closing{margin-top:44px;text-align:center;background:var(--green);color:#fff;padding:54px 28px}
+.closing h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.6vw,36px)}
+.closing p{color:rgba(255,255,255,.85);max-width:580px;margin:12px auto 24px;font-size:15.5px}
+.closing .hero-btns{justify-content:center}
+
+footer{background:var(--green-deep);color:rgba(255,255,255,.75);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:32px 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center}
+footer b{color:#fff}
+footer .disc{text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:12px;color:rgba(255,255,255,.5);max-width:680px;margin-top:10px}
+</style>
+</head>
+<body id="top">
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand"><span class="logo">🚀</span> AIPA-Online</div>
+    <nav class="topnav">
+      <a href="#process">Process</a>
+      <a href="#steps">The 4 Steps</a>
+      <a href="#not-to-do">Strictly Not To Do</a>
+      <a href="#principle">Core Principle</a>
+    </nav>
+    <a class="cta" href="mailto:tamanna3v@gmail.com?subject=AIPA%20Presales%20Guideline">Get the Guideline →</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Presales Guideline · Internal Playbook</span>
+    <h1>Roles &amp; steps for <span class="u">Program, Sales</span> and <span class="u">Communication</span> teams.</h1>
+    <p class="lead"><b>Purpose:</b> to make every role in the AIPA presales process clear across Program, Sales, and
+      Communication, so that each client-facing step is consistent, thoughtful, and outcome-driven.
+      Follow the four steps below — in sequence, every time.</p>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="#process">See the Process</a>
+      <a class="btn btn-ghost" href="#principle">Core Principle</a>
+    </div>
+  </div>
+</header>
+
+<!-- STAT BAND -->
+<div class="statband">
+  <div class="wrap">
+    <div class="statgrid">
+      <div class="stat"><div class="ic">🗣️</div><div class="v">01</div><div class="l">Explain — Program Leads</div></div>
+      <div class="stat"><div class="ic">🔍</div><div class="v">02</div><div class="l">Understand Requirement</div></div>
+      <div class="stat"><div class="ic">📋</div><div class="v">03</div><div class="l">Recommend, Quote &amp; Propose</div></div>
+      <div class="stat"><div class="ic">🔒</div><div class="v">04</div><div class="l">Follow Up &amp; Lock</div></div>
+    </div>
+    <div class="partnerstrip">Applies to <b>every client meeting</b> — for SLDP, AIPA, RL, or any FutureMind programme.</div>
+  </div>
+</div>
+
+<!-- PROCESS TABLE -->
+<section id="process">
+  <div class="wrap">
+    <span class="eyebrow">The Process</span>
+    <h2 class="sec-title" style="margin-top:12px">Four steps, four owners, one outcome.</h2>
+    <p class="sec-sub">Each step has a clear owner and a clear output — nobody moves to the next step until the current one is done.</p>
+
+    <div class="proc-table">
+      <div class="proc-row head">
+        <div>Step</div><div>Owner</div><div>Key Focus</div><div>Output</div>
+      </div>
+      <div class="proc-row">
+        <div class="cell-step">1</div>
+        <div>Program Team (lead), Sales/Comm support</div>
+        <div>Explain content, intent, outcome, approach in client's context</div>
+        <div>Client understands relevance</div>
+      </div>
+      <div class="proc-row">
+        <div class="cell-step">2</div>
+        <div>Program Team + Sales/Comm</div>
+        <div>Understand requirement, business context, participants, success criteria</div>
+        <div>Documented requirement</div>
+      </div>
+      <div class="proc-row">
+        <div class="cell-step">3</div>
+        <div>Sales, with Program input</div>
+        <div>Recommendation-based quote &amp; proposal</div>
+        <div>Proposal + quote sent</div>
+      </div>
+      <div class="proc-row">
+        <div class="cell-step">4</div>
+        <div>Sales/Comm, with Program</div>
+        <div>Lock scope, dates, participants, commercials</div>
+        <div>Clean handover to delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 STEPS DETAIL -->
+<section id="steps" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <span class="eyebrow">In Detail</span>
+    <h2 class="sec-title" style="margin-top:12px">What each step actually means.</h2>
+    <div class="grid g2" style="margin-top:34px">
+
+      <div class="step-card">
+        <div class="sk">Step 1</div>
+        <h3>First Meeting — Program Team Leads</h3>
+        <ul>
+          <li>Program Team always leads the first client meeting — for SLDP, AIPA, RL, or any programme.</li>
+          <li>Program Team clearly explains the programme's content, intent, outcome, and approach — connecting it to the client's specific context, not just presenting it.</li>
+          <li>Sales and Communication provide coordination and support; the core thinking and explanation must come from the Program Team.</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <div class="sk">Step 2</div>
+        <h3>Detailing &amp; Requirement Understanding</h3>
+        <ul>
+          <li>If more detail is needed, hold an in-person or online session with the Head of Training / Head of HR, involving CPO/CHRO-level stakeholders where relevant.</li>
+          <li>Goal: understand the actual requirement, business/problem context, participant profile, expected outcome and success criteria, and how our programme addresses it.</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <div class="sk">Step 3</div>
+        <h3>Quote &amp; Proposal</h3>
+        <ul>
+          <li>Send a proper quote and proposal only after requirements are understood.</li>
+          <li>The proposal covers recommendation, rationale, scope, and expected outcome — not price alone — and explains why this approach fits the client.</li>
+          <li>The quote reflects our recommendation; it is never a mechanical quotation of only what the client asked for.</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <div class="sk">Step 4</div>
+        <h3>Follow-up &amp; Lock</h3>
+        <ul>
+          <li>Use follow-up communication to progressively lock scope, dates, participant numbers, and other requirements.</li>
+          <li>Confirm final scope, commercial terms, and delivery expectations clearly.</li>
+          <li>Hand over cleanly to the implementation/delivery team so nothing is missed.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STRICTLY NOT TO DO -->
+<section class="warn" id="not-to-do">
+  <div class="wrap">
+    <div>
+      <div class="badge">⛔ Strictly Not To Do</div>
+      <p>No one on the team acts as a <b>"postman"</b> — passing information along is not enough.
+        Business, Operations, Sales, and Communication must each carry at least 80–90% of the Program
+        Lead's level of understanding, contributing actively with business understanding, operational
+        input, sales context, and communication insight.</p>
+    </div>
+    <div class="no-postman">
+      <div class="row"><span>Program Lead's understanding</span><span class="pct">100%</span></div>
+      <div class="row"><span>Business &amp; Operations</span><span class="pct">80–90%</span></div>
+      <div class="row"><span>Sales</span><span class="pct">80–90%</span></div>
+      <div class="row"><span>Communication</span><span class="pct">80–90%</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE PRINCIPLE -->
+<section id="principle">
+  <div class="wrap">
+    <div style="text-align:center;max-width:680px;margin:0 auto">
+      <span class="eyebrow">Core Principle</span>
+      <h2 class="sec-title" style="margin-top:12px">Understand → Diagnose → Recommend → Quote → Lock.</h2>
+      <p class="sec-sub" style="margin:12px auto 0">Every AIPA presales conversation follows this chain — skipping a link is how deals go wrong.</p>
+    </div>
+    <div class="flow">
+      <div class="node"><div class="n-ic">🔍</div><div class="n-t">Understand</div></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="n-ic">🩺</div><div class="n-t">Diagnose</div></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="n-ic">💡</div><div class="n-t">Recommend</div></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="n-ic">📄</div><div class="n-t">Quote</div></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="n-ic">🔒</div><div class="n-t">Lock</div></div>
+    </div>
+
+    <div class="closing">
+      <h2>Consistent process. Consistent client experience.</h2>
+      <p>This guideline exists so every AIPA client — regardless of which team member they meet first —
+        gets the same thoughtful, outcome-driven experience from first meeting to signed proposal.</p>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="mailto:tamanna3v@gmail.com?subject=AIPA%20Presales%20Guideline">Request the Full Guideline</a>
+        <a class="btn btn-ghost" href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>🚀 <b>AIPA-Online</b> — Presales Guideline · Program, Sales &amp; Communication</div>
+    <div>An internal playbook for AIPA (AI Proficiency Accelerator) client engagements</div>
+  </div>
+  <div class="wrap"><div class="disc">AIPA-Online summarises the internal Presales Guideline used by the Program, Sales and Communication teams to run consistent, outcome-driven client engagements for the AI Proficiency Accelerator (AIPA) programme.</div></div>
+</footer>
+
+</body>
+</html>
