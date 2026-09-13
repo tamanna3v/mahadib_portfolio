@@ -807,7 +807,7 @@ nav{
 /* TIMELINE */
 .timeline{display:flex;flex-direction:row;flex-wrap:wrap;gap:10px;padding:6px 0 8px;align-items:stretch}
 .timeline-line{display:none}
-.tl-item{display:flex;flex-direction:column;align-items:flex-start;min-width:140px;max-width:170px;min-height:124px;background:var(--paper-2);border:none;border-radius:0;padding:16px 16px;gap:4px;flex-shrink:0;position:relative}
+.tl-item{display:flex;flex-direction:column;align-items:flex-start;width:170px;height:150px;background:var(--paper-2);border:none;border-radius:0;padding:16px 16px;gap:4px;flex-shrink:0;position:relative}
 .tl-item.active-phase{background:#244a33;border-color:#244a33}
 .tl-item.tl-new{background:var(--accent) !important;border:none !important}
 .tl-dot{display:none}
@@ -1163,7 +1163,7 @@ a{color:var(--green)}
   font-family:var(--sans)!important;font-weight:600;letter-spacing:-0.01em!important;color:var(--ink);
 }
 .section-title{
-  font-size:clamp(40px,5.2vw,64px);line-height:1.05;letter-spacing:-0.02em!important;
+  font-size:clamp(24px,2.6vw,34px);line-height:1.05;letter-spacing:-0.02em!important;
   color:var(--green);margin:0 0 18px;text-transform:none;
 }
 .section-title::after{content:".";color:var(--accent)}
@@ -1310,7 +1310,7 @@ body.deck-mode .page{padding-top:0;scroll-padding-top:76px}
 .pstat-val{color:var(--green)}
 .product-preview{background:var(--bg-soft)}
 .preview-badge{backdrop-filter:none;-webkit-backdrop-filter:none}
-.tl-item{min-width:170px;max-width:210px;padding:20px 18px;background:var(--paper)!important}
+.tl-item{width:200px;height:190px;padding:20px 18px;background:var(--paper)!important}
 .tl-item.active-phase{background:var(--green)!important;border-color:var(--green)!important}
 .tl-item.tl-new{background:var(--accent)!important;border-color:var(--accent)!important}
 .tl-item.active-phase .tl-year,.tl-item.tl-new .tl-year{color:rgba(255,255,255,.75)!important}
@@ -1511,12 +1511,11 @@ footer{
   .page{padding-top:200px}
 }
 @media(max-width:600px){
-  .section-title{font-size:40px}
   .sub-label{margin-top:52px}
   .stat-box,.prog-result-card{padding:22px 20px}
   .stat-val{font-size:38px}
   .exp-card{padding-left:44px}
-  .tl-item{min-width:150px}
+  .tl-item{width:150px}
   .bnp-h1{font-size:46px}
 }
 
@@ -1643,7 +1642,7 @@ const EXPERIENCES = [
   {logo:"📡",org:"Robi Axiata Limited",role:"Innovation & Digital Service Unit Lead · May 2013 – July 2021 · Dhaka, Bangladesh",desc:"Led product lifecycle for Digital Services, Innovation, IoT & VAS. Redesigned SMS Ecosystem for 40M subscribers — $3M YRR.",tags:["Telco","IoT","Digital Services"],points:["Led complete product lifecycle for Digital Services, Innovation, IoT & VAS.","Managed Airtel & Axiata SDP merger, onboarding 2000+ services across USSD, VAS, MFS & Digital platforms.","Redesigned SMS Ecosystem for 40M subscribers — achieved $3M YRR."]},
   {logo:"📶",org:"Nokia Siemens Networks",role:"Intelligent Network & Project Management Lead · Feb 2008 – May 2013",desc:"Implemented Banglalink IN09–IN14 handling 90M subscribers. Managed 60M-subscriber migration for Vodafone India.",tags:["IN","BSS","Telecom"],points:["Implemented Banglalink IN09–IN14 (five IN platforms) handling 90 million subscribers.","Managed migration of 60M subscribers across four IN nodes for Vodafone India."]},
   {logo:"⚙️",org:"Huawei Technologies",role:"Business Support System Engineer · April 2006 – Feb 2008",desc:"Led commissioning of Postpaid Billing, Mediation, PRM & International Roaming. Deployed BTTB to Teletalk Charging for 20M subscribers.",tags:["BSS","Billing","Mediation"],points:["Led commissioning of Postpaid Billing, Mediation, PRM & International Roaming solutions.","Deployed BTTB to Teletalk Charging system transformation for 20M subscribers."]},
-  {logo:"🎓",org:"Premier University, Chittagong",role:"Lecturer in CSE · Feb 2006 – Sep 2007",desc:"Conducted CS & Business lectures and mentored undergraduate thesis and projects.",tags:["Teaching","Academia"],points:["Conducted CS & Business lectures, labs and mentored undergraduate thesis and projects."]}
+  {logo:"🎓",org:"Premier University, Chittagong & CUET ( Appointed )",role:"Lecturer in CSE · Feb 2006 – Sep 2007",desc:"Conducted CS & Business lectures and mentored undergraduate thesis and projects.",tags:["Teaching","Academia"],points:["Conducted CS & Business lectures, labs and mentored undergraduate thesis and projects."]}
 ];
 
 const SKILLS = {
@@ -1865,9 +1864,12 @@ const CERTIFICATIONS = [
   {code:"ITIL v4",title:"ITIL v4 Foundation",issuer:"AXELOS / PeopleCert",detail:"IT service management best practices for designing, delivering and continually improving digital services.",bg:"var(--accent-sage)"},
   {code:"BABOK",title:"Business Analysis (BABOK)",issuer:"IIBA",detail:"Body of knowledge for requirements engineering, solution assessment and enterprise analysis.",bg:"var(--accent-lilac)"},
   {code:"CxO",title:"CxO Conclave Certified",issuer:"IBA – University of Dhaka",detail:"Executive leadership certification for C-suite strategy and digital decision-making.",year:"2024",bg:"var(--accent-peach)"},
-  {code:"MS",title:"Microsoft for Startups Founders Fellow",issuer:"Microsoft",detail:"Founders Hub fellowship recognising AI startup ecosystem and enterprise B2B SaaS leadership.",year:"2022",bg:"var(--accent-butter)"},
   {code:"NSN",title:"NSN TAC II Certified",issuer:"Nokia Siemens Networks",detail:"Advanced technical assistance certification for Intelligent Network and BSS platforms.",bg:"var(--accent-rose)"},
   {code:"ServADM",title:"Service Administration",issuer:"Telecom Systems",detail:"Service provisioning and administration across charging, VAS and digital service platforms.",bg:"var(--accent-maroon-light)"}
+];
+
+const FELLOWSHIPS = [
+  {code:"MS",title:"Microsoft for Startups Founders Fellow",issuer:"Microsoft",detail:"Founders Hub fellowship recognising AI startup ecosystem and enterprise B2B SaaS leadership.",year:"2022",bg:"var(--accent-butter)"}
 ];
 
 const CONSULTING = [
@@ -1953,7 +1955,7 @@ function pageAbout(){
     <div id="sec-building" style="scroll-margin-top:68px"></div>
     <div class="sub-label"><h3>Building NOW</h3><div class="sub-label-line"></div></div>
     <div class="building-grid">${BUILDING.map(b=>`<div class="building-card"${b.href?` style="cursor:pointer" onclick="window.open('${b.href}','_blank')"`:''}>` +`<div class="building-emoji">${b.emoji}</div><div><div class="building-title">${b.title}${b.href?` <span style="font-size:12px;opacity:.6">↗</span>`:''}</div><div class="building-desc">${b.desc}</div></div></div>`).join('')}</div>
-    <div class="sub-label"><h3>Associated Companies</h3><div class="sub-label-line"></div></div>
+    <div class="sub-label"><h3>Organizations</h3><div class="sub-label-line"></div></div>
     <div class="company-logos-row">
       <div class="company-logo-item">
         <div class="company-logo-wrap"><img src="https://www.google.com/s2/favicons?domain=buildnation.com.bd&sz=128" alt="BuildNation" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:#2e5c3f\\'>BN</div>')"/></div>
@@ -2041,8 +2043,6 @@ function pageExperience(){
     <h2 class="section-title">Experience</h2>
     <p class="section-sub">19+ years across Telco, AI, SaaS & Digital Transformation</p>
     <div class="card" style="padding:8px 24px">${expCards}</div>
-    <div class="sub-label"><h3>Competence</h3><div class="sub-label-line"></div></div>
-    ${skillSections}
     <div class="sub-label"><h3>Education</h3><div class="sub-label-line"></div></div>
     <div class="card">
       <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
@@ -2061,7 +2061,9 @@ function pageExperience(){
           <div style="font-weight:800;font-size:15px;color:#244a33;margin-top:8px">Chittagong Collegiate School, Bangladesh</div>
         </div>
       </div>
-    </div>`;
+    </div>
+    <div class="sub-label"><h3>Competence</h3><div class="sub-label-line"></div></div>
+    ${skillSections}`;
 }
 
 function pageProducts(){
@@ -2463,7 +2465,7 @@ function pageRecognition(){
 }
 
 function pageCertifications(){
-  const cards = CERTIFICATIONS.map(c=>`
+  const certCard = c=>`
     <div class="cert-card" style="background:${c.bg}">
       <div class="cert-badge">${c.code}</div>
       <div class="cert-body">
@@ -2472,14 +2474,18 @@ function pageCertifications(){
         <p class="cert-detail">${c.detail}</p>
         ${c.year?`<div class="feat-year">📅 ${c.year}</div>`:''}
       </div>
-    </div>`).join('');
+    </div>`;
+  const cards = CERTIFICATIONS.map(certCard).join('');
+  const fellowshipCards = FELLOWSHIPS.map(certCard).join('');
   return `
     <h2 class="section-title">Certifications</h2>
     <p class="section-sub">Professional credentials & executive certifications</p>
     <div class="stat-grid">
       ${[{val:String(CERTIFICATIONS.length),label:"Certifications"},{val:"PMP",label:"Project Mgmt"},{val:"ITIL v4",label:"Service Mgmt"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
     </div>
-    <div class="cert-grid">${cards}</div>`;
+    <div class="cert-grid">${cards}</div>
+    <div class="sub-label"><h3>Fellowship</h3><div class="sub-label-line"></div></div>
+    <div class="cert-grid">${fellowshipCards}</div>`;
 }
 
 function pageContact(){
