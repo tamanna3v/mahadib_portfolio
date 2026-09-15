@@ -599,28 +599,98 @@ nav{
 .uc-menu-desc{font-size:12px;color:var(--muted);font-weight:400;line-height:1.5;letter-spacing:-0.003em}
 @media(max-width:700px){.uc-menu{grid-template-columns:repeat(2,1fr)}}
 
-/* PRODUCT SELECTOR */
-.prod-selector{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
-.prod-sel-btn{
-  background:var(--paper-2);border:none;border-radius:0;
-  padding:14px 22px;font-size:14px;font-weight:500;color:var(--ink-2);
-  cursor:pointer;font-family:var(--sans);letter-spacing:-0.005em;
-  transition:background .2s ease,color .2s ease,transform .15s ease;
-  min-width:120px;text-align:center;
+/* PRODUCT CONSTELLATION */
+.prod-cons{
+  position:relative;background:var(--paper);
+  border:1px solid var(--line);border-top:3px solid var(--green);
+  margin-bottom:24px;overflow:hidden;
 }
-.prod-sel-btn:hover:not(.active){filter:brightness(0.92);transform:translateY(-1px)}
-.prod-sel-btn[onclick*="easyflow"]{background:#e8ebe6;color:#2e5c3f}
-.prod-sel-btn[onclick*="easyflow"].active{background:#2e5c3f;color:#fff}
-.prod-sel-btn[onclick*="easydo"]{background:#e8ebe6;color:#2e5c3f}
-.prod-sel-btn[onclick*="easydo"].active{background:#16a34a;color:#fff}
-.prod-sel-btn[onclick*="commengine"]{background:#e8ebe6;color:#2e5c3f}
-.prod-sel-btn[onclick*="commengine"].active{background:#2e5c3f;color:#fff}
-.prod-sel-btn[onclick*="jachai"]{background:#e8ebe6;color:#2e5c3f}
-.prod-sel-btn[onclick*="jachai"].active{background:#2e5c3f;color:#fff}
-.prod-sel-btn[onclick*="swachho"]{background:#e8ebe6;color:#2e5c3f}
-.prod-sel-btn[onclick*="swachho"].active{background:#2e5c3f;color:#fff}
-.prod-sel-btn[onclick*="probeno"]{background:#e8ebe6;color:#2e5c3f}
-.prod-sel-btn[onclick*="probeno"].active{background:#2e5c3f;color:#fff}
+.prod-cons-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding:15px 22px;border-bottom:1px solid var(--line-soft);position:relative;z-index:3;
+  background:var(--paper);
+}
+.prod-cons-eyebrow{
+  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--green);
+}
+.prod-cons-hint{font-size:12px;color:var(--muted);letter-spacing:-0.005em}
+.prod-cons-plane{position:relative;margin:34px 78px 40px;height:330px}
+@media(max-width:1100px){.prod-cons-plane{margin:28px 56px 34px;height:286px}}
+
+/* faint star dust behind the asterism */
+.cons-dust-layer{position:absolute;inset:-34px -78px -40px;pointer-events:none;z-index:0}
+.cons-dust{
+  position:absolute;left:var(--x);top:var(--y);width:2px;height:2px;
+  background:var(--muted-2);opacity:.22;animation:cons-twinkle 5s ease-in-out infinite;
+}
+@keyframes cons-twinkle{0%,100%{opacity:.12}50%{opacity:.5}}
+
+/* the lines of the asterism */
+.prod-cons-sky{position:absolute;inset:0;width:100%;height:100%;z-index:1;overflow:visible}
+.cons-link{fill:none;stroke:var(--line);stroke-width:1;transition:stroke .28s ease}
+.cons-link.lit{stroke:var(--green)}
+
+/* each product is a star */
+.cons-node{
+  position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-12px);
+  z-index:2;width:max-content;max-width:150px;
+  display:flex;flex-direction:column;align-items:center;gap:7px;
+  background:none;border:none;padding:0;cursor:pointer;font-family:var(--sans);text-align:center;
+}
+.cons-star-wrap{height:24px;display:flex;align-items:center;justify-content:center;position:relative}
+.cons-star{
+  width:14px;height:14px;transform:rotate(45deg);
+  border:1px solid var(--green);background:var(--paper);
+  transition:width .2s ease,height .2s ease,background .2s ease,border-color .2s ease;
+}
+.cons-node:hover .cons-star,.cons-node:focus-visible .cons-star{background:var(--green);width:18px;height:18px}
+.cons-node.active .cons-star{background:var(--accent);border-color:var(--accent);width:18px;height:18px}
+/* four-point glint on the selected star */
+.cons-star-wrap::before,.cons-star-wrap::after{
+  content:"";position:absolute;left:50%;top:50%;background:var(--accent);
+  opacity:0;transition:opacity .2s ease,width .25s ease,height .25s ease;
+}
+.cons-star-wrap::before{width:0;height:1px;transform:translate(-50%,-50%)}
+.cons-star-wrap::after{width:1px;height:0;transform:translate(-50%,-50%)}
+.cons-node.active .cons-star-wrap::before{opacity:.55;width:42px}
+.cons-node.active .cons-star-wrap::after{opacity:.55;height:42px}
+.cons-label{
+  font-size:13px;font-weight:600;color:var(--ink-2);line-height:1.2;
+  letter-spacing:-0.008em;white-space:nowrap;transition:color .2s ease;
+}
+.cons-node:hover .cons-label,.cons-node:focus-visible .cons-label{color:var(--ink)}
+.cons-node.active .cons-label{color:var(--accent)}
+.cons-cap{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted-2);line-height:1.35;opacity:0;transition:opacity .2s ease;
+}
+.cons-node:hover .cons-cap,.cons-node:focus-visible .cons-cap,.cons-node.active .cons-cap{opacity:1}
+.cons-node:focus{outline:none}
+.cons-node:focus-visible{outline:1px solid var(--ink);outline-offset:6px}
+
+@media(prefers-reduced-motion:reduce){
+  .cons-dust{animation:none}
+  .cons-star,.cons-link,.cons-label,.cons-cap,.cons-star-wrap::before,.cons-star-wrap::after{transition:none}
+}
+/* below tablet the map folds into a plain list of stars */
+@media(max-width:760px){
+  .prod-cons-plane{position:static;margin:14px;height:auto;display:flex;flex-wrap:wrap;gap:8px}
+  .prod-cons-sky,.cons-dust-layer{display:none}
+  .cons-node{
+    position:static;transform:none;width:auto;flex:1 1 44%;
+    flex-direction:row;align-items:center;justify-content:flex-start;gap:9px;
+    padding:12px 14px;background:var(--paper-2);text-align:left;
+  }
+  .cons-node.active{background:var(--green)}
+  .cons-node.active .cons-label{color:#fff}
+  .cons-node.active .cons-star{background:#fff;border-color:#fff}
+  .cons-star-wrap{height:auto}
+  .cons-star-wrap::before,.cons-star-wrap::after{display:none}
+  .cons-label{white-space:nowrap;font-size:12.5px}
+  .cons-cap{display:none}
+}
+@media(max-width:560px){.prod-cons-hint{display:none}}
 
 /* PRODUCT EMBED PANEL */
 .prod-embed-panel{display:none;border-radius:0;overflow:hidden;background:var(--paper-2);margin-bottom:28px}
@@ -1364,7 +1434,7 @@ body.deck-mode .page{padding-top:0;scroll-padding-top:76px}
 
 /* ── BUTTONS → square, tracked uppercase; solid green or hairline ghost ── */
 .btn-dark,.link-btn,.event-btn,.event-filter-btn,.ieee-btn,.dig8-feed-btn,.li-post-cta,.aipa-btn-white,
-.aipa-btn-ghost,.prod-sel-btn,.prod-embed-link,.dig8-embed-follow-btn,.exp-dd-toggle,.cons-doc-link,
+.aipa-btn-ghost,.prod-embed-link,.dig8-embed-follow-btn,.exp-dd-toggle,.cons-doc-link,
 .news-card-btn,.btn-light,.bnp-pill{
   border-radius:0!important;box-shadow:none!important;font-family:var(--sans);font-weight:500!important;
   font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 20px;line-height:1.2;
@@ -1376,17 +1446,16 @@ body.deck-mode .page{padding-top:0;scroll-padding-top:76px}
 .btn-dark:hover,.event-btn:hover,.dig8-feed-btn:hover,.li-post-cta:hover,.aipa-btn-white:hover,.news-card-btn:hover{
   background:var(--green-deep)!important;border-color:var(--green-deep)!important;opacity:1;
 }
-.link-btn,.event-filter-btn,.ieee-btn,.prod-sel-btn,.aipa-btn-ghost,.prod-embed-link,.exp-dd-toggle,
+.link-btn,.event-filter-btn,.ieee-btn,.aipa-btn-ghost,.prod-embed-link,.exp-dd-toggle,
 .cons-doc-link,.btn-light{
   background:transparent!important;color:var(--ink)!important;border:1px solid var(--ink)!important;
 }
-.link-btn:hover,.event-filter-btn:hover,.ieee-btn:hover,.prod-sel-btn:hover,.aipa-btn-ghost:hover,
+.link-btn:hover,.event-filter-btn:hover,.ieee-btn:hover,.aipa-btn-ghost:hover,
 .prod-embed-link:hover,.exp-dd-toggle:hover,.cons-doc-link:hover,.btn-light:hover{
   background:var(--ink)!important;color:#fff!important;filter:none;
 }
 .link-btn{text-transform:none;letter-spacing:0;font-size:13px;padding:10px 16px;margin:0}
-.event-filter-btn.active,.prod-sel-btn.active{background:var(--green)!important;color:#fff!important;border-color:var(--green)!important}
-.prod-sel-btn{min-width:0}
+.event-filter-btn.active{background:var(--green)!important;color:#fff!important;border-color:var(--green)!important}
 .dig8-embed-follow-btn{background:#fff!important;color:var(--green)!important;border:1px solid #fff!important}
 .dig8-embed-follow-btn:hover{background:var(--bg)!important}
 .aipa-ink .aipa-btn-ghost,.prog-hero .aipa-btn-ghost,.prog-banner .aipa-btn-ghost{color:#fff!important;border-color:rgba(255,255,255,.6)!important}
@@ -2066,7 +2135,86 @@ function pageExperience(){
     ${skillSections}`;
 }
 
+// Product constellation — each product is a star, lines trace how they connect.
+const PRODUCT_STARS = [
+  {id:'commengine', x:8,  y:64, emoji:'🏢', name:'CommEngine', cap:'SocialCRM & profiling',
+   title:'CommEngine', meta:'commengine.xyz', href:'https://commengine.xyz/',
+   src:'https://commengine.xyz/', frameTitle:'CommEngine — SocialCRM &amp; AI Profiling'},
+  {id:'easydo', x:23, y:22, emoji:'🤖', name:'EasyDo', cap:'Private AI workspace',
+   title:'EasyDo — Private AI Workspace', meta:'easydo.ai', href:'https://easydo.ai/',
+   src:'https://easydo.ai/', frameTitle:'EasyDo — Private AI Workspace'},
+  {id:'easyflow', x:42, y:56, emoji:'🌊', name:'EasyFlow', cap:'Audience engagement',
+   title:'EasyFlow by EasyDO.ai', meta:'flow.easydo.ai', href:'https://flow.easydo.ai/',
+   src:'https://flow.easydo.ai/', frameTitle:'EasyFlow — AI-Guided Audience Engagement', eager:true},
+  {id:'jachai', x:57, y:16, emoji:'🔐', name:'Jachai', cap:'Product authentication',
+   title:'Jachai', meta:'zachai.xyz', href:'https://www.zachai.xyz/',
+   src:'https://www.zachai.xyz/', frameTitle:'Jachai — Product Authentication'},
+  {id:'swachho', x:63, y:86, emoji:'🧼', name:'Swaccho', cap:'Relief distribution',
+   title:'Swaccho — Food &amp; Relief Distribution Tracking',
+   meta:'P2O2V2P Model · Retail Digital Innovation Award 2020', href:'swaccho.html',
+   src:'swaccho.html', frameTitle:'Swaccho — Nationwide Food &amp; Relief Distribution Tracking System'},
+  {id:'probeno', x:79, y:45, emoji:'🎓', name:'Probeno', cap:'AI for educators',
+   title:'Probeno — AI for Educators',
+   meta:'Teach the teachers · UNESCO AI Competency Framework aligned', href:'probeno.html',
+   src:'probeno.html', frameTitle:'Probeno — AI for Educators · Teach the Teachers, Empower Thousands'},
+  {id:'aipaonline', x:93, y:76, emoji:'🚀', name:'AIPA-Online', cap:'Presales guideline',
+   title:'AIPA-Online — Presales Guideline',
+   meta:'Roles &amp; Steps for Program, Sales &amp; Communication Teams', href:'aipa-online.html',
+   src:'aipa-online.html', frameTitle:'AIPA-Online — Presales Guideline'}
+];
+// lines of the asterism
+const PRODUCT_LINKS_MAP = [
+  ['commengine','easydo'],['easydo','easyflow'],['easyflow','jachai'],['easyflow','swachho'],
+  ['jachai','probeno'],['swachho','probeno'],['probeno','aipaonline']
+];
+// fixed scatter so the sky renders identically on every load
+const PRODUCT_DUST = [
+  [4,12],[11,84],[16,44],[19,7],[27,68],[31,33],[34,92],[39,15],[44,78],[47,38],
+  [52,62],[55,5],[59,49],[66,28],[69,70],[72,11],[75,90],[81,24],[84,60],[88,8],
+  [91,46],[95,88],[97,30],[13,58],[25,96],[63,41],[86,72],[2,71]
+];
+
 function pageProducts(){
+  const ACTIVE = 'easyflow';
+
+  const dust = PRODUCT_DUST.map(([x,y],i)=>
+    `<span class="cons-dust" style="--x:${x}%;--y:${y}%;animation-delay:${(i%7)*0.7}s"></span>`).join('');
+
+  const byId = {};
+  PRODUCT_STARS.forEach(p=>{byId[p.id]=p;});
+  const links = PRODUCT_LINKS_MAP.map(([a,b])=>{
+    const A = byId[a], B = byId[b];
+    return `<line class="cons-link${a===ACTIVE||b===ACTIVE?' lit':''}" data-a="${a}" data-b="${b}"
+      x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}" vector-effect="non-scaling-stroke"></line>`;
+  }).join('');
+
+  const stars = PRODUCT_STARS.map(p=>`
+    <button type="button" class="cons-node${p.id===ACTIVE?' active':''}" data-prod="${p.id}"
+      style="--x:${p.x}%;--y:${p.y}%"
+      aria-pressed="${p.id===ACTIVE?'true':'false'}"
+      onclick="switchProduct('${p.id}')"
+      onmouseenter="consPeek('${p.id}')" onmouseleave="consPeek(null)"
+      onfocus="consPeek('${p.id}')" onblur="consPeek(null)">
+      <span class="cons-star-wrap"><span class="cons-star"></span></span>
+      <span class="cons-label">${p.name}</span>
+      <span class="cons-cap">${p.cap}</span>
+    </button>`).join('');
+
+  const panels = PRODUCT_STARS.map(p=>`
+    <div class="prod-embed-panel${p.id===ACTIVE?' active':''}" id="prod-${p.id}">
+      <div class="prod-embed-header">
+        <div>
+          <div class="prod-embed-name">${p.emoji} ${p.title}</div>
+          <div class="prod-embed-url">${p.meta}</div>
+        </div>
+        <div class="prod-embed-actions">
+          <a href="${p.href}" target="_blank" rel="noopener" class="prod-embed-link">Open in new tab ↗</a>
+        </div>
+      </div>
+      <iframe class="prod-embed-frame" ${p.eager?`src="${p.src}"`:`data-src="${p.src}"`}
+        title="${p.frameTitle}" loading="lazy" allowfullscreen></iframe>
+    </div>`).join('');
+
   const productLinks = [
     {icon:"🌐",label:"AI Accelerator Program",val:"buildnation.com.bd",href:"https://buildnation.com.bd/aipa/"},
     {icon:"🏢",label:"SocialCRM & AI Profiling",val:"commengine.xyz",href:"http://www.commengine.xyz"},
@@ -2086,153 +2234,20 @@ function pageProducts(){
     <h2 class="section-title">Products</h2>
     <p class="section-sub">AI-powered platforms built to transform how teams work and engage</p>
 
-    <!-- Product selector -->
-    <div class="prod-selector">
-      <button class="prod-sel-btn active" onclick="switchProduct('easyflow')">🌊 EasyFlow</button>
-      <button class="prod-sel-btn" onclick="switchProduct('easydo')">🤖 EasyDo</button>
-      <button class="prod-sel-btn" onclick="switchProduct('commengine')">🏢 CommEngine</button>
-      <button class="prod-sel-btn" onclick="switchProduct('jachai')">🔐 Jachai</button>
-      <button class="prod-sel-btn" onclick="switchProduct('swachho')">🧼 Swachho</button>
-      <button class="prod-sel-btn" onclick="switchProduct('probeno')">🎓 Probeno</button>
-      <button class="prod-sel-btn" onclick="switchProduct('aipaonline')">🚀 AIPA-Online</button>
+    <!-- Product constellation selector -->
+    <div class="prod-cons">
+      <div class="prod-cons-head">
+        <span class="prod-cons-eyebrow">The Constellation</span>
+        <span class="prod-cons-hint">${PRODUCT_STARS.length} products, one system — select a star to open it</span>
+      </div>
+      <div class="prod-cons-plane">
+        <div class="cons-dust-layer" aria-hidden="true">${dust}</div>
+        <svg class="prod-cons-sky" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${links}</svg>
+        ${stars}
+      </div>
     </div>
 
-    <!-- EasyFlow embed -->
-    <div class="prod-embed-panel active" id="prod-easyflow">
-      <div class="prod-embed-header">
-        <div>
-          <div class="prod-embed-name">🌊 EasyFlow by EasyDO.ai</div>
-          <div class="prod-embed-url">flow.easydo.ai</div>
-        </div>
-        <div class="prod-embed-actions">
-          <a href="https://flow.easydo.ai/" target="_blank" class="prod-embed-link">Open in new tab ↗</a>
-        </div>
-      </div>
-      <iframe
-        class="prod-embed-frame"
-        src="https://flow.easydo.ai/"
-        title="EasyFlow — AI-Guided Audience Engagement"
-        loading="lazy"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <!-- EasyDo embed -->
-    <div class="prod-embed-panel" id="prod-easydo">
-      <div class="prod-embed-header">
-        <div>
-          <div class="prod-embed-name">🤖 EasyDo — Private AI Workspace</div>
-          <div class="prod-embed-url">easydo.ai</div>
-        </div>
-        <div class="prod-embed-actions">
-          <a href="https://easydo.ai/" target="_blank" class="prod-embed-link">Open in new tab ↗</a>
-        </div>
-      </div>
-      <iframe
-        class="prod-embed-frame"
-        data-src="https://easydo.ai/"
-        title="EasyDo — Private AI Workspace"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <!-- CommEngine embed -->
-    <div class="prod-embed-panel" id="prod-commengine">
-      <div class="prod-embed-header">
-        <div>
-          <div class="prod-embed-name">🏢 CommEngine</div>
-          <div class="prod-embed-url">commengine.xyz</div>
-        </div>
-        <div class="prod-embed-actions">
-          <a href="https://commengine.xyz/" target="_blank" class="prod-embed-link">Open in new tab ↗</a>
-        </div>
-      </div>
-      <iframe
-        class="prod-embed-frame"
-        data-src="https://commengine.xyz/"
-        title="CommEngine — SocialCRM & AI Profiling"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <!-- Jachai embed -->
-    <div class="prod-embed-panel" id="prod-jachai">
-      <div class="prod-embed-header">
-        <div>
-          <div class="prod-embed-name">🔐 Jachai</div>
-          <div class="prod-embed-url">zachai.xyz</div>
-        </div>
-        <div class="prod-embed-actions">
-          <a href="https://www.zachai.xyz/" target="_blank" class="prod-embed-link">Open in new tab ↗</a>
-        </div>
-      </div>
-      <iframe
-        class="prod-embed-frame"
-        data-src="https://www.zachai.xyz/"
-        title="Jachai — Product Authentication"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <!-- Swachho embed (designed site — no public production URL) -->
-    <div class="prod-embed-panel" id="prod-swachho">
-      <div class="prod-embed-header">
-        <div>
-          <div class="prod-embed-name">🧼 Swaccho — Food &amp; Relief Distribution Tracking</div>
-          <div class="prod-embed-url">P2O2V2P Model · Retail Digital Innovation Award 2020</div>
-        </div>
-        <div class="prod-embed-actions">
-          <a href="swaccho.html" target="_blank" class="prod-embed-link">Open in new tab ↗</a>
-        </div>
-      </div>
-      <iframe
-        class="prod-embed-frame"
-        data-src="swaccho.html"
-        title="Swaccho — Nationwide Food &amp; Relief Distribution Tracking System"
-        loading="lazy"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <!-- Probeno embed (AI for Educators — designed programme page) -->
-    <div class="prod-embed-panel" id="prod-probeno">
-      <div class="prod-embed-header">
-        <div>
-          <div class="prod-embed-name">🎓 Probeno — AI for Educators</div>
-          <div class="prod-embed-url">Teach the teachers · UNESCO AI Competency Framework aligned</div>
-        </div>
-        <div class="prod-embed-actions">
-          <a href="probeno.html" target="_blank" class="prod-embed-link">Open in new tab ↗</a>
-        </div>
-      </div>
-      <iframe
-        class="prod-embed-frame"
-        data-src="probeno.html"
-        title="Probeno — AI for Educators · Teach the Teachers, Empower Thousands"
-        loading="lazy"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <!-- AIPA-Online embed (Presales Guideline — internal playbook landing page) -->
-    <div class="prod-embed-panel" id="prod-aipaonline">
-      <div class="prod-embed-header">
-        <div>
-          <div class="prod-embed-name">🚀 AIPA-Online — Presales Guideline</div>
-          <div class="prod-embed-url">Roles &amp; Steps for Program, Sales &amp; Communication Teams</div>
-        </div>
-        <div class="prod-embed-actions">
-          <a href="aipa-online.html" target="_blank" class="prod-embed-link">Open in new tab ↗</a>
-        </div>
-      </div>
-      <iframe
-        class="prod-embed-frame"
-        data-src="aipa-online.html"
-        title="AIPA-Online — Presales Guideline"
-        loading="lazy"
-        allowfullscreen
-      ></iframe>
-    </div>
+    ${panels}
 
     <!-- EasyFlow use cases -->
     <div class="sub-label"><h3>EasyFlow Use Cases</h3><div class="sub-label-line"></div></div>
@@ -3931,14 +3946,31 @@ function _pageAIInferenceLegacy(){
 
 function switchProduct(id){
   document.querySelectorAll('.prod-embed-panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.prod-sel-btn').forEach(b=>b.classList.remove('active'));
   const panel = document.getElementById('prod-'+id);
   if(panel){
     panel.classList.add('active');
     const iframe = panel.querySelector('iframe[data-src]');
     if(iframe && !iframe.src) iframe.src = iframe.dataset.src;
   }
-  event.currentTarget.classList.add('active');
+  document.querySelectorAll('.cons-node').forEach(n=>{
+    const on = n.dataset.prod === id;
+    n.classList.toggle('active', on);
+    n.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+  consLight(id);
+}
+
+// light the asterism lines that touch a given star
+function consLight(id){
+  document.querySelectorAll('.cons-link').forEach(l=>{
+    l.classList.toggle('lit', !!id && (l.dataset.a === id || l.dataset.b === id));
+  });
+}
+
+// hover/focus preview — falls back to the selected star on leave
+function consPeek(id){
+  const active = document.querySelector('.cons-node.active');
+  consLight(id || (active ? active.dataset.prod : null));
 }
 
 // ── SECTIONS PANEL ───────────────────────────────────────
