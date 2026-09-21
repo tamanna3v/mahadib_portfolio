@@ -599,6 +599,32 @@ nav{
 .uc-menu-desc{font-size:12px;color:var(--muted);font-weight:400;line-height:1.5;letter-spacing:-0.003em}
 @media(max-width:700px){.uc-menu{grid-template-columns:repeat(2,1fr)}}
 
+/* AI ACCELERATOR PROGRAM TABS */
+.acc-tabs{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 26px;
+}
+.acc-tab{
+  display:flex;flex-direction:column;align-items:flex-start;gap:4px;
+  padding:16px 18px;text-align:left;cursor:pointer;font-family:var(--sans);
+  background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--line);
+  transition:border-color .18s ease,background .18s ease,color .18s ease;
+}
+.acc-tab:hover:not(.active){border-color:var(--ink);border-top-color:var(--green)}
+.acc-tab.active{background:var(--green);border-color:var(--green);border-top-color:var(--accent)}
+.acc-tab-code{
+  font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--green);
+}
+.acc-tab-name{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-0.012em;line-height:1.2}
+.acc-tab-meta{font-size:12px;color:var(--muted);letter-spacing:-0.005em;line-height:1.35}
+.acc-tab.active .acc-tab-code{color:#b9d4b8}
+.acc-tab.active .acc-tab-name{color:#fff}
+.acc-tab.active .acc-tab-meta{color:#d6e0d6}
+.acc-tab:focus{outline:none}
+.acc-tab:focus-visible{outline:1px solid var(--ink);outline-offset:3px}
+@media(max-width:860px){.acc-tabs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.acc-tabs{grid-template-columns:1fr}}
+
 /* PRODUCT CONSTELLATION */
 .prod-cons{
   position:relative;background:var(--paper);
@@ -1665,7 +1691,11 @@ const NAV = [
   {text:"Hadi Bhuiyan",id:"about"},
   {text:"Products",id:"products"},
   {text:"AI Accelerator",id:"aipa",dropdown:[
-    {text:"AI Briefing Session (AIBS)",id:"aibs"},
+    {text:"Suite Overview",id:"aipa"},
+    {text:"AIBS — AI Briefing Session",id:"aipa-aibs"},
+    {text:"AISA — AI Strategy Accelerator",id:"aipa-aisa"},
+    {text:"AIPA — AI Proficiency Accelerator",id:"aipa-aipa"},
+    {text:"AIBS Session Detail",id:"aibs"},
     {text:"AIPA Session Plan",id:"aipa-session-plan"},
     {text:"Management AI-SA",id:"management-aisa"}
   ]},
@@ -2693,26 +2723,34 @@ function pageAffiliation(){
 </div>`;
 }
 
-function pageAIPA(){
-  const foot = `<div class="bnp-foot"><div class="bnp-foot-l">Partnering with · a2i · DoICT · TAFE · School Curriculum &amp; Standards Authority · Gov. of Western Australia &nbsp;|&nbsp; A member of · BASIS · ABCCI</div><div class="bnp-foot-r">build<b>n</b>ation · <span style="font-weight:600;color:#d6e0d6">Bridge to a brighter tomorrow</span></div></div>`;
-  return `
-<h2 class="section-title">AI Accelerator</h2>
-<p class="section-sub">AI Proficiency Accelerator · Briefing &amp; Strategy Accelerator by BuildNation</p>
+// The AI Accelerator suite splits into four tracks — a shared overview plus one
+// tab per program (AIBS, AISA, AIPA). Each track draws the slides it needs from
+// the same deck, so a slide lives in exactly one place.
+const ACCEL_TRACKS = [
+  {key:"overview", id:"aipa", code:"Suite", name:"Overview", meta:"The three programs, side by side", title:"AI Accelerator", sub:"The AI Strategy &amp; Proficiency Suite by BuildNation", slides:["01", "05", "04", "08", "13", "23"]},
+  {key:"aibs", id:"aipa-aibs", code:"AIBS", name:"AI Briefing Session", meta:"3 hours \u00b7 Entry point", title:"AIBS \u2014 AI Briefing Session", sub:"The entry point: three hours to establish what AI means for your business", slides:["06", "09", "04", "23"]},
+  {key:"aisa", id:"aipa-aisa", code:"AISA", name:"AI Strategy Accelerator", meta:"2 days \u00b7 Senior leadership", title:"AISA \u2014 AI Strategy Accelerator", sub:"Two sessions bridged by a facilitated breakout, ending in a leadership-endorsed AI strategy", slides:["07", "09", "04", "23"]},
+  {key:"aipa", id:"aipa-aipa", code:"AIPA", name:"AI Proficiency Accelerator", meta:"12 sessions \u00b7 Whole workforce", title:"AIPA \u2014 AI Proficiency Accelerator", sub:"Six standard, three transformation and three roadmap sessions across roughly five months", slides:["02", "03", "10", "11", "12", "15", "16", "17", "18", "14", "09", "23"]},
+];
 
-<div class="bnp-deck">
-
+function pageAIPA(trackKey){
+  const track = ACCEL_TRACKS.find(t=>t.key===trackKey) || ACCEL_TRACKS[0];
+const foot = `<div class="bnp-foot"><div class="bnp-foot-l">Partnering with · a2i · DoICT · TAFE · School Curriculum &amp; Standards Authority · Gov. of Western Australia &nbsp;|&nbsp; A member of · BASIS · ABCCI</div><div class="bnp-foot-r">build<b>n</b>ation · <span style="font-weight:600;color:#d6e0d6">Bridge to a brighter tomorrow</span></div></div>`;
+  const SLIDES = {
+'01': `
 <!-- 01 · TITLE -->
 <section class="bnp-slide bnp-slide-yellow">
   <div class="bnp-slide-body" style="padding-top:36px">
-    <div style="font-size:26px;font-weight:800;color:#2e5c3f;letter-spacing:-.01em;margin-bottom:30px">AISA | AIPA | AI Product Bootcamp</div>
-    <div class="bnp-h1" style="font-size:clamp(48px,9vw,96px);margin-bottom:42px">AI Proficiency<br>Accelerator</div>
+    <div style="font-size:26px;font-weight:800;color:#2e5c3f;letter-spacing:-.01em;margin-bottom:30px">AIBS | AISA | AIPA</div>
+    <div class="bnp-h1" style="font-size:clamp(48px,9vw,96px);margin-bottom:42px">AI Accelerator<br>Suite</div>
     <div style="font-size:clamp(28px,4.5vw,42px);font-weight:800;color:#2e5c3f;letter-spacing:-.02em;margin-bottom:36px">by BuildNation</div>
     <div style="font-size:24px;font-weight:800;color:#2e5c3f;margin-bottom:16px">AI will become a universal personal skill.</div>
-    <p style="font-size:19px;line-height:1.5;color:#3f3f3c;font-weight:600;max-width:780px">The target of the AIPA program is to prepare our workforce for this shift, ensuring AI becomes a natural extension of every professional's capability.</p>
+    <p style="font-size:19px;line-height:1.5;color:#3f3f3c;font-weight:600;max-width:780px">Three programs, one path: a briefing session to decide where to start, a strategy accelerator for senior leadership, and a proficiency accelerator that prepares the whole workforce for the shift.</p>
   </div>
   ${foot}
 </section>
-
+`,
+'02': `
 <!-- 02 · THE AIPA MISSION -->
 <section class="bnp-slide bnp-slide-white" style="padding:0;min-height:620px">
   <div style="display:grid;grid-template-columns:1fr 1fr;flex:1 0 auto" class="bnp-split">
@@ -2728,7 +2766,8 @@ function pageAIPA(){
     </div>
   </div>
 </section>
-
+`,
+'03': `
 <!-- 03 · SIX PROMISED OUTCOMES -->
 <section class="bnp-slide">
   <div class="bnp-wordmark">build<b>n</b>ation</div>
@@ -2787,7 +2826,8 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
-
+`,
+'04': `
 <!-- 04 · PROVEN RESULTS -->
 <section class="bnp-slide">
   <div class="bnp-wordmark">build<b>n</b>ation</div>
@@ -2816,7 +2856,8 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
-
+`,
+'05': `
 <!-- 05 · THE SUITE -->
 <section class="bnp-slide">
   <div class="bnp-wordmark">build<b>n</b>ation</div>
@@ -2859,7 +2900,8 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
-
+`,
+'06': `
 <!-- 06 · AI BRIEFING SESSION -->
 <section class="bnp-slide">
   <div class="bnp-slide-body">
@@ -2899,13 +2941,14 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
-
+`,
+'07': `
 <!-- 07 · AISA SPECIALIZED PROGRAM -->
 <section class="bnp-slide">
   <div class="bnp-slide-body">
     <div style="background:linear-gradient(135deg,#c94f2f,#ab4127);margin:-44px -50px 24px;padding:32px 50px;color:#fff;position:relative">
       <div style="position:absolute;top:30px;right:50px;font-size:19px;font-weight:900;letter-spacing:-.03em;color:#fff">build<span style="color:#b9d4b8">n</span>ation</div>
-      <div style="font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#f0c9bb;margin-bottom:6px">Section 03 · AI Strategy Accelerator — Program 01</div>
+      <div style="font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#f0c9bb;margin-bottom:6px">AI Strategy Accelerator · Program 01</div>
       <div style="font-size:36px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px">AISA — Specialized Program for Senior Leadership</div>
       <p style="font-size:16px;line-height:1.5;color:#f3e3dc;font-weight:500;max-width:900px">Two sessions bridged by a facilitated breakout, ending in a leadership-endorsed base AI strategy. Conducted by two facilitators from <b style="color:#f0c9bb">Mahtab Uddin Ahmed, Hadi Bhuiyan and Munaf Mojib Chowdhury</b> ; CxOs, HoDs and senior management only.</p>
     </div>
@@ -2938,7 +2981,8 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
-
+`,
+'08': `
 <!-- 08 · FACILITATOR POOL -->
 <section class="bnp-slide">
   <div class="bnp-wordmark">build<b>n</b>ation</div>
@@ -2968,7 +3012,8 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
-
+`,
+'09': `
 <!-- 09 · CORE FACILITATORS & PROGRAM DIRECTOR -->
 <section class="bnp-slide bnp-slide-mint">
   <div class="bnp-slide-body">
@@ -2993,7 +3038,8 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
-
+`,
+'10': `
 <!-- 10 · CURRICULUM & DELIVERY METHODOLOGY -->
 <section class="bnp-slide bnp-slide-yellow">
   <div class="bnp-slide-body" style="padding-top:40px">
@@ -3009,7 +3055,8 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
-
+`,
+'11': `
 <!-- 11 · MANDATORY PERSONAL PROFICIENCY -->
 <section class="bnp-slide">
   <div class="bnp-slide-body">
@@ -3036,7 +3083,8 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
-
+`,
+'12': `
 <!-- 12 · TEAM TO ENTERPRISE -->
 <section class="bnp-slide">
   <div class="bnp-slide-body">
@@ -3068,7 +3116,8 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
-
+`,
+'13': `
 <!-- 13 · BUILT TO NATIONAL AI POLICY -->
 <section class="bnp-slide">
   <div class="bnp-slide-body">
@@ -3101,7 +3150,8 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
-
+`,
+'14': `
 <!-- 14 · EVERYTHING LEADERSHIP ASKS -->
 <section class="bnp-slide">
   <div class="bnp-slide-body">
@@ -3134,7 +3184,8 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
-
+`,
+'15': `
 <!-- 15 · INDUSTRY-WISE USE CASE SCENARIOS -->
 <section class="bnp-slide bnp-slide-yellow">
   <div class="bnp-slide-body" style="padding-top:34px">
@@ -3155,7 +3206,8 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
-
+`,
+'16': `
 <!-- 16 · AIPA FOR BANKING -->
 <section class="bnp-slide">
   <div class="bnp-slide-body">
@@ -3182,7 +3234,8 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
-
+`,
+'17': `
 <!-- 17 · AIPA FOR FMCG -->
 <section class="bnp-slide">
   <div class="bnp-slide-body">
@@ -3202,7 +3255,8 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
-
+`,
+'18': `
 <!-- 18 · AIPA FOR PHARMA -->
 <section class="bnp-slide">
   <div class="bnp-slide-body">
@@ -3224,7 +3278,8 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
-
+`,
+'23': `
 <!-- 23 · START YOUR AI PROFICIENCY JOURNEY -->
 <section class="bnp-slide bnp-slide-mint">
   <div class="bnp-slide-body" style="padding-top:30px">
@@ -3246,7 +3301,25 @@ function pageAIPA(){
   </div>
   ${foot}
 </section>
+`,
+  };
 
+  const tabs = ACCEL_TRACKS.map(t=>`
+    <button type="button" class="acc-tab${t.key===track.key?' active':''}"
+      aria-current="${t.key===track.key?'page':'false'}" onclick="showPage('${t.id}')">
+      <span class="acc-tab-code">${t.code}</span>
+      <span class="acc-tab-name">${t.name}</span>
+      <span class="acc-tab-meta">${t.meta}</span>
+    </button>`).join('');
+
+  return `
+<h2 class="section-title">${track.title}</h2>
+<p class="section-sub">${track.sub}</p>
+
+<div class="acc-tabs">${tabs}</div>
+
+<div class="bnp-deck">
+${track.slides.map(n=>SLIDES[n]).join('\n')}
 </div>
 `;
 }
@@ -5048,8 +5121,11 @@ const PAGES = {
   about: pageAbout,
   experience: pageExperience,
   products: pageProducts,
-  programs: pageAIPA,
-  aipa: pageAIPA,
+  programs: ()=>pageAIPA('overview'),
+  aipa: ()=>pageAIPA('overview'),
+  'aipa-aibs': ()=>pageAIPA('aibs'),
+  'aipa-aisa': ()=>pageAIPA('aisa'),
+  'aipa-aipa': ()=>pageAIPA('aipa'),
   aibs: pageAIBS,
   'aipa-session-plan': pageAIPASessionPlan,
   'management-aisa': pageManagementAISA,
@@ -5073,7 +5149,10 @@ let currentPage = 'about';
 const PAGE_META = {
   about:{t:"Hadi Bhuiyan — Digital · AI · SaaS",d:"Digital, AI, Enterprise & SaaS leader in Bangladesh. Co-Founder of CommEngine, EasyDO.ai, FutureMind & BuildNation. 20+ years experience."},
   products:{t:"Products — Hadi Bhuiyan",d:"SaaS & AI products built by Hadi Bhuiyan: CommEngine SocialCRM, EasyDO.ai, EasyFlow, Madevo and more."},
-  aipa:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA for leadership, AIPA 5-month workforce program, and AITA transformation sprints. 256+ executives trained."},
+  aipa:{t:"AI Accelerator Suite — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AIBS briefing, AISA for leadership and the AIPA workforce program. 256+ executives trained across 6+ corporates."},
+  'aipa-aibs':{t:"AIBS — AI Briefing Session | BuildNation · Hadi Bhuiyan",d:"The entry point to BuildNation's AI Accelerator suite: a three-hour executive orientation covering where to start, what AI costs, where it applies function by function, and what the first move should be."},
+  'aipa-aisa':{t:"AISA — AI Strategy Accelerator | BuildNation · Hadi Bhuiyan",d:"A two-day AI Strategy Accelerator for CxOs, HoDs and senior management — Cornell CAIO framing, AIPPM prioritisation and a leadership-endorsed base AI strategy with a 24-month roadmap."},
+  'aipa-aipa':{t:"AIPA — AI Proficiency Accelerator | BuildNation · Hadi Bhuiyan",d:"A 12-session AI Proficiency Accelerator across roughly five months — literacy, prompting, tools, automation and agents, applied to each participant's own workflows, ending in a departmental AI roadmap."},
   aibs:{t:"AI Briefing Session (AIBS) — BuildNation | Hadi Bhuiyan", d:"AIBS is a 3.5–8 hour executive orientation and pre-preparation session before BuildNation's AISA or AIPA — establishing what AI means for your business, what it costs, where it applies function by function, and what the first move should be."},
   'aipa-session-plan':{t:"AIPA Session Plan — BuildNation | Hadi Bhuiyan", d:"The AIPA Curriculum — 12 sessions across 4 parts. A progressive journey from AI foundations to enterprise-wide impact."},
   'management-aisa':{t:"Management AI-Strategy Accelerator — BuildNation | Hadi Bhuiyan", d:"A condensed single-day AI Strategy Accelerator for Dhaka Ice Cream Industries Limited (Polar) senior management — strategic framing, breakout opportunity mapping, and a leadership-endorsed base AI strategy."},
