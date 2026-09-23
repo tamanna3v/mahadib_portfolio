@@ -101,7 +101,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='0' fill='%232e5c3f'/><text y='.85em' font-size='52' x='8' fill='white' font-family='sans-serif' font-weight='bold'>HB</text></svg>"/>
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Work+Sans:wght@300;400;500;600&family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
 <style>
 /* ── DESIGN TOKENS (institutional: off-white · forest green · terracotta · DM Sans/Serif/Mono) ── */
 :root{
@@ -1616,6 +1616,14 @@ footer{
 #sections-panel .sp-card.active .sp-sub{color:rgba(255,255,255,.72)}
 @media(max-width:900px){#sections-panel{display:none}}
 
+/* ── AI Accelerator pages (AIBS · AIPA · AISA) ── */
+.bnx{font-family:Lato,system-ui,sans-serif;color:#1C202B;font-size:16px;line-height:1.62;margin-top:-40px}
+.bnx a{text-decoration:none}
+.bnx summary{list-style:none}
+.bnx summary::-webkit-details-marker{display:none}
+.bnx .bnx-h1:hover{background:#07703C!important;color:#fff!important}
+.bnx .bnx-h2:hover{border-color:#0DBA6B!important;color:#07703C!important}
+.bnx .bnx-h3:hover{border-color:rgba(13,186,107,.45)!important;color:#1C202B!important}
 </style>
 </head>
 <body>
@@ -1667,7 +1675,7 @@ const NAV = [
   {text:"AI Accelerator",id:"aipa",dropdown:[
     {text:"AI Briefing Session (AIBS)",id:"aibs"},
     {text:"AIPA Session Plan",id:"aipa-session-plan"},
-    {text:"Management AI-SA",id:"management-aisa"},
+    {text:"AI Strategy Accelerator (AISA)",id:"management-aisa"},
     {text:"AI Inference",id:"ai-inference"}
   ]},
   {text:"EasyFlow",id:"easyflow"},
@@ -2693,560 +2701,213 @@ function pageAffiliation(){
 </div>`;
 }
 
-function pageAIPA(){
-  const foot = `<div class="bnp-foot"><div class="bnp-foot-l">Partnering with · a2i · DoICT · TAFE · School Curriculum &amp; Standards Authority · Gov. of Western Australia &nbsp;|&nbsp; A member of · BASIS · ABCCI</div><div class="bnp-foot-r">build<b>n</b>ation · <span style="font-weight:600;color:#d6e0d6">Bridge to a brighter tomorrow</span></div></div>`;
+// ── AI ACCELERATOR (AIBS · AIPA · AISA) — shared blocks ──
+const AIACC_CLIENTS = [
+  {mark:"ISPAHANI",name:"Ispahani Tea",sub:"",progs:["AIPA (Dhk|Ctg)"]},
+  {mark:"BEXIMCO<br>PHARMA",name:"Beximco Pharma",sub:"Synovia Pharma &amp; Nuvista Pharma",progs:["AIPA Leadership","AIPA General","AISA"]},
+  {mark:"DHAKA BANK",name:"Dhaka Bank",sub:"",progs:["AIPA Multiple","AISA"]},
+  {mark:"nitol niloy",name:"Nitol Niloy",sub:"Nitol Motors Limited",progs:["Procurement AIPA"]},
+  {mark:"JAPAN SOLAR",name:"Japan Solartech",sub:"Bahon Limited",progs:["AIPA Combined"]},
+  {mark:"ICMAB",name:"ICMAB",sub:"",progs:["Accounting AIPA"]},
+  {mark:"Polar",name:"Polar",sub:"Dhaka Icecream Industries Limited",progs:["AIPA","AISA"]},
+  {mark:"NATIONAL CYBER<br>SECURITY AGENCY",name:"National Cyber Security Agency",sub:"Participants from NBR &amp; DG-HS",progs:["AIPA"]}
+];
+const AIACC_STATS = [["256+","Professionals"],["14+","Cohorts"],["1200+","Use cases"],["80+","Half-day sessions"]];
+
+function aiaccBand(mint){
+  return mint
+    ? 'padding:clamp(56px,8vw,86px) 0;background:#F2F7F3;border-top:1px solid rgba(28,32,43,.12);border-bottom:1px solid rgba(28,32,43,.12)'
+    : 'padding:clamp(56px,8vw,86px) 0';
+}
+
+function aiaccClients(mint){
+  const eyebrow = "font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C";
+  const pill = "font-size:11.5px;border:1px solid rgba(28,32,43,.12);border-radius:999px;padding:5px 10px;color:#5E6C64;background:#fff";
   return `
-<h2 class="section-title">AI Accelerator</h2>
-<p class="section-sub">AI Proficiency Accelerator · Briefing &amp; Strategy Accelerator by BuildNation</p>
-
-<div class="bnp-deck">
-
-<!-- 01 · TITLE -->
-<section class="bnp-slide bnp-slide-yellow">
-  <div class="bnp-slide-body" style="padding-top:36px">
-    <div style="font-size:26px;font-weight:800;color:#2e5c3f;letter-spacing:-.01em;margin-bottom:30px">AISA | AIPA | AI Product Bootcamp</div>
-    <div class="bnp-h1" style="font-size:clamp(48px,9vw,96px);margin-bottom:42px">AI Proficiency<br>Accelerator</div>
-    <div style="font-size:clamp(28px,4.5vw,42px);font-weight:800;color:#2e5c3f;letter-spacing:-.02em;margin-bottom:36px">by BuildNation</div>
-    <div style="font-size:24px;font-weight:800;color:#2e5c3f;margin-bottom:16px">AI will become a universal personal skill.</div>
-    <p style="font-size:19px;line-height:1.5;color:#3f3f3c;font-weight:600;max-width:780px">The target of the AIPA program is to prepare our workforce for this shift, ensuring AI becomes a natural extension of every professional's capability.</p>
-  </div>
-  ${foot}
-</section>
-
-<!-- 02 · THE AIPA MISSION -->
-<section class="bnp-slide bnp-slide-white" style="padding:0;min-height:620px">
-  <div style="display:grid;grid-template-columns:1fr 1fr;flex:1 0 auto" class="bnp-split">
-    <div style="padding:64px 46px;display:flex;flex-direction:column;justify-content:center">
-      <div class="bnp-eyebrow">The AIPA Mission</div>
-      <p style="font-size:27px;line-height:1.42;color:var(--bnp-ink);font-weight:600;margin-top:16px">In 1990, Microsoft Excel was perceived as <b style="color:#2e5c3f">"magic."</b> Within a decade, it transitioned from a specialized tool to a <b style="color:var(--bnp-navy)">mandatory personal skill</b> known by everyone in the workforce.</p>
-      <div style="width:66px;height:5px;border-radius:0;background:#2e5c3f;margin-top:36px"></div>
+  <section style="${aiaccBand(mint)}">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="max-width:1040px;margin:0 auto clamp(30px,4vw,38px);text-align:center">
+        <div style="${eyebrow}">Clients · Previous cohorts</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0;text-wrap:balance">Trusted by leading organisations.</h2>
+        <p style="max-width:780px;color:#5E6C64;margin:18px auto 0;font-size:16.5px;line-height:1.7">256+ professionals transformed through months-long incubation across banking, pharmaceuticals, FMCG, manufacturing and the public sector.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px">
+        ${AIACC_CLIENTS.map(c=>`
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:18px;padding:20px;display:flex;flex-direction:column;align-items:center;text-align:center">
+          <div style="width:100%;min-height:64px;display:flex;align-items:center;justify-content:center;background:#DFF5E9;border-radius:12px;padding:10px;font-family:'Work Sans',sans-serif;font-weight:600;font-size:15px;letter-spacing:.04em;color:#07703C;line-height:1.2">${c.mark}</div>
+          <strong style="display:block;margin-top:14px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;color:#1C202B">${c.name}</strong>
+          ${c.sub?`<span style="display:block;margin-top:3px;color:#5E6C64;font-size:13px;line-height:1.45">${c.sub}</span>`:''}
+          <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center">${c.progs.map(p=>`<span style="${pill}">${p}</span>`).join('')}</div>
+        </div>`).join('')}
+      </div>
+      <div style="margin-top:14px;padding:16px 20px;border-left:3px solid #0DBA6B;background:#DFF5E9;border-radius:0 12px 12px 0;color:#1F4A34;font-size:14.5px;line-height:1.65"><strong style="font-weight:700">In-built AIPA sessions for</strong> BSRM, Danone and Rethinking Leadership (Financial Enterprise, Pharma &amp; Healthcare).</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:12px;margin-top:14px">
+        ${AIACC_STATS.map(([v,l])=>`<div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:16px 18px"><div style="font-family:'Work Sans',sans-serif;font-weight:300;font-size:34px;letter-spacing:-.03em;color:#07703C;line-height:1.1">${v}</div><div style="color:#5E6C64;font-size:13px;margin-top:2px">${l}</div></div>`).join('')}
+      </div>
     </div>
-    <div style="background:#244a33;padding:64px 46px;display:flex;flex-direction:column;justify-content:center;color:#fff">
-      <div style="font-size:36px;font-weight:800;line-height:1.12;letter-spacing:-.02em;margin-bottom:24px">AI will become a universal personal skill.</div>
-      <p style="font-size:18px;line-height:1.55;color:#d6e0d6;font-weight:500;margin-bottom:28px">The target of the AIPA program is to prepare our workforce for this shift, ensuring AI becomes a natural extension of every professional's capability.</p>
-      <div style="font-size:26px;font-weight:800;letter-spacing:-.02em">Six promised outcomes.</div>
-    </div>
-  </div>
-</section>
+  </section>`;
+}
 
-<!-- 03 · SIX PROMISED OUTCOMES -->
-<section class="bnp-slide">
-  <div class="bnp-wordmark">build<b>n</b>ation</div>
-  <div class="bnp-slide-body">
-    <div class="bnp-eyebrow">What AIPA Delivers</div>
-    <div class="bnp-h2" style="margin-bottom:22px">Six promised outcomes.</div>
-    <div class="bnp-g2">
-      <div class="bnp-card bnp-c-green">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><span class="bnp-badge">1</span><span class="bnp-card-t">Demystify AI</span></div>
-        <div class="bnp-card-d">Places executives between AI hype and AI reluctance, so they think for themselves and apply AI to their own work.</div>
-        <div style="background:#fff;border-radius:0;padding:15px 18px;display:flex;align-items:center;gap:12px;margin-top:16px">
-          <span style="font-size:14px;color:var(--bnp-body);font-weight:600">Hype</span>
-          <div style="flex:1;height:6px;border-radius:0;background:linear-gradient(90deg,#d3d3cd,#2e5c3f);position:relative"><span style="position:absolute;left:46%;top:50%;transform:translate(-50%,-50%);width:16px;height:16px;border-radius:0;background:#2e5c3f;box-shadow:none"></span></div>
-          <span style="font-size:14px;color:var(--bnp-body);font-weight:600">Reluctance</span>
-        </div>
+function aiaccDirector(mint){
+  const pill = "font-size:11.5px;border:1px solid rgba(28,32,43,.12);border-radius:999px;padding:5px 10px;color:#5E6C64;background:#fff";
+  return `
+  <section style="${aiaccBand(mint)}">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(30px,4vw,60px);align-items:center">
+      <div style="min-width:0">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">Program Director</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0;max-width:14ch">Led by practitioners, not presenters.</h2>
+        <p style="margin:18px 0 0;max-width:520px;color:#5E6C64;font-size:16.5px;line-height:1.72">Every AI Accelerator programme is directed by Hadi Bhuiyan, combining two decades of telco, enterprise and SaaS product leadership with hands-on AI building.</p>
       </div>
-      <div class="bnp-card bnp-c-blue">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><span class="bnp-badge">2</span><span class="bnp-card-t">Augmentation, Not Training</span></div>
-        <div class="bnp-card-d">AI changes how people work and think. The outcome is deploying AI inside everyday work — not attending a workshop.</div>
-        <div style="background:#fff;border-radius:0;padding:14px 18px;display:flex;align-items:center;gap:12px;margin-top:16px">
-          <span style="font-size:15px;color:#8a8a85;font-weight:600;text-decoration:line-through">Workshop</span>
-          <span class="bnp-mono-arrow">→</span>
-          <span style="border:1px solid #d3d3cd;background:#e8ebe6;border-radius:0;padding:6px 16px;font-size:15px;font-weight:800;color:var(--bnp-navy)">Everyday work</span>
-        </div>
-      </div>
-      <div class="bnp-card bnp-c-cream">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><span class="bnp-badge">3</span><span class="bnp-card-t">Project-Based Learning</span></div>
-        <div class="bnp-card-d">Each participant completes 10–16 project tasks and augmentations, including data security and privacy compliance applied to their own workplace.</div>
-        <div style="background:#fff;border-radius:0;padding:14px 18px;margin-top:16px"><span style="font-size:26px;font-weight:900;color:var(--bnp-navy);letter-spacing:-.02em">10–16</span> <span style="font-size:15px;color:var(--bnp-body);font-weight:600">projects per participant</span></div>
-      </div>
-      <div class="bnp-card bnp-c-green">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><span class="bnp-badge">4</span><span class="bnp-card-t">Measurable Productivity</span></div>
-        <div class="bnp-card-d">~12% without tools, ~20% with tools, up to 40% once participants build their own AI inference.</div>
-        <div style="background:#fff;border-radius:0;padding:14px 22px;margin-top:16px;display:flex;align-items:flex-end;gap:26px;height:104px">
-          <div style="text-align:center"><div style="font-weight:800;color:#2e5c3f;font-size:16px;margin-bottom:6px">12%</div><div style="width:46px;height:22px;background:#d3d3cd;border-radius:0"></div></div>
-          <div style="text-align:center"><div style="font-weight:800;color:#2e5c3f;font-size:16px;margin-bottom:6px">20%</div><div style="width:46px;height:40px;background:#b9d4b8;border-radius:0"></div></div>
-          <div style="text-align:center"><div style="font-weight:900;color:#2e5c3f;font-size:19px;margin-bottom:6px">40%</div><div style="width:46px;height:62px;background:#2e5c3f;border-radius:0"></div></div>
-        </div>
-      </div>
-      <div class="bnp-card bnp-c-purple">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><span class="bnp-badge">5</span><span class="bnp-card-t">Self-Learning</span></div>
-        <div class="bnp-card-d">A self-training method so participants keep updating themselves continuously, without further training or support.</div>
-        <div style="background:#fff;border-radius:0;padding:15px 18px;margin-top:16px;font-size:16px;font-weight:700;color:var(--bnp-navy)">Discover <span class="bnp-mono-arrow">→</span> Apply <span class="bnp-mono-arrow">→</span> Reflect ↻</div>
-      </div>
-      <div class="bnp-card bnp-c-pink">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><span class="bnp-badge">6</span><span class="bnp-card-t">Automation Without Vendors</span></div>
-        <div class="bnp-card-d">Participants use AI like Excel — without vendors or a technical team.</div>
-        <div style="background:#fff;border-radius:0;padding:14px 18px;display:flex;align-items:center;gap:10px;margin-top:16px;flex-wrap:wrap">
-          <span style="font-size:15px;color:#8a8a85;font-weight:600;text-decoration:line-through">Vendors</span><span style="color:#d6e0d6">·</span><span style="font-size:15px;color:#8a8a85;font-weight:600;text-decoration:line-through">IT team</span>
-          <span class="bnp-mono-arrow">→</span>
-          <span style="border:1px solid #f3e3dc;background:#f3e3dc;border-radius:0;padding:6px 16px;font-size:15px;font-weight:800;color:var(--bnp-navy)">You build it</span>
+      <div style="min-width:0;background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:20px;padding:clamp(22px,3vw,30px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start">
+        <div style="width:78px;height:78px;border-radius:50%;background:#07703C;color:#fff;display:grid;place-items:center;font-family:'Work Sans',sans-serif;font-weight:500;font-size:26px;letter-spacing:-.02em;border:3px solid #DFF5E9">HB</div>
+        <div style="min-width:0">
+          <div style="font-family:'Work Sans',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:#07703C">Program Director &amp; Core Facilitator</div>
+          <h3 style="font-family:'Work Sans',sans-serif;font-weight:400;letter-spacing:-.025em;font-size:26px;margin:6px 0 0;color:#1C202B">Hadi Bhuiyan</h3>
+          <p style="margin:8px 0 0;color:#414F47;font-size:14.5px;line-height:1.6">Co-Founder, CommEngine Limited (FutureMind AI)<br>Consultant CPO, BuildNation Limited</p>
+          <p style="margin:10px 0 0;color:#5E6C64;font-size:13.5px;line-height:1.6">Member: National Blockchain Policy Forum, 4IR Standing Committee for e-Commerce, Institution of Engineers — Press &amp; Publication · Mentor, R-Venture II Cohorts</p>
+          <div style="margin-top:14px;display:flex;gap:6px;flex-wrap:wrap">${["Huawei","Robi","Nokia Siemens Networks","Premier University","CommEngine","BuildNation"].map(p=>`<span style="${pill}">${p}</span>`).join('')}</div>
+          <a href="https://linkedin.com/in/mahadib" target="_blank" rel="noopener" class="bnx-h2" style="display:inline-flex;margin-top:16px;border-radius:999px;padding:9px 16px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:13.5px;background:#fff;color:#1C202B;border:1px solid rgba(28,32,43,.14)">linkedin.com/in/mahadib ↗</a>
         </div>
       </div>
     </div>
-    <p style="font-size:14px;color:var(--bnp-body);font-weight:500;margin-top:18px"><b style="color:var(--bnp-navy);font-weight:800">Departments Represented:</b> Finance · Procurement · HR · Supply Chain · Marketing · Sales · Production · Strategy · CXOs · International Business · Branding · Training · Distribution · L&amp;D · IT · Planning</p>
-  </div>
-  ${foot}
-</section>
+  </section>`;
+}
 
-<!-- 04 · PROVEN RESULTS -->
-<section class="bnp-slide">
-  <div class="bnp-wordmark">build<b>n</b>ation</div>
-  <div class="bnp-slide-body">
-    <div class="bnp-eyebrow">Proven Results — Previous Cohorts</div>
-    <div class="bnp-h2" style="font-size:38px;margin-bottom:20px">256+ professionals transformed through months-long incubation.</div>
-    <div class="bnp-g4" style="margin-bottom:14px">
-      <div class="bnp-card bnp-c-green" style="text-align:center;padding:20px 18px"><div style="background:#fff;border-radius:0;padding:12px;font-weight:900;color:#2e5c3f;font-size:18px;letter-spacing:.02em;margin-bottom:12px">ISPAHANI</div><div class="bnp-card-t" style="font-size:17px">Ispahani Tea</div><div style="height:34px"></div><div style="margin-top:8px"><span class="bnp-pill-out">AIPA (Dhk|Ctg)</span></div></div>
-      <div class="bnp-card bnp-c-blue" style="text-align:center;padding:20px 18px"><div style="background:#fff;border-radius:0;padding:12px;font-weight:900;color:#244a33;font-size:16px;margin-bottom:12px">BEXIMCO<br>PHARMA</div><div class="bnp-card-t" style="font-size:17px">Beximco Pharma</div><div class="bnp-card-d" style="font-size:12.5px;margin-top:4px">Synovia Pharma &amp; Nuvista Pharma</div><div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:5px;justify-content:center"><span class="bnp-pill-out">AIPA Leadership</span><span class="bnp-pill-out">AIPA General</span><span class="bnp-pill-out">AISA</span></div></div>
-      <div class="bnp-card bnp-c-cream" style="text-align:center;padding:20px 18px"><div style="background:#fff;border-radius:0;padding:12px;font-weight:900;color:#244a33;font-size:16px;margin-bottom:12px">DHAKA BANK</div><div class="bnp-card-t" style="font-size:17px">Dhaka Bank</div><div style="height:34px"></div><div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:5px;justify-content:center"><span class="bnp-pill-out">AIPA Multiple</span><span class="bnp-pill-out">AISA</span></div></div>
-      <div class="bnp-card bnp-c-pink" style="text-align:center;padding:20px 18px"><div style="background:#fff;border-radius:0;padding:12px;font-weight:900;color:#244a33;font-size:15px;margin-bottom:12px">notol niloy</div><div class="bnp-card-t" style="font-size:17px">Nitol Niloy</div><div class="bnp-card-d" style="font-size:12.5px;margin-top:4px">Nitol Motors Limited</div><div style="margin-top:8px"><span class="bnp-pill-out">Procurement AIPA</span></div></div>
-      <div class="bnp-card bnp-c-purple" style="text-align:center;padding:20px 18px"><div style="background:#fff;border-radius:0;padding:12px;font-weight:900;color:#c94f2f;font-size:15px;margin-bottom:12px">JAPAN SOLAR</div><div class="bnp-card-t" style="font-size:17px">Japan Solartech</div><div class="bnp-card-d" style="font-size:12.5px;margin-top:4px">Bahon Limited</div><div style="margin-top:8px"><span class="bnp-pill-out">AIPA Combined</span></div></div>
-      <div class="bnp-card bnp-c-teal" style="text-align:center;padding:20px 18px"><div style="background:#fff;border-radius:0;padding:12px;font-weight:900;color:#244a33;font-size:16px;margin-bottom:12px">ICMAB</div><div class="bnp-card-t" style="font-size:17px">ICMAB</div><div style="height:34px"></div><div style="margin-top:8px"><span class="bnp-pill-out">Accounting AIPA</span></div></div>
-      <div class="bnp-card bnp-c-pink" style="text-align:center;padding:20px 18px"><div style="background:#fff;border-radius:0;padding:12px;font-weight:900;color:#c94f2f;font-size:16px;margin-bottom:12px">Polar</div><div class="bnp-card-t" style="font-size:17px">Polar</div><div class="bnp-card-d" style="font-size:12.5px;margin-top:4px">Dhaka Icecream Industries Limited</div><div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:5px;justify-content:center"><span class="bnp-pill-out">AIPA</span><span class="bnp-pill-out">AISA</span></div></div>
-      <div class="bnp-card bnp-c-green" style="text-align:center;padding:20px 18px"><div style="background:#fff;border-radius:0;padding:12px;font-weight:900;color:#2e5c3f;font-size:13px;margin-bottom:12px">NATIONAL CYBER<br>SECURITY AGENCY</div><div class="bnp-card-t" style="font-size:16px">National Cyber Security Agency</div><div class="bnp-card-d" style="font-size:12.5px;margin-top:4px">Participants from NBR &amp; DG-HS</div><div style="margin-top:8px"><span class="bnp-pill-out">AIPA</span></div></div>
-    </div>
-    <div class="bnp-card bnp-c-green" style="padding:13px 20px;margin-bottom:14px;font-size:15px;color:var(--bnp-ink);font-weight:600"><b style="color:#2e5c3f;font-weight:800">In-built AIPA session for</b> &nbsp;BSRM, Danone, Rethinking Leadership ( Financial Enterprise, Pharma &amp; Healthcare )</div>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">
-      <div class="bnp-card bnp-c-plain" style="padding:16px 18px"><div style="font-size:32px;font-weight:900;color:#2e5c3f;letter-spacing:-.02em">256+</div><div class="bnp-card-d" style="font-size:13px">Professionals</div></div>
-      <div class="bnp-card bnp-c-plain" style="padding:16px 18px"><div style="font-size:32px;font-weight:900;color:#2e5c3f;letter-spacing:-.02em">14+</div><div class="bnp-card-d" style="font-size:13px">Cohorts</div></div>
-      <div class="bnp-card bnp-c-plain" style="padding:16px 18px"><div style="font-size:32px;font-weight:900;color:#2e5c3f;letter-spacing:-.02em">1200+</div><div class="bnp-card-d" style="font-size:13px">Use Cases</div></div>
-      <div class="bnp-card bnp-c-plain" style="padding:16px 18px"><div style="font-size:32px;font-weight:900;color:#2e5c3f;letter-spacing:-.02em">80+</div><div class="bnp-card-d" style="font-size:13px">Half-Day Sessions</div></div>
-      <div class="bnp-card bnp-c-plain" style="padding:16px 18px"><div style="font-size:18px;font-weight:900;color:var(--bnp-navy);letter-spacing:-.01em;line-height:1.2">CxOs, HoDs &amp; Senior Mgmt.</div></div>
-    </div>
-    <p style="font-size:14px;color:var(--bnp-body);font-weight:500;margin-top:16px"><b style="color:var(--bnp-navy);font-weight:800">Departments Represented:</b> Finance · Procurement · HR · Supply Chain · Marketing · Sales · Production · Strategy · CXOs · International Business · Branding · Training · Distribution · L&amp;D · IT · Planning</p>
-  </div>
-  ${foot}
-</section>
-
-<!-- 05 · THE SUITE -->
-<section class="bnp-slide">
-  <div class="bnp-wordmark">build<b>n</b>ation</div>
-  <div class="bnp-slide-body">
-    <div class="bnp-eyebrow">The Suite &amp; Trusted Partners</div>
-    <div class="bnp-h2" style="margin-bottom:22px">AI Strategy &amp; Proficiency Suite.</div>
-    <div class="bnp-g2" style="gap:20px">
-      <div class="bnp-card" style="background:#e8ebe6;border:1px solid #d3d3cd;padding:26px 28px">
-        <div style="font-size:15px;font-weight:800;color:#2e5c3f;margin-bottom:12px">AISA</div>
-        <div style="margin-bottom:14px"><span style="background:#e8ebe6;padding:6px 14px;border-radius:0;font-size:24px;font-weight:800;color:var(--bnp-navy);letter-spacing:-.02em">AI Strategy Accelerator</span></div>
-        <div style="font-size:15px;font-weight:800;color:#2e5c3f;margin-bottom:14px">Only Senior Leadership</div>
-        <ul class="bnp-ul" style="margin-top:0">
-          <li>Two sessions: strategic framing, then formulation &amp; roadmap</li>
-          <li>Cornell CAIO framework and the AI Product Priority Matrix</li>
-          <li>Facilitated breakout mapping opportunities to your operations</li>
-          <li>Ends in a leadership-endorsed base AI strategy</li>
-        </ul>
-        <div style="margin-top:26px;font-size:30px;font-weight:900;color:var(--bnp-navy);letter-spacing:-.02em">2 Days</div>
-        <div class="bnp-card-d">Leadership cohort · 16 hours</div>
+function pageAIPA(){
+  return `
+<div class="bnx">
+<section>
+  <div style="padding:clamp(48px,6vw,72px) 0 clamp(34px,4vw,44px)">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="display:flex;gap:8px;align-items:center;color:#5E6C64;font-size:13px;margin-bottom:18px;flex-wrap:wrap">
+        <a href="/aipa" onclick="showPage('aipa');return false" style="color:#07703C;font-family:'Work Sans',sans-serif;font-weight:500">AI Accelerator</a><span>/</span><span>AIPA</span>
       </div>
-      <div class="bnp-card" style="background:#e8ebe6;border:1px solid #d3d3cd;padding:26px 28px">
-        <div style="font-size:15px;font-weight:800;color:#2e5c3f;margin-bottom:12px">AIPA</div>
-        <div style="margin-bottom:14px"><span style="background:#e8ebe6;padding:6px 14px;border-radius:0;font-size:24px;font-weight:800;color:var(--bnp-navy);letter-spacing:-.02em">AI Proficiency Accelerator</span></div>
-        <div style="font-size:15px;font-weight:800;color:#2e5c3f;margin-bottom:14px">For All Audience</div>
-        <ul class="bnp-ul" style="margin-top:0">
-          <li>Problem-based learning on the participant's own workflows</li>
-          <li>AI literacy, prompting, tools, data, automation, agents</li>
-          <li>Industry context and functional use cases per department</li>
-          <li>Ends in a departmental AI roadmap</li>
-        </ul>
-        <div style="margin-top:22px;font-size:26px;font-weight:900;color:var(--bnp-navy);letter-spacing:-.02em;margin-bottom:12px">6 + 3 + 3 = 12 Sessions</div>
-        <div class="bnp-g3" style="gap:10px">
-          <div class="bnp-c-green" style="border-radius:0;padding:14px"><div style="font-size:22px;font-weight:900;color:#2e5c3f">6</div><div style="font-weight:800;color:var(--bnp-navy);font-size:14px;margin:2px 0 4px">Standard</div><div style="font-size:12px;color:var(--bnp-body);line-height:1.4;font-weight:500">Core proficiency — literacy, prompting, tools, no-code building.</div></div>
-          <div class="bnp-c-blue" style="border-radius:0;padding:14px"><div style="font-size:22px;font-weight:900;color:#244a33">3</div><div style="font-weight:800;color:var(--bnp-navy);font-size:14px;margin:2px 0 4px">Transformation</div><div style="font-size:12px;color:var(--bnp-body);line-height:1.4;font-weight:500">Agentic workflows, RAG and enterprise integration.</div></div>
-          <div class="bnp-c-cream" style="border-radius:0;padding:14px"><div style="font-size:22px;font-weight:900;color:#c94f2f">3</div><div style="font-weight:800;color:var(--bnp-navy);font-size:14px;margin:2px 0 4px">Org AI Roadmap</div><div style="font-size:12px;color:var(--bnp-body);line-height:1.4;font-weight:500">Skill mapping, adoption playbook and governance.</div></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:clamp(30px,4vw,60px);align-items:start;max-width:1180px;margin:0 auto">
+        <div style="min-width:0">
+          <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">AI Proficiency Accelerator</div>
+          <h1 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.035em;line-height:1.04;font-size:clamp(34px,4.8vw,62px);margin:16px 0 0;max-width:15ch;text-wrap:balance">Do not just learn AI. Learn to work differently with it.</h1>
+          <p style="max-width:720px;color:#5E6C64;font-size:clamp(17px,1.35vw,19px);line-height:1.62;margin:22px 0 0">AIPA is a project-based AI augmentation journey for employees. Participants learn the fundamentals, apply them to real work, build projects between sessions and progressively move into automation and organisation-level practice.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px">
+            <a href="mailto:contact@buildnation.com.bd" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 22px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:14px;background:#0DBA6B;color:#fff;border:1px solid transparent" class="bnx-h1">Design an AIPA cohort →</a>
+            <a href="/aibs" onclick="showPage('aibs');return false" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 22px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:14px;background:#fff;color:#1C202B;border:1px solid rgba(28,32,43,.14)" class="bnx-h2">Start with AIBS</a>
+          </div>
         </div>
-      </div>
-    </div>
-    <div style="background:#2e5c3f;border-radius:0;padding:22px 28px;margin-top:18px;color:#fff;font-size:18px;line-height:1.5;font-weight:600">Over <b>200+</b> senior leaders and executives across <b>HR, IT, procurement, supply chain, sales, finance, administration, and strategy</b> have transformed the way they work with AI.</div>
-  </div>
-  ${foot}
-</section>
-
-<!-- 06 · AI BRIEFING SESSION -->
-<section class="bnp-slide">
-  <div class="bnp-slide-body">
-    <div style="background:linear-gradient(135deg,#c94f2f,#ab4127);margin:-44px -50px 24px;padding:34px 50px;color:#fff;position:relative">
-      <div style="position:absolute;top:30px;right:50px;display:flex;gap:12px" class="bnp-brief-badges">
-        <div style="background:rgba(255,255,255,.14);border-radius:0;padding:10px 18px;text-align:center"><div style="font-size:26px;font-weight:900;line-height:1;color:#f0c9bb">3</div><div style="font-size:12px;color:#f3e3dc">hours</div></div>
-        <div style="background:rgba(255,255,255,.14);border-radius:0;padding:10px 18px;text-align:center"><div style="font-size:16px;font-weight:900;line-height:1.1;color:#f0c9bb">Mid to senior</div><div style="font-size:12px;color:#f3e3dc">leadership</div></div>
-      </div>
-      <div style="font-size:14px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#f0c9bb;margin-bottom:6px">Entry Point · Executive Orientation</div>
-      <div style="font-size:40px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px">AI Briefing Session</div>
-      <p style="font-size:17px;line-height:1.5;color:#f3e3dc;font-weight:500;max-width:820px">For organizations that cannot yet see where to begin. Three hours to establish what AI means for your business, what it will cost, where it applies function by function, and what the first move should be.</p>
-    </div>
-    <div class="bnp-g3" style="gap:14px">
-      <div class="bnp-card bnp-c-green" style="padding:18px 20px"><div style="font-size:20px;font-weight:900;color:#2e5c3f">01</div><div class="bnp-card-t" style="font-size:18px;margin:2px 0 6px">Where to start</div><div class="bnp-card-d" style="font-size:13.5px">Training, workshop, or full AI transformation — which entry point fits your organization today.</div></div>
-      <div class="bnp-card bnp-c-blue" style="padding:18px 20px"><div style="font-size:20px;font-weight:900;color:#2e5c3f">02</div><div class="bnp-card-t" style="font-size:18px;margin:2px 0 6px">Do's and don'ts</div><div class="bnp-card-d" style="font-size:13.5px">What works and what fails in early AI adoption, and the regulations that apply as you move.</div></div>
-      <div class="bnp-card bnp-c-cream" style="padding:18px 20px"><div style="font-size:20px;font-weight:900;color:#2e5c3f">03</div><div class="bnp-card-t" style="font-size:18px;margin:2px 0 6px">Cost-benefit analysis</div><div class="bnp-card-d" style="font-size:13.5px">What an AI initiative actually costs, what it returns, and how to read the trade-off before committing.</div></div>
-      <div class="bnp-card bnp-c-pink" style="padding:18px 20px"><div style="font-size:20px;font-weight:900;color:#2e5c3f">04</div><div class="bnp-card-t" style="font-size:18px;margin:2px 0 6px">Low-cost augmentation</div><div class="bnp-card-d" style="font-size:13.5px">How to make employees AI-augmented quickly using a small set of low-cost tools.</div></div>
-      <div class="bnp-card bnp-c-purple" style="padding:18px 20px"><div style="font-size:20px;font-weight:900;color:#2e5c3f">05</div><div class="bnp-card-t" style="font-size:18px;margin:2px 0 6px">Leveraging public tools</div><div class="bnp-card-d" style="font-size:13.5px">How to get real work out of Claude, Gemini, NotebookLM, Google AI Studio, ChatGPT and Perplexity.</div></div>
-      <div class="bnp-card bnp-c-teal" style="padding:18px 20px"><div style="font-size:20px;font-weight:900;color:#2e5c3f">06</div><div class="bnp-card-t" style="font-size:18px;margin:2px 0 6px">Function-wise AI journey</div><div class="bnp-card-d" style="font-size:13.5px">Building enterprise guidelines for HR, recruitment, sales, supply chain, production, marketing, branding and communication.</div></div>
-      <div class="bnp-card bnp-c-pink" style="padding:18px 20px"><div style="font-size:20px;font-weight:900;color:#2e5c3f">07</div><div class="bnp-card-t" style="font-size:18px;margin:2px 0 6px">What we have seen</div><div class="bnp-card-d" style="font-size:13.5px">Our experience, successes and failures in transforming industries.</div></div>
-      <div class="bnp-card bnp-c-green" style="padding:18px 20px"><div style="font-size:20px;font-weight:900;color:#2e5c3f">08</div><div class="bnp-card-t" style="font-size:18px;margin:2px 0 6px">Organization Q&amp;A</div><div class="bnp-card-d" style="font-size:13.5px">An organization-specific question-and-answer session to understand your context better.</div></div>
-      <div class="bnp-card bnp-c-cream" style="padding:18px 20px"><div style="font-size:20px;font-weight:900;color:#2e5c3f">09</div><div class="bnp-card-t" style="font-size:18px;margin:2px 0 6px">Hands-on practice</div><div class="bnp-card-d" style="font-size:13.5px">Working directly with the tools to understand the nuances of AI in practice.</div></div>
-    </div>
-    <div style="background:#244a33;border-radius:0;padding:16px 22px;margin-top:16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-      <span style="font-size:18px;font-weight:800;color:#fff">Leaders leave able to decide on</span>
-      <span style="background:#244a33;color:#d6e0d6;border-radius:0;padding:7px 15px;font-size:14px;font-weight:700">Transformation</span>
-      <span style="background:#244a33;color:#d6e0d6;border-radius:0;padding:7px 15px;font-size:14px;font-weight:700">Learning</span>
-      <span style="background:#244a33;color:#d6e0d6;border-radius:0;padding:7px 15px;font-size:14px;font-weight:700">Budgeting</span>
-      <span style="background:#244a33;color:#d6e0d6;border-radius:0;padding:7px 15px;font-size:14px;font-weight:700">Forecast</span>
-      <span style="background:#244a33;color:#d6e0d6;border-radius:0;padding:7px 15px;font-size:14px;font-weight:700">Roadmapping</span>
-    </div>
-    <div style="background:#fff;border:1px solid #d3d3cd;border-radius:0;padding:14px 22px;margin-top:12px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-      <span style="font-size:17px;font-weight:800;color:var(--bnp-navy)">Audience</span>
-      <span class="bnp-pill-out">CxOs</span><span class="bnp-pill-out">HoDs</span><span class="bnp-pill-out">Function leads</span><span class="bnp-pill-out">Mid-level managers</span><span class="bnp-pill-out">Transformation &amp; IT</span><span class="bnp-pill-out">HR &amp; L&amp;D</span>
-    </div>
-    <div style="border-left:4px solid #2e5c3f;background:#fff;border-radius:0;padding:14px 20px;margin-top:12px;font-size:15px;color:var(--bnp-body);font-weight:500;line-height:1.5">Can be run at any point, before or after the AIPA program. Organizations that have already completed the AI Strategy Accelerator with us do not need this session.</div>
-  </div>
-  ${foot}
-</section>
-
-<!-- 07 · AISA SPECIALIZED PROGRAM -->
-<section class="bnp-slide">
-  <div class="bnp-slide-body">
-    <div style="background:linear-gradient(135deg,#c94f2f,#ab4127);margin:-44px -50px 24px;padding:32px 50px;color:#fff;position:relative">
-      <div style="position:absolute;top:30px;right:50px;font-size:19px;font-weight:900;letter-spacing:-.03em;color:#fff">build<span style="color:#b9d4b8">n</span>ation</div>
-      <div style="font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#f0c9bb;margin-bottom:6px">Section 03 · AI Strategy Accelerator — Program 01</div>
-      <div style="font-size:36px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px">AISA — Specialized Program for Senior Leadership</div>
-      <p style="font-size:16px;line-height:1.5;color:#f3e3dc;font-weight:500;max-width:900px">Two sessions bridged by a facilitated breakout, ending in a leadership-endorsed base AI strategy. Conducted by two facilitators from <b style="color:#f0c9bb">Mahtab Uddin Ahmed, Hadi Bhuiyan and Munaf Mojib Chowdhury</b> ; CxOs, HoDs and senior management only.</p>
-    </div>
-    <div class="bnp-g2" style="gap:20px">
-      <div>
-        <div class="bnp-h3" style="font-size:23px;margin-bottom:12px">Session 1 — Strategic Framing &amp; Awareness</div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div class="bnp-c-green" style="border-radius:0;padding:13px 16px;font-size:14.5px;color:var(--bnp-body);font-weight:500;line-height:1.45"><b style="color:#2e5c3f">Focus:</b> Learn &amp; align — build a shared AI literacy baseline and surface opportunities across the value chain.</div>
-          <div class="bnp-c-blue" style="border-radius:0;padding:13px 16px;font-size:14.5px;color:var(--bnp-body);font-weight:500;line-height:1.45"><b style="color:#2e5c3f">Primary objective:</b> Establish a shared AI vision and align on the organization's AI ambition as an FMCG manufacturer and distributor.</div>
-          <div class="bnp-c-cream" style="border-radius:0;padding:13px 16px;font-size:14.5px;color:var(--bnp-body);font-weight:500;line-height:1.45"><b style="color:#2e5c3f">Key sessions:</b> Inauguration &amp; mindset assessment · Foundational AI training · Enterprise AI framing (Cornell CAIO) · Transformation Q&amp;A</div>
-          <div class="bnp-c-pink" style="border-radius:0;padding:13px 16px;font-size:14.5px;color:var(--bnp-body);font-weight:500;line-height:1.45"><b style="color:#2e5c3f">Frameworks:</b> Cornell CAIO-based transformation framework; "Sourced vs. Owned" AI architecture.</div>
-          <div class="bnp-c-purple" style="border-radius:0;padding:13px 16px;font-size:14.5px;color:var(--bnp-body);font-weight:500;line-height:1.45"><b style="color:#2e5c3f">Key output:</b> Shared AI baseline and an articulated AI ambition; mapped opportunity inputs from the breakout.</div>
-        </div>
-      </div>
-      <div>
-        <div class="bnp-h3" style="font-size:23px;margin-bottom:12px">Session 2 — Formulation &amp; Roadmap</div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div class="bnp-c-green" style="border-radius:0;padding:13px 16px;font-size:14.5px;color:var(--bnp-body);font-weight:500;line-height:1.45"><b style="color:#2e5c3f">Focus:</b> Decide &amp; commit — prioritise initiatives and lock the roadmap.</div>
-          <div class="bnp-c-blue" style="border-radius:0;padding:13px 16px;font-size:14.5px;color:var(--bnp-body);font-weight:500;line-height:1.45"><b style="color:#2e5c3f">Primary objective:</b> Prioritise initiatives, consolidate a 24-month phased roadmap, and secure management endorsement of the base strategy.</div>
-          <div class="bnp-c-cream" style="border-radius:0;padding:13px 16px;font-size:14.5px;color:var(--bnp-body);font-weight:500;line-height:1.45"><b style="color:#2e5c3f">Key sessions:</b> Breakout playback &amp; ideas · AIPPM prioritisation · Strategy synthesis · Finalisation &amp; endorsement</div>
-          <div class="bnp-c-pink" style="border-radius:0;padding:13px 16px;font-size:14.5px;color:var(--bnp-body);font-weight:500;line-height:1.45"><b style="color:#2e5c3f">Frameworks:</b> AI Product Priority Matrix (AIPPM); 24-month phased roadmap (0–24 mo).</div>
-          <div class="bnp-c-purple" style="border-radius:0;padding:13px 16px;font-size:14.5px;color:var(--bnp-body);font-weight:500;line-height:1.45"><b style="color:#2e5c3f">Key output:</b> Endorsed base AI Strategy — ranked initiative portfolio, assigned owners &amp; sign-off.</div>
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:20px">
-      <div class="bnp-eyebrow" style="margin-bottom:12px">Key Outcomes</div>
-      <div style="display:flex;flex-wrap:wrap;gap:10px"><span class="bnp-pill">Management-endorsed AI vision</span><span class="bnp-pill">Opportunities mapped across functions</span><span class="bnp-pill">AIPPM-scored initiative portfolio</span><span class="bnp-pill">Base AI Strategy with owners &amp; decision register</span></div>
-    </div>
-  </div>
-  ${foot}
-</section>
-
-<!-- 08 · FACILITATOR POOL -->
-<section class="bnp-slide">
-  <div class="bnp-wordmark">build<b>n</b>ation</div>
-  <div class="bnp-slide-body">
-    <div class="bnp-eyebrow">BuildNation Facilitators</div>
-    <div class="bnp-h3" style="margin-bottom:4px">AI-PA Program Facilitator Pool</div>
-    <p class="bnp-lead" style="font-size:16px;margin-bottom:18px">A world-class collective of industry experts and AI practitioners.</p>
-    <div style="background:#e8ebe6;border:1.5px solid #d3d3cd;border-radius:0;padding:18px 20px;margin-bottom:16px">
-      <div style="font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#2e5c3f;margin-bottom:12px">Program Leadership</div>
-      <div class="bnp-g4">
-        <div class="bnp-card bnp-c-plain" style="padding:16px"><span style="display:inline-block;background:#2e5c3f;color:#fff;font-size:12px;font-weight:800;border-radius:0;padding:5px 10px;margin-bottom:10px">Strategy Facilitator</span><div class="bnp-card-t" style="font-size:17px">Mahtab Uddin Ahmed</div><div class="bnp-card-d" style="font-size:13px;margin-top:4px">Founder, Buildcon Consultancies Limited</div></div>
-        <div class="bnp-card bnp-c-plain" style="padding:16px"><span style="display:inline-block;background:#2e5c3f;color:#fff;font-size:12px;font-weight:800;border-radius:0;padding:5px 10px;margin-bottom:10px">Program Director &amp; Core Facilitator</span><div class="bnp-card-t" style="font-size:17px">Hadi Bhuiyan</div><div class="bnp-card-d" style="font-size:13px;margin-top:4px">Co-Founder, CommEngine-FutureMind AI · Consultant CPO, BuildNation.</div><div style="font-size:13px;font-weight:800;color:#2e5c3f;margin-top:8px">mahadib.futuremind.ltd</div></div>
-        <div class="bnp-card bnp-c-plain" style="padding:16px"><span style="display:inline-block;background:#2e5c3f;color:#fff;font-size:12px;font-weight:800;border-radius:0;padding:5px 10px;margin-bottom:10px">Program Director &amp; Core Facilitator</span><div class="bnp-card-t" style="font-size:17px">Munaf Mojib Chowdhury</div><div class="bnp-card-d" style="font-size:13px;margin-top:4px">Founder, Ekshathe Foundation · Head of Brand, Axentec PLC.</div><div style="font-size:13px;font-weight:800;color:#2e5c3f;margin-top:8px">in/munafchowdhury</div></div>
-        <div class="bnp-card bnp-c-plain" style="padding:16px"><span style="display:inline-block;background:#2e5c3f;color:#fff;font-size:12px;font-weight:800;border-radius:0;padding:5px 10px;margin-bottom:10px">Program Leader</span><div class="bnp-card-t" style="font-size:17px">Sania Mahmood</div><div class="bnp-card-d" style="font-size:13px;margin-top:4px">CEO, BuildNation Limited</div></div>
-      </div>
-    </div>
-    <div class="bnp-g4">
-      <div class="bnp-card bnp-c-plain" style="padding:16px"><span style="display:inline-block;background:#2e5c3f;color:#fff;font-size:12px;font-weight:800;border-radius:0;padding:5px 10px;margin-bottom:10px">Core Facilitator</span><div class="bnp-card-t" style="font-size:16px">Md. Mahmudul Hassan</div><div class="bnp-card-d" style="font-size:12.5px;margin-top:4px">Founder &amp; CEO, ElectroCom Group, CoRiser, AI4BT Global · 20+ yrs · AI transformation coach &amp; strategist.</div><div style="font-size:12.5px;font-weight:800;color:#2e5c3f;margin-top:8px">in/mahmudul10875</div></div>
-      <div class="bnp-card bnp-c-plain" style="padding:16px"><span style="display:inline-block;background:#2e5c3f;color:#fff;font-size:12px;font-weight:800;border-radius:0;padding:5px 10px;margin-bottom:10px">Workflow Facilitator</span><div class="bnp-card-t" style="font-size:16px">Talemul Islam</div><div class="bnp-card-d" style="font-size:12.5px;margin-top:4px">Software Architect, Encoders Infotech · 11+ yrs in digital &amp; AI products and strategy.</div><div style="font-size:12.5px;font-weight:800;color:#2e5c3f;margin-top:8px">in/talemul</div></div>
-      <div class="bnp-card bnp-c-plain" style="padding:16px"><span style="display:inline-block;background:#2e5c3f;color:#fff;font-size:12px;font-weight:800;border-radius:0;padding:5px 10px;margin-bottom:10px">Facilitator</span><div class="bnp-card-t" style="font-size:16px">Maksud Alam</div><div class="bnp-card-d" style="font-size:12.5px;margin-top:4px">Co-Founder, XpertSolvers · CTO, CommEngine &amp; Zachai · 19+ yrs digital transformation &amp; AI.</div><div style="font-size:12.5px;font-weight:800;color:#2e5c3f;margin-top:8px">in/maksudalam</div></div>
-      <div class="bnp-card bnp-c-plain" style="padding:16px"><span style="display:inline-block;background:#2e5c3f;color:#fff;font-size:12px;font-weight:800;border-radius:0;padding:5px 10px;margin-bottom:10px">AI Martech Facilitator</span><div class="bnp-card-t" style="font-size:16px">Muhammad Muhtasim Jawad</div><div class="bnp-card-d" style="font-size:12.5px;margin-top:4px">Head of Marketing, Foodi · Lead, Client Solutions, ADA Global (Axiata) · Ex-Pathao &amp; Shohoz.</div><div style="font-size:12.5px;font-weight:800;color:#2e5c3f;margin-top:8px">in/mmjawadr</div></div>
-      <div class="bnp-card bnp-c-plain" style="padding:16px"><span style="display:inline-block;background:#2e5c3f;color:#fff;font-size:12px;font-weight:800;border-radius:0;padding:5px 10px;margin-bottom:10px">AI Solution Facilitator</span><div class="bnp-card-t" style="font-size:16px">KF Tamanna</div><div class="bnp-card-d" style="font-size:12.5px;margin-top:4px">AI &amp; Digital Transformation Facilitator · L&amp;D, HR Tech &amp; EdTech · 16+ yrs experience.</div><div style="font-size:12.5px;font-weight:800;color:#2e5c3f;margin-top:8px">in/kftamanna</div></div>
-      <div class="bnp-card bnp-c-plain" style="padding:16px"><span style="display:inline-block;background:#2e5c3f;color:#fff;font-size:12px;font-weight:800;border-radius:0;padding:5px 10px;margin-bottom:10px">Facilitator</span><div class="bnp-card-t" style="font-size:16px">Mostafizur Rahman</div><div class="bnp-card-d" style="font-size:12.5px;margin-top:4px">PMP | CSSGB | ITIL · Process improvement &amp; change management · 22+ yrs industry experience.</div><div style="font-size:12.5px;font-weight:800;color:#2e5c3f;margin-top:8px">in/mostafizur-rahman</div></div>
-      <div class="bnp-card bnp-c-plain" style="padding:16px"><span style="display:inline-block;background:#2e5c3f;color:#fff;font-size:12px;font-weight:800;border-radius:0;padding:5px 10px;margin-bottom:10px">Tech Facilitator</span><div class="bnp-card-t" style="font-size:16px">Mohd Ruhul Ameen</div><div class="bnp-card-d" style="font-size:12.5px;margin-top:4px">Founder, Tinkers Technologies · Graduate Research Assistant, Marshall University.</div><div style="font-size:12.5px;font-weight:800;color:#2e5c3f;margin-top:8px">in/ameenruhul</div></div>
-      <div class="bnp-card bnp-c-plain" style="padding:16px"><span style="display:inline-block;background:#2e5c3f;color:#fff;font-size:12px;font-weight:800;border-radius:0;padding:5px 10px;margin-bottom:10px">Associates</span><div class="bnp-card-t" style="font-size:16px">Hafijul Islam Jamil</div><div class="bnp-card-d" style="font-size:12.5px;margin-top:4px">Business &amp; Data Analyst · Product Manager · CommEngine Limited.</div></div>
-    </div>
-  </div>
-  ${foot}
-</section>
-
-<!-- 09 · CORE FACILITATORS & PROGRAM DIRECTOR -->
-<section class="bnp-slide bnp-slide-mint">
-  <div class="bnp-slide-body">
-    <div style="text-align:center;margin-bottom:26px"><span style="background:#2e5c3f;color:#fff;font-size:26px;font-weight:800;letter-spacing:-.01em;border-radius:0;padding:16px 40px;display:inline-block">Core Facilitators and Program Director</span></div>
-    <div class="bnp-g2" style="gap:24px">
-      <div style="text-align:center">
-        <div style="width:110px;height:110px;border-radius:0;background:#244a33;color:#fff;font-size:34px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;border:4px solid #c94f2f">MC</div>
-        <div style="font-size:26px;font-weight:800;color:#244a33;line-height:1.1">Munaf Mojib Chowdhury</div>
-        <div style="display:inline-block;background:#fff;border:1px solid #d3d3cd;border-radius:0;padding:5px 14px;font-size:13px;color:#244a33;font-weight:600;margin:10px 0">in linkedin.com/in/munafchowdhury</div>
-        <div style="font-size:14px;font-weight:800;color:#2e5c3f;line-height:1.5">Founder, Ekshathe Foundation<br>Head of Brand &amp; Communication, Axentec PLC<br>Ex-Head of Meta Advertising Business in Bangladesh for Official Meta ASP</div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px"><span class="bnp-pill-ghost">SoftBank</span><span class="bnp-pill-ghost">axiata</span><span class="bnp-pill-ghost">NASPERS</span><span class="bnp-pill-ghost">Harvard Business School</span><span class="bnp-pill-ghost">Aleph</span><span class="bnp-pill-ghost">SCHIBSTED</span><span class="bnp-pill-ghost">telenor</span></div>
-      </div>
-      <div style="text-align:center">
-        <div style="width:110px;height:110px;border-radius:0;background:#244a33;color:#fff;font-size:34px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;border:4px solid #c94f2f">HB</div>
-        <div style="font-size:26px;font-weight:800;color:#244a33;line-height:1.1">Hadi Bhuiyan</div>
-        <div style="display:inline-block;background:#fff;border:1px solid #d3d3cd;border-radius:0;padding:5px 14px;font-size:13px;color:#244a33;font-weight:600;margin:10px 0">in linkedin.com/in/mahadib</div>
-        <div style="font-size:14px;font-weight:800;color:#2e5c3f;line-height:1.5">Co-Founder, CommEngine Limited ( FutureMind AI )<br>Consultant CPO, BuildNation Limited</div>
-        <div style="font-size:13px;color:#2e5c3f;font-weight:500;line-height:1.5;margin-top:8px">Member: National Blockchain Policy Forum, 4IR Standing Committee for e-Commerce, Institution of Engineers — Press &amp; Publication · Mentor, R-Venture II Cohorts</div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px"><span class="bnp-pill-ghost">HUAWEI</span><span class="bnp-pill-ghost">robi</span><span class="bnp-pill-ghost">Nokia Siemens Networks</span><span class="bnp-pill-ghost">Premier University</span><span class="bnp-pill-ghost">CommEngine</span><span class="bnp-pill-ghost">buildnation</span></div>
-      </div>
-    </div>
-  </div>
-  ${foot}
-</section>
-
-<!-- 10 · CURRICULUM & DELIVERY METHODOLOGY -->
-<section class="bnp-slide bnp-slide-yellow">
-  <div class="bnp-slide-body" style="padding-top:40px">
-    <div style="font-size:16px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#2e5c3f;margin-bottom:26px">Section 02</div>
-    <div class="bnp-h1" style="font-size:clamp(44px,7vw,74px);margin-bottom:36px">Curriculum &amp; Delivery<br>Methodology</div>
-    <p style="font-size:22px;line-height:1.5;color:#3f3f3c;font-weight:600;max-width:820px;margin-bottom:40px">Twelve workshop sessions across three parts, plus optional sectoral add-ons. Project-based learning — every participant ships a working solution scored on the DIG+8 framework.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
-      <span style="background:rgba(255,255,255,.5);border:1px solid rgba(28,42,33,.15);border-radius:0;padding:14px 24px;font-size:17px;font-weight:800;color:var(--bnp-navy)">Part 1 · Personal Proficiency</span>
-      <span style="background:rgba(255,255,255,.5);border:1px solid rgba(28,42,33,.15);border-radius:0;padding:14px 24px;font-size:17px;font-weight:800;color:var(--bnp-navy)">Parts 2–3 · Team &amp; Enterprise</span>
-      <span style="background:rgba(255,255,255,.5);border:1px solid rgba(28,42,33,.15);border-radius:0;padding:14px 24px;font-size:17px;font-weight:800;color:var(--bnp-navy)">Part 4 · Add-Ons</span>
-      <span style="background:#2e5c3f;color:#fff;border-radius:0;padding:14px 28px;font-size:17px;font-weight:800">FAQ</span>
-    </div>
-  </div>
-  ${foot}
-</section>
-
-<!-- 11 · MANDATORY PERSONAL PROFICIENCY -->
-<section class="bnp-slide">
-  <div class="bnp-slide-body">
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap">
-      <div style="flex:1;min-width:300px">
-        <div class="bnp-eyebrow">AIPA Curriculum · Part 1</div>
-        <div class="bnp-h2" style="margin-bottom:12px">Mandatory Personal<br>Proficiency</div>
-        <p class="bnp-lead" style="font-size:16px;max-width:600px">Six foundation sessions every participant completes — grammar of AI, anthropology, no-code and low-code building. Workshop-style, project-based.</p>
-      </div>
-      <div style="display:flex;gap:12px">
-        <div style="background:#fff;border:1px solid #d3d3cd;border-radius:0;padding:16px 22px;text-align:center"><div style="font-size:30px;font-weight:900;color:#2e5c3f">6</div><div class="bnp-card-d" style="font-size:13px">Sessions</div></div>
-        <div style="background:#fff;border:1px solid #d3d3cd;border-radius:0;padding:16px 22px;text-align:center"><div style="font-size:30px;font-weight:900;color:#2e5c3f">12</div><div class="bnp-card-d" style="font-size:13px">Total in track</div></div>
-      </div>
-    </div>
-    <div class="bnp-g3" style="margin-top:22px">
-      <div class="bnp-card bnp-c-green"><div style="font-size:14px;font-weight:800;color:#2e5c3f;margin-bottom:8px">01 · BASIC</div><div class="bnp-card-t">AI Anthropology &amp; Augmentation</div><div class="bnp-card-d" style="margin-top:10px">AI evolution, philosophy and the DIG+8 framework in the enterprise.</div></div>
-      <div class="bnp-card bnp-c-blue"><div style="font-size:14px;font-weight:800;color:#2e5c3f;margin-bottom:8px">02 · BASIC</div><div class="bnp-card-t">AI as Colleague: Communication &amp; Second Brain</div><div class="bnp-card-d" style="margin-top:10px">Tools and techniques — structured prompting, chain of thought and RAG with NotebookLM.</div></div>
-      <div class="bnp-card bnp-c-cream"><div style="font-size:14px;font-weight:800;color:#2e5c3f;margin-bottom:8px">03 · BASIC</div><div class="bnp-card-t">No-Code App Building &amp; Regular Work Automation</div><div class="bnp-card-d" style="margin-top:10px">Problem definition, build, documentation and deployment — and automate regular works.</div></div>
-      <div class="bnp-card bnp-c-pink"><div style="font-size:14px;font-weight:800;color:#2e5c3f;margin-bottom:8px">04 · ADVANCED</div><div class="bnp-card-t">Google AI Studio &amp; Data Insight Workshop</div><div class="bnp-card-d" style="margin-top:10px">Data prep and privacy, insight discovery, actionable reporting.</div></div>
-      <div class="bnp-card bnp-c-teal"><div style="font-size:14px;font-weight:800;color:#2e5c3f;margin-bottom:8px">05 · SEMI-TECH</div><div class="bnp-card-t">Agentic AI, MCP &amp; Context</div><div class="bnp-card-d" style="margin-top:10px">Context engineering, MCP and connectors — building agentic systems.</div></div>
-      <div class="bnp-card bnp-c-purple"><div style="font-size:14px;font-weight:800;color:#2e5c3f;margin-bottom:8px">06 · SEMI-TECH</div><div class="bnp-card-t">Low-Code Automation</div><div class="bnp-card-d" style="margin-top:10px">Workflow basics, agentic automation and agentic AI.</div></div>
-    </div>
-    <p style="font-size:15px;color:var(--bnp-body);font-weight:500;margin-top:18px"><b style="color:var(--bnp-navy);font-weight:800">Tools</b> &nbsp; Gemini / ChatGPT / Claude · NotebookLM · Google AI Studio · DIG8 · Gamma · n8n</p>
-  </div>
-  ${foot}
-</section>
-
-<!-- 12 · TEAM TO ENTERPRISE -->
-<section class="bnp-slide">
-  <div class="bnp-slide-body">
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap">
-      <div style="flex:1;min-width:300px">
-        <div class="bnp-eyebrow">AIPA Curriculum · Parts 2 &amp; 3</div>
-        <div class="bnp-h2">From team proficiency<br>to enterprise integration</div>
-      </div>
-      <div style="background:#e8ebe6;border:1px solid #d3d3cd;border-radius:0;padding:16px 24px;text-align:center"><div style="font-size:30px;font-weight:900;color:#2e5c3f">3+3</div><div class="bnp-card-d" style="font-size:13px">Sessions</div></div>
-    </div>
-    <div class="bnp-g2" style="margin-top:22px;gap:22px">
-      <div>
-        <div style="border-left:4px solid #2e5c3f;padding-left:14px;margin-bottom:14px"><div style="font-size:14px;font-weight:800;color:#2e5c3f;text-transform:uppercase;letter-spacing:.05em">Part 2</div><div class="bnp-h3" style="font-size:22px">Advanced Personal &amp; Team Proficiency</div></div>
-        <div style="display:flex;flex-direction:column;gap:12px">
-          <div class="bnp-card bnp-c-green"><div style="font-size:13px;font-weight:800;color:#2e5c3f;margin-bottom:6px">07 · SEMI-TECH</div><div class="bnp-card-t" style="font-size:18px">Hands-On Agentic Workflow Implementation</div><div class="bnp-card-d" style="margin-top:8px">Workflow design, skill · connector · MCP, execution and testing.</div></div>
-          <div class="bnp-card bnp-c-blue"><div style="font-size:13px;font-weight:800;color:#2e5c3f;margin-bottom:6px">08 · ADVANCED</div><div class="bnp-card-t" style="font-size:18px">Second Brain: RAG, Multimodal &amp; Content Creation</div><div class="bnp-card-d" style="margin-top:8px">Persistent memory architecture, hallucination protection, and professional content creation with Gamma and AI tooling.</div></div>
-          <div class="bnp-card bnp-c-cream"><div style="font-size:13px;font-weight:800;color:#2e5c3f;margin-bottom:6px">09 · ADVANCED</div><div class="bnp-card-t" style="font-size:18px">Agentic Operating System Creation</div><div class="bnp-card-d" style="margin-top:8px">Enterprise integration blueprint — product selection matrix, inference basics, roadmap and playbook.</div></div>
-        </div>
-      </div>
-      <div>
-        <div style="border-left:4px solid #2e5c3f;padding-left:14px;margin-bottom:14px"><div style="font-size:14px;font-weight:800;color:#2e5c3f;text-transform:uppercase;letter-spacing:.05em">Part 3</div><div class="bnp-h3" style="font-size:22px">Advanced Practice &amp; Enterprise Integration</div></div>
-        <div style="display:flex;flex-direction:column;gap:12px">
-          <div class="bnp-card bnp-c-pink"><div style="font-size:13px;font-weight:800;color:#2e5c3f;margin-bottom:6px">10 · ADVANCED</div><div class="bnp-card-t" style="font-size:18px">Skill &amp; AI Mapping</div><div class="bnp-card-d" style="margin-top:8px">Departmental workflow analysis, skills-gap and learning alignment.</div></div>
-          <div class="bnp-card bnp-c-purple"><div style="font-size:13px;font-weight:800;color:#2e5c3f;margin-bottom:6px">11 · ADVANCED</div><div class="bnp-card-t" style="font-size:18px">AI Adoption Playbook &amp; Gameboard</div><div class="bnp-card-d" style="margin-top:8px">Change-management roadmap, stakeholder and KPI design.</div></div>
-          <div class="bnp-card bnp-c-teal"><div style="font-size:13px;font-weight:800;color:#2e5c3f;margin-bottom:6px">12 · ADVANCED</div><div class="bnp-card-t" style="font-size:18px">Governance, Trust &amp; Leadership Decisions</div><div class="bnp-card-d" style="margin-top:8px">Responsible AI, security and fairness, executive dashboards.</div></div>
+        <div style="min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:18px 24px;padding-top:6px">
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Format</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">12-session extensive or 6-session compact</strong></div>
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Structure</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">3 parts</strong></div>
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Audience</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">All employees</strong></div>
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Prerequisite</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">None</strong></div>
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Learning model</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">Teach → project → feedback → progress</strong></div>
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Core outcome</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">AI capability embedded in everyday work</strong></div>
         </div>
       </div>
     </div>
   </div>
-  ${foot}
-</section>
 
-<!-- 13 · BUILT TO NATIONAL AI POLICY -->
-<section class="bnp-slide">
-  <div class="bnp-slide-body">
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap">
-      <div style="flex:1;min-width:300px">
-        <div class="bnp-eyebrow">AI Proficiency Accelerator · Curriculum Standard</div>
-        <div class="bnp-h2" style="margin-bottom:10px">Built to the National AI Policy</div>
+  <section style="padding:clamp(56px,8vw,86px) 0">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(30px,4vw,60px);align-items:start">
+      <div style="min-width:0">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">The difference</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0;max-width:14ch">Project-based, not theory-based.</h2>
       </div>
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <span style="background:#e8ebe6;border:1px solid #d3d3cd;border-radius:0;padding:9px 16px;font-size:14px;font-weight:800;color:#2e5c3f">Bangladesh National AI Policy compliant</span>
-        <span style="background:#e8ebe6;border:1px solid #d3d3cd;border-radius:0;padding:9px 16px;font-size:14px;font-weight:800;color:#2e5c3f">Bangladesh Bank AI Guideline compliant</span>
+      <div style="min-width:0;max-width:640px;color:#5E6C64;font-size:16.5px;line-height:1.72">
+        <p style="margin:0">Participants are taught a concept clearly first. Then they receive a project based on their own work. They complete it, receive feedback, and move on to the next lesson.</p>
+        <p style="margin:16px 0 0">That makes the programme more than a sequence of classes. It is a journey in which participants practise AI augmentation on the work they already own.</p>
       </div>
     </div>
-    <div style="font-size:20px;font-weight:800;color:var(--bnp-navy);margin:6px 0 4px">10 Key Principles for AI Training &amp; Curriculum Design</div>
-    <p class="bnp-lead" style="font-size:15px;margin-bottom:16px;max-width:960px">Derived from the Bangladesh National AI Policy 2026–2030 (Draft v2.0, ICT Division) and aligned with the Bangladesh Bank AI Guideline. Curated by Hadi Bhuiyan for BuildNation and FutureMind AI. These ten principles govern how every AIPA session is scoped, delivered and assessed — each traceable to a clause of the national policy.</p>
-    <div class="bnp-g2" style="gap:12px">
-      ${[
-        ['01','Ethical','§3.1','Training must raise quality of life and spread AI\'s benefits equitably, within human rights, the rule of law and democratic values.','bnp-c-green'],
-        ['02','Human-Centric','§3.3','Every session teaches AI as augmentation of human judgement — designed to extend the professional, never to replace them.','bnp-c-blue'],
-        ['03','Inclusive','§3.4','No role, gender, language or literacy level is priced out of the cohort; tiering opens the door rather than filtering at it.','bnp-c-cream'],
-        ['04','Accountable','§3.5','Every workflow a participant ships carries a named human owner who can explain, contest and override its output.','bnp-c-pink'],
-        ['05','Transparent','§3.6','Participants leave able to explain how a tool reached an output, what data it used, and where it is known to fail.','bnp-c-purple'],
-        ['06','Pro-Innovation','§3.2','Learning happens in a sandbox: real organizational problems, safe-to-fail builds, measured against real outcomes.','bnp-c-green'],
-        ['07','Anti-Over-Reliance','§5.2','Core human skills — reasoning, writing, problem-solving — are actively protected against erosion by tool dependence.','bnp-c-pink'],
-        ['08','Data Sovereign','§4.2','Cohort and organizational data stays in controlled workspaces under explicit access, retention and deletion rules.','bnp-c-teal'],
-        ['09','Integrity-First','§5.2','Authorship is declared and assessment resists generation: work is scored on judgement, not on what a model produced.','bnp-c-blue'],
-        ['10','Transition-Ready','§5.3','Training is an upskilling pathway that protects the roles most exposed to automation — never a rationale for displacing them.','bnp-c-cream'],
-      ].map(p=>`<div class="bnp-card ${p[4]}" style="padding:14px 18px"><div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-size:16px;font-weight:800;color:var(--bnp-navy)"><span style="color:#2e5c3f">${p[0]}</span> ${p[1]}</div><div style="font-size:13px;color:#8a8a85;font-weight:700">${p[2]}</div></div><div class="bnp-card-d" style="font-size:13px;margin-top:6px">${p[3]}</div></div>`).join('')}
-    </div>
-  </div>
-  ${foot}
-</section>
+  </section>
 
-<!-- 14 · EVERYTHING LEADERSHIP ASKS -->
-<section class="bnp-slide">
-  <div class="bnp-slide-body">
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap">
-      <div style="flex:1;min-width:300px">
-        <div class="bnp-eyebrow">Questions, Answered</div>
-        <div class="bnp-h2" style="font-size:38px">Everything leadership asks before committing a cohort</div>
+  <section style="padding:clamp(56px,8vw,86px) 0;background:#F2F7F3;border-top:1px solid rgba(28,32,43,.12);border-bottom:1px solid rgba(28,32,43,.12)">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="max-width:1040px;margin:0 auto clamp(30px,4vw,38px);text-align:center">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">The journey</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0;text-wrap:balance">Three parts. One progression.</h2>
+        <p style="max-width:780px;color:#5E6C64;margin:18px auto 0;font-size:16.5px;line-height:1.7">The extensive format goes deeper across all three parts. The compact format covers the same overall journey at a faster pace.</p>
       </div>
-      <div style="text-align:right"><div style="font-size:44px;font-weight:900;color:#2e5c3f;letter-spacing:-.02em">15–40%</div><div class="bnp-card-d" style="font-size:14px">productivity improvement across functions</div></div>
-    </div>
-    <div style="background:#fff;border:1px solid #d3d3cd;border-radius:0;padding:22px 26px;margin-top:18px">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:18px"><div style="font-size:22px;font-weight:800;color:var(--bnp-navy)">How is the program delivered?</div><div style="font-size:16px;color:var(--bnp-body);font-weight:600">Not training. Not a workshop. <b style="color:#2e5c3f">Project-based AI learning.</b></div></div>
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-        <div style="text-align:center;flex:1;min-width:90px"><div style="font-size:24px">📅</div><div style="font-size:14px;font-weight:800;color:var(--bnp-navy);margin-top:4px">01 · Learn</div></div><span class="bnp-mono-arrow">→</span>
-        <div style="text-align:center;flex:1;min-width:90px"><div style="font-size:24px">📚</div><div style="font-size:14px;font-weight:800;color:var(--bnp-navy);margin-top:4px">02 · Build</div></div><span class="bnp-mono-arrow">→</span>
-        <div style="text-align:center;flex:1;min-width:90px"><div style="font-size:24px">⬆️</div><div style="font-size:14px;font-weight:800;color:var(--bnp-navy);margin-top:4px">03 · Submit</div></div><span class="bnp-mono-arrow">→</span>
-        <div style="text-align:center;flex:1;min-width:90px"><div style="font-size:24px">💬</div><div style="font-size:14px;font-weight:800;color:var(--bnp-navy);margin-top:4px">04 · Feedback</div></div><span class="bnp-mono-arrow">→</span>
-        <div style="text-align:center;flex:1;min-width:90px"><div style="font-size:24px">🕐</div><div style="font-size:14px;font-weight:800;color:var(--bnp-navy);margin-top:4px">05 · Self-Paced</div></div><span class="bnp-mono-arrow">→</span>
-        <div style="text-align:center;flex:1;min-width:90px"><div style="font-size:24px">▦</div><div style="font-size:14px;font-weight:800;color:var(--bnp-navy);margin-top:4px">06 · Matrix</div></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:12px">
+        <div style="border:1px solid rgba(28,32,43,.12);background:#fff;border-radius:18px;padding:24px;display:flex;flex-direction:column">
+          <div style="color:#07703C;font-family:'Work Sans',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600">Part 01 · Foundations</div>
+          <h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:21px;margin:10px 0 0;line-height:1.25">Understand AI and use it well.</h3>
+          <p style="color:#5E6C64;font-size:14.5px;line-height:1.65;margin:8px 0 0">Build a clear foundation, learn effective ways to work with AI, and start creating practical no-code or low-code solutions.</p>
+          <div style="margin-top:16px;display:flex;gap:6px;flex-wrap:wrap"><span style="font-size:11.5px;border:1px solid rgba(28,32,43,.12);border-radius:999px;padding:5px 10px;color:#5E6C64">Basics</span><span style="font-size:11.5px;border:1px solid rgba(28,32,43,.12);border-radius:999px;padding:5px 10px;color:#5E6C64">Prompting</span><span style="font-size:11.5px;border:1px solid rgba(28,32,43,.12);border-radius:999px;padding:5px 10px;color:#5E6C64">Data &amp; outputs</span><span style="font-size:11.5px;border:1px solid rgba(28,32,43,.12);border-radius:999px;padding:5px 10px;color:#5E6C64">No-code</span></div>
+        </div>
+        <div style="border:1px solid rgba(28,32,43,.12);background:#fff;border-radius:18px;padding:24px;display:flex;flex-direction:column">
+          <div style="color:#07703C;font-family:'Work Sans',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600">Part 02 · Automation</div>
+          <h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:21px;margin:10px 0 0;line-height:1.25">Move from assistance to automation.</h3>
+          <p style="color:#5E6C64;font-size:14.5px;line-height:1.65;margin:8px 0 0">Explore how workflows can be automated and how AI can work with context, tools and repeatable processes.</p>
+          <div style="margin-top:16px;display:flex;gap:6px;flex-wrap:wrap"><span style="font-size:11.5px;border:1px solid rgba(28,32,43,.12);border-radius:999px;padding:5px 10px;color:#5E6C64">Automation</span><span style="font-size:11.5px;border:1px solid rgba(28,32,43,.12);border-radius:999px;padding:5px 10px;color:#5E6C64">Agents</span><span style="font-size:11.5px;border:1px solid rgba(28,32,43,.12);border-radius:999px;padding:5px 10px;color:#5E6C64">Context</span><span style="font-size:11.5px;border:1px solid rgba(28,32,43,.12);border-radius:999px;padding:5px 10px;color:#5E6C64">Workflows</span></div>
+        </div>
+        <div style="border:1px solid rgba(28,32,43,.12);background:#fff;border-radius:18px;padding:24px;display:flex;flex-direction:column">
+          <div style="color:#07703C;font-family:'Work Sans',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600">Part 03 · Workforce &amp; organisation</div>
+          <h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:21px;margin:10px 0 0;line-height:1.25">Turn personal skill into organisational capability.</h3>
+          <p style="color:#5E6C64;font-size:14.5px;line-height:1.65;margin:8px 0 0">Map where AI fits across teams, consider adoption and governance, and connect individual practice to organisational needs.</p>
+          <div style="margin-top:16px;display:flex;gap:6px;flex-wrap:wrap"><span style="font-size:11.5px;border:1px solid rgba(28,32,43,.12);border-radius:999px;padding:5px 10px;color:#5E6C64">AI mapping</span><span style="font-size:11.5px;border:1px solid rgba(28,32,43,.12);border-radius:999px;padding:5px 10px;color:#5E6C64">Adoption</span><span style="font-size:11.5px;border:1px solid rgba(28,32,43,.12);border-radius:999px;padding:5px 10px;color:#5E6C64">Governance</span><span style="font-size:11.5px;border:1px solid rgba(28,32,43,.12);border-radius:999px;padding:5px 10px;color:#5E6C64">Leadership</span></div>
+        </div>
       </div>
-      <div style="background:#244a33;border-radius:0;padding:14px 20px;margin-top:16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span style="display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:800;color:#b9d4b8"><span style="width:26px;height:26px;background:#2e5c3f;border-radius:0;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:14px">✦</span>AI Learning Agent</span><span style="font-size:15px;color:#d6e0d6;font-weight:500;flex:1;min-width:240px">One AI learning agent for each participant — it guides every step of the program and handles task submission.</span></div>
     </div>
-    <div class="bnp-g3" style="margin-top:16px">
-      <div class="bnp-card bnp-c-green" style="padding:20px"><div style="font-size:22px;margin-bottom:8px">👥</div><div class="bnp-card-t" style="font-size:18px">Who is AIPA designed for?</div><div class="bnp-card-d" style="margin-top:8px">Every level of the organization — frontline staff to senior leadership. Sessions are tiered Basic → Advanced.</div></div>
-      <div class="bnp-card bnp-c-blue" style="padding:20px"><div style="font-size:22px;margin-bottom:8px">💻</div><div class="bnp-card-t" style="font-size:18px">Do participants need a technical background?</div><div class="bnp-card-d" style="margin-top:8px">No. The core track is no-code and low-code. Semi-technical sessions are clearly marked and optional.</div></div>
-      <div class="bnp-card bnp-c-cream" style="padding:20px"><div style="font-size:22px;margin-bottom:8px">📈</div><div class="bnp-card-t" style="font-size:18px">What does each participant produce?</div><div class="bnp-card-d" style="margin-top:8px">Multiple working applications and automations tied to their role, scored on DIG+8 with a 75%+ threshold.</div></div>
-      <div class="bnp-card bnp-c-pink" style="padding:20px"><div style="font-size:22px;margin-bottom:8px">🛡️</div><div class="bnp-card-t" style="font-size:18px">How do you protect our data?</div><div class="bnp-card-d" style="margin-top:8px">Private, secure workspaces — encrypted premium models, role-based access, usage tracking.</div></div>
-      <div class="bnp-card bnp-c-purple" style="padding:20px"><div style="font-size:22px;margin-bottom:8px">📊</div><div class="bnp-card-t" style="font-size:18px">What return can we expect?</div><div class="bnp-card-d" style="margin-top:8px">A 15–40% productivity improvement across functions, with a phased 9-month rollout to scale.</div></div>
-    </div>
-  </div>
-  ${foot}
-</section>
+  </section>
 
-<!-- 15 · INDUSTRY-WISE USE CASE SCENARIOS -->
-<section class="bnp-slide bnp-slide-yellow">
-  <div class="bnp-slide-body" style="padding-top:34px">
-    <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:40px"><span style="font-size:16px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#2e5c3f">AIPA Industry Applications</span><span style="font-size:16px;color:#5a5a56;font-weight:600">Same curriculum · Industry-specific application</span></div>
-    <div class="bnp-h1" style="font-size:clamp(40px,6.5vw,66px);margin-bottom:36px">Industry-Wise Use Case Scenarios</div>
-    <div style="font-size:26px;font-weight:800;color:#2e5c3f;letter-spacing:-.01em;margin-bottom:24px">One AIPA methodology. Multiple industry applications.</div>
-    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:34px">
-      <span style="background:#fff;border-radius:0;padding:12px 22px;font-size:16px;font-weight:800;color:var(--bnp-navy)">Core AIPA</span><span class="bnp-mono-arrow" style="color:#5a5a56">→</span>
-      <span style="background:#fff;border-radius:0;padding:12px 22px;font-size:16px;font-weight:800;color:var(--bnp-navy)">Industry Context</span><span class="bnp-mono-arrow" style="color:#5a5a56">→</span>
-      <span style="background:#fff;border-radius:0;padding:12px 22px;font-size:16px;font-weight:800;color:var(--bnp-navy)">Functional Use Cases</span><span class="bnp-mono-arrow" style="color:#5a5a56">→</span>
-      <span style="background:#2e5c3f;color:#fff;border-radius:0;padding:12px 22px;font-size:16px;font-weight:800">AI Transformation Opportunities</span>
+  <section style="padding:clamp(56px,8vw,86px) 0">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="max-width:1040px;margin:0 auto clamp(30px,4vw,38px);text-align:center">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">How a participant experiences it</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0">Learn. Build. Prove it.</h2>
+      </div>
+      <div style="max-width:860px;margin:0 auto;display:flex;flex-direction:column">
+        <div style="display:grid;grid-template-columns:62px minmax(0,1fr);gap:16px;padding:16px 0;border-top:1px solid rgba(28,32,43,.12)"><div style="width:46px;height:46px;border-radius:50%;background:#DFF5E9;display:grid;place-items:center;color:#07703C;font-family:'Work Sans',sans-serif;font-weight:600">1</div><div><h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:19px;margin:4px 0 0">Learn the concept</h3><p style="margin:5px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">The facilitator explains the capability and the reasoning behind it, in a workshop setting.</p></div></div>
+        <div style="display:grid;grid-template-columns:62px minmax(0,1fr);gap:16px;padding:16px 0;border-top:1px solid rgba(28,32,43,.12)"><div style="width:46px;height:46px;border-radius:50%;background:#DFF5E9;display:grid;place-items:center;color:#07703C;font-family:'Work Sans',sans-serif;font-weight:600">2</div><div><h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:19px;margin:4px 0 0">Apply it to real work</h3><p style="margin:5px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">The participant receives a project connected to their own role or workflow.</p></div></div>
+        <div style="display:grid;grid-template-columns:62px minmax(0,1fr);gap:16px;padding:16px 0;border-top:1px solid rgba(28,32,43,.12)"><div style="width:46px;height:46px;border-radius:50%;background:#DFF5E9;display:grid;place-items:center;color:#07703C;font-family:'Work Sans',sans-serif;font-weight:600">3</div><div><h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:19px;margin:4px 0 0">Submit and get feedback</h3><p style="margin:5px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">The work is reviewed so the participant learns from what they actually built.</p></div></div>
+        <div style="display:grid;grid-template-columns:62px minmax(0,1fr);gap:16px;padding:16px 0;border-top:1px solid rgba(28,32,43,.12);border-bottom:1px solid rgba(28,32,43,.12)"><div style="width:46px;height:46px;border-radius:50%;background:#DFF5E9;display:grid;place-items:center;color:#07703C;font-family:'Work Sans',sans-serif;font-weight:600">4</div><div><h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:19px;margin:4px 0 0">Move forward</h3><p style="margin:5px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">The next session builds on the capability already practised, gradually moving towards automation and organisational use.</p></div></div>
+      </div>
     </div>
-    <div class="bnp-g3">
-      <div style="background:#fff;border-radius:0;padding:24px"><div style="font-size:28px;font-weight:900;color:#2e5c3f">01</div><div class="bnp-card-t" style="font-size:21px;margin:6px 0 8px">Banking &amp; Financial Services</div><div class="bnp-card-d">AI Literacy → Intelligent Operations → Data-Driven Decision Making</div></div>
-      <div style="background:#fff;border-radius:0;padding:24px"><div style="font-size:28px;font-weight:900;color:#2e5c3f">02</div><div class="bnp-card-t" style="font-size:21px;margin:6px 0 8px">FMCG &amp; Distribution</div><div class="bnp-card-d">Market Intelligence → Commercial Excellence → Intelligent Supply Chain</div></div>
-      <div style="background:#fff;border-radius:0;padding:24px"><div style="font-size:28px;font-weight:900;color:#2e5c3f">03</div><div class="bnp-card-t" style="font-size:21px;margin:6px 0 8px">Pharmaceutical Industry</div><div class="bnp-card-d">Scientific Intelligence → Commercial Excellence → AI-Enabled Operations</div></div>
-    </div>
-  </div>
-  ${foot}
-</section>
+  </section>
 
-<!-- 16 · AIPA FOR BANKING -->
-<section class="bnp-slide">
-  <div class="bnp-slide-body">
-    <div style="background:#f3e3dc;margin:-44px -50px 22px;padding:30px 50px;border-bottom:1px solid #f3e3dc">
-      <div style="font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#2e5c3f;margin-bottom:6px">AIPA Industry Application · 01</div>
-      <div class="bnp-h2" style="font-size:36px;margin-bottom:8px">AIPA for Banking &amp; Financial Services</div>
-      <div style="font-size:16px;font-weight:700;color:var(--bnp-body)">From AI Literacy → Intelligent Operations → Data-Driven Decision Making</div>
+  <section style="padding:clamp(56px,8vw,86px) 0;background:#F2F7F3;border-top:1px solid rgba(28,32,43,.12);border-bottom:1px solid rgba(28,32,43,.12)">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="max-width:1040px;margin:0 auto clamp(26px,3vw,32px);text-align:center">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">Designed for the workforce</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0">Any function. Any level.</h2>
+        <p style="max-width:780px;color:#5E6C64;margin:18px auto 0;font-size:16.5px;line-height:1.7">No technical background is required for the core journey. The content can be grounded in the team's actual work.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:900px;margin:0 auto">
+        <span style="padding:8px 13px;border:1px solid rgba(28,32,43,.12);border-radius:999px;background:#fff;color:#414F47;font-size:13.5px">Finance</span><span style="padding:8px 13px;border:1px solid rgba(28,32,43,.12);border-radius:999px;background:#fff;color:#414F47;font-size:13.5px">HR</span><span style="padding:8px 13px;border:1px solid rgba(28,32,43,.12);border-radius:999px;background:#fff;color:#414F47;font-size:13.5px">Procurement</span><span style="padding:8px 13px;border:1px solid rgba(28,32,43,.12);border-radius:999px;background:#fff;color:#414F47;font-size:13.5px">Sales</span><span style="padding:8px 13px;border:1px solid rgba(28,32,43,.12);border-radius:999px;background:#fff;color:#414F47;font-size:13.5px">Marketing</span><span style="padding:8px 13px;border:1px solid rgba(28,32,43,.12);border-radius:999px;background:#fff;color:#414F47;font-size:13.5px">Supply chain</span><span style="padding:8px 13px;border:1px solid rgba(28,32,43,.12);border-radius:999px;background:#fff;color:#414F47;font-size:13.5px">Production</span><span style="padding:8px 13px;border:1px solid rgba(28,32,43,.12);border-radius:999px;background:#fff;color:#414F47;font-size:13.5px">Strategy</span><span style="padding:8px 13px;border:1px solid rgba(28,32,43,.12);border-radius:999px;background:#fff;color:#414F47;font-size:13.5px">IT</span><span style="padding:8px 13px;border:1px solid rgba(28,32,43,.12);border-radius:999px;background:#fff;color:#414F47;font-size:13.5px">Planning</span>
+      </div>
+      <div style="margin:24px auto 0;max-width:900px;padding:18px 22px;border-left:3px solid #0DBA6B;background:#DFF5E9;border-radius:0 12px 12px 0;color:#1F4A34;font-size:14.5px;line-height:1.65">For senior managers who need organisation-level direction rather than workforce training, AISA is the more appropriate programme.</div>
     </div>
-    <div class="bnp-g3" style="gap:14px">
-      <div class="bnp-card bnp-c-plain"><div class="bnp-card-t" style="font-size:17px">👤 01 · Customer Intelligence</div><ul class="bnp-ul"><li>Customer segmentation</li><li>Personalized banking experiences</li><li>Customer behavior analysis</li><li>Next-best-action recommendations</li><li>AI-assisted relationship management</li></ul></div>
-      <div class="bnp-card bnp-c-plain"><div class="bnp-card-t" style="font-size:17px">🛡️ 02 · Risk, Compliance &amp; Fraud</div><ul class="bnp-ul"><li>Fraud detection</li><li>Risk assessment</li><li>AML / transaction monitoring</li><li>Compliance intelligence</li><li>AI-assisted investigation and reporting</li></ul></div>
-      <div class="bnp-card bnp-c-plain"><div class="bnp-card-t" style="font-size:17px">📄 03 · Credit &amp; Lending Intelligence</div><ul class="bnp-ul"><li>Credit assessment</li><li>Loan application analysis</li><li>Document processing</li><li>Credit-risk signals</li><li>AI-assisted underwriting</li></ul></div>
-      <div class="bnp-card bnp-c-plain"><div class="bnp-card-t" style="font-size:17px">🤖 04 · Productivity &amp; Automation</div><ul class="bnp-ul"><li>Employee productivity</li><li>Document and email automation</li><li>Reporting automation</li><li>AI agents for repetitive operational tasks</li><li>Workflow optimization</li></ul></div>
-      <div class="bnp-card bnp-c-plain"><div class="bnp-card-t" style="font-size:17px">📊 05 · Data, Analytics &amp; Decisions</div><ul class="bnp-ul"><li>Management dashboards</li><li>Business analytics</li><li>Data interpretation</li><li>Scenario analysis</li><li>AI-assisted decision support</li></ul></div>
-      <div class="bnp-card bnp-c-plain"><div class="bnp-card-t" style="font-size:17px">🛡️ 06 · AI Governance &amp; Transformation</div><ul class="bnp-ul"><li>Responsible AI</li><li>Data privacy</li><li>AI governance</li><li>Risk controls</li><li>AI transformation roadmap</li></ul></div>
-    </div>
-    <p style="text-align:center;font-size:15px;color:var(--bnp-body);font-weight:500;margin:16px 0 14px">AIPA helps banking leaders identify where AI can improve <b style="color:var(--bnp-navy)">customer experience, risk management, productivity, and decision-making.</b></p>
-    <div style="background:#2e5c3f;border-radius:0;padding:20px 26px;color:#fff;text-align:center">
-      <div style="font-size:16px;font-weight:800;letter-spacing:.05em;margin-bottom:10px">CORE AIPA CURRICULUM</div>
-      <div style="font-size:15px;font-weight:800;margin-bottom:6px">AI Literacy → Prompting → AI Tools → Data &amp; Analytics → Automation → AI Agents → Governance → Transformation</div>
-      <div style="font-size:14px;color:#d3d3cd;font-weight:500;margin-bottom:8px">Core AIPA → Industry Context → Functional Use Cases → AI Transformation Opportunities</div>
-      <div style="font-size:15px;font-weight:800">One AIPA methodology. Multiple industry applications.</div>
-    </div>
-  </div>
-  ${foot}
-</section>
+  </section>
 
-<!-- 17 · AIPA FOR FMCG -->
-<section class="bnp-slide">
-  <div class="bnp-slide-body">
-    <div style="background:#e8ebe6;margin:-44px -50px 22px;padding:30px 50px;border-bottom:1px solid #d3d3cd">
-      <div style="font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#2e5c3f;margin-bottom:6px">AIPA Industry Application · 02</div>
-      <div class="bnp-h2" style="font-size:36px;margin-bottom:8px">AIPA for FMCG &amp; Distribution</div>
-      <div style="font-size:16px;font-weight:700;color:var(--bnp-body)">From Market Intelligence → Commercial Excellence → Intelligent Supply Chain</div>
+  <section style="padding:clamp(56px,8vw,86px) 0">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="max-width:1040px;margin:0 auto clamp(30px,4vw,38px);text-align:center">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">Frequently asked</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0">What people usually want to know.</h2>
+      </div>
+      <div style="display:grid;gap:8px;max-width:900px;margin:0 auto">
+        <details open style="border:1px solid rgba(28,32,43,.12);background:#fff;border-radius:14px;padding:0 20px"><summary style="cursor:pointer;padding:16px 0;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px">Six sessions or twelve?</summary><p style="padding:0 0 17px;color:#5E6C64;font-size:14.5px;line-height:1.7;margin:0">Twelve is the extensive journey. Six is the compact journey, useful when release time is tighter or when the cohort has already covered foundational material through AIBS.</p></details>
+        <details style="border:1px solid rgba(28,32,43,.12);background:#fff;border-radius:14px;padding:0 20px"><summary style="cursor:pointer;padding:16px 0;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px">Is AIPA just a course?</summary><p style="padding:0 0 17px;color:#5E6C64;font-size:14.5px;line-height:1.7;margin:0">No. Sessions are workshop-style, but the programme is built around projects that participants complete on their own work between lessons.</p></details>
+        <details style="border:1px solid rgba(28,32,43,.12);background:#fff;border-radius:14px;padding:0 20px"><summary style="cursor:pointer;padding:16px 0;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px">Can one department take AIPA?</summary><p style="padding:0 0 17px;color:#5E6C64;font-size:14.5px;line-height:1.7;margin:0">Yes. AIPA can be shaped around one function or used across mixed teams.</p></details>
+        <details style="border:1px solid rgba(28,32,43,.12);background:#fff;border-radius:14px;padding:0 20px"><summary style="cursor:pointer;padding:16px 0;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px">What changes after AIPA?</summary><p style="padding:0 0 17px;color:#5E6C64;font-size:14.5px;line-height:1.7;margin:0">The goal is not just that people know more about AI. They start using it to handle recurring work faster, improve analysis, research and reporting, and build better ways of working into everyday tasks. When a workflow needs a deeper, integrated solution, AITA can take that next step into engineering.</p></details>
+      </div>
     </div>
-    <div class="bnp-g2" style="gap:16px">
-      <div class="bnp-card bnp-c-plain"><div class="bnp-card-t" style="font-size:18px">👥 01 · Sales &amp; Customer Intelligence</div><ul class="bnp-ul"><li>Sales performance analysis</li><li>Customer segmentation</li><li>Territory intelligence</li><li>Sales forecasting</li><li>AI-assisted sales planning</li></ul></div>
-      <div class="bnp-card bnp-c-plain"><div class="bnp-card-t" style="font-size:18px">🚚 02 · Demand &amp; Supply Chain</div><ul class="bnp-ul"><li>Demand forecasting</li><li>Inventory optimization</li><li>Supply planning</li><li>Distribution efficiency</li><li>Route / logistics intelligence</li></ul></div>
-      <div class="bnp-card bnp-c-plain"><div class="bnp-card-t" style="font-size:18px">🛍️ 03 · Marketing &amp; Consumer Intelligence</div><ul class="bnp-ul"><li>Consumer behavior analysis</li><li>Campaign intelligence</li><li>Product / market insights</li><li>Content generation</li><li>Personalized marketing</li></ul></div>
-      <div class="bnp-card bnp-c-plain"><div class="bnp-card-t" style="font-size:18px">🤖 04 · Operations &amp; Management Productivity</div><ul class="bnp-ul"><li>Automated reporting</li><li>Field-force productivity</li><li>Data compilation</li><li>Management dashboards</li><li>AI agents for repetitive workflows</li></ul></div>
-    </div>
-    <div style="background:#fff;border:1px solid #d3d3cd;border-radius:0;padding:16px 22px;margin-top:16px;text-align:center;font-size:16px;font-weight:800;color:var(--bnp-navy)"><span style="background:#2e5c3f;color:#fff;border-radius:0;padding:6px 16px;margin-right:10px;font-size:14px">AI Layer</span>Market → Demand → Production → Distribution → Retail → <span style="color:#2e5c3f">Consumer</span></div>
-    <p style="text-align:center;font-size:15px;color:var(--bnp-body);font-weight:500;margin-top:14px">AIPA connects AI capability with the complete FMCG value chain — <b style="color:var(--bnp-navy)">from consumer insight to distribution and operational execution.</b></p>
-  </div>
-  ${foot}
-</section>
+  </section>
 
-<!-- 18 · AIPA FOR PHARMA -->
-<section class="bnp-slide">
-  <div class="bnp-slide-body">
-    <div style="background:#e8ebe6;margin:-44px -50px 22px;padding:30px 50px;border-bottom:1px solid #d3d3cd">
-      <div style="font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#2e5c3f;margin-bottom:6px">AIPA Industry Application · 03</div>
-      <div class="bnp-h2" style="font-size:36px;margin-bottom:8px">AIPA for Pharmaceutical Industry</div>
-      <div style="font-size:16px;font-weight:700;color:var(--bnp-body)">From Scientific Intelligence → Commercial Excellence → AI-Enabled Operations</div>
+${aiaccClients(true)}
+${aiaccDirector(!true)}
+  <section style="padding:clamp(56px,8vw,86px) 0;background:#F2F7F3;border-top:1px solid rgba(28,32,43,.12);border-bottom:1px solid rgba(28,32,43,.12)">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="max-width:1040px;margin:0 auto clamp(30px,4vw,38px);text-align:center">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">Explore the Accelerator</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0">See the other programmes.</h2>
+        <p style="max-width:780px;color:#5E6C64;margin:18px auto 0;font-size:16.5px;line-height:1.7">Each programme answers a different AI question.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px">
+        <a href="/aibs" onclick="showPage('aibs');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">01 · Briefing</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AIBS — Understand AI</strong></a>
+        <a href="/aipa" onclick="showPage('aipa');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">02 · Workforce</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AIPA — Build capability</strong></a>
+        <a href="/management-aisa" onclick="showPage('management-aisa');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">03 · Leadership</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AISA — Decide the direction</strong></a>
+      </div>
     </div>
-    <div class="bnp-g2" style="gap:16px">
-      <div class="bnp-card bnp-c-plain"><div class="bnp-card-t" style="font-size:18px">🔬 01 · Medical &amp; Scientific Intelligence</div><ul class="bnp-ul"><li>Scientific literature analysis</li><li>Research intelligence</li><li>Medical information processing</li><li>Knowledge management</li><li>AI-assisted scientific research</li></ul></div>
-      <div class="bnp-card bnp-c-plain"><div class="bnp-card-t" style="font-size:18px">👥 02 · Sales Force &amp; HCP Intelligence</div><ul class="bnp-ul"><li>Doctor / HCP segmentation</li><li>Field-force productivity</li><li>Call planning</li><li>Visit intelligence</li><li>AI-assisted sales effectiveness</li></ul></div>
-    </div>
-    <div class="bnp-card bnp-c-plain" style="margin-top:16px"><div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><div class="bnp-card-t" style="font-size:18px">📊 03 · Market &amp; Product Intelligence</div><div style="font-size:15px;font-weight:800;color:#2e5c3f">Product → Market → Competitor → Customer → Opportunity</div></div><div class="bnp-card-d" style="margin-top:8px">Market intelligence · Competitor analysis · Product intelligence · Market opportunity identification · AI-assisted strategic decision making</div></div>
-    <div class="bnp-g2" style="gap:16px;margin-top:16px">
-      <div class="bnp-card bnp-c-plain"><div class="bnp-card-t" style="font-size:18px">📄 04 · Regulatory, Quality &amp; Compliance</div><ul class="bnp-ul"><li>Regulatory document processing</li><li>SOP / policy intelligence</li><li>Quality documentation</li><li>Compliance monitoring</li><li>AI-assisted reporting</li></ul></div>
-      <div class="bnp-card bnp-c-plain"><div class="bnp-card-t" style="font-size:18px">🏭 05 · Supply Chain &amp; Commercial Operations</div><ul class="bnp-ul"><li>Demand forecasting</li><li>Inventory intelligence</li><li>Supply planning</li><li>Procurement insights</li><li>Commercial performance analytics</li></ul></div>
-    </div>
-    <p style="text-align:center;font-size:15px;color:var(--bnp-body);font-weight:500;margin-top:14px">AIPA enables pharmaceutical leaders to apply AI across <b style="color:var(--bnp-navy)">scientific knowledge, commercial execution, regulatory processes, and operational decision-making.</b></p>
-  </div>
-  ${foot}
+  </section>
 </section>
-
-<!-- 23 · START YOUR AI PROFICIENCY JOURNEY -->
-<section class="bnp-slide bnp-slide-mint">
-  <div class="bnp-slide-body" style="padding-top:30px">
-    <div class="bnp-eyebrow">Let's Begin</div>
-    <div class="bnp-h1" style="font-size:clamp(40px,6vw,62px);margin-bottom:26px">Start your AI proficiency journey</div>
-    <div style="background:#2e5c3f;border-radius:0;padding:16px 24px;margin-bottom:20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;color:#fff"><span style="font-size:12px;font-weight:800;letter-spacing:.06em;opacity:.85">PROGRAM PAGE</span><span style="font-size:19px;font-weight:900;letter-spacing:-.01em">buildnation.com.bd/aipa</span><span style="font-size:15px;color:#d3d3cd;font-weight:500">AI Proficiency Accelerator · AI Accelerator Suite by BuildNation</span></div>
-    <div class="bnp-g4" style="gap:14px;margin-bottom:14px">
-      <div style="background:#fff;border-radius:0;padding:18px 22px"><div style="font-size:13px;font-weight:800;letter-spacing:.04em;color:#2e5c3f;margin-bottom:6px">PHONE</div><div style="font-size:17px;font-weight:700;color:var(--bnp-navy)">+8801861-88444</div></div>
-      <div style="background:#fff;border-radius:0;padding:18px 22px"><div style="font-size:13px;font-weight:800;letter-spacing:.04em;color:#2e5c3f;margin-bottom:6px">EMAIL</div><div style="font-size:15px;font-weight:700;color:var(--bnp-navy);word-break:break-all">contact@buildnation.com.bd</div></div>
-      <div style="background:#fff;border-radius:0;padding:18px 22px"><div style="font-size:13px;font-weight:800;letter-spacing:.04em;color:#2e5c3f;margin-bottom:6px">OFFICE</div><div style="font-size:14px;font-weight:700;color:var(--bnp-navy);line-height:1.4">L9, Amanullah Trade Center, Gulshan 2 Circle, Dhaka-1212</div></div>
-      <div style="background:#fff;border-radius:0;padding:18px 22px"><div style="font-size:13px;font-weight:800;letter-spacing:.04em;color:#2e5c3f;margin-bottom:6px">OFFICE</div><div style="font-size:14px;font-weight:700;color:var(--bnp-navy);line-height:1.4">Level 04, House 388, Road 6, Baridhara DOHS, Dhaka-1206</div></div>
-    </div>
-    <div class="bnp-g3" style="gap:14px">
-      <div style="background:#fff;border-radius:0;padding:18px 22px"><div style="font-size:13px;font-weight:800;letter-spacing:.04em;color:#2e5c3f;margin-bottom:6px">WEBSITE</div><div style="font-size:16px;font-weight:700;color:var(--bnp-navy)">buildnation.com.bd</div></div>
-      <div style="background:#fff;border-radius:0;padding:18px 22px"><div style="font-size:13px;font-weight:800;letter-spacing:.04em;color:#2e5c3f;margin-bottom:6px">FACEBOOK</div><div style="font-size:16px;font-weight:700;color:var(--bnp-navy)">facebook.com/buildnation</div></div>
-      <div style="background:#fff;border-radius:0;padding:18px 22px"><div style="font-size:13px;font-weight:800;letter-spacing:.04em;color:#2e5c3f;margin-bottom:6px">LINKEDIN</div><div style="font-size:16px;font-weight:700;color:var(--bnp-navy)">linkedin.com/company/buildnation</div></div>
-    </div>
-    <div style="text-align:center;margin-top:28px"><div style="font-size:28px;font-weight:900;letter-spacing:-.04em;color:#244a33">build<span style="color:#2e5c3f">n</span>ation</div><div style="font-size:13px;color:#d6e0d6;font-weight:600">Bridge to a brighter tomorrow</div></div>
-  </div>
-  ${foot}
-</section>
-
 </div>
 `;
 }
@@ -4421,276 +4082,274 @@ function pageAIPASessionPlan(){
 }
 
 function pageAIBS(){
-  const cover = [
-    {n:"01",t:"Where to start",d:"Training, workshop, or full transformation — the right entry point today.",c:"#e8ebe6"},
-    {n:"02",t:"Do's and don'ts",d:"What works and what fails in early adoption, and the regulations that apply.",c:"#e8ebe6"},
-    {n:"03",t:"Cost-benefit analysis",d:"What an AI initiative costs, what it returns, how to read the trade-off.",c:"#f3e3dc"},
-    {n:"04",t:"Low-cost augmentation",d:"Making employees AI-augmented quickly with a small set of low-cost tools.",c:"#f3e3dc"},
-    {n:"05",t:"Leveraging public tools",d:"Real work from Claude, Gemini, NotebookLM, AI Studio, ChatGPT, Perplexity.",c:"#e8ebe6"},
-    {n:"06",t:"Function-wise journey",d:"Enterprise guidelines for HR, sales, supply chain, production, marketing.",c:"#e8ebe6"},
-    {n:"07",t:"What we have seen",d:"Our experience, successes and failures transforming industries.",c:"#f3e3dc"},
-    {n:"08",t:"Organization Q&A",d:"A context-specific question-and-answer session on your organization.",c:"#e8ebe6"},
-    {n:"09",t:"Hands-on practice",d:"Working directly with the tools to understand AI in practice.",c:"#e8ebe6"}
-  ];
-  const audience = ["CxOs","HoDs","Function leads","Transformation & IT","HR & L&D","Functionwise frontier people"];
-  const decisions = ["Transformation","Functions","Budgeting","Forecast","Roadmapping","Upskilling","Consultation"];
-  const stats = [
-    {v:"296+",l:"Professionals transformed"},
-    {v:"16+",l:"Cohorts delivered"},
-    {v:"1200+",l:"Use cases built"},
-    {v:"82+",l:"Half-day sessions"}
-  ];
-  const partners = ["Beximco Pharma","Dhaka Bank PLC","Ispahani","Nuvista","ICMAB","Bahon & Japan Solartech","Nitol Motors Limited","EDGE-BCC","Polar","National Cyber Security Agency"];
-  const speakers = [
-    {n:"Hadi Bhuiyan",r:"Co-Founder, FutureMind AI (CommEngine Limited)",role:"Program Director, AIPA, BuildNation Limited"},
-    {n:"Munaf Mojib Chowdhury",r:"Founder, Ekshathe Foundation",role:"Program Director, AIPA, BuildNation Limited"},
-    {n:"Mahtab Uddin Ahmed",r:"Founder, Buildcon Consultancies Limited & BuildNation Limited",role:"Strategy Director, AIPA, BuildNation Limited"}
-  ];
-  const rows = [
-    {h:"Hour 1",s:"AI Anthropology & Communication Framework",a:["Quick assessment of AI expectation and AI readiness","Simple communication framework (RCTF) and communication grammar","LLM superpower and biggest fault — hallucination & protection"],o:["Understanding team expectations & AI readiness","How to properly communicate with AI using RCTF","Core strengths and major limitations / faults of LLMs"]},
-    {h:"Hour 2",s:"AI Adoption & Practical Applications",a:["Data analysis with SaaS solutions & basic content generation","Building no-code applications for analysis or plan generation"],o:["Hands-on data analysis using SaaS tools","Techniques for basic content generation","How to build no-code AI applications for planning & analysis"]},
-    {h:"Hour 3",s:"Advanced AI Concepts & Basic Organization Roadmap",a:["Overview of Agentic AI & Vibe Coding concepts","Hands-on 1: Memory management","Hands-on 2: Starting organization's AI PPM (Product Priority Matrix)"],o:["Concepts of Agentic AI & Vibe Coding","Effective AI memory management techniques","Initiating organizational AI PPM integration"]}
-  ];
-  const fullday = [
-    {h:"Hour 4–6",s:"Complete No-Code Business AI-Application with RAG",a:["Hands-on: building a complete no-code business AI application with RAG (retrieval-augmented generation)"],o:["Building an end-to-end no-code business AI application","Applying RAG to ground AI on your own data"]},
-    {h:"Hour 7–8",s:"Building a Baseline AIPPM for Your Organization",a:["Complete hands-on: building context for every function with DIG+8, and an AI roadmap for the organization including AIPPM hands-on"],o:["A baseline AIPPM for your organization","Context built for every function using DIG+8"]}
-  ];
-
-  const coverCards = cover.map(x=>`
-    <div style="background:${x.c};border-radius:0;padding:20px 18px">
-      <div style="font-size:13px;font-weight:700;color:var(--accent);letter-spacing:0.02em">${x.n}</div>
-      <div style="font-family:var(--sans);font-size:16px;font-weight:700;color:var(--ink);margin:6px 0 6px">${x.t}</div>
-      <div style="font-size:13px;color:var(--muted);line-height:1.5">${x.d}</div>
-    </div>`).join('');
-
-  const rowHtml = (r,accent)=>`
-    <div class="aibs-table-row" style="display:grid;grid-template-columns:96px 1.1fr 1.3fr 1.3fr;gap:0;border-top:1px solid rgba(0,0,0,0.08)">
-      <div style="padding:18px 16px;font-weight:700;color:${accent};font-family:var(--sans);font-size:15px">${r.h}</div>
-      <div style="padding:18px 16px;font-family:var(--sans);font-weight:600;color:var(--ink);font-size:14px;line-height:1.4">${r.s}</div>
-      <div style="padding:18px 16px;font-size:13px;color:var(--muted);line-height:1.55">${r.a.map((i,ix)=>`${ix+1}. ${i}`).join('<br>')}</div>
-      <div style="padding:18px 16px;font-size:13px;color:var(--muted);line-height:1.55">${r.o.join('<br>')}</div>
-    </div>`;
-
   return `
-<style>
-@media(max-width:760px){
-  .aibs-cover-grid{grid-template-columns:1fr !important}
-  .aibs-table-row{grid-template-columns:1fr !important}
-  .aibs-table-row>div{border-top:1px solid rgba(0,0,0,0.06)}
-}
-</style>
-
-<!-- HERO -->
-<div style="background:linear-gradient(135deg,#e8ebe6,#e8ebe6);border-radius:0;padding:34px 34px 30px;margin-bottom:22px">
-  <div style="font-size:12px;font-weight:700;color:#2e5c3f;text-transform:uppercase;letter-spacing:0.1em">Entry Point · Executive Orientation</div>
-  <div style="font-family:var(--sans);font-size:44px;font-weight:800;color:#244a33;letter-spacing:-0.02em;line-height:1.05;margin:8px 0 12px">AI Briefing Session <span style="color:#2e5c3f">(AIBS)</span></div>
-  <div style="font-size:16px;color:#244a33;max-width:70ch;line-height:1.5">Three hours to establish what AI means for your business, what it costs, where it applies function by function, and what the first move should be.</div>
-  <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:20px">
-    <span style="background:#2e5c3f;color:#fff;font-size:13px;font-weight:700;padding:9px 16px;border-radius:0">Half-Day AIBS · 3.5 hrs</span>
-    <span style="background:#2e5c3f;color:#fff;font-size:13px;font-weight:700;padding:9px 16px;border-radius:0">Full-Day AIBS · 8 hrs</span>
-    <span style="background:#2e5c3f;color:#fff;font-size:13px;font-weight:700;padding:9px 16px;border-radius:0">Senior–Mid leadership</span>
+<div class="bnx">
+<section>
+  <div style="padding:clamp(48px,6vw,72px) 0 clamp(34px,4vw,44px)">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="display:flex;gap:8px;align-items:center;color:#5E6C64;font-size:13px;margin-bottom:18px;flex-wrap:wrap">
+        <a href="/aipa" onclick="showPage('aipa');return false" style="color:#07703C;font-family:'Work Sans',sans-serif;font-weight:500">AI Accelerator</a><span>/</span><span>AIBS</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:clamp(30px,4vw,60px);align-items:start;max-width:1180px;margin:0 auto">
+        <div style="min-width:0">
+          <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">AI Briefing Session</div>
+          <h1 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.035em;line-height:1.04;font-size:clamp(38px,5.6vw,72px);margin:16px 0 0;max-width:12ch;text-wrap:balance">Understand AI properly. In a day.</h1>
+          <p style="max-width:720px;color:#5E6C64;font-size:clamp(17px,1.35vw,19px);line-height:1.62;margin:22px 0 0">AIBS gives people a complete, practical picture of AI: what it is, where it fits, what it can and cannot do, and how to work with it themselves.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px">
+            <a href="mailto:contact@buildnation.com.bd" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 22px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:14px;background:#0DBA6B;color:#fff;border:1px solid transparent" class="bnx-h1">Book a briefing →</a>
+            <a href="/aipa" onclick="showPage('aipa');return false" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 22px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:14px;background:#fff;color:#1C202B;border:1px solid rgba(28,32,43,.14)" class="bnx-h2">See AIPA</a>
+          </div>
+        </div>
+        <div style="min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:18px 24px;padding-top:6px">
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Format</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">4 or 8 hours</strong></div>
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Delivery</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">2-hour blocks, completed in one day</strong></div>
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Audience</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">Anyone</strong></div>
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Prerequisite</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">None</strong></div>
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Core outcome</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">Understand AI and work with it independently</strong></div>
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Best next step</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">AIPA or AISA, when relevant</strong></div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
-<!-- WHAT AIBS COVERS -->
-<div style="margin-bottom:22px">
-  <div style="font-family:var(--sans);font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px">What AIBS Covers</div>
-  <div style="font-size:15px;color:var(--muted);line-height:1.6;max-width:80ch;margin-bottom:18px">AIBS is a pre-preparation session before BuildNation's AISA or AIPA — helping management understand where to begin their AI transformation journey.</div>
-  <div class="aibs-cover-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">${coverCards}</div>
-</div>
+  <section style="padding:clamp(56px,8vw,86px) 0">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(30px,4vw,60px);align-items:start">
+      <div style="min-width:0">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">Why AIBS</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0;max-width:14ch">One clear picture before a bigger commitment.</h2>
+      </div>
+      <div style="min-width:0;max-width:640px;color:#5E6C64;font-size:16.5px;line-height:1.72">
+        <p style="margin:0">Many people encounter AI in fragments: a tool demo here, a news story there, a colleague showing what they built. AIBS brings those fragments together.</p>
+        <p style="margin:16px 0 0">It is deliberately self-contained. You do not have to sign up for a longer journey afterwards. The goal is to leave with enough understanding and hands-on experience to keep working with AI on your own.</p>
+      </div>
+    </div>
+  </section>
 
-<!-- AUDIENCE -->
-<div style="background:var(--paper-2);border-radius:0;padding:18px 22px;margin-bottom:16px;display:flex;flex-wrap:wrap;align-items:center;gap:10px">
-  <span style="font-family:var(--sans);font-size:15px;font-weight:700;color:var(--ink);margin-right:8px">Audience</span>
-  ${audience.map(a=>`<span style="border:1px solid #d3d3cd;color:#2e5c3f;background:#e8ebe6;font-size:13px;font-weight:600;padding:6px 14px;border-radius:0">${a}</span>`).join('')}
-</div>
+  <section style="padding:clamp(56px,8vw,86px) 0;background:#F2F7F3;border-top:1px solid rgba(28,32,43,.12);border-bottom:1px solid rgba(28,32,43,.12)">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="max-width:1040px;margin:0 auto clamp(30px,4vw,38px);text-align:center">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">What the briefing covers</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0;text-wrap:balance">From the basics to your own context.</h2>
+        <p style="max-width:780px;color:#5E6C64;margin:18px auto 0;font-size:16.5px;line-height:1.7">The exact emphasis can shift with the audience, but the briefing is designed to give a joined-up picture rather than a collection of tool demos.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:12px">
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:18px;padding:22px"><h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:19px;margin:0">How AI works</h3><p style="margin:8px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">Core concepts, capabilities, limitations and the practical implications for professional work.</p></div>
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:18px;padding:22px"><h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:19px;margin:0">How to work with it</h3><p style="margin:8px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">How to communicate with AI effectively, evaluate outputs and reduce the risk of relying on plausible but wrong answers.</p></div>
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:18px;padding:22px"><h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:19px;margin:0">Where it fits</h3><p style="margin:8px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">Examples across functions and a discussion of where AI can augment work meaningfully.</p></div>
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:18px;padding:22px"><h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:19px;margin:0">What it means for your organisation</h3><p style="margin:8px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">Questions around adoption, cost, risk, capability and possible next moves.</p></div>
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:18px;padding:22px"><h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:19px;margin:0">Hands-on use</h3><p style="margin:8px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">Participants work directly with AI rather than only watching demonstrations.</p></div>
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:18px;padding:22px"><h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:19px;margin:0">Your questions</h3><p style="margin:8px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">Time is reserved for the organisation's actual context, constraints and priorities.</p></div>
+      </div>
+    </div>
+  </section>
 
-<!-- LEADERS LEAVE ABLE TO DECIDE ON -->
-<div style="background:#244a33;border-radius:0;padding:22px 24px;margin-bottom:24px">
-  <div style="font-family:var(--sans);font-size:17px;font-weight:700;color:#fff;margin-bottom:14px">Leaders leave able to decide on</div>
-  <div style="display:flex;flex-wrap:wrap;gap:10px">
-    ${decisions.map(d=>`<span style="background:rgba(255,255,255,0.12);color:#fff;font-size:14px;font-weight:600;padding:8px 16px;border-radius:0">${d}</span>`).join('')}
-  </div>
-</div>
+  <section style="padding:clamp(56px,8vw,86px) 0">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="max-width:1040px;margin:0 auto clamp(30px,4vw,38px);text-align:center">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">Choose the depth</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0">4 hours or 8 hours.</h2>
+        <p style="max-width:780px;color:#5E6C64;margin:18px auto 0;font-size:16.5px;line-height:1.7">Both are completed within a single day, using two-hour blocks.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px">
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:20px;padding:26px">
+          <div style="font-family:'Work Sans',sans-serif;font-size:12.5px;color:#07703C;font-weight:600;letter-spacing:.08em;text-transform:uppercase">4-hour briefing</div>
+          <h3 style="font-family:'Work Sans',sans-serif;font-weight:400;letter-spacing:-.025em;font-size:23px;margin:9px 0 0">Understand + try</h3>
+          <p style="margin:9px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">Best when the immediate need is a clear, relevant understanding of AI, with small practical tasks that help people start using it confidently.</p>
+          <ul style="margin:16px 0 0;padding-left:18px;color:#5E6C64;font-size:14.5px;line-height:1.8"><li>Joined-up AI foundation</li><li>Small practical exercises</li><li>Discussion of organisational context</li></ul>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:20px;padding:26px">
+          <div style="font-family:'Work Sans',sans-serif;font-size:12.5px;color:#07703C;font-weight:600;letter-spacing:.08em;text-transform:uppercase">8-hour briefing</div>
+          <h3 style="font-family:'Work Sans',sans-serif;font-weight:400;letter-spacing:-.025em;font-size:23px;margin:9px 0 0">Understand + practise</h3>
+          <p style="margin:9px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">Best when the team wants the same clear foundation with substantially more hands-on work, so the learning moves beyond theory.</p>
+          <ul style="margin:16px 0 0;padding-left:18px;color:#5E6C64;font-size:14.5px;line-height:1.8"><li>Everything in the 4-hour format</li><li>More hands-on tasks and application</li><li>Deeper organisation-specific exploration</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- STATS -->
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px">
-  ${stats.map(s=>`<div style="background:#e8ebe6;border-radius:0;padding:22px 20px"><div style="font-family:var(--sans);font-size:34px;font-weight:800;color:#2e5c3f;letter-spacing:-0.03em">${s.v}</div><div style="font-size:13px;color:var(--muted);margin-top:4px">${s.l}</div></div>`).join('')}
-</div>
+  <section style="padding:clamp(56px,8vw,86px) 0;background:#F2F7F3;border-top:1px solid rgba(28,32,43,.12);border-bottom:1px solid rgba(28,32,43,.12)">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(30px,4vw,60px);align-items:start">
+      <div style="min-width:0">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">Where it leads</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0;max-width:14ch">AIBS can be the whole journey.</h2>
+      </div>
+      <div style="min-width:0;max-width:640px">
+        <p style="margin:0;color:#5E6C64;font-size:16.5px;line-height:1.72">Some teams take the briefing and stop there. Others decide they want deeper workforce capability and move into AIPA. Senior leadership may use the grounding to make better use of an AISA strategy engagement.</p>
+        <div style="margin-top:20px;padding:18px 22px;border-left:3px solid #0DBA6B;background:#DFF5E9;border-radius:0 12px 12px 0;color:#1F4A34;font-size:14.5px;line-height:1.65">For people who do continue, we can design AIPA or AISA differently after AIBS because the baseline explanation is already covered.</div>
+      </div>
+    </div>
+  </section>
 
-<!-- PARTNERS -->
-<div style="background:var(--paper-2);border-radius:0;padding:22px 24px;margin-bottom:26px">
-  <div style="font-family:var(--sans);font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px">Multi-Session AIPA &amp; AISA Conducted With</div>
-  <div style="display:flex;flex-wrap:wrap;gap:10px">
-    ${partners.map(p=>`<span style="background:var(--paper);border:1px solid rgba(0,0,0,0.08);color:var(--ink);font-size:13px;font-weight:600;padding:8px 14px;border-radius:0">${p}</span>`).join('')}
-  </div>
-</div>
+  <section style="padding:clamp(56px,8vw,86px) 0">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="max-width:1040px;margin:0 auto clamp(30px,4vw,38px);text-align:center">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">Still wondering?</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0">AIBS, in plain terms.</h2>
+      </div>
+      <div style="display:grid;gap:8px;max-width:900px;margin:0 auto">
+        <details open style="border:1px solid rgba(28,32,43,.12);background:#fff;border-radius:14px;padding:0 20px"><summary style="cursor:pointer;padding:16px 0;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px">Who should attend?</summary><p style="padding:0 0 17px;color:#5E6C64;font-size:14.5px;line-height:1.7;margin:0">Anyone. Mixed groups can work especially well because people across leadership, functions and IT build a shared understanding in the same room.</p></details>
+        <details style="border:1px solid rgba(28,32,43,.12);background:#fff;border-radius:14px;padding:0 20px"><summary style="cursor:pointer;padding:16px 0;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px">Does AIBS lock us into AIPA or AISA?</summary><p style="padding:0 0 17px;color:#5E6C64;font-size:14.5px;line-height:1.7;margin:0">No. AIBS is designed to stand on its own. The next step is your decision.</p></details>
+        <details style="border:1px solid rgba(28,32,43,.12);background:#fff;border-radius:14px;padding:0 20px"><summary style="cursor:pointer;padding:16px 0;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px">Is there a technical prerequisite?</summary><p style="padding:0 0 17px;color:#5E6C64;font-size:14.5px;line-height:1.7;margin:0">No. The purpose is to create a clear understanding that is accessible to non-specialists.</p></details>
+        <details style="border:1px solid rgba(28,32,43,.12);background:#fff;border-radius:14px;padding:0 20px"><summary style="cursor:pointer;padding:16px 0;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px">Can the focus be adapted to our organisation?</summary><p style="padding:0 0 17px;color:#5E6C64;font-size:14.5px;line-height:1.7;margin:0">Yes. AIBS should make room for the audience's actual questions, functions and constraints.</p></details>
+      </div>
+    </div>
+  </section>
 
-<!-- ===== PROGRAM PLAN ===== -->
-<div class="aipa-slide aipa-ink" style="margin-bottom:20px">
-  <div class="aipa-tag">Session Plan · 3.5–8 Hours</div>
-  <div class="aipa-headline-xl">Program <span style="color:#b9d4b8">Plan</span></div>
-  <div class="aipa-body" style="color:#d3d3cd;max-width:70ch">Delivered across 3.5 to 8 hours, each building from fundamentals to advanced hands-on implementation.</div>
-</div>
-
-<!-- PRE-SESSION -->
-<div style="border-left:4px solid #2e5c3f;background:#e8ebe6;border-radius:0;padding:18px 22px;margin-bottom:18px">
-  <span style="background:#2e5c3f;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:0;letter-spacing:0.04em">PRE-SESSION</span>
-  <span style="font-family:var(--sans);font-size:16px;font-weight:700;color:var(--ink);margin-left:10px">Readiness Assessment</span>
-  <div style="font-size:14px;color:var(--muted);line-height:1.55;margin-top:8px">Participants complete a readiness assessment with an AI-Avatar; facilitator analysis of the results produces a baseline guideline that shapes the session.</div>
-</div>
-
-<!-- HALF-DAY TABLE -->
-<div style="background:var(--paper);border:1px solid rgba(0,0,0,0.08);border-radius:0;overflow:hidden;margin-bottom:18px">
-  <div class="aibs-table-row" style="display:grid;grid-template-columns:96px 1.1fr 1.3fr 1.3fr;background:#2e5c3f">
-    <div style="padding:14px 16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.05em">HOUR</div>
-    <div style="padding:14px 16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.05em">SUBJECT / TOPIC</div>
-    <div style="padding:14px 16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.05em">ACTIVITIES</div>
-    <div style="padding:14px 16px;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.05em">OUTCOMES</div>
-  </div>
-  ${rows.slice(0,2).map(r=>rowHtml(r,'#2e5c3f')).join('')}
-  <div style="background:#f3e3dc;border-top:1px solid rgba(0,0,0,0.08);padding:12px 18px;font-size:13px;color:#c94f2f"><span style="background:#c94f2f;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:0;margin-right:10px">BREAK &amp; Q&amp;A · 30 MIN</span>Comfort break with an open Q&amp;A allocation.</div>
-  ${rowHtml(rows[2],'#2e5c3f')}
-</div>
-
-<!-- FULL-DAY EXTENSION -->
-<div style="background:#f3e3dc;border:1px solid #e8ebe6;border-radius:0;overflow:hidden;margin-bottom:24px">
-  <div style="padding:16px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-    <span style="background:#c94f2f;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:0;letter-spacing:0.04em">FULL-DAY AIBS</span>
-    <span style="font-family:var(--sans);font-size:16px;font-weight:700;color:#c94f2f">Complete Hands-On Extension</span>
-  </div>
-  ${fullday.map(r=>rowHtml(r,'#c94f2f')).join('')}
-</div>
-
-<!-- MAIN BROCHURE PROGRAMS -->
-<div style="font-family:var(--sans);font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px">Please Check the Main Brochure for the AIPA &amp; AISA Programs</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:26px" class="aibs-cover-grid">
-  <div style="background:#e8ebe6;border-radius:0;padding:22px 24px">
-    <div style="font-family:var(--sans);font-size:18px;font-weight:800;color:#2e5c3f;margin-bottom:8px">AIPA · AI Practitioner Accelerator</div>
-    <div style="font-size:14px;color:var(--muted);line-height:1.55;margin-bottom:10px">A hands-on program that makes AI a universal personal skill — preparing every professional to work AI-augmented across their function.</div>
-    <div style="font-size:13px;color:var(--ink)"><b style="color:#2e5c3f">Format:</b> Foundational 6 sessions + Advanced 3 sessions + Organizational 3 sessions</div>
-  </div>
-  <div style="background:#e8ebe6;border-radius:0;padding:22px 24px">
-    <div style="font-family:var(--sans);font-size:18px;font-weight:800;color:#244a33;margin-bottom:8px">AISA · AI Strategy Accelerator</div>
-    <div style="font-size:14px;color:var(--muted);line-height:1.55">A specialized program for senior leadership — facilitated sessions ending in a management-endorsed base AI strategy and roadmap. Delivered over 2 days.</div>
-  </div>
-</div>
-
-<!-- SPEAKERS -->
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px" class="aibs-cover-grid">
-  ${speakers.map(s=>`<div style="background:var(--paper-2);border-radius:0;padding:18px 20px"><div style="font-family:var(--sans);font-size:16px;font-weight:700;color:var(--ink)">${s.n}</div><div style="font-size:12px;color:var(--muted);margin-top:4px;line-height:1.45">${s.r}</div><div style="font-size:12px;font-weight:600;color:var(--accent);margin-top:6px">${s.role}</div></div>`).join('')}
-</div>
-
-<!-- CONTACT BAR -->
-<div style="background:#244a33;border-radius:0;padding:22px 26px;display:flex;flex-wrap:wrap;align-items:center;gap:18px">
-  <span style="font-family:var(--sans);font-size:18px;font-weight:700;color:#fff">Talk to BuildNation</span>
-  <a href="mailto:contact@buildnation.com.bd" style="color:#d3d3cd;font-size:14px;text-decoration:none">contact@buildnation.com.bd</a>
-  <a href="tel:+8801861884444" style="color:#d3d3cd;font-size:14px;text-decoration:none">+8801861-88444</a>
-  <a href="https://buildnation.com.bd/aipa" target="_blank" style="color:#b9d4b8;font-size:14px;font-weight:600;text-decoration:none;margin-left:auto">buildnation.com.bd/aipa ↗</a>
+${aiaccClients(true)}
+${aiaccDirector(!true)}
+  <section style="padding:clamp(56px,8vw,86px) 0;background:#F2F7F3;border-top:1px solid rgba(28,32,43,.12);border-bottom:1px solid rgba(28,32,43,.12)">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="max-width:1040px;margin:0 auto clamp(30px,4vw,38px);text-align:center">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">Explore the Accelerator</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0">See the other programmes.</h2>
+        <p style="max-width:780px;color:#5E6C64;margin:18px auto 0;font-size:16.5px;line-height:1.7">Each programme answers a different AI question.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px">
+        <a href="/aibs" onclick="showPage('aibs');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">01 · Briefing</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AIBS — Understand AI</strong></a>
+        <a href="/aipa" onclick="showPage('aipa');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">02 · Workforce</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AIPA — Build capability</strong></a>
+        <a href="/management-aisa" onclick="showPage('management-aisa');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">03 · Leadership</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AISA — Decide the direction</strong></a>
+      </div>
+    </div>
+  </section>
+</section>
 </div>
 `;
 }
 
 function pageManagementAISA(){
-  const DAY = [
-    {t:"09:00",dur:"3 HRS",title:"Session 1",sub:"Strategic Framing",bg:"#244a33",fg:"#fff"},
-    {t:"12:00",dur:"2 HRS",title:"Breakout",sub:"Opportunity Mapping",bg:"var(--paper-2)",fg:"var(--ink)"},
-    {t:"14:00",dur:"1 HR",title:"Lunch",sub:"Working Break",bg:"var(--paper)",fg:"var(--muted)"},
-    {t:"15:00",dur:"3 HRS",title:"Session 2",sub:"Formulation &amp; Roadmap",bg:"var(--accent)",fg:"#fff"},
-    {t:"18:00",dur:"1 HR",title:"Closing",sub:"Internal Wrap-Up",bg:"var(--paper-2)",fg:"var(--ink)"}
-  ];
-  const ROWS = [
-    {label:"Focus",s1:"Learn &amp; align — build a shared AI literacy baseline and surface opportunities across the Polar value chain.",s2:"Decide &amp; commit — prioritise initiatives and lock the roadmap."},
-    {label:"Primary Objective",s1:"Establish a shared AI vision and create initial alignment on Polar's AI ambition as an FMCG manufacturer and distributor.",s2:"Prioritise initiatives, consolidate a 24-month phased roadmap, and secure management endorsement of the base strategy."},
-    {label:"Key Sessions",s1:"Inauguration &amp; mindset assessment · Foundational AI training · Enterprise AI framing (Cornell CAIO) · Transformation Q&amp;A",s2:"Breakout playback &amp; ideas · AIPPM prioritisation · Strategy synthesis · Finalisation &amp; endorsement"},
-    {label:"Frameworks &amp; Tools",s1:"Cornell CAIO-based transformation framework; “Sourced vs. Owned” AI architecture.",s2:"AI Product Priority Matrix (AIPPM); 24-month phased roadmap (0–24 mo)."},
-    {label:"Duration",s1:"~3 hours session + 2 hrs breakout mapping",s2:"~3 hours session + 1 hr internal closing"},
-    {label:"Key Output",s1:"Shared AI baseline and an articulated AI ambition; mapped opportunity inputs from the breakout.",s2:"Endorsed base AI Strategy — ranked initiative portfolio, assigned owners &amp; sign-off."}
-  ];
-  const OUTCOMES = [
-    "A single, management-endorsed <strong>AI vision statement</strong> for Polar.",
-    "AI opportunities mapped across <strong>Polar's core operating and commercial functions</strong>.",
-    "A ranked, <strong>AIPPM-scored portfolio</strong> of AI initiatives ready for resource allocation.",
-    "A leadership-approved <strong>base AI Strategy</strong> with initiative owners and a decision register."
-  ];
   return `
-<div class="aipa-slide aipa-ink" style="margin-bottom:18px">
-  <div class="aipa-tag">Client Engagement · BuildNation Limited</div>
-  <div class="aipa-headline-xl">Management<br><span style="color:#b9d4b8">AI-Strategy Accelerator</span></div>
-  <div class="aipa-body" style="color:#d3d3cd;max-width:64ch">Dhaka Ice Cream Industries Limited · Polar Ice Cream · Senior Management Team</div>
-  <div class="aipa-body" style="color:#8a8a85;margin-top:6px">Facilitators: <strong style="color:#f1f1ec">Hadi Bhuiyan</strong> &amp; <strong style="color:#f1f1ec">Munaf Mojib Chowdhury</strong> | BuildNation Limited · July 2026</div>
-  <p class="aipa-body" style="color:#d3d3cd;max-width:70ch;margin-top:18px">A condensed, single-day version of BuildNation's leadership working session for Polar's senior management. It combines strategic AI framing, a facilitated breakout on Polar's own value chain, and roadmap prioritisation into one 8-hour executive day, ending in a leadership-endorsed base AI strategy for the company.</p>
-</div>
-
-<!-- DAY AT A GLANCE -->
-<div class="aipa-slide aipa-light" style="margin-bottom:18px">
-  <span class="aipa-tag" style="color:#7a7a75">THE DAY AT A GLANCE</span>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px">
-    ${DAY.map(d=>`
-    <div style="background:${d.bg};color:${d.fg};border-radius:0;padding:18px 16px">
-      <div style="font-size:11px;font-weight:600;opacity:0.75;letter-spacing:0.03em;margin-bottom:8px">${d.t} · ${d.dur}</div>
-      <div style="font-family:var(--sans);font-size:17px;font-weight:600;letter-spacing:-0.012em;margin-bottom:2px">${d.title}</div>
-      <div style="font-size:13px;opacity:0.8">${d.sub}</div>
-    </div>`).join('')}
-  </div>
-</div>
-
-<!-- SESSION COMPARISON TABLE -->
-<div class="aipa-slide aipa-light" style="margin-bottom:18px">
-  <span class="aipa-tag" style="color:#7a7a75">SESSION 1 vs SESSION 2</span>
-  <div class="aipa-headline-lg" style="font-size:32px">Strategic Framing<br>→ Formulation &amp; Roadmap</div>
-  <div style="overflow-x:auto">
-    <table style="width:100%;border-collapse:collapse;font-size:14px;min-width:640px">
-      <thead>
-        <tr style="border-bottom:2px solid var(--line-soft)">
-          <th style="text-align:left;padding:10px 14px;font-size:11px;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:-0.005em">AT A GLANCE</th>
-          <th style="text-align:left;padding:10px 14px;font-size:12px;font-weight:700;color:var(--ink);letter-spacing:-0.005em">SESSION 1 · Strategic Framing &amp; Awareness</th>
-          <th style="text-align:left;padding:10px 14px;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:-0.005em">SESSION 2 · Formulation &amp; Roadmap</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${ROWS.map(r=>`
-        <tr style="border-bottom:1px solid var(--line-soft)">
-          <td style="padding:12px 14px;white-space:nowrap;font-weight:600;color:var(--ink);vertical-align:top;font-size:13px">${r.label}</td>
-          <td style="padding:12px 14px;color:var(--ink-2);line-height:1.55;vertical-align:top">${r.s1}</td>
-          <td style="padding:12px 14px;color:var(--ink-2);line-height:1.55;vertical-align:top">${r.s2}</td>
-        </tr>`).join('')}
-      </tbody>
-    </table>
-  </div>
-  <div style="background:var(--paper-2);border-left:2px solid var(--accent);border-radius:0;padding:16px 20px;margin-top:18px;font-size:13px;color:var(--ink-2);line-height:1.6">
-    <strong style="color:var(--ink)">↳ Bridged by a 2-hour facilitated breakout</strong> — division heads map AI opportunities against Polar's own operations before Session 2 converts them into a ranked portfolio.
-  </div>
-</div>
-
-<!-- KEY OUTCOMES -->
-<div class="aipa-slide aipa-accent" style="margin-bottom:18px">
-  <span class="aipa-tag">KEY OUTCOMES BY END OF DAY</span>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:16px">
-    ${OUTCOMES.map(o=>`<div style="background:rgba(255,255,255,0.6);border-radius:0;padding:20px 22px;font-size:14px;color:var(--ink-2);line-height:1.55">${o}</div>`).join('')}
-  </div>
-</div>
-
-<!-- FACILITATORS -->
-<div class="aipa-slide aipa-light">
-  <span class="aipa-tag" style="color:#7a7a75">FACILITATORS</span>
-  <div class="aipa-team-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
-    <div class="aipa-team-card" style="background:var(--paper)">
-      <div class="aipa-team-avatar">HB</div>
-      <div class="aipa-team-name">Hadi Bhuiyan</div>
-      <div class="aipa-team-role">Co-Founder, CommEngine Limited (FutureMind AI) &amp; BuildNation Limited</div>
-      <div class="aipa-team-note">Ex-Faculty: Premier University &amp; CUET. Ex-Huawei, Nokia Siemens.<br><a href="https://mahadib.futuremind.ltd" style="color:var(--accent)">mahadib.futuremind.ltd</a></div>
-    </div>
-    <div class="aipa-team-card" style="background:var(--paper)">
-      <div class="aipa-team-avatar">MC</div>
-      <div class="aipa-team-name">Munaf Mojib Chowdhury</div>
-      <div class="aipa-team-role">Founder, Ekshathe Foundation · Head of Brand &amp; Communication, Axentec PLC</div>
-      <div class="aipa-team-note">Ex-Head of Meta Advertising Business in Bangladesh (official Meta ASP).<br><a href="https://linkedin.com/in/munafchowdhury" style="color:var(--accent)">linkedin.com/in/munafchowdhury</a></div>
+<div class="bnx">
+<section>
+  <div style="padding:clamp(48px,6vw,72px) 0 clamp(34px,4vw,44px)">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="display:flex;gap:8px;align-items:center;color:#5E6C64;font-size:13px;margin-bottom:18px;flex-wrap:wrap">
+        <a href="/aipa" onclick="showPage('aipa');return false" style="color:#07703C;font-family:'Work Sans',sans-serif;font-weight:500">AI Accelerator</a><span>/</span><span>AISA</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:clamp(30px,4vw,60px);align-items:start;max-width:1180px;margin:0 auto">
+        <div style="min-width:0">
+          <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">AI Strategy Accelerator</div>
+          <h1 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.035em;line-height:1.04;font-size:clamp(38px,5.6vw,72px);margin:16px 0 0;max-width:12ch;text-wrap:balance">For the people who have to decide.</h1>
+          <p style="max-width:720px;color:#5E6C64;font-size:clamp(17px,1.35vw,19px);line-height:1.62;margin:22px 0 0">AISA is a leadership-level consulting engagement for CxOs, HoDs and senior management. It gives decision-makers a deep understanding of AI, a realistic view of the opportunities and risks, and a draft transformation strategy they can take forward.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px">
+            <a href="mailto:contact@buildnation.com.bd" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 22px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:14px;background:#0DBA6B;color:#fff;border:1px solid transparent" class="bnx-h1">Discuss AISA →</a>
+            <a href="/aibs" onclick="showPage('aibs');return false" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 22px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:14px;background:#fff;color:#1C202B;border:1px solid rgba(28,32,43,.14)" class="bnx-h2">See AIBS</a>
+          </div>
+        </div>
+        <div style="min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:18px 24px;padding-top:6px">
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Audience</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">CxOs · HoDs · senior management</strong></div>
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Format</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">Leadership / consulting engagement</strong></div>
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Goal</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">Informed, realistic transformation decisions</strong></div>
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Output</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">Draft transformation strategy + action plan</strong></div>
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Facilitation</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">AI + industry + leadership experience</strong></div>
+          <div><small style="display:block;color:#5E6C64;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600;margin-bottom:5px">Delivered to date</small><strong style="display:block;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px;line-height:1.35">Pharmaceuticals · banking · FMCG · distribution</strong></div>
+        </div>
+      </div>
     </div>
   </div>
-  <p style="font-size:13px;color:var(--muted);margin-top:18px"><strong style="color:var(--ink)">Additional facilitators, if required:</strong> Muhtasim Jawaad, Head of Marketing, Foodi · Insan Arafat Jamil, Co-Founder, FactoryNext.</p>
-  <div class="aipa-divider"></div>
-  <p style="font-size:12px;color:var(--muted)">BuildNation Limited | www.buildnation.com.bd — Prepared exclusively for Dhaka Ice Cream Industries Limited (Polar) | July 2026</p>
+
+  <section style="padding:clamp(56px,8vw,86px) 0">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(30px,4vw,60px);align-items:start">
+      <div style="min-width:0">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">The leadership challenge</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0;max-width:15ch">Too excited? Too cautious? Both can be costly.</h2>
+      </div>
+      <div style="min-width:0;max-width:640px;color:#5E6C64;font-size:16.5px;line-height:1.72">
+        <p style="margin:0">Senior leaders can approach AI from very different starting points. Some want to automate quickly. Others are concerned about risk and want to wait.</p>
+        <p style="margin:16px 0 0">AISA is designed to bring those views into the same informed discussion. The purpose is not to tell management what it must do. It is to make sure management has the understanding needed to decide what it should do, what it should not do, and what should happen first.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(56px,8vw,86px) 0;background:#F2F7F3;border-top:1px solid rgba(28,32,43,.12);border-bottom:1px solid rgba(28,32,43,.12)">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="max-width:1040px;margin:0 auto clamp(30px,4vw,38px);text-align:center">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">What happens</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0">Learn, align, decide.</h2>
+        <p style="max-width:780px;color:#5E6C64;margin:18px auto 0;font-size:16.5px;line-height:1.7">The engagement combines substantive AI understanding with structured leadership work so that the final strategy belongs to the organisation.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:12px">
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:18px;padding:22px"><h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:19px;margin:0">1. Build the common picture</h3><p style="margin:8px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">Bring leadership to a shared understanding of AI, its capabilities, limitations and implications for the organisation.</p></div>
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:18px;padding:22px"><h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:19px;margin:0">2. Surface opportunities</h3><p style="margin:8px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">Map where AI may matter across functions and connect ideas to the organisation's actual operating context.</p></div>
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:18px;padding:22px"><h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:19px;margin:0">3. Prioritise realistically</h3><p style="margin:8px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">Consider value, feasibility, risk, people, technology and sequencing rather than reacting to whichever use case sounds most exciting.</p></div>
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:18px;padding:22px"><h3 style="font-family:'Work Sans',sans-serif;font-weight:500;letter-spacing:-.02em;font-size:19px;margin:0">4. Shape the roadmap</h3><p style="margin:8px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">Turn the decisions into a draft transformation strategy and practical action plan that leadership can own.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(56px,8vw,86px) 0">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="max-width:1040px;margin:0 auto clamp(30px,4vw,38px);text-align:center">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">What you leave with</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0;text-wrap:balance">Clarity that can actually be acted on.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px">
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:20px;padding:24px"><div style="color:#07703C;font-family:'Work Sans',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase">Shared direction</div><h3 style="font-family:'Work Sans',sans-serif;font-weight:400;letter-spacing:-.025em;font-size:22px;margin:10px 0 0">A clear AI ambition</h3><p style="margin:9px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">A common understanding of what AI means for the organisation and what management is trying to achieve.</p></div>
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:20px;padding:24px"><div style="color:#07703C;font-family:'Work Sans',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase">Priorities</div><h3 style="font-family:'Work Sans',sans-serif;font-weight:400;letter-spacing:-.025em;font-size:22px;margin:10px 0 0">What deserves attention first</h3><p style="margin:9px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">A practical view of opportunities across functions, informed by the organisation's context.</p></div>
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:20px;padding:24px"><div style="color:#07703C;font-family:'Work Sans',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase">Next steps</div><h3 style="font-family:'Work Sans',sans-serif;font-weight:400;letter-spacing:-.025em;font-size:22px;margin:10px 0 0">A draft transformation plan</h3><p style="margin:9px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">A realistic starting point for action, with decisions and ownership that can be refined internally.</p></div>
+      </div>
+      <div style="margin-top:20px;padding:18px 22px;border-left:3px solid #0DBA6B;background:#DFF5E9;border-radius:0 12px 12px 0;color:#1F4A34;font-size:14.5px;line-height:1.65"><strong style="font-weight:700">Your organisation decides.</strong> AISA gives leadership the clear picture, the frameworks and the draft action plan. Whether to transform, how far to go and how quickly to move remains a management decision.</div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(56px,8vw,86px) 0;background:#F2F7F3;border-top:1px solid rgba(28,32,43,.12);border-bottom:1px solid rgba(28,32,43,.12)">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="max-width:1040px;margin:0 auto clamp(26px,3vw,32px);text-align:center">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">Why the facilitation matters</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0">Not only AI knowledge.</h2>
+        <p style="max-width:780px;color:#5E6C64;margin:18px auto 0;font-size:16.5px;line-height:1.7">AISA is conducted by people with AI capability alongside deep domain and leadership knowledge, so strategy discussions stay connected to how the industry actually works. To date, our work has included pharmaceuticals, banking, FMCG and distribution.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+        <span style="padding:8px 13px;border:1px solid rgba(28,32,43,.12);border-radius:999px;background:#fff;color:#414F47;font-size:13.5px">Pharmaceuticals</span><span style="padding:8px 13px;border:1px solid rgba(28,32,43,.12);border-radius:999px;background:#fff;color:#414F47;font-size:13.5px">Banking</span><span style="padding:8px 13px;border:1px solid rgba(28,32,43,.12);border-radius:999px;background:#fff;color:#414F47;font-size:13.5px">FMCG</span><span style="padding:8px 13px;border:1px solid rgba(28,32,43,.12);border-radius:999px;background:#fff;color:#414F47;font-size:13.5px">Distribution</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(56px,8vw,86px) 0">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="max-width:1040px;margin:0 auto clamp(30px,4vw,38px);text-align:center">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">Where AISA sits</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0;text-wrap:balance">Before capability. Before implementation.</h2>
+        <p style="max-width:780px;color:#5E6C64;margin:18px auto 0;font-size:16.5px;line-height:1.7">AISA can stand alone, but the sequence below is often useful when an organisation wants a joined-up journey.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px">
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:20px;padding:24px"><div style="color:#07703C;font-family:'Work Sans',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase">Recommended for leadership</div><h3 style="font-family:'Work Sans',sans-serif;font-weight:400;letter-spacing:-.025em;font-size:22px;margin:10px 0 0">AIBS → AISA</h3><p style="margin:9px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">The briefing supplies the baseline. AISA can focus its time on judgement, prioritisation and the strategy.</p></div>
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:20px;padding:24px"><div style="color:#07703C;font-family:'Work Sans',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase">In parallel</div><h3 style="font-family:'Work Sans',sans-serif;font-weight:400;letter-spacing:-.025em;font-size:22px;margin:10px 0 0">AISA + AIPA</h3><p style="margin:9px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">Leadership develops direction while the wider workforce develops the capability needed to execute it.</p></div>
+        <div style="background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:20px;padding:24px"><div style="color:#07703C;font-family:'Work Sans',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase">When ready to build</div><h3 style="font-family:'Work Sans',sans-serif;font-weight:400;letter-spacing:-.025em;font-size:22px;margin:10px 0 0">AISA → AITA</h3><p style="margin:9px 0 0;color:#5E6C64;font-size:14.5px;line-height:1.65">Once a specific workflow is chosen, AITA can move from strategy into engineering.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(56px,8vw,86px) 0;background:#F2F7F3;border-top:1px solid rgba(28,32,43,.12);border-bottom:1px solid rgba(28,32,43,.12)">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="max-width:1040px;margin:0 auto clamp(30px,4vw,38px);text-align:center">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">FAQ</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0">AISA, in plain terms.</h2>
+      </div>
+      <div style="display:grid;gap:8px;max-width:900px;margin:0 auto">
+        <details open style="border:1px solid rgba(28,32,43,.12);background:#fff;border-radius:14px;padding:0 20px"><summary style="cursor:pointer;padding:16px 0;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px">Is AISA a training programme?</summary><p style="padding:0 0 17px;color:#5E6C64;font-size:14.5px;line-height:1.7;margin:0">No. It is a consulting engagement with substantial teaching inside it. The purpose of the teaching is to enable better leadership decisions.</p></details>
+        <details style="border:1px solid rgba(28,32,43,.12);background:#fff;border-radius:14px;padding:0 20px"><summary style="cursor:pointer;padding:16px 0;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px">Do leaders need to agree beforehand?</summary><p style="padding:0 0 17px;color:#5E6C64;font-size:14.5px;line-height:1.7;margin:0">No. Different levels of enthusiasm or concern are normal starting points. The engagement is designed to create a shared, evidence-based discussion.</p></details>
+        <details style="border:1px solid rgba(28,32,43,.12);background:#fff;border-radius:14px;padding:0 20px"><summary style="cursor:pointer;padding:16px 0;font-family:'Work Sans',sans-serif;font-weight:500;font-size:16px">Is the transformation plan final?</summary><p style="padding:0 0 17px;color:#5E6C64;font-size:14.5px;line-height:1.7;margin:0">It is a draft strategy and action plan. It is designed to be realistic, owned by management and refined as the organisation learns.</p></details>
+      </div>
+    </div>
+  </section>
+
+${aiaccClients(false)}
+${aiaccDirector(!false)}
+  <section style="padding:clamp(56px,8vw,86px) 0;background:#FBFCFA;border-bottom:1px solid rgba(28,32,43,.12)">
+    <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <div style="max-width:1040px;margin:0 auto clamp(30px,4vw,38px);text-align:center">
+        <div style="font-family:'Work Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:600;color:#07703C">Explore the Accelerator</div>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:300;letter-spacing:-.032em;line-height:1.06;font-size:clamp(30px,3.9vw,54px);margin:10px 0 0">See the other programmes.</h2>
+        <p style="max-width:780px;color:#5E6C64;margin:18px auto 0;font-size:16.5px;line-height:1.7">Each programme answers a different AI question.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px">
+        <a href="/aibs" onclick="showPage('aibs');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">01 · Briefing</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AIBS — Understand AI</strong></a>
+        <a href="/aipa" onclick="showPage('aipa');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">02 · Workforce</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AIPA — Build capability</strong></a>
+        <a href="/management-aisa" onclick="showPage('management-aisa');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">03 · Leadership</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AISA — Decide the direction</strong></a>
+      </div>
+    </div>
+  </section>
+</section>
 </div>
 `;
 }
@@ -5073,10 +4732,10 @@ let currentPage = 'about';
 const PAGE_META = {
   about:{t:"Hadi Bhuiyan — Digital · AI · SaaS",d:"Digital, AI, Enterprise & SaaS leader in Bangladesh. Co-Founder of CommEngine, EasyDO.ai, FutureMind & BuildNation. 20+ years experience."},
   products:{t:"Products — Hadi Bhuiyan",d:"SaaS & AI products built by Hadi Bhuiyan: CommEngine SocialCRM, EasyDO.ai, EasyFlow, Madevo and more."},
-  aipa:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA for leadership, AIPA 5-month workforce program, and AITA transformation sprints. 256+ executives trained."},
-  aibs:{t:"AI Briefing Session (AIBS) — BuildNation | Hadi Bhuiyan", d:"AIBS is a 3.5–8 hour executive orientation and pre-preparation session before BuildNation's AISA or AIPA — establishing what AI means for your business, what it costs, where it applies function by function, and what the first move should be."},
+  aipa:{t:"AI Proficiency Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"AIPA is a project-based AI augmentation journey for employees — 12-session extensive or 6-session compact, in three parts: foundations, automation, and workforce & organisation. Directed by Hadi Bhuiyan."},
+  aibs:{t:"AI Briefing Session (AIBS) — BuildNation | Hadi Bhuiyan",d:"AIBS gives people a complete, practical picture of AI in a single day — 4 or 8 hours, no prerequisite — so they can understand AI and work with it independently."},
   'aipa-session-plan':{t:"AIPA Session Plan — BuildNation | Hadi Bhuiyan", d:"The AIPA Curriculum — 12 sessions across 4 parts. A progressive journey from AI foundations to enterprise-wide impact."},
-  'management-aisa':{t:"Management AI-Strategy Accelerator — BuildNation | Hadi Bhuiyan", d:"A condensed single-day AI Strategy Accelerator for Dhaka Ice Cream Industries Limited (Polar) senior management — strategic framing, breakout opportunity mapping, and a leadership-endorsed base AI strategy."},
+  'management-aisa':{t:"AI Strategy Accelerator (AISA) — BuildNation | Hadi Bhuiyan",d:"AISA is a leadership-level consulting engagement for CxOs, HoDs and senior management that ends in a draft AI transformation strategy and action plan leadership can own."},
   programs:{t:"AI Accelerator (AIPA) — BuildNation | Hadi Bhuiyan",d:"BuildNation's AI Accelerator suite: AISA, AIPA and AITA. 256+ executives trained across 6+ corporates."},
   'ai-inference':{t:"Enterprise AI & CoWork Consultation — FutureMind AI Group",d:"A two-day Enterprise AI & CoWork Implementation Stack consultation: inference infrastructure, RAG, workflow sandboxing, no-code launcher and a scope-cost-roadmap document."},
   easyflow:{t:"EasyFlow — AI-Guided Presentation, Training & Assessment | FutureMind AI",d:"EasyFlow turns scattered slides, docs, videos, quizzes and submissions into one synchronized flow with a 1:1 AI-Agent — self-paced courses, live training and AI assessment at scale. The full FutureMind pitch, slide by slide."},
