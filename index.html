@@ -1624,6 +1624,20 @@ footer{
 .bnx .bnx-h1:hover{background:#07703C!important;color:#fff!important}
 .bnx .bnx-h2:hover{border-color:#0DBA6B!important;color:#07703C!important}
 .bnx .bnx-h3:hover{border-color:rgba(13,186,107,.45)!important;color:#1C202B!important}
+.aiacc-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:6px;margin:-40px 0 8px;background:#fff;border:1px solid rgba(28,32,43,.12);border-radius:18px;font-family:'Work Sans',sans-serif;position:relative;z-index:2}
+.aiacc-tab{display:flex;flex-direction:column;gap:2px;padding:12px 16px;border-radius:13px;color:#1C202B;text-decoration:none;transition:background .2s,color .2s}
+.aiacc-tab strong{font-weight:600;font-size:15px;letter-spacing:-.01em}
+.aiacc-tab span{font-size:12px;color:#5E6C64;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aiacc-tab:hover{background:#F2F7F3;color:#07703C;text-decoration:none}
+.aiacc-tab.is-active,.aiacc-tab.is-active:hover{background:#0DBA6B;color:#fff}
+.aiacc-tab.is-active span{color:rgba(255,255,255,.85)}
+.aiacc-tabs+.bnx{margin-top:0}
+/* in the full-screen AI Inference deck the bar stays pinned under the site nav */
+body.deck-mode .aiacc-tabs{position:sticky;top:calc(var(--navh,76px) + 8px);z-index:5;width:max-content;max-width:calc(100% - 20px);margin:calc(var(--navh,76px) + 8px) auto -62px;grid-template-columns:repeat(4,auto);justify-content:center;box-shadow:0 8px 24px rgba(16,31,22,.12)}
+body.deck-mode .aiacc-tab{padding:9px 16px}
+body.deck-mode .aiacc-tab span{display:none}
+@media(max-width:900px){body.deck-mode .aiacc-tabs~.aipa-slide .aipa-slide-inner{padding-top:calc(var(--navh,76px) + 70px)}}
+@media(max-width:700px){.aiacc-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.aiacc-tab{padding:10px 12px}body.deck-mode .aiacc-tabs{grid-template-columns:repeat(4,auto);gap:2px;padding:4px}body.deck-mode .aiacc-tab{padding:8px 9px}body.deck-mode .aiacc-tab strong{font-size:13px}}
 </style>
 </head>
 <body>
@@ -1672,12 +1686,7 @@ footer{
 const NAV = [
   {text:"Hadi Bhuiyan",id:"about"},
   {text:"Products",id:"products"},
-  {text:"AI Accelerator",id:"aipa",dropdown:[
-    {text:"AI Briefing Session (AIBS)",id:"aibs"},
-    {text:"AIPA Session Plan",id:"aipa-session-plan"},
-    {text:"AI Strategy Accelerator (AISA)",id:"management-aisa"},
-    {text:"AI Inference",id:"ai-inference"}
-  ]},
+  {text:"AI Accelerator",id:"aipa"},
   {text:"EasyFlow",id:"easyflow"},
   {text:"Consulting & Research",id:"consulting-research"},
   {text:"Events and News",id:"events"},
@@ -2714,6 +2723,22 @@ const AIACC_CLIENTS = [
 ];
 const AIACC_STATS = [["256+","Professionals"],["14+","Cohorts"],["1200+","Use cases"],["80+","Half-day sessions"]];
 
+// Internal sub-tabs shared by every AI Accelerator programme page.
+const AIACC_TABS = [
+  {id:"aibs",code:"AIBS",label:"AI Briefing Session"},
+  {id:"aipa",code:"AIPA",label:"AI Proficiency Accelerator"},
+  {id:"management-aisa",code:"AISA",label:"AI Strategy Accelerator"},
+  {id:"ai-inference",code:"AI Inference",label:"Enterprise AI &amp; CoWork Stack"}
+];
+const AIACC_PAGES = [...AIACC_TABS.map(t=>t.id),"aipa-session-plan"];
+
+function aiaccTabs(active){
+  return `
+<div class="aiacc-tabs" role="navigation" aria-label="AI Accelerator programmes">
+  ${AIACC_TABS.map(t=>`<a href="/${t.id}" class="aiacc-tab${t.id===active?' is-active':''}"${t.id===active?' aria-current="page"':''} onclick="showPage('${t.id}');return false"><strong>${t.code}</strong><span>${t.label}</span></a>`).join('')}
+</div>`;
+}
+
 function aiaccBand(mint){
   return mint
     ? 'padding:clamp(56px,8vw,86px) 0;background:#F2F7F3;border-top:1px solid rgba(28,32,43,.12);border-bottom:1px solid rgba(28,32,43,.12)'
@@ -2775,6 +2800,7 @@ function aiaccDirector(mint){
 
 function pageAIPA(){
   return `
+${aiaccTabs('aipa')}
 <div class="bnx">
 <section>
   <div style="padding:clamp(48px,6vw,72px) 0 clamp(34px,4vw,44px)">
@@ -2790,6 +2816,7 @@ function pageAIPA(){
           <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px">
             <a href="mailto:contact@buildnation.com.bd" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 22px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:14px;background:#0DBA6B;color:#fff;border:1px solid transparent" class="bnx-h1">Design an AIPA cohort →</a>
             <a href="/aibs" onclick="showPage('aibs');return false" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 22px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:14px;background:#fff;color:#1C202B;border:1px solid rgba(28,32,43,.14)" class="bnx-h2">Start with AIBS</a>
+            <a href="/aipa-session-plan" onclick="showPage('aipa-session-plan');return false" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 22px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:14px;background:#fff;color:#1C202B;border:1px solid rgba(28,32,43,.14)" class="bnx-h2">View the session plan</a>
           </div>
         </div>
         <div style="min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:18px 24px;padding-top:6px">
@@ -2904,6 +2931,7 @@ ${aiaccDirector(!true)}
         <a href="/aibs" onclick="showPage('aibs');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">01 · Briefing</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AIBS — Understand AI</strong></a>
         <a href="/aipa" onclick="showPage('aipa');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">02 · Workforce</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AIPA — Build capability</strong></a>
         <a href="/management-aisa" onclick="showPage('management-aisa');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">03 · Leadership</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AISA — Decide the direction</strong></a>
+        <a href="/ai-inference" onclick="showPage('ai-inference');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">04 · Implementation</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AI Inference — Build the stack</strong></a>
       </div>
     </div>
   </section>
@@ -2914,6 +2942,7 @@ ${aiaccDirector(!true)}
 
 function pageAIInference(){
   return `
+${aiaccTabs('ai-inference')}
 <h2 class="section-title">AI Inference</h2>
 <p class="section-sub">Enterprise AI &amp; CoWork Implementation Stack · Consultation Proposal · Doc № AI-CW-2026-01 · FutureMind AI Group</p>
 
@@ -3874,6 +3903,7 @@ function newsSectionHTML(){
 
 function pageAIPASessionPlan(){
   return `
+${aiaccTabs('aipa')}
 <div class="aipa-slide aipa-ink" style="margin-bottom:18px">
   <div class="aipa-tag">Program 02 · AI Accelerator Suite</div>
   <div class="aipa-headline-xl">The AIPA<br><span style="color:#b9d4b8">Curriculum</span></div>
@@ -4083,6 +4113,7 @@ function pageAIPASessionPlan(){
 
 function pageAIBS(){
   return `
+${aiaccTabs('aibs')}
 <div class="bnx">
 <section>
   <div style="padding:clamp(48px,6vw,72px) 0 clamp(34px,4vw,44px)">
@@ -4208,6 +4239,7 @@ ${aiaccDirector(!true)}
         <a href="/aibs" onclick="showPage('aibs');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">01 · Briefing</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AIBS — Understand AI</strong></a>
         <a href="/aipa" onclick="showPage('aipa');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">02 · Workforce</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AIPA — Build capability</strong></a>
         <a href="/management-aisa" onclick="showPage('management-aisa');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">03 · Leadership</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AISA — Decide the direction</strong></a>
+        <a href="/ai-inference" onclick="showPage('ai-inference');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">04 · Implementation</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AI Inference — Build the stack</strong></a>
       </div>
     </div>
   </section>
@@ -4218,6 +4250,7 @@ ${aiaccDirector(!true)}
 
 function pageManagementAISA(){
   return `
+${aiaccTabs('management-aisa')}
 <div class="bnx">
 <section>
   <div style="padding:clamp(48px,6vw,72px) 0 clamp(34px,4vw,44px)">
@@ -4346,6 +4379,7 @@ ${aiaccDirector(!false)}
         <a href="/aibs" onclick="showPage('aibs');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">01 · Briefing</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AIBS — Understand AI</strong></a>
         <a href="/aipa" onclick="showPage('aipa');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">02 · Workforce</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AIPA — Build capability</strong></a>
         <a href="/management-aisa" onclick="showPage('management-aisa');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">03 · Leadership</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AISA — Decide the direction</strong></a>
+        <a href="/ai-inference" onclick="showPage('ai-inference');return false" style="border:1px solid rgba(28,32,43,.12);border-radius:16px;padding:18px;background:#fff;color:#1C202B;display:block" class="bnx-h3"><small style="display:block;color:#07703C;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-family:'Work Sans',sans-serif;font-weight:600">04 · Implementation</small><strong style="display:block;margin-top:6px;font-family:'Work Sans',sans-serif;font-weight:500;font-size:15px">AI Inference — Build the stack</strong></a>
       </div>
     </div>
   </section>
@@ -4780,9 +4814,12 @@ function showPage(id, updateHistory = true){
   const deck = (id === 'ai-inference' || id === 'easyflow');
   document.body.classList.toggle('deck-mode', deck);
   if(deck) wrapDeckSlides('pg-' + id);
+  const siteNav = document.querySelector('body > nav');
+  if(siteNav) document.documentElement.style.setProperty('--navh', siteNav.offsetHeight + 'px');
   // update nav
+  const navId = AIACC_PAGES.includes(id) ? 'aipa' : id;
   document.querySelectorAll('.nav-btn').forEach(b=>{
-    b.classList.toggle('active', b.dataset.page === id);
+    b.classList.toggle('active', b.dataset.page === navId);
   });
   document.querySelectorAll('.nav-dropdown-item').forEach(b=>{
     b.classList.toggle('active', b.dataset.page === id);
