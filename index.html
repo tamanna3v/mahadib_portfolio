@@ -1601,18 +1601,18 @@ footer{
 
 /* ── SECTIONS PANEL (fixed right) ── */
 #sections-panel{
-  position:fixed;right:20px;top:50%;transform:translateY(-50%);
+  position:fixed;right:16px;top:calc(var(--nav-h,76px) + 16px);
   z-index:90;display:flex;flex-direction:column;gap:0;
   background:var(--paper);border:1px solid var(--line);border-radius:0;
-  padding:12px 10px 10px;min-width:130px;box-shadow:none;
+  padding:8px 6px 6px;min-width:0;box-shadow:none;
 }
 #sections-panel .sp-label{
   font-family:var(--mono);font-size:9px;font-weight:400;letter-spacing:.18em;
   color:var(--accent);text-transform:uppercase;
-  padding:0 6px 8px;border-bottom:1px solid var(--line);margin-bottom:6px;
+  padding:0 6px 6px;border-bottom:1px solid var(--line);margin-bottom:4px;
 }
 #sections-panel .sp-card{
-  display:flex;align-items:center;gap:8px;padding:8px;border-radius:0;
+  display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:0;
   cursor:pointer;transition:background .15s ease;text-align:left;background:none;border:none;width:100%;
 }
 #sections-panel .sp-card:hover{background:var(--bg-soft)}
@@ -1621,9 +1621,9 @@ footer{
 #sections-panel .sp-card.active .sp-num{color:#f0c9bb}
 #sections-panel .sp-icon{font-size:14px;line-height:1;filter:grayscale(1)}
 #sections-panel .sp-info{display:flex;flex-direction:column;gap:2px}
-#sections-panel .sp-title{font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);line-height:1.2}
+#sections-panel .sp-title{font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);line-height:1.2}
 #sections-panel .sp-card.active .sp-title{color:#fff}
-#sections-panel .sp-sub{font-size:9px;color:var(--muted);font-weight:400;line-height:1.2}
+#sections-panel .sp-sub{display:none}
 #sections-panel .sp-card.active .sp-sub{color:rgba(255,255,255,.72)}
 @media(max-width:900px){#sections-panel{display:none}}
 
@@ -3650,6 +3650,13 @@ function scrollToSection(sec, btn){
   document.querySelectorAll('#sections-panel .sp-card').forEach(b=>b.classList.remove('active'));
   if(btn) btn.classList.add('active');
 }
+
+function syncNavHeight(){
+  const nav = document.querySelector('nav');
+  if(nav) document.documentElement.style.setProperty('--nav-h', nav.getBoundingClientRect().height+'px');
+}
+window.addEventListener('resize', syncNavHeight);
+window.addEventListener('load', syncNavHeight);
 
 function updateSectionsPanelVisibility(pageId){
   const panel = document.getElementById('sections-panel');
