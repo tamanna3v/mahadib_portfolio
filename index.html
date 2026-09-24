@@ -1411,6 +1411,15 @@ body.deck-mode .page{padding-top:0;scroll-padding-top:76px}
 .aipa-kpi-val,.aipa-impact-val{color:var(--green)}
 .aipa-ink .aipa-kpi-val,.aipa-ink .aipa-impact-val{color:#fff}
 
+.skill-legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:14px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.skill-legend-item{display:inline-flex;align-items:center;gap:8px}
+.skill-swatch{width:12px;height:12px;display:inline-block}
+.skill-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.skill-chip{color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px}
+.skill-c0{background:var(--green)}
+.skill-c1{background:var(--accent)}
+.skill-c2{background:#3d5a80}
+.skill-c3{background:#8a6a1f}
 /* ── Chips → hairline mono tags; pills → solid green tags ── */
 .chip,.skill-tag,.trusted-pill,.aipa-trusted-pill,.aipa-suite-tag,.aipa-step-badge,.bnp-pill-ghost,
 .bnp-pill-out,.li-post-hashtag{
@@ -2110,11 +2119,11 @@ function pageExperience(){
       </div>
     </div>`).join('')+`</div>`;
 
-  const skillSections = Object.entries(SKILLS).map(([cat,items])=>`
-    <div style="margin-bottom:16px">
-      <div class="lbl">${cat}</div>
-      <div>${items.map(s=>`<span class="${cat==='Top Skills'?'skill-pill':'skill-tag'}">${s}</span>`).join('')}</div>
-    </div>`).join('');
+  const skillCats = Object.keys(SKILLS);
+  const seenSkills = new Set();
+  const skillSections = `
+    <div class="skill-legend">${skillCats.map((cat,i)=>`<span class="skill-legend-item"><span class="skill-swatch skill-c${i}"></span>${cat}</span>`).join('')}</div>
+    <div class="skill-cloud">${skillCats.flatMap((cat,i)=>SKILLS[cat].filter(s=>!seenSkills.has(s)&&seenSkills.add(s)).map(s=>`<span class="skill-chip skill-c${i}" title="${cat}">${s}</span>`)).join('')}</div>`;
 
   return `
     <h2 class="section-title">Experience</h2>
@@ -2126,7 +2135,7 @@ function pageExperience(){
         <div>
           <div style="font-weight:800;font-size:15px;color:#244a33">B.Sc. Engineering in Computer Science & Engineering</div>
           <div style="font-size:13px;color:#5a5a56;margin-top:4px">Chittagong University of Engineering & Technology, Bangladesh</div>
-          <div><span class="edu-badge">Ranked 5th</span><span class="edu-badge">Dean's Award</span></div>
+          <div><span class="edu-badge">Ranked 5th / 63</span><span class="edu-badge">Dean's Award</span></div>
         </div>
         <div style="font-size:12px;color:#5a5a56;font-weight:600">2001 – 2005</div>
       </div>
