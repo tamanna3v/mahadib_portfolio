@@ -1683,7 +1683,8 @@ const NAV = [
   {text:"Events and News",id:"events"},
   {text:"Contact",id:"contact",dropdown:[
     {text:"Partner / Build Together",id:"contact-partner"},
-    {text:"Affiliation",id:"contact-affiliation"}
+    {text:"Affiliation",id:"contact-affiliation"},
+    {text:"Download Profile (PPT) ⬇",href:"/assets/hadi-bhuiyan-profile.pptx",download:true}
   ]}
 ];
 
@@ -4892,6 +4893,16 @@ function switchAIPAContent(program){
       const menu = document.createElement('div');
       menu.className = 'nav-dropdown-menu';
       n.dropdown.forEach(sub=>{
+        if(sub.href){
+          const link = document.createElement('a');
+          link.className = 'nav-dropdown-item';
+          link.href = sub.href;
+          link.textContent = sub.text;
+          if(sub.download) link.setAttribute('download','');
+          link.style.textDecoration = 'none';
+          menu.appendChild(link);
+          return;
+        }
         const subBtn = document.createElement('button');
         subBtn.className = 'nav-dropdown-item';
         subBtn.dataset.page = sub.id;
