@@ -2502,10 +2502,6 @@ function pageCertifications(){
   const fellowshipCards = FELLOWSHIPS.map(certCard).join('');
   return `
     <h2 class="section-title">Certifications</h2>
-    <p class="section-sub">Professional credentials & executive certifications</p>
-    <div class="stat-grid">
-      ${[{val:String(CERTIFICATIONS.length),label:"Certifications"},{val:"PMP",label:"Project Mgmt"},{val:"ITIL v4",label:"Service Mgmt"}].map(s=>`<div class="stat-box"><div class="stat-val">${s.val}</div><div class="stat-lbl">${s.label}</div></div>`).join('')}
-    </div>
     <div class="cert-grid">${cards}</div>
     <div class="sub-label"><h3>Fellowship</h3><div class="sub-label-line"></div></div>
     <div class="cert-grid">${fellowshipCards}</div>`;
