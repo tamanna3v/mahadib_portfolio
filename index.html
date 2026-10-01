@@ -101,7 +101,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='0' fill='%232e5c3f'/><text y='.85em' font-size='52' x='8' fill='white' font-family='sans-serif' font-weight='bold'>HB</text></svg>"/>
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Work+Sans:wght@300;400;500;600&family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Work+Sans:wght@300;400;500;600&family=Lato:wght@400;700&family=Noto+Serif+Bengali:wght@400;600;700&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 /* ── DESIGN TOKENS (institutional: off-white · forest green · terracotta · DM Sans/Serif/Mono) ── */
 :root{
@@ -829,6 +829,43 @@ nav{
 .cons-cl-arrow{color:var(--accent);font-weight:700;flex:0 0 auto}
 .cons-doc-link{margin-top:16px;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--accent);text-decoration:none;background:var(--paper);border-radius:0;padding:9px 14px;letter-spacing:-0.005em;transition:box-shadow .2s ease, transform .2s ease}
 .cons-doc-link:hover{box-shadow:none;transform:translateY(-1px)}
+
+/* BLOG */
+.blog-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.blog-card{background:var(--paper-2);padding:28px;display:flex;flex-direction:column;gap:10px;cursor:pointer;border:none;text-align:left;font-family:var(--sans);transition:transform .25s ease}
+.blog-card:hover{transform:translateY(-1px)}
+.blog-card-meta{font-size:12px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+.blog-card-title{font-family:"Hind Siliguri",var(--sans);font-size:24px;font-weight:600;color:var(--ink);line-height:1.35}
+.blog-card-sub{font-family:"Hind Siliguri",var(--sans);font-size:15px;color:var(--muted);line-height:1.5}
+.blog-card-sum{font-size:14px;color:var(--ink-2);line-height:1.55;padding-top:12px;border-top:1px solid var(--line-soft)}
+.blog-card-cta{font-size:13px;color:var(--accent);font-weight:600;margin-top:auto}
+.blog-back{background:var(--paper-2);border:none;color:var(--accent);font-size:13px;font-weight:600;padding:8px 14px;margin-bottom:28px}
+.blog-article{max-width:720px;font-family:"Noto Serif Bengali","Hind Siliguri",Georgia,serif;color:var(--ink);font-size:18px;line-height:1.85}
+.blog-article .blog-h1{font-family:"Hind Siliguri",var(--sans);font-size:42px;font-weight:600;line-height:1.3;margin:0 0 12px;letter-spacing:-0.01em}
+.blog-article .blog-dek{font-family:"Hind Siliguri",var(--sans);font-size:19px;color:var(--muted);line-height:1.55;margin:0 0 18px}
+.blog-article .blog-byline{font-family:var(--sans);font-size:13px;color:var(--muted);padding-bottom:22px;margin-bottom:30px;border-bottom:1px solid var(--line-soft)}
+.blog-article h2{font-family:"Hind Siliguri",var(--sans);font-size:27px;font-weight:600;line-height:1.35;margin:44px 0 14px}
+.blog-article h3{font-family:"Hind Siliguri",var(--sans);font-size:20px;font-weight:600;line-height:1.4;margin:28px 0 8px}
+.blog-article p{margin:0 0 16px}
+.blog-article ul,.blog-article ol{margin:0 0 18px 1.3em}
+.blog-article li{margin-bottom:6px}
+.blog-article blockquote{border-left:3px solid var(--accent);padding:4px 0 4px 18px;margin:22px 0;font-size:21px;font-weight:600;font-family:"Hind Siliguri",var(--sans)}
+.blog-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px 0 28px;font-family:var(--sans)}
+.blog-stat{background:var(--paper-2);padding:16px}
+.blog-stat b{display:block;font-size:26px;font-weight:600;color:var(--ink);line-height:1.1}
+.blog-stat span{font-family:"Hind Siliguri",var(--sans);font-size:13px;color:var(--muted);line-height:1.4;display:block;margin-top:6px}
+.blog-note{font-size:14px;color:var(--muted);background:var(--paper-2);padding:16px 18px;margin-top:36px;line-height:1.7}
+.cons-blog{margin-top:16px;background:var(--paper);padding:14px 16px}
+.cons-blog-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-sage-ink);margin-bottom:6px}
+.cons-blog p{font-size:14px;color:var(--ink-2);line-height:1.55;margin:0 0 10px}
+.cons-blog-link{background:none;border:none;padding:0;color:var(--accent);font-size:13px;font-weight:600;font-family:var(--sans)}
+@media(max-width:600px){
+  .blog-list{grid-template-columns:1fr}
+  .blog-article{font-size:17px}
+  .blog-article .blog-h1{font-size:30px}
+  .blog-article h2{font-size:23px}
+  .blog-stats{grid-template-columns:1fr}
+}
 
 /* WRITING GRID */
 .writing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
@@ -1692,6 +1729,7 @@ const NAV = [
   {text:"EasyFlow",id:"easyflow"},
   {text:"Consulting & Research",id:"consulting-research"},
   {text:"Events and News",id:"events"},
+  {text:"Blog",id:"blog"},
   {text:"Contact",id:"contact",dropdown:[
     {text:"Partner / Build Together",id:"contact-partner"},
     {text:"Affiliation",id:"contact-affiliation"},
@@ -2020,7 +2058,12 @@ const CONSULTING = [
     ink:"var(--accent-sky-ink)",
     desc:"Innovation-design engagement for a Fourth Industrial Revolution surveillance application — tackling counterfeit certification (≈22% of products faked, static QR/barcodes forgeable) with a consumer-powered, AR-driven quality-control and metrology surveillance system. Delivered from the BSTI 4IR workshop, Dak Bhaban, Agargaon, Dhaka (21–22 Nov 2023).",
     focus:["AR + ML consumer-powered package surveillance","IoT metrology for weight & measurement verification","Blockchain-based certification & analytics decision engine"],
-    doc:{href:"assets/bsti/bsti-4ir-surveillance-innovation-design.pdf",label:"View innovation-design deck ↗"}
+    doc:{href:"assets/bsti/bsti-4ir-surveillance-innovation-design.pdf",label:"View innovation-design deck ↗"},
+    blog:{
+      id:"blog-bsti-4ir-surveillance",
+      summary:"150 field inspectors and ~6,000 lab samples a month cannot watch the purchases of 180 million consumers — the constraint isn't the people, it's the model. The workshop flipped surveillance: let the consumer's own phone become the inspector's eye. AR + ML visual fingerprints replace copyable static QR codes; IoT flow meters and precision scales verify fuel and jewellery measurements; everything feeds a central BSTI dashboard that alerts both BSTI and the brand whose packaging is being faked.",
+      takeaway:"Of the six implementation challenges the team found, five were institutional, behavioural or legal — not technical. A pilot (10 fuel stations, 10 jewellery shops, one AR app, one dashboard) was scoped at under BDT 1 crore."
+    }
   }
 ];
 
@@ -2433,6 +2476,13 @@ function consultingSection(){
       <div class="cons-focus">
         ${c.focus.map(f=>`<div class="cons-focus-item"><span class="cons-focus-dot">✓</span>${f}</div>`).join('')}
       </div>` : '';
+    const blogRow = c.blog ? `
+      <div class="cons-blog">
+        <div class="cons-blog-lbl">📝 Summary · from the blog</div>
+        <p>${c.blog.summary}</p>
+        <p>${c.blog.takeaway}</p>
+        <button type="button" class="cons-blog-link" onclick="showPage('${c.blog.id}')">Read the full article (বাংলা) →</button>
+      </div>` : '';
     const docRow = c.doc ? `
       <a href="${c.doc.href}" target="_blank" rel="noopener" class="cons-doc-link">${c.doc.label}</a>` : '';
     return `
@@ -2449,6 +2499,7 @@ function consultingSection(){
         <p class="research-abs cons-abs">${c.desc}</p>
         ${focusRows}
         ${clientRows}
+        ${blogRow}
         ${docRow}
       </div>`;
   }).join('');
@@ -4713,6 +4764,208 @@ function pageEasyFlow(){
 `;
 }
 
+// ── BLOG ─────────────────────────────────────────────────
+const BLOG_POSTS = [
+  {
+    id:"blog-bsti-4ir-surveillance",
+    lang:"bn",
+    title:"১৫০ জন পরিদর্শক, ১৮ কোটি ভোক্তা: সার্ভেইল্যান্সের মডেল উল্টে দিলে কী হয়",
+    dek:"বিএসটিআই-এর সঙ্গে ৪আইআর ইনোভেশন ডিজাইন ওয়ার্কশপ ফ্যাসিলিটেট করার অভিজ্ঞতা থেকে",
+    date:"October 2026",
+    readTime:"৮ মিনিট",
+    tags:["BSTI","4IR","Public Sector Innovation","Consumer Protection"],
+    metaTitle:"150 Inspectors, 180 Million Consumers — Flipping the Surveillance Model | Hadi Bhuiyan",
+    metaDesc:"Lessons from facilitating the BSTI 4IR innovation-design workshop: consumer-powered surveillance with AR, ML and IoT — and why five of six challenges weren't technical. (Bangla)",
+    summary:"150 inspectors cannot watch 180 million consumers. Lessons from the BSTI 4IR innovation-design workshop on turning the consumer's phone into the regulator's eye — and why five of the six real challenges weren't technical.",
+    body:`
+<p>একটা সংখ্যা দিয়ে শুরু করি।</p>
+<p>বাংলাদেশ স্ট্যান্ডার্ডস অ্যান্ড টেস্টিং ইনস্টিটিউশন, মানে বিএসটিআই। যারা নিশ্চিত করে ভোজ্যতেলের বোতলে যেটা লেখা আছে, আসলেই সেটা আছে কি না, এক লিটার পেট্রোল আসলেই এক লিটার কি না, জুয়েলারির দোকানের স্কেল ঠিকমতো ওজন করছে কি না। তাদের মাঠপর্যায়ে ইন্সপেক্টর আছেন প্রায় ১৫০ জন। আর প্রতি মাসে ল্যাব ভেরিফিকেশনের জন্য প্রায় ৬,০০০ স্যাম্পল কালেক্ট হয়।</p>
+<p>অন্যদিকে আমাদের দেশে প্রায় ১৮ কোটি কনজিউমার প্রতিদিন, প্রতিটি উপজেলায়, প্রতিটি ঘণ্টায় কেনাকাটা করছেন।</p>
+<div class="blog-stats">
+  <div class="blog-stat"><b>~১৫০</b><span>মাঠপর্যায়ের ইন্সপেক্টর</span></div>
+  <div class="blog-stat"><b>~৬,০০০</b><span>প্রতি মাসে ল্যাব স্যাম্পল</span></div>
+  <div class="blog-stat"><b>~১৮ কোটি</b><span>প্রতিদিনের কনজিউমার</span></div>
+</div>
+<p>মানে, প্রতিটা কেনাকাটা আসলে একটা একটা কমপ্লায়েন্স ইভেন্ট।</p>
+<p>এখন ১৫০ জন মানুষ দিয়ে ১৮ কোটি মানুষের প্রতিটা ট্রানজ্যাকশনের মধ্যে কী হচ্ছে, সেটা মনিটর করা সম্ভব?</p>
+<p>অবশ্যই না।</p>
+<p>এটা বিএসটিআই-এর মানুষজনের ফেইলিউর না। বরং সমস্যাটা মডেলের মধ্যে। মানুষ যত ভালো কাজই করুক, এই মডেল একটা নির্দিষ্ট স্কেলের পর আর গ্রো করতে পারে না।</p>
+<p>২০২৩ সালের নভেম্বর মাসে ঢাকার আগারগাঁওয়ের ডাক ভবনে এটুআই, মন্ত্রিপরিষদ বিভাগ, আইসিটি ডিভিশন এবং ইউএনডিপির ইনোভেশন প্রোগ্রামের আওতায় বিএসটিআই-এর ইনোভেশন টিমের সঙ্গে দুই দিনের ৪আইআর ইনোভেশন ডিজাইন ওয়ার্কশপ ফ্যাসিলিটেট করার সুযোগ হয়েছিল।</p>
+<p>ওই ওয়ার্কশপ থেকে আমার কাছে সবচেয়ে ইম্পর্ট্যান্ট যে বিষয়টা বের হয়ে এসেছিল, সেটা কোনো টেকনোলজি না।</p>
+<p>বরং একটা প্রশ্ন:</p>
+<blockquote>সার্ভেইল্যান্স করবে কে?</blockquote>
+
+<h2>আসল সমস্যাটা কোথায়?</h2>
+<p>ওয়ার্কশপের শুরুতেই টিম একটা ইম্পর্ট্যান্ট ডেটা সামনে নিয়ে আসে।</p>
+<p>বাজারে প্রায় ২২ শতাংশ প্রোডাক্টে কোনো না কোনোভাবে নকল প্যাকেজিং বা মার্ক পাওয়া যায়।</p>
+<p>নকল বিএসটিআই প্যাকেজিং, ফেক লাইসেন্স মার্ক, পেট্রোল পাম্পে কম তেল, জুয়েলারি শপে এমনভাবে স্কেল রাখা যে একটু একটু করে কনজিউমারের বিপক্ষে যাচ্ছে। এই ধরনের অনেক সমস্যা।</p>
+<p>কিন্তু এখানে একটা ফান্ডামেন্টাল প্রবলেম আছে।</p>
+<p>আমরা যেসব ভেরিফিকেশন মেকানিজম ব্যবহার করি, যেমন প্রিন্টেড বিএসটিআই মার্ক, স্ট্যাটিক কিউআর কোড, বারকোড, প্যাকেজিং ডিজাইন, এর প্রায় সবই কপি করা যায়।</p>
+<p>ধরেন, একটা স্ট্যাটিক কিউআর কোড দিলেন।</p>
+<p>এটা আসলে একটা ছবি।</p>
+<p>কেউ সেই ছবিটা তুলে নিয়ে একই কিউআর কোড নকল প্যাকেটে বসিয়ে দিল। কনজিউমার স্ক্যান করলেন। গ্রিন টিক পেলেন।</p>
+<p>কনজিউমার ভাবলেন, প্রোডাক্ট জেনুইন।</p>
+<p>কিন্তু আসলে সিস্টেমটাই তাকে ফালস কনফিডেন্স দিল।</p>
+<p>এখানে তিনটা পক্ষ ক্ষতিগ্রস্ত হয়।</p>
+<ul>
+  <li>একজন জেনুইন প্রডিউসার নিজের ব্র্যান্ড এবং মার্কেট শেয়ার হারায়।</li>
+  <li>বিএসটিআই রেগুলেটরি ইনস্টিটিউশন হিসেবে ক্রেডিবিলিটি হারায়।</li>
+  <li>আর কনজিউমার হারায় টাকা এবং ধীরে ধীরে পুরো মার্কের ওপর ট্রাস্ট হারায়।</li>
+</ul>
+<p>আমার কাছে তৃতীয় ক্ষতিটাই সবচেয়ে ডেঞ্জারাস।</p>
+<p>কারণ একটা ট্রাস্ট মার্কের ওপর মানুষ বিশ্বাস না করলে, সেই মার্কের ভ্যালু প্র্যাকটিক্যালি জিরো।</p>
+<p>আর তখন এনফোর্সমেন্ট সিস্টেম কী করে?</p>
+<p>ইন্সপেক্টর যায়। স্যাম্পল কালেক্ট করে। ল্যাবে পাঠায়। কয়েক সপ্তাহ পরে রিপোর্ট আসে। তারপর শো-কজ নোটিশ হয়।</p>
+<p>কিন্তু ততদিনে ওই প্রোডাক্ট হয়তো মার্কেটে বিক্রি হয়ে গেছে।</p>
+<p>তাহলে প্রশ্ন হলো, আমরা কি আরও ইন্সপেক্টর নিয়োগ করব?</p>
+<p>নাকি সার্ভেইল্যান্সের মডেলটাই বদলাব?</p>
+
+<h2>এখানেই চিন্তাটা উল্টে গেল</h2>
+<p>ওয়ার্কশপে আমরা একটা অন্যরকম মডেল নিয়ে কাজ করি।</p>
+<p>বিএসটিআই বাইরে গিয়ে নকল খুঁজবে, এই মডেলের পরিবর্তে আমরা ভাবলাম, নকল নিজেই যেন খবর দেয়।</p>
+<p>আর এই কাজের জন্য একজন সাধারণ কনজিউমারের হাতে থাকা মোবাইল ফোনকেই ব্যবহার করা যায়।</p>
+<p>বিএসটিআই যেহেতু মূলত দুই ধরনের বিষয় সার্টিফাই করে, আমরা দুইটা কাজ নিয়ে এগিয়েছিলাম।</p>
+
+<h3>প্রথম কাজ: প্রোডাক্ট অথেন্টিসিটি</h3>
+<p>এখানে আমরা অগমেন্টেড রিয়েলিটি এবং মেশিন লার্নিং ব্যবহার করার কনসেপ্ট নিয়ে কাজ করি।</p>
+<p>একটা জেনুইন প্যাকেজিংকে আমরা একটা ভিজ্যুয়াল ফিঙ্গারপ্রিন্ট হিসেবে রেজিস্টার করব। এর মধ্যে থাকবে লাইসেন্স ডেটা এবং অরিজিনাল প্যাকেজিংয়ের হাই-রেজোলিউশন ইমেজ।</p>
+<p>তারপর একটা মেশিন লার্নিং মডেল সেই ভিজ্যুয়াল ফিঙ্গারপ্রিন্ট শিখবে।</p>
+<p>কনজিউমার একটা সাধারণ মোবাইল ফোন দিয়ে প্রোডাক্টের দিকে ক্যামেরা ধরবেন। অ্যাপ্লিকেশন তখন ওই প্যাকেজিংয়ের ভিজ্যুয়াল ক্যারেক্টারিস্টিকসের সঙ্গে ট্রেইনড ডেটাসেটের কম্পারিজন করবে এবং প্রোডাক্ট জেনুইন কি না, তাৎক্ষণিকভাবে জানাবে।</p>
+<p>এখানে একটা বিষয় খুব ইম্পর্ট্যান্ট ছিল।</p>
+<p>আমরা চাইনি কনজিউমারের জন্য কোনো স্পেশাল ডিভাইস লাগুক। একটা সাধারণ স্মার্টফোনই যথেষ্ট হতে হবে।</p>
+<p>কারণ ভেরিফিকেশন যদি প্রিন্টেড কিউআর কোডের ওপর ডিপেন্ড না করে, বরং প্রোডাক্টের লার্নড ভিজ্যুয়াল সিগনেচারের ওপর ডিপেন্ড করে, তাহলে শুধু প্যাকেজিংয়ের ছবি কপি করলেই পুরো ভেরিফিকেশন সিস্টেম কপি করা যাবে না।</p>
+
+<h3>দ্বিতীয় কাজ: ওয়েট অ্যান্ড মেজারমেন্ট</h3>
+<p>এখানে আমরা আইওটি ব্যবহার করার কনসেপ্ট নিয়ে কাজ করি।</p>
+<ul>
+  <li>পেট্রোল পাম্পের হোসে আইওটি ফ্লো মিটার।</li>
+  <li>জুয়েলারি শপে আইওটি প্রিসিশন স্কেল।</li>
+</ul>
+<p>এই ডিভাইস থেকে র‍্যান্ডম ভেরিফিকেশন ডেটা অটোমেটিক্যালি সেন্ট্রাল সিস্টেমে যাবে।</p>
+<p>আর কনজিউমারও দেখতে পারবেন তিনি আসলে কতটা কিনেছেন।</p>
+<p>মানে মেশিনের রিডিং এবং কনজিউমারের অ্যাকচুয়াল এক্সপেরিয়েন্স, দুটোকে পাশাপাশি ভেরিফাই করার সুযোগ থাকবে। কোনো একটা সোর্সের ওপর ব্লাইন্ড ট্রাস্ট করতে হবে না।</p>
+<p>শেষে দুইটা কাজই গিয়ে একটা জায়গায় কানেক্ট করবে: সেন্ট্রাল বিএসটিআই সার্ভেইল্যান্স ড্যাশবোর্ড।</p>
+<p>এর সঙ্গে থাকবে অটোমেটেড অ্যালার্ট এবং অ্যানালিটিক্স। সার্টিফিকেশনের প্রতিটি ধাপের রেকর্ড রাখার জন্য ব্লকচেইন-বেজড সার্টিফিকেশন লেয়ারের কনসেপ্টও ছিল।</p>
+<p>কোনো সাসপিশাস অ্যাক্টিভিটি হলে রিয়েল-টাইম অ্যালার্ট যাবে।</p>
+<p>আর একটা বিষয় আমার কাছে বিশেষভাবে ভালো লেগেছিল।</p>
+<p>শুধু বিএসটিআইকে অ্যালার্ট করা হবে না। প্রডিউসারকেও অ্যালার্ট করা হবে।</p>
+<p>ধরেন, কোনো নির্দিষ্ট এলাকায় কোনো ব্র্যান্ডের ফেক প্যাকেজিং পাওয়া গেল। তাহলে ওই ব্র্যান্ডও সঙ্গে সঙ্গে জানতে পারবে।</p>
+<p>এটা খুব লজিক্যাল একটা ডিজাইন।</p>
+<p>কারণ ফেক প্রোডাক্ট বন্ধ করার কমার্শিয়াল মোটিভেশন সবচেয়ে বেশি কার?</p>
+<p>যে জেনুইন প্রডিউসারের ব্র্যান্ড কপি হচ্ছে, তার।</p>
+<p>তাহলে তাকে সিস্টেমের বাইরে রাখব কেন?</p>
+
+<h2>তাহলে কী পরিবর্তন আসতে পারে?</h2>
+<p>বর্তমান সিস্টেমে মাসে প্রায় ৬,০০০ স্যাম্পল কালেক্ট হচ্ছে।</p>
+<p>ওয়ার্কশপের কনসেপ্টুয়াল মডেলে আমরা ভাবছিলাম, এই সিস্টেম প্রতিদিন লক্ষাধিক সার্ভেইল্যান্স ডেটা পয়েন্ট তৈরি করতে পারে।</p>
+<p>এর পাশাপাশি রেগুলার ইন্সপেকশন এবং রিপোর্টিংয়ের মতো রিপিটেটিভ কাজেও প্রায় ২০ শতাংশ টাইম এফিশিয়েন্সি পাওয়া যেতে পারে, এমন একটা প্রজেকশন নিয়ে আমরা কাজ করেছিলাম।</p>
+<p>এখানে ইন্সপেক্টরের রোল আর শুধু ডেটা কালেক্ট করার মধ্যে সীমাবদ্ধ থাকবে না।</p>
+<p>অনেক বেশি ডেটা কালেক্ট করবে টেকনোলজি। আর ইন্সপেক্টর সেই ডেটা দেখে কোথায় অ্যাকশন নেওয়া দরকার, সেটা ঠিক করবেন।</p>
+<p>মানে, ইন্সপেক্টরের কাজটা আরও ইন্টেলিজেন্ট হবে।</p>
+
+<h2>কিন্তু টেকনোলজিই কি আসল সমস্যা?</h2>
+<p>এখানেই ওয়ার্কশপের একটা ইম্পর্ট্যান্ট লার্নিং ছিল।</p>
+<p>ইনোভেশন ডিজাইনের সবচেয়ে ভালো দিক হলো, সলিউশন তৈরি করার আগেই কোথায় প্রবলেম হবে, সেটা দেখতে পাওয়া যায়।</p>
+<p>টিম মোট ছয়টা বড় চ্যালেঞ্জ আইডেন্টিফাই করেছিল। আর ইন্টারেস্টিং বিষয় হলো, এর মধ্যে পাঁচটাই টেকনোলজি রিলেটেড না।</p>
+
+<h3>১. সলিউশন আর্কিটেকচার ক্যাপাবিলিটি</h3>
+<p>অগমেন্টেড রিয়েলিটি, মেশিন লার্নিং এবং ব্লকচেইন, সবকিছু আলাদা আলাদা করে ডেমো করা সহজ। কিন্তু এগুলোকে একটা ন্যাশনাল লেভেলের ওয়ার্কিং সিস্টেমের মধ্যে ইন্টিগ্রেট করা কঠিন। এর জন্য প্রপার টেকনিক্যাল আর্কিটেকচার ক্যাপাবিলিটি দরকার।</p>
+<h3>২. স্টেকহোল্ডার ইনসেনটিভ</h3>
+<p>রিটেইল শপ, পেট্রোল পাম্প বা জুয়েলারি শপের ওনার এমন একটা সিস্টেম কেন চাইবেন, যেটা তার কম দেওয়া বা ভুল মেজারমেন্ট ধরিয়ে দিতে পারে? তাই এখানে টেকনোলজির আগে ইনসেনটিভের প্রশ্ন আছে।</p>
+<h3>৩. পিপল অ্যান্ড লজিস্টিকস</h3>
+<p>সিস্টেম বানালেই হবে না। স্টাফ ট্রেনিং লাগবে। অপারেশনাল ম্যানপাওয়ার লাগবে। লজিস্টিকস লাগবে। এসবের জন্য প্রপার অ্যালোকেশন লাগবে।</p>
+<h3>৪. প্রডিউসার পার্টিসিপেশন</h3>
+<p>প্রডিউসারকে রেগুলার বেসিসে প্যাকেজিং এবং ভিজ্যুয়াল ফিঙ্গারপ্রিন্ট ডেটা আপডেট করতে হবে। রেফারেন্স ডেটাসেট পুরোনো হয়ে গেলে জেনুইন প্রোডাক্টও ফেক হিসেবে ডিটেক্ট হতে পারে। আর সেটা হলে সিস্টেমের ওপর ট্রাস্ট খুব দ্রুত শেষ হয়ে যাবে।</p>
+<h3>৫. ডেটা সিকিউরিটি অ্যান্ড প্রাইভেসি</h3>
+<p>কনজিউমার জেনারেটেড সার্ভেইল্যান্স ডেটা মানেই প্রাইভেসির প্রশ্ন। ডেটা যত বাড়বে, গভর্ন্যান্সের প্রশ্নও তত বড় হবে।</p>
+<h3>৬. লিগ্যাল ফাউন্ডেশন</h3>
+<p>সবশেষে একটা খুব বেসিক কোয়েশ্চেন আছে। আইনে এর ভিত্তি আছে কি?</p>
+<p>কোনো অ্যাপ্লিকেশন যদি বলে কোনো প্রোডাক্ট ফেক, সেটা কি লিগ্যালি অ্যাকসেপ্টেড এভিডেন্স?</p>
+<p>ল এবং রেগুলেশনের মধ্যে টেকনোলজি ইউজের প্রভিশন না থাকলে, টেকনোলজি যত অ্যাডভান্সডই হোক, সেটা এনফোর্সমেন্টের ক্ষেত্রে কতটা ইউজেবল হবে?</p>
+<p>এই ছয়টা চ্যালেঞ্জের মধ্যে পাঁচটাই ইনস্টিটিউশনাল, বিহেভিয়োরাল অথবা লিগ্যাল।</p>
+<p>এটা আমি গভর্নমেন্ট সেক্টরের ইনোভেশন কাজগুলোতে বারবার দেখি। টিম সাধারণত ভাবে, সবচেয়ে কঠিন হবে টেকনোলজি।</p>
+<blockquote>কিন্তু বাস্তবে টেকনোলজিই অনেক সময় সবচেয়ে সহজ অংশ।</blockquote>
+
+<h2>পাইলট দিয়ে শুরু করা যায়</h2>
+<p>আমরা এখানে কোনো বিগ ব্যাং সলিউশন নিয়ে কথা বলিনি। বরং একটা ম্যানেজেবল পাইলট নিয়ে ভাবা হয়েছিল। যেমন:</p>
+<ul>
+  <li>১০টা পেট্রোল পাম্পে ৩০টা আইওটি ফুয়েল মিটার।</li>
+  <li>১০টা জুয়েলারি শপে ২০টা প্রিসিশন স্কেল।</li>
+  <li>একটা অগমেন্টেড রিয়েলিটি অ্যাপ্লিকেশন।</li>
+  <li>একটা সেন্ট্রাল সার্ভেইল্যান্স ড্যাশবোর্ড।</li>
+  <li>একটা ব্লকচেইন-বেজড ট্র্যাকিং লেয়ার।</li>
+  <li>ক্লাউড হোস্টিং।</li>
+  <li>এক্সপার্ট কনসালট্যান্সি।</li>
+  <li>ট্রেনিং এবং ওয়ার্কশপ।</li>
+</ul>
+<p>ইন্ডিকেটিভ ইনভেস্টমেন্ট এক কোটি টাকারও কম।</p>
+<p>একটা ন্যাশনাল রেগুলেটরি ক্যাপাবিলিটির জন্য এটা খুব বড় ইনভেস্টমেন্ট না।</p>
+<p>তাই আবার সেই একই প্রশ্নে ফিরে আসি। সমস্যাটা আসলে টাকা না।</p>
+
+<h2>আমি কী শিখে ফিরেছি?</h2>
+<p>এই ধরনের যেকোনো ইনোভেশন কাজের জন্য আমার কাছে তিনটা লার্নিং খুব ইম্পর্ট্যান্ট।</p>
+<h3>প্রথমত, আগে ঠিক করুন আসলে কোন রিসোর্সটা স্কার্স।</h3>
+<p>বিএসটিআই-এর স্কার্স রিসোর্স আসলে ইন্সপেক্টর না। স্কার্স রিসোর্স হলো অবজারভেশন ক্যাপাসিটি।</p>
+<p>যখন আমরা প্রবলেমটাকে এইভাবে ডিফাইন করি, তখন সলিউশনও বদলে যায়। সলিউশন আর “আরও ইন্সপেক্টর নিয়োগ করা” থাকে না।</p>
+<h3>দ্বিতীয়ত, টেকনোলজির সঙ্গে ইনসেনটিভও ডিজাইন করতে হবে।</h3>
+<p>প্রডিউসার অ্যালার্টের ফিচারটা আমার কাছে এজন্য ইন্টারেস্টিং। কারণ এখানে এমন একজন স্টেকহোল্ডারকে সিস্টেমের মধ্যে নিয়ে আসা হচ্ছে, যার জেনুইন মোটিভেশন আছে ফেক প্রোডাক্ট বন্ধ করার।</p>
+<p>তাই শুরুতেই একটা কোয়েশ্চেন করা দরকার: এই সিস্টেম কাজ করলে কার লাভ হবে, এবং সেই লাভ তাকে সিস্টেমটাকে এগিয়ে নিতে কতটা মোটিভেট করবে?</p>
+<h3>তৃতীয়ত, ভেরিফিকেশন সিস্টেম ডায়নামিক হতে হবে।</h3>
+<p>যে ট্রাস্ট মার্কের ছবি তোলা যায়, সেটার ছবি কেউ না কেউ তুলবেই।</p>
+<p>এটা শুধু বিএসটিআই-এর প্রবলেম না। যেকোনো সার্টিফিকেট, টিকিট, ক্রেডেনশিয়াল, সিল বা ভেরিফিকেশন মার্কের ক্ষেত্রেই একই কথা প্রযোজ্য।</p>
+<p>স্ট্যাটিক ট্রাস্টের একটা লিমিট আছে।</p>
+
+<h2>শেষ কথা</h2>
+<p>আমার কাছে এই পুরো কাজের সবচেয়ে বড় লার্নিং হলো, বাংলাদেশের মতো দেশে রেগুলেটরি ক্যাপাবিলিটি শুধু প্রোপোরশনাল ম্যানপাওয়ার বাড়িয়ে সলভ করা সম্ভব না।</p>
+<p>১৮ কোটি কনজিউমারের বিপরীতে ১৫০ জন ইন্সপেক্টর বসিয়ে কোনো রিয়েলিস্টিক ইন্সপেকশন রেশিও তৈরি করা যাবে না।</p>
+<p>বরং আমাদের এমন একটা সিস্টেম তৈরি করতে হবে, যেখানে কনজিউমার শুধু রেগুলেশনের প্যাসিভ বেনিফিশিয়ারি না হয়ে সার্ভেইল্যান্সের অংশ হয়ে উঠবেন।</p>
+<p>আর ইনস্টিটিউশন তখন করবে সেই কাজগুলো, যেগুলো কনজিউমার করতে পারবেন না। জাজমেন্ট, অথরিটি এবং কনসিকোয়েন্স।</p>
+<p>আমরা অনেক সময় ভাবি টেকনোলজি মানুষকে রিপ্লেস করবে।</p>
+<p>এই ক্ষেত্রে টেকনোলজির কাজ মানুষকে রিপ্লেস করা না।</p>
+<blockquote>টেকনোলজি অনেক বেশি চোখ তৈরি করবে। আর মানুষ ঠিক করবে, কোন চোখে পাওয়া ডেটার পরে কী অ্যাকশন নিতে হবে।</blockquote>
+<p>আমার কাছে ৪আইআরের প্র্যাকটিক্যাল ভ্যালু এখানেই।</p>
+<p>টেকনোলজি নিয়ে কথা বলার চেয়ে বেশি জরুরি হলো, পুরোনো অপারেটিং মডেলটা কোথায় বদলানো দরকার, সেটা ঠিকভাবে দেখা।</p>
+
+<p class="blog-note">লেখাটি ঢাকায় এটুআই, মন্ত্রিপরিষদ বিভাগ, আইসিটি ডিভিশন এবং ইউএনডিপি ইনোভেশন প্রোগ্রামের আওতায় বিএসটিআই ইনোভেশন টিমের সঙ্গে ফ্যাসিলিটেট করা ৪আইআর ইনোভেশন ডিজাইন ওয়ার্কশপের অভিজ্ঞতার ভিত্তিতে লেখা। উল্লিখিত পরিসংখ্যান ওয়ার্কশপের ডিজাইন ডকুমেন্টেশনে থাকা তথ্য অনুযায়ী। মতামত লেখকের নিজস্ব।</p>
+`,
+    related:[
+      {label:"See the BSTI engagement in Consulting →",page:"consulting-research"},
+      {label:"View the innovation-design deck (PDF) ↗",href:"assets/bsti/bsti-4ir-surveillance-innovation-design.pdf"}
+    ]
+  }
+];
+
+function pageBlog(){
+  const cards = BLOG_POSTS.map(b=>`
+    <button type="button" class="blog-card" onclick="showPage('${b.id}')">
+      <div class="blog-card-meta">${b.date} · ${b.lang === 'bn' ? 'বাংলা' : 'English'}</div>
+      <div class="blog-card-title" lang="${b.lang}">${b.title}</div>
+      <div class="blog-card-sub" lang="${b.lang}">${b.dek}</div>
+      <div class="blog-card-sum">${b.summary}</div>
+      ${chipRow(b.tags)}
+      <div class="blog-card-cta">Read article →</div>
+    </button>`).join('');
+  return `
+    <h2 class="section-title">Blog</h2>
+    <p class="section-sub">Field notes and reflections from consulting, innovation design and AI work.</p>
+    <div class="blog-list">${cards}</div>`;
+}
+
+function pageBlogPost(b){
+  const related = (b.related||[]).map(r=> r.href
+    ? `<a href="${r.href}" target="_blank" rel="noopener" class="cons-doc-link">${r.label}</a>`
+    : `<button type="button" class="cons-doc-link" style="border:none;font-family:var(--sans)" onclick="showPage('${r.page}')">${r.label}</button>`).join('');
+  return `
+    <button type="button" class="blog-back" onclick="showPage('blog')">← All posts</button>
+    <article class="blog-article" lang="${b.lang}">
+      <h1 class="blog-h1">${b.title}</h1>
+      <p class="blog-dek">${b.dek}</p>
+      <div class="blog-byline">Hadi Bhuiyan · ${b.date} · পড়তে লাগবে ${b.readTime}</div>
+      ${b.body}
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px">${related}</div>
+    </article>`;
+}
+
 const PAGES = {
   about: pageAbout,
   experience: pageExperience,
@@ -4734,8 +4987,10 @@ const PAGES = {
   'contact-partner': pagePartner,
   'contact-affiliation': pageAffiliation,
   futuremind: pageFutureMind,
-  news: pageEvents
+  news: pageEvents,
+  blog: pageBlog
 };
+BLOG_POSTS.forEach(b=>{ PAGES[b.id] = ()=>pageBlogPost(b); });
 
 let currentPage = 'about';
 
@@ -4762,6 +5017,9 @@ const PAGE_META = {
   news:{t:"Events and News — Hadi Bhuiyan",d:"Events, milestones and news — key appearances, program launches, awards, social initiatives and press coverage, from Microsoft panels to the AI-PA corporate cohorts."},
   futuremind:{t:"FutureMind.Ltd — AI Solution & Product Company",d:"FutureMind builds AI two ways: SaaS products (EasyFlow, Madevo) from $29/mo and custom private solutions (AI Inference, EasyDO Launchpad)."}
 };
+
+PAGE_META.blog = {t:"Blog — Hadi Bhuiyan",d:"Field notes and reflections from consulting, public-sector innovation design and enterprise AI work."};
+BLOG_POSTS.forEach(b=>{ PAGE_META[b.id] = {t:b.metaTitle,d:b.metaDesc}; });
 
 function applyPageMeta(id){
   const m = PAGE_META[id] || PAGE_META.about;
