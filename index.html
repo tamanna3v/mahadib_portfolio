@@ -794,7 +794,17 @@ nav{
 }
 
 /* WRITING GRID */
-.writing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.writing-grid,.research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}
+.research-grid{margin-bottom:8px}
+.research-grid .research-card{margin-bottom:0;padding:24px;display:flex;flex-direction:column;gap:10px}
+.research-grid .research-featured{top:16px;right:16px}
+.research-grid .research-featured + .chip-row{padding-right:84px}
+.research-grid .research-title{font-size:21px;margin-bottom:0}
+.research-grid .research-venue,.research-grid .research-loc{margin-bottom:0;font-size:13px}
+.research-grid .research-abs{font-size:14px;margin:0;padding-top:12px}
+.research-grid .ieee-btn{margin-top:auto;align-self:flex-start}
+@media(max-width:900px){.writing-grid,.research-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.writing-grid,.research-grid{grid-template-columns:1fr}}
 .writing-card{background:var(--paper-2);border:none;border-radius:0;padding:24px;display:flex;flex-direction:column;gap:10px;transition:box-shadow .25s ease, transform .25s ease}
 .writing-card:hover{box-shadow:none;transform:translateY(-1px)}
 .writing-title{font-family:var(--sans);font-weight:600;font-size:21px;color:var(--ink);line-height:1.2;letter-spacing:-0.018em}
@@ -2308,7 +2318,7 @@ function researchSection(){
 
   return `
     <div class="sub-label"><h3>📄 IEEE Publications</h3><div class="sub-label-line"></div></div>
-    ${papers}
+    <div class="research-grid">${papers}</div>
     <div class="sub-label"><h3>✍️ Policy Contributions & Academic Reviews</h3><div class="sub-label-line"></div></div>
     <div class="writing-grid">${writings}</div>
     <div class="notice">
