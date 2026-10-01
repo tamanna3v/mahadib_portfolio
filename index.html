@@ -589,108 +589,22 @@ nav{
 .prog-menu-name{font-size:13px;font-weight:500;color:var(--ink-2);margin-bottom:10px;line-height:1.4;letter-spacing:-0.005em}
 .prog-menu-for{font-size:12px;color:var(--muted);font-weight:400;line-height:1.5}
 
-/* USE CASE MENU */
-.uc-menu{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:32px}
-.uc-menu-card{background:var(--paper);border:1px solid var(--line-soft);border-radius:0;padding:26px 22px;transition:box-shadow .2s ease,transform .2s ease}
-.uc-menu-card:hover{box-shadow:none;transform:translateY(-2px)}
-.uc-menu-icon{width:42px;height:42px;border-radius:0;border:1px solid var(--line);background:var(--paper-2);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-.uc-menu-icon svg{width:20px;height:20px;stroke:var(--ink-2);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.uc-menu-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:-0.008em;line-height:1.3}
-.uc-menu-desc{font-size:12px;color:var(--muted);font-weight:400;line-height:1.5;letter-spacing:-0.003em}
-@media(max-width:700px){.uc-menu{grid-template-columns:repeat(2,1fr)}}
-
-/* PRODUCT CONSTELLATION */
-.prod-cons{
-  position:relative;background:var(--paper);
-  border:1px solid var(--line);border-top:3px solid var(--green);
-  margin-bottom:24px;overflow:hidden;
-}
-.prod-cons-head{
-  display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;
-  padding:15px 22px;border-bottom:1px solid var(--line-soft);position:relative;z-index:3;
-  background:var(--paper);
-}
-.prod-cons-eyebrow{
-  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--green);
-}
-.prod-cons-hint{font-size:12px;color:var(--muted);letter-spacing:-0.005em}
-.prod-cons-plane{position:relative;margin:34px 78px 40px;height:330px}
-@media(max-width:1100px){.prod-cons-plane{margin:28px 56px 34px;height:286px}}
-
-/* faint star dust behind the asterism */
-.cons-dust-layer{position:absolute;inset:-34px -78px -40px;pointer-events:none;z-index:0}
-.cons-dust{
-  position:absolute;left:var(--x);top:var(--y);width:2px;height:2px;
-  background:var(--muted-2);opacity:.22;animation:cons-twinkle 5s ease-in-out infinite;
-}
-@keyframes cons-twinkle{0%,100%{opacity:.12}50%{opacity:.5}}
-
-/* the lines of the asterism */
-.prod-cons-sky{position:absolute;inset:0;width:100%;height:100%;z-index:1;overflow:visible}
-.cons-link{fill:none;stroke:var(--line);stroke-width:1;transition:stroke .28s ease}
-.cons-link.lit{stroke:var(--green)}
-
-/* each product is a star */
-.cons-node{
-  position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-12px);
-  z-index:2;width:max-content;max-width:150px;
-  display:flex;flex-direction:column;align-items:center;gap:7px;
-  background:none;border:none;padding:0;cursor:pointer;font-family:var(--sans);text-align:center;
-}
-.cons-star-wrap{height:24px;display:flex;align-items:center;justify-content:center;position:relative}
-.cons-star{
-  width:14px;height:14px;transform:rotate(45deg);
-  border:1px solid var(--green);background:var(--paper);
-  transition:width .2s ease,height .2s ease,background .2s ease,border-color .2s ease;
-}
-.cons-node:hover .cons-star,.cons-node:focus-visible .cons-star{background:var(--green);width:18px;height:18px}
-.cons-node.active .cons-star{background:var(--accent);border-color:var(--accent);width:18px;height:18px}
-/* four-point glint on the selected star */
-.cons-star-wrap::before,.cons-star-wrap::after{
-  content:"";position:absolute;left:50%;top:50%;background:var(--accent);
-  opacity:0;transition:opacity .2s ease,width .25s ease,height .25s ease;
-}
-.cons-star-wrap::before{width:0;height:1px;transform:translate(-50%,-50%)}
-.cons-star-wrap::after{width:1px;height:0;transform:translate(-50%,-50%)}
-.cons-node.active .cons-star-wrap::before{opacity:.55;width:42px}
-.cons-node.active .cons-star-wrap::after{opacity:.55;height:42px}
-.cons-label{
-  font-size:13px;font-weight:600;color:var(--ink-2);line-height:1.2;
-  letter-spacing:-0.008em;white-space:nowrap;transition:color .2s ease;
-}
-.cons-node:hover .cons-label,.cons-node:focus-visible .cons-label{color:var(--ink)}
-.cons-node.active .cons-label{color:var(--accent)}
-.cons-cap{
-  font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--muted-2);line-height:1.35;opacity:0;transition:opacity .2s ease;
-}
-.cons-node:hover .cons-cap,.cons-node:focus-visible .cons-cap,.cons-node.active .cons-cap{opacity:1}
-.cons-node:focus{outline:none}
-.cons-node:focus-visible{outline:1px solid var(--ink);outline-offset:6px}
-
-@media(prefers-reduced-motion:reduce){
-  .cons-dust{animation:none}
-  .cons-star,.cons-link,.cons-label,.cons-cap,.cons-star-wrap::before,.cons-star-wrap::after{transition:none}
-}
-/* below tablet the map folds into a plain list of stars */
-@media(max-width:760px){
-  .prod-cons-plane{position:static;margin:14px;height:auto;display:flex;flex-wrap:wrap;gap:8px}
-  .prod-cons-sky,.cons-dust-layer{display:none}
-  .cons-node{
-    position:static;transform:none;width:auto;flex:1 1 44%;
-    flex-direction:row;align-items:center;justify-content:flex-start;gap:9px;
-    padding:12px 14px;background:var(--paper-2);text-align:left;
-  }
-  .cons-node.active{background:var(--green)}
-  .cons-node.active .cons-label{color:#fff}
-  .cons-node.active .cons-star{background:#fff;border-color:#fff}
-  .cons-star-wrap{height:auto}
-  .cons-star-wrap::before,.cons-star-wrap::after{display:none}
-  .cons-label{white-space:nowrap;font-size:12.5px}
-  .cons-cap{display:none}
-}
-@media(max-width:560px){.prod-cons-hint{display:none}}
+/* PRODUCT PICKER — guided: pick a product, preview it live */
+.prod-step{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.prod-step-num{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--accent)}
+.prod-step-title{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-0.008em}
+.prod-step-hint{font-size:13px;color:var(--muted)}
+.prod-pick{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-bottom:40px}
+.prod-pick-btn{display:flex;align-items:flex-start;gap:12px;text-align:left;background:var(--paper);border:1px solid var(--line);padding:14px 16px;cursor:pointer;font-family:var(--sans);transition:border-color .2s ease,background .2s ease}
+.prod-pick-btn:hover{border-color:var(--ink)}
+.prod-pick-btn.active{background:var(--green);border-color:var(--green)}
+.prod-pick-emoji{font-size:20px;line-height:1.2;flex:0 0 auto}
+.prod-pick-name{display:block;font-size:14px;font-weight:600;color:var(--ink);letter-spacing:-0.008em;line-height:1.3}
+.prod-pick-cap{display:block;font-size:12px;color:var(--muted);line-height:1.4;margin-top:2px}
+.prod-pick-btn.active .prod-pick-name{color:#fff}
+.prod-pick-btn.active .prod-pick-cap{color:rgba(255,255,255,.78)}
+.prod-pick-btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+@media(max-width:560px){.prod-pick{grid-template-columns:1fr 1fr}.prod-step-hint{display:none}}
 
 /* PRODUCT EMBED PANEL */
 .prod-embed-panel{display:none;border-radius:0;overflow:hidden;background:var(--paper-2);margin-bottom:28px}
@@ -2214,69 +2128,41 @@ function pageExperience(){
     ${skillSections}`;
 }
 
-// Product constellation — each product is a star, lines trace how they connect.
+// Products shown in the Products tab picker, each with a live preview.
 const PRODUCT_STARS = [
-  {id:'commengine', x:8,  y:64, emoji:'🏢', name:'CommEngine', cap:'SocialCRM & profiling',
+  {id:'commengine', emoji:'🏢', name:'CommEngine', cap:'SocialCRM & profiling',
    title:'CommEngine', meta:'commengine.xyz', href:'https://commengine.xyz/',
    src:'https://commengine.xyz/', frameTitle:'CommEngine — SocialCRM &amp; AI Profiling'},
-  {id:'easydo', x:23, y:22, emoji:'🤖', name:'EasyDo', cap:'Private AI workspace',
+  {id:'easydo', emoji:'🤖', name:'EasyDo', cap:'Private AI workspace',
    title:'EasyDo — Private AI Workspace', meta:'easydo.ai', href:'https://easydo.ai/',
    src:'https://easydo.ai/', frameTitle:'EasyDo — Private AI Workspace'},
-  {id:'easyflow', x:42, y:56, emoji:'🌊', name:'EasyFlow', cap:'Audience engagement',
+  {id:'easyflow', emoji:'🌊', name:'EasyFlow', cap:'Audience engagement',
    title:'EasyFlow by EasyDO.ai', meta:'flow.easydo.ai', href:'https://flow.easydo.ai/',
    src:'https://flow.easydo.ai/', frameTitle:'EasyFlow — AI-Guided Audience Engagement', eager:true},
-  {id:'jachai', x:57, y:16, emoji:'🔐', name:'Jachai', cap:'Product authentication',
+  {id:'jachai', emoji:'🔐', name:'Jachai', cap:'Product authentication',
    title:'Jachai', meta:'zachai.xyz', href:'https://www.zachai.xyz/',
    src:'https://www.zachai.xyz/', frameTitle:'Jachai — Product Authentication'},
-  {id:'swachho', x:63, y:86, emoji:'🧼', name:'Swaccho', cap:'Relief distribution',
+  {id:'swachho', emoji:'🧼', name:'Swaccho', cap:'Relief distribution',
    title:'Swaccho — Food &amp; Relief Distribution Tracking',
    meta:'P2O2V2P Model · Retail Digital Innovation Award 2020', href:'swaccho.html',
    src:'swaccho.html', frameTitle:'Swaccho — Nationwide Food &amp; Relief Distribution Tracking System'},
-  {id:'probeno', x:79, y:45, emoji:'🎓', name:'Probeno', cap:'AI for educators',
+  {id:'probeno', emoji:'🎓', name:'Probeno', cap:'AI for educators',
    title:'Probeno — AI for Educators',
    meta:'Teach the teachers · UNESCO AI Competency Framework aligned', href:'probeno.html',
    src:'probeno.html', frameTitle:'Probeno — AI for Educators · Teach the Teachers, Empower Thousands'},
-  {id:'aipaonline', x:93, y:76, emoji:'🚀', name:'AIPA-Online', cap:'Presales guideline',
+  {id:'aipaonline', emoji:'🚀', name:'AIPA-Online', cap:'Presales guideline',
    title:'AIPA-Online — Presales Guideline',
    meta:'Roles &amp; Steps for Program, Sales &amp; Communication Teams', href:'aipa-online.html',
    src:'aipa-online.html', frameTitle:'AIPA-Online — Presales Guideline'}
 ];
-// lines of the asterism
-const PRODUCT_LINKS_MAP = [
-  ['commengine','easydo'],['easydo','easyflow'],['easyflow','jachai'],['easyflow','swachho'],
-  ['jachai','probeno'],['swachho','probeno'],['probeno','aipaonline']
-];
-// fixed scatter so the sky renders identically on every load
-const PRODUCT_DUST = [
-  [4,12],[11,84],[16,44],[19,7],[27,68],[31,33],[34,92],[39,15],[44,78],[47,38],
-  [52,62],[55,5],[59,49],[66,28],[69,70],[72,11],[75,90],[81,24],[84,60],[88,8],
-  [91,46],[95,88],[97,30],[13,58],[25,96],[63,41],[86,72],[2,71]
-];
-
 function pageProducts(){
   const ACTIVE = 'easyflow';
 
-  const dust = PRODUCT_DUST.map(([x,y],i)=>
-    `<span class="cons-dust" style="--x:${x}%;--y:${y}%;animation-delay:${(i%7)*0.7}s"></span>`).join('');
-
-  const byId = {};
-  PRODUCT_STARS.forEach(p=>{byId[p.id]=p;});
-  const links = PRODUCT_LINKS_MAP.map(([a,b])=>{
-    const A = byId[a], B = byId[b];
-    return `<line class="cons-link${a===ACTIVE||b===ACTIVE?' lit':''}" data-a="${a}" data-b="${b}"
-      x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}" vector-effect="non-scaling-stroke"></line>`;
-  }).join('');
-
-  const stars = PRODUCT_STARS.map(p=>`
-    <button type="button" class="cons-node${p.id===ACTIVE?' active':''}" data-prod="${p.id}"
-      style="--x:${p.x}%;--y:${p.y}%"
-      aria-pressed="${p.id===ACTIVE?'true':'false'}"
-      onclick="switchProduct('${p.id}')"
-      onmouseenter="consPeek('${p.id}')" onmouseleave="consPeek(null)"
-      onfocus="consPeek('${p.id}')" onblur="consPeek(null)">
-      <span class="cons-star-wrap"><span class="cons-star"></span></span>
-      <span class="cons-label">${p.name}</span>
-      <span class="cons-cap">${p.cap}</span>
+  const picker = PRODUCT_STARS.map(p=>`
+    <button type="button" class="prod-pick-btn${p.id===ACTIVE?' active':''}" data-prod="${p.id}"
+      aria-pressed="${p.id===ACTIVE?'true':'false'}" onclick="switchProduct('${p.id}')">
+      <span class="prod-pick-emoji">${p.emoji}</span>
+      <span><span class="prod-pick-name">${p.name}</span><span class="prod-pick-cap">${p.cap}</span></span>
     </button>`).join('');
 
   const panels = PRODUCT_STARS.map(p=>`
@@ -2313,54 +2199,23 @@ function pageProducts(){
     <h2 class="section-title">Products</h2>
     <p class="section-sub">AI-powered platforms built to transform how teams work and engage</p>
 
-    <!-- Product constellation selector -->
-    <div class="prod-cons">
-      <div class="prod-cons-head">
-        <span class="prod-cons-eyebrow">The Constellation</span>
-        <span class="prod-cons-hint">${PRODUCT_STARS.length} products, one system — select a star to open it</span>
-      </div>
-      <div class="prod-cons-plane">
-        <div class="cons-dust-layer" aria-hidden="true">${dust}</div>
-        <svg class="prod-cons-sky" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${links}</svg>
-        ${stars}
-      </div>
+    <div class="prod-step">
+      <span class="prod-step-num">STEP 01</span>
+      <span class="prod-step-title">Choose a product</span>
+      <span class="prod-step-hint">${PRODUCT_STARS.length} products — select one to preview it</span>
     </div>
+    <div class="prod-pick">${picker}</div>
 
+    <div class="prod-step">
+      <span class="prod-step-num">STEP 02</span>
+      <span class="prod-step-title">Explore it live</span>
+    </div>
     ${panels}
 
-    <!-- EasyFlow use cases -->
-    <div class="sub-label"><h3>EasyFlow Use Cases</h3><div class="sub-label-line"></div></div>
-    <div class="uc-menu">
-      <div class="uc-menu-card">
-        <div class="uc-menu-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
-        </div>
-        <div class="uc-menu-title">EasyFlow for HR</div>
-        <div class="uc-menu-desc">Recruitment, interviews, onboarding</div>
-      </div>
-      <div class="uc-menu-card">
-        <div class="uc-menu-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-        </div>
-        <div class="uc-menu-title">EasyFlow for Trainers</div>
-        <div class="uc-menu-desc">Training courses, modules, lessons</div>
-      </div>
-      <div class="uc-menu-card">
-        <div class="uc-menu-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
-        </div>
-        <div class="uc-menu-title">EasyFlow for Course Delivery</div>
-        <div class="uc-menu-desc">Interactive learning experiences</div>
-      </div>
-      <div class="uc-menu-card">
-        <div class="uc-menu-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <div class="uc-menu-title">EasyFlow for Product Presentation</div>
-        <div class="uc-menu-desc">Product demos, pitch decks</div>
-      </div>
+    <div class="prod-step" style="margin-top:44px">
+      <span class="prod-step-num">STEP 03</span>
+      <span class="prod-step-title">Visit the product sites</span>
     </div>
-    <div class="sub-label"><h3>Product Links</h3><div class="sub-label-line"></div></div>
     <div class="contact-grid">${productLinks}</div>`;
 }
 
@@ -3672,25 +3527,11 @@ function switchProduct(id){
     const iframe = panel.querySelector('iframe[data-src]');
     if(iframe && !iframe.src) iframe.src = iframe.dataset.src;
   }
-  document.querySelectorAll('.cons-node').forEach(n=>{
+  document.querySelectorAll('.prod-pick-btn').forEach(n=>{
     const on = n.dataset.prod === id;
     n.classList.toggle('active', on);
     n.setAttribute('aria-pressed', on ? 'true' : 'false');
   });
-  consLight(id);
-}
-
-// light the asterism lines that touch a given star
-function consLight(id){
-  document.querySelectorAll('.cons-link').forEach(l=>{
-    l.classList.toggle('lit', !!id && (l.dataset.a === id || l.dataset.b === id));
-  });
-}
-
-// hover/focus preview — falls back to the selected star on leave
-function consPeek(id){
-  const active = document.querySelector('.cons-node.active');
-  consLight(id || (active ? active.dataset.prod : null));
 }
 
 // ── SECTIONS PANEL ───────────────────────────────────────
