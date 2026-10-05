@@ -786,8 +786,6 @@ nav{
 .sg-cta{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-top:40px;padding:40px;background:var(--accent-sage)}
 .sg-h2{font-family:"Hind Siliguri",var(--sans);font-size:30px;font-weight:600;line-height:1.3;margin:10px 0 6px;color:var(--ink)}
 .sg-cta p{font-family:"Hind Siliguri",var(--sans);font-size:16px;color:var(--muted);margin:0}
-.sg-btn{background:var(--accent-purple);color:#fff;border:none;padding:15px 26px;font-family:"Hind Siliguri",var(--sans);font-size:16px;font-weight:600;cursor:pointer;transition:background .2s}
-.sg-btn:hover{background:var(--ink)}
 .sg-details{padding-top:40px;scroll-margin-top:120px}
 .sg-tabs{display:flex;gap:0;overflow-x:auto;border-bottom:1px solid var(--line);scrollbar-width:none}
 .sg-tabs::-webkit-scrollbar{display:none}
@@ -841,7 +839,6 @@ nav{
   .sg-facts>div+div{border-top:1px solid var(--line)}
   .sg-story{font-size:19px}
   .sg-cta{padding:28px 22px}
-  .sg-btn{width:100%}
   .sg-table thead{display:none}
   .sg-table tr{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
   .sg-table td{display:block;border:none;padding:4px 0;width:auto!important}
@@ -4930,7 +4927,7 @@ function pageAI4SG(){
         <article class="sg-story">
           <div class="sg-section-l">আমাদের গল্প</div>
           <p id="sg-s0">কিছু গল্প কোনো প্রোডাক্ট দিয়ে শুরু হয় না। শুরু হয় একটি সমস্যা দিয়ে, যেটা বারবার চোখের সামনে এসে দাঁড়ায়। আমাদের গল্পটাও এমন।</p>
-          <p id="sg-s1">২০২৩ সালে আমরা দেশের বিভিন্ন জেলার শিক্ষকদের জন্য একটি ব্লেন্ডেড এডুকেশন মডেলে গ্রাফিক ডিজাইনের প্রশিক্ষণ পরিচালনা করেছিলাম। পুরো প্রোগ্রামের সেশন নিয়েছিলেন অনিন্দ্য আহমেদ।</p>
+          <p id="sg-s1">২০২৩ সালে আমরা দেশের বিভিন্ন জেলার শিক্ষকদের জন্য একটি ব্লেন্ডেড এডুকেশন মডেলে গ্রাফিক ডিজাইনের ট্রেনিং পরিচালনা করেছিলাম। পুরো প্রোগ্রামের সেশন নিয়েছিলেন অনিন্দ্য আহমেদ।</p>
           <p>ঢাকায় থাকা এক্সপার্ট ট্রেইনারের সঙ্গে যুক্ত করা হয়েছিল দেশের বিভিন্ন জেলার স্কুলের মাল্টিমিডিয়া ক্লাসরুম। আর মাঠপর্যায়ের সমন্বয়ে বড় ভূমিকা রেখেছিল এটুআই-এর অ্যাম্বাসেডর নেটওয়ার্ক।</p>
           <p>এই জায়গায় আমরা বিশেষভাবে কৃতজ্ঞ এটুআই-এর অ্যাম্বাসেডর কো-অর্ডিনেটর আফজাল হোসেন সারওয়ারের প্রতি, যাঁর সহায়তায় পুরো কো-অর্ডিনেশন চলেছিল। লালমনিরহাটের ডালগ্রাম হাই স্কুলের শিক্ষক নাসিরুল ইসলামসহ যাঁরা মাঠপর্যায়ে এই লার্নিং এক্সপেরিয়েন্সকে বাস্তবে নিয়ে গেছেন, তাঁদের অবদানও আমাদের এই জার্নির গুরুত্বপূর্ণ অংশ।</p>
           <p>সেই সময়ের মডেলটি খুব কার্যকর ছিল। একজন এক্সপার্ট ট্রেইনার ঢাকায় বসে বিভিন্ন জেলার শিক্ষকদের একসঙ্গে স্কিল করাতে পারছিলেন, আর জেলার স্কুলগুলোর মাল্টিমিডিয়া ক্লাসরুম হয়ে উঠছিল লার্নিং হাব। ট্রেইনার একজন, কিন্তু তাঁর নলেজ পৌঁছে যাচ্ছিল অনেক জায়গায়, অনেক শিক্ষকের কাছে।</p>
@@ -4992,10 +4989,9 @@ function pageAI4SG(){
           <h2 class="sg-h2">শিক্ষক AI সক্ষমতা কর্মসূচি</h2>
           <p>লক্ষ্য, টিম, কারিকুলাম আর বাস্তবায়ন মডেল।</p>
         </div>
-        <button type="button" class="sg-btn" id="sgToggle" aria-expanded="false" aria-controls="sgDetails" onclick="ai4sgToggle()">বিস্তারিত কাঠামো জানুন <span aria-hidden="true">↓</span></button>
       </section>
 
-      <section class="sg-details" id="sgDetails" hidden>
+      <section class="sg-details" id="sgDetails">
         <div class="sg-tabs" role="tablist">
           <button type="button" role="tab" class="sg-tab active" data-tab="summary" aria-selected="true" onclick="ai4sgTab('summary')"><span>01</span>সারসংক্ষেপ ও সমস্যা</button>
           <button type="button" role="tab" class="sg-tab" data-tab="goals" aria-selected="false" onclick="ai4sgTab('goals')"><span>02</span>লক্ষ্য ও উদ্দেশ্য</button>
@@ -5005,30 +5001,31 @@ function pageAI4SG(){
         </div>
         <div class="sg-panel active" role="tabpanel" data-panel="summary">
 <h3>সারসংক্ষেপ</h3>
-<p>FutureMind বাংলাদেশের সব স্কুলের শিক্ষকদের জন্য একটি AI সক্ষমতা কর্মসূচি প্রস্তাব করছে: স্বল্প সময়ের অনলাইন/অফলাইন প্রশিক্ষণ, তারপর EasyFlow-এর LearnFlow এজেন্টের মাধ্যমে নিয়মিত সহায়তা।</p>
+<p>FutureMind বাংলাদেশের সব স্কুলের শিক্ষকদের জন্য একটি AI সক্ষমতা কর্মসূচি প্রস্তাব করছে: স্বল্প সময়ের অনলাইন/অফলাইন ট্রেনিং, তারপর EasyFlow-এর LearnFlow এজেন্টের মাধ্যমে নিয়মিত সাপোর্ট।</p>
 <p>কর্মসূচিটি চালাবে এমন একটি ফ্যাসিলিটেশন টিম, যারা ইতিমধ্যে শিক্ষা ও কর্পোরেট দুই খাতেই AI Proficiency Accelerator ও AI consultancy চালিয়েছে।</p>
 <h3>সমস্যা</h3>
 <ul class="sg-list">
-<li>শিক্ষকদের AI ও ডিজিটাল কনটেন্ট তৈরির দক্ষতা কম; মাল্টিমিডিয়া ক্লাসরুম (MMC) থাকলেও যথাযথ ব্যবহার হয় না।</li>
-<li>প্রচলিত cascade প্রশিক্ষণে (ToT → মাস্টার ট্রেইনার → বাকিরা) প্রতি ধাপে মান কমে, আর প্রশিক্ষকের সংখ্যা দিয়ে স্কেল আটকে যায়।</li>
-<li>এককালীন ওয়ার্কশপের পর কোনো follow-up থাকে না, তাই শেখা দক্ষতা ক্লাসরুমে টেকে না।</li>
+<li>শিক্ষকদের AI ও ডিজিটাল কনটেন্ট তৈরির স্কিল কম; মাল্টিমিডিয়া ক্লাসরুম (MMC) থাকলেও যথাযথ ব্যবহার হয় না।</li>
+<li>প্রচলিত cascade ট্রেনিংয়ে (ToT → মাস্টার ট্রেইনার → বাকিরা) প্রতি ধাপে কোয়ালিটি কমে, আর ট্রেইনারের সংখ্যা দিয়ে স্কেল আটকে যায়।</li>
+<li>এককালীন ওয়ার্কশপের পর কোনো follow-up থাকে না, তাই শেখা স্কিল ক্লাসরুমে টেকে না।</li>
 </ul>
         </div>
         <div class="sg-panel" role="tabpanel" data-panel="goals">
-<div class="sg-callout"><span class="sg-callout-l">মূল লক্ষ্য</span>প্রতিটি শিক্ষককে স্ট্যান্ডার্ড ট্রেনিং দিয়ে এবং তাঁর হাতে একটি AI এজেন্ট দিয়ে তাকে enable করা, যাতে তিনি নিজের শিক্ষার্থীদের enable করতে পারেন। একজন শিক্ষক বছরে শতাধিক শিক্ষার্থীকে পড়ান; তাই শিক্ষকের দক্ষতা বাড়লে দক্ষতা বহুগুণে ছড়ায়।</div>
+<div class="sg-callout"><span class="sg-callout-l">মূল লক্ষ্য</span>প্রতিটি শিক্ষককে স্ট্যান্ডার্ড ট্রেনিং দিয়ে এবং তাঁর হাতে একটি AI এজেন্ট দিয়ে তাকে enable করা, যাতে তিনি নিজের শিক্ষার্থীদের enable করতে পারেন। একজন শিক্ষক বছরে শতাধিক শিক্ষার্থীকে পড়ান; তাই শিক্ষকের স্কিল বাড়লে সেই স্কিল বহুগুণে ছড়ায়।</div>
 <h3>নির্দিষ্ট উদ্দেশ্য</h3>
 <ol class="sg-steps">
-<li>শিক্ষককে AI দিয়ে দ্রুত ও নির্ভুল পাঠ পরিকল্পনা, ছবি, স্লাইড, মিনি ভিডিও ও কুইজ তৈরিতে দক্ষ করা।</li>
+<li>শিক্ষককে AI দিয়ে দ্রুত ও নির্ভুল লেসন প্ল্যান, ছবি, স্লাইড, মিনি ভিডিও ও কুইজ তৈরিতে দক্ষ করা।</li>
 <li>প্রতিটি শিক্ষককে নিজের বিষয়ভিত্তিক AI Teaching Assistant তৈরি ও ব্যবহারে সক্ষম করা।</li>
+<li>শিক্ষার্থীরা কোন কাজ নিজে করবে আর কোন কাজে AI ব্যবহার করবে, সেই সীমা (কগনিটিভ ফ্লোরিং) ঠিক করতে শিক্ষককে একটি স্পষ্ট গাইডলাইন দেওয়া।</li>
 <li>মাল্টিমিডিয়া ক্লাসরুমের কার্যকর ব্যবহার নিশ্চিত করা।</li>
 <li>প্রতি উপজেলা/জেলায় মাস্টার ট্রেইনার ও শিক্ষক-নেটওয়ার্ক গড়ে তোলা।</li>
-<li>প্রশিক্ষণের পরেও EasyFlow-এ নিয়মিত অনুশীলন, assessment ও অগ্রগতি পরিমাপ করা।</li>
+<li>ট্রেনিংয়ের পরেও EasyFlow-এ নিয়মিত প্র্যাকটিস, assessment ও প্রোগ্রেস ট্র্যাক করা।</li>
 </ol>
         </div>
         <div class="sg-panel" role="tabpanel" data-panel="team">
 <p>যে টিম এই কর্মসূচি পরিচালনা করবে, তারা শিক্ষা, কর্পোরেট ও blended — তিন ধরনের প্রোগ্রামই মাঠে চালিয়েছে।</p>
-<table class="sg-table "><thead><tr><th>ক্ষেত্র</th><th>অভিজ্ঞতা</th></tr></thead><tbody><tr><td data-l="ক্ষেত্র">AI Proficiency Accelerator (AIPA) — শিক্ষা</td><td data-l="অভিজ্ঞতা">ঢাকা বিশ্ববিদ্যালয়ের ফ্যাকাল্টিদের জন্য ৬ দিন, ১২ সেশন, ৩৬ ঘণ্টার AIPA (Finance &amp; Accounting track); পার্বত্য চট্টগ্রামে UNDP/MoCHTA-র উদ্যোগে ৩০ জন শিক্ষককে মাস্টার ট্রেইনার করার ৩ দিনের ToT</td></tr><tr><td data-l="ক্ষেত্র">AIPA — কর্পোরেট</td><td data-l="অভিজ্ঞতা">শীর্ষ ব্যবস্থাপনার জন্য AI Proficiency Accelerator (যেমন Ispahani-তে ৬ ঘণ্টার ওয়ার্কশপ)</td></tr><tr><td data-l="ক্ষেত্র">AI consultancy</td><td data-l="অভিজ্ঞতা">ব্যাংকিং, ফার্মা, FMCG ও ডিস্ট্রিবিউশন — চার খাতে AI কৌশল ও রোডম্যাপ</td></tr><tr><td data-l="ক্ষেত্র">Blended education</td><td data-l="অভিজ্ঞতা">দেশব্যাপী মাল্টিমিডিয়া ক্লাসরুম কার্যক্রম; a2i ambassador হাই স্কুল শিক্ষকদের মেন্টর হিসেবে নিয়ে অনলাইন + অফলাইন প্রোগ্রাম</td></tr></tbody></table>
-<h3>প্রশিক্ষক প্যানেল</h3>
+<table class="sg-table "><thead><tr><th>ক্ষেত্র</th><th>অভিজ্ঞতা</th></tr></thead><tbody><tr><td data-l="ক্ষেত্র">AI Proficiency Accelerator (AIPA) — শিক্ষা</td><td data-l="অভিজ্ঞতা">ঢাকা বিশ্ববিদ্যালয়ের ফ্যাকাল্টিদের জন্য ৬ দিন, ১২ সেশন, ৩৬ ঘণ্টার AIPA (Finance &amp; Accounting track); পার্বত্য চট্টগ্রামে UNDP/MoCHTA-র উদ্যোগে ৩০ জন শিক্ষককে মাস্টার ট্রেইনার করার ৩ দিনের ToT</td></tr><tr><td data-l="ক্ষেত্র">AIPA — কর্পোরেট</td><td data-l="অভিজ্ঞতা">সিনিয়র ম্যানেজমেন্টের জন্য AI Proficiency Accelerator (যেমন Ispahani-তে ৬ ঘণ্টার ওয়ার্কশপ)</td></tr><tr><td data-l="ক্ষেত্র">AI consultancy</td><td data-l="অভিজ্ঞতা">ব্যাংকিং, ফার্মা, FMCG ও ডিস্ট্রিবিউশন — চার খাতে AI স্ট্র্যাটেজি ও রোডম্যাপ</td></tr><tr><td data-l="ক্ষেত্র">Blended education</td><td data-l="অভিজ্ঞতা">দেশব্যাপী মাল্টিমিডিয়া ক্লাসরুম কার্যক্রম; a2i ambassador হাই স্কুল শিক্ষকদের মেন্টর হিসেবে নিয়ে অনলাইন + অফলাইন প্রোগ্রাম</td></tr></tbody></table>
+<h3>ট্রেইনার প্যানেল</h3>
 <div class="sg-people">
 <div><b>মোহাম্মদ আবদুল হাদী ভুঁইয়া</b><span>কো-ফাউন্ডার, FutureMind AI</span></div>
 <div><b>কানিজ ফাতেমা তামান্না</b><span>সফটওয়্যার সলিউশন আর্কিটেক্ট</span></div>
@@ -5039,18 +5036,18 @@ function pageAI4SG(){
         </div>
         <div class="sg-panel" role="tabpanel" data-panel="curriculum">
 <p>৩ দিনের কোর ওয়ার্কশপ (শিক্ষক AIPA-র পরীক্ষিত কাঠামো) + ৪ ঘণ্টার মাসিক blended refresher। প্রতিটি মডিউল শেষে শিক্ষকের হাতে থাকে একটি বাস্তব আউটপুট।</p>
-<table class="sg-table "><thead><tr><th>মডিউল</th><th>বিষয়বস্তু</th><th>ফলাফল</th></tr></thead><tbody><tr><td data-l="মডিউল">১. AI ও ডিজিটাল ক্লাসরুমের ভিত্তি</td><td data-l="বিষয়বস্তু">AI-এর মৌলিক ধারণা, MMC ব্যবহার, রক্ষণাবেক্ষণ ও ট্রাবলশুটিং</td><td data-l="ফলাফল">MMC আত্মবিশ্বাসের সাথে ব্যবহার</td></tr><tr><td data-l="মডিউল">২. AI দিয়ে কনটেন্ট তৈরি</td><td data-l="বিষয়বস্তু">সঠিক প্রম্পটে ছবি, ডায়াগ্রাম, স্টোরি-ভিত্তিক ব্যাখ্যা, স্লাইড, মিনি ভিডিও</td><td data-l="ফলাফল">নিজ বিষয়ে একটি পূর্ণ মিনি কোর্স</td></tr><tr><td data-l="মডিউল">৩. শিক্ষণ পদ্ধতিতে AI</td><td data-l="বিষয়বস্তু">Augment/Enhance নীতি, নৈতিক ও দায়িত্বশীল ব্যবহার</td><td data-l="ফলাফল">ক্লাসে AI ব্যবহারের নিজস্ব নিয়ম</td></tr><tr><td data-l="মডিউল">৪. DIG+8 ও AI Teaching Assistant</td><td data-l="বিষয়বস্তু">DIG+8 ফ্রেমওয়ার্কে কোর্স, কুইজ, assessment; ফ্রি টুলে নিজস্ব এজেন্ট</td><td data-l="ফলাফল">বিষয়ভিত্তিক AI সহকারী চালু</td></tr><tr><td data-l="মডিউল">৫. প্রশিক্ষকের ভূমিকায় (ToT)</td><td data-l="বিষয়বস্তু">গ্রুপ উপস্থাপনা, রিহার্সাল, ফিডব্যাক</td><td data-l="ফলাফল">সার্টিফাইড মাস্টার ট্রেইনার</td></tr><tr><td data-l="মডিউল">৬. মাসিক refresher (blended)</td><td data-l="বিষয়বস্তু">৪ ঘণ্টার ছোট মডিউল, gamification, স্বীকৃতি (ব্যাজ, সার্টিফিকেট)</td><td data-l="ফলাফল">দক্ষতা টিকে থাকা, নিয়মিত অংশগ্রহণ</td></tr></tbody></table>
+<table class="sg-table "><thead><tr><th>মডিউল</th><th>কনটেন্ট</th><th>আউটকাম</th></tr></thead><tbody><tr><td data-l="মডিউল">১. AI ও ডিজিটাল ক্লাসরুমের ভিত্তি</td><td data-l="কনটেন্ট">AI-এর বেসিক ধারণা, MMC ব্যবহার, মেইনটেন্যান্স ও ট্রাবলশুটিং</td><td data-l="আউটকাম">MMC আত্মবিশ্বাসের সাথে ব্যবহার</td></tr><tr><td data-l="মডিউল">২. AI দিয়ে কনটেন্ট তৈরি</td><td data-l="কনটেন্ট">সঠিক প্রম্পটে ছবি, ডায়াগ্রাম, স্টোরি-ভিত্তিক ব্যাখ্যা, স্লাইড, মিনি ভিডিও</td><td data-l="আউটকাম">নিজ বিষয়ে একটি পূর্ণ মিনি কোর্স</td></tr><tr><td data-l="মডিউল">৩. টিচিং মেথডে AI</td><td data-l="কনটেন্ট">Augment/Enhance নীতি, এথিক্যাল ও রেসপন্সিবল ইউজ</td><td data-l="আউটকাম">ক্লাসে AI ব্যবহারের নিজস্ব নিয়ম</td></tr><tr><td data-l="মডিউল">৪. কগনিটিভ ফ্লোরিং: AI কতটুকু, কোথায় নয়</td><td data-l="কনটেন্ট">শেখার জন্য শিক্ষার্থীর নিজের চিন্তা ও চেষ্টার যে ন্যূনতম স্তর থাকা দরকার, তা ধরে রাখা: কোন কাজ শিক্ষার্থী নিজে করবে আর কোথায় AI-এর সাহায্য নেবে, বয়স ও বিষয় অনুযায়ী সেই সীমা ঠিক করা। পাশাপাশি AI-এর ওভারইউজ বা আনকনশাস ইউজের ঝুঁকি চেনা: নিজে ভাবা, লেখা ও প্রবলেম সলভিংয়ের স্কিল দুর্বল হয়ে পড়া, আর AI-এর ভুল উত্তর যাচাই না করেই মেনে নেওয়া।</td><td data-l="আউটকাম">শিক্ষার্থীদের জন্য “নিজে করবে / AI দিয়ে করবে” গাইডলাইন এবং ওভারইউজ চেনার চেকলিস্ট</td></tr><tr><td data-l="মডিউল">৫. DIG+8 ও AI Teaching Assistant</td><td data-l="কনটেন্ট">DIG+8 ফ্রেমওয়ার্কে কোর্স, কুইজ, assessment; ফ্রি টুলে নিজস্ব এজেন্ট</td><td data-l="আউটকাম">বিষয়ভিত্তিক AI অ্যাসিস্ট্যান্ট চালু</td></tr><tr><td data-l="মডিউল">৬. ট্রেইনারের ভূমিকায় (ToT)</td><td data-l="কনটেন্ট">গ্রুপ প্রেজেন্টেশন, রিহার্সাল, ফিডব্যাক</td><td data-l="আউটকাম">সার্টিফাইড মাস্টার ট্রেইনার</td></tr><tr><td data-l="মডিউল">৭. মাসিক refresher (blended)</td><td data-l="কনটেন্ট">৪ ঘণ্টার ছোট মডিউল, gamification, রিকগনিশন (ব্যাজ, সার্টিফিকেট)</td><td data-l="আউটকাম">স্কিল টিকে থাকা, নিয়মিত অংশগ্রহণ</td></tr></tbody></table>
         </div>
         <div class="sg-panel" role="tabpanel" data-panel="model">
-<p>কর্মসূচি চলবে তিন ধাপে; তৃতীয় ধাপটিই স্কেলের চাবিকাঠি, কারণ সেখানে প্রশিক্ষকের জায়গা নেয় LearnFlow এজেন্ট।</p>
+<p>কর্মসূচি চলবে তিন ধাপে; তৃতীয় ধাপটিই স্কেলের চাবিকাঠি, কারণ সেখানে ট্রেইনারের জায়গা নেয় LearnFlow এজেন্ট।</p>
 <ol class="sg-steps">
-<li><b>কোর প্রশিক্ষণ (অনলাইন বা অফলাইন):</b> ৩ দিনের ওয়ার্কশপ। ১৫–৩০ জনের ব্যাচ, জনপ্রতি ল্যাপটপ ও ইন্টারনেট লাগবে; অনলাইনে লাইভ সেশন + রেকর্ডিং।</li>
+<li><b>কোর ট্রেনিং (অনলাইন বা অফলাইন):</b> ৩ দিনের ওয়ার্কশপ। ১৫–৩০ জনের ব্যাচ, জনপ্রতি ল্যাপটপ ও ইন্টারনেট লাগবে; অনলাইনে লাইভ সেশন + রেকর্ডিং।</li>
 <li><b>মাস্টার ট্রেইনার ও মেন্টর নেটওয়ার্ক:</b> প্রতি ব্যাচ থেকে মাস্টার ট্রেইনার নির্বাচন, যারা a2i ambassador মেন্টর মডেলের মতো জেলা/উপজেলায় পরের ব্যাচ চালাবেন।</li>
-<li><b>নিয়মিত augmentation (EasyFlow/LearnFlow):</b> প্রশিক্ষণের পর প্রতিটি শিক্ষক বাংলায় একটি AI এজেন্ট পান, যা:
+<li><b>নিয়মিত augmentation (EasyFlow/LearnFlow):</b> ট্রেনিংয়ের পর প্রতিটি শিক্ষক বাংলায় একটি AI এজেন্ট পান, যা:
 <ul class="sg-list">
-<li>সাপ্তাহিক ছোট অনুশীলন ও কুইজ পাঠায়, উত্তর (টেক্সট/ভয়েস/ছবি) AI দিয়ে মূল্যায়ন করে।</li>
-<li>শিক্ষকের দুর্বলতা ধরে পরবর্তী অনুশীলন ঠিক করে (শিক্ষকের জন্য learning loop)।</li>
-<li>ক্লাসের জন্য পাঠ পরিকল্পনা ও assessment তৈরিতে সহকারী হিসেবে কাজ করে, যা শিক্ষক নিজের শিক্ষার্থীদের উপর প্রয়োগ করেন।</li>
+<li>সাপ্তাহিক ছোট প্র্যাকটিস ও কুইজ পাঠায়, উত্তর (টেক্সট/ভয়েস/ছবি) AI দিয়ে ইভ্যালুয়েট করে।</li>
+<li>শিক্ষকের দুর্বলতা ধরে পরবর্তী প্র্যাকটিস ঠিক করে (শিক্ষকের জন্য learning loop)।</li>
+<li>ক্লাসের জন্য লেসন প্ল্যান ও assessment তৈরিতে অ্যাসিস্ট্যান্ট হিসেবে কাজ করে, যা শিক্ষক নিজের শিক্ষার্থীদের উপর প্রয়োগ করেন।</li>
 <li>লিডারবোর্ড, ব্যাজ ও সার্টিফিকেটে অংশগ্রহণ ধরে রাখে; অ্যাপ/SMS নোটিফিকেশনে মনে করিয়ে দেয়।</li>
 </ul></li>
 </ol>
@@ -5062,7 +5059,7 @@ function pageAI4SG(){
         <div class="sg-past-grid">
           <article class="sg-past-card">
             <div class="sg-past-tag">২০২৩ · ব্লেন্ডেড এডুকেশন</div>
-            <h3>শিক্ষকদের জন্য গ্রাফিক ডিজাইন প্রশিক্ষণ</h3>
+            <h3>শিক্ষকদের জন্য গ্রাফিক ডিজাইন ট্রেনিং</h3>
             <p>ঢাকা থেকে একজন এক্সপার্ট ট্রেইনার, আর বিভিন্ন জেলার স্কুলের মাল্টিমিডিয়া ক্লাসরুম হয়ে উঠেছিল লার্নিং হাব।</p>
             <ul>
               <li>ট্রেইনার: অনিন্দ্য আহমেদ</li>
@@ -5092,15 +5089,6 @@ function pageAI4SG(){
         </div>
       </section>
     </div>`;
-}
-
-function ai4sgToggle(){
-  const d = document.getElementById('sgDetails'), b = document.getElementById('sgToggle');
-  const open = d.hidden;
-  d.hidden = !open;
-  b.setAttribute('aria-expanded', open);
-  b.innerHTML = open ? 'বিস্তারিত লুকান <span aria-hidden="true">↑</span>' : 'বিস্তারিত কাঠামো জানুন <span aria-hidden="true">↓</span>';
-  if(open) d.scrollIntoView({behavior:'smooth', block:'start'});
 }
 
 function ai4sgGo(id){
