@@ -816,8 +816,8 @@ nav{
 .sg-table th{text-align:left;font-size:14px;font-weight:600;color:var(--muted);padding:0 16px 10px 0;border-bottom:2px solid var(--ink)}
 .sg-table td{padding:16px 16px 16px 0;border-bottom:1px solid var(--line);vertical-align:top}
 .sg-table td:first-child{font-weight:600;color:var(--ink);width:30%}
-.sg-people{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.sg-people>div{background:var(--paper);padding:20px}
+.sg-people{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.sg-people>div{background:var(--paper);border:1px solid var(--line);padding:20px}
 .sg-people b{display:block;font-size:16px;line-height:1.4}
 .sg-people span{display:block;font-size:14px;color:var(--muted);margin-top:4px}
 @media(max-width:1000px){
@@ -832,7 +832,6 @@ nav{
   .sg-story{font-size:19px}
   .sg-cta{padding:28px 22px}
   .sg-btn{width:100%}
-  .sg-people{grid-template-columns:1fr}
   .sg-table thead{display:none}
   .sg-table tr{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
   .sg-table td{display:block;border:none;padding:4px 0;width:auto!important}
@@ -5023,8 +5022,10 @@ function pageAI4SG(){
 <h3>প্রশিক্ষক প্যানেল</h3>
 <div class="sg-people">
 <div><b>মোহাম্মদ আবদুল হাদী ভুঁইয়া</b><span>কো-ফাউন্ডার, FutureMind AI</span></div>
-<div><b>হাসিব হাসান চৌধুরী</b><span>ক্রিয়েটিভ ডিরেক্টর</span></div>
-<div><b>তৌফিকুর রহমান</b><span>ইনোভেশন এক্সপার্ট, a2i</span></div>
+<div><b>কানিজ ফাতেমা তামান্না</b><span>সফটওয়্যার সলিউশন আর্কিটেক্ট</span></div>
+<div><b>রুহুল আমিন</b><span>এআই / এআর আর্কিটেক্ট</span></div>
+<div><b>তালেমুল ইসলাম</b><span>ওয়ার্কফ্লো অটোমেশন স্পেশালিস্ট</span></div>
+<div><b>দেবব্রত সরকার</b><span>ইনফ্রাস্ট্রাকচার স্পেশালিস্ট</span></div>
 </div>
         </div>
         <div class="sg-panel" role="tabpanel" data-panel="curriculum">
@@ -5044,7 +5045,6 @@ function pageAI4SG(){
 <li>লিডারবোর্ড, ব্যাজ ও সার্টিফিকেটে অংশগ্রহণ ধরে রাখে; অ্যাপ/SMS নোটিফিকেশনে মনে করিয়ে দেয়।</li>
 </ul></li>
 </ol>
-<p>প্রতিটি স্তরের ড্যাশবোর্ড (শিক্ষক → মাস্টার ট্রেইনার → জেলা/কর্তৃপক্ষ) অগ্রগতি দেখায়। শুরুতে ১০টি কেন্দ্রে পরীক্ষা করে তারপর বাড়ানো হবে।</p>
         </div>
         <div class="sg-panel" role="tabpanel" data-panel="roadmap">
 <table class="sg-table sg-table-phase"><thead><tr><th>ধাপ</th><th>কাজ</th><th>পরিমাপযোগ্য ফলাফল</th></tr></thead><tbody><tr><td data-l="ধাপ">পাইলট (৩ মাস)</td><td data-l="কাজ">১০টি কেন্দ্র, ৩০ জনের ব্যাচ, LearnFlow চালু</td><td data-l="পরিমাপযোগ্য ফলাফল">শিক্ষকের pre→post স্কোর, ৩০ দিনে সক্রিয় শিক্ষক %, তৈরি AI Assistant সংখ্যা</td></tr><tr><td data-l="ধাপ">সম্প্রসারণ (৬–১২ মাস)</td><td data-l="কাজ">মাস্টার ট্রেইনার দিয়ে জেলাভিত্তিক cascade</td><td data-l="পরিমাপযোগ্য ফলাফল">মাস্টার ট্রেইনার সংখ্যা, মাসিক refresher সম্পন্নতার হার</td></tr><tr><td data-l="ধাপ">জাতীয় (২য় বছর)</td><td data-l="কাজ">সব স্কুলে অনলাইন-প্রথম মডেল</td><td data-l="পরিমাপযোগ্য ফলাফল">শিক্ষার্থীর learning gain (শিক্ষকের ক্লাসের pre/post)</td></tr></tbody></table>
