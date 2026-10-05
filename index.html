@@ -820,6 +820,16 @@ nav{
 .sg-people>div{background:var(--paper);border:1px solid var(--line);padding:20px}
 .sg-people b{display:block;font-size:16px;line-height:1.4}
 .sg-people span{display:block;font-size:14px;color:var(--muted);margin-top:4px}
+.sg-past{padding:72px 0 8px}
+.sg-past .sg-h2{margin-bottom:28px}
+.sg-past-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.sg-past-card{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--accent-purple);padding:26px 24px;font-family:"Hind Siliguri",var(--sans)}
+.sg-past-tag{font-size:14px;font-weight:600;color:var(--accent);margin-bottom:10px}
+.sg-past-card h3{font-size:21px;font-weight:600;line-height:1.4;color:var(--ink);margin:0 0 10px}
+.sg-past-card p{font-size:16px;line-height:1.7;color:var(--ink-2);margin:0 0 14px}
+.sg-past-card ul{list-style:none;margin:0;padding:14px 0 0;border-top:1px solid var(--line-soft)}
+.sg-past-card li{position:relative;padding-left:18px;font-size:15px;line-height:1.6;color:var(--muted);margin-bottom:6px}
+.sg-past-card li::before{content:"";position:absolute;left:0;top:.75em;width:8px;height:2px;background:var(--accent)}
 @media(max-width:1000px){
   .sg-body{grid-template-columns:1fr;gap:0}
   .sg-toc{position:static;max-height:none;order:-1;padding:40px 0 0}
@@ -5044,6 +5054,41 @@ function pageAI4SG(){
 <li>লিডারবোর্ড, ব্যাজ ও সার্টিফিকেটে অংশগ্রহণ ধরে রাখে; অ্যাপ/SMS নোটিফিকেশনে মনে করিয়ে দেয়।</li>
 </ul></li>
 </ol>
+        </div>
+      </section>
+      <section class="sg-past">
+        <div class="sg-section-l">আগের প্রোগ্রাম</div>
+        <h2 class="sg-h2">যেসব কাজ থেকে এই উদ্যোগের শুরু</h2>
+        <div class="sg-past-grid">
+          <article class="sg-past-card">
+            <div class="sg-past-tag">২০২৩ · ব্লেন্ডেড এডুকেশন</div>
+            <h3>শিক্ষকদের জন্য গ্রাফিক ডিজাইন প্রশিক্ষণ</h3>
+            <p>ঢাকা থেকে একজন এক্সপার্ট ট্রেইনার, আর বিভিন্ন জেলার স্কুলের মাল্টিমিডিয়া ক্লাসরুম হয়ে উঠেছিল লার্নিং হাব।</p>
+            <ul>
+              <li>ট্রেইনার: অনিন্দ্য আহমেদ</li>
+              <li>মাঠপর্যায়ে সমন্বয়: এটুআই অ্যাম্বাসেডর নেটওয়ার্ক</li>
+              <li>ডালগ্রাম হাই স্কুল, লালমনিরহাটসহ বিভিন্ন জেলা</li>
+            </ul>
+          </article>
+          <article class="sg-past-card">
+            <div class="sg-past-tag">ইউএনডিপি / MoCHTA · টিওটি</div>
+            <h3>পার্বত্য চট্টগ্রামের শিক্ষকদের জন্য এআই কারিকুলাম</h3>
+            <p>শিক্ষকরা যেন এআই দিয়ে নিজের ক্লাসরুমের কনটেন্ট বানাতে পারেন এবং শিক্ষার্থীদের রেসপন্সিবল ইউজ সম্পর্কে সচেতন করতে পারেন।</p>
+            <ul>
+              <li>ট্রেনিং অব ট্রেইনার্স (টিওটি) পদ্ধতি</li>
+              <li>৩ দিনের ToT, মাস্টার ট্রেইনার তৈরি</li>
+              <li>এআই ও ডিজিটাল স্কিলস</li>
+            </ul>
+          </article>
+          <article class="sg-past-card">
+            <div class="sg-past-tag">AIPA · উচ্চশিক্ষা</div>
+            <h3>ঢাকা বিশ্ববিদ্যালয়ের ফ্যাকাল্টিদের জন্য AIPA</h3>
+            <p>শিক্ষকদের জন্য AI Proficiency Accelerator, Finance &amp; Accounting track।</p>
+            <ul>
+              <li>৬ দিন, ১২ সেশন</li>
+              <li>মোট ৩৬ ঘণ্টা</li>
+            </ul>
+          </article>
         </div>
       </section>
     </div>`;
