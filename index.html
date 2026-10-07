@@ -777,6 +777,8 @@ nav{
 .sg-video-text .sg-section-l{margin-bottom:10px}
 .sg-video-text h2{font-family:"Hind Siliguri",var(--sans);font-size:28px;font-weight:600;line-height:1.3;margin:0 0 10px}
 .sg-video-text p{font-family:"Hind Siliguri",var(--sans);font-size:16px;color:var(--muted);line-height:1.6;margin:0}
+.sg-story .sg-video{border-bottom:0;border-top:1px solid var(--line);margin:40px 0 0;scroll-margin-top:150px}
+.sg-story .sg-video-text p{margin:0}
 @media (max-width:700px){.sg-video{flex-direction:column;align-items:stretch;gap:20px}.sg-video-frame{width:100%;max-width:320px;margin:0 auto}}
 .sg-story{max-width:760px;padding:56px 0 24px;font-family:"Noto Serif Bengali","Hind Siliguri",Georgia,serif;font-size:21px;line-height:1.95;color:var(--ink)}
 .sg-story [id^="sg-s"]{scroll-margin-top:150px}
@@ -4940,16 +4942,6 @@ function pageAI4SG(){
         <div><b>প্রো বোনো</b><span>কমার্শিয়াল প্রোডাক্ট নয়, চলমান সোশ্যাল-গুড কন্ট্রিবিউশন</span></div>
       </div>
 
-      <section class="sg-video" aria-label="AI4SG quick overview video">
-        <div class="sg-video-frame">
-          <iframe src="https://www.youtube-nocookie.com/embed/toWmnBuP9qY?rel=0&amp;playsinline=1" title="AI4SG — 2 min quick overview" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="sg-video-text">
-          <div class="sg-section-l">২ মিনিটের কুইক ওভারভিউ</div>
-          <h2>এক নজরে এআই ফর টিচার্স</h2>
-          <p>পুরো গল্প পড়ার আগে দুই মিনিটে দেখে নিন — কীভাবে একজন ট্রেইনার আর এআই এজেন্ট মিলে শিক্ষকের স্কিলকে স্কেল করে।</p>
-        </div>
-      </section>
 
       <div class="sg-body">
         <article class="sg-story">
@@ -4991,6 +4983,16 @@ function pageAI4SG(){
           <p>কীভাবে একজন মানুষের স্কিলকে আরও বেশি মানুষের কাছে পৌঁছে দেওয়া যায়? আর একই সঙ্গে কীভাবে সেই স্কিলকে আরও দীর্ঘস্থায়ী করা যায়?</p>
           <p>আমাদের উত্তর এখন তিন শব্দে, স্কেলিং দ্য স্কিল। লাইভ ফ্লো স্কেলস দ্য স্কিল, কোর্স ফ্লো মেকস দ্য স্কিল পারসিস্টেন্ট।</p>
           <p>আর এই দুইয়ের সমন্বয়েই আমাদের এআই ফর টিচার্স প্রোগ্রাম। এটা কোনো কমার্শিয়াল প্রোডাক্ট নয়, বরং একটি চলমান সোশ্যাল-গুড কন্ট্রিবিউশন।</p>
+          <section class="sg-video" id="sg-video" aria-label="AI4SG quick overview video">
+            <div class="sg-video-frame">
+              <iframe src="https://www.youtube-nocookie.com/embed/toWmnBuP9qY?rel=0&amp;playsinline=1" title="AI4SG — 2 min quick overview" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="sg-video-text">
+              <div class="sg-section-l">২ মিনিটের কুইক ওভারভিউ</div>
+              <h2>এক নজরে এআই ফর টিচার্স</h2>
+              <p>পুরো গল্পটা দুই মিনিটে দেখে নিন — কীভাবে একজন ট্রেইনার আর এআই এজেন্ট মিলে শিক্ষকের স্কিলকে স্কেল করে।</p>
+            </div>
+          </section>
         </article>
         <aside class="sg-toc" aria-label="গল্পের সূচি">
           <div class="sg-section-l">সূচি</div>
@@ -5006,6 +5008,7 @@ function pageAI4SG(){
             <li><button type="button" data-target="sg-s28" onclick="ai4sgGo('sg-s28')">একটি সোশ্যাল-গুড উদ্যোগ</button></li>
             <li><button type="button" data-target="sg-s31" onclick="ai4sgGo('sg-s31')">শিক্ষক যখন মাল্টিপ্লায়ার</button></li>
             <li><button type="button" data-target="sg-s33" onclick="ai4sgGo('sg-s33')">একটি প্রশ্নের উত্তর</button></li>
+            <li><button type="button" data-target="sg-video" onclick="ai4sgGo('sg-video')">২ মিনিটের কুইক ওভারভিউ</button></li>
             <li class="sg-toc-cta"><button type="button" data-target="sgCta" onclick="ai4sgGo('sgCta')">প্রস্তাবনা ও বিস্তারিত কাঠামো →</button></li>
           </ol>
         </aside>
@@ -5093,6 +5096,16 @@ function pageAI4SG(){
               <li>ট্রেইনার: অনিন্দ্য আহমেদ</li>
               <li>মাঠপর্যায়ে সমন্বয়: এটুআই অ্যাম্বাসেডর নেটওয়ার্ক</li>
               <li>ডালগ্রাম হাই স্কুল, লালমনিরহাটসহ বিভিন্ন জেলা</li>
+            </ul>
+          </article>
+          <article class="sg-past-card">
+            <div class="sg-past-tag">২০২৪ · প্লেসমেন্ট প্রোগ্রাম</div>
+            <h3>হার পাওয়ার × বিল্ডনেশন সফট-লঞ্চ</h3>
+            <p>ডিওআইসিটি-র হার পাওয়ার প্রজেক্টের নারী ট্রেইনিদের জন্য বিল্ডনেশন (a2i–BuildCon)-এর ব্লেন্ডেড লার্নিং ও জব প্লেসমেন্ট পাথওয়ে।</p>
+            <ul>
+              <li>ট্র্যাক: মেডিকেল স্ক্রাইব ও গ্রাফিক্স ফ্রিল্যান্সিং, পরে মিউচুয়াল ফান্ড সেলিং এজেন্ট</li>
+              <li>লেভেল টেস্টিং দিয়ে ট্রেইনি বাছাই</li>
+              <li>সফট-লঞ্চ: ২ এপ্রিল ২০২৪, লালমনিরহাট সদর এসআরডিএল সেন্টার থেকে অনলাইনে যুক্ত ট্রেইনিরা</li>
             </ul>
           </article>
           <article class="sg-past-card">
