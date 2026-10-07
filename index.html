@@ -771,6 +771,13 @@ nav{
 .sg-facts b{display:block;font-family:"Hind Siliguri",var(--sans);font-size:32px;font-weight:600;color:var(--accent-purple);line-height:1.2}
 .sg-facts span{display:block;font-family:"Hind Siliguri",var(--sans);font-size:15px;color:var(--muted);line-height:1.5;margin-top:6px}
 .sg-body{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:72px;align-items:start}
+.sg-video{display:flex;gap:40px;align-items:center;padding:40px 0;border-bottom:1px solid var(--line);margin-bottom:48px}
+.sg-video-frame{flex:0 0 auto;width:300px;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.sg-video-frame iframe{width:100%;height:100%;border:0;display:block}
+.sg-video-text .sg-section-l{margin-bottom:10px}
+.sg-video-text h2{font-family:"Hind Siliguri",var(--sans);font-size:28px;font-weight:600;line-height:1.3;margin:0 0 10px}
+.sg-video-text p{font-family:"Hind Siliguri",var(--sans);font-size:16px;color:var(--muted);line-height:1.6;margin:0}
+@media (max-width:700px){.sg-video{flex-direction:column;align-items:stretch;gap:20px}.sg-video-frame{width:100%;max-width:320px;margin:0 auto}}
 .sg-story{max-width:760px;padding:56px 0 24px;font-family:"Noto Serif Bengali","Hind Siliguri",Georgia,serif;font-size:21px;line-height:1.95;color:var(--ink)}
 .sg-story [id^="sg-s"]{scroll-margin-top:150px}
 .sg-toc{position:sticky;top:130px;padding:56px 0 24px;max-height:calc(100vh - 150px);overflow-y:auto}
@@ -4928,6 +4935,17 @@ function pageAI4SG(){
         <div><b>১ + ২০০</b><span>একজন ট্রেইনার আর ২০০টি এআই এজেন্ট, ২০০ জন পার্টিসিপ্যান্টের পাশে</span></div>
         <div><b>প্রো বোনো</b><span>কমার্শিয়াল প্রোডাক্ট নয়, চলমান সোশ্যাল-গুড কন্ট্রিবিউশন</span></div>
       </div>
+
+      <section class="sg-video" aria-label="AI4SG quick overview video">
+        <div class="sg-video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/toWmnBuP9qY?rel=0&amp;playsinline=1" title="AI4SG — 2 min quick overview" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="sg-video-text">
+          <div class="sg-section-l">২ মিনিটের কুইক ওভারভিউ</div>
+          <h2>এক নজরে এআই ফর টিচার্স</h2>
+          <p>পুরো গল্প পড়ার আগে দুই মিনিটে দেখে নিন — কীভাবে একজন ট্রেইনার আর এআই এজেন্ট মিলে শিক্ষকের স্কিলকে স্কেল করে।</p>
+        </div>
+      </section>
 
       <div class="sg-body">
         <article class="sg-story">
