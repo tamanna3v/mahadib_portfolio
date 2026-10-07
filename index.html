@@ -765,11 +765,10 @@ nav{
 .sg-h1{font-family:"Hind Siliguri",var(--sans);font-size:clamp(44px,7vw,80px);font-weight:600;line-height:1.1;letter-spacing:-0.01em;margin:18px 0 6px;color:var(--accent-purple)}
 .sg-tagline{font-family:"Hind Siliguri",var(--sans);font-size:clamp(22px,3vw,30px);font-weight:500;color:var(--ink);margin:0 0 22px}
 .sg-lede{font-family:"Noto Serif Bengali",Georgia,serif;font-size:20px;line-height:1.75;color:var(--ink-2);max-width:640px;margin:0}
-.sg-facts{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
-.sg-facts>div{padding:30px 24px 30px 0}
-.sg-facts>div+div{padding-left:24px;border-left:1px solid var(--line)}
-.sg-facts b{display:block;font-family:"Hind Siliguri",var(--sans);font-size:32px;font-weight:600;color:var(--accent-purple);line-height:1.2}
-.sg-facts span{display:block;font-family:"Hind Siliguri",var(--sans);font-size:15px;color:var(--muted);line-height:1.5;margin-top:6px}
+.sg-facts{max-width:640px;margin:0;padding:32px 0 34px;border-bottom:1px solid var(--line)}
+.sg-facts h3{font-family:"Hind Siliguri",var(--sans);font-size:22px;font-weight:700;line-height:1.35;color:var(--accent);margin:22px 0 4px}
+.sg-facts h3:first-child{margin-top:0}
+.sg-facts p{font-family:"Noto Serif Bengali",Georgia,serif;font-size:17px;line-height:1.75;color:var(--ink-2);margin:0}
 .sg-body{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:72px;align-items:start}
 .sg-video{display:flex;gap:40px;align-items:center;padding:40px 0;border-bottom:1px solid var(--line);margin-bottom:48px}
 .sg-video-frame{flex:0 0 auto;width:300px;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 10px 30px rgba(0,0,0,.18)}
@@ -847,9 +846,6 @@ nav{
   .sg-toc button{font-size:18px;padding:7px 0 7px 16px}
 }
 @media(max-width:720px){
-  .sg-facts{grid-template-columns:1fr}
-  .sg-facts>div,.sg-facts>div+div{padding:20px 0;border-left:none}
-  .sg-facts>div+div{border-top:1px solid var(--line)}
   .sg-story{font-size:19px}
   .sg-cta{padding:28px 22px}
   .sg-next{padding:32px 22px}
@@ -4937,9 +4933,12 @@ function pageAI4SG(){
       </header>
 
       <div class="sg-facts">
-        <div><b>২০২৩</b><span>ব্লেন্ডেড ক্লাসরুম থেকে যাত্রার শুরু</span></div>
-        <div><b>১ + ২০০</b><span>একজন ট্রেইনার আর ২০০টি এআই এজেন্ট, ২০০ জন পার্টিসিপ্যান্টের পাশে</span></div>
-        <div><b>প্রো বোনো</b><span>কমার্শিয়াল প্রোডাক্ট নয়, চলমান সোশ্যাল-গুড কন্ট্রিবিউশন</span></div>
+        <h3>২০২৩</h3>
+        <p>ব্লেন্ডেড ক্লাসরুম থেকে যাত্রার শুরু।</p>
+        <h3>১ + ২০০</h3>
+        <p>একজন ট্রেইনার আর ২০০টি এআই এজেন্ট, ২০০ জন পার্টিসিপ্যান্টের পাশে।</p>
+        <h3>প্রো বোনো</h3>
+        <p>কমার্শিয়াল প্রোডাক্ট নয়, চলমান সোশ্যাল-গুড কন্ট্রিবিউশন।</p>
       </div>
 
 
