@@ -1758,7 +1758,7 @@ footer{
 const NAV = [
   {text:"Hadi Bhuiyan",id:"about"},
   {text:"Products",id:"products"},
-  {text:"AI Accelerator",id:"aipa",dropdown:[
+  {text:"AI Accelerator",id:"aipa",subtabs:[
     {text:"AI Briefing Session (AIBS)",id:"aibs"},
     {text:"AIPA Session Plan",id:"aipa-session-plan"},
     {text:"AI Strategy Accelerator (AISA)",id:"management-aisa"},
@@ -5243,14 +5243,20 @@ function showPage(id, updateHistory = true){
   currentPage = id;
   applyPageMeta(id);
   // render page
-  document.getElementById('app').innerHTML = `<div class="page active" id="pg-${id}">${PAGES[id]()}</div>`;
+  const subtabs = subtabsHTML(id);
+  document.body.classList.toggle('has-subtabs', !!subtabs);
+  document.getElementById('app').innerHTML = `${subtabs}<div class="page active" id="pg-${id}">${PAGES[id]()}</div>`;
+  syncNavHeight();
+  const activeTab = document.querySelector('.subtabs .subtab.active');
+  if(activeTab) activeTab.parentElement.scrollLeft = activeTab.offsetLeft - (activeTab.parentElement.clientWidth - activeTab.offsetWidth) / 2;
   // presentation-deck mode: AI Inference renders as full-screen, snapping panels
   const deck = (id === 'ai-inference' || id === 'easyflow');
   document.body.classList.toggle('deck-mode', deck);
   if(deck) wrapDeckSlides('pg-' + id);
   // update nav
+  const navParent = subtabParent(id);
   document.querySelectorAll('.nav-btn').forEach(b=>{
-    b.classList.toggle('active', b.dataset.page === id);
+    b.classList.toggle('active', b.dataset.page === id || (!!navParent && b.dataset.page === navParent.id));
   });
   document.querySelectorAll('.nav-dropdown-item').forEach(b=>{
     b.classList.toggle('active', b.dataset.page === id);
@@ -5293,6 +5299,25 @@ document.addEventListener('keydown', (e)=>{
   const target = Math.min(Math.max(idx + (next ? 1 : -1), 0), slides.length - 1);
   slides[target].scrollIntoView({ behavior:'smooth', block:'start' });
 });
+
+// Sub-tabs: a nav item with `subtabs` gets a tab row under the nav instead of a dropdown.
+function subtabParent(id){
+  return NAV.find(n=>n.subtabs && (n.id === id || n.subtabs.some(t=>t.id === id)));
+}
+function subtabsHTML(id){
+  const parent = subtabParent(id === 'programs' ? 'aipa' : id);
+  if(!parent) return '';
+  return `<div class="subtabs" role="tablist" aria-label="${parent.text}"><div class="subtabs-inner">${
+    parent.subtabs.map(t=>`<button class="subtab${t.id === id ? ' active' : ''}" role="tab" aria-selected="${t.id === id}" data-page="${t.id}" onclick="showPage('${t.id}')">${t.text}</button>`).join('')
+  }</div></div>`;
+}
+// The sub-tab row sits right under the fixed nav, whose height changes as it wraps.
+function syncNavHeight(){
+  const nav = document.querySelector('body > nav');
+  if(nav) document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+}
+window.addEventListener('resize', syncNavHeight);
+window.addEventListener('load', syncNavHeight);
 
 function getPageFromURL(){
   const path = window.location.pathname;
@@ -5437,6 +5462,18 @@ function submitAffiliationForm(e){
 #wa-chat-bar:hover{background:var(--green-deep);text-decoration:none;color:#fff}
 #wa-chat-bar svg{flex-shrink:0}
 @media(max-width:500px){#wa-chat-bar{padding:10px 14px;font-size:0}#wa-chat-bar svg{width:22px;height:22px}}
+/* ── SUB-TABS (AI Accelerator) ── */
+.subtabs{position:fixed;top:var(--nav-h,76px);left:0;right:0;z-index:95;background:var(--paper);border-bottom:1px solid var(--line)}
+.subtabs-inner{display:flex;justify-content:center;gap:4px;overflow-x:auto;scrollbar-width:none;padding:0 22px}
+.subtabs-inner::-webkit-scrollbar{display:none}
+.subtab{flex:0 0 auto;background:transparent;border:none;border-radius:0;padding:14px 16px;margin:0;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);position:relative;white-space:nowrap;cursor:pointer}
+.subtab:hover{color:var(--green)}
+.subtab.active{color:var(--green)}
+.subtab.active::after{content:"";position:absolute;left:16px;right:16px;bottom:0;height:2px;background:var(--accent)}
+body.has-subtabs:not(.deck-mode) #app{padding-top:46px}
+body.has-subtabs.deck-mode .page{scroll-padding-top:calc(var(--nav-h,76px) + 46px)}
+body.has-subtabs.deck-mode .aipa-slide-inner{padding-top:calc(var(--nav-h,76px) + 66px)}
+@media(max-width:900px){.subtabs-inner{justify-content:flex-start}}
 </style>
 <a id="wa-chat-bar" href="https://api.whatsapp.com/send/?phone=8801833180420&text=Hello+Hadi&type=phone_number&app_absent=0" target="_blank" rel="noopener">
   <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.827 1.782 6.854L2 30l7.354-1.758A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2Zm0 25.6a11.54 11.54 0 0 1-5.88-1.602l-.42-.25-4.364 1.044 1.064-4.25-.274-.436A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6Zm6.33-8.67c-.346-.174-2.05-1.012-2.368-1.126-.316-.116-.547-.174-.778.174-.23.348-.894 1.126-1.096 1.358-.202.23-.404.26-.75.086-.346-.174-1.46-.538-2.782-1.718-1.028-.918-1.722-2.052-1.924-2.4-.202-.348-.022-.536.152-.708.156-.156.346-.406.52-.61.172-.202.23-.348.346-.578.116-.232.058-.434-.028-.61-.086-.174-.778-1.878-1.066-2.57-.28-.674-.566-.582-.778-.594l-.664-.012c-.23 0-.604.086-.92.434-.316.348-1.206 1.178-1.206 2.872s1.234 3.332 1.406 3.562c.174.23 2.428 3.71 5.884 5.204.822.356 1.464.568 1.964.728.824.262 1.574.226 2.168.136.66-.098 2.05-.838 2.34-1.648.29-.81.29-1.504.202-1.648-.086-.144-.316-.23-.662-.406Z"/></svg>

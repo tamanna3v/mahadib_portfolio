@@ -43,7 +43,7 @@
     "© 2026 Hadi Bhuiyan · Dhaka, Bangladesh":{bn:"© ২০২৬ হাদি ভূঁইয়া · ঢাকা, বাংলাদেশ",fr:"© 2026 Hadi Bhuiyan · Dacca, Bangladesh",ar:"© 2026 هادي بويان · دكا، بنغلاديش",pt:"© 2026 Hadi Bhuiyan · Daca, Bangladesh"},
     "Chat on WhatsApp · EasyFlow":{bn:"হোয়াটসঅ্যাপে চ্যাট করুন · EasyFlow",fr:"Discuter sur WhatsApp · EasyFlow",ar:"تحدث عبر واتساب · EasyFlow",pt:"Conversar no WhatsApp · EasyFlow"}
   };
-  const CHROME = 'nav, #sections-panel, footer, #wa-chat-bar';
+  const CHROME = 'nav, #sections-panel, footer, #wa-chat-bar, .subtabs';
 
   function readCookie(){
     const m = document.cookie.match(/(?:^|;\s*)googtrans=\/[^/]*\/([^;]+)/);
@@ -198,6 +198,10 @@ html[dir=rtl] #wa-chat-bar{right:auto;left:20px}
     injectStyles();
     buildSwitcher();
     translateChrome();
+    // Sub-tabs are re-rendered with every SPA page change.
+    const app = document.getElementById('app');
+    if(app && lang !== 'en') new MutationObserver(()=>translateChrome(app)).observe(app, {childList:true});
+    if(typeof window.syncNavHeight === 'function') window.syncNavHeight();
     loadGoogleTranslate();
   }
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
