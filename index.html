@@ -882,7 +882,22 @@ nav{
 .blog-stat{background:var(--paper-2);padding:16px}
 .blog-stat b{display:block;font-size:26px;font-weight:600;color:var(--ink);line-height:1.1}
 .blog-stat span{font-family:"Hind Siliguri",var(--sans);font-size:13px;color:var(--muted);line-height:1.4;display:block;margin-top:6px}
-.blog-hashtags{display:flex;flex-wrap:wrap;gap:6px 14px;margin:32px 0 20px;padding-top:18px;border-top:1px solid var(--line-soft);font-family:var(--sans),"Hind Siliguri",sans-serif;font-size:14px;font-weight:500;color:var(--green)}
+.blog-tagbar{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--line);margin:0 0 28px;font-family:var(--sans),"Hind Siliguri",sans-serif}
+.blog-tagbar::-webkit-scrollbar{display:none}
+.blog-tagbar .subtab{text-transform:none;letter-spacing:.02em;font-size:13px;padding:12px 14px}
+.blog-tagbar .subtab.active::after{left:14px;right:14px}
+.blog-share{margin:40px 0 20px;padding-top:22px;border-top:1px solid var(--line-soft);font-family:var(--sans)}
+.blog-share-label{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.blog-share-row{display:flex;flex-wrap:wrap;gap:8px}
+.blog-share-btn{display:inline-flex;align-items:center;padding:10px 16px;font-family:var(--sans);font-size:13px;font-weight:500;line-height:1;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:0;text-decoration:none;cursor:pointer}
+.blog-share-btn:hover{text-decoration:none;color:#fff;border-color:transparent;background:var(--green)}
+.blog-share-wa:hover{background:#1f8f4e}
+.blog-share-li:hover{background:#0a66c2}
+.blog-share-fb:hover{background:#1877f2}
+.blog-share-ig:hover{background:#c13584}
+.blog-share-msg{font-size:13px;color:var(--green);min-height:18px;margin-top:8px}
+.blog-comments{margin-top:44px;padding-top:22px;border-top:1px solid var(--line-soft);font-family:var(--sans)}
+.blog-comments-note{font-size:14px;color:var(--muted);margin:0 0 12px}
 .blog-note{font-size:14px;color:var(--muted);background:var(--paper-2);padding:16px 18px;margin-top:36px;line-height:1.7}
 .cons-blog{margin-top:16px;background:var(--paper);padding:14px 16px}
 .cons-blog-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-sage-ink);margin-bottom:6px}
@@ -4795,6 +4810,7 @@ const BLOG_POSTS = [
     date:"October 2026",
     readTime:"৮ মিনিট",
     tags:["BSTI","4IR","Public Sector Innovation","Consumer Protection"],
+    hashtags:["#BSTI","#4IR","#ConsumerProtection","#PublicSectorInnovation","#RegTech","#AntiCounterfeit","#Bangladesh","#বিএসটিআই","#ভোক্তা_অধিকার"],
     metaTitle:"150 Inspectors, 180 Million Consumers — Flipping the Surveillance Model | Hadi Bhuiyan",
     metaDesc:"Lessons from facilitating the BSTI 4IR innovation-design workshop: consumer-powered surveillance with AR, ML and IoT — and why five of six challenges weren't technical. (Bangla)",
     summary:"150 inspectors cannot watch 180 million consumers. Lessons from the BSTI 4IR innovation-design workshop on turning the consumer's phone into the regulator's eye — and why five of the six real challenges weren't technical.",
@@ -4983,8 +4999,31 @@ const BLOG_POSTS = [
   }
 ];
 
+// Hashtag filter for the blog list ('' = all posts).
+let blogTag = '';
+function blogHashtags(){
+  const count = {};
+  BLOG_POSTS.forEach(b=>(b.hashtags||[]).forEach(h=>{ count[h] = (count[h]||0) + 1; }));
+  return Object.keys(count).sort((a,b)=>count[b]-count[a]);
+}
+function blogTagBar(tags, active){
+  return `<div class="blog-tagbar" role="tablist" aria-label="Hashtags">${
+    tags.map(t=>`<button type="button" class="subtab${t.tag === active ? ' active' : ''}" role="tab" aria-selected="${t.tag === active}" data-tag="${t.tag}" onclick="blogFilterBy(this.dataset.tag)">${t.label}</button>`).join('')
+  }</div>`;
+}
+function blogFilterBy(tag){
+  blogTag = tag || '';
+  if(currentPage === 'blog'){
+    document.querySelector('#pg-blog').innerHTML = pageBlog();
+  } else {
+    showPage('blog');
+  }
+}
+window.blogFilterBy = blogFilterBy;
+
 function pageBlog(){
-  const cards = BLOG_POSTS.map(b=>`
+  const posts = blogTag ? BLOG_POSTS.filter(b=>(b.hashtags||[]).includes(blogTag)) : BLOG_POSTS;
+  const cards = posts.map(b=>`
     <button type="button" class="blog-card" onclick="showPage('${b.id}')">
       <div class="blog-card-meta">${b.date} · ${b.lang === 'bn' ? 'বাংলা' : 'English'}</div>
       <div class="blog-card-title" lang="${b.lang}">${b.title}</div>
@@ -4993,10 +5032,79 @@ function pageBlog(){
       ${chipRow(b.tags)}
       <div class="blog-card-cta">Read article →</div>
     </button>`).join('');
+  const tags = [{tag:'',label:'All posts'}].concat(blogHashtags().map(h=>({tag:h,label:h})));
   return `
     <h2 class="section-title">Blog</h2>
     <p class="section-sub">Field notes and reflections from consulting, innovation design and AI work.</p>
+    ${blogTagBar(tags, blogTag)}
     <div class="blog-list">${cards}</div>`;
+}
+
+// Comments are stored by Cusdis (cusdis.com): readers leave a name and a comment,
+// no login needed; new comments wait for approval in the Cusdis dashboard.
+// Paste the website's App ID here to switch the comment section on.
+const COMMENTS_APP_ID = '';
+const SITE_URL = 'https://mahadib.futuremind.ltd';
+
+function blogShare(b){
+  const url = encodeURIComponent(`${SITE_URL}/${b.id}`);
+  const text = encodeURIComponent(b.title);
+  const links = [
+    {cls:'wa', label:'WhatsApp', href:`https://api.whatsapp.com/send?text=${text}%20${url}`},
+    {cls:'li', label:'LinkedIn', href:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`},
+    {cls:'fb', label:'Facebook', href:`https://www.facebook.com/sharer/sharer.php?u=${url}`}
+  ].map(l=>`<a class="blog-share-btn blog-share-${l.cls}" href="${l.href}" target="_blank" rel="noopener">${l.label}</a>`).join('');
+  return `
+    <div class="blog-share">
+      <div class="blog-share-label">Share this post</div>
+      <div class="blog-share-row">
+        ${links}
+        <button type="button" class="blog-share-btn blog-share-ig" onclick="sharePostInstagram('${b.id}')">Instagram</button>
+        <button type="button" class="blog-share-btn" onclick="copyPostLink('${b.id}')">Copy link</button>
+      </div>
+      <div class="blog-share-msg" id="blogShareMsg" role="status"></div>
+    </div>`;
+}
+function copyPostLink(id, msg){
+  const url = `${SITE_URL}/${id}`;
+  const done = ()=>{
+    const el = document.getElementById('blogShareMsg');
+    if(el) el.textContent = msg || '✓ Link copied.';
+  };
+  if(navigator.clipboard) navigator.clipboard.writeText(url).then(done, done);
+  else done();
+}
+// Instagram has no web share link: use the phone's share sheet, or copy the link.
+function sharePostInstagram(id){
+  const b = BLOG_POSTS.find(p=>p.id === id);
+  if(navigator.share && /Android|iPhone|iPad/i.test(navigator.userAgent)){
+    navigator.share({title:b.title, url:`${SITE_URL}/${id}`}).catch(()=>{});
+    return;
+  }
+  copyPostLink(id, '✓ Link copied. Paste it into your Instagram story, bio or message.');
+}
+window.copyPostLink = copyPostLink;
+window.sharePostInstagram = sharePostInstagram;
+
+function blogComments(b){
+  if(!COMMENTS_APP_ID) return '';
+  return `
+    <section class="blog-comments" lang="en">
+      <div class="blog-share-label">Comments</div>
+      <p class="blog-comments-note">Add your name and comment. Comments appear after review.</p>
+      <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="${COMMENTS_APP_ID}"
+        data-page-id="${b.id}" data-page-url="${SITE_URL}/${b.id}" data-page-title="${b.metaTitle}"></div>
+    </section>`;
+}
+function loadComments(){
+  if(!document.getElementById('cusdis_thread')) return;
+  if(window.CUSDIS){ window.CUSDIS.initial(); return; }
+  if(document.getElementById('cusdis-script')) return;
+  const s = document.createElement('script');
+  s.id = 'cusdis-script';
+  s.src = 'https://cusdis.com/js/cusdis.es.js';
+  s.async = true;
+  document.body.appendChild(s);
 }
 
 function pageBlogPost(b){
@@ -5006,12 +5114,14 @@ function pageBlogPost(b){
   return `
     <button type="button" class="blog-back" onclick="showPage('blog')">← All posts</button>
     <article class="blog-article" lang="${b.lang}">
+      ${b.hashtags ? blogTagBar(b.hashtags.map(h=>({tag:h,label:h})), '') : ''}
       <h1 class="blog-h1">${b.title}</h1>
       <p class="blog-dek">${b.dek}</p>
       <div class="blog-byline">Hadi Bhuiyan · ${b.date} · পড়তে লাগবে ${b.readTime}</div>
       ${b.body}
-      ${b.hashtags ? `<div class="blog-hashtags">${b.hashtags.map(h=>`<span>${h}</span>`).join('')}</div>` : ''}
+      ${blogShare(b)}
       <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px">${related}</div>
+      ${blogComments(b)}
     </article>`;
 }
 
@@ -5336,6 +5446,7 @@ function showPage(id, updateHistory = true){
   document.body.classList.toggle('has-subtabs', !!subtabs);
   document.getElementById('app').innerHTML = `${subtabs}<div class="page active" id="pg-${id}">${PAGES[id]()}</div>`;
   syncNavHeight();
+  loadComments();
   const activeTab = document.querySelector('.subtabs .subtab.active');
   if(activeTab) activeTab.parentElement.scrollLeft = activeTab.offsetLeft - (activeTab.parentElement.clientWidth - activeTab.offsetWidth) / 2;
   // presentation-deck mode: AI Inference renders as full-screen, snapping panels
