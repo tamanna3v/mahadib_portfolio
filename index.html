@@ -594,7 +594,7 @@ nav{
 .prod-step-num{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--accent)}
 .prod-step-title{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-0.008em}
 .prod-step-hint{font-size:13px;color:var(--muted)}
-.prod-pick{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-bottom:40px}
+.prod-pick{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:40px}
 .prod-pick-btn{display:flex;align-items:flex-start;gap:12px;text-align:left;background:var(--paper);border:1px solid var(--line);padding:14px 16px;cursor:pointer;font-family:var(--sans);transition:border-color .2s ease,background .2s ease}
 .prod-pick-btn:hover{border-color:var(--ink)}
 .prod-pick-btn.active{background:var(--green);border-color:var(--green)}
@@ -882,6 +882,7 @@ nav{
 .blog-stat{background:var(--paper-2);padding:16px}
 .blog-stat b{display:block;font-size:26px;font-weight:600;color:var(--ink);line-height:1.1}
 .blog-stat span{font-family:"Hind Siliguri",var(--sans);font-size:13px;color:var(--muted);line-height:1.4;display:block;margin-top:6px}
+.blog-hashtags{display:flex;flex-wrap:wrap;gap:6px 14px;margin:32px 0 20px;padding-top:18px;border-top:1px solid var(--line-soft);font-family:var(--sans),"Hind Siliguri",sans-serif;font-size:14px;font-weight:500;color:var(--green)}
 .blog-note{font-size:14px;color:var(--muted);background:var(--paper-2);padding:16px 18px;margin-top:36px;line-height:1.7}
 .cons-blog{margin-top:16px;background:var(--paper);padding:14px 16px}
 .cons-blog-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-sage-ink);margin-bottom:6px}
@@ -2262,15 +2263,7 @@ const PRODUCT_STARS = [
   {id:'swachho', emoji:'🧼', name:'Swaccho', cap:'Relief distribution',
    title:'Swaccho — Food &amp; Relief Distribution Tracking',
    meta:'P2O2V2P Model · Retail Digital Innovation Award 2020', href:'swaccho.html',
-   src:'swaccho.html', frameTitle:'Swaccho — Nationwide Food &amp; Relief Distribution Tracking System'},
-  {id:'probeno', emoji:'🎓', name:'Probeno', cap:'AI for educators',
-   title:'Probeno — AI for Educators',
-   meta:'Teach the teachers · UNESCO AI Competency Framework aligned', href:'probeno.html',
-   src:'probeno.html', frameTitle:'Probeno — AI for Educators · Teach the Teachers, Empower Thousands'},
-  {id:'aipaonline', emoji:'🚀', name:'AIPA-Online', cap:'Presales guideline',
-   title:'AIPA-Online — Presales Guideline',
-   meta:'Roles &amp; Steps for Program, Sales &amp; Communication Teams', href:'aipa-online.html',
-   src:'aipa-online.html', frameTitle:'AIPA-Online — Presales Guideline'}
+   src:'swaccho.html', frameTitle:'Swaccho — Nationwide Food &amp; Relief Distribution Tracking System'}
 ];
 function pageProducts(){
   const ACTIVE = 'easyflow';
@@ -2303,9 +2296,7 @@ function pageProducts(){
     {icon:"🤖",label:"Private AI Workspace",val:"easydo.ai",href:"https://easydo.ai"},
     {icon:"🔐",label:"Product Authentication",val:"zachai.xyz",href:"https://www.zachai.xyz"},
     {icon:"🌊",label:"AI Audience Engagement",val:"flow.easydo.ai",href:"https://flow.easydo.ai"},
-    {icon:"🧼",label:"Swachho — Covid-19 Response",val:"Retail Digital Innovation Award 2020",href:"http://bd.linkedin.com/in/mahadib/"},
-    {icon:"🎓",label:"Probeno — AI for Educators",val:"UNESCO-aligned teacher upskilling",href:"probeno.html"},
-    {icon:"🚀",label:"AIPA-Online — Presales Guideline",val:"Roles & steps for Program, Sales, Communication",href:"aipa-online.html"}
+    {icon:"🧼",label:"Swachho — Covid-19 Response",val:"Retail Digital Innovation Award 2020",href:"http://bd.linkedin.com/in/mahadib/"}
   ].map(c=>`
     <a href="${c.href}" target="_blank" class="contact-card">
       <span class="contact-icon">${c.icon}</span>
@@ -4727,6 +4718,76 @@ function pageEasyFlow(){
 // ── BLOG ─────────────────────────────────────────────────
 const BLOG_POSTS = [
   {
+    id:"blog-responsibilization-four-examples",
+    lang:"bn",
+    title:"রাষ্ট্র, সমাজ ও দায়: রেসপনসিবিলাইজেশনের চার উদাহরণ",
+    dek:"অটোরিকশা, রাইড-শেয়ারিং, কিশোর গ্যাং আর জলাবদ্ধতা: রাষ্ট্রের তৈরি সমস্যার দায় কীভাবে নাগরিকের ঘাড়ে চাপে",
+    date:"30 October 2026",
+    readTime:"৪ মিনিট",
+    tags:["Public Policy","Governance","Society","Bangladesh"],
+    hashtags:["#Responsibilization","#StateAccountability","#PublicPolicy","#Governance","#UrbanPlanning","#Waterlogging","#GigEconomy","#YouthUnemployment","#Dhaka","#Bangladesh","#রাষ্ট্রের_দায়","#জবাবদিহি","#জলাবদ্ধতা"],
+    metaTitle:"State, Society and Blame: Four Examples of Responsibilization | Hadi Bhuiyan",
+    metaDesc:"Battery rickshaws, ride-sharing riders, teen gangs and drugs, and Dhaka's waterlogging: how problems created by policy failure get pushed onto citizens. (Bangla)",
+    summary:"Four everyday Bangladeshi examples of responsibilization: battery rickshaws, ride-sharing riders, teen gangs and drugs, and Dhaka's waterlogging, where the state shifts the blame for its own policy failures onto citizens.",
+    body:`
+<p>রেসপনসিবিলাইজেশন কথাটা আমাদের কাছে খুব পরিচিত না, কিন্তু জিনিসটা আমরা প্রতিদিন দেখি। রাষ্ট্র যে সমস্যা তৈরি করে বা যে সমস্যার সমাধান করার কথা তার, সেটার দায় সে চুপচাপ নাগরিকের ঘাড়ে চাপিয়ে দেয়। তারপর ব্যর্থতার জন্য দোষও দেয় নাগরিককেই।</p>
+<p>আমাদের চারপাশে এর উদাহরণ অসংখ্য। আজ চারটা নিয়ে কথা বলি।</p>
+<p>প্রথম উদাহরণ বাংলার টেসলা, মানে আমাদের ব্যাটারিচালিত অটোরিকশা। সরকার কর্মসংস্থান দিতে পারেনি, পারবেও না। অথচ যারা দলের কর্মী হিসেবে সরকারের পেশিশক্তির কাজ করে, তাদেরও আয়ের একটা উৎস দরকার।</p>
+<p>এই কারণেই সেক্টরটাকে অনেকটা অপ্রাতিষ্ঠানিক রেখে দেওয়া হয়েছে, যাতে এক ঢিলে দুই পাখি মারা যায়। একদিকে মার্জিনাল বেকার জনগোষ্ঠী একটা কাজে ব্যস্ত থাকে, অন্যদিকে দলের কর্মীদেরও আয়ের ব্যবস্থা হয়।</p>
+<p>মাঝখান দিয়ে আপনার গাড়ি গেল নাকি আপনার হাত-পা ভাঙল, সেই দায় আপনার।</p>
+<p>দ্বিতীয় উদাহরণ পাঠাও-উবারের মোটরসাইকেল চালকেরা। এদের বড় একটা অংশ শিক্ষিত, কিন্তু উপায় না পেয়ে এই কাজে এসেছে। এটা কোনো ক্যারিয়ার না, এটা জুগাড়।</p>
+<p>এটা একটা স্টাক এরিয়া, এখানে কোনো প্রোগ্রেস নেই। পাঁচ বছর পরেও একজন রাইডার রাইডারই থাকবে, শুধু বয়স আর ক্লান্তিটা বাড়বে।</p>
+<p>সারাদিন বাইক চালানো স্বাস্থ্য বা জীবনযাপন, কোনো হিসেবেই টেকসই কাজ না। দীর্ঘদিন এভাবে চালালে শরীরের, বিশেষ করে মেরুদণ্ডের, ক্ষতি হওয়ার কথা। একদিন এই পুরো জনগোষ্ঠীকে তার ভোগান্তি পোহাতে হবে।</p>
+<p>এখন এরা অ্যাপের বাইরে খ্যাপ দিচ্ছে, রাস্তাঘাটে নানা রকম নুইসেন্স তৈরি হচ্ছে, যাত্রী আর সাধারণ মানুষের সঙ্গে প্রায়ই বিবাদে জড়িয়ে পড়ছে। আমরা বিরক্ত হই রাইডারদের ওপর।</p>
+<p>অথচ শিক্ষিত তরুণদের জন্য সম্মানজনক কর্মসংস্থান তৈরি করা রাষ্ট্রের কাজ। রাষ্ট্র সেই প্রবলেম অ্যাড্রেস করেনি। চুপচাপ দায়টা তাদের ঘাড়ে, আর তাদের মাধ্যমে আমাদের সবার ঘাড়ে চাপিয়ে দিয়েছে।</p>
+<p>তৃতীয় উদাহরণ কিশোর গ্যাং আর মাদক। আমি একটা প্রশ্ন করি। যে কিশোর গ্যাংয়ের কথা বলা হয়, তাদের প্রত্যেকের লিস্ট সরকারের কাছে আছে। যে মাদক টেকনাফ দিয়ে ঢোকে, সেখানে বিজিবি আর সেনাবাহিনীর কড়া পাহারা।</p>
+<p>তো আপনি মাদক ঢুকতে দেবেন, কিশোর গ্যাংকে খোলা ছেড়ে দেবেন, এলাকায় একটা খেলার মাঠও রাখবেন না। তারপর ব্লেম দেবেন আমাকে, কেন আমি বাচ্চা সামলে রাখিনি?</p>
+<p>আপনার ব্লেমটা আগে নিন। নিচ্ছেন না কেন?</p>
+<p>চতুর্থ উদাহরণ জলাবদ্ধতা। প্রতি বর্ষায় ঢাকা আর চট্টগ্রাম ডোবে, আর প্রতিবার দোষ পড়ে নাগরিকের ঘাড়ে। কেন সে চিপসের প্যাকেট, পলিথিন, ময়লা রাস্তায় ফেলছে?</p>
+<p>ময়লা ফেলা খারাপ, তাতে ড্রেন আটকায়, এটা সত্য। কিন্তু ঢাকায় যে ভয়ংকর জলাবদ্ধতা হয়, তার আসল কারণ চিপসের প্যাকেট নয়।</p>
+<p>আসল কারণ হলো ড্যাপকে অগ্রাহ্য করে ঢাকার চারপাশের জলাভূমি আর বন্যাপ্রবাহ এলাকা ভরাট করে বিশাল বিশাল আবাসন প্রকল্প বানানো। বসুন্ধরা তার মধ্যে অন্যতম, যমুনাও। শুধু বেসরকারি নয়, সরকারের নিজের প্রকল্পও আছে, ইসিবি থেকে শুরু করে উত্তরার বিভিন্ন ফেজ পর্যন্ত।</p>
+<p>এগুলোর কারণে শহরের চারপাশ দিয়ে পানি নেমে যাওয়ার প্রাকৃতিক পথ প্রায় বন্ধ হয়ে গেছে। এই ক্ষতি এখন আর সহজে ফেরানো যাবে না।</p>
+<p>কাল থেকে যদি সব নাগরিক চিপসের প্যাকেট ফেলা বন্ধ করে দেয়, তারপরও এই জলাবদ্ধতা থাকবে। সবাই এটা জানে, অথবা না জেনেই ভান করে। তবুও আঙুলটা ওঠে নাগরিকের দিকে।</p>
+<p>চারটা উদাহরণের কাঠামো আসলে একই। বেকারত্ব, অনিরাপদ পরিবহন, মাদক আর কিশোর অপরাধ, ধ্বংস হওয়া জলাভূমি: সমস্যাগুলো তৈরি হয়েছে নীতির ব্যর্থতা আর ক্ষমতাবানদের স্বার্থে। কিন্তু দায় চাপানো হয়েছে সেই নাগরিকের ওপর, যার এসবে কোনো হাত ছিল না।</p>
+<p>রেসপনসিবিলাইজেশনের সবচেয়ে বড় সাফল্য হলো আমরা একসময় নিজেরাই বিশ্বাস করতে শুরু করি যে দোষটা আমাদেরই। প্রশ্নটা তাই ঘুরিয়ে করতে হবে: দায়টা আসলে কার?</p>
+`,
+    related:[
+      {label:"Read: The dark side of AI →",page:"blog-ai-dark-side-distillation"},
+      {label:"All posts →",page:"blog"}
+    ]
+  },
+  {
+    id:"blog-ai-dark-side-distillation",
+    lang:"bn",
+    title:"এআই-এর ডার্ক সাইড: ডিস্টিলেশন ও বই স্ক্যান",
+    dek:"অন্যের মডেল কপি করা নিয়ে আপত্তি, অথচ অন্যের বই অনুমতি ছাড়া: এআই-এর দ্বিচারিতা আর প্রিসিশনের জায়গায় কাঠামোর প্রয়োজন",
+    date:"30 October 2026",
+    readTime:"৩ মিনিট",
+    tags:["AI Ethics","Copyright","AI Governance","Responsible AI"],
+    hashtags:["#DarkSideOfAI","#AIEthics","#ModelDistillation","#Copyright","#ProjectPanama","#ResponsibleAI","#AIGovernance","#AIPolicy","#GenerativeAI","#AIHallucination","#Bangladesh","#এআই_নৈতিকতা","#দায়িত্বশীল_এআই"],
+    metaTitle:"The Dark Side of AI: Distillation and Book Scanning | Hadi Bhuiyan",
+    metaDesc:"AI labs object to their models being distilled, yet trained on millions of books used without permission. Why AI in precision-critical decisions needs a framework now. (Bangla)",
+    summary:"AI labs fight distillation of their models while having trained on millions of books used without permission. Why generative AI is fundamentally a pattern-matcher, and why precision-critical decisions need guardrails now.",
+    body:`
+<p>এআই-এর ডার্ক সাইড নিয়ে আমরা সাধারণত খুব একটা কথা বলতে চাই না।</p>
+<p>অ্যানথ্রপিক তাদের ক্লড মডেলগুলোর ডিস্টিলেশন ঠেকাতে নানারকম বাধা-নিষেধ দিচ্ছে। ডিস্টিলেশন মানে একটা শক্তিশালী মডেলের আউটপুট দিয়ে আরেকটা মডেলকে ট্রেন করানো, অর্থাৎ অন্যের মডেলের সক্ষমতা কপি করে নেওয়া। অ্যানথ্রপিকের অভিযোগ, মূলত চীনা ভেন্ডররা এভাবে তুলনামূলক কম খরচে নতুন এআই মডেল বের করছে।</p>
+<p>অথচ সেই অ্যানথ্রপিকই লক্ষ লক্ষ বই স্ক্যান করে নিজেদের মডেল ট্রেন করেছে। "প্রজেক্ট পানামা" নামের এই গোপন প্রকল্পে স্ক্যান করার জন্য বইগুলোর বাঁধাই ছিঁড়ে, পাতা কেটে ফেলা হয়েছে। তাদের নিজেদের ইন্টারনাল ডকুমেন্টেই লেখা ছিল, লক্ষ্য হলো "পৃথিবীর সব বই ডিস্ট্রাক্টিভলি স্ক্যান করা"।</p>
+<p>এর মধ্যে অনেক পুরোনো, আউট-অফ-প্রিন্ট বইও ছিল, যেগুলোর কপি এখন সহজে পাওয়া যায় না। সত্যি বলতে, এসব নিয়ে তাদের খুব একটা মাথাব্যথা ছিল বলে মনে হয় না।</p>
+<p>এর আগে পাইরেটেড বই দিয়ে মডেল ট্রেন করার মামলায় অ্যানথ্রপিককে লেখকদের সঙ্গে প্রায় দেড় বিলিয়ন ডলারে সেটেলমেন্ট করতে হয়েছে। মার্কিন কপিরাইটের ইতিহাসে এটাই সবচেয়ে বড় সেটেলমেন্ট।</p>
+<p>নোয়াম চমস্কি চ্যাটজিপিটিকে বলেছিলেন "হাই-টেক প্লেজিয়ারিজম", মানে উচ্চপ্রযুক্তির চৌর্যবৃত্তি। কেন বলেছিলেন, সেটা এখন আর বুঝতে কষ্ট হয় না।</p>
+<p>মজার ব্যাপার হলো, আমি নিজেও এআই প্রোডাক্ট আর স্ট্র্যাটেজি নিয়ে কনসাল্টিং করি, এআই প্রোডাক্ট বানাই, ওয়ার্কশপ করাই। এসব করেই দুই বেলা ডাল-ভাত জোগাই।</p>
+<p>কিন্তু প্রযুক্তিটা যেভাবে তৈরি হয়েছে, তার পেছনে অন্যের সৃষ্টি অনুমতি ছাড়া ব্যবহার করার যে বিশাল গল্প আছে, সেটা ভাবলে লজ্জা লাগে।</p>
+<p>ফান্ডামেন্টালি এআই কিন্তু একটা ডাম্ব সিস্টেম। জেনারেটিভ এআই যে ইন্টেলিজেন্স দেখায়, সেটা আসলে পারমুটেশন-কম্বিনেশন করে বেস্ট ফিটিং আউটকামটা আমাদের দেওয়া। এখানে তার কোনো কগনিটিভ থট নেই।</p>
+<p>তাই যেসব ক্ষেত্রে প্রিসিশন লাগে, সেখানে এআই-এর ব্যবহার এখনই একটা কাঠামোর মধ্যে আনতে হবে। যেমন অ্যাডমিনিস্ট্রেটিভ বা পাবলিক ডিসিশন মেকিং, মেডিকেল ডিসিশন মেকিং, ফাইন্যান্সিয়াল বা নাম্বার ফোরকাস্টিং। না হলে এআই-কে আমরা যেভাবে সর্বরোগের ওষুধ ভাবছি, সেটা বড় বিপর্যয় ডেকে আনবে।</p>
+<p>আমি নিজে একজন এআই সলিউশন বিল্ডার, আর নন-টেকনিক্যাল প্রফেশনালদের জন্য একটা এআই প্রফিসিয়েন্সি অ্যাক্সিলারেটর চালাই। তাই কাছ থেকেই দেখছি, "এটা দিয়েই সবকিছু করে ফেলব" প্রবণতাটা খুব দ্রুত বাড়ছে।</p>
+<p>এআই-এর এই ফান্ডামেন্টাল হ্যালুসিনেটিভ জেনারেশন নিয়ে আরও অনেক সচেতনতা দরকার। যারা এ নিয়ে পলিসি তৈরি, ইমপ্লিমেন্টেশন বা অ্যাডভোকেসির কাজ করছেন, এই সচেতনতা তৈরির যোগ্যতা আর দায়িত্ব সবচেয়ে বেশি তাদেরই।</p>
+`,
+    related:[
+      {label:"Read: No AI for children under 14 →",page:"blog-no-ai-under-14"},
+      {label:"See the AI Proficiency Accelerator (AIPA) →",page:"aipa"}
+    ]
+  },
+  {
     id:"blog-bsti-4ir-surveillance",
     lang:"bn",
     title:"১৫০ জন পরিদর্শক, ১৮ কোটি ভোক্তা: সার্ভেইল্যান্সের মডেল উল্টে দিলে কী হয়",
@@ -4892,6 +4953,33 @@ const BLOG_POSTS = [
       {label:"See the BSTI engagement in Consulting →",page:"consulting"},
       {label:"View the innovation-design deck (PDF) ↗",href:"assets/bsti/bsti-4ir-surveillance-innovation-design.pdf"}
     ]
+  },
+  {
+    id:"blog-no-ai-under-14",
+    lang:"bn",
+    title:"চৌদ্দ বছরের নিচে বাচ্চাদের হাতে এআই নয়",
+    dek:"এআই টুল কখন, কোন বয়সে, কীভাবে সন্তানের হাতে দেবেন: একটি দ্বিমতসহ অবস্থান",
+    date:"15 September 2026",
+    readTime:"২ মিনিট",
+    tags:["AI & Children","Responsible AI","Education","Parenting"],
+    hashtags:["#NoAIUnder14","#ChildrenAndAI","#ResponsibleAI","#AIEducation","#AIAnthropology","#GenerativeAI","#AgenticAI","#DigitalParenting","#EdTech","#Bangladesh","#শিশু_ও_এআই","#দায়িত্বশীল_এআই"],
+    metaTitle:"No AI for Children Under 14 | Hadi Bhuiyan",
+    metaDesc:"Why AI tools should wait until around age 14 (Class 9 / SSC): teach the anthropology and inherent structure of AI first, hand over tools like NotebookLM only in high school. (Bangla)",
+    summary:"Why children under 14 shouldn't be handed generative or agentic AI tools: teach them the anthropology of AI first, and let tools like NotebookLM wait until high school.",
+    body:`
+<p>অনেকে হয়তো দ্বিমত করবেন, সেই দ্বিমতকে সম্মান করেই বলছি। ক্লাস এইট-নাইন পর্যন্ত, বড়জোর ক্লাস টেন পর্যন্ত, বাচ্চাদের হাতে কোনো ধরনের এআই টুল তুলে দেওয়ার পক্ষে আমি নই।</p>
+<p>আমার একটি এন্টারপ্রাইজ কর্পোরেট এআই কনসালটেশন প্রোগ্রাম আছে। তার প্রথম সেশনেই আমি অংশগ্রহণকারীদের বলি, সন্তানদের আগে এআইয়ের অ্যানথ্রোপলজি, অর্থাৎ এর ইনহেরেন্ট স্ট্রাকচারটা বোঝান। নোটবুকএলএম-এর মতো টুল তাদের হাতে দিন অন্তত হাই স্কুলে গিয়ে।</p>
+<p>এর আগে জেনারেটিভ বা এজেন্টিক কোনো ধরনের এআইতে বাচ্চাকে অভ্যস্ত করানো উচিত নয়।</p>
+<p>ক্লাস নাইন বা এসএসসি মানে মোটামুটি চৌদ্দ বছর বয়স। পৃথিবীকে এত দ্রুত দৌড়াতে হবে না যে চৌদ্দ বছরের নিচের একটা বাচ্চাকে টেকনোলজি শেখাতে গিয়ে আমরা তাকেই ভেঙে ফেলব।</p>
+<p>বিজ্ঞান আর টেকনোলজি নিয়ে নতুন করে ভাবার সময় এসেছে। বিজ্ঞান বা টেকনোলজি কি আসলেই আমাদের সমাজ, রাষ্ট্র আর অ্যানথ্রোপলজিকে অতিক্রম করতে পারে?</p>
+<p>বিজ্ঞানকে মহিমান্বিত করতে গিয়ে আমরা ভুলে গেছি যে এটা মানুষের অ্যানথ্রোপলজিরই একটা অংশ। ব্যাপারটা এখন এমন দাঁড়িয়েছে যে আপনার ব্যবসার চেয়ে আপনার টুল বড় হয়ে যাচ্ছে। মানুষের চেয়ে মানুষেরই আবিষ্কার বড় হয়ে উঠছে।</p>
+<p>আপনি-আমি সবাই ভালো করেই জানি, এআই একটা হ্যালুসিনেটিভ বক্স। কারণ জোর করে কম্পিউটার দিয়ে আউটপুট বের করার প্রক্রিয়াটাই আমরা বেছে নিয়েছি। এর ঘাটতি ঢাকতে আমরা নানা রকম ইঞ্জিনিয়ারিং বের করছি, কারণ এখানে বিলিয়ন বিলিয়ন ডলার ঢুকে গেছে।</p>
+<p>আগামী কয়েক বছরেই পরিষ্কার হয়ে যাবে, এই হ্যালুসিনেটিভ বক্স আমাদের জীবনে কী প্রতিক্রিয়া তৈরি করে। সেই প্রতিক্রিয়া সামলাতে গিয়ে আবার আরেক ধরনের অ্যান্টি-সায়েন্স প্রতিক্রিয়া তৈরি হয় কিনা, সেটাও দেখার বিষয়।</p>
+`,
+    related:[
+      {label:"See the AI Briefing Session (AIBS) →",page:"aibs"},
+      {label:"See the AI Proficiency Accelerator (AIPA) →",page:"aipa"}
+    ]
   }
 ];
 
@@ -4922,6 +5010,7 @@ function pageBlogPost(b){
       <p class="blog-dek">${b.dek}</p>
       <div class="blog-byline">Hadi Bhuiyan · ${b.date} · পড়তে লাগবে ${b.readTime}</div>
       ${b.body}
+      ${b.hashtags ? `<div class="blog-hashtags">${b.hashtags.map(h=>`<span>${h}</span>`).join('')}</div>` : ''}
       <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px">${related}</div>
     </article>`;
 }
