@@ -882,6 +882,13 @@ nav{
 .blog-stat{background:var(--paper-2);padding:16px}
 .blog-stat b{display:block;font-size:26px;font-weight:600;color:var(--ink);line-height:1.1}
 .blog-stat span{font-family:"Hind Siliguri",var(--sans);font-size:13px;color:var(--muted);line-height:1.4;display:block;margin-top:6px}
+.footer-owner{background:none;border:none;padding:0;margin:0;font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit;opacity:.7;cursor:pointer}
+.footer-owner:hover{opacity:1;color:var(--green)}
+.analytics-box{max-width:720px;background:var(--paper);border:1px solid var(--line);padding:28px 30px;font-size:16px;line-height:1.7;color:var(--ink-2)}
+.analytics-box ul{margin:8px 0 22px 1.2em}
+.analytics-box li{margin-bottom:6px}
+.analytics-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;padding:14px 24px;font-size:14px;font-weight:500;text-decoration:none}
+.analytics-btn:hover{background:var(--green-deep);color:#fff;text-decoration:none}
 .blog-tagbar{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--line);margin:0 0 28px;font-family:var(--sans),"Hind Siliguri",sans-serif}
 .blog-tagbar::-webkit-scrollbar{display:none}
 .blog-tagbar .subtab{text-transform:none;letter-spacing:.02em;font-size:13px;padding:12px 14px}
@@ -1727,6 +1734,7 @@ footer{
 .bnx .bnx-h2:hover{border-color:#0DBA6B!important;color:#07703C!important}
 .bnx .bnx-h3:hover{border-color:rgba(13,186,107,.45)!important;color:#1C202B!important}
 </style>
+<script src="/assets/analytics.js"></script>
 </head>
 <body>
 
@@ -1767,7 +1775,7 @@ footer{
 
 <div id="app"></div>
 
-<footer>© 2026 Hadi Bhuiyan · Dhaka, Bangladesh</footer>
+<footer>© 2026 Hadi Bhuiyan · Dhaka, Bangladesh<span aria-hidden="true"> · </span><button type="button" class="footer-owner" onclick="showPage('analytics')">Owner login</button></footer>
 
 <script>
 // ── DATA ────────────────────────────────────────────────
@@ -5053,7 +5061,7 @@ function blogShare(b){
     {cls:'wa', label:'WhatsApp', href:`https://api.whatsapp.com/send?text=${text}%20${url}`},
     {cls:'li', label:'LinkedIn', href:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`},
     {cls:'fb', label:'Facebook', href:`https://www.facebook.com/sharer/sharer.php?u=${url}`}
-  ].map(l=>`<a class="blog-share-btn blog-share-${l.cls}" href="${l.href}" target="_blank" rel="noopener">${l.label}</a>`).join('');
+  ].map(l=>`<a class="blog-share-btn blog-share-${l.cls}" href="${l.href}" target="_blank" rel="noopener" onclick="trackEvent('share',{method:'${l.label}',item_id:'${b.id}'})">${l.label}</a>`).join('');
   return `
     <div class="blog-share">
       <div class="blog-share-label">Share this post</div>
@@ -5067,6 +5075,7 @@ function blogShare(b){
 }
 function copyPostLink(id, msg){
   const url = `${SITE_URL}/${id}`;
+  trackEvent('share', {method: msg ? 'Instagram' : 'Copy link', item_id: id});
   const done = ()=>{
     const el = document.getElementById('blogShareMsg');
     if(el) el.textContent = msg || '✓ Link copied.';
@@ -5123,6 +5132,25 @@ function pageBlogPost(b){
       <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px">${related}</div>
       ${blogComments(b)}
     </article>`;
+}
+
+// Owner-only entry point to the visitor reports. The page itself is public but holds
+// no data: the reports open on analytics.google.com, which asks for the owner's Gmail login.
+function pageAnalytics(){
+  return `
+    <h2 class="section-title">Visitor Analytics</h2>
+    <p class="section-sub">Who visits, for how long, from which source, and which pages they read.</p>
+    <div class="analytics-box">
+      <p>The visitor log is kept by Google Analytics. Sign in with the site owner's Gmail account to open it.</p>
+      <ul>
+        <li><b>Realtime</b>: who is on the site right now and which page they are on</li>
+        <li><b>Acquisition</b>: where visitors come from: Google, LinkedIn, Facebook, WhatsApp, direct</li>
+        <li><b>Engagement → Pages and screens</b>: which pages and blog posts are read, and for how long</li>
+        <li><b>Demographics &amp; Tech</b>: country, city, language, phone or computer</li>
+        <li><b>Events → share</b>: which posts were shared, and on which platform</li>
+      </ul>
+      <a class="analytics-btn" href="https://analytics.google.com/analytics/web/" target="_blank" rel="noopener">Sign in with Gmail &amp; open analytics ↗</a>
+    </div>`;
 }
 
 function pageAI4SG(){
@@ -5386,7 +5414,8 @@ const PAGES = {
   'contact-affiliation': pageAffiliation,
   futuremind: pageFutureMind,
   news: pageEvents,
-  blog: pageBlog
+  blog: pageBlog,
+  analytics: pageAnalytics
 };
 BLOG_POSTS.forEach(b=>{ PAGES[b.id] = ()=>pageBlogPost(b); });
 
@@ -5417,6 +5446,7 @@ const PAGE_META = {
 };
 
 PAGE_META.ai4sg = {t:"AI for Teachers (AI4SG) — Scaling the Skill | Hadi Bhuiyan",d:"AI for Teachers: a pro bono social-good initiative that scales teacher skilling with EasyFlow — Live Flow scales the learning experience, Course Flow makes the skill persistent."};
+PAGE_META.analytics = {t:"Visitor Analytics — Hadi Bhuiyan",d:"Owner sign-in to the site's visitor analytics."};
 PAGE_META.blog = {t:"Blog — Hadi Bhuiyan",d:"Field notes and reflections from consulting, public-sector innovation design and enterprise AI work."};
 BLOG_POSTS.forEach(b=>{ PAGE_META[b.id] = {t:b.metaTitle,d:b.metaDesc}; });
 

@@ -41,6 +41,7 @@
     "Awards & Recognition":{bn:"পুরস্কার ও স্বীকৃতি",fr:"Prix & reconnaissance",ar:"الجوائز والتقدير",pt:"Prêmios e Reconhecimento"},
     "Work Experience & Skills":{bn:"কর্মঅভিজ্ঞতা ও দক্ষতা",fr:"Expérience & compétences",ar:"الخبرة العملية والمهارات",pt:"Experiência e Competências"},
     "© 2026 Hadi Bhuiyan · Dhaka, Bangladesh":{bn:"© ২০২৬ হাদি ভূঁইয়া · ঢাকা, বাংলাদেশ",fr:"© 2026 Hadi Bhuiyan · Dacca, Bangladesh",ar:"© 2026 هادي بويان · دكا، بنغلاديش",pt:"© 2026 Hadi Bhuiyan · Daca, Bangladesh"},
+    "Owner login":{bn:"মালিকের লগইন",fr:"Connexion propriétaire",ar:"دخول المالك",pt:"Login do proprietário"},
     "Chat on WhatsApp · EasyFlow":{bn:"হোয়াটসঅ্যাপে চ্যাট করুন · EasyFlow",fr:"Discuter sur WhatsApp · EasyFlow",ar:"تحدث عبر واتساب · EasyFlow",pt:"Conversar no WhatsApp · EasyFlow"}
   };
   const CHROME = 'nav, #sections-panel, footer, #wa-chat-bar, .subtabs';
@@ -83,6 +84,7 @@
 
   function choose(code){
     if(code === lang) return;
+    if(window.trackEvent) window.trackEvent('select_language', {language: code});
     try{ localStorage.setItem(KEY, code); }catch(e){}
     setCookie(code);
     const u = new URL(location.href);
