@@ -6,7 +6,7 @@
 // by GA4's enhanced measurement, so every tab and blog post is logged.
 // Paste the GA4 Measurement ID (G-XXXXXXXXXX) here to switch tracking on.
 (function(){
-  const GA_ID = '';
+  const GA_ID = 'G-11B0HNP710';
   window.trackEvent = function(name, params){
     if(window.gtag) window.gtag('event', name, params || {});
   };
