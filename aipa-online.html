@@ -12,23 +12,23 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23244a33'/><text y='.9em' font-size='58' x='16' fill='white'>🚀</text></svg>"/>
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
 :root{
-  --green:#2e5c3f;
-  --green-deep:#244a33;
-  --accent:#c94f2f;
-  --accent-soft:#f3e3dc;
+  --green:#1f4d3a;
+  --green-deep:#163a2c;
+  --accent:#b8552f;
+  --accent-soft:#faefe9;
   --gold:#f0c9bb;
-  --ink:#1c2a21;
-  --ink-2:#3f3f3c;
-  --muted:#5a5a56;
-  --line:#d3d3cd;
+  --ink:#15191f;
+  --ink-2:#3b414c;
+  --muted:#636b78;
+  --line:#e6e3dc;
   --paper:#ffffff;
-  --bg:#f1f1ec;
-  --sans:"DM Sans",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
-  --serif:"DM Serif Display",Georgia,serif;
-  --mono:"DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --bg:#f8f7f4;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --serif:"Newsreader",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -65,7 +65,7 @@ section{padding:70px 0}
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid transparent;cursor:pointer}
 .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-.btn-primary:hover{background:#ab4127;border-color:#ab4127}
+.btn-primary:hover{background:#9a4524;border-color:#9a4524}
 .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
 
 /* STAT / STEP BAND */
@@ -135,6 +135,51 @@ footer{background:var(--green-deep);color:rgba(255,255,255,.75);font-family:var(
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center}
 footer b{color:#fff}
 footer .disc{text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:12px;color:rgba(255,255,255,.5);max-width:680px;margin-top:10px}
+
+/* ── EDITORIAL LAYER: warm paper · deep green · copper · Newsreader / Inter · soft rounded cards ── */
+body{font-family:var(--sans);font-feature-settings:"cv02","cv03","cv04","cv11";letter-spacing:-0.006em;background:var(--bg)}
+h1,h2,.sec-title,.closing h2{font-family:var(--serif)!important;font-weight:500!important;letter-spacing:-0.02em!important}
+.sec-title{color:var(--ink)}
+.frame .sec-title,.live .sec-title,.closing h2{color:#fff}
+h3,h4,.card h3,.dim h4,.level h4,.prog h4,.tier h4,.member h4,.road .r h4,.press h4,.ask-card h3,.impact h4{font-family:var(--sans);font-weight:600;letter-spacing:-0.012em}
+.eyebrow,.stat .l,.flow .node .n-d,.level .lk,.prog .pk,.tier .tk,.member .role,.press .pk,.ripple-card h3,.shot .bar span,.hero-visual .cap,.tier .flag,.urlchip{
+  font-family:var(--sans)!important;font-weight:600!important;letter-spacing:.08em!important;font-size:11.5px!important;
+}
+.prog .map{font-family:var(--mono)!important;letter-spacing:0!important;text-transform:none!important;font-size:12.5px!important}
+.eyebrow::before{width:18px;height:1.5px;border-radius:2px}
+.topbar{background:rgba(248,247,244,.86)!important;backdrop-filter:saturate(160%) blur(14px)!important;-webkit-backdrop-filter:saturate(160%) blur(14px)!important}
+.topbar .wrap{height:68px}
+.brand{color:var(--ink);font-weight:500;font-size:24px;letter-spacing:-0.02em}
+.brand .logo{border-radius:10px}
+.topnav a{color:var(--ink-2);font-weight:500;font-size:14px;letter-spacing:-0.01em;text-transform:none}
+.topnav a:hover{color:var(--green)}
+.topbar .cta,.btn,.btn-primary,.btn-ghost{border-radius:999px!important;font-weight:500;font-size:14px;letter-spacing:-0.01em;text-transform:none;padding:11px 20px}
+.hero .btn-primary,.closing .btn-primary,.tier.feat .btn-primary{background:#fff;color:var(--green);border-color:#fff}
+.hero .btn-primary:hover,.closing .btn-primary:hover{background:var(--green-100,#e7f0ea);border-color:var(--green-100,#e7f0ea)}
+.hero,.frame,.live,.closing,.divide-visual,.finbox{background:linear-gradient(135deg,var(--green) 0%,var(--green-deep) 100%)}
+.closing,.divide-visual,.finbox{border-radius:20px}
+.hero-visual,.shot,.dim,.level{border-radius:14px}
+.hero-visual img,.shot img,.press img{border-radius:10px}
+.model-chips span,.frame-badge,.urlchip,.finbox .badge{border-radius:999px;font-family:var(--sans);font-weight:500;letter-spacing:0;text-transform:none;font-size:12.5px}
+.stat{background:var(--paper)!important;color:var(--ink);border:1px solid var(--line)!important;border-radius:14px;box-shadow:0 1px 2px rgba(20,24,31,.04)}
+.stat .v{color:var(--green)}
+.stat .l{color:var(--muted);opacity:1}
+.card,.pill,.tier,.ask-card,.road .r,.member,.press,.partnerstrip,.prog,.flow .node,.photo-frame{border-radius:14px!important;box-shadow:0 1px 2px rgba(20,24,31,.04)!important}
+.card,.tier,.member,.flow .node,.card:nth-child(2n),.tier:nth-child(2n),.member:nth-child(2n),.flow .node:nth-child(4n+3){border-top:1px solid var(--line)}
+.tier.feat{border:1px solid var(--accent)}
+.tier .flag{border-radius:999px}
+.prog{border-left:3px solid var(--green)}
+.card .ic,.pill .pi,.dim .di,.ripple-step .rs-ic{border-radius:10px}
+.needlist .x{border-radius:50%}
+.road .r .num,.member .av{border-radius:50%}
+.prog .map{border-radius:8px}
+.stake span{border-radius:999px;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:0;text-transform:none}
+.ask-card.collab,.ask-card.fund{border-radius:0 14px 14px 0!important}
+.divide-visual .dv-bar,.divide-visual .dv-bar i{border-radius:999px}
+.photo-frame .tag{border-radius:999px;font-family:var(--sans);font-weight:500;letter-spacing:0;text-transform:none;font-size:12px}
+.dot{border-radius:50%}
+footer{background:var(--green-deep);font-family:var(--sans);font-size:13.5px;letter-spacing:0;text-transform:none}
+.brand::after{margin-left:-9px}
 </style>
 </head>
 <body id="top">
