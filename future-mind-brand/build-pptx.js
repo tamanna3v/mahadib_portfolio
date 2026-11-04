@@ -10,6 +10,7 @@ const THEME = {
     accent1:"9257BB", accent2:"A4E5D4", accent3:"6E3B96", accent4:"1E1630", accent5:"5E5670", accent6:"E3DEEA",
     hlink:"9257BB", folHlink:"6E3B96" }
 };
+const CE_LOGO = require("path").join(require("path").dirname(OUT), "commengine-logo.png");
 const H = { purple:"9257BB", mint:"A4E5D4", ink:"1E1630", white:"FFFFFF", deep:"6E3B96" };
 
 async function markPng(bg, fg, opts = {}) {
@@ -332,13 +333,10 @@ async function markPng(bg, fg, opts = {}) {
   lockup(s, 7.65, 2.5, 0.7, "P", C.text1, C.accent1, "Endorsement");
   T(s, "A CommEngine Limited & Partners company", { x: 7.65, y: 3.4, w: 4.8, h: 0.4, fontSize: 12, color: C.accent5, objectName: "Endorsement line" });
 
-  s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 7.3, y: 4.35, w: 5.43, h: 2.2, rectRadius: 0.08, fill: { color: C.background1 },
-    line: { color: C.accent1, width: 1.25, dashType: "dash" }, objectName: "CommEngine logo slot" });
+  panel(s, 7.3, 4.35, 5.43, 2.2, C.background1, "CommEngine logo panel", { line: { color: C.accent6, width: 1 } });
   T(s, "LEGAL ENTITY LOGO", { x: 7.65, y: 4.55, w: 4.5, h: 0.3, fontSize: 11, bold: true, charSpacing: 3, color: C.accent1, objectName: "Entity logo label" });
-  T(s, [{ text: "CommEngine logo", options: { bold: true, fontSize: 20, color: C.text1, breakLine: true } },
-        { text: "Place the official CommEngine artwork here", options: { fontSize: 12, color: C.accent5 } }],
-    { x: 7.65, y: 5.0, w: 4.8, h: 1.3, align: "center", valign: "middle", objectName: "Entity logo slot text" });
-  s.addNotes("Legal entity: Future Mind Consulting Group currently operates under CommEngine Limited & Partners. Replace the dashed box with the official CommEngine logo file.");
+  s.addImage({ path: CE_LOGO, x: 8.215, y: 5.2, w: 3.6, h: 0.648, altText: "CommEngine logo", objectName: "CommEngine logo" });
+  s.addNotes("Legal entity: Future Mind Consulting Group currently operates under CommEngine Limited & Partners. The CommEngine logo is shown alongside the Future Mind endorsement lockup.");
 
   await pres.writeFile({ fileName: OUT });
   await applyTheme(OUT, THEME);
