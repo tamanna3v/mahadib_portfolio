@@ -313,6 +313,33 @@ async function markPng(bg, fg, opts = {}) {
   });
   lockup(s, 0.7, 6.55, 0.42, "M", C.background1, C.accent2, "Closing");
 
+  // ===== 12. Legal entity =====
+  pres.addSection({ title: "Legal entity" });
+  s = content("Legal entity");
+  s.addText("LEGAL ENTITY", { placeholder: "eyebrow" });
+  s.addText("Who stands behind the brand", { placeholder: "title" });
+  T(s, "Future Mind Consulting Group currently operates under the legal entity", { x: 0.6, y: 1.85, w: 6.2, h: 0.8, fontSize: 18, color: C.accent5, valign: "top", objectName: "Entity intro" });
+  T(s, [{ text: "CommEngine Limited", options: { breakLine: true } }, { text: "& Partners" }], { x: 0.6, y: 2.7, w: 6.2, h: 1.3, fontSize: 36, bold: true, color: C.accent1, valign: "top", objectName: "Entity name" });
+  T(s, [
+    { text: "Contracts, invoices and legal documents carry the legal entity name.", options: { bullet: true, breakLine: true } },
+    { text: "Letterheads and proposals show the endorsement line under the logo.", options: { bullet: true, breakLine: true } },
+    { text: "Marketing material leads with the Future Mind brand.", options: { bullet: true } },
+  ], { x: 0.6, y: 4.2, w: 6.2, h: 1.6, fontSize: 15, valign: "top", paraSpaceAfter: 8, objectName: "Entity rules" });
+  T(s, "© 2026 CommEngine Limited & Partners. All rights reserved.", { x: 0.6, y: 6.15, w: 6.2, h: 0.35, fontSize: 12, color: C.accent5, objectName: "Copyright line" });
+
+  panel(s, 7.3, 1.8, 5.43, 2.3, C.background2, "Endorsement panel");
+  T(s, "ENDORSEMENT LOCKUP", { x: 7.65, y: 2.0, w: 4.5, h: 0.3, fontSize: 11, bold: true, charSpacing: 3, color: C.accent1, objectName: "Endorsement label" });
+  lockup(s, 7.65, 2.5, 0.7, "P", C.text1, C.accent1, "Endorsement");
+  T(s, "A CommEngine Limited & Partners company", { x: 7.65, y: 3.4, w: 4.8, h: 0.4, fontSize: 12, color: C.accent5, objectName: "Endorsement line" });
+
+  s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 7.3, y: 4.35, w: 5.43, h: 2.2, rectRadius: 0.08, fill: { color: C.background1 },
+    line: { color: C.accent1, width: 1.25, dashType: "dash" }, objectName: "CommEngine logo slot" });
+  T(s, "LEGAL ENTITY LOGO", { x: 7.65, y: 4.55, w: 4.5, h: 0.3, fontSize: 11, bold: true, charSpacing: 3, color: C.accent1, objectName: "Entity logo label" });
+  T(s, [{ text: "CommEngine logo", options: { bold: true, fontSize: 20, color: C.text1, breakLine: true } },
+        { text: "Place the official CommEngine artwork here", options: { fontSize: 12, color: C.accent5 } }],
+    { x: 7.65, y: 5.0, w: 4.8, h: 1.3, align: "center", valign: "middle", objectName: "Entity logo slot text" });
+  s.addNotes("Legal entity: Future Mind Consulting Group currently operates under CommEngine Limited & Partners. Replace the dashed box with the official CommEngine logo file.");
+
   await pres.writeFile({ fileName: OUT });
   await applyTheme(OUT, THEME);
   console.log("written");
