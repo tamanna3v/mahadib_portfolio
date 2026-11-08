@@ -1711,6 +1711,11 @@ body.has-subtabs:not(.deck-mode) .page{padding-top:calc(var(--nav-h,68px) + 40px
 .aipa-ink .chip,.aipa-ink .aipa-suite-tag,.aipa-ink .aipa-trusted-pill,.aipa-ink .aipa-step-badge{
   background:rgba(255,255,255,.08)!important;color:#fff!important;border-color:rgba(255,255,255,.22)!important;
 }
+.cons-firm{margin-top:auto;padding-top:16px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.cons-focus + .cons-firm,.cons-clients + .cons-firm,.cons-abs + .cons-firm{margin-top:20px}
+.cons-firm-lbl{font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cons-firm-name{font-size:14px;font-weight:600;color:var(--green)}
+
 /* decorative corner blobs on the partner/affiliate banners */
 div[style*="top:-40px;right:-40px"],div[style*="bottom:-60px;left:-20px"]{display:none}
 
@@ -2184,6 +2189,7 @@ const CONSULTING = [
   {
     icon:"🏦",
     title:"UCB Digital Bank Licensing",
+    firm:"BuildCon Consultancies Limited",
     client:"United Commercial Bank PLC",
     sector:"Financial Services · Digital Banking",
     tag:"Digital Bank Establishment",
@@ -2195,6 +2201,7 @@ const CONSULTING = [
   {
     icon:"🖥️",
     title:"Four-Tier Data Center Consultancy",
+    firm:"BuildCon Consultancies Limited",
     client:"Tier-I → Tier-IV Feasibility",
     sector:"Infrastructure · Data Center",
     tag:"Tier-IV Feasibility",
@@ -2206,6 +2213,7 @@ const CONSULTING = [
   {
     icon:"📊",
     title:"Organizational KPI & SLA Optimization",
+    firm:"BuildCon Consultancies Limited",
     sector:"Operational Excellence · Governance",
     tag:"Performance & Governance",
     bg:"var(--accent-lilac)",
@@ -2582,6 +2590,8 @@ function consultingSection(){
         <p>${c.blog.takeaway}</p>
         <button type="button" class="cons-blog-link" onclick="showPage('${c.blog.id}')">Read the full article (বাংলা) →</button>
       </div>` : '';
+    const firmRow = c.firm ? `
+      <div class="cons-firm"><span class="cons-firm-lbl">Delivered through</span><span class="cons-firm-name">${c.firm}</span></div>` : '';
     const docRow = c.doc ? `
       <a href="${c.doc.href}" target="_blank" rel="noopener" class="cons-doc-link">${c.doc.label}</a>` : '';
     return `
@@ -2601,6 +2611,7 @@ function consultingSection(){
         ${clientRows}
         ${blogRow}
         ${docRow}
+        ${firmRow}
       </div>`;
   }).join('');
 
