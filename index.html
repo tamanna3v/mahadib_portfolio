@@ -1711,6 +1711,11 @@ body.has-subtabs:not(.deck-mode) .page{padding-top:calc(var(--nav-h,68px) + 40px
 .aipa-ink .chip,.aipa-ink .aipa-suite-tag,.aipa-ink .aipa-trusted-pill,.aipa-ink .aipa-step-badge{
   background:rgba(255,255,255,.08)!important;color:#fff!important;border-color:rgba(255,255,255,.22)!important;
 }
+.cons-firm{margin-top:auto;padding-top:16px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.cons-focus + .cons-firm,.cons-clients + .cons-firm,.cons-abs + .cons-firm{margin-top:20px}
+.cons-firm-lbl{font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cons-firm-name{font-size:14px;font-weight:600;color:var(--green)}
+
 /* decorative corner blobs on the partner/affiliate banners */
 div[style*="top:-40px;right:-40px"],div[style*="bottom:-60px;left:-20px"]{display:none}
 
@@ -1877,14 +1882,16 @@ footer{
 // ── DATA ────────────────────────────────────────────────
 const NAV = [
   {text:"Hadi Bhuiyan",id:"about"},
-  {text:"Products",id:"products"},
+  {text:"Products",id:"products",subtabs:[
+    {text:"All Products",id:"products"},
+    {text:"EasyFlow",id:"easyflow"}
+  ]},
   {text:"AI Accelerator",id:"aipa",subtabs:[
     {text:"AI Briefing Session (AIBS)",id:"aibs"},
     {text:"AIPA Session Plan",id:"aipa-session-plan"},
     {text:"AI Strategy Accelerator (AISA)",id:"management-aisa"},
     {text:"AI Inference",id:"ai-inference"}
   ]},
-  {text:"EasyFlow",id:"easyflow"},
   {text:"Consulting",id:"consulting"},
   {text:"Research",id:"research"},
   {text:"AI4SG",id:"ai4sg"},
@@ -2182,6 +2189,7 @@ const CONSULTING = [
   {
     icon:"🏦",
     title:"UCB Digital Bank Licensing",
+    firm:"BuildCon Consultancies Limited",
     client:"United Commercial Bank PLC",
     sector:"Financial Services · Digital Banking",
     tag:"Digital Bank Establishment",
@@ -2193,6 +2201,7 @@ const CONSULTING = [
   {
     icon:"🖥️",
     title:"Four-Tier Data Center Consultancy",
+    firm:"BuildCon Consultancies Limited",
     client:"Tier-I → Tier-IV Feasibility",
     sector:"Infrastructure · Data Center",
     tag:"Tier-IV Feasibility",
@@ -2204,6 +2213,7 @@ const CONSULTING = [
   {
     icon:"📊",
     title:"Organizational KPI & SLA Optimization",
+    firm:"BuildCon Consultancies Limited",
     sector:"Operational Excellence · Governance",
     tag:"Performance & Governance",
     bg:"var(--accent-lilac)",
@@ -2580,6 +2590,8 @@ function consultingSection(){
         <p>${c.blog.takeaway}</p>
         <button type="button" class="cons-blog-link" onclick="showPage('${c.blog.id}')">Read the full article (বাংলা) →</button>
       </div>` : '';
+    const firmRow = c.firm ? `
+      <div class="cons-firm"><span class="cons-firm-lbl">Delivered through</span><span class="cons-firm-name">${c.firm}</span></div>` : '';
     const docRow = c.doc ? `
       <a href="${c.doc.href}" target="_blank" rel="noopener" class="cons-doc-link">${c.doc.label}</a>` : '';
     return `
@@ -2599,6 +2611,7 @@ function consultingSection(){
         ${clientRows}
         ${blogRow}
         ${docRow}
+        ${firmRow}
       </div>`;
   }).join('');
 
@@ -2928,6 +2941,7 @@ function pageAIPA(){
 <section>
   <div style="padding:clamp(48px,6vw,72px) 0 clamp(34px,4vw,44px)">
     <div style="width:min(1240px,calc(100% - 40px));margin:0 auto">
+      <h2 style="font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height:1.15;font-size:clamp(26px,3vw,38px);color:var(--ink);margin:0 0 20px;padding-bottom:20px;border-bottom:1px solid var(--line);text-wrap:balance">AI Proficiency Accelerator (AIPA), BuildNation Limited</h2>
       <div style="display:flex;gap:8px;align-items:center;color:var(--muted);font-size:13px;margin-bottom:18px;flex-wrap:wrap">
         <a href="/aipa" onclick="showPage('aipa');return false" style="color:var(--green);font-family:var(--sans);font-weight:500">AI Accelerator</a><span>/</span><span>AIPA</span>
       </div>
