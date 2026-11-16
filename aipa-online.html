@@ -12,20 +12,20 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23244a33'/><text y='.9em' font-size='58' x='16' fill='white'>🚀</text></svg>"/>
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
 :root{
-  --green:#1f4d3a;
-  --green-deep:#163a2c;
-  --accent:#b8552f;
-  --accent-soft:#faefe9;
-  --gold:#f0c9bb;
-  --ink:#15191f;
-  --ink-2:#3b414c;
-  --muted:#636b78;
-  --line:#e6e3dc;
+  --green:#000000;
+  --green-deep:#1a1a1a;
+  --accent:#8f5d00;
+  --accent-soft:#fef6e4;
+  --gold:#f6b443;
+  --ink:#000000;
+  --ink-2:#1f1f1f;
+  --muted:#555555;
+  --line:#d3d3d3;
   --paper:#ffffff;
-  --bg:#f8f7f4;
+  --bg:#ffffff;
   --sans:"Inter",system-ui,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;
   --serif:"Newsreader",Georgia,serif;
   --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
@@ -65,7 +65,7 @@ section{padding:70px 0}
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid transparent;cursor:pointer}
 .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-.btn-primary:hover{background:#9a4524;border-color:#9a4524}
+.btn-primary:hover{background:#6f4800;border-color:#6f4800}
 .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
 
 /* STAT / STEP BAND */
@@ -147,7 +147,7 @@ h3,h4,.card h3,.dim h4,.level h4,.prog h4,.tier h4,.member h4,.road .r h4,.press
 }
 .prog .map{font-family:var(--mono)!important;letter-spacing:0!important;text-transform:none!important;font-size:12.5px!important}
 .eyebrow::before{width:18px;height:1.5px;border-radius:2px}
-.topbar{background:rgba(248,247,244,.86)!important;backdrop-filter:saturate(160%) blur(14px)!important;-webkit-backdrop-filter:saturate(160%) blur(14px)!important}
+.topbar{background:#000!important;backdrop-filter:saturate(160%) blur(14px)!important;-webkit-backdrop-filter:saturate(160%) blur(14px)!important}
 .topbar .wrap{height:68px}
 .brand{color:var(--ink);font-weight:500;font-size:24px;letter-spacing:-0.02em}
 .brand .logo{border-radius:10px}
@@ -155,7 +155,7 @@ h3,h4,.card h3,.dim h4,.level h4,.prog h4,.tier h4,.member h4,.road .r h4,.press
 .topnav a:hover{color:var(--green)}
 .topbar .cta,.btn,.btn-primary,.btn-ghost{border-radius:999px!important;font-weight:500;font-size:14px;letter-spacing:-0.01em;text-transform:none;padding:11px 20px}
 .hero .btn-primary,.closing .btn-primary,.tier.feat .btn-primary{background:#fff;color:var(--green);border-color:#fff}
-.hero .btn-primary:hover,.closing .btn-primary:hover{background:var(--green-100,#e7f0ea);border-color:var(--green-100,#e7f0ea)}
+.hero .btn-primary:hover,.closing .btn-primary:hover{background:var(--green-100,#fdf0d5);border-color:var(--green-100,#fdf0d5)}
 .hero,.frame,.live,.closing,.divide-visual,.finbox{background:linear-gradient(135deg,var(--green) 0%,var(--green-deep) 100%)}
 .closing,.divide-visual,.finbox{border-radius:20px}
 .hero-visual,.shot,.dim,.level{border-radius:14px}
@@ -180,6 +180,38 @@ h3,h4,.card h3,.dim h4,.level h4,.prog h4,.tier h4,.member h4,.road .r h4,.press
 .dot{border-radius:50%}
 footer{background:var(--green-deep);font-family:var(--sans);font-size:13.5px;letter-spacing:0;text-transform:none}
 .brand::after{margin-left:-9px}
+
+/* ── CONVENING LAYER: black · white · amber · square · bold uppercase labels ── */
+body{background:#fff;color:#000}
+h1,h2,.sec-title,.closing h2{font-weight:300!important}
+.topbar{background:#000!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border-bottom:none}
+.brand{color:#fff;font-weight:400}
+.brand::after{color:#f6b443}
+.brand .logo{border-radius:0;border:none}
+.topnav a{color:#fff;font-weight:700;font-size:13.5px;letter-spacing:.02em;text-transform:uppercase}
+.topnav a:hover{color:#f6b443}
+.topbar .lang-switch-btn{color:#fff;border-color:rgba(255,255,255,.5)}
+.topbar .cta,.btn,.btn-primary,.btn-ghost{border-radius:0!important;font-weight:700;font-size:13px;letter-spacing:.02em;text-transform:uppercase;padding:12px 20px}
+.topbar .cta,.btn-primary,.hero .btn-primary,.closing .btn-primary,.tier.feat .btn-primary{background:#f6b443;color:#000;border-color:#f6b443}
+.topbar .cta:hover,.btn-primary:hover,.hero .btn-primary:hover,.closing .btn-primary:hover{background:#fff;color:#000;border-color:#fff}
+.hero,.frame,.live,.closing,.divide-visual,.finbox{background:#000}
+.eyebrow{color:#000}
+.eyebrow::before{background:#f6b443;height:3px;width:20px;border-radius:0}
+.hero .eyebrow,.frame .eyebrow,.live .eyebrow{color:#f6b443}
+.hero h1 .u{color:#f6b443}
+.closing,.divide-visual,.finbox,.hero-visual,.shot,.dim,.level,.hero-visual img,.shot img,.press img,.model-chips span,.frame-badge,.urlchip,.finbox .badge,
+.stat,.card,.pill,.tier,.ask-card,.road .r,.member,.press,.partnerstrip,.prog,.flow .node,.photo-frame,.tier .flag,.card .ic,.pill .pi,.dim .di,.ripple-step .rs-ic,
+.needlist .x,.road .r .num,.member .av,.prog .map,.stake span,.ask-card.collab,.ask-card.fund,.divide-visual .dv-bar,.divide-visual .dv-bar i,.photo-frame .tag,.dot{border-radius:0!important;box-shadow:none!important}
+.stat{background:#000!important;border-color:#000!important}
+.stat .v{color:#fff;font-weight:300}
+.stat .l{color:#fff}
+.tier.feat{border:1px solid #000}
+.tier .flag,.divide-visual .dv-bar i{background:#f6b443;color:#000}
+.prog,.ask-card.collab,.ask-card.fund{border-left:4px solid #f6b443}
+.road .r .num,.member .av{background:#000}
+.photo-frame .tag{background:#000}
+.tier li::before,.ask-card li::before,.flow .arrow{color:#000}
+footer{background:#000}
 </style>
 </head>
 <body id="top">
