@@ -2068,6 +2068,14 @@ body.deck-mode footer{display:none}
 .bnp-c-green,.bnp-c-teal{background:var(--paper-2)}
 .bnp-pill{background:var(--amber)!important;color:#000!important;border-color:var(--amber)!important}
 
+/* Products overview cards */
+.prod-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.prod-card{display:flex;flex-direction:column;gap:6px;background:#000;color:#fff;padding:26px 22px 22px;border:1px solid #000;text-decoration:none;transition:background .15s ease,color .15s ease}
+.prod-card:hover{background:var(--amber);border-color:var(--amber);color:#000;text-decoration:none}
+.prod-card-emoji{font-size:26px;line-height:1;margin-bottom:8px}
+.prod-card-name{font-family:var(--serif);font-weight:300;font-size:30px;line-height:1.1;letter-spacing:-.01em}
+.prod-card-cap{font-size:14px;opacity:.82}
+.prod-card-cta{margin-top:18px;padding-top:12px;border-top:1px solid currentColor;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
 /* ── AI Accelerator pages (AIBS · AIPA · AISA) ── */
 .bnx{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.62;margin-top:-40px}
 .bnx a{text-decoration:none}
@@ -2125,7 +2133,11 @@ const NAV = [
   {text:"Hadi Bhuiyan",id:"about"},
   {text:"Products",id:"products",subtabs:[
     {text:"All Products",id:"products"},
-    {text:"EasyFlow",id:"easyflow"}
+    {text:"EasyFlow",id:"easyflow"},
+    {text:"EasyDo",id:"product-easydo"},
+    {text:"CommEngine",id:"product-commengine"},
+    {text:"Jachai",id:"product-jachai"},
+    {text:"Swaccho",id:"product-swaccho"}
   ]},
   {text:"AI Accelerator",id:"aipa",subtabs:[
     {text:"AI Briefing Session (AIBS)",id:"aibs"},
@@ -2639,18 +2651,11 @@ const PRODUCT_STARS = [
    meta:'P2O2V2P Model · Retail Digital Innovation Award 2020', href:'swaccho.html',
    src:'swaccho.html', frameTitle:'Swaccho — Nationwide Food &amp; Relief Distribution Tracking System'}
 ];
-function pageProducts(){
-  const ACTIVE = 'easyflow';
+function productPageId(p){ return p.id === 'easyflow' ? 'easyflow' : 'product-' + (p.id === 'swachho' ? 'swaccho' : p.id); }
 
-  const picker = PRODUCT_STARS.map(p=>`
-    <button type="button" class="prod-pick-btn${p.id===ACTIVE?' active':''}" data-prod="${p.id}"
-      aria-pressed="${p.id===ACTIVE?'true':'false'}" onclick="switchProduct('${p.id}')">
-      <span class="prod-pick-emoji">${p.emoji}</span>
-      <span><span class="prod-pick-name">${p.name}</span><span class="prod-pick-cap">${p.cap}</span></span>
-    </button>`).join('');
-
-  const panels = PRODUCT_STARS.map(p=>`
-    <div class="prod-embed-panel${p.id===ACTIVE?' active':''}" id="prod-${p.id}">
+function productEmbed(p){
+  return `
+    <div class="prod-embed-panel active" id="prod-${p.id}">
       <div class="prod-embed-header">
         <div>
           <div class="prod-embed-name">${p.emoji} ${p.title}</div>
@@ -2660,9 +2665,30 @@ function pageProducts(){
           <a href="${p.href}" target="_blank" rel="noopener" class="prod-embed-link">Open in new tab ↗</a>
         </div>
       </div>
-      <iframe class="prod-embed-frame" ${p.eager?`src="${p.src}"`:`data-src="${p.src}"`}
-        title="${p.frameTitle}" loading="lazy" allowfullscreen></iframe>
-    </div>`).join('');
+      <iframe class="prod-embed-frame" src="${p.src}" title="${p.frameTitle}" loading="lazy" allowfullscreen></iframe>
+    </div>`;
+}
+
+// One product, live — reached from the Products sub-tabs.
+function pageProduct(id){
+  const p = PRODUCT_STARS.find(x=>x.id===id);
+  return `
+    <h2 class="section-title">${p.name}</h2>
+    <p class="section-sub">${p.cap} · ${p.meta}</p>
+    ${productEmbed(p)}`;
+}
+
+// Order of the product sub-tabs: EasyFlow, EasyDo, then the rest.
+const PRODUCT_ORDER = ['easyflow','easydo','commengine','jachai','swachho'];
+
+function pageProducts(){
+  const cards = PRODUCT_ORDER.map(id=>PRODUCT_STARS.find(p=>p.id===id)).map(p=>`
+    <a href="/${productPageId(p)}" onclick="showPage('${productPageId(p)}');return false" class="prod-card">
+      <span class="prod-card-emoji">${p.emoji}</span>
+      <span class="prod-card-name">${p.name}</span>
+      <span class="prod-card-cap">${p.cap}</span>
+      <span class="prod-card-cta">Explore ${p.name} →</span>
+    </a>`).join('');
 
   const productLinks = [
     {icon:"🌐",label:"AI Accelerator Program",val:"buildnation.com.bd",href:"https://buildnation.com.bd/aipa/"},
@@ -2680,27 +2706,10 @@ function pageProducts(){
   return `
     <h2 class="section-title">Products</h2>
     <p class="section-sub">AI-powered platforms built to transform how teams work and engage</p>
-
-    <div class="prod-step">
-      <span class="prod-step-num">STEP 01</span>
-      <span class="prod-step-title">Choose a product</span>
-      <span class="prod-step-hint">${PRODUCT_STARS.length} products — select one to preview it</span>
-    </div>
-    <div class="prod-pick">${picker}</div>
-
-    <div class="prod-step">
-      <span class="prod-step-num">STEP 02</span>
-      <span class="prod-step-title">Explore it live</span>
-    </div>
-    ${panels}
-
-    <div class="prod-step" style="margin-top:44px">
-      <span class="prod-step-num">STEP 03</span>
-      <span class="prod-step-title">Visit the product sites</span>
-    </div>
+    <div class="prod-cards">${cards}</div>
+    <div class="sub-label"><h3>Visit the product sites</h3><div class="sub-label-line"></div></div>
     <div class="contact-grid">${productLinks}</div>`;
 }
-
 function pageEvents(activeFilter){
   activeFilter = activeFilter || 'All';
   const categories = ['All', ...new Set(EVENTS.map(e=>e.type))];
@@ -5636,6 +5645,10 @@ const PAGES = {
   about: pageAbout,
   experience: pageExperience,
   products: pageProducts,
+  'product-easydo': ()=>pageProduct('easydo'),
+  'product-commengine': ()=>pageProduct('commengine'),
+  'product-jachai': ()=>pageProduct('jachai'),
+  'product-swaccho': ()=>pageProduct('swachho'),
   programs: pageAIPA,
   aipa: pageAIPA,
   aibs: pageAIBS,
@@ -5685,6 +5698,10 @@ const PAGE_META = {
 };
 
 PAGE_META.ai4sg = {t:"AI for Teachers (AI4SG) — Scaling the Skill | Hadi Bhuiyan",d:"AI for Teachers: a pro bono social-good initiative that scales teacher skilling with EasyFlow — Live Flow scales the learning experience, Course Flow makes the skill persistent."};
+PAGE_META['product-easydo'] = {t:"EasyDo — Private AI Workspace | Hadi Bhuiyan",d:"EasyDo: a private AI workspace. Live preview from Hadi Bhuiyan's Products."};
+PAGE_META['product-commengine'] = {t:"CommEngine — SocialCRM & AI Profiling | Hadi Bhuiyan",d:"CommEngine: SocialCRM and AI customer profiling serving 120+ brands. Live preview."};
+PAGE_META['product-jachai'] = {t:"Jachai — Product Authentication | Hadi Bhuiyan",d:"Jachai: product authentication. Live preview from Hadi Bhuiyan's Products."};
+PAGE_META['product-swaccho'] = {t:"Swaccho — Relief Distribution Tracking | Hadi Bhuiyan",d:"Swaccho: nationwide food and relief distribution tracking, Retail Digital Innovation Award 2020."};
 PAGE_META.blog = {t:"Blog — Hadi Bhuiyan",d:"Field notes and reflections from consulting, public-sector innovation design and enterprise AI work."};
 BLOG_POSTS.forEach(b=>{ PAGE_META[b.id] = {t:b.metaTitle,d:b.metaDesc}; });
 
