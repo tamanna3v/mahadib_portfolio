@@ -2077,86 +2077,143 @@ body.deck-mode footer{display:none}
 .prod-card-name{font-family:var(--serif);font-weight:300;font-size:30px;line-height:1.1;letter-spacing:-.01em}
 .prod-card-cap{font-size:14px;opacity:.82}
 .prod-card-cta{margin-top:18px;padding-top:12px;border-top:1px solid currentColor;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
-/* ── PROFILE PAGE (AI Transformation Proposal 2026) ── */
-.pf-actions{display:flex;flex-wrap:wrap;gap:10px;margin:-20px 0 0}
-.pf-glance-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.pf-glance{background:var(--paper);border:1px solid var(--line);padding:24px 26px;display:flex;flex-direction:column;gap:12px;min-width:0}
+/* ── PROFILE PAGE · pane-by-pane deck (AI Transformation Proposal 2026) ── */
+#pg-profile{--pf-green:#1b7a4a;--pf-green-d:#135c37}
+.pf-topbar{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 24px;padding:40px 0 24px;border-bottom:1px solid #000;margin-bottom:24px}
+.pf-topbar-k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pf-topbar-t{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4vw,52px);line-height:1.05;color:#000;margin-top:6px}
+.pf-actions{display:flex;flex-wrap:wrap;gap:10px}
+.pf-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;font-size:14px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;border:2px solid transparent;transition:background .15s ease,color .15s ease,border-color .15s ease}
+.pf-btn:hover{text-decoration:none}
+.pf-btn-open{background:var(--pf-green);color:#fff;border-color:var(--pf-green)}
+.pf-btn-open:hover{background:var(--pf-green-d);border-color:var(--pf-green-d);color:#fff}
+.pf-btn-dl{background:#f6c343;color:#000;border-color:#f6c343}
+.pf-btn-dl:hover{background:#e8b228;border-color:#e8b228;color:#000}
+.pf-tone-dark .pf-btn-dl{border-color:#f6c343}
+
+.pf-deck{outline:none}
+.pf-pane{position:relative;min-height:min(78vh,820px);padding:clamp(28px,4.5vw,64px);border:1px solid #000;display:flex;flex-direction:column;gap:22px;animation:pfIn .35s ease both}
+.pf-pane[hidden]{display:none}
+body:has(#pfDeck) #wa-chat-bar{bottom:104px}
+@media(max-width:760px){body:has(#pfDeck) #wa-chat-bar{bottom:96px}}
+@keyframes pfIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.pf-pane{animation:none}}
+.pf-tone-light{background:#fff;color:var(--ink)}
+.pf-tone-dark{background:#000;color:#fff;border-color:#000}
+.pf-tone-amber{background:var(--amber);color:#000;border-color:var(--amber)}
+.pf-pane-num{position:absolute;top:clamp(18px,3vw,32px);right:clamp(18px,3vw,36px);font-family:var(--serif);font-weight:300;font-size:clamp(28px,3vw,40px);line-height:1;opacity:.9}
+.pf-pane-num span{font-size:.5em;opacity:.55}
+.pf-eyebrow{font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);padding-right:110px}
+.pf-tone-dark .pf-eyebrow{color:var(--amber)}
+.pf-tone-amber .pf-eyebrow{color:#000}
+.pf-h{font-family:var(--serif)!important;font-weight:300;font-size:clamp(40px,5.6vw,80px);line-height:1.02;letter-spacing:-.02em;margin:0;max-width:18ch;text-wrap:balance}
+.pf-h-name{max-width:none}
+.pf-lede{font-size:clamp(19px,1.9vw,26px);line-height:1.4;margin:0;font-weight:500;max-width:46ch}
+.pf-tone-dark .pf-lede{color:rgba(255,255,255,.9)}
+
+.pf-cover-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:auto 0 8px;padding-top:28px}
+.pf-cover-stats div{display:flex;flex-direction:column;gap:12px}
+.pf-cover-stats b{font-family:var(--serif);font-weight:300;font-size:clamp(44px,5.4vw,76px);line-height:1;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.6)}
+.pf-cover-stats span{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+
+.pf-grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pf-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.pf-grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.pf-glance{background:#fff;border:1px solid var(--line);padding:24px;display:flex;flex-direction:column;gap:14px;min-width:0}
 .pf-glance-feature{background:var(--amber-soft);border-color:var(--amber)}
 .pf-glance-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
 .pf-num{background:#000;color:#fff;font-weight:700;font-size:15px;padding:8px 12px;line-height:1}
 .pf-stat{text-align:right;display:flex;flex-direction:column;align-items:flex-end}
-.pf-stat b{font-family:var(--serif);font-weight:300;font-size:46px;line-height:1;color:#000}
+.pf-stat b{font-family:var(--serif);font-weight:300;font-size:58px;line-height:1;color:#000}
 .pf-stat small{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:6px}
-.pf-glance-title{font-size:20px;font-weight:700;line-height:1.3;margin:0;color:var(--ink);padding-bottom:12px;border-bottom:3px solid var(--amber);width:fit-content;max-width:100%}
-.pf-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
-.pf-list li{position:relative;padding-left:18px;font-size:15px;line-height:1.55;color:var(--ink-2)}
-.pf-list li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;background:#000}
-.pf-text{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-2)}
-.pf-note{margin:auto 0 0;padding-top:12px;border-top:1px dashed var(--ink);font-weight:700;color:#000}
-.pf-profile{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:28px;background:#000;color:#fff;padding:32px}
-.pf-profile-name{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4vw,48px);line-height:1.05}
-.pf-profile-role{font-weight:700;margin-top:10px;font-size:16px}
-.pf-profile-ex{color:var(--amber);font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-top:8px}
-.pf-profile-main p{color:rgba(255,255,255,.85);margin:16px 0 0;line-height:1.65}
-.pf-contact{list-style:none;margin:0;padding:0 0 0 24px;border-left:1px solid rgba(255,255,255,.3);display:flex;flex-direction:column;gap:12px;justify-content:center}
-.pf-contact li{display:flex;flex-direction:column;font-size:15px;overflow-wrap:anywhere}
+.pf-glance-title{font-size:21px;font-weight:700;line-height:1.3;margin:0;color:#000;padding-bottom:12px;border-bottom:3px solid var(--amber)}
+.pf-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.pf-list li{position:relative;padding-left:18px;font-size:15.5px;line-height:1.55;color:var(--ink-2)}
+.pf-list li::before{content:"";position:absolute;left:0;top:.58em;width:8px;height:8px;background:#000}
+.pf-text{margin:0;font-size:16px;line-height:1.6;color:var(--ink-2)}
+.pf-note{margin:auto 0 0;padding-top:12px;border-top:1px dashed #000;font-weight:700;color:#000}
+
+.pf-profile-ex{color:var(--amber);font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.pf-profile-body{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:32px;margin-top:auto;padding-top:20px;border-top:1px solid rgba(255,255,255,.3)}
+.pf-profile-body p{margin:0;font-size:clamp(17px,1.5vw,20px);line-height:1.65;color:rgba(255,255,255,.88)}
+.pf-contact{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.pf-contact li{display:flex;flex-direction:column;font-size:16px;overflow-wrap:anywhere}
 .pf-contact span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
 .pf-contact a{color:#fff;text-decoration:underline;text-underline-offset:3px}
-.pf-band{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--amber);padding:12px 18px;margin:56px 0 20px}
-.pf-band-n{background:#000;color:#fff;font-weight:700;padding:4px 9px;font-size:14px}
-.pf-band h3{margin:0;font-size:20px;font-weight:700;color:#000}
-.pf-band-k{margin-left:auto;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#000}
-.pf-kicker{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
-.pf-featured{background:var(--paper-2);border:1px solid var(--line);border-top:4px solid #000;padding:24px 26px;margin-bottom:16px}
-.pf-featured h4,.pf-card h4{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.15;margin:8px 0 10px;color:#000}
-.pf-featured p,.pf-card p{margin:0 0 10px;line-height:1.6;color:var(--ink-2)}
-.pf-clients{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin:14px 0}
+
+.pf-kicker{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.pf-tone-dark .pf-kicker,.pf-tone-amber .pf-kicker{color:inherit;opacity:.85}
+.pf-gap{margin-top:10px}
+.pf-gap-lg{margin-top:12px}
+.pf-featured{background:var(--paper-2);border-top:4px solid #000;padding:24px 26px}
+.pf-featured h4,.pf-card h4{font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.2vw,30px);line-height:1.15;margin:8px 0 10px;color:#000}
+.pf-featured p,.pf-card p{margin:0 0 10px;line-height:1.6;color:var(--ink-2);font-size:15.5px}
+.pf-clients{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:14px 0}
 .pf-clients span{background:#fff;border:1px solid var(--line);padding:10px 14px;display:flex;flex-direction:column;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .pf-clients b{font-size:15px;letter-spacing:0;text-transform:none;color:#000}
 .pf-small{font-size:14px;color:var(--muted)!important}
-.pf-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.pf-grid-4{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
-.pf-card{background:var(--paper);border:1px solid var(--line);padding:22px 24px;min-width:0}
-.pf-recog{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:0;border:1px solid #000}
-.pf-recog-item{display:flex;flex-direction:column;gap:4px;padding:18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-.pf-recog-y{font-family:var(--serif);font-weight:300;font-size:26px;line-height:1.1;color:#000}
-.pf-recog-item b{font-size:15px;line-height:1.3}
-.pf-recog-item small{font-size:13px;color:var(--muted)}
+.pf-card{background:#fff;border:1px solid var(--line);padding:22px 24px;min-width:0}
+.pf-card-tall{border-top:4px solid #000;padding-top:26px}
+
+.pf-recog{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid #000;margin-top:auto}
+.pf-recog-item{display:flex;flex-direction:column;gap:6px;padding:26px 22px 26px 0;border-bottom:1px solid rgba(0,0,0,.35)}
+.pf-recog-y{font-family:var(--serif);font-weight:300;font-size:clamp(36px,3.6vw,52px);line-height:1}
+.pf-recog-item b{font-size:18px;line-height:1.3}
+.pf-recog-item small{font-size:14px}
+
 .pf-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.pf-stats div{background:#000;color:#fff;padding:20px 20px 18px;display:flex;flex-direction:column;gap:8px}
-.pf-stats b{font-family:var(--serif);font-weight:300;font-size:44px;line-height:1}
-.pf-stats span{font-size:13px;font-weight:600;line-height:1.4}
-.pf-lead{margin:22px 0 12px;font-weight:600}
-.pf-orgs{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.pf-orgs span{border:1px solid #000;padding:7px 12px;font-size:14px;font-weight:600;background:#fff}
+.pf-stats div{background:#000;color:#fff;padding:22px 20px 20px;display:flex;flex-direction:column;gap:10px}
+.pf-stats b{font-family:var(--serif);font-weight:300;font-size:clamp(40px,4vw,58px);line-height:1}
+.pf-stats span{font-size:13.5px;font-weight:600;line-height:1.4}
+.pf-lead{margin:6px 0 0;font-weight:700;font-size:17px}
+.pf-orgs{display:flex;flex-wrap:wrap;gap:8px}
+.pf-orgs span{border:1px solid #000;padding:8px 13px;font-size:14.5px;font-weight:600;background:#fff;color:#000}
 .pf-orgs-quiet span{border-color:var(--line);font-weight:500;color:var(--ink-2)}
-.pf-research{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
-.pf-research li{padding:12px 0;border-bottom:1px solid var(--line);line-height:1.5;color:var(--ink-2)}
+.pf-orgs-dark span{background:transparent;color:#fff;border-color:rgba(255,255,255,.5);font-weight:500}
+.pf-research{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px;border-top:2px solid #000}
+.pf-research li{padding:13px 0;border-bottom:1px solid var(--line);line-height:1.5;color:var(--ink-2);font-size:15.5px}
 .pf-research b{color:#000}
 .pf-dash{list-style:none;margin:6px 0 0;padding:0}
 .pf-dash li{padding:4px 0 4px 22px;position:relative;color:var(--ink-2)}
 .pf-dash li::before{content:"—";position:absolute;left:0;color:var(--accent)}
-.pf-cv-head{border-left:4px solid var(--amber);padding:4px 0 4px 22px}
-.pf-cv-head .pf-profile-name{color:#000}
-.pf-cv-head .pf-profile-role{color:var(--ink)}
-.pf-cv-contact{font-size:14px;color:var(--muted);margin-top:8px}
-.pf-cv-head p{margin:14px 0 0;line-height:1.65;color:var(--ink-2);max-width:80ch}
-.pf-cv{display:flex;flex-direction:column;border-top:1px solid #000;margin-top:10px}
+.pf-cv-contact{font-size:14.5px;color:rgba(255,255,255,.7)}
+.pf-cv-sum{margin:0;font-size:clamp(16px,1.4vw,19px);line-height:1.65;color:rgba(255,255,255,.88);max-width:82ch}
+.pf-cv{display:flex;flex-direction:column;border-top:2px solid #000}
 .pf-job{padding:20px 0;border-bottom:1px solid var(--line)}
-.pf-job-head{display:flex;justify-content:space-between;align-items:baseline;gap:6px 20px;flex-wrap:wrap;margin-bottom:10px}
-.pf-job-head h4{margin:0;font-size:17px;font-weight:700;color:#000}
+.pf-job-head{display:flex;justify-content:space-between;align-items:baseline;gap:6px 20px;flex-wrap:wrap;margin-bottom:12px}
+.pf-job-head h4{margin:0;font-size:19px;font-weight:700;color:#000}
 .pf-job-head span{font-size:13px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-.pf-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;background:var(--amber);padding:26px 28px;margin-top:48px}
-.pf-cta div{display:flex;flex-direction:column;gap:4px}
-.pf-cta b{font-size:20px}
-.pf-cta .btn-dark{background:#000!important;color:#fff!important;border-color:#000!important}
-.pf-cta .btn-dark:hover{background:#fff!important;color:#000!important;border-color:#fff!important}
-@media(max-width:860px){
-  .pf-glance-grid,.pf-grid-2,.pf-research{grid-template-columns:minmax(0,1fr)}
-  .pf-profile{grid-template-columns:minmax(0,1fr);padding:24px}
-  .pf-contact{border-left:none;border-top:1px solid rgba(255,255,255,.3);padding:18px 0 0}
-  .pf-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .pf-band-k{margin-left:0;flex-basis:100%}
+.pf-end{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:auto;padding-top:24px;border-top:2px solid #000}
+.pf-end b{font-family:var(--serif);font-weight:400;font-size:clamp(22px,2.4vw,32px);line-height:1.2;max-width:24ch}
+
+.pf-controls{position:sticky;bottom:0;z-index:20;display:flex;align-items:center;gap:16px;background:#fff;border:1px solid #000;border-top:none;padding:12px 14px;padding-bottom:max(12px,env(safe-area-inset-bottom,0px))}
+.pf-arrow{flex:none;min-width:52px;height:48px;padding:0 18px;border:2px solid #000;background:#fff;color:#000;font:inherit;font-size:16px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;cursor:pointer}
+.pf-arrow:hover:not(:disabled){background:#000;color:#fff}
+.pf-arrow-next{background:#000;color:#fff}
+.pf-arrow-next:hover:not(:disabled){background:var(--amber);border-color:var(--amber);color:#000}
+.pf-arrow:disabled{opacity:.3;cursor:default}
+.pf-progress{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:8px}
+.pf-progress-label{font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-align:center}
+.pf-dots{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.pf-dot{width:26px;height:6px;border:none;padding:0;background:#d0d0d0;cursor:pointer}
+.pf-dot:hover{background:#888}
+.pf-dot.active{background:var(--amber);width:40px}
+#pg-profile ~ footer, body:has(#pg-profile) footer{margin-top:0}
+
+@media(max-width:1100px){
+  .pf-grid-3{grid-template-columns:minmax(0,1fr)}
+  .pf-grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pf-clients{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+  .pf-grid-2,.pf-grid-4,.pf-research,.pf-profile-body{grid-template-columns:minmax(0,1fr)}
+  .pf-cover-stats,.pf-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pf-recog{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pf-pane{min-height:0}
+  .pf-eyebrow{padding-right:72px}
+  .pf-dots{display:none}
+  .pf-arrow{padding:0 14px;font-size:14px}
+  .pf-btn{padding:12px 16px;font-size:13px}
 }
 /* ── AI Accelerator pages (AIBS · AIPA · AISA) ── */
 .bnx{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.62;margin-top:-40px}
@@ -2698,7 +2755,7 @@ const PF_CV = [
 ];
 
 function pageProfile(){
-  const glance = PF_GLANCE.map(g=>`
+  const glanceCard = g=>`
     <article class="pf-glance${g.feature?' pf-glance-feature':''}">
       <div class="pf-glance-top">
         <span class="pf-num">${g.n}</span>
@@ -2708,129 +2765,200 @@ function pageProfile(){
       ${g.items?`<ul class="pf-list">${g.items.map(i=>`<li>${i}</li>`).join('')}</ul>`:''}
       ${g.text?`<p class="pf-text">${g.text}</p>`:''}
       ${g.note?`<p class="pf-note">${g.note}</p>`:''}
-    </article>`).join('');
-
-  const head = (n,t,k)=>`<div class="pf-band"><span class="pf-band-n">${n}</span><h3>${t}</h3><span class="pf-band-k">${k}</span></div>`;
-
-  return `
-    <h2 class="section-title">AI Transformation Proposal 2026</h2>
-    <p class="section-sub">Let us help you instil AI in your enterprise DNA. Hadi Bhuiyan · FutureMind AI</p>
-
+    </article>`;
+  const job = j=>`
+    <article class="pf-job">
+      <div class="pf-job-head"><h4>${j.role}</h4><span>${j.when}</span></div>
+      <ul class="pf-list">${j.pts.map(x=>`<li>${x}</li>`).join('')}</ul>
+    </article>`;
+  const pdfBtns = `
     <div class="pf-actions">
-      <a href="${PROFILE_PDF}" target="_blank" rel="noopener" class="btn-dark">Open the proposal (PDF) ↗</a>
-      <a href="${PROFILE_PDF}" download class="link-btn">Download PDF ⬇</a>
-    </div>
+      <a href="${PROFILE_PDF}" target="_blank" rel="noopener" class="pf-btn pf-btn-open">Open PDF ↗</a>
+      <a href="${PROFILE_PDF}" download class="pf-btn pf-btn-dl">Download PDF ⬇</a>
+    </div>`;
 
-    <!-- Page 1 · Proposal at a glance -->
-    <div class="sub-label"><h3>Proposal at a glance</h3><div class="sub-label-line"></div></div>
-    <div class="pf-glance-grid">${glance}</div>
-
-    <!-- Page 2 · Profile, advisory, recognition -->
-    <div class="sub-label"><h3>Profile</h3><div class="sub-label-line"></div></div>
-    <section class="pf-profile">
-      <div class="pf-profile-main">
-        <div class="pf-profile-name">Hadi Bhuiyan</div>
-        <div class="pf-profile-role">Transformation Leader / Digital &amp; AI Product Builder</div>
-        <div class="pf-profile-ex">Ex-Huawei | Ex-Nokia Siemens Networks | Ex-Robi Axiata | Co-Founder, FutureMind AI</div>
+  // Each pane: [short label for the nav, tone, html]
+  const panes = [
+    ['Cover','dark',`
+      <div class="pf-eyebrow">Proposal · AI Transformation · 2026</div>
+      <h2 class="pf-h">Let us help you instil AI in your enterprise DNA.</h2>
+      <p class="pf-lede">Hadi Bhuiyan · FutureMind AI</p>
+      <div class="pf-cover-stats">
+        <div><b>318+</b><span>Senior managers joined</span></div>
+        <div><b>16</b><span>AIPA cohorts</span></div>
+        <div><b>20+</b><span>Years in digital &amp; AI</span></div>
+        <div><b>8</b><span>Quarter roadmap</span></div>
+      </div>`],
+    ['At a glance · 1','light',`
+      <div class="pf-eyebrow">Proposal at a glance · 01–03</div>
+      <h2 class="pf-h">Experience, roadmap and scale.</h2>
+      <div class="pf-grid-3">${PF_GLANCE.slice(0,3).map(glanceCard).join('')}</div>`],
+    ['At a glance · 2','light',`
+      <div class="pf-eyebrow">Proposal at a glance · 04–06</div>
+      <h2 class="pf-h">Platforms, solutions and how we join.</h2>
+      <div class="pf-grid-3">${PF_GLANCE.slice(3).map(glanceCard).join('')}</div>`],
+    ['Profile','dark',`
+      <div class="pf-eyebrow">Profile</div>
+      <h2 class="pf-h pf-h-name">Hadi Bhuiyan</h2>
+      <p class="pf-lede">Transformation Leader / Digital &amp; AI Product Builder</p>
+      <div class="pf-profile-ex">Ex-Huawei | Ex-Nokia Siemens Networks | Ex-Robi Axiata | Co-Founder, FutureMind AI</div>
+      <div class="pf-profile-body">
         <p>20+ years across telecom, enterprise SaaS and public-sector programmes — Nokia Siemens Networks, Huawei, Robi Axiata, and now Co-Founder &amp; CPO of FutureMind AI. Fractional Chief AI Officer to enterprises; founder and Program Director of the AI Proficiency Accelerator.</p>
-      </div>
-      <ul class="pf-contact">
-        <li><span>Phone</span>+880 1833 180420</li>
-        <li><span>Email</span>mahadib@commengine.xyz</li>
-        <li><span>LinkedIn</span><a href="https://linkedin.com/in/mahadib" target="_blank" rel="noopener">linkedin.com/in/mahadib</a></li>
-        <li><span>Web</span><a href="https://mahadib.futuremind.ltd" target="_blank" rel="noopener">mahadib.futuremind.ltd</a></li>
-      </ul>
-    </section>
-
-    ${head('01','Advisory &amp; consultation','AI strategy, digital and 4IR advisory')}
-    <article class="pf-featured">
-      <div class="pf-kicker">Top priority · Multi-client engagement</div>
-      <h4>AI strategy &amp; roadmapping</h4>
-      <p>Executive AI strategy and roadmapping — helping leadership teams move from broad AI interest to a defensible, phased implementation roadmap grounded in real, sector-specific use cases. Currently advising a bank, a large pharma group and a conglomerate.</p>
-      <div class="pf-clients">
-        <span><b>Dhaka Bank PLC</b>Financial services</span>
-        <span><b>Beximco Pharma Group</b>Pharmaceuticals</span>
-        <span><b>Ispahani Group</b>Conglomerate</span>
-        <span><b>BuildNation Limited</b>Consulting &amp; training</span>
-      </div>
-      <p class="pf-small">For each client we ran several engagements, shaped to its needs: AI strategy cohorts, roadmapping, training, consulting and hands-on prototyping of AI projects.</p>
-    </article>
-    <div class="pf-grid-2">${PF_ADVISORY.map(a=>`
-      <article class="pf-card">
-        <div class="pf-kicker">${a.tag}${a.org?` · ${a.org}`:''}</div>
-        <h4>${a.title}</h4>
-        <p>${a.text}</p>
-      </article>`).join('')}</div>
-
-    ${head('02','Recognition','Awards, honours and policy forums')}
-    <div class="pf-recog">${PF_RECOGNITION.map(r=>`
-      <div class="pf-recog-item"><span class="pf-recog-y">${r.y}</span><b>${r.t}</b>${r.d?`<small>${r.d}</small>`:''}</div>`).join('')}</div>
-
-    <!-- Page 3 · Customers, products, research, ventures -->
-    ${head('03','Customers','AI consulting, adoption, strategy &amp; training')}
-    <div class="pf-stats">${PF_CUSTOMERS.stats.map(([v,l])=>`<div><b>${v}</b><span>${l}</span></div>`).join('')}</div>
-    <p class="pf-lead">Every organisation below ran the AIPA programme.</p>
-    <div class="pf-orgs">${PF_CUSTOMERS.aipa.map(o=>`<span>${o}</span>`).join('')}</div>
-    <div class="pf-kicker" style="margin-top:18px">Integrated AIPA</div>
-    <div class="pf-orgs">${PF_CUSTOMERS.integrated.map(o=>`<span>${o}</span>`).join('')}</div>
-    <div class="pf-kicker" style="margin-top:18px">Public sector &amp; social impact</div>
-    <div class="pf-orgs">${PF_CUSTOMERS.public.map(o=>`<span>${o}</span>`).join('')}</div>
-
-    ${head('04','Products','Designed and launched')}
-    <div class="pf-grid-4">${PF_PRODUCTS.map(p=>`
-      <article class="pf-card"><div class="pf-kicker">${p.tag}</div><h4>${p.t}</h4><p>${p.d}</p></article>`).join('')}</div>
-
-    ${head('05','Research','Publications and policy')}
-    <ul class="pf-research">${PF_RESEARCH.map(([a,b])=>`<li><b>${a}</b> — ${b}</li>`).join('')}</ul>
-
-    ${head('06','Ventures','CommEngine and Zachai')}
-    <div class="pf-grid-2">${PF_VENTURES.map(v=>`
-      <article class="pf-card"><div class="pf-kicker">${v.tag}</div><h4>${v.t}</h4><p>${v.d}</p>
-        <ul class="pf-dash">${v.pts.map(x=>`<li>${x}</li>`).join('')}</ul></article>`).join('')}</div>
-    <div class="pf-kicker" style="margin-top:22px">CommEngine brands &amp; partners</div>
-    <div class="pf-orgs pf-orgs-quiet">${PF_BRANDS.map(o=>`<span>${o}</span>`).join('')}</div>
-
-    <!-- Page 4 · CV -->
-    <div class="sub-label"><h3>Curriculum vitae</h3><div class="sub-label-line"></div></div>
-    <section class="pf-cv-head">
-      <div class="pf-profile-name">Mohammad Abdul Hadi Bhuiyan</div>
-      <div class="pf-profile-role">Digital &amp; AI-Core Transformation Management | Product &amp; Program Management | AI-Accelerator Director</div>
+        <ul class="pf-contact">
+          <li><span>Phone</span>+880 1833 180420</li>
+          <li><span>Email</span>mahadib@commengine.xyz</li>
+          <li><span>LinkedIn</span><a href="https://linkedin.com/in/mahadib" target="_blank" rel="noopener">linkedin.com/in/mahadib</a></li>
+          <li><span>Web</span><a href="https://mahadib.futuremind.ltd" target="_blank" rel="noopener">mahadib.futuremind.ltd</a></li>
+        </ul>
+      </div>`],
+    ['Advisory','light',`
+      <div class="pf-eyebrow">01 · AI strategy, digital and 4IR advisory</div>
+      <h2 class="pf-h">Advisory &amp; consultation</h2>
+      <article class="pf-featured">
+        <div class="pf-kicker">Top priority · Multi-client engagement</div>
+        <h4>AI strategy &amp; roadmapping</h4>
+        <p>Executive AI strategy and roadmapping — helping leadership teams move from broad AI interest to a defensible, phased implementation roadmap grounded in real, sector-specific use cases. Currently advising a bank, a large pharma group and a conglomerate.</p>
+        <div class="pf-clients">
+          <span><b>Dhaka Bank PLC</b>Financial services</span>
+          <span><b>Beximco Pharma Group</b>Pharmaceuticals</span>
+          <span><b>Ispahani Group</b>Conglomerate</span>
+          <span><b>BuildNation Limited</b>Consulting &amp; training</span>
+        </div>
+        <p class="pf-small">For each client we ran several engagements, shaped to its needs: AI strategy cohorts, roadmapping, training, consulting and hands-on prototyping of AI projects.</p>
+      </article>
+      <div class="pf-grid-2">${PF_ADVISORY.map(a=>`
+        <article class="pf-card">
+          <div class="pf-kicker">${a.tag}${a.org?` · ${a.org}`:''}</div>
+          <h4>${a.title}</h4>
+          <p>${a.text}</p>
+        </article>`).join('')}</div>`],
+    ['Recognition','amber',`
+      <div class="pf-eyebrow">02 · Awards, honours and policy forums</div>
+      <h2 class="pf-h">Recognition</h2>
+      <div class="pf-recog">${PF_RECOGNITION.map(r=>`
+        <div class="pf-recog-item"><span class="pf-recog-y">${r.y}</span><b>${r.t}</b>${r.d?`<small>${r.d}</small>`:''}</div>`).join('')}</div>`],
+    ['Customers','light',`
+      <div class="pf-eyebrow">03 · AI consulting, adoption, strategy &amp; training</div>
+      <h2 class="pf-h">Customers</h2>
+      <div class="pf-stats">${PF_CUSTOMERS.stats.map(([v,l])=>`<div><b>${v}</b><span>${l}</span></div>`).join('')}</div>
+      <p class="pf-lead">Every organisation below ran the AIPA programme.</p>
+      <div class="pf-orgs">${PF_CUSTOMERS.aipa.map(o=>`<span>${o}</span>`).join('')}</div>
+      <div class="pf-kicker pf-gap">Integrated AIPA</div>
+      <div class="pf-orgs">${PF_CUSTOMERS.integrated.map(o=>`<span>${o}</span>`).join('')}</div>
+      <div class="pf-kicker pf-gap">Public sector &amp; social impact</div>
+      <div class="pf-orgs">${PF_CUSTOMERS.public.map(o=>`<span>${o}</span>`).join('')}</div>`],
+    ['Products','light',`
+      <div class="pf-eyebrow">04 · Designed and launched</div>
+      <h2 class="pf-h">Products</h2>
+      <div class="pf-grid-4">${PF_PRODUCTS.map(p=>`
+        <article class="pf-card pf-card-tall"><div class="pf-kicker">${p.tag}</div><h4>${p.t}</h4><p>${p.d}</p></article>`).join('')}</div>`],
+    ['Research & ventures','light',`
+      <div class="pf-eyebrow">05 · Publications and policy &nbsp;·&nbsp; 06 · CommEngine and Zachai</div>
+      <h2 class="pf-h">Research &amp; ventures</h2>
+      <ul class="pf-research">${PF_RESEARCH.map(([a,b])=>`<li><b>${a}</b> — ${b}</li>`).join('')}</ul>
+      <div class="pf-grid-2 pf-gap-lg">${PF_VENTURES.map(v=>`
+        <article class="pf-card"><div class="pf-kicker">${v.tag}</div><h4>${v.t}</h4><p>${v.d}</p>
+          <ul class="pf-dash">${v.pts.map(x=>`<li>${x}</li>`).join('')}</ul></article>`).join('')}</div>
+      <div class="pf-kicker pf-gap">CommEngine brands &amp; partners</div>
+      <div class="pf-orgs pf-orgs-quiet">${PF_BRANDS.map(o=>`<span>${o}</span>`).join('')}</div>`],
+    ['CV','dark',`
+      <div class="pf-eyebrow">Curriculum vitae</div>
+      <h2 class="pf-h pf-h-name">Mohammad Abdul Hadi Bhuiyan</h2>
+      <p class="pf-lede">Digital &amp; AI-Core Transformation Management | Product &amp; Program Management | AI-Accelerator Director</p>
       <div class="pf-cv-contact">+880 1833 180420 · bhuiyan.hadi@gmail.com · linkedin.com/in/mahadib · mahadib.futuremind.ltd · Dhaka</div>
-      <p>Technology and product leader with 20+ years driving digital and AI transformation across telecom, enterprise SaaS and public-sector programmes — Nokia Siemens Networks, Huawei, Robi Axiata, and Lead of FutureMind AI / CommEngine. Built and shipped 10+ products spanning Business Intelligence, AI workspace, IoT and SDP/ERP platforms; led AI strategy and transformation roadmaps across banking, pharma, FMCG and distribution; ran the AI Proficiency Accelerator for 318+ senior managers, directors and CxOs across 16+ cohorts. National ICT Award 2019 and Microsoft Startup Founders Fellow 2022.</p>
-    </section>
-
-    <div class="pf-kicker" style="margin-top:28px">Core competencies</div>
-    <div class="pf-orgs">${PF_COMPETENCIES.map(c=>`<span>${c}</span>`).join('')}</div>
-
-    <div class="pf-kicker" style="margin-top:32px">Experience</div>
-    <div class="pf-cv">${PF_CV.map(j=>`
-      <article class="pf-job">
-        <div class="pf-job-head"><h4>${j.role}</h4><span>${j.when}</span></div>
-        <ul class="pf-list">${j.pts.map(x=>`<li>${x}</li>`).join('')}</ul>
-      </article>`).join('')}</div>
-
-    <div class="pf-grid-2" style="margin-top:28px">
-      <article class="pf-card">
-        <div class="pf-kicker">Education &amp; certifications</div>
-        <p><b>B.Sc. in Computer Science &amp; Engineering — CUET, 2005.</b> Ranked 5th; Dean's Award.</p>
-        <p>Published research papers on neural networks, IoT and internet technology (IEEE).</p>
-        <p>ITIL v4 | BABOK | Service Management ServADM (Jakarta) | PMP trained | NSN TAC II (Berlin) | IBA CxO Strategy Conclave, Batch-III Graduate.</p>
-      </article>
-      <article class="pf-card">
-        <div class="pf-kicker">Recognition &amp; policy contribution</div>
-        <p>National ICT Award 2019 for CommEngine | Retail Innovation Award 2021 | Microsoft Startup Founders Fellow 2022 | ICT Ministry recognition for the pro-bono COVID-19 relief BI system “Swachho” | Member, National Blockchain Policy Forum; 4IR Standing Committee | Independent Reviewer, ICT4D Conference (2010–present).</p>
-        <p class="pf-small">References available on request.</p>
-      </article>
-    </div>
-
-    <div class="pf-cta">
-      <div>
-        <b>Let us help you instil AI in your enterprise DNA.</b>
-        <span>For case studies and the full annex, open the proposal or get in touch.</span>
+      <p class="pf-cv-sum">Technology and product leader with 20+ years driving digital and AI transformation across telecom, enterprise SaaS and public-sector programmes — Nokia Siemens Networks, Huawei, Robi Axiata, and Lead of FutureMind AI / CommEngine. Built and shipped 10+ products spanning Business Intelligence, AI workspace, IoT and SDP/ERP platforms; led AI strategy and transformation roadmaps across banking, pharma, FMCG and distribution; ran the AI Proficiency Accelerator for 318+ senior managers, directors and CxOs across 16+ cohorts. National ICT Award 2019 and Microsoft Startup Founders Fellow 2022.</p>
+      <div class="pf-kicker pf-gap">Core competencies</div>
+      <div class="pf-orgs pf-orgs-dark">${PF_COMPETENCIES.map(c=>`<span>${c}</span>`).join('')}</div>`],
+    ['Experience · 2018–now','light',`
+      <div class="pf-eyebrow">Experience · 2018 – present</div>
+      <h2 class="pf-h">FutureMind AI, BuildNation &amp; BuildCon</h2>
+      <div class="pf-cv">${PF_CV.slice(0,2).map(job).join('')}</div>`],
+    ['Experience · 2006–2018','light',`
+      <div class="pf-eyebrow">Experience · 2006 – 2018</div>
+      <h2 class="pf-h">Robi Axiata, Nokia Siemens, Huawei</h2>
+      <div class="pf-cv">${PF_CV.slice(2).map(job).join('')}</div>`],
+    ['Education','amber',`
+      <div class="pf-eyebrow">Education, certifications &amp; recognition</div>
+      <h2 class="pf-h">Credentials</h2>
+      <div class="pf-grid-2">
+        <article class="pf-card">
+          <div class="pf-kicker">Education &amp; certifications</div>
+          <p><b>B.Sc. in Computer Science &amp; Engineering — CUET, 2005.</b> Ranked 5th; Dean's Award.</p>
+          <p>Published research papers on neural networks, IoT and internet technology (IEEE).</p>
+          <p>ITIL v4 | BABOK | Service Management ServADM (Jakarta) | PMP trained | NSN TAC II (Berlin) | IBA CxO Strategy Conclave, Batch-III Graduate.</p>
+        </article>
+        <article class="pf-card">
+          <div class="pf-kicker">Recognition &amp; policy contribution</div>
+          <p>National ICT Award 2019 for CommEngine | Retail Innovation Award 2021 | Microsoft Startup Founders Fellow 2022 | ICT Ministry recognition for the pro-bono COVID-19 relief BI system “Swachho” | Member, National Blockchain Policy Forum; 4IR Standing Committee | Independent Reviewer, ICT4D Conference (2010–present).</p>
+          <p class="pf-small">References available on request.</p>
+        </article>
       </div>
-      <a href="${PROFILE_PDF}" target="_blank" rel="noopener" class="btn-dark">Open the proposal (PDF) ↗</a>
+      <div class="pf-end">
+        <b>Let us help you instil AI in your enterprise DNA.</b>
+        ${pdfBtns}
+      </div>`]
+  ];
+
+  const total = panes.length;
+  const pad = n=>String(n).padStart(2,'0');
+  return `
+    <div class="pf-topbar">
+      <div>
+        <div class="pf-topbar-k">Profile · AI Transformation Proposal 2026</div>
+        <div class="pf-topbar-t">Hadi Bhuiyan</div>
+      </div>
+      ${pdfBtns}
+    </div>
+    <div class="pf-deck" id="pfDeck" data-index="0" tabindex="-1" aria-roledescription="carousel" aria-label="Profile, pane by pane">
+      <div class="pf-panes">${panes.map(([label,tone,html],i)=>`
+        <section class="pf-pane pf-tone-${tone}" data-label="${label}" aria-roledescription="slide" aria-label="${i+1} of ${total}: ${label}"${i?' hidden':''}>
+          <div class="pf-pane-num">${pad(i+1)} <span>/ ${pad(total)}</span></div>
+          ${html}
+        </section>`).join('')}</div>
+      <div class="pf-controls">
+        <button type="button" class="pf-arrow" id="pfPrev" onclick="pfGo(-1)" aria-label="Previous pane">←</button>
+        <div class="pf-progress">
+          <div class="pf-progress-label"><span id="pfCount">01 / ${pad(total)}</span> · <span id="pfLabel">${panes[0][0]}</span></div>
+          <div class="pf-dots">${panes.map(([label],i)=>`<button type="button" class="pf-dot${i?'':' active'}" onclick="pfShow(${i})" aria-label="Go to ${label}" title="${label}"></button>`).join('')}</div>
+        </div>
+        <button type="button" class="pf-arrow pf-arrow-next" id="pfNext" onclick="pfGo(1)" aria-label="Next pane">Next →</button>
+      </div>
     </div>`;
 }
+
+function pfShow(i){
+  const deck = document.getElementById('pfDeck'); if(!deck) return;
+  const panes = deck.querySelectorAll('.pf-pane'); const n = panes.length;
+  i = Math.max(0, Math.min(n-1, i));
+  panes.forEach((p,k)=>{ p.hidden = k !== i; });
+  deck.dataset.index = i;
+  deck.querySelectorAll('.pf-dot').forEach((d,k)=>d.classList.toggle('active', k===i));
+  document.getElementById('pfCount').textContent = String(i+1).padStart(2,'0') + ' / ' + String(n).padStart(2,'0');
+  document.getElementById('pfLabel').textContent = panes[i].dataset.label;
+  document.getElementById('pfPrev').disabled = i === 0;
+  const next = document.getElementById('pfNext');
+  next.disabled = i === n-1;
+  next.textContent = i === n-1 ? 'End' : 'Next →';
+  const top = deck.getBoundingClientRect().top + window.scrollY - (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 64) - 12;
+  if(window.scrollY > top) window.scrollTo({top, behavior:'auto'});
+}
+function pfGo(d){ const deck = document.getElementById('pfDeck'); if(deck) pfShow(+deck.dataset.index + d); }
+window.pfShow = pfShow; window.pfGo = pfGo;
+document.addEventListener('keydown', e=>{
+  if(!document.getElementById('pfDeck')) return;
+  if(/INPUT|TEXTAREA|SELECT/.test((e.target||{}).tagName||'')) return;
+  if(e.key === 'ArrowRight'){ pfGo(1); e.preventDefault(); }
+  else if(e.key === 'ArrowLeft'){ pfGo(-1); e.preventDefault(); }
+});
+(function(){
+  let x0 = null, y0 = null;
+  document.addEventListener('touchstart', e=>{ if(e.target.closest && e.target.closest('.pf-panes')){ x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; } }, {passive:true});
+  document.addEventListener('touchend', e=>{
+    if(x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
+    if(Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) pfGo(dx < 0 ? 1 : -1);
+  }, {passive:true});
+})();
 
 function pageAbout(){
   return `
