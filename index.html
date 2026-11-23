@@ -1915,7 +1915,8 @@ nav .lang-switch-btn:hover{border-color:var(--amber)}
 .subtab{font-size:13px!important;font-weight:700!important;text-transform:uppercase!important;letter-spacing:.03em!important;color:var(--muted)!important}
 .subtab:hover,.subtab.active{color:#000!important}
 .subtab.active::after{height:3px!important;background:var(--amber)!important;border-radius:0}
-@media(max-width:1320px){.nav-btn{font-size:13px;padding:9px 8px}}
+@media(max-width:1560px){.nav-btn{font-size:13px;padding:9px 8px}nav{gap:14px}}
+@media(max-width:1380px){.nav-btn{font-size:12.5px;padding:9px 6px}.nav-tabs>.nav-dropdown:last-child>.nav-btn{padding:10px 14px;margin-left:4px}.nav-brand{font-size:22px}}
 @media(max-width:900px){.nav-btn{font-size:12px;padding:7px 7px}.nav-tabs>.nav-dropdown:last-child>.nav-btn{padding:8px 12px}}
 
 /* ── ABOUT HERO → black band, stats in the Solve manner ── */
@@ -2076,6 +2077,87 @@ body.deck-mode footer{display:none}
 .prod-card-name{font-family:var(--serif);font-weight:300;font-size:30px;line-height:1.1;letter-spacing:-.01em}
 .prod-card-cap{font-size:14px;opacity:.82}
 .prod-card-cta{margin-top:18px;padding-top:12px;border-top:1px solid currentColor;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
+/* ── PROFILE PAGE (AI Transformation Proposal 2026) ── */
+.pf-actions{display:flex;flex-wrap:wrap;gap:10px;margin:-20px 0 0}
+.pf-glance-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.pf-glance{background:var(--paper);border:1px solid var(--line);padding:24px 26px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.pf-glance-feature{background:var(--amber-soft);border-color:var(--amber)}
+.pf-glance-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.pf-num{background:#000;color:#fff;font-weight:700;font-size:15px;padding:8px 12px;line-height:1}
+.pf-stat{text-align:right;display:flex;flex-direction:column;align-items:flex-end}
+.pf-stat b{font-family:var(--serif);font-weight:300;font-size:46px;line-height:1;color:#000}
+.pf-stat small{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.pf-glance-title{font-size:20px;font-weight:700;line-height:1.3;margin:0;color:var(--ink);padding-bottom:12px;border-bottom:3px solid var(--amber);width:fit-content;max-width:100%}
+.pf-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.pf-list li{position:relative;padding-left:18px;font-size:15px;line-height:1.55;color:var(--ink-2)}
+.pf-list li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;background:#000}
+.pf-text{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-2)}
+.pf-note{margin:auto 0 0;padding-top:12px;border-top:1px dashed var(--ink);font-weight:700;color:#000}
+.pf-profile{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:28px;background:#000;color:#fff;padding:32px}
+.pf-profile-name{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4vw,48px);line-height:1.05}
+.pf-profile-role{font-weight:700;margin-top:10px;font-size:16px}
+.pf-profile-ex{color:var(--amber);font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-top:8px}
+.pf-profile-main p{color:rgba(255,255,255,.85);margin:16px 0 0;line-height:1.65}
+.pf-contact{list-style:none;margin:0;padding:0 0 0 24px;border-left:1px solid rgba(255,255,255,.3);display:flex;flex-direction:column;gap:12px;justify-content:center}
+.pf-contact li{display:flex;flex-direction:column;font-size:15px;overflow-wrap:anywhere}
+.pf-contact span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
+.pf-contact a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.pf-band{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--amber);padding:12px 18px;margin:56px 0 20px}
+.pf-band-n{background:#000;color:#fff;font-weight:700;padding:4px 9px;font-size:14px}
+.pf-band h3{margin:0;font-size:20px;font-weight:700;color:#000}
+.pf-band-k{margin-left:auto;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#000}
+.pf-kicker{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.pf-featured{background:var(--paper-2);border:1px solid var(--line);border-top:4px solid #000;padding:24px 26px;margin-bottom:16px}
+.pf-featured h4,.pf-card h4{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.15;margin:8px 0 10px;color:#000}
+.pf-featured p,.pf-card p{margin:0 0 10px;line-height:1.6;color:var(--ink-2)}
+.pf-clients{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin:14px 0}
+.pf-clients span{background:#fff;border:1px solid var(--line);padding:10px 14px;display:flex;flex-direction:column;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.pf-clients b{font-size:15px;letter-spacing:0;text-transform:none;color:#000}
+.pf-small{font-size:14px;color:var(--muted)!important}
+.pf-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.pf-grid-4{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.pf-card{background:var(--paper);border:1px solid var(--line);padding:22px 24px;min-width:0}
+.pf-recog{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:0;border:1px solid #000}
+.pf-recog-item{display:flex;flex-direction:column;gap:4px;padding:18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pf-recog-y{font-family:var(--serif);font-weight:300;font-size:26px;line-height:1.1;color:#000}
+.pf-recog-item b{font-size:15px;line-height:1.3}
+.pf-recog-item small{font-size:13px;color:var(--muted)}
+.pf-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.pf-stats div{background:#000;color:#fff;padding:20px 20px 18px;display:flex;flex-direction:column;gap:8px}
+.pf-stats b{font-family:var(--serif);font-weight:300;font-size:44px;line-height:1}
+.pf-stats span{font-size:13px;font-weight:600;line-height:1.4}
+.pf-lead{margin:22px 0 12px;font-weight:600}
+.pf-orgs{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.pf-orgs span{border:1px solid #000;padding:7px 12px;font-size:14px;font-weight:600;background:#fff}
+.pf-orgs-quiet span{border-color:var(--line);font-weight:500;color:var(--ink-2)}
+.pf-research{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.pf-research li{padding:12px 0;border-bottom:1px solid var(--line);line-height:1.5;color:var(--ink-2)}
+.pf-research b{color:#000}
+.pf-dash{list-style:none;margin:6px 0 0;padding:0}
+.pf-dash li{padding:4px 0 4px 22px;position:relative;color:var(--ink-2)}
+.pf-dash li::before{content:"—";position:absolute;left:0;color:var(--accent)}
+.pf-cv-head{border-left:4px solid var(--amber);padding:4px 0 4px 22px}
+.pf-cv-head .pf-profile-name{color:#000}
+.pf-cv-head .pf-profile-role{color:var(--ink)}
+.pf-cv-contact{font-size:14px;color:var(--muted);margin-top:8px}
+.pf-cv-head p{margin:14px 0 0;line-height:1.65;color:var(--ink-2);max-width:80ch}
+.pf-cv{display:flex;flex-direction:column;border-top:1px solid #000;margin-top:10px}
+.pf-job{padding:20px 0;border-bottom:1px solid var(--line)}
+.pf-job-head{display:flex;justify-content:space-between;align-items:baseline;gap:6px 20px;flex-wrap:wrap;margin-bottom:10px}
+.pf-job-head h4{margin:0;font-size:17px;font-weight:700;color:#000}
+.pf-job-head span{font-size:13px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.pf-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;background:var(--amber);padding:26px 28px;margin-top:48px}
+.pf-cta div{display:flex;flex-direction:column;gap:4px}
+.pf-cta b{font-size:20px}
+.pf-cta .btn-dark{background:#000!important;color:#fff!important;border-color:#000!important}
+.pf-cta .btn-dark:hover{background:#fff!important;color:#000!important;border-color:#fff!important}
+@media(max-width:860px){
+  .pf-glance-grid,.pf-grid-2,.pf-research{grid-template-columns:minmax(0,1fr)}
+  .pf-profile{grid-template-columns:minmax(0,1fr);padding:24px}
+  .pf-contact{border-left:none;border-top:1px solid rgba(255,255,255,.3);padding:18px 0 0}
+  .pf-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pf-band-k{margin-left:0;flex-basis:100%}
+}
 /* ── AI Accelerator pages (AIBS · AIPA · AISA) ── */
 .bnx{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.62;margin-top:-40px}
 .bnx a{text-decoration:none}
@@ -2131,6 +2213,7 @@ body.deck-mode footer{display:none}
 // ── DATA ────────────────────────────────────────────────
 const NAV = [
   {text:"Hadi Bhuiyan",id:"about"},
+  {text:"Profile",id:"profile"},
   {text:"Products",id:"products",subtabs:[
     {text:"All Products",id:"products"},
     {text:"EasyFlow",id:"easyflow"},
@@ -2500,6 +2583,255 @@ function chips(arr){ return arr.map(t=>`<span class="chip">${t}</span>`).join(''
 function chipRow(arr){ return `<div class="chip-row">${chips(arr)}</div>`; }
 
 // ── PAGES ────────────────────────────────────────────────
+// ── PROFILE: AI Transformation Proposal 2026, laid out page by page ──
+const PROFILE_PDF = "assets/hadi-bhuiyan-ai-transformation-proposal-2026.pdf";
+
+const PF_GLANCE = [
+  {n:"01", stat:"318+", unit:"Senior managers joined", title:"Digital and AI transformation experience", items:[
+    "<b>AI strategy</b> through the AI Strategy Accelerator for Dhaka Bank, Beximco Pharma Group and Polar, with Mahtab Uddin Ahmed and Munaf Mojib Chowdhury",
+    "<b>AI Proficiency Accelerator:</b> 16 cohorts run; <b>318+ senior management</b> joined, up to ManCom",
+    "Dhaka Bank, Beximco Pharma Group, Japan Solartech, Ispahani, NBR, DGHS and the National Cyber Security Agency (NCSA)",
+    "<b>ICMAB:</b> curriculum programme “Transforming Accounts &amp; Finance with AI”"]},
+  {n:"02", stat:"8", unit:"Quarters", title:"Business first: an 8-quarter transformation roadmap", items:[
+    "Start with small, safe wins","Fix the process before adding AI","People make the final call",
+    "Every AI idea passes a <b>return-on-investment test</b> before money is spent",
+    "Every result is measured again each quarter","Already delivered for a <b>13,000+ people</b> group"]},
+  {n:"03", stat:"20+", unit:"Years", title:"20 years of mass-scale digital systems, in telco and as an entrepreneur", items:[
+    "<b>Telco:</b> Huawei, Nokia Siemens Networks and Robi Axiata: intelligent networks, mass-customer systems and digital services",
+    "<b>Entrepreneurship:</b> CommEngine Limited products: CommEngine, Zachai, EasyDO and EasyFlow",
+    "Multicultural, multi-city teams"]},
+  {n:"04", stat:"$M", unit:"Platforms managed", title:"Mass and enterprise digital and business support solutions", items:[
+    "<b>Network:</b> Intelligent Network (IN), SMSC, API gateway",
+    "<b>Customer:</b> mass-customer systems, peripheral customer services",
+    "<b>Services:</b> Multi-Service Delivery Platform (SDP), value-added services (VAS), digital services, location-based systems",
+    "<b>Payments:</b> MFS / Robi Cash"]},
+  {n:"05", stat:"6", unit:"Business solutions", title:"Six business solutions built and shipped to market", items:[
+    "<b>CommEngine</b> (2018): social CRM and BI","<b>Zachai:</b> blockchain supply-chain tracing",
+    "<b>EasyDO</b> (2025): AI workspace","<b>EasyFlow</b> (2026): AI agents for hiring, onboarding and learning",
+    "<b>BuildNation LMS:</b> AI-powered learning management","<b>Swachho:</b> multi-tier relief distribution system"]},
+  {n:"06", stat:"3", unit:"Tiers", title:"How we join your transformation", feature:true,
+   text:"Joins your AI and digital transformation in <b>three tiers: Adopt</b> (training and consulting), <b>Integrate</b> (EasyFlow and low-risk workflows) and <b>Develop</b> (AI in your core systems and your own language model).",
+   note:"Not sure where to start? Begin with a 2-hour leadership briefing, and decide the rest from there."}
+];
+
+const PF_ADVISORY = [
+  {tag:"Digital bank establishment", org:"UCB", title:"UCB digital bank licensing",
+   text:"Advisory for United Commercial Bank PLC on the digital-bank licensing journey — business case, operating model and technology posture for a compliant, digital-first bank."},
+  {tag:"Tier-IV feasibility", org:"", title:"Tier-IV data-centre consultancy",
+   text:"Associate consultant with Mahtab Uddin Ahmed (BuildCon Consultancies Limited) — Tier-IV data-centre feasibility and advisory for a large family business group in Bangladesh."},
+  {tag:"Strategy &amp; performance", org:"LafargeHolcim", title:"2030 plan, KPI &amp; AI transformation",
+   text:"Associate consultant with Mahtab Uddin Ahmed (BuildCon Consultancies Limited) on LafargeHolcim's 2030 plan."},
+  {tag:"4IR innovation design", org:"BSTI", title:"BSTI 4IR surveillance application",
+   text:"Innovation design for Bangladesh Standards &amp; Testing Institution — a consumer-powered, AR-driven quality-control and metrology system against counterfeit certification (BSTI 4IR workshop, Dhaka, Nov 2023)."}
+];
+
+const PF_RECOGNITION = [
+  {y:"2019", t:"National ICT Award", d:"CommEngine"},
+  {y:"2021", t:"Retail Innovation Award", d:"Zachai"},
+  {y:"2022", t:"Microsoft for Founders Fellow", d:""},
+  {y:"Call for Nation", t:"Honorarium for Swachho", d:"Multi-tier relief distribution system"},
+  {y:"Policy", t:"National Blockchain Policy Forum", d:"Member; 4IR Standing Committee"},
+  {y:"IBA", t:"CxO Strategy Conclave", d:""}
+];
+
+const PF_CUSTOMERS = {
+  stats:[["20+","years in digital &amp; AI transformation"],["318+","senior managers &amp; CxOs trained · 16 cohorts"],["1,200+","enterprise use cases built by alumni"],["4","industries with AI strategy roadmaps"]],
+  aipa:["Ispahani","Dhaka Bank","Beximco Pharma Group","Japan Solartech","ICMAB"],
+  integrated:["BSRM","Rahimafrooz","Nitol Niloy"],
+  public:["PMO","NCSA","NBR","DGHS","Grameen Danone","AI for Teachers"]
+};
+
+const PF_PRODUCTS = [
+  {tag:"Programme as a product", t:"AI Proficiency Accelerator", d:"Designed and launched end to end: curriculum, frameworks, delivery model and brand."},
+  {tag:"AI agent · 2026", t:"EasyFlow", d:"AI coach agent for recruitment, onboarding and learning; every candidate and learner assessed."},
+  {tag:"EdTech", t:"BuildNation LMS", d:"AI-powered learning management with an HR-tech KPI dashboard for performance governance."},
+  {tag:"AI platform", t:"EasyDO WorkSpace", d:"AI-core inference platform that turns business workflows into deployable AI agents."}
+];
+
+const PF_RESEARCH = [
+  ["IEEE ICCIT 2005","fuzzy-logic and neural-network traffic-flow controller"],
+  ["IEEE ICNEWS 2006 · ICCIT 2010","neural networks, IoT, internet technology"],
+  ["Independent Reviewer","ICT4D Conference, since 2010"],
+  ["National Blockchain Policy Forum","member; work referenced in the policy"],
+  ["4IR Standing Committee","member"],
+  ["SME digitisation &amp; BSTI","policy input; 4IR surveillance innovation design"]
+];
+
+const PF_VENTURES = [
+  {tag:"SaaS · 2018", t:"CommEngine", d:"B2B social CRM and BI platform for electronics, automotive, e-commerce and FinTech brands.",
+   pts:["20M+ customer profiles","55+ brands and agencies served","Seed-funded by Robi Axiata Limited"]},
+  {tag:"Blockchain · anti-counterfeit", t:"Zachai", d:"Blockchain product authentication against counterfeit goods.",
+   pts:["Scan-to-verify for brands and consumers","Mobile, IoT and blockchain supply-chain tracing"]}
+];
+const PF_BRANDS = ["Huawei","Unilever","BRAC Bank","Walton","Suzuki","Singer","Marico","Symphony","Yamaha","Hero"];
+
+const PF_COMPETENCIES = ["Digital &amp; AI Transformation Strategy","Product Management &amp; 0-to-1 Product Building",
+  "System Design &amp; Large-Scale Integration (BSS/OSS, Intelligent Networks, SDP/ERP, API platforms)",
+  "AI-Core &amp; Automation (LLM inference, RAG, AI agents, workflow automation)",
+  "Forecast-Driven Governance (KPI dashboards, capacity &amp; budget planning)","Process Simplification &amp; Value Stream",
+  "Technology Procurement (RFP/RFI, vendor negotiation)","Team Building &amp; Executive Upskilling","P&amp;L Ownership"];
+
+const PF_CV = [
+  {role:"Co-Founder &amp; Chief Product Officer — FutureMind AI (CommEngine Ltd.)", when:"Apr 2018 – Present", pts:[
+    "Built BI &amp; CRM from scratch; raised seed funding from employer Robi Axiata (2018) and built the business, product and engineering teams. Repositioned from 2023 as product, BI &amp; AI consulting, serving Singer, Transcom, Suzuki, Walton, Danone, Asiatic and others.",
+    "Launched CommEngine.xyz, a B2B SocialCRM and BI SaaS for electronics, automotive, e-commerce and FinTech brands — 20M+ customer profiles; built Zachai, a blockchain-based product-authentication platform (Retail Innovation Award 2021).",
+    "Lead product for EasyFlow, an AI-Core inference platform that turns business workflows into deployable AI agents — LLM inference routing, RAG over enterprise data, the no-code flow builder EasyDO, and the “Recruit AI” manager and Learning Agent.",
+    "Founded and led AIPA (AI Proficiency Accelerator): AI upskilling for 318+ senior managers, directors and CxOs across 16+ cohorts — Dhaka Bank, Ispahani, ICMAB, Japan Solartech, Beximco Pharma group, Polar, BSRM and more; public-sector cohorts (PMO, NBR, NCSA, DGHS) under the World Bank EDGE project.",
+    "AI strategy consultation and transformation roadmaps across four industries — banking, pharma, FMCG and distribution: Polar Ice Cream, Rahimafrooz Group, Beximco Pharma/Synovia/Nuvista and Ispahani Group; public-sector engagements with the National Cyber Security Agency, NBR and the PMO."]},
+  {role:"Consultant CPO — BuildNation Limited &amp; BuildCon Consultancies Limited", when:"Aug 2022 – Present", pts:[
+    "Designed, built and delivered an AI-augmented Learning Management Solution (BuildNation LMS) and an HR-tech dashboard (organisation-wide, real-time KPI marker for performance governance).",
+    "Technical lead, digital bank licensing for United Commercial Bank (UCB) — technology architecture, platform strategy and licensing readiness.",
+    "Tier-IV data-centre advisory — associate consultant with Mahtab Uddin Ahmed for a large family business group in Bangladesh.",
+    "LafargeHolcim — associate consultant with Mahtab Uddin Ahmed on the 2030 plan: SLA &amp; KPI dashboarding, organisation-wide KPI measurement and goal tasking, assessment, and digital &amp; AI transformation.",
+    "Nationwide Blended Education piloting with the ICT Ministry; technology roadmap and vendor selection.",
+    "Designed and delivered enablement programmes — AI Proficiency Accelerator, Sales Leadership Development Program, Rethinking Leadership, podcasts."]},
+  {role:"Manager, Project &amp; Innovation — Robi Axiata Ltd.", when:"May 2013 – Apr 2018 (LWP exit Jul 2021)", pts:[
+    "Took the IoT/M2M platform, mobile financial services (RobiCash), location-based campaign systems (AdReach) and the BDApps national app store from concept to launch; drove API monetisation — around 6× return on $8M/yr spending.",
+    "Led the Airtel–Robi merged Service Delivery Platform; onboarded 2,000+ VAS/USSD/MFS services; built the IoT ecosystem at 75% cost saving.",
+    "Redesigned the SMS ecosystem (filter, reroute, fraud detection) adding $3M/yr A2P revenue; deployed a $12M geo-redundant DR node for 40M subscribers at 60% capex saving; redesigned the tech RFP tracking system."]},
+  {role:"Business Support System Specialist — Nokia Siemens Networks", when:"Feb 2008 – May 2013", pts:[
+    "Commissioned 7 Intelligent Network / BSS projects across Bangladesh and India — Banglalink (90M subscribers, migration to Charge@Once Select) and Vodafone India (four IN nodes, 60M-subscriber migration); platform delivery in Poland (T-Mobile), Germany and Indonesia."]},
+  {role:"Application &amp; Software Engineer — Huawei Technologies", when:"2006 – 2008", pts:[
+    "Commissioned postpaid billing, mediation, PRM and international-roaming systems; led the software unit for the $5M BTTB-to-Teletalk charging transformation and re-architected partner mediation and provisioning."]},
+  {role:"Lecturer, Computer Science &amp; Engineering — Premier University, Chittagong", when:"2006 (LWP exit 2008)", pts:[
+    "Teaching and project consultation; appointed Lecturer at CUET (Chittagong University of Engineering &amp; Technology)."]}
+];
+
+function pageProfile(){
+  const glance = PF_GLANCE.map(g=>`
+    <article class="pf-glance${g.feature?' pf-glance-feature':''}">
+      <div class="pf-glance-top">
+        <span class="pf-num">${g.n}</span>
+        <span class="pf-stat"><b>${g.stat}</b><small>${g.unit}</small></span>
+      </div>
+      <h3 class="pf-glance-title">${g.title}</h3>
+      ${g.items?`<ul class="pf-list">${g.items.map(i=>`<li>${i}</li>`).join('')}</ul>`:''}
+      ${g.text?`<p class="pf-text">${g.text}</p>`:''}
+      ${g.note?`<p class="pf-note">${g.note}</p>`:''}
+    </article>`).join('');
+
+  const head = (n,t,k)=>`<div class="pf-band"><span class="pf-band-n">${n}</span><h3>${t}</h3><span class="pf-band-k">${k}</span></div>`;
+
+  return `
+    <h2 class="section-title">AI Transformation Proposal 2026</h2>
+    <p class="section-sub">Let us help you instil AI in your enterprise DNA. Hadi Bhuiyan · FutureMind AI</p>
+
+    <div class="pf-actions">
+      <a href="${PROFILE_PDF}" target="_blank" rel="noopener" class="btn-dark">Open the proposal (PDF) ↗</a>
+      <a href="${PROFILE_PDF}" download class="link-btn">Download PDF ⬇</a>
+    </div>
+
+    <!-- Page 1 · Proposal at a glance -->
+    <div class="sub-label"><h3>Proposal at a glance</h3><div class="sub-label-line"></div></div>
+    <div class="pf-glance-grid">${glance}</div>
+
+    <!-- Page 2 · Profile, advisory, recognition -->
+    <div class="sub-label"><h3>Profile</h3><div class="sub-label-line"></div></div>
+    <section class="pf-profile">
+      <div class="pf-profile-main">
+        <div class="pf-profile-name">Hadi Bhuiyan</div>
+        <div class="pf-profile-role">Transformation Leader / Digital &amp; AI Product Builder</div>
+        <div class="pf-profile-ex">Ex-Huawei | Ex-Nokia Siemens Networks | Ex-Robi Axiata | Co-Founder, FutureMind AI</div>
+        <p>20+ years across telecom, enterprise SaaS and public-sector programmes — Nokia Siemens Networks, Huawei, Robi Axiata, and now Co-Founder &amp; CPO of FutureMind AI. Fractional Chief AI Officer to enterprises; founder and Program Director of the AI Proficiency Accelerator.</p>
+      </div>
+      <ul class="pf-contact">
+        <li><span>Phone</span>+880 1833 180420</li>
+        <li><span>Email</span>mahadib@commengine.xyz</li>
+        <li><span>LinkedIn</span><a href="https://linkedin.com/in/mahadib" target="_blank" rel="noopener">linkedin.com/in/mahadib</a></li>
+        <li><span>Web</span><a href="https://mahadib.futuremind.ltd" target="_blank" rel="noopener">mahadib.futuremind.ltd</a></li>
+      </ul>
+    </section>
+
+    ${head('01','Advisory &amp; consultation','AI strategy, digital and 4IR advisory')}
+    <article class="pf-featured">
+      <div class="pf-kicker">Top priority · Multi-client engagement</div>
+      <h4>AI strategy &amp; roadmapping</h4>
+      <p>Executive AI strategy and roadmapping — helping leadership teams move from broad AI interest to a defensible, phased implementation roadmap grounded in real, sector-specific use cases. Currently advising a bank, a large pharma group and a conglomerate.</p>
+      <div class="pf-clients">
+        <span><b>Dhaka Bank PLC</b>Financial services</span>
+        <span><b>Beximco Pharma Group</b>Pharmaceuticals</span>
+        <span><b>Ispahani Group</b>Conglomerate</span>
+        <span><b>BuildNation Limited</b>Consulting &amp; training</span>
+      </div>
+      <p class="pf-small">For each client we ran several engagements, shaped to its needs: AI strategy cohorts, roadmapping, training, consulting and hands-on prototyping of AI projects.</p>
+    </article>
+    <div class="pf-grid-2">${PF_ADVISORY.map(a=>`
+      <article class="pf-card">
+        <div class="pf-kicker">${a.tag}${a.org?` · ${a.org}`:''}</div>
+        <h4>${a.title}</h4>
+        <p>${a.text}</p>
+      </article>`).join('')}</div>
+
+    ${head('02','Recognition','Awards, honours and policy forums')}
+    <div class="pf-recog">${PF_RECOGNITION.map(r=>`
+      <div class="pf-recog-item"><span class="pf-recog-y">${r.y}</span><b>${r.t}</b>${r.d?`<small>${r.d}</small>`:''}</div>`).join('')}</div>
+
+    <!-- Page 3 · Customers, products, research, ventures -->
+    ${head('03','Customers','AI consulting, adoption, strategy &amp; training')}
+    <div class="pf-stats">${PF_CUSTOMERS.stats.map(([v,l])=>`<div><b>${v}</b><span>${l}</span></div>`).join('')}</div>
+    <p class="pf-lead">Every organisation below ran the AIPA programme.</p>
+    <div class="pf-orgs">${PF_CUSTOMERS.aipa.map(o=>`<span>${o}</span>`).join('')}</div>
+    <div class="pf-kicker" style="margin-top:18px">Integrated AIPA</div>
+    <div class="pf-orgs">${PF_CUSTOMERS.integrated.map(o=>`<span>${o}</span>`).join('')}</div>
+    <div class="pf-kicker" style="margin-top:18px">Public sector &amp; social impact</div>
+    <div class="pf-orgs">${PF_CUSTOMERS.public.map(o=>`<span>${o}</span>`).join('')}</div>
+
+    ${head('04','Products','Designed and launched')}
+    <div class="pf-grid-4">${PF_PRODUCTS.map(p=>`
+      <article class="pf-card"><div class="pf-kicker">${p.tag}</div><h4>${p.t}</h4><p>${p.d}</p></article>`).join('')}</div>
+
+    ${head('05','Research','Publications and policy')}
+    <ul class="pf-research">${PF_RESEARCH.map(([a,b])=>`<li><b>${a}</b> — ${b}</li>`).join('')}</ul>
+
+    ${head('06','Ventures','CommEngine and Zachai')}
+    <div class="pf-grid-2">${PF_VENTURES.map(v=>`
+      <article class="pf-card"><div class="pf-kicker">${v.tag}</div><h4>${v.t}</h4><p>${v.d}</p>
+        <ul class="pf-dash">${v.pts.map(x=>`<li>${x}</li>`).join('')}</ul></article>`).join('')}</div>
+    <div class="pf-kicker" style="margin-top:22px">CommEngine brands &amp; partners</div>
+    <div class="pf-orgs pf-orgs-quiet">${PF_BRANDS.map(o=>`<span>${o}</span>`).join('')}</div>
+
+    <!-- Page 4 · CV -->
+    <div class="sub-label"><h3>Curriculum vitae</h3><div class="sub-label-line"></div></div>
+    <section class="pf-cv-head">
+      <div class="pf-profile-name">Mohammad Abdul Hadi Bhuiyan</div>
+      <div class="pf-profile-role">Digital &amp; AI-Core Transformation Management | Product &amp; Program Management | AI-Accelerator Director</div>
+      <div class="pf-cv-contact">+880 1833 180420 · bhuiyan.hadi@gmail.com · linkedin.com/in/mahadib · mahadib.futuremind.ltd · Dhaka</div>
+      <p>Technology and product leader with 20+ years driving digital and AI transformation across telecom, enterprise SaaS and public-sector programmes — Nokia Siemens Networks, Huawei, Robi Axiata, and Lead of FutureMind AI / CommEngine. Built and shipped 10+ products spanning Business Intelligence, AI workspace, IoT and SDP/ERP platforms; led AI strategy and transformation roadmaps across banking, pharma, FMCG and distribution; ran the AI Proficiency Accelerator for 318+ senior managers, directors and CxOs across 16+ cohorts. National ICT Award 2019 and Microsoft Startup Founders Fellow 2022.</p>
+    </section>
+
+    <div class="pf-kicker" style="margin-top:28px">Core competencies</div>
+    <div class="pf-orgs">${PF_COMPETENCIES.map(c=>`<span>${c}</span>`).join('')}</div>
+
+    <div class="pf-kicker" style="margin-top:32px">Experience</div>
+    <div class="pf-cv">${PF_CV.map(j=>`
+      <article class="pf-job">
+        <div class="pf-job-head"><h4>${j.role}</h4><span>${j.when}</span></div>
+        <ul class="pf-list">${j.pts.map(x=>`<li>${x}</li>`).join('')}</ul>
+      </article>`).join('')}</div>
+
+    <div class="pf-grid-2" style="margin-top:28px">
+      <article class="pf-card">
+        <div class="pf-kicker">Education &amp; certifications</div>
+        <p><b>B.Sc. in Computer Science &amp; Engineering — CUET, 2005.</b> Ranked 5th; Dean's Award.</p>
+        <p>Published research papers on neural networks, IoT and internet technology (IEEE).</p>
+        <p>ITIL v4 | BABOK | Service Management ServADM (Jakarta) | PMP trained | NSN TAC II (Berlin) | IBA CxO Strategy Conclave, Batch-III Graduate.</p>
+      </article>
+      <article class="pf-card">
+        <div class="pf-kicker">Recognition &amp; policy contribution</div>
+        <p>National ICT Award 2019 for CommEngine | Retail Innovation Award 2021 | Microsoft Startup Founders Fellow 2022 | ICT Ministry recognition for the pro-bono COVID-19 relief BI system “Swachho” | Member, National Blockchain Policy Forum; 4IR Standing Committee | Independent Reviewer, ICT4D Conference (2010–present).</p>
+        <p class="pf-small">References available on request.</p>
+      </article>
+    </div>
+
+    <div class="pf-cta">
+      <div>
+        <b>Let us help you instil AI in your enterprise DNA.</b>
+        <span>For case studies and the full annex, open the proposal or get in touch.</span>
+      </div>
+      <a href="${PROFILE_PDF}" target="_blank" rel="noopener" class="btn-dark">Open the proposal (PDF) ↗</a>
+    </div>`;
+}
+
 function pageAbout(){
   return `
     <div id="sec-intro" style="scroll-margin-top:68px"></div>
@@ -5643,6 +5975,7 @@ function ai4sgTab(k){
 const PAGES = {
   ai4sg: pageAI4SG,
   about: pageAbout,
+  profile: pageProfile,
   experience: pageExperience,
   products: pageProducts,
   'product-easydo': ()=>pageProduct('easydo'),
@@ -5702,6 +6035,7 @@ PAGE_META['product-easydo'] = {t:"EasyDo — Private AI Workspace | Hadi Bhuiyan
 PAGE_META['product-commengine'] = {t:"CommEngine — SocialCRM & AI Profiling | Hadi Bhuiyan",d:"CommEngine: SocialCRM and AI customer profiling serving 120+ brands. Live preview."};
 PAGE_META['product-jachai'] = {t:"Jachai — Product Authentication | Hadi Bhuiyan",d:"Jachai: product authentication. Live preview from Hadi Bhuiyan's Products."};
 PAGE_META['product-swaccho'] = {t:"Swaccho — Relief Distribution Tracking | Hadi Bhuiyan",d:"Swaccho: nationwide food and relief distribution tracking, Retail Digital Innovation Award 2020."};
+PAGE_META.profile = {t:"Profile — AI Transformation Proposal 2026 | Hadi Bhuiyan",d:"Hadi Bhuiyan's AI Transformation Proposal 2026: 318+ senior managers trained across 16 AIPA cohorts, an 8-quarter roadmap, 20+ years in telco and SaaS, advisory work, products, research and CV."};
 PAGE_META.blog = {t:"Blog — Hadi Bhuiyan",d:"Field notes and reflections from consulting, public-sector innovation design and enterprise AI work."};
 BLOG_POSTS.forEach(b=>{ PAGE_META[b.id] = {t:b.metaTitle,d:b.metaDesc}; });
 
