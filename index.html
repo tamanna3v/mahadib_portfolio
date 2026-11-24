@@ -2429,6 +2429,23 @@ footer{background:var(--ink);color:#fff;font-family:var(--label);font-weight:500
 .aw-tl-when{font-size:clamp(26px,2.6vw,38px)}
 .pf-stat b,.pf-recog-y{font-size:clamp(36px,3.4vw,48px)}
 .pf-cover-stats b{font-size:clamp(40px,4.6vw,64px)}
+/* Profile: small deep-green headlines; dark panes turn pale green so the green reads */
+#pg-profile{--pf-head:#14532d}
+#pg-profile .pf-h,#pg-profile .pf-topbar-t{color:var(--pf-head)!important;font-size:clamp(26px,2.6vw,36px)!important;line-height:1.15!important;max-width:30ch}
+#pg-profile .pf-h-name{max-width:none}
+#pg-profile .pf-pane{gap:16px;min-height:min(62vh,640px)}
+#pg-profile .pf-tone-dark{background:#eef5f0!important;color:var(--ink)!important;border-color:#cfe1d5!important}
+#pg-profile .pf-tone-dark .pf-eyebrow{color:var(--pf-head)}
+#pg-profile .pf-tone-dark .pf-lede,#pg-profile .pf-tone-dark .pf-profile-body p,#pg-profile .pf-cv-sum{color:var(--ink-2)!important}
+#pg-profile .pf-cv-contact{color:var(--muted)}
+#pg-profile .pf-profile-body{border-top-color:#cfe1d5}
+#pg-profile .pf-profile-ex{color:#8a6a00}
+#pg-profile .pf-contact span{color:var(--pf-head)}
+#pg-profile .pf-contact a{color:var(--ink)}
+#pg-profile .pf-cover-stats b{color:var(--pf-head);border-bottom-color:#a7c9b2;font-size:clamp(34px,3.4vw,48px)!important}
+#pg-profile .pf-cover-stats span{color:var(--ink-2)}
+#pg-profile .pf-orgs-dark span{color:var(--ink);border-color:#a7c9b2;background:#fff}
+#pg-profile .pf-tone-dark .pf-pane-num{color:var(--pf-head)}
 /* ── AI Accelerator pages (AIBS · AIPA · AISA) ── */
 .bnx{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.62;margin-top:-40px}
 .bnx a{text-decoration:none}
