@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a5c0a'/><text y='.86em' font-size='58' x='24' fill='white'>🧼</text></svg>"/>
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet"/>
 <style>
 :root{
   --green-950:#1a1a1a;
@@ -322,36 +322,54 @@ footer{background:var(--green-deep);font-family:var(--sans);font-size:13.5px;let
 .brand::after{margin-left:-9px}
 
 /* ── CONVENING LAYER: black · white · amber · square · bold uppercase labels ── */
-body{background:#fff;color:#000}
+body{background:#fff;color:#33383a}
 h1,h2,.sec-title,.closing h2{font-weight:300!important}
-.topbar{background:#000!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border-bottom:none}
+.topbar{background:#33383a!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border-bottom:none}
 .brand{color:#fff;font-weight:400}
-.brand::after{color:#f6b443}
+.brand::after{color:#f4c430}
 .brand .logo{border-radius:0;border:none}
 .topnav a{color:#fff;font-weight:700;font-size:13.5px;letter-spacing:.02em;text-transform:uppercase}
-.topnav a:hover{color:#f6b443}
+.topnav a:hover{color:#f4c430}
 .topbar .lang-switch-btn{color:#fff;border-color:rgba(255,255,255,.5)}
 .topbar .cta,.btn,.btn-primary,.btn-ghost{border-radius:0!important;font-weight:700;font-size:13px;letter-spacing:.02em;text-transform:uppercase;padding:12px 20px}
-.topbar .cta,.btn-primary,.hero .btn-primary,.closing .btn-primary,.tier.feat .btn-primary{background:#f6b443;color:#000;border-color:#f6b443}
-.topbar .cta:hover,.btn-primary:hover,.hero .btn-primary:hover,.closing .btn-primary:hover{background:#fff;color:#000;border-color:#fff}
-.hero,.frame,.live,.closing,.divide-visual,.finbox{background:#000}
-.eyebrow{color:#000}
-.eyebrow::before{background:#f6b443;height:3px;width:20px;border-radius:0}
-.hero .eyebrow,.frame .eyebrow,.live .eyebrow{color:#f6b443}
-.hero h1 .u{color:#f6b443}
+.topbar .cta,.btn-primary,.hero .btn-primary,.closing .btn-primary,.tier.feat .btn-primary{background:#f4c430;color:#33383a;border-color:#f4c430}
+.topbar .cta:hover,.btn-primary:hover,.hero .btn-primary:hover,.closing .btn-primary:hover{background:#fff;color:#33383a;border-color:#fff}
+.hero,.frame,.live,.closing,.divide-visual,.finbox{background:#33383a}
+.eyebrow{color:#33383a}
+.eyebrow::before{background:#f4c430;height:3px;width:20px;border-radius:0}
+.hero .eyebrow,.frame .eyebrow,.live .eyebrow{color:#f4c430}
+.hero h1 .u{color:#f4c430}
 .closing,.divide-visual,.finbox,.hero-visual,.shot,.dim,.level,.hero-visual img,.shot img,.press img,.model-chips span,.frame-badge,.urlchip,.finbox .badge,
 .stat,.card,.pill,.tier,.ask-card,.road .r,.member,.press,.partnerstrip,.prog,.flow .node,.photo-frame,.tier .flag,.card .ic,.pill .pi,.dim .di,.ripple-step .rs-ic,
 .needlist .x,.road .r .num,.member .av,.prog .map,.stake span,.ask-card.collab,.ask-card.fund,.divide-visual .dv-bar,.divide-visual .dv-bar i,.photo-frame .tag,.dot{border-radius:0!important;box-shadow:none!important}
-.stat{background:#000!important;border-color:#000!important}
+.stat{background:#33383a!important;border-color:#33383a!important}
 .stat .v{color:#fff;font-weight:300}
 .stat .l{color:#fff}
-.tier.feat{border:1px solid #000}
-.tier .flag,.divide-visual .dv-bar i{background:#f6b443;color:#000}
-.prog,.ask-card.collab,.ask-card.fund{border-left:4px solid #f6b443}
-.road .r .num,.member .av{background:#000}
-.photo-frame .tag{background:#000}
-.tier li::before,.ask-card li::before,.flow .arrow{color:#000}
-footer{background:#000}
+.tier.feat{border:1px solid #33383a}
+.tier .flag,.divide-visual .dv-bar i{background:#f4c430;color:#33383a}
+.prog,.ask-card.collab,.ask-card.fund{border-left:4px solid #f4c430}
+.road .r .num,.member .av{background:#33383a}
+.photo-frame .tag{background:#33383a}
+.tier li::before,.ask-card li::before,.flow .arrow{color:#33383a}
+footer{background:#33383a}
+
+/* ── GROOVE LAYER: white · charcoal · yellow · Anton / Newsreader / IBM Plex Mono / Hanken Grotesk ── */
+body{font-family:"Hanken Grotesk","Inter",system-ui,sans-serif;color:#4a5053}
+h1,h2,.sec-title,.closing h2{font-family:"Anton","Arial Narrow",Impact,sans-serif!important;font-weight:400!important;text-transform:uppercase;letter-spacing:.01em!important;line-height:1!important}
+.hero h1 .u{font-style:normal}
+.card h3,.member h4,.prog h4,.tier h4,.road .r h4,.press h4,.ask-card h3{font-family:"Newsreader",Georgia,serif;font-weight:400;font-size:22px}
+.eyebrow,.topnav a,.stat .l,.flow .node .n-d,.prog .pk,.tier .tk,.member .role,.press .pk,.level .lk{font-family:"IBM Plex Mono",ui-monospace,monospace!important;font-weight:500!important;letter-spacing:.14em!important}
+.eyebrow::before{display:none}
+.topbar{background:#fff!important;border-bottom:1px solid #d3d3d3}
+.brand{color:#33383a;font-family:"Anton",Impact,sans-serif;text-transform:uppercase}
+.topnav a{color:#33383a}
+.topnav a:hover{color:#8a6a00}
+.topbar .lang-switch-btn{color:#33383a;border-color:#d3d3d3}
+.topbar .cta,.btn,.btn-primary,.btn-ghost{border-radius:999px!important;font-family:"IBM Plex Mono",monospace;letter-spacing:.1em}
+.hero .btn-ghost{border-color:#fff}
+.stat .v{font-family:"Anton",Impact,sans-serif;font-weight:400}
+.card .ic,.member .av,.road .r .num,.pill .pi{border-radius:50%!important}
+footer{font-family:"IBM Plex Mono",monospace}
 </style>
 </head>
 <body>
