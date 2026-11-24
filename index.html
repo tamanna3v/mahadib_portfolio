@@ -2302,6 +2302,10 @@ nav .lang-switch-btn:hover{border-color:var(--ink)}
 .hero .hero-eyebrow{color:var(--accent)!important;font-size:14px!important;margin-bottom:22px}
 .hero-name{font-family:var(--cond)!important;font-weight:400!important;text-transform:uppercase;color:var(--ink)!important;font-size:clamp(64px,10vw,150px)!important;line-height:.92!important;letter-spacing:.005em!important}
 .hero-tagline{font-family:var(--serif);font-style:italic;color:var(--ink-2);font-size:clamp(22px,2.2vw,32px);line-height:1.35;max-width:36ch}
+/* name: medium-small; tagline: one line on desktop */
+.hero-name{font-size:clamp(38px,4.6vw,60px)!important;line-height:1!important;margin-bottom:14px!important}
+.hero-tagline{font-size:clamp(17px,1.55vw,22px);max-width:none;white-space:nowrap}
+@media(max-width:900px){.hero-tagline{white-space:normal}}
 .hero-links .link-btn{background:#fff!important;color:var(--ink)!important;border-color:var(--line)!important}
 .hero-links .link-btn:hover{background:var(--amber)!important;border-color:var(--amber)!important;color:var(--ink)!important}
 .hero-stats{border-top:2px solid var(--ink);padding-top:32px;margin-top:56px}
@@ -2392,6 +2396,27 @@ footer{background:var(--ink);color:#fff;font-family:var(--label);font-weight:500
 #wa-chat-bar{border-radius:999px!important;background:var(--ink)!important;border-color:var(--ink)!important;font-family:var(--label)!important;letter-spacing:.08em!important}
 #sections-panel .sp-num{border-radius:50%!important;font-family:var(--label)}
 
+.exp-logo .company-logo-initial{width:100%;height:100%;background:var(--ink);color:#fff;font-family:var(--label);font-size:15px;font-weight:600;letter-spacing:.04em}
+/* Award & Contribution timeline */
+.aw-tl{list-style:none;margin:0;padding:0;position:relative}
+.aw-tl::before{content:"";position:absolute;left:170px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.aw-tl-year{display:grid;grid-template-columns:150px minmax(0,1fr);gap:0 40px;position:relative;padding:0 0 36px}
+.aw-tl-year::before{content:"";position:absolute;left:163px;top:12px;width:16px;height:16px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 5px #fff}
+.aw-tl-when{font-family:var(--cond);font-size:clamp(30px,3vw,44px);line-height:1;color:var(--ink);text-align:right;padding-top:2px}
+.aw-tl-items{display:flex;flex-direction:column;gap:18px;padding-left:6px}
+.aw-tl-item{border-top:2px solid var(--ink);padding-top:14px;max-width:760px}
+.aw-tl-type{font-family:var(--label);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.aw-tl-title{font-family:var(--serif);font-weight:400;font-size:clamp(22px,2.2vw,28px);line-height:1.2;margin:6px 0 6px;color:var(--ink)}
+.aw-tl-detail{margin:0;color:var(--ink-2);font-size:16px;line-height:1.6}
+@media(max-width:700px){
+  .aw-tl::before{left:7px}
+  .aw-tl-year{grid-template-columns:minmax(0,1fr);padding-left:36px;gap:12px}
+  .aw-tl-year::before{left:0;top:6px}
+  .aw-tl-when{text-align:left;font-size:32px}
+  .aw-tl-items{padding-left:0}
+}
+.cert-kind{font-family:var(--label);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.cert-card .edu-badge{margin-top:10px}
 /* ── AI Accelerator pages (AIBS · AIPA · AISA) ── */
 .bnx{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.62;margin-top:-40px}
 .bnx a{text-decoration:none}
@@ -2412,23 +2437,13 @@ footer{background:var(--ink);color:#fff;font-family:var(--label);font-weight:500
     <span class="sp-icon">👤</span>
     <span class="sp-info"><span class="sp-title">Intro</span><span class="sp-sub">Hadi Bhuiyan · AI · SaaS</span></span>
   </button>
-  <button class="sp-card" data-sec="building" onclick="scrollToSection('building',this)">
-    <span class="sp-num">2</span>
-    <span class="sp-icon">🚀</span>
-    <span class="sp-info"><span class="sp-title">Building</span><span class="sp-sub">Building NOW &amp; Companies</span></span>
-  </button>
-  <button class="sp-card" data-sec="timeline" onclick="scrollToSection('timeline',this)">
-    <span class="sp-num">3</span>
-    <span class="sp-icon">📅</span>
-    <span class="sp-info"><span class="sp-title">Timeline</span><span class="sp-sub">Career · 20 yrs</span></span>
-  </button>
   <button class="sp-card" data-sec="awards" onclick="scrollToSection('awards',this)">
-    <span class="sp-num">4</span>
+    <span class="sp-num">2</span>
     <span class="sp-icon">🏆</span>
-    <span class="sp-info"><span class="sp-title">Awards</span><span class="sp-sub">Awards &amp; Recognition</span></span>
+    <span class="sp-info"><span class="sp-title">Awards</span><span class="sp-sub">Award &amp; Contribution</span></span>
   </button>
   <button class="sp-card" data-sec="experience" onclick="scrollToSection('experience',this)">
-    <span class="sp-num">5</span>
+    <span class="sp-num">3</span>
     <span class="sp-icon">💼</span>
     <span class="sp-info"><span class="sp-title">Experience</span><span class="sp-sub">Work Experience &amp; Skills</span></span>
   </button>
@@ -2497,16 +2512,16 @@ const BUILDING = [
 ];
 
 const EXPERIENCES = [
-  {img:"https://www.google.com/s2/favicons?domain=buildnation.com.bd&sz=128",logo:"🏗️",org:"BuildCon Consultancies & BuildNation Limited",role:"Consultant (CPO Capacity) · Aug 2022 – Present · Dhaka, Bangladesh",desc:"Led AI-Proficiency Accelerator (AIPA) for 256+ senior leaders across 6+ corporates. Built B2B LMS platform onboarding TAFE Australia, ACCA, CIMA, and AI-PA programs.",tags:["AI","Digital Transformation","Consulting"],points:["Led AI-Proficiency Accelerator for 256+ Corporate Senior Leadership participants across six corporate engagements.","Built a Blended Learning B2B LMS platform onboarding global programs (TAFE Australia, ACCA, CIMA, AI-PA).","Delivered consultancy for Tier-IV Data Center Feasibility and Digital Bank Establishment projects."],url:"https://buildnation.com.bd/aipa/",serviced:[
+  {img:"https://www.google.com/s2/favicons?domain=buildnation.com.bd&sz=128",logo:"🏗️",org:"BuildCon Consultancies & BuildNation Limited",initials:"BN",role:"Consultant (CPO Capacity) · Aug 2022 – Present · Dhaka, Bangladesh",desc:"Led AI-Proficiency Accelerator (AIPA) for 256+ senior leaders across 6+ corporates. Built B2B LMS platform onboarding TAFE Australia, ACCA, CIMA, and AI-PA programs.",tags:["AI","Digital Transformation","Consulting"],points:["Led AI-Proficiency Accelerator for 256+ Corporate Senior Leadership participants across six corporate engagements.","Built a Blended Learning B2B LMS platform onboarding global programs (TAFE Australia, ACCA, CIMA, AI-PA).","Delivered consultancy for Tier-IV Data Center Feasibility and Digital Bank Establishment projects."],url:"https://buildnation.com.bd/aipa/",serviced:[
     {icon:"🚀",title:"AI Proficiency Accelerator",desc:"Led an AI Proficiency Accelerator across 9 organizations, training 240+ executives and delivering 100+ AI automations to accelerate enterprise AI adoption."},
     {icon:"🏦",title:"Advisory & Implementation",desc:"Led advisory and implementation for data center and AI tokenization, digital banking, and SLA/KPI management platforms for leading multinational organizations."},
     {icon:"🎓",title:"EdFinTech Platform",desc:"Built an EdFinTech platform through global and local partnerships, delivering blended learning and scalable skill-to-employment pathways."}
   ]},
-  {img:"https://www.google.com/s2/favicons?domain=commengine.xyz&sz=128",logo:"💬",org:"CommEngine Limited",role:"Co-Founder · April 2018 – Present · Dhaka, Bangladesh",desc:"Co-founded enterprise B2B SaaS serving 120+ brands. Built SocialCRM, profiled 20M+ customers, secured seed funding from Robi Axiata.",tags:["SaaS","AI","SocialCRM"],points:["Co-Founded EasyDO.ai and FutureMind AI — Private AI-Workspace, Application Launchpad & AI-Consulting Manager.","Secured seed funding from Robi Axiata; launched enterprise B2B SaaS serving 120+ brands.","Built Business, Strategy, Product & Technology teams; profiled 20M+ customers."],url:"http://www.commengine.xyz"},
-  {img:"https://www.google.com/s2/favicons?domain=robi.com.bd&sz=128",logo:"📡",org:"Robi Axiata Limited",role:"Innovation & Digital Service Unit Lead · May 2013 – July 2021 · Dhaka, Bangladesh",desc:"Led product lifecycle for Digital Services, Innovation, IoT & VAS. Redesigned SMS Ecosystem for 40M subscribers — $3M YRR.",tags:["Telco","IoT","Digital Services"],points:["Led complete product lifecycle for Digital Services, Innovation, IoT & VAS.","Managed Airtel & Axiata SDP merger, onboarding 2000+ services across USSD, VAS, MFS & Digital platforms.","Redesigned SMS Ecosystem for 40M subscribers — achieved $3M YRR."]},
-  {img:"assets/logos/nokia.svg",logo:"📶",org:"Nokia Siemens Networks",role:"Intelligent Network & Project Management Lead · Feb 2008 – May 2013",desc:"Implemented Banglalink IN09–IN14 handling 90M subscribers. Managed 60M-subscriber migration for Vodafone India. OJT in Poland, Germany & Indonesia.",tags:["IN","BSS","Telecom"],points:["Implemented Banglalink IN09–IN14 (five IN platforms) handling 90 million subscribers.","Managed migration of 60M subscribers across four IN nodes for Vodafone India.","Completed on-the-job training (OJT) in Poland, Germany and Indonesia."]},
-  {img:"assets/logos/huawei.svg",logo:"⚙️",org:"Huawei Technologies",role:"Business Support System Engineer · April 2006 – Feb 2008",desc:"Led commissioning of Postpaid Billing, Mediation, PRM & International Roaming. Deployed BTTB to Teletalk Charging for 20M subscribers.",tags:["BSS","Billing","Mediation"],points:["Led commissioning of Postpaid Billing, Mediation, PRM & International Roaming solutions.","Deployed BTTB to Teletalk Charging system transformation for 20M subscribers."]},
-  {img:"https://www.google.com/s2/favicons?domain=puc.ac.bd&sz=128",logo:"🎓",org:"Premier University, Chittagong & CUET ( Appointed )",role:"Lecturer in CSE · Feb 2006 – Sep 2007",desc:"Conducted CS & Business lectures and mentored undergraduate thesis and projects.",tags:["Teaching","Academia"],points:["Conducted CS & Business lectures, labs and mentored undergraduate thesis and projects."]}
+  {img:"https://www.google.com/s2/favicons?domain=commengine.xyz&sz=128",logo:"💬",org:"CommEngine Limited",initials:"CE",role:"Co-Founder · April 2018 – Present · Dhaka, Bangladesh",desc:"Co-founded enterprise B2B SaaS serving 120+ brands. Built SocialCRM, profiled 20M+ customers, secured seed funding from Robi Axiata.",tags:["SaaS","AI","SocialCRM"],points:["Co-Founded EasyDO.ai and FutureMind AI — Private AI-Workspace, Application Launchpad & AI-Consulting Manager.","Secured seed funding from Robi Axiata; launched enterprise B2B SaaS serving 120+ brands.","Built Business, Strategy, Product & Technology teams; profiled 20M+ customers."],url:"http://www.commengine.xyz"},
+  {img:"https://www.google.com/s2/favicons?domain=robi.com.bd&sz=128",logo:"📡",org:"Robi Axiata Limited",initials:"RA",role:"Innovation & Digital Service Unit Lead · May 2013 – July 2021 · Dhaka, Bangladesh",desc:"Led product lifecycle for Digital Services, Innovation, IoT & VAS. Redesigned SMS Ecosystem for 40M subscribers — $3M YRR.",tags:["Telco","IoT","Digital Services"],points:["Led complete product lifecycle for Digital Services, Innovation, IoT & VAS.","Managed Airtel & Axiata SDP merger, onboarding 2000+ services across USSD, VAS, MFS & Digital platforms.","Redesigned SMS Ecosystem for 40M subscribers — achieved $3M YRR."]},
+  {img:"assets/logos/nokia.svg",logo:"📶",org:"Nokia Siemens Networks",initials:"NSN",role:"Intelligent Network & Project Management Lead · Feb 2008 – May 2013",desc:"Implemented Banglalink IN09–IN14 handling 90M subscribers. Managed 60M-subscriber migration for Vodafone India. OJT in Poland, Germany & Indonesia.",tags:["IN","BSS","Telecom"],points:["Implemented Banglalink IN09–IN14 (five IN platforms) handling 90 million subscribers.","Managed migration of 60M subscribers across four IN nodes for Vodafone India.","Completed on-the-job training (OJT) in Poland, Germany and Indonesia."]},
+  {img:"assets/logos/huawei.svg",logo:"⚙️",org:"Huawei Technologies",initials:"HW",role:"Business Support System Engineer · April 2006 – Feb 2008",desc:"Led commissioning of Postpaid Billing, Mediation, PRM & International Roaming. Deployed BTTB to Teletalk Charging for 20M subscribers.",tags:["BSS","Billing","Mediation"],points:["Led commissioning of Postpaid Billing, Mediation, PRM & International Roaming solutions.","Deployed BTTB to Teletalk Charging system transformation for 20M subscribers."]},
+  {img:"https://www.google.com/s2/favicons?domain=puc.ac.bd&sz=128",logo:"🎓",org:"Premier University, Chittagong & CUET ( Appointed )",initials:"PU",role:"Lecturer in CSE · Feb 2006 – Sep 2007",desc:"Conducted CS & Business lectures and mentored undergraduate thesis and projects.",tags:["Teaching","Academia"],points:["Conducted CS & Business lectures, labs and mentored undergraduate thesis and projects."]}
 ];
 
 const SKILLS = {
@@ -2719,10 +2734,10 @@ const FEATURED = [
 const AWARDS = [
   {type:"Award",title:"Retail Digital Innovation Award",detail:"Zachai – 2020",year:"2020",bg:"var(--accent-peach)"},
   {type:"Award",title:"Covid-19 Solution Award",detail:"Swachho – 2020",year:"2020",bg:"var(--accent-rose)"},
-  {type:"Contribution",title:"National Blockchain Policy Forum",detail:"Policy Contributor",bg:"var(--accent-butter)"},
-  {type:"Publication",title:"IEEE Publications",detail:"ICCIT-2005, ICNEWS-2006, ICCIT-2010",bg:"var(--accent-sky)"},
-  {type:"Recognition",title:"ICT4D Conference Reviewer",detail:"Independent 2010–2016",bg:"var(--accent-sage)"},
-  {type:"Contribution",title:"BSTI Consumer Protection",detail:"Digital System Contributor",bg:"var(--accent-maroon-light)"}
+  {type:"Contribution",title:"National Blockchain Policy Forum",detail:"Policy Contributor",year:"2021–2022",bg:"var(--accent-butter)"},
+  {type:"Publication",title:"IEEE Publications",detail:"ICCIT-2005, ICNEWS-2006, ICCIT-2010",year:"2005–2010",bg:"var(--accent-sky)"},
+  {type:"Recognition",title:"ICT4D Conference Reviewer",detail:"Independent 2010–2016",year:"2010–2016",bg:"var(--accent-sage)"},
+  {type:"Contribution",title:"BSTI Consumer Protection",detail:"Digital System Contributor",year:"2022",bg:"var(--accent-maroon-light)"}
 ];
 
 const CERTIFICATIONS = [
@@ -3137,6 +3152,31 @@ document.addEventListener('keydown', e=>{
   }, {passive:true});
 })();
 
+
+// Award & Contribution — one timeline, newest first, grouped by year.
+function awardsTimeline(){
+  const items = [...FEATURED, ...AWARDS].map(a=>{
+    const yrs = (a.year||'').match(/\d{4}/g) || ['0'];
+    return {...a, sortY: Math.max(...yrs.map(Number)), startY: Math.min(...yrs.map(Number))};
+  }).sort((x,y)=> y.sortY - x.sortY || y.startY - x.startY);
+  const groups = [];
+  items.forEach(a=>{
+    const key = a.year.replace(/^[A-Za-z]+\s+/,'');
+    const g = groups[groups.length-1];
+    if(g && g.key === key) g.items.push(a); else groups.push({key, items:[a]});
+  });
+  return `<ol class="aw-tl">${groups.map(g=>`
+    <li class="aw-tl-year">
+      <div class="aw-tl-when">${g.key}</div>
+      <div class="aw-tl-items">${g.items.map(a=>`
+        <article class="aw-tl-item">
+          <div class="aw-tl-type">${a.type}${/^[A-Za-z]/.test(a.year)?` · ${a.year}`:''}</div>
+          <h4 class="aw-tl-title">${a.title}</h4>
+          <p class="aw-tl-detail">${a.detail}</p>
+        </article>`).join('')}</div>
+    </li>`).join('')}</ol>`;
+}
+
 function pageAbout(){
   return `
     <div id="sec-intro" style="scroll-margin-top:68px"></div>
@@ -3153,50 +3193,13 @@ function pageAbout(){
       </div>
       <div class="hero-stats">${STATS.map(st=>`<div class="hero-stat"><div class="hero-stat-val">${st.val}</div><div class="hero-stat-lbl">${st.label}</div></div>`).join('')}</div>
     </header>
-    <div id="sec-building" style="scroll-margin-top:68px"></div>
-    <div class="sub-label"><h3>Building NOW</h3><div class="sub-label-line"></div></div>
-    <div class="building-grid">${BUILDING.map(b=>`<div class="building-card"${b.href?` style="cursor:pointer" onclick="window.open('${b.href}','_blank')"`:''}>` +`<div class="building-emoji">${b.emoji}</div><div><div class="building-title">${b.title}${b.href?` <span style="font-size:12px;opacity:.6">↗</span>`:''}</div><div class="building-desc">${b.desc}</div></div></div>`).join('')}</div>
-    <div class="sub-label"><h3>Organizations</h3><div class="sub-label-line"></div></div>
-    <div class="company-logos-row">
-      <div class="company-logo-item">
-        <div class="company-logo-wrap"><img src="https://www.google.com/s2/favicons?domain=buildnation.com.bd&sz=128" alt="BuildNation" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:var(--green)\\'>BN</div>')"/></div>
-        <span class="company-logo-name">BuildNation</span>
-      </div>
-      <div class="company-logo-item">
-        <div class="company-logo-wrap"><img src="https://www.google.com/s2/favicons?domain=commengine.xyz&sz=128" alt="CommEngine" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:var(--accent)\\'>CE</div>')"/></div>
-        <span class="company-logo-name">CommEngine</span>
-      </div>
-      <div class="company-logo-item">
-        <div class="company-logo-wrap"><img src="https://www.google.com/s2/favicons?domain=robi.com.bd&sz=128" alt="Robi Axiata" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:var(--accent)\\'>RA</div>')"/></div>
-        <span class="company-logo-name">Robi Axiata</span>
-      </div>
-      <div class="company-logo-item">
-        <div class="company-logo-wrap"><img src="assets/logos/nokia.svg" alt="Nokia Siemens" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:var(--green-deep)\\'>NSN</div>')"/></div>
-        <span class="company-logo-name">Nokia Siemens</span>
-      </div>
-      <div class="company-logo-item">
-        <div class="company-logo-wrap"><img src="assets/logos/huawei.svg" alt="Huawei" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:var(--accent)\\'>HW</div>')"/></div>
-        <span class="company-logo-name">Huawei</span>
-      </div>
-      <div class="company-logo-item">
-        <div class="company-logo-wrap"><img src="https://www.google.com/s2/favicons?domain=puc.ac.bd&sz=128" alt="Premier University" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'company-logo-initial\\' style=\\'background:var(--green-deep)\\'>PU</div>')"/></div>
-        <span class="company-logo-name">Premier University</span>
-      </div>
-    </div>
-    <div id="sec-timeline" style="scroll-margin-top:68px"></div>
-    <div class="sub-label"><h3>Career Timeline</h3><div class="sub-label-line"></div></div>
-    <div class="timeline">
-      <div class="timeline-line"></div>
-      ${TIMELINE.map(t=>`<div class="tl-item${t.active?' active-phase':''}${t.isNew?' tl-new':''}"><div class="tl-year">${t.year}</div><div class="tl-label">${t.label}</div><div class="tl-role">${t.role||''}</div><div class="tl-note">${t.note}</div></div>${t.arrowAfter?'<div class="tl-arrow">→</div>':''}`).join('')}
-    </div>
     <div id="sec-awards" style="scroll-margin-top:68px"></div>
-    <div class="sub-label"><h3>Awards, Contributions and Participations</h3><div class="sub-label-line"></div></div>
-    <div class="feat-grid">${FEATURED.map(f=>`<div class="feat-card" style="background:${f.bg}"><div class="feat-type">${f.type}</div><div class="feat-title">${f.title}</div><p class="feat-detail">${f.detail}</p><div class="feat-year">📅 ${f.year}</div></div>`).join('')}</div>
-    <div class="feat-grid" style="margin-top:14px">${AWARDS.map(a=>`<div class="feat-card" style="background:${a.bg}"><div class="feat-type">${a.type}</div><div class="feat-title">${a.title}</div><p class="feat-detail">${a.detail}</p>${a.year?`<div class="feat-year">📅 ${a.year}</div>`:''}</div>`).join('')}</div>
+    <div class="sub-label"><h3>Award &amp; Contribution</h3><div class="sub-label-line"></div></div>
+    ${awardsTimeline()}
     <div id="sec-experience" style="scroll-margin-top:68px"></div>
     ${pageExperience()}
     <div id="sec-certifications" style="scroll-margin-top:68px"></div>
-    ${pageCertifications()}`;
+    ${eduCertSection()}`;
 }
 
 function toggleServiced(i){
@@ -3212,7 +3215,7 @@ window.toggleServiced=toggleServiced;
 function pageExperience(){
   const expCards = `<div class="exp-list">`+EXPERIENCES.map((e,i)=>`
     <div class="exp-card">
-      <div class="exp-logo">${e.img?`<img src="${e.img}" alt="${e.org}" loading="lazy" onerror="this.replaceWith('${e.logo}')"/>`:e.logo}</div>
+      <div class="exp-logo">${e.img?`<img src="${e.img}" alt="${e.org}" loading="lazy" onerror="this.outerHTML='<span class=\\'company-logo-initial\\'>${e.initials||''}</span>'"/>`:e.logo}</div>
       <div class="exp-content">
         <div class="exp-org">${e.org}</div>
         <div class="exp-role">${e.role}</div>
@@ -3246,25 +3249,6 @@ function pageExperience(){
     From Intelligent Network platforms serving 90M+ subscribers at Nokia Siemens and Huawei to digital innovation at Robi Axiata.<br>
     Now co-founding AI and SaaS ventures and leading corporate AI adoption for senior leaders.</p>
     <div class="card" style="padding:8px 24px">${expCards}</div>
-    <div class="sub-label"><h3>Education</h3><div class="sub-label-line"></div></div>
-    <div class="card">
-      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
-        <div>
-          <div style="font-weight:800;font-size:15px;color:var(--green-deep)">B.Sc. Engineering in Computer Science & Engineering</div>
-          <div style="font-size:13px;color:#5a5a56;margin-top:4px">Chittagong University of Engineering & Technology, Bangladesh</div>
-          <div><span class="edu-badge">Ranked 5th / 63</span><span class="edu-badge">Dean's Award</span></div>
-        </div>
-        <div style="font-size:12px;color:#5a5a56;font-weight:600">2001 – 2005</div>
-      </div>
-    </div>
-    <div class="card">
-      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
-        <div>
-          <div style="font-weight:800;font-size:15px;color:var(--green-deep)">Chittagong College, Bangladesh</div>
-          <div style="font-weight:800;font-size:15px;color:var(--green-deep);margin-top:8px">Chittagong Collegiate School, Bangladesh</div>
-        </div>
-      </div>
-    </div>
     <div class="sub-label"><h3>Competence</h3><div class="sub-label-line"></div></div>
     ${skillSections}`;
 }
@@ -3531,29 +3515,46 @@ function pageRecognition(){
   return `
     <h2 class="section-title">Recognition</h2>
     <p class="section-sub">Awards, honours and featured milestones</p>
-    <div class="sub-label"><h3>Awards, Contributions and Participations</h3><div class="sub-label-line"></div></div>
-    <div class="feat-grid">${feat}</div>
-    <div class="feat-grid" style="margin-top:14px">${awards}</div>`;
+    <div class="sub-label"><h3>Award &amp; Contribution</h3><div class="sub-label-line"></div></div>
+    ${awardsTimeline()}`;
+}
+
+const EDUCATION = [
+  {code:"CUET",title:"B.Sc. Engineering in Computer Science &amp; Engineering",issuer:"Chittagong University of Engineering &amp; Technology",detail:"",badges:["Ranked 5th / 63","Dean's Award"],year:"2001 – 2005"},
+  {code:"CC",title:"Chittagong College",issuer:"Chittagong, Bangladesh",detail:""},
+  {code:"CCS",title:"Chittagong Collegiate School",issuer:"Chittagong, Bangladesh",detail:""}
+];
+
+// Education, Certification & Fellowship — one section, one grid.
+function eduCertGrid(){
+  const card = (c,kind)=>`
+    <div class="cert-card">
+      <div class="cert-badge">${c.code}</div>
+      <div class="cert-body">
+        <div class="cert-kind">${kind}${c.year?` · ${c.year}`:''}</div>
+        <div class="cert-title">${c.title}</div>
+        <div class="cert-issuer">${c.issuer}</div>
+        ${c.detail?`<p class="cert-detail">${c.detail}</p>`:''}
+        ${c.badges?`<div>${c.badges.map(x=>`<span class="edu-badge">${x}</span>`).join('')}</div>`:''}
+      </div>
+    </div>`;
+  return `<div class="cert-grid">${
+    EDUCATION.map(c=>card(c,'Education')).join('') +
+    CERTIFICATIONS.map(c=>card(c,'Certification')).join('') +
+    FELLOWSHIPS.map(c=>card(c,'Fellowship')).join('')
+  }</div>`;
+}
+
+function eduCertSection(){
+  return `<div class="sub-label"><h3>Education, Certification &amp; Fellowship</h3><div class="sub-label-line"></div></div>
+    ${eduCertGrid()}`;
 }
 
 function pageCertifications(){
-  const certCard = c=>`
-    <div class="cert-card" style="background:${c.bg}">
-      <div class="cert-badge">${c.code}</div>
-      <div class="cert-body">
-        <div class="cert-title">${c.title}</div>
-        <div class="cert-issuer">${c.issuer}</div>
-        <p class="cert-detail">${c.detail}</p>
-        ${c.year?`<div class="feat-year">📅 ${c.year}</div>`:''}
-      </div>
-    </div>`;
-  const cards = CERTIFICATIONS.map(certCard).join('');
-  const fellowshipCards = FELLOWSHIPS.map(certCard).join('');
   return `
-    <h2 class="section-title">Certifications</h2>
-    <div class="cert-grid">${cards}</div>
-    <div class="sub-label"><h3>Fellowship</h3><div class="sub-label-line"></div></div>
-    <div class="cert-grid">${fellowshipCards}</div>`;
+    <h2 class="section-title">Education &amp; Certification</h2>
+    <p class="section-sub">Degree, professional certifications and fellowship</p>
+    ${eduCertGrid()}`;
 }
 
 function pageContact(){
@@ -4685,7 +4686,7 @@ function updateSectionsPanelVisibility(pageId){
 }
 
 (function initScrollSpy(){
-  const SECS = ['intro','building','timeline','awards','experience'];
+  const SECS = ['intro','awards','experience'];
   let ticking = false;
   window.addEventListener('scroll', ()=>{
     if(ticking) return;
@@ -6582,7 +6583,7 @@ function submitAffiliationForm(e){
 }
 </script>
 <style>
-#wa-chat-bar{position:fixed;bottom:24px;right:20px;z-index:9999;display:flex;align-items:center;gap:9px;background:var(--green);color:#fff;border:1px solid var(--green);border-radius:0;padding:11px 18px 11px 13px;box-shadow:none;text-decoration:none;font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;transition:background .15s ease}
+#wa-chat-bar{position:fixed;bottom:24px;left:20px;right:auto;z-index:9999;display:flex;align-items:center;gap:9px;background:var(--green);color:#fff;border:1px solid var(--green);border-radius:0;padding:11px 18px 11px 13px;box-shadow:none;text-decoration:none;font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;transition:background .15s ease}
 #wa-chat-bar:hover{background:#333;text-decoration:none;color:#fff}
 #wa-chat-bar svg{flex-shrink:0}
 @media(max-width:500px){#wa-chat-bar{padding:11px;font-size:0;gap:0}#wa-chat-bar svg{width:22px;height:22px}}
