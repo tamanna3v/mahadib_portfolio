@@ -101,9 +101,9 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='0' fill='%2333383a'/><text y='.85em' font-size='52' x='8' fill='white' font-family='sans-serif' font-weight='bold'>HB</text></svg>"/>
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Noto+Serif+Bengali:wght@400;600;700&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Noto+Serif+Bengali:wght@400;600;700&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
-/* ── DESIGN TOKENS (white · charcoal grey · yellow · Anton / Newsreader / IBM Plex Mono / Hanken Grotesk) ── */
+/* ── DESIGN TOKENS (white · charcoal grey · yellow · Calibri / Newsreader / IBM Plex Mono / Hanken Grotesk) ── */
 :root{
   /* ground */
   --bg:#ffffff;
@@ -2218,11 +2218,11 @@ body:has(#pfDeck) #wa-chat-bar{bottom:104px}
 /* ════════════════════════════════════════════════════════════════
    GROOVE LAYER
    White ground · charcoal grey ink · warm yellow accent ·
-   Anton condensed uppercase display · Newsreader serif names ·
+   Calibri bold uppercase display · Newsreader serif names ·
    IBM Plex Mono tracked labels and nav · Hanken Grotesk body ·
    circular portraits with an offset yellow disc · pill CTAs.
    ════════════════════════════════════════════════════════════════ */
-:root{--cond:"Anton","Oswald","Arial Narrow",Impact,sans-serif;--label:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+:root{--cond:Calibri,"Carlito","Segoe UI",Candara,"Hanken Grotesk",sans-serif;--label:"IBM Plex Mono",ui-monospace,Menlo,monospace}
 body{font-family:var(--sans);color:var(--ink-2);background:#fff;font-size:17px;line-height:1.65}
 ::selection{background:var(--amber);color:var(--ink)}
 
@@ -2417,6 +2417,18 @@ footer{background:var(--ink);color:#fff;font-family:var(--label);font-weight:500
 }
 .cert-kind{font-family:var(--label);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
 .cert-card .edu-badge{margin-top:10px}
+/* Display face → Calibri (Carlito as the web fallback), bold */
+.nav-brand,.section-title,.sub-label h3,.hero-name,.hero-stat-val,.stat-val,.prog-result-val,.pf-stats b,.pf-recog-y,.pf-stat b,
+.prod-card-name,.pf-h,.pf-topbar-t,.pf-cover-stats b,.bnx h1,.bnx h2,.aw-tl-when{font-weight:700!important;letter-spacing:0!important}
+.section-title{font-size:clamp(40px,5.2vw,76px);line-height:1}
+.sub-label h3{font-size:clamp(28px,2.8vw,40px)}
+.pf-h{font-size:clamp(36px,4.6vw,68px);line-height:1.02}
+.pf-topbar-t{font-size:clamp(32px,3.8vw,54px)}
+.bnx h1{font-size:clamp(32px,4.2vw,56px)!important}
+.bnx h2{font-size:clamp(26px,3.2vw,44px)!important}
+.aw-tl-when{font-size:clamp(26px,2.6vw,38px)}
+.pf-stat b,.pf-recog-y{font-size:clamp(36px,3.4vw,48px)}
+.pf-cover-stats b{font-size:clamp(40px,4.6vw,64px)}
 /* ── AI Accelerator pages (AIBS · AIPA · AISA) ── */
 .bnx{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.62;margin-top:-40px}
 .bnx a{text-decoration:none}
