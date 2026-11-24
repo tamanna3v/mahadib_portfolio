@@ -2411,6 +2411,8 @@ footer{background:var(--ink);color:#fff;font-family:var(--label);font-weight:500
   .aw-tl-when{text-align:left;font-size:32px}
   .aw-tl-items{padding-left:0}
 }
+.cert-kind{font-family:var(--label);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.cert-card .edu-badge{margin-top:10px}
 /* ── AI Accelerator pages (AIBS · AIPA · AISA) ── */
 .bnx{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.62;margin-top:-40px}
 .bnx a{text-decoration:none}
@@ -3193,7 +3195,7 @@ function pageAbout(){
     <div id="sec-experience" style="scroll-margin-top:68px"></div>
     ${pageExperience()}
     <div id="sec-certifications" style="scroll-margin-top:68px"></div>
-    ${pageCertifications()}`;
+    ${eduCertSection()}`;
 }
 
 function toggleServiced(i){
@@ -3243,25 +3245,6 @@ function pageExperience(){
     From Intelligent Network platforms serving 90M+ subscribers at Nokia Siemens and Huawei to digital innovation at Robi Axiata.<br>
     Now co-founding AI and SaaS ventures and leading corporate AI adoption for senior leaders.</p>
     <div class="card" style="padding:8px 24px">${expCards}</div>
-    <div class="sub-label"><h3>Education</h3><div class="sub-label-line"></div></div>
-    <div class="card">
-      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
-        <div>
-          <div style="font-weight:800;font-size:15px;color:var(--green-deep)">B.Sc. Engineering in Computer Science & Engineering</div>
-          <div style="font-size:13px;color:#5a5a56;margin-top:4px">Chittagong University of Engineering & Technology, Bangladesh</div>
-          <div><span class="edu-badge">Ranked 5th / 63</span><span class="edu-badge">Dean's Award</span></div>
-        </div>
-        <div style="font-size:12px;color:#5a5a56;font-weight:600">2001 – 2005</div>
-      </div>
-    </div>
-    <div class="card">
-      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
-        <div>
-          <div style="font-weight:800;font-size:15px;color:var(--green-deep)">Chittagong College, Bangladesh</div>
-          <div style="font-weight:800;font-size:15px;color:var(--green-deep);margin-top:8px">Chittagong Collegiate School, Bangladesh</div>
-        </div>
-      </div>
-    </div>
     <div class="sub-label"><h3>Competence</h3><div class="sub-label-line"></div></div>
     ${skillSections}`;
 }
@@ -3532,24 +3515,42 @@ function pageRecognition(){
     ${awardsTimeline()}`;
 }
 
-function pageCertifications(){
-  const certCard = c=>`
-    <div class="cert-card" style="background:${c.bg}">
+const EDUCATION = [
+  {code:"CUET",title:"B.Sc. Engineering in Computer Science &amp; Engineering",issuer:"Chittagong University of Engineering &amp; Technology",detail:"",badges:["Ranked 5th / 63","Dean's Award"],year:"2001 – 2005"},
+  {code:"CC",title:"Chittagong College",issuer:"Chittagong, Bangladesh",detail:""},
+  {code:"CCS",title:"Chittagong Collegiate School",issuer:"Chittagong, Bangladesh",detail:""}
+];
+
+// Education, Certification & Fellowship — one section, one grid.
+function eduCertGrid(){
+  const card = (c,kind)=>`
+    <div class="cert-card">
       <div class="cert-badge">${c.code}</div>
       <div class="cert-body">
+        <div class="cert-kind">${kind}${c.year?` · ${c.year}`:''}</div>
         <div class="cert-title">${c.title}</div>
         <div class="cert-issuer">${c.issuer}</div>
-        <p class="cert-detail">${c.detail}</p>
-        ${c.year?`<div class="feat-year">📅 ${c.year}</div>`:''}
+        ${c.detail?`<p class="cert-detail">${c.detail}</p>`:''}
+        ${c.badges?`<div>${c.badges.map(x=>`<span class="edu-badge">${x}</span>`).join('')}</div>`:''}
       </div>
     </div>`;
-  const cards = CERTIFICATIONS.map(certCard).join('');
-  const fellowshipCards = FELLOWSHIPS.map(certCard).join('');
+  return `<div class="cert-grid">${
+    EDUCATION.map(c=>card(c,'Education')).join('') +
+    CERTIFICATIONS.map(c=>card(c,'Certification')).join('') +
+    FELLOWSHIPS.map(c=>card(c,'Fellowship')).join('')
+  }</div>`;
+}
+
+function eduCertSection(){
+  return `<div class="sub-label"><h3>Education, Certification &amp; Fellowship</h3><div class="sub-label-line"></div></div>
+    ${eduCertGrid()}`;
+}
+
+function pageCertifications(){
   return `
-    <h2 class="section-title">Certifications</h2>
-    <div class="cert-grid">${cards}</div>
-    <div class="sub-label"><h3>Fellowship</h3><div class="sub-label-line"></div></div>
-    <div class="cert-grid">${fellowshipCards}</div>`;
+    <h2 class="section-title">Education &amp; Certification</h2>
+    <p class="section-sub">Degree, professional certifications and fellowship</p>
+    ${eduCertGrid()}`;
 }
 
 function pageContact(){
