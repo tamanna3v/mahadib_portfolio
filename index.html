@@ -2393,6 +2393,24 @@ footer{background:var(--ink);color:#fff;font-family:var(--label);font-weight:500
 #sections-panel .sp-num{border-radius:50%!important;font-family:var(--label)}
 
 .exp-logo .company-logo-initial{width:100%;height:100%;background:var(--ink);color:#fff;font-family:var(--label);font-size:15px;font-weight:600;letter-spacing:.04em}
+/* Award & Contribution timeline */
+.aw-tl{list-style:none;margin:0;padding:0;position:relative}
+.aw-tl::before{content:"";position:absolute;left:170px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.aw-tl-year{display:grid;grid-template-columns:150px minmax(0,1fr);gap:0 40px;position:relative;padding:0 0 36px}
+.aw-tl-year::before{content:"";position:absolute;left:163px;top:12px;width:16px;height:16px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 5px #fff}
+.aw-tl-when{font-family:var(--cond);font-size:clamp(30px,3vw,44px);line-height:1;color:var(--ink);text-align:right;padding-top:2px}
+.aw-tl-items{display:flex;flex-direction:column;gap:18px;padding-left:6px}
+.aw-tl-item{border-top:2px solid var(--ink);padding-top:14px;max-width:760px}
+.aw-tl-type{font-family:var(--label);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.aw-tl-title{font-family:var(--serif);font-weight:400;font-size:clamp(22px,2.2vw,28px);line-height:1.2;margin:6px 0 6px;color:var(--ink)}
+.aw-tl-detail{margin:0;color:var(--ink-2);font-size:16px;line-height:1.6}
+@media(max-width:700px){
+  .aw-tl::before{left:7px}
+  .aw-tl-year{grid-template-columns:minmax(0,1fr);padding-left:36px;gap:12px}
+  .aw-tl-year::before{left:0;top:6px}
+  .aw-tl-when{text-align:left;font-size:32px}
+  .aw-tl-items{padding-left:0}
+}
 /* ── AI Accelerator pages (AIBS · AIPA · AISA) ── */
 .bnx{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.62;margin-top:-40px}
 .bnx a{text-decoration:none}
@@ -2416,7 +2434,7 @@ footer{background:var(--ink);color:#fff;font-family:var(--label);font-weight:500
   <button class="sp-card" data-sec="awards" onclick="scrollToSection('awards',this)">
     <span class="sp-num">2</span>
     <span class="sp-icon">🏆</span>
-    <span class="sp-info"><span class="sp-title">Awards</span><span class="sp-sub">Awards &amp; Recognition</span></span>
+    <span class="sp-info"><span class="sp-title">Awards</span><span class="sp-sub">Award &amp; Contribution</span></span>
   </button>
   <button class="sp-card" data-sec="experience" onclick="scrollToSection('experience',this)">
     <span class="sp-num">3</span>
@@ -2710,10 +2728,10 @@ const FEATURED = [
 const AWARDS = [
   {type:"Award",title:"Retail Digital Innovation Award",detail:"Zachai – 2020",year:"2020",bg:"var(--accent-peach)"},
   {type:"Award",title:"Covid-19 Solution Award",detail:"Swachho – 2020",year:"2020",bg:"var(--accent-rose)"},
-  {type:"Contribution",title:"National Blockchain Policy Forum",detail:"Policy Contributor",bg:"var(--accent-butter)"},
-  {type:"Publication",title:"IEEE Publications",detail:"ICCIT-2005, ICNEWS-2006, ICCIT-2010",bg:"var(--accent-sky)"},
-  {type:"Recognition",title:"ICT4D Conference Reviewer",detail:"Independent 2010–2016",bg:"var(--accent-sage)"},
-  {type:"Contribution",title:"BSTI Consumer Protection",detail:"Digital System Contributor",bg:"var(--accent-maroon-light)"}
+  {type:"Contribution",title:"National Blockchain Policy Forum",detail:"Policy Contributor",year:"2021–2022",bg:"var(--accent-butter)"},
+  {type:"Publication",title:"IEEE Publications",detail:"ICCIT-2005, ICNEWS-2006, ICCIT-2010",year:"2005–2010",bg:"var(--accent-sky)"},
+  {type:"Recognition",title:"ICT4D Conference Reviewer",detail:"Independent 2010–2016",year:"2010–2016",bg:"var(--accent-sage)"},
+  {type:"Contribution",title:"BSTI Consumer Protection",detail:"Digital System Contributor",year:"2022",bg:"var(--accent-maroon-light)"}
 ];
 
 const CERTIFICATIONS = [
@@ -3128,6 +3146,31 @@ document.addEventListener('keydown', e=>{
   }, {passive:true});
 })();
 
+
+// Award & Contribution — one timeline, newest first, grouped by year.
+function awardsTimeline(){
+  const items = [...FEATURED, ...AWARDS].map(a=>{
+    const yrs = (a.year||'').match(/\d{4}/g) || ['0'];
+    return {...a, sortY: Math.max(...yrs.map(Number)), startY: Math.min(...yrs.map(Number))};
+  }).sort((x,y)=> y.sortY - x.sortY || y.startY - x.startY);
+  const groups = [];
+  items.forEach(a=>{
+    const key = a.year.replace(/^[A-Za-z]+\s+/,'');
+    const g = groups[groups.length-1];
+    if(g && g.key === key) g.items.push(a); else groups.push({key, items:[a]});
+  });
+  return `<ol class="aw-tl">${groups.map(g=>`
+    <li class="aw-tl-year">
+      <div class="aw-tl-when">${g.key}</div>
+      <div class="aw-tl-items">${g.items.map(a=>`
+        <article class="aw-tl-item">
+          <div class="aw-tl-type">${a.type}${/^[A-Za-z]/.test(a.year)?` · ${a.year}`:''}</div>
+          <h4 class="aw-tl-title">${a.title}</h4>
+          <p class="aw-tl-detail">${a.detail}</p>
+        </article>`).join('')}</div>
+    </li>`).join('')}</ol>`;
+}
+
 function pageAbout(){
   return `
     <div id="sec-intro" style="scroll-margin-top:68px"></div>
@@ -3145,9 +3188,8 @@ function pageAbout(){
       <div class="hero-stats">${STATS.map(st=>`<div class="hero-stat"><div class="hero-stat-val">${st.val}</div><div class="hero-stat-lbl">${st.label}</div></div>`).join('')}</div>
     </header>
     <div id="sec-awards" style="scroll-margin-top:68px"></div>
-    <div class="sub-label"><h3>Awards, Contributions and Participations</h3><div class="sub-label-line"></div></div>
-    <div class="feat-grid">${FEATURED.map(f=>`<div class="feat-card" style="background:${f.bg}"><div class="feat-type">${f.type}</div><div class="feat-title">${f.title}</div><p class="feat-detail">${f.detail}</p><div class="feat-year">📅 ${f.year}</div></div>`).join('')}</div>
-    <div class="feat-grid" style="margin-top:14px">${AWARDS.map(a=>`<div class="feat-card" style="background:${a.bg}"><div class="feat-type">${a.type}</div><div class="feat-title">${a.title}</div><p class="feat-detail">${a.detail}</p>${a.year?`<div class="feat-year">📅 ${a.year}</div>`:''}</div>`).join('')}</div>
+    <div class="sub-label"><h3>Award &amp; Contribution</h3><div class="sub-label-line"></div></div>
+    ${awardsTimeline()}
     <div id="sec-experience" style="scroll-margin-top:68px"></div>
     ${pageExperience()}
     <div id="sec-certifications" style="scroll-margin-top:68px"></div>
@@ -3486,9 +3528,8 @@ function pageRecognition(){
   return `
     <h2 class="section-title">Recognition</h2>
     <p class="section-sub">Awards, honours and featured milestones</p>
-    <div class="sub-label"><h3>Awards, Contributions and Participations</h3><div class="sub-label-line"></div></div>
-    <div class="feat-grid">${feat}</div>
-    <div class="feat-grid" style="margin-top:14px">${awards}</div>`;
+    <div class="sub-label"><h3>Award &amp; Contribution</h3><div class="sub-label-line"></div></div>
+    ${awardsTimeline()}`;
 }
 
 function pageCertifications(){
@@ -6537,7 +6578,7 @@ function submitAffiliationForm(e){
 }
 </script>
 <style>
-#wa-chat-bar{position:fixed;bottom:24px;right:20px;z-index:9999;display:flex;align-items:center;gap:9px;background:var(--green);color:#fff;border:1px solid var(--green);border-radius:0;padding:11px 18px 11px 13px;box-shadow:none;text-decoration:none;font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;transition:background .15s ease}
+#wa-chat-bar{position:fixed;bottom:24px;left:20px;right:auto;z-index:9999;display:flex;align-items:center;gap:9px;background:var(--green);color:#fff;border:1px solid var(--green);border-radius:0;padding:11px 18px 11px 13px;box-shadow:none;text-decoration:none;font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;transition:background .15s ease}
 #wa-chat-bar:hover{background:#333;text-decoration:none;color:#fff}
 #wa-chat-bar svg{flex-shrink:0}
 @media(max-width:500px){#wa-chat-bar{padding:11px;font-size:0;gap:0}#wa-chat-bar svg{width:22px;height:22px}}
